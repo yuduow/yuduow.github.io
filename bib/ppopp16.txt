@@ -1,0 +1,15 @@
+@inproceedings{Wang:2016:GAH,
+  author = {Yangzihao Wang and Andrew Davidson and Yuechao Pan
+                  and Yuduo Wu and Andy Riffel and John D. Owens},
+  title = {{G}unrock: A High-Performance Graph Processing
+                  Library on the {GPU}},
+  booktitle = {Proceedings of the 21st ACM SIGPLAN Symposium on
+                  Principles and Practice of Parallel Programming},
+  series = {PPoPP 2016},
+  year = 2016,
+  month = mar,
+  acceptance = {29 of 151 submissions, 19.2\%},
+  cvnote = {Distinguished Paper},
+  doi = {10.1145/2851141.2851145},
+  url = {http://escholarship.org/uc/item/6xz7z9k0}
+}
