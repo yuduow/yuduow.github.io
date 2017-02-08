@@ -72,6 +72,68 @@
         </article>
     </div>
 
+    <!-- project -->
+    <div class="wrapper style2">
+      <article class="container" id="project">
+        <header>
+          <h1 align="left"><i class="fa fa-bar-chart"></i> Recent Projects</h1>
+        </header>
+        <div class="container">
+          <div class="row">
+            <div class="8u">
+              <h3 align="left">
+                <a href="http://gunrock.github.io/gunrock/">Gunrock - High-Performance Graph Primitives on GPUs</a>
+              </h3>
+              <p align="left">
+                Co-authored "Gunrock", a high-performance CUDA library for graph-processing designed specifically for GPUs. It uses a high-level, bulk-synchronous, data-centric abstraction focused on operations on a vertex or edge frontiers. Gunrock has the best performance of any programmable GPU+graph library and has better scalability with multiple GPUs on a node than any other graph library. For more details, check out our GitHub homepage and more: </br>[
+                <a href="http://gunrock.github.io/gunrock/doc/0.3/why-gunrock.html">Why-Gunrock</a>
+                |
+                <a href="gunrock_poster.pdf">Poster</a>
+                |
+                <a href="#publications">Publications</a>
+                |
+                <a href="http://gunrock.github.io/gunrock/doc/latest/index.html">Documentation</a>
+                ]
+              </p>
+            </div>
+            <div class="4u">
+              <article class="box style3">
+                <a href="http://gunrock.github.io/gunrock/" class="image fit"><img src="images/gunrock.jpg" alt=""/></a>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="8u">
+              <article class="box style3">
+                <a href="images/vision-1.png" class="image fit"><img src="images/vision-1.png" alt=""/></a>
+              </article>
+            </div>
+            <div class="4u">
+              <h3 align="left">Scene Classification based on Deep Convolutional Neural Networks (CNNs)</h3>
+              <p align="left">Collaborated with
+                <a href="http://www.idav.ucdavis.edu/~yzhwang/">Yangzihao Wang</a>, together we implemented a novel scene classification method which combines
+                <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Convolutional Neural Network (CNN)</a>
+                and Spatial Pyramid Pooling to generate high-level context-aware features. We achieved better recognition rate than the state-of-the-art method on the challenging
+                <a href="http://web.mit.edu/torralba/www/indoor.html">MIT Indoor-67</a>
+                dataset using only the deep features trained from
+                <a href="http://www.image-net.org">ImageNet</a>.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="5u">
+              <h3 align="left">Parallel Minimum Spanning Tree (MST) Algorithm using Gunrock</h3>
+              <p align="left">Implemented parallel Boruvka's minimum spanning tree (MST) algorithm using Gunrock's data-centric programming model. Achieved up to 120X speedup against the serial CPU Boost graph library (BGL) implementation for real-world road networks, open street maps (OSMs), Delaunay graphs, and many long-diameter fully-connected synthetic datasets.</p>
+            </div>
+            <div class="7u">
+              <article class="box style3">
+                <a href="images/mst.png" class="image fit"><img src="images/mst.png" alt=""/></a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
     <!-- Publications -->
     <div class="wrapper style2">
         <article class="container" id="publications">
