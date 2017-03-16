@@ -1,15 +1,11 @@
-@article{Pan:2015:MGA,
-  author =  {Yuechao Pan and Yangzihao Wang and Yuduo Wu and Carl
-            Yang and John D. Owens},
-  title =   {Multi-{GPU} Graph Analytics},
-  journal = {CoRR},
-  volume =  {abs/1504.04804},
-  year =    2015,
-  ee =      {http://arxiv.org/abs/1504.04804},
-  month =   apr,
-  archiveprefix = {arXiv},
-  number =  {1504.04804v1},
-  eprint =  {1504.04804v1},
-  primaryclass = {cs.DC},
-  nonrefereed = {true}
+@inproceedings{Pan:2017:MGA,
+  author = {Yuechao Pan and Yangzihao Wang and Yuduo Wu and Carl
+                  Yang and John D. Owens},
+  title = {Multi-{GPU} Graph Analytics},
+  booktitle = {Proceedings of the 31st IEEE International Parallel
+                  and Distributed Processing Symposium},
+  series = {IPDPS 2017},
+  year = 2017,
+  month = may # {\slash } # jun,
+  url = {http://escholarship.org/uc/item/39r145g1}
 }
