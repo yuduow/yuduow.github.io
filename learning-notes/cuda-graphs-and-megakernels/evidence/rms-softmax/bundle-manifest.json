@@ -679,13 +679,13 @@
     },
     {
       "path": "implementation.md",
-      "bytes": 8524,
-      "sha256": "32a5ee226e60eda092956811a3fb689e8166eb70414478653db6fa7078b01d48"
+      "bytes": 11173,
+      "sha256": "e8acd4cead7f571f6d03f5e218689ccde46979ad2b8a618595d4f952cb05c6bd"
     },
     {
       "path": "implementation.html",
-      "bytes": 64218,
-      "sha256": "690499be2af08b14afc6782096d2a0252e40b8d155278dce0592ccf3eda1e053"
+      "bytes": 87262,
+      "sha256": "c996f03e55276df9463235ae212e6a495e97bccf4aaa10576d744d9ea7b0b7a3"
     }
   ]
 }
