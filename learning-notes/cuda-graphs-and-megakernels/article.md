@@ -4,7 +4,7 @@ CUDA Graphs reduce launch overhead. When is a megakernel still worth the complex
 
 CUDA Graph replay can reduce the overhead of submitting a repeated GPU workflow. However, it leaves the kernels and their intermediate tensors intact. Fusion can avoid some of those writes and reads, but it must preserve the order of dependent operations. In an ordered kernel chain, each kernel finishes before the next starts. If we fuse the chain into a megakernel, how do thread blocks wait for the results they need from other blocks? In this post, we’ll use RMS-scaled softmax as a toy example to compare and understand the progression: unfused baseline → CUDA Graph replay → local fusion → megakernel.
 
-## A toy example with two synchronization points
+## A Toy Example with Two Synchronization Points
 
 Start with a 2D tensor `x` of shape `(B, N)`: `B` rows and `N` elements per row. For each row, compute `sqrt(mean(row * row) + eps)`, divide the row by that number, then apply softmax.
 
@@ -55,7 +55,7 @@ Local fusion uses ordered kernel launches for this synchronization. The megakern
 
 The [unfused baseline](evidence/rms-softmax/code/bench.cu) uses 9 kernels to compute squares, tile and row statistics, exponentials, their sums, and normalization. This is a deliberately unfused baseline, not a tuned framework implementation.
 
-## 1. CUDA Graphs: reduce repeated submission overhead
+## 1. CUDA Graphs: Reduce Repeated Submission Overhead
 
 [Capture the baseline’s 9 launches](evidence/rms-softmax/implementation.html#cuda-graph-capture-and-replay) and instantiate the resulting CUDA Graph. Each replay then submits the chain with 1 `cudaGraphLaunch` call. [Instantiation](https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-programming-guide/index.html#cuda-graphs) performs much of the launch setup in advance.
 
@@ -67,7 +67,7 @@ Replay leaves these kernel bodies unchanged. A later kernel cannot inherit a com
 
 For 16 rows, [host completion time](evidence/rms-softmax/results.html#article-comparison) drops from **44.7 to 38.8 µs**. This includes submission and waiting for GPU completion.
 
-## 2. Local fusion: combine work within each phase
+## 2. Local Fusion: Combine Work within Each Phase
 
 Local fusion reduces the baseline from 9 kernels to 3. The first writes each tile’s sum of squares and maximum to global memory. In the second, each block combines its row’s tile statistics, computes exponentials and writes their tile sum. In the third, each block combines those sums into the softmax denominator and normalizes its output tile.
 
@@ -79,7 +79,7 @@ These 3 kernels execute in stream order: all blocks of each kernel finish before
 
 For 16 rows, local fusion brings host completion time to **19.9 µs**. Can keeping tiles across phases save enough time to justify synchronization inside the kernel?
 
-## 3. Megakernel: keep tiles in shared memory
+## 3. Megakernel: Keep Tiles in Shared Memory
 
 Our [**megakernel**](evidence/rms-softmax/implementation.html#megakernel-and-row-barrier) extends fusion across the remaining 2 kernel boundaries. It executes all 3 phases for its assigned rows in 1 cooperative launch, so the same blocks and their shared-memory tiles survive across phases. Explicit barriers enforce the dependencies. Each block owns one tile throughout:
 
@@ -95,7 +95,7 @@ Grid-wide barriers wait for every block in the launch. Row-scoped barriers wait 
 
 Blocks waiting at a barrier still occupy registers and shared memory; if the blocks they need cannot run, the kernel can deadlock. We therefore [cap each cooperative launch](https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-programming-guide/index.html#grid-synchronization-cg) at the kernel’s active blocks per SM multiplied by the GPU’s SM count. Larger inputs are split into row groups that fit this limit.
 
-## What the H100 measurements show
+## What the H100 Measurements Show
 
 We measured repeated execution on H100 80 GB GPUs (CUDA 12.8.1), using the same input after warmup. Setup and transfers are excluded. The megakernel uses graph replay, with grid-wide barriers for one row and row-scoped barriers for 16–64 rows. The 64-row case is split across 2 launches to fit the cooperative launch limit.
 
@@ -117,7 +117,7 @@ Reloading the input adds **1.39 µs**; writing exponentials to global memory and
 
 These results cover warm execution at one row width on H100. Application speedups and other GPUs need separate measurements. The [full results and methods](evidence/rms-softmax/results.html) include per-session timings, both barrier variants, direct launches and slower candidates.
 
-## When is the extra control worthwhile?
+## When Is the Extra Control Worthwhile?
 
 For 16 rows, graph replay with local fusion reduces host completion time from **44.7 to 19.9 µs**. The megakernel saves a further **0.7 µs**, reaching **19.2 µs** with graph replay. It loads `x` once and keeps `E` for normalization, instead of rereading `x` and recomputing `E` across kernels. That additional saving is what must justify the synchronization and launch-size handling.
 
