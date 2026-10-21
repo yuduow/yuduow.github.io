@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A concise GPU terminology reference across NVIDIA CUDA, AMD HIP, Intel SYCL and Apple Metal, with primary-source links and a downloadable PDF.">
+  <meta name="description" content="Hardware and low-level programming terminology across NVIDIA GPUs, AMD Instinct GPUs, Google TPU and AWS Trainium, with scoped comparisons, primary sources and a downloadable PDF.">
   <meta name="theme-color" content="#ffffff">
-  <title>GPU Terminology Cheat Sheet</title>
+  <title>AI Accelerator Terminology Cheat Sheet</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' rx='12' fill='%23232e2b'/%3E%3Cpath d='M23 23h18v18H23z' fill='none' stroke='%23dae8c8' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="gpu-reference/style.css">
   <link rel="stylesheet" href="writeup.css">
-  <script defer src="gpu-reference/app.js"></script>
   <link rel="stylesheet" href="../../note-icons.css?v=4b469568df12">
+  <script defer src="gpu-reference/app.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#reference">Skip to the reference</a>
   <div class="page">
     <div class="writeup-meta"><a href="../">← Learning Notes</a><time datetime="2025-12-15">December 15, 2025</time></div>
     <header class="hero">
-      <div><h1><svg class="note-title-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>GPU Terminology Cheat Sheet</h1><p class="intro">NVIDIA, AMD, Intel and Apple. One reference.</p></div>
-      <a class="download" href="gpu-terminology-cheat-sheet.pdf" download="gpu-terminology-cheat-sheet.pdf">
+      <h1><svg class="note-title-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>AI Accelerator Terminology Cheat Sheet</h1>
+      <a class="download" href="ai-accelerator-terminology-cheat-sheet.pdf" download="ai-accelerator-terminology-cheat-sheet.pdf">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>Download PDF
       </a>
     </header>
@@ -32,376 +32,510 @@
       </div>
     </div>
     <main id="reference">
-      <div class="reading-note"><p>Common roles and scopes. Hardware and API details vary.</p><button id="toggle-sources" aria-pressed="false">Show citations</button></div>
+      <div class="reading-note"><p>Shared roles, different architectures. Read each column within its stated scope.</p><button id="toggle-sources" aria-pressed="false">Show citations</button></div>
+      <p class="order-note">Examples: Hopper · CDNA 3 · TPU v6e · Trainium2. APIs: CUDA · HIP · Pallas · NKI. <a href="#sources">Sources &amp; Scope</a></p>
       <p id="result-count" role="status" aria-live="polite" class="search-status" hidden></p>
-      <div id="empty-state" hidden><h2>No Matching Terms</h2><p>Try “warp”, “thread” or “memory”.</p><button id="reset-search">Clear search</button></div>
+      <div id="empty-state" hidden><h2>No Matching Terms</h2><p>Try “vector”, “memory” or “DMA”.</p><button id="reset-search">Clear search</button></div>
       <section class="concept-section" id="execution" aria-labelledby="execution-title">
-          <div class="section-heading"><h2 id="execution-title"><span>01</span>Execution</h2><p>How the work is divided</p></div>
+          <div class="section-heading"><h2 id="execution-title"><span>01</span>Execution</h2><p>How work is expressed and scheduled</p></div>
           <table role="table" aria-label="Execution terminology">
             <colgroup><col class="concept-col"><col><col><col><col></colgroup>
-            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
-            <tbody role="rowgroup"><tr role="row" data-concept data-search="launch grid grid grid nd-range grid the full set of threads or work-items in one kernel launch.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Launch grid</span><p class="definition">The full set of threads or work-items in one kernel launch.</p></th>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA GPUs<small>Hopper · CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD Instinct GPUs<small>CDNA 3 · HIP</small></th><th role="columnheader" scope="col" class="google">Google TPU<small>v6e · Pallas</small></th><th role="columnheader" scope="col" class="aws">AWS Trainium<small>Trainium2 · NKI</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="execution model simt a kernel runs as many threads. simt hip threads map to wavefronts. vector/tile program a sequential instruction stream with asynchronous units. tensor program sequential semantics; independent engine work may overlap. how a program expresses parallel work; the execution models differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Execution Model</span><p class="definition">How a program expresses parallel work; the execution models differ.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Grid</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Launch grid"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">SIMT<span class="term-note">A kernel runs as many threads.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Execution Model"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Grid</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Launch grid"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">ND-range</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Launch grid"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Grid</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Launch grid"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">SIMT<span class="term-note">HIP threads map to wavefronts.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Execution Model"><a class="citation" href="#source-6" aria-label="Source 6: AMD · HIP Programming Model 6.3.1">6</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Vector/tile program<span class="term-note">A sequential instruction stream with asynchronous units.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Execution Model"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Tensor program<span class="term-note">Sequential semantics; independent engine work may overlap.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Execution Model"><a class="citation" href="#source-14" aria-label="Source 14: AWS · NKI Language Guide · Neuron 2.33.0">14</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="cooperating threads thread block thread block work-group in hardware docs work-group threadgroup a group that can share memory and synchronize at a group barrier.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Cooperating threads</span><p class="definition">A group that can share memory and synchronize at a group barrier.</p></th>
+            </tr><tr role="row" data-concept data-search="work grid grid of thread blocks blockidx + threadidx grid of thread blocks blockidx + threadidx pallas grid generally iterated sequentially on a core. spmd launch grid nl.program_id identifies an instance. the index space used to divide an operation into program instances.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Work Grid</span><p class="definition">The index space used to divide an operation into program instances.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Thread block</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Cooperating threads"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Grid of thread blocks<span class="term-note">blockIdx + threadIdx</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Work Grid"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Thread block<span class="term-note">Work-group in hardware docs</span></span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Cooperating threads"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a> <a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Work-group</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Cooperating threads"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a> <a class="citation" href="#source-10" aria-label="Source 9: Intel: Shared Local Memory">9</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Threadgroup</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Cooperating threads"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a> <a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Grid of thread blocks<span class="term-note">blockIdx + threadIdx</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Work Grid"><a class="citation" href="#source-6" aria-label="Source 6: AMD · HIP Programming Model 6.3.1">6</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Pallas grid<span class="term-note">Generally iterated sequentially on a core.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Work Grid"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">SPMD launch grid<span class="term-note">nl.program_id identifies an instance.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Work Grid"><a class="citation" href="#source-20" aria-label="Source 20: AWS · NKI program_id · Neuron 2.33.0">20</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="execution subgroup warp wavefront warp in hip sub-group simd-group threads grouped for instruction execution. width and synchronization rules depend on the target.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Execution subgroup</span><p class="definition">Threads grouped for instruction execution. Width and synchronization rules depend on the target.</p></th>
+            </tr><tr role="row" data-concept data-search="cooperation scope thread block threads share block shared memory. thread block / work-group threads share lds. kernel program tile operations use vmem/smem buffers. kernel instance engine operations use sbuf/psum tiles. a scope for sharing temporary data within local work.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Cooperation Scope</span><p class="definition">A scope for sharing temporary data within local work.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Warp</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Execution subgroup"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA: Advanced Kernel Programming">2</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Thread block<span class="term-note">Threads share block shared memory.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Cooperation Scope"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Wavefront<span class="term-note">Warp in HIP</span></span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Execution subgroup"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Sub-group</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Execution subgroup"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">SIMD-group</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Execution subgroup"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Thread block / work-group<span class="term-note">Threads share LDS.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Cooperation Scope"><a class="citation" href="#source-6" aria-label="Source 6: AMD · HIP Programming Model 6.3.1">6</a> <a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Kernel program<span class="term-note">Tile operations use VMEM/SMEM buffers.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Cooperation Scope"><a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Kernel instance<span class="term-note">Engine operations use SBUF/PSUM tiles.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Cooperation Scope"><a class="citation" href="#source-15" aria-label="Source 15: AWS · Trainium Memory Hierarchy · Neuron 2.33.0">15</a> <a class="citation" href="#source-14" aria-label="Source 14: AWS · NKI Language Guide · Neuron 2.33.0">14</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="one invocation thread thread work-item thread one indexed execution of the kernel, with its own private state.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">One invocation</span><p class="definition">One indexed execution of the kernel, with its own private state.</p></th>
+            </tr><tr role="row" data-concept data-search="execution group warp 32 threads. wavefront 64 work-items on cdna 3; hip calls it a warp. vector lanes / sublanes elements of a vreg, not gpu threads. engine-wide tile operation no cuda-style warp in the nki model. the hardware grouping below a program; these are different abstractions.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Execution Group</span><p class="definition">The hardware grouping below a program; these are different abstractions.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Thread</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for One invocation"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Warp<span class="term-note">32 threads.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Execution Group"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Thread</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for One invocation"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Work-item</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for One invocation"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Thread</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for One invocation"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Wavefront<span class="term-note">64 work-items on CDNA 3; HIP calls it a warp.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Execution Group"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a> <a class="citation" href="#source-6" aria-label="Source 6: AMD · HIP Programming Model 6.3.1">6</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Vector lanes / sublanes<span class="term-note">Elements of a VREG, not GPU threads.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Execution Group"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Engine-wide tile operation<span class="term-note">No CUDA-style warp in the NKI model.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Execution Group"><a class="citation" href="#source-14" aria-label="Source 14: AWS · NKI Language Guide · Neuron 2.33.0">14</a> <a class="citation" href="#source-19" aria-label="Source 19: AWS · NeuronCore-v3 Architecture · Neuron 2.33.0">19</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="matrix operation mma / wgmma warp / asynchronous warp-group operations. mfma matrix fused multiply-add instructions. lax.dot / lax.dot_general pallas lowers matrix operations to mxus. nisa.nc_matmul stationary and moving operand tiles. an instruction or kernel api that requests matrix multiply-accumulate work.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Matrix Operation</span><p class="definition">An instruction or kernel API that requests matrix multiply-accumulate work.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">mma / wgmma<span class="term-note">Warp / asynchronous warp-group operations.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Matrix Operation"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA · PTX ISA 9.0">3</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">MFMA<span class="term-note">Matrix fused multiply-add instructions.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Matrix Operation"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">lax.dot / lax.dot_general<span class="term-note">Pallas lowers matrix operations to MXUs.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Matrix Operation"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">nisa.nc_matmul<span class="term-note">Stationary and moving operand tiles.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Matrix Operation"><a class="citation" href="#source-17" aria-label="Source 17: AWS · NKI Matrix Multiplication · Neuron 2.33.0">17</a></div></div>
                 </td>
             </tr></tbody>
           </table></section>
 <section class="concept-section" id="hardware" aria-labelledby="hardware-title">
-          <div class="section-heading"><h2 id="hardware-title"><span>02</span>Hardware</h2><p>Closest roles; hardware boundaries and counts differ</p></div>
+          <div class="section-heading"><h2 id="hardware-title"><span>02</span>Hardware</h2><p>Physical compute blocks and engines</p></div>
           <table role="table" aria-label="Hardware terminology">
             <colgroup><col class="concept-col"><col><col><col><col></colgroup>
-            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
-            <tbody role="rowgroup"><tr role="row" data-concept data-search="compute block streaming multiprocessor sm compute unit (cu) cdna 1-4 example xe-core shader core a hardware block that executes groups of threads. size and resources differ across vendors.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Compute block</span><p class="definition">A hardware block that executes groups of threads. Size and resources differ across vendors.</p></th>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA GPUs<small>Hopper · CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD Instinct GPUs<small>CDNA 3 · HIP</small></th><th role="columnheader" scope="col" class="google">Google TPU<small>v6e · Pallas</small></th><th role="columnheader" scope="col" class="aws">AWS Trainium<small>Trainium2 · NKI</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="compute block sm streaming multiprocessor. cu compute unit; cus are grouped in xcds. tensorcore one per v6e chip; includes matrix, vector and scalar units. neuroncore-v3 eight physical cores per trainium2 chip. a repeated block containing arithmetic and local storage; sizes and capabilities differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Compute Block</span><p class="definition">A repeated block containing arithmetic and local storage; sizes and capabilities differ.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Streaming Multiprocessor<span class="term-note">SM</span></span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Compute block"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA: Advanced Kernel Programming">2</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">SM<span class="term-note">Streaming Multiprocessor.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Compute Block"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Compute Unit (CU)<span class="term-note">CDNA 1-4 example</span></span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Compute block"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a> <a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Xe-core</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Compute block"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a> <a class="citation" href="#source-9" aria-label="Source 8: Intel: Xe GPU Architecture">8</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Shader core</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Compute block"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">CU<span class="term-note">Compute Unit; CUs are grouped in XCDs.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Compute Block"><a class="citation" href="#source-5" aria-label="Source 5: AMD · MI300 / CDNA 3 Microarchitecture">5</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">TensorCore<span class="term-note">One per v6e chip; includes matrix, vector and scalar units.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Compute Block"><a class="citation" href="#source-9" aria-label="Source 9: Google · TPU v6e Architecture">9</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">NeuronCore-v3<span class="term-note">Eight physical cores per Trainium2 chip.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Compute Block"><a class="citation" href="#source-13" aria-label="Source 13: AWS · Trainium2 NKI Architecture · Neuron 2.33.0">13</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="matrix engine tensor core inside an sm. matrix core inside a cu. mxu matrix-multiply unit; two per v6e tensorcore. tensor engine systolic matrix engine in a neuroncore. specialized hardware for dense matrix arithmetic.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Matrix Engine</span><p class="definition">Specialized hardware for dense matrix arithmetic.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Tensor Core<span class="term-note">Inside an SM.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Matrix Engine"><a class="citation" href="#source-21" aria-label="Source 21: NVIDIA · Hopper Architecture In-Depth">21</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Matrix Core<span class="term-note">Inside a CU.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Matrix Engine"><a class="citation" href="#source-5" aria-label="Source 5: AMD · MI300 / CDNA 3 Microarchitecture">5</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">MXU<span class="term-note">Matrix-multiply unit; two per v6e TensorCore.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Matrix Engine"><a class="citation" href="#source-9" aria-label="Source 9: Google · TPU v6e Architecture">9</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Tensor Engine<span class="term-note">Systolic matrix engine in a NeuronCore.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Matrix Engine"><a class="citation" href="#source-19" aria-label="Source 19: AWS · NeuronCore-v3 Architecture · Neuron 2.33.0">19</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="general arithmetic cuda cores / sm pipelines thread arithmetic and other instructions. valu + salu vector work and wave-uniform scalar work. vector unit + scalar unit array arithmetic and scalar control. vector, scalar, gpsimd the scalar engine also operates across many elements. hardware for work around matrix multiplication, such as elementwise operations and control.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">General Arithmetic</span><p class="definition">Hardware for work around matrix multiplication, such as elementwise operations and control.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">CUDA cores / SM pipelines<span class="term-note">Thread arithmetic and other instructions.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for General Arithmetic"><a class="citation" href="#source-21" aria-label="Source 21: NVIDIA · Hopper Architecture In-Depth">21</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">VALU + SALU<span class="term-note">Vector work and wave-uniform scalar work.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for General Arithmetic"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Vector unit + scalar unit<span class="term-note">Array arithmetic and scalar control.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for General Arithmetic"><a class="citation" href="#source-9" aria-label="Source 9: Google · TPU v6e Architecture">9</a> <a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Vector, Scalar, GPSIMD<span class="term-note">The Scalar Engine also operates across many elements.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for General Arithmetic"><a class="citation" href="#source-19" aria-label="Source 19: AWS · NeuronCore-v3 Architecture · Neuron 2.33.0">19</a></div></div>
                 </td>
             </tr></tbody>
           </table></section>
 <section class="concept-section" id="memory" aria-labelledby="memory-title">
-          <div class="section-heading"><h2 id="memory-title"><span>03</span>Memory</h2><p>Who owns the data, and where it lives</p></div>
+          <div class="section-heading"><h2 id="memory-title"><span>03</span>Memory</h2><p>Where values live and how they move</p></div>
           <table role="table" aria-label="Memory terminology">
             <colgroup><col class="concept-col"><col><col><col><col></colgroup>
-            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
-            <tbody role="rowgroup"><tr role="row" data-concept data-search="registers registers vector / scalar registers vgprs / sgprs general register file grf registers storage for values used by executing instructions. allocation and physical backing vary.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Registers</span><p class="definition">Storage for values used by executing instructions. Allocation and physical backing vary.</p></th>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA GPUs<small>Hopper · CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD Instinct GPUs<small>CDNA 3 · HIP</small></th><th role="columnheader" scope="col" class="google">Google TPU<small>v6e · Pallas</small></th><th role="columnheader" scope="col" class="aws">AWS Trainium<small>Trainium2 · NKI</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="device memory global memory / hbm for the h100 example. global memory / hbm3 for the mi300 example. hbm staged into on-chip memory for computation. hbm explicit transfers to and from sbuf. large accelerator-attached storage for tensors.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Device Memory</span><p class="definition">Large accelerator-attached storage for tensors.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Registers</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Registers"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Global memory / HBM<span class="term-note">For the H100 example.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Device Memory"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a> <a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Vector / scalar registers<span class="term-note">VGPRs / SGPRs</span></span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Registers"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">General Register File<span class="term-note">GRF</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Registers"><a class="citation" href="#source-9" aria-label="Source 8: Intel: Xe GPU Architecture">8</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Registers</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Registers"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Global memory / HBM3<span class="term-note">For the MI300 example.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Device Memory"><a class="citation" href="#source-5" aria-label="Source 5: AMD · MI300 / CDNA 3 Microarchitecture">5</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">HBM<span class="term-note">Staged into on-chip memory for computation.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Device Memory"><a class="citation" href="#source-9" aria-label="Source 9: Google · TPU v6e Architecture">9</a> <a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">HBM<span class="term-note">Explicit transfers to and from SBUF.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Device Memory"><a class="citation" href="#source-15" aria-label="Source 15: AWS · Trainium Memory Hierarchy · Neuron 2.33.0">15</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="group-shared memory shared memory local data share lds shared local memory slm threadgroup memory program-managed storage shared by threads in one cooperating group.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Group-shared memory</span><p class="definition">Program-managed storage shared by threads in one cooperating group.</p></th>
+            </tr><tr role="row" data-concept data-search="operand scratchpad shared memory block-scoped; hopper also supports cluster access. lds local data share; work-group allocation. vmem / smem vector sram / scalar sram. sbuf state buffer shared by the core’s compute engines. software-managed on-chip storage for reusable input and intermediate tiles.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Operand Scratchpad</span><p class="definition">Software-managed on-chip storage for reusable input and intermediate tiles.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Shared memory</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Group-shared memory"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Shared memory<span class="term-note">Block-scoped; Hopper also supports cluster access.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Operand Scratchpad"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a> <a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Local Data Share<span class="term-note">LDS</span></span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Group-shared memory"><a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Shared Local Memory<span class="term-note">SLM</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Group-shared memory"><a class="citation" href="#source-10" aria-label="Source 9: Intel: Shared Local Memory">9</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Threadgroup memory</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Group-shared memory"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a> <a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">LDS<span class="term-note">Local Data Share; work-group allocation.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Operand Scratchpad"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">VMEM / SMEM<span class="term-note">Vector SRAM / scalar SRAM.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Operand Scratchpad"><a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">SBUF<span class="term-note">State Buffer shared by the core’s compute engines.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Operand Scratchpad"><a class="citation" href="#source-15" aria-label="Source 15: AWS · Trainium Memory Hierarchy · Neuron 2.33.0">15</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="private memory local memory scratch memory scratch memory thread stack / spills per-thread storage outside registers, used for spills, stack data and other private values.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Private memory</span><p class="definition">Per-thread storage outside registers, used for spills, stack data and other private values.</p></th>
+            </tr><tr role="row" data-concept data-search="register storage registers per-thread architectural values. vgprs / sgprs per-lane vector / wave-uniform scalar values. vregs / sregs vector / scalar registers. scalar virtualregister nki tensor values live in sbuf/psum. storage closest to arithmetic; ownership and allocation differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Register Storage</span><p class="definition">Storage closest to arithmetic; ownership and allocation differ.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Local memory</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Private memory"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Registers<span class="term-note">Per-thread architectural values.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Register Storage"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Scratch memory</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Private memory"><a class="citation" href="#source-46" aria-label="Source 30: LLVM: AMDGPU private address space">30</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Scratch memory</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Private memory"><a class="citation" href="#source-45" aria-label="Source 29: Intel: Optimizing Explicit SIMD Kernels">29</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Thread stack / spills</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Private memory"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a> <a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">VGPRs / SGPRs<span class="term-note">Per-lane vector / wave-uniform scalar values.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Register Storage"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">VREGs / SREGs<span class="term-note">Vector / scalar registers.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Register Storage"><a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Scalar VirtualRegister<span class="term-note">NKI tensor values live in SBUF/PSUM.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Register Storage"><a class="citation" href="#source-14" aria-label="Source 14: AWS · NKI Language Guide · Neuron 2.33.0">14</a> <a class="citation" href="#source-15" aria-label="Source 15: AWS · Trainium Memory Hierarchy · Neuron 2.33.0">15</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="device-wide memory global memory global memory global memory device address space memory accessible to gpu threads across cooperating groups. coordinate conflicting accesses to avoid data races.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Device-wide memory</span><p class="definition">Memory accessible to GPU threads across cooperating groups. Coordinate conflicting accesses to avoid data races.</p></th>
+            </tr><tr role="row" data-concept data-search="matrix accumulators register accumulators for hopper mma / wgmma. vgprs / accvgprs destination depends on the mfma form. fp32 vector values for floating-point pallas dot; vregs and vmem scratch. psum partial sum buffer; dedicated matrix-result memory. where partial matrix results are kept between multiply-accumulate steps.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Matrix Accumulators</span><p class="definition">Where partial matrix results are kept between multiply-accumulate steps.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Global memory</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Device-wide memory"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Register accumulators<span class="term-note">For Hopper mma / wgmma.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Matrix Accumulators"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA · PTX ISA 9.0">3</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Global memory</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Device-wide memory"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Global memory</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Device-wide memory"><a class="citation" href="#source-10" aria-label="Source 9: Intel: Shared Local Memory">9</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Device address space</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Device-wide memory"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">VGPRs / AccVGPRs<span class="term-note">Destination depends on the MFMA form.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Matrix Accumulators"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">FP32 vector values<span class="term-note">For floating-point Pallas dot; VREGs and VMEM scratch.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Matrix Accumulators"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a> <a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">PSUM<span class="term-note">Partial Sum Buffer; dedicated matrix-result memory.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Matrix Accumulators"><a class="citation" href="#source-15" aria-label="Source 15: AWS · Trainium Memory Hierarchy · Neuron 2.33.0">15</a> <a class="citation" href="#source-17" aria-label="Source 17: AWS · NKI Matrix Multiplication · Neuron 2.33.0">17</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="caches l1 / l2 caches vector / scalar caches; l2 cdna example l1 / l2 caches xe-hpc example shader-core caches; gpu last-level cache hardware-managed storage that reuses recently accessed data. cache levels and sharing scopes differ.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Caches</span><p class="definition">Hardware-managed storage that reuses recently accessed data. Cache levels and sharing scopes differ.</p></th>
+            </tr><tr role="row" data-concept data-search="tensor layout register fragments / shared descriptors mma operands use instruction-specific register or shared-memory layouts. mfma operand layout instruction-specific lane/vgpr mapping. vreg lanes / sublanes tiling and padding follow vector dimensions. partition + free dimensions sbuf/psum use partitioned 2d storage. how logical tensor elements map to the storage consumed by an instruction.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Tensor Layout</span><p class="definition">How logical tensor elements map to the storage consumed by an instruction.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">L1 / L2 caches</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Caches"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Register fragments / shared descriptors<span class="term-note">MMA operands use instruction-specific register or shared-memory layouts.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Tensor Layout"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA · PTX ISA 9.0">3</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Vector / scalar caches; L2<span class="term-note">CDNA example</span></span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Caches"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a> <a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">L1 / L2 caches<span class="term-note">Xe-HPC example</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Caches"><a class="citation" href="#source-48" aria-label="Source 32: Intel: Data Center GPU Max Series product brief">32</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Shader-core caches;<span class="term-note">GPU last-level cache</span></span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Caches"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">MFMA operand layout<span class="term-note">Instruction-specific lane/VGPR mapping.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Tensor Layout"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">VREG lanes / sublanes<span class="term-note">Tiling and padding follow vector dimensions.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Tensor Layout"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Partition + free dimensions<span class="term-note">SBUF/PSUM use partitioned 2D storage.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Tensor Layout"><a class="citation" href="#source-16" aria-label="Source 16: AWS · NKI Data Representation · Neuron 2.33.0">16</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="bulk data movement tma tensor memory accelerator; global to/from shared copies. global-to-lds loads isa loads can target lds; completion needs a wait. dma hbm to/from vmem/smem copies. dma engines hbm to/from sbuf; independent of compute engines. a mechanism to stage large tiles while arithmetic can proceed.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Bulk Data Movement</span><p class="definition">A mechanism to stage large tiles while arithmetic can proceed.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">TMA<span class="term-note">Tensor Memory Accelerator; global to/from shared copies.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Bulk Data Movement"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Global-to-LDS loads<span class="term-note">ISA loads can target LDS; completion needs a wait.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Bulk Data Movement"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">DMA<span class="term-note">HBM to/from VMEM/SMEM copies.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Bulk Data Movement"><a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">DMA engines<span class="term-note">HBM to/from SBUF; independent of compute engines.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Bulk Data Movement"><a class="citation" href="#source-13" aria-label="Source 13: AWS · Trainium2 NKI Architecture · Neuron 2.33.0">13</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="cache or explicit buffer l1 / l2 caches shared memory is explicitly managed. l1 / l2 caches l2 is shared by cus within an xcd. explicit vmem/smem staging pallas exposes sram buffers and dma. software-managed hierarchy sbuf/psum are not transparent hardware caches. whether fast-memory contents are filled transparently or by program-visible transfers.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Cache or Explicit Buffer</span><p class="definition">Whether fast-memory contents are filled transparently or by program-visible transfers.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">L1 / L2 caches<span class="term-note">Shared memory is explicitly managed.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Cache or Explicit Buffer"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">L1 / L2 caches<span class="term-note">L2 is shared by CUs within an XCD.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Cache or Explicit Buffer"><a class="citation" href="#source-5" aria-label="Source 5: AMD · MI300 / CDNA 3 Microarchitecture">5</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Explicit VMEM/SMEM staging<span class="term-note">Pallas exposes SRAM buffers and DMA.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Cache or Explicit Buffer"><a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Software-managed hierarchy<span class="term-note">SBUF/PSUM are not transparent hardware caches.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Cache or Explicit Buffer"><a class="citation" href="#source-15" aria-label="Source 15: AWS · Trainium Memory Hierarchy · Neuron 2.33.0">15</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="private temporaries local memory thread-private device-memory space, including spills. scratch memory private per-work-item storage in memory. vreg spills to vmem program scratch is not per-thread local memory. sbuf intermediates kernel-local tensor storage in the nki model. storage for values local to execution; “local” does not imply on-chip sram.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Private Temporaries</span><p class="definition">Storage for values local to execution; “local” does not imply on-chip SRAM.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Local memory<span class="term-note">Thread-private device-memory space, including spills.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Private Temporaries"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a> <a class="citation" href="#source-4" aria-label="Source 4: NVIDIA · CUDA Best Practices 13.0.2">4</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Scratch memory<span class="term-note">Private per-work-item storage in memory.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Private Temporaries"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">VREG spills to VMEM<span class="term-note">Program scratch is not per-thread local memory.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Private Temporaries"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">SBUF intermediates<span class="term-note">Kernel-local tensor storage in the NKI model.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Private Temporaries"><a class="citation" href="#source-15" aria-label="Source 15: AWS · Trainium Memory Hierarchy · Neuron 2.33.0">15</a></div></div>
                 </td>
             </tr></tbody>
           </table></section>
 <section class="concept-section" id="coordination" aria-labelledby="coordination-title">
-          <div class="section-heading"><h2 id="coordination-title"><span>04</span>Coordination</h2><p>How lanes cooperate and the host submits work</p></div>
+          <div class="section-heading"><h2 id="coordination-title"><span>04</span>Coordination</h2><p>Ordering work and exchanging data</p></div>
           <table role="table" aria-label="Coordination terminology">
             <colgroup><col class="concept-col"><col><col><col><col></colgroup>
-            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
-            <tbody role="rowgroup"><tr role="row" data-concept data-search="group barrier __syncthreads() __syncthreads() group_barrier(g) sycl work-group threadgroup_barrier(flags) a rendezvous for cooperating threads. follow the api’s participation and memory-fence rules.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Group barrier</span><p class="definition">A rendezvous for cooperating threads. Follow the API’s participation and memory-fence rules.</p></th>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA GPUs<small>Hopper · CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD Instinct GPUs<small>CDNA 3 · HIP</small></th><th role="columnheader" scope="col" class="google">Google TPU<small>v6e · Pallas</small></th><th role="columnheader" scope="col" class="aws">AWS Trainium<small>Trainium2 · NKI</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="local ordering __syncthreads() a converged block barrier; not a grid barrier. __syncthreads() hip block barrier. isa s_barrier alone does not complete memory operations. program dependencies sequential core program; asynchronous work needs completion tracking. program dependencies nki preserves sequential semantics when scheduling engines. ensure producers finish before dependent local consumers proceed.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Local Ordering</span><p class="definition">Ensure producers finish before dependent local consumers proceed.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">__syncthreads()</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Group barrier"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">__syncthreads()<span class="term-note">A converged block barrier; not a grid barrier.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Local Ordering"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">__syncthreads()</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Group barrier"><a class="citation" href="#source-17" aria-label="Source 13: AMD: HIP C++ language extensions">13</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">group_barrier(g)<span class="term-note">SYCL work-group</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Group barrier"><a class="citation" href="#source-38" aria-label="Source 23: Khronos: SYCL group functions">23</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">threadgroup_barrier(flags)</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Group barrier"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">__syncthreads()<span class="term-note">HIP block barrier. ISA s_barrier alone does not complete memory operations.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Local Ordering"><a class="citation" href="#source-8" aria-label="Source 8: AMD · HIP Performance Guidelines">8</a> <a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Program dependencies<span class="term-note">Sequential core program; asynchronous work needs completion tracking.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Local Ordering"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a> <a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Program dependencies<span class="term-note">NKI preserves sequential semantics when scheduling engines.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Local Ordering"><a class="citation" href="#source-14" aria-label="Source 14: AWS · NKI Language Guide · Neuron 2.33.0">14</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="lane exchange __shfl_sync __shfl select_from_group sycl sub-group simd_shuffle read a value from another lane in the same execution subgroup.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Lane exchange</span><p class="definition">Read a value from another lane in the same execution subgroup.</p></th>
+            </tr><tr role="row" data-concept data-search="transfer completion cuda::barrier / pipeline track asynchronous shared-memory copies. s_waitcnt isa counters track relevant outstanding memory operations. dma semaphore + wait copy descriptors track completion. compiler dependencies nki schedules required ordering between dma and consumers. wait for an in-flight data transfer before reading or reusing its buffers.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Transfer Completion</span><p class="definition">Wait for an in-flight data transfer before reading or reusing its buffers.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">__shfl_sync</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Lane exchange"><a class="citation" href="#source-37" aria-label="Source 22: NVIDIA: C/C++ language extensions">22</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">cuda::barrier / pipeline<span class="term-note">Track asynchronous shared-memory copies.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Transfer Completion"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">__shfl</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Lane exchange"><a class="citation" href="#source-17" aria-label="Source 13: AMD: HIP C++ language extensions">13</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">select_from_group<span class="term-note">SYCL sub-group</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Lane exchange"><a class="citation" href="#source-13" aria-label="Source 10: Khronos: SYCL group algorithms">10</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">simd_shuffle</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Lane exchange"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">s_waitcnt<span class="term-note">ISA counters track relevant outstanding memory operations.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Transfer Completion"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">DMA semaphore + wait<span class="term-note">Copy descriptors track completion.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Transfer Completion"><a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a> <a class="citation" href="#source-12" aria-label="Source 12: JAX · Distributed Pallas on TPUs">12</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Compiler dependencies<span class="term-note">NKI schedules required ordering between DMA and consumers.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Transfer Completion"><a class="citation" href="#source-14" aria-label="Source 14: AWS · NKI Language Guide · Neuron 2.33.0">14</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="atomic addition atomicadd example atomicadd example fetch_add sycl::atomic_ref member atomic_fetch_add_explicit example add to a scalar memory value indivisibly. supported types, memory order and scope depend on the api.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Atomic addition</span><p class="definition">Add to a scalar memory value indivisibly. Supported types, memory order and scope depend on the API.</p></th>
+            </tr><tr role="row" data-concept data-search="chip-to-chip exchange nvlink gpu-to-gpu links; separate from the sm hierarchy. infinity fabric links connect mi300x gpus within an eight-gpu node. ici inter-chip interconnect; pallas exposes remote dma. neuronlink-v3 trainium2 device-to-device communication. dedicated links carry data between accelerator chips; topology and scope vary.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Chip-to-Chip Exchange</span><p class="definition">Dedicated links carry data between accelerator chips; topology and scope vary.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">atomicAdd<span class="term-note">Example</span></span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Atomic addition"><a class="citation" href="#source-37" aria-label="Source 22: NVIDIA: C/C++ language extensions">22</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">NVLink<span class="term-note">GPU-to-GPU links; separate from the SM hierarchy.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Chip-to-Chip Exchange"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">atomicAdd<span class="term-note">Example</span></span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Atomic addition"><a class="citation" href="#source-17" aria-label="Source 13: AMD: HIP C++ language extensions">13</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">fetch_add<span class="term-note">sycl::atomic_ref member</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Atomic addition"><a class="citation" href="#source-15" aria-label="Source 12: Khronos: SYCL atomic_ref">12</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">atomic_fetch_add_explicit<span class="term-note">Example</span></span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Atomic addition"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
-                </td>
-            </tr><tr role="row" data-concept data-search="work submission cuda stream hip stream sycl queue mtlcommandqueue mtl4commandqueue submit gpu work through a stream or queue. ordering and dependency rules differ.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Work submission</span><p class="definition">Submit GPU work through a stream or queue. Ordering and dependency rules differ.</p></th>
-              <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">CUDA stream</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Work submission"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA: Asynchronous Execution">3</a></div></div>
-                </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">HIP stream</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Work submission"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">SYCL queue</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Work submission"><a class="citation" href="#source-14" aria-label="Source 11: Khronos: SYCL queues">11</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">MTLCommandQueue<span class="term-note">MTL4CommandQueue</span></span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Work submission"><a class="citation" href="#source-32" aria-label="Source 19: Apple: Resource synchronization">19</a> <a class="citation" href="#source-42" aria-label="Source 26: Apple: MTLCommandQueue">26</a> <a class="citation" href="#source-43" aria-label="Source 27: Apple: MTL4CommandQueue">27</a></div></div>
-                </td>
-            </tr><tr role="row" data-concept data-search="work dependencies cuda event hip event sycl event mtlevent mtlsharedevent record or signal progress so dependent work can wait. event models differ across apis.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Work dependencies</span><p class="definition">Record or signal progress so dependent work can wait. Event models differ across APIs.</p></th>
-              <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">CUDA event</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Work dependencies"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA: Asynchronous Execution">3</a></div></div>
-                </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">HIP event</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Work dependencies"><a class="citation" href="#source-44" aria-label="Source 28: AMD: HIP event management">28</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">SYCL event</span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Work dependencies"><a class="citation" href="#source-39" aria-label="Source 24: Khronos: SYCL events">24</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">MTLEvent<span class="term-note">MTLSharedEvent</span></span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Work dependencies"><a class="citation" href="#source-33" aria-label="Source 20: Apple: MTLEvent">20</a> <a class="citation" href="#source-34" aria-label="Source 21: Apple: MTLSharedEvent">21</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Infinity Fabric links<span class="term-note">Connect MI300X GPUs within an eight-GPU node.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Chip-to-Chip Exchange"><a class="citation" href="#source-5" aria-label="Source 5: AMD · MI300 / CDNA 3 Microarchitecture">5</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">ICI<span class="term-note">Inter-chip interconnect; Pallas exposes remote DMA.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Chip-to-Chip Exchange"><a class="citation" href="#source-9" aria-label="Source 9: Google · TPU v6e Architecture">9</a> <a class="citation" href="#source-12" aria-label="Source 12: JAX · Distributed Pallas on TPUs">12</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">NeuronLink-v3<span class="term-note">Trainium2 device-to-device communication.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Chip-to-Chip Exchange"><a class="citation" href="#source-13" aria-label="Source 13: AWS · Trainium2 NKI Architecture · Neuron 2.33.0">13</a></div></div>
                 </td>
             </tr></tbody>
           </table></section>
 <section class="concept-section" id="performance" aria-labelledby="performance-title">
-          <div class="section-heading"><h2 id="performance-title"><span>05</span>Performance</h2><p>The same questions, with different counters</p></div>
+          <div class="section-heading"><h2 id="performance-title"><span>05</span>Performance</h2><p>Precision, utilization and data access</p></div>
           <table role="table" aria-label="Performance terminology">
             <colgroup><col class="concept-col"><col><col><col><col></colgroup>
-            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
-            <tbody role="rowgroup"><tr role="row" data-concept data-search="occupancy warp occupancy wave occupancy xe-core occupancy hardware threads thread occupancy simd-groups resident execution state, measured as a count or share of capacity. higher occupancy need not mean higher performance.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Occupancy</span><p class="definition">Resident execution state, measured as a count or share of capacity. Higher occupancy need not mean higher performance.</p></th>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA GPUs<small>Hopper · CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD Instinct GPUs<small>CDNA 3 · HIP</small></th><th role="columnheader" scope="col" class="google">Google TPU<small>v6e · Pallas</small></th><th role="columnheader" scope="col" class="aws">AWS Trainium<small>Trainium2 · NKI</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="matrix input precision fp8 / fp16 / bf16 / tf32 examples of hopper tensor core modes. fp8 / fp16 / bf16 / int8 examples of cdna 3 matrix core modes. bf16 / int8 documented v6e matrix compute examples. fp8 / fp16 / bf16 / tf32 examples of trainium2 tensor engine modes. example arithmetic formats; a tensor’s storage type alone does not select the math.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Matrix Input Precision</span><p class="definition">Example arithmetic formats; a tensor’s storage type alone does not select the math.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Warp occupancy</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Occupancy"><a class="citation" href="#source-47" aria-label="Source 31: NVIDIA: CUDA Best Practices Guide — Occupancy">31</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">FP8 / FP16 / BF16 / TF32<span class="term-note">Examples of Hopper Tensor Core modes.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Matrix Input Precision"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA · PTX ISA 9.0">3</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Wave occupancy</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Occupancy"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">Xe-core occupancy<span class="term-note">Hardware threads</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Occupancy"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">Thread occupancy<span class="term-note">SIMD-groups</span></span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Occupancy"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">FP8 / FP16 / BF16 / INT8<span class="term-note">Examples of CDNA 3 Matrix Core modes.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Matrix Input Precision"><a class="citation" href="#source-5" aria-label="Source 5: AMD · MI300 / CDNA 3 Microarchitecture">5</a> <a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">BF16 / INT8<span class="term-note">Documented v6e matrix compute examples.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Matrix Input Precision"><a class="citation" href="#source-9" aria-label="Source 9: Google · TPU v6e Architecture">9</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">FP8 / FP16 / BF16 / TF32<span class="term-note">Examples of Trainium2 Tensor Engine modes.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Matrix Input Precision"><a class="citation" href="#source-13" aria-label="Source 13: AWS · Trainium2 NKI Architecture · Neuron 2.33.0">13</a></div></div>
                 </td>
-            </tr><tr role="row" data-concept data-search="divergence warp divergence wavefront divergence simd divergence within a sub-group simd-group divergence threads in an execution subgroup take different code paths, which can reduce useful parallel work.">
-              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Divergence</span><p class="definition">Threads in an execution subgroup take different code paths, which can reduce useful parallel work.</p></th>
+            </tr><tr role="row" data-concept data-search="accumulation precision fp32 accumulation available for bf16/fp16 matrix operations. mfma_f32 forms bf16/fp16 inputs can accumulate into fp32. fp32 floating-point dot results fp32 inputs may be rounded to bf16 by default. fp32 psum nki matmul writes fp32 partial results. the running sum can be wider than the multiply inputs; mode and instruction matter.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Accumulation Precision</span><p class="definition">The running sum can be wider than the multiply inputs; mode and instruction matter.</p></th>
               <td role="cell" class="vendor-cell nvidia">
-                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
-                  <div class="vendor-content"><span class="term">Warp divergence</span>
-                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Divergence"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA: Advanced Kernel Programming">2</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">FP32 accumulation<span class="term-note">Available for BF16/FP16 matrix operations.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Accumulation Precision"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA · PTX ISA 9.0">3</a></div></div>
                 </td><td role="cell" class="vendor-cell amd">
-                  <span class="mobile-label" aria-hidden="true">AMD</span>
-                  <div class="vendor-content"><span class="term">Wavefront divergence</span>
-                  <div class="cell-sources" hidden aria-label="AMD sources for Divergence"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
-                </td><td role="cell" class="vendor-cell intel">
-                  <span class="mobile-label" aria-hidden="true">Intel</span>
-                  <div class="vendor-content"><span class="term">SIMD divergence<span class="term-note">Within a sub-group</span></span>
-                  <div class="cell-sources" hidden aria-label="Intel sources for Divergence"><a class="citation" href="#source-20" aria-label="Source 14: Intel: Removing Conditional Checks">14</a></div></div>
-                </td><td role="cell" class="vendor-cell apple">
-                  <span class="mobile-label" aria-hidden="true">Apple</span>
-                  <div class="vendor-content"><span class="term">SIMD-group divergence</span>
-                  <div class="cell-sources" hidden aria-label="Apple sources for Divergence"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">MFMA_F32 forms<span class="term-note">BF16/FP16 inputs can accumulate into FP32.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Accumulation Precision"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">FP32 floating-point dot results<span class="term-note">FP32 inputs may be rounded to BF16 by default.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Accumulation Precision"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">FP32 PSUM<span class="term-note">NKI matmul writes FP32 partial results.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Accumulation Precision"><a class="citation" href="#source-17" aria-label="Source 17: AWS · NKI Matrix Multiplication · Neuron 2.33.0">17</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="latency hiding warp occupancy + pipelines resident warps and asynchronous tile staging. wave occupancy + pipelining resident waves and staged lds data. software pipelining overlap dma with a core’s computation. engine/dma overlap pipeline tiles; inspect each engine’s utilization. overlap useful work with data waits. occupancy counts resident state, not utilization.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Latency Hiding</span><p class="definition">Overlap useful work with data waits. Occupancy counts resident state, not utilization.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Warp occupancy + pipelines<span class="term-note">Resident warps and asynchronous tile staging.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Latency Hiding"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA · Hopper Tuning Guide">2</a> <a class="citation" href="#source-4" aria-label="Source 4: NVIDIA · CUDA Best Practices 13.0.2">4</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Wave occupancy + pipelining<span class="term-note">Resident waves and staged LDS data.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Latency Hiding"><a class="citation" href="#source-8" aria-label="Source 8: AMD · HIP Performance Guidelines">8</a> <a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Software pipelining<span class="term-note">Overlap DMA with a core’s computation.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Latency Hiding"><a class="citation" href="#source-11" aria-label="Source 11: JAX · TPU Pipelining">11</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Engine/DMA overlap<span class="term-note">Pipeline tiles; inspect each engine’s utilization.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Latency Hiding"><a class="citation" href="#source-18" aria-label="Source 18: AWS · NKI Kernel Optimization · Neuron 2.33.0">18</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="memory access efficiency coalescing / bank conflicts warp global accesses / shared-memory banks. coalescing / lds banking wave accesses / shared-memory banks. block shape / padding tile layout must fit the vector/matrix units. dma efficiency / partition layout block transfers and reuse sbuf tiles. match data access patterns to the memory system to reduce wasted transfers.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Memory Access Efficiency</span><p class="definition">Match data access patterns to the memory system to reduce wasted transfers.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Coalescing / bank conflicts<span class="term-note">Warp global accesses / shared-memory banks.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Memory Access Efficiency"><a class="citation" href="#source-4" aria-label="Source 4: NVIDIA · CUDA Best Practices 13.0.2">4</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Coalescing / LDS banking<span class="term-note">Wave accesses / shared-memory banks.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Memory Access Efficiency"><a class="citation" href="#source-8" aria-label="Source 8: AMD · HIP Performance Guidelines">8</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Block shape / padding<span class="term-note">Tile layout must fit the vector/matrix units.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Memory Access Efficiency"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">DMA efficiency / partition layout<span class="term-note">Block transfers and reuse SBUF tiles.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Memory Access Efficiency"><a class="citation" href="#source-16" aria-label="Source 16: AWS · NKI Data Representation · Neuron 2.33.0">16</a> <a class="citation" href="#source-18" aria-label="Source 18: AWS · NKI Kernel Optimization · Neuron 2.33.0">18</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="branching and selection warp divergence / predication different thread paths can reduce efficiency. wave divergence / exec mask inactive lanes do not contribute useful work. scalar control / vector select no gpu thread-warp divergence model. compiled scalar loops python branches are resolved during specialization. conditional work can waste parallel arithmetic; control and selection differ by model.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Branching and Selection</span><p class="definition">Conditional work can waste parallel arithmetic; control and selection differ by model.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA GPUs</span>
+                  <div class="vendor-content"><span class="term">Warp divergence / predication<span class="term-note">Different thread paths can reduce efficiency.</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA GPUs sources for Branching and Selection"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA · CUDA C++ Programming Guide 13.0.2">1</a> <a class="citation" href="#source-4" aria-label="Source 4: NVIDIA · CUDA Best Practices 13.0.2">4</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD Instinct GPUs</span>
+                  <div class="vendor-content"><span class="term">Wave divergence / EXEC mask<span class="term-note">Inactive lanes do not contribute useful work.</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD Instinct GPUs sources for Branching and Selection"><a class="citation" href="#source-7" aria-label="Source 7: AMD · MI300 / CDNA 3 ISA">7</a> <a class="citation" href="#source-8" aria-label="Source 8: AMD · HIP Performance Guidelines">8</a></div></div>
+                </td><td role="cell" class="vendor-cell google">
+                  <span class="mobile-label" aria-hidden="true">Google TPU</span>
+                  <div class="vendor-content"><span class="term">Scalar control / vector select<span class="term-note">No GPU thread-warp divergence model.</span></span>
+                  <div class="cell-sources" hidden aria-label="Google TPU sources for Branching and Selection"><a class="citation" href="#source-10" aria-label="Source 10: JAX · Writing TPU Kernels with Pallas">10</a></div></div>
+                </td><td role="cell" class="vendor-cell aws">
+                  <span class="mobile-label" aria-hidden="true">AWS Trainium</span>
+                  <div class="vendor-content"><span class="term">Compiled scalar loops<span class="term-note">Python branches are resolved during specialization.</span></span>
+                  <div class="cell-sources" hidden aria-label="AWS Trainium sources for Branching and Selection"><a class="citation" href="#source-14" aria-label="Source 14: AWS · NKI Language Guide · Neuron 2.33.0">14</a></div></div>
                 </td>
             </tr></tbody>
           </table></section>
-      <section class="translation-notes" aria-labelledby="notes-title"><h2 id="notes-title">Notes</h2><div class="notes-grid"><article><h3>Memory Names Are Easy to Mix Up</h3><p>CUDA local memory is private to a thread. Intel SLM and Metal threadgroup memory are shared within a group. Metal private resource storage controls CPU access.</p></article><article><h3>Hardware Counts Are Not Interchangeable</h3><p>SM, CU, Xe-core and shader core describe different hardware organizations. Their counts do not measure equal amounts of compute.</p></article><article><h3>Use the API’s Synchronization Rules</h3><p>A subgroup does not guarantee implicit synchronization. Barriers, shuffles, atomics and queues each have participation and ordering rules.</p></article></div></section>
+      <section class="translation-notes" aria-labelledby="notes-title"><h2 id="notes-title">Notes</h2><div class="notes-grid"><article><h3>Same Role, Different Unit</h3><p>An SM, CU, Google TensorCore and NeuronCore have different sizes and capabilities. Google TensorCore names a compute block; NVIDIA Tensor Core names a matrix engine.</p></article><article><h3>Scratchpads Have Different Scopes</h3><p>CUDA shared memory and AMD LDS support thread cooperation. TPU VMEM and Trainium SBUF serve tile programs and engines. These are role comparisons, not interchangeable memory models.</p></article><article><h3>Precision Has Three Parts</h3><p>Distinguish operand storage, multiply precision and accumulation. FP32 output does not guarantee full FP32 multiplication. Format support and throughput vary by instruction and generation.</p></article></div></section>
       <section class="appendix" aria-label="Sources and scope">
-        <details id="sources"><summary>Sources &amp; Scope <span>32 references</span></summary>
+        <details id="sources"><summary>Sources &amp; Scope <span>21 references</span></summary>
           <p class="source-intro">Select “Show citations” to see the sources for each vendor term. Definitions summarize the common concept.</p>
-          <ul class="qualifications"><li>The comparison covers CUDA, HIP, SYCL on Intel GPUs, and Metal on Apple silicon. SYCL is a vendor-neutral standard.</li><li>Shared definitions summarize a common role or scope. They do not imply identical hardware, performance or API semantics.</li><li>Hardware examples use AMD CDNA 1-4, the Intel Xe family, and Apple M3 / A17 Pro documentation. Organization, cache labels and feature availability vary by generation.</li><li>Metal thread memory is per-thread. Metal private resource storage means GPU-only access; it can still be accessed by many GPU threads.</li></ul><ol class="source-list"><li id="source-1"><span class="source-number">01</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/writing-cuda-kernels.html">NVIDIA: Writing SIMT Kernels</a><p>Thread hierarchy, shared memory, registers, device-backed local memory and caches.</p></div></li><li id="source-2"><span class="source-number">02</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/03-advanced/advanced-kernel-programming.html">NVIDIA: Advanced Kernel Programming</a><p>SMs, warps, hardware multithreading, divergence and independent thread scheduling.</p></div></li><li id="source-3"><span class="source-number">03</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">NVIDIA: Asynchronous Execution</a><p>Streams, events, ordering and asynchronous submission.</p></div></li><li id="source-4"><span class="source-number">04</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/understand/programming_model.html">AMD: HIP programming model</a><p>HIP kernels, threads, blocks, grids, wavefronts, memory and streams. Generation-specific width claims are not used.</p></div></li><li id="source-5"><span class="source-number">05</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/understand/hardware_implementation.html">AMD: HIP hardware implementation</a><p>Documented CU organization, registers, caches and occupancy. Hardware examples are scoped to CDNA 1-4.</p></div></li><li id="source-6"><span class="source-number">06</span><div><a href="https://rocm.docs.amd.com/projects/rocprofiler-compute/en/docs-6.3.0/conceptual/compute-unit.html">AMD: CDNA compute unit</a><p>CDNA compute units, vector/scalar execution resources, LDS and caches.</p></div></li><li id="source-8"><span class="source-number">07</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/thread-mapping-and-gpu-occupancy.html">Intel: Thread Mapping and GPU Occupancy</a><p>Work-item to lane, sub-group to hardware thread, work-group to Xe-core; target-dependent SIMD sizes and occupancy.</p></div></li><li id="source-9"><span class="source-number">08</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/intel-xe-gpu-architecture.html">Intel: Xe GPU Architecture</a><p>Xe-core, GRF and shared local memory. Cache-level naming follows the separate Data Center GPU Max Series product brief.</p></div></li><li id="source-10"><span class="source-number">09</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/shared-local-memory.html">Intel: Shared Local Memory</a><p>Work-group scratchpad, SLM and local_accessor.</p></div></li><li id="source-13"><span class="source-number">10</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/group-algorithms-library.html">Khronos: SYCL group algorithms</a><p>Sub-group algorithms, including select_from_group. Barrier semantics are documented in the separate SYCL group functions reference.</p></div></li><li id="source-14"><span class="source-number">11</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/queue.html">Khronos: SYCL queues</a><p>Queue submission, in_order and event profiling.</p></div></li><li id="source-15"><span class="source-number">12</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/atomic_ref.html">Khronos: SYCL atomic_ref</a><p>Atomic operations, memory order, scope and address space.</p></div></li><li id="source-17"><span class="source-number">13</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/hip_cpp_language_extensions.html">AMD: HIP C++ language extensions</a><p>HIP synchronization, shuffle and atomic intrinsics.</p></div></li><li id="source-20"><span class="source-number">14</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/removing-conditional-checks.html">Intel: Removing Conditional Checks</a><p>SIMD divergence within a sub-group, divergent control paths and their potential performance cost.</p></div></li><li id="source-23"><span class="source-number">15</span><div><a href="https://developer.apple.com/videos/play/tech-talks/111375/">Apple: Explore GPU advancements in M3 and A17 Pro</a><p>Apple family 9 (M3 and A17 Pro) examples: shader cores, registers, cached storage, stack, caches and thread occupancy.</p></div></li><li id="source-27"><span class="source-number">16</span><div><a href="https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf">Apple: Metal Shading Language specification 4.1, 4 June 2026</a><p>Sections 4.1, 4.3 and 4.4: device, thread and threadgroup address spaces. Sections 6.10 and 6.16: barriers, SIMD exchange and atomics.</p></div></li><li id="source-28"><span class="source-number">17</span><div><a href="https://developer.apple.com/documentation/metal/creating-threads-and-threadgroups">Apple: Creating threads and threadgroups</a><p>Kernel, grid, threadgroup, thread, SIMD-group, divergence and runtime execution width.</p></div></li><li id="source-30"><span class="source-number">18</span><div><a href="https://developer.apple.com/documentation/metal/choosing-a-resource-storage-mode-for-apple-gpus">Apple: Choosing a resource storage mode for Apple GPUs</a><p>Unified system memory, shared/private resource accessibility, and memoryless texture storage.</p></div></li><li id="source-32"><span class="source-number">19</span><div><a href="https://developer.apple.com/documentation/metal/resource-synchronization">Apple: Resource synchronization</a><p>MTL4CommandQueue requires explicit handling of access conflicts; Metal 4 compute commands can overlap.</p></div></li><li id="source-33"><span class="source-number">20</span><div><a href="https://developer.apple.com/documentation/metal/mtlevent">Apple: MTLEvent</a><p>Monotonically increasing event values and signal/wait synchronization within one Metal device.</p></div></li><li id="source-34"><span class="source-number">21</span><div><a href="https://developer.apple.com/documentation/metal/mtlsharedevent">Apple: MTLSharedEvent</a><p>Synchronization involving the CPU, multiple Metal devices or processes.</p></div></li><li id="source-37"><span class="source-number">22</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">NVIDIA: C/C++ language extensions</a><p>Warp shuffle intrinsics, atomics, supported types and participation rules.</p></div></li><li id="source-38"><span class="source-number">23</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/group-functions.html">Khronos: SYCL group functions</a><p>group_barrier, group convergence and memory synchronization.</p></div></li><li id="source-39"><span class="source-number">24</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/event.html">Khronos: SYCL events</a><p>Command completion, dependencies, waiting and profiling information.</p></div></li><li id="source-40"><span class="source-number">25</span><div><a href="https://www.khronos.org/sycl/">Khronos: SYCL overview</a><p>SYCL is a cross-vendor standard, not an Intel-exclusive programming model.</p></div></li><li id="source-42"><span class="source-number">26</span><div><a href="https://developer.apple.com/documentation/metal/mtlcommandqueue">Apple: MTLCommandQueue</a><p>Creates and schedules command buffers; queue submission and per-command hazard rules are distinct.</p></div></li><li id="source-43"><span class="source-number">27</span><div><a href="https://developer.apple.com/documentation/metal/mtl4commandqueue">Apple: MTL4CommandQueue</a><p>Commits command buffers and encodes event signal/wait operations in Metal 4.</p></div></li><li id="source-44"><span class="source-number">28</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/reference/hip_runtime_api/modules/event_management.html">AMD: HIP event management</a><p>hipEvent_t, recording, waiting, queries, timing and timing-disable flags.</p></div></li><li id="source-45"><span class="source-number">29</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2024-2/optimizing-explicit-simd-kernels.html">Intel: Optimizing Explicit SIMD Kernels</a><p>GRF operand storage and register spilling to scratch memory. This source supplies the scratch-memory name, independently of the implicit-SIMD thread mapping.</p></div></li><li id="source-46"><span class="source-number">30</span><div><a href="https://llvm.org/docs/AMDGPUUsage.html#address-spaces">LLVM: AMDGPU private address space</a><p>Private (scratch) storage for individual work-items, including register spills and stack allocation.</p></div></li><li id="source-47"><span class="source-number">31</span><div><a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy">NVIDIA: CUDA Best Practices Guide — Occupancy</a><p>Active-warps-to-capacity occupancy ratio; higher occupancy does not necessarily improve performance.</p></div></li><li id="source-48"><span class="source-number">32</span><div><a href="https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2023-01/data-center-gpu-max-series-product-brief.pdf">Intel: Data Center GPU Max Series product brief</a><p>Pages 1 and 3 identify Xe-HPC (Max Series) L1 and L2 caches. Product-specific terminology is used for the cache example.</p></div></li></ol>
+          <ul class="qualifications"><li>Hardware examples are explicitly bounded to Hopper, CDNA 3, TPU v6e and Trainium2; this is not a claim about every NVIDIA, AMD, Google or AWS chip.</li><li>CUDA and HIP use a thread hierarchy. Pallas TPU and NKI express tile/tensor programs. A Pallas grid is generally sequential on a core; an NKI program_id is an SPMD instance coordinate, not a thread ID.</li><li>Pallas and NKI entries are software interfaces to hardware concepts, identified in column subtitles. Pallas TPU is experimental; these APIs can evolve. The matrix-format row describes hardware examples, not a promise that every type is accepted by every kernel API.</li><li>Precision rows show selected matrix modes, not all supported storage types or instructions. TF32 is reduced-precision multiplication; FP8 variants are not automatically numerically interchangeable.</li><li>The original publication date is retained; this expanded four-platform edition was reviewed on October 21, 2026. No cross-platform speed or popularity ranking is implied.</li></ul><ol class="source-list"><li id="source-1"><span class="source-number">01</span><div><a href="https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html">NVIDIA · CUDA C++ Programming Guide 13.0.2</a><p>CUDA grids, blocks, warps, memory spaces, barriers, streams and matrix operations.</p></div></li><li id="source-2"><span class="source-number">02</span><div><a href="https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html">NVIDIA · Hopper Tuning Guide</a><p>Hopper SMs, TMA, shared memory, caches, HBM, NVLink and occupancy.</p></div></li><li id="source-3"><span class="source-number">03</span><div><a href="https://docs.nvidia.com/cuda/archive/13.0.2/parallel-thread-execution/index.html">NVIDIA · PTX ISA 9.0</a><p>mma and wgmma instructions, register fragments, matrix types and asynchronous completion.</p></div></li><li id="source-4"><span class="source-number">04</span><div><a href="https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-best-practices-guide/index.html">NVIDIA · CUDA Best Practices 13.0.2</a><p>Latency hiding, occupancy, coalescing, banking and register spilling.</p></div></li><li id="source-5"><span class="source-number">05</span><div><a href="https://rocmdocs.amd.com/en/docs-7.2.4/conceptual/gpu-arch/mi300.html">AMD · MI300 / CDNA 3 Microarchitecture</a><p>CUs, Matrix Cores, XCD caches, HBM and Infinity Fabric links.</p></div></li><li id="source-6"><span class="source-number">06</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/docs-6.3.1/understand/programming_model.html">AMD · HIP Programming Model 6.3.1</a><p>Thread/block/grid hierarchy, shared memory and SIMT execution.</p></div></li><li id="source-7"><span class="source-number">07</span><div><a href="https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf">AMD · MI300 / CDNA 3 ISA</a><p>Wave64, VALU/SALU, SGPR/VGPR/AccVGPR, LDS, MFMA, EXEC masking and wait counters.</p></div></li><li id="source-8"><span class="source-number">08</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/performance_guidelines.html">AMD · HIP Performance Guidelines</a><p>Occupancy, divergence, memory coalescing and shared-memory banking.</p></div></li><li id="source-9"><span class="source-number">09</span><div><a href="https://docs.cloud.google.com/tpu/docs/v6e">Google · TPU v6e Architecture</a><p>One TensorCore per chip, MXUs, vector/scalar units, HBM and ICI.</p></div></li><li id="source-10"><span class="source-number">10</span><div><a href="https://docs.jax.dev/en/latest/pallas/tpu/details.html">JAX · Writing TPU Kernels with Pallas</a><p>Sequential grid semantics, vector registers, scalar control, block layout, spills and matrix precision.</p></div></li><li id="source-11"><span class="source-number">11</span><div><a href="https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html">JAX · TPU Pipelining</a><p>VMEM/SMEM, VREG/SREG, scratch buffers, DMA, semaphores and pipelined transfers.</p></div></li><li id="source-12"><span class="source-number">12</span><div><a href="https://docs.jax.dev/en/latest/pallas/tpu/distributed.html">JAX · Distributed Pallas on TPUs</a><p>Remote DMA, send/receive semaphores and inter-device synchronization.</p></div></li><li id="source-13"><span class="source-number">13</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/architecture/trainium2_arch.html">AWS · Trainium2 NKI Architecture · Neuron 2.33.0</a><p>NeuronCore-v3, matrix formats, SBUF/PSUM, DMA, NeuronLink-v3 and engine overlap.</p></div></li><li id="source-14"><span class="source-number">14</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html">AWS · NKI Language Guide · Neuron 2.33.0</a><p>Sequential tensor programming, dependency-preserving scheduling, scalar values and control flow.</p></div></li><li id="source-15"><span class="source-number">15</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html">AWS · Trainium Memory Hierarchy · Neuron 2.33.0</a><p>Software-managed HBM, SBUF and PSUM; explicit transfers and absence of a transparent hardware cache hierarchy.</p></div></li><li id="source-16"><span class="source-number">16</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/data-representation-overview.html">AWS · NKI Data Representation · Neuron 2.33.0</a><p>Tensor memory placement and partition/free-dimension organization.</p></div></li><li id="source-17"><span class="source-number">17</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/tutorials/matrix_multiplication.html">AWS · NKI Matrix Multiplication · Neuron 2.33.0</a><p>Stationary/moving tiles, nc_matmul, FP32 PSUM results and accumulation.</p></div></li><li id="source-18"><span class="source-number">18</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/tutorials/kernel-optimization.html">AWS · NKI Kernel Optimization · Neuron 2.33.0</a><p>Tensor Engine/DMA utilization, blocking, reuse and overlapping data with compute.</p></div></li><li id="source-19"><span class="source-number">19</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/about-neuron/arch/neuron-hardware/neuron-core-v3.html">AWS · NeuronCore-v3 Architecture · Neuron 2.33.0</a><p>Tensor, Vector, Scalar and GPSIMD engines; their distinct functions.</p></div></li><li id="source-20"><span class="source-number">20</span><div><a href="https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/api/generated/nki.language.program_id.html">AWS · NKI program_id · Neuron 2.33.0</a><p>SPMD program coordinates within a launch grid.</p></div></li><li id="source-21"><span class="source-number">21</span><div><a href="https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/">NVIDIA · Hopper Architecture In-Depth</a><p>SM CUDA cores and Tensor Cores, their matrix formats, register files and memory hierarchy.</p></div></li></ol>
         </details>
       </section>
     </main>
-    <footer><span>17 concepts · Reviewed <time datetime="2026-10-20">20 Oct 2026</time></span><a href="gpu-terminology-cheat-sheet.pdf" download>Poster PDF <span aria-hidden="true">↓</span></a></footer>
+    <footer><span>24 concepts · Reviewed <time datetime="2026-10-21">21 Oct 2026</time></span><a href="ai-accelerator-terminology-cheat-sheet.pdf" download>Poster PDF <span aria-hidden="true">↓</span></a></footer>
   </div>
 </body>
 </html>

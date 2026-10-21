@@ -1,0 +1,1182 @@
+%PDF-1.4
+%“Œ‹ ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2+0 126 0 R /F3+0 130 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 3292 912.205 3311 ] /Subtype /Link /Type /Annot
+>>
+endobj
+4 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/docs-6.3.1/understand/programming_model.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 3292 1981.598 3311 ] /Subtype /Link /Type /Annot
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 3292 3054.321 3311 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 3292 4119.589 3311 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 3174 912.205 3193 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/docs-6.3.1/understand/programming_model.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 3174 1981.598 3193 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 3174 3054.321 3193 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/api/generated/nki.language.program_id.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 3174 4123.369 3193 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 3056 912.205 3075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/docs-6.3.1/understand/programming_model.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 3056 1981.598 3075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1995.138 3056 2003.013 3075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 3056 3049.686 3075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 3056 4118.734 3075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+16 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html)
+>> /Border [ 0 0 0 ] /Rect [ 4127.414 3056 4141.589 3075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+17 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 2938 912.205 2957 ] /Subtype /Link /Type /Annot
+>>
+endobj
+18 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2938 1981.013 2957 ] /Subtype /Link /Type /Annot
+>>
+endobj
+19 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/docs-6.3.1/understand/programming_model.html)
+>> /Border [ 0 0 0 ] /Rect [ 1995.138 2938 2003.598 2957 ] /Subtype /Link /Type /Annot
+>>
+endobj
+20 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2938 3054.321 2957 ] /Subtype /Link /Type /Annot
+>>
+endobj
+21 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2938 4119.589 2957 ] /Subtype /Link /Type /Annot
+>>
+endobj
+22 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/about-neuron/arch/neuron-hardware/neuron-core-v3.html)
+>> /Border [ 0 0 0 ] /Rect [ 4127.414 2938 4141.079 2957 ] /Subtype /Link /Type /Annot
+>>
+endobj
+23 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/parallel-thread-execution/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 2820 915.07 2839 ] /Subtype /Link /Type /Annot
+>>
+endobj
+24 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2820 1981.013 2839 ] /Subtype /Link /Type /Annot
+>>
+endobj
+25 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2820 3054.321 2839 ] /Subtype /Link /Type /Annot
+>>
+endobj
+26 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/tutorials/matrix_multiplication.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2820 4118.494 2839 ] /Subtype /Link /Type /Annot
+>>
+endobj
+27 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 2649 915.115 2668 ] /Subtype /Link /Type /Annot
+>>
+endobj
+28 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocmdocs.amd.com/en/docs-7.2.4/conceptual/gpu-arch/mi300.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2649 1981.253 2668 ] /Subtype /Link /Type /Annot
+>>
+endobj
+29 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.cloud.google.com/tpu/docs/v6e)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2649 3047.736 2668 ] /Subtype /Link /Type /Annot
+>>
+endobj
+30 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/architecture/trainium2_arch.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2649 4118.689 2668 ] /Subtype /Link /Type /Annot
+>>
+endobj
+31 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/)
+>> /Border [ 0 0 0 ] /Rect [ 907 2531 920.32 2550 ] /Subtype /Link /Type /Annot
+>>
+endobj
+32 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocmdocs.amd.com/en/docs-7.2.4/conceptual/gpu-arch/mi300.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2531 1981.253 2550 ] /Subtype /Link /Type /Annot
+>>
+endobj
+33 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.cloud.google.com/tpu/docs/v6e)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2531 3047.736 2550 ] /Subtype /Link /Type /Annot
+>>
+endobj
+34 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/about-neuron/arch/neuron-hardware/neuron-core-v3.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2531 4119.079 2550 ] /Subtype /Link /Type /Annot
+>>
+endobj
+35 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://developer.nvidia.com/blog/nvidia-hopper-architecture-in-depth/)
+>> /Border [ 0 0 0 ] /Rect [ 907 2413 920.32 2432 ] /Subtype /Link /Type /Annot
+>>
+endobj
+36 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2413 1981.013 2432 ] /Subtype /Link /Type /Annot
+>>
+endobj
+37 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.cloud.google.com/tpu/docs/v6e)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2413 3047.736 2432 ] /Subtype /Link /Type /Annot
+>>
+endobj
+38 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3061.276 2413 3071.686 2432 ] /Subtype /Link /Type /Annot
+>>
+endobj
+39 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/about-neuron/arch/neuron-hardware/neuron-core-v3.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2413 4119.079 2432 ] /Subtype /Link /Type /Annot
+>>
+endobj
+40 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 2242 912.205 2261 ] /Subtype /Link /Type /Annot
+>>
+endobj
+41 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 929 2242 937.115 2261 ] /Subtype /Link /Type /Annot
+>>
+endobj
+42 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocmdocs.amd.com/en/docs-7.2.4/conceptual/gpu-arch/mi300.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2242 1981.253 2261 ] /Subtype /Link /Type /Annot
+>>
+endobj
+43 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.cloud.google.com/tpu/docs/v6e)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2242 3047.736 2261 ] /Subtype /Link /Type /Annot
+>>
+endobj
+44 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3061.276 2242 3071.686 2261 ] /Subtype /Link /Type /Annot
+>>
+endobj
+45 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2242 4118.734 2261 ] /Subtype /Link /Type /Annot
+>>
+endobj
+46 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 2124 912.205 2143 ] /Subtype /Link /Type /Annot
+>>
+endobj
+47 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 929 2124 937.115 2143 ] /Subtype /Link /Type /Annot
+>>
+endobj
+48 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2124 1981.013 2143 ] /Subtype /Link /Type /Annot
+>>
+endobj
+49 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2124 3049.686 2143 ] /Subtype /Link /Type /Annot
+>>
+endobj
+50 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2124 4118.734 2143 ] /Subtype /Link /Type /Annot
+>>
+endobj
+51 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 2006 912.205 2025 ] /Subtype /Link /Type /Annot
+>>
+endobj
+52 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 2006 1981.013 2025 ] /Subtype /Link /Type /Annot
+>>
+endobj
+53 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 2006 3049.686 2025 ] /Subtype /Link /Type /Annot
+>>
+endobj
+54 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 2006 4119.589 2025 ] /Subtype /Link /Type /Annot
+>>
+endobj
+55 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4127.414 2006 4140.734 2025 ] /Subtype /Link /Type /Annot
+>>
+endobj
+56 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/parallel-thread-execution/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1888 915.07 1907 ] /Subtype /Link /Type /Annot
+>>
+endobj
+57 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1888 1981.013 1907 ] /Subtype /Link /Type /Annot
+>>
+endobj
+58 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1888 3054.321 1907 ] /Subtype /Link /Type /Annot
+>>
+endobj
+59 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3061.276 1888 3071.686 1907 ] /Subtype /Link /Type /Annot
+>>
+endobj
+60 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1888 4118.734 1907 ] /Subtype /Link /Type /Annot
+>>
+endobj
+61 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/tutorials/matrix_multiplication.html)
+>> /Border [ 0 0 0 ] /Rect [ 4127.414 1888 4140.494 1907 ] /Subtype /Link /Type /Annot
+>>
+endobj
+62 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/parallel-thread-execution/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1770 915.07 1789 ] /Subtype /Link /Type /Annot
+>>
+endobj
+63 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1770 1981.013 1789 ] /Subtype /Link /Type /Annot
+>>
+endobj
+64 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1770 3054.321 1789 ] /Subtype /Link /Type /Annot
+>>
+endobj
+65 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/data-representation-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1770 4119.079 1789 ] /Subtype /Link /Type /Annot
+>>
+endobj
+66 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1652 915.115 1671 ] /Subtype /Link /Type /Annot
+>>
+endobj
+67 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1652 1981.013 1671 ] /Subtype /Link /Type /Annot
+>>
+endobj
+68 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1652 3049.686 1671 ] /Subtype /Link /Type /Annot
+>>
+endobj
+69 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/architecture/trainium2_arch.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1652 4118.689 1671 ] /Subtype /Link /Type /Annot
+>>
+endobj
+70 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1534 915.115 1553 ] /Subtype /Link /Type /Annot
+>>
+endobj
+71 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocmdocs.amd.com/en/docs-7.2.4/conceptual/gpu-arch/mi300.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1534 1981.253 1553 ] /Subtype /Link /Type /Annot
+>>
+endobj
+72 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1534 3049.686 1553 ] /Subtype /Link /Type /Annot
+>>
+endobj
+73 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1534 4118.734 1553 ] /Subtype /Link /Type /Annot
+>>
+endobj
+74 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1416 912.205 1435 ] /Subtype /Link /Type /Annot
+>>
+endobj
+75 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-best-practices-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 929 1416 937.97 1435 ] /Subtype /Link /Type /Annot
+>>
+endobj
+76 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1416 1981.013 1435 ] /Subtype /Link /Type /Annot
+>>
+endobj
+77 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1416 3054.321 1435 ] /Subtype /Link /Type /Annot
+>>
+endobj
+78 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/memory-hierarchy-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1416 4118.734 1435 ] /Subtype /Link /Type /Annot
+>>
+endobj
+79 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1245 912.205 1264 ] /Subtype /Link /Type /Annot
+>>
+endobj
+80 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/performance_guidelines.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1245 1981.388 1264 ] /Subtype /Link /Type /Annot
+>>
+endobj
+81 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1995.138 1245 2003.013 1264 ] /Subtype /Link /Type /Annot
+>>
+endobj
+82 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1245 3054.321 1264 ] /Subtype /Link /Type /Annot
+>>
+endobj
+83 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3061.276 1245 3071.686 1264 ] /Subtype /Link /Type /Annot
+>>
+endobj
+84 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1245 4119.589 1264 ] /Subtype /Link /Type /Annot
+>>
+endobj
+85 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1127 915.115 1146 ] /Subtype /Link /Type /Annot
+>>
+endobj
+86 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1127 1981.013 1146 ] /Subtype /Link /Type /Annot
+>>
+endobj
+87 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1127 3049.686 1146 ] /Subtype /Link /Type /Annot
+>>
+endobj
+88 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/distributed.html)
+>> /Border [ 0 0 0 ] /Rect [ 3061.276 1127 3074.596 1146 ] /Subtype /Link /Type /Annot
+>>
+endobj
+89 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1127 4119.589 1146 ] /Subtype /Link /Type /Annot
+>>
+endobj
+90 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 1009 915.115 1028 ] /Subtype /Link /Type /Annot
+>>
+endobj
+91 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocmdocs.amd.com/en/docs-7.2.4/conceptual/gpu-arch/mi300.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 1009 1981.253 1028 ] /Subtype /Link /Type /Annot
+>>
+endobj
+92 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.cloud.google.com/tpu/docs/v6e)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 1009 3047.736 1028 ] /Subtype /Link /Type /Annot
+>>
+endobj
+93 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/distributed.html)
+>> /Border [ 0 0 0 ] /Rect [ 3061.276 1009 3074.596 1028 ] /Subtype /Link /Type /Annot
+>>
+endobj
+94 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/architecture/trainium2_arch.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 1009 4118.689 1028 ] /Subtype /Link /Type /Annot
+>>
+endobj
+95 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/parallel-thread-execution/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 838 915.07 857 ] /Subtype /Link /Type /Annot
+>>
+endobj
+96 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocmdocs.amd.com/en/docs-7.2.4/conceptual/gpu-arch/mi300.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 838 1981.253 857 ] /Subtype /Link /Type /Annot
+>>
+endobj
+97 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1995.138 838 2003.013 857 ] /Subtype /Link /Type /Annot
+>>
+endobj
+98 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.cloud.google.com/tpu/docs/v6e)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 838 3047.736 857 ] /Subtype /Link /Type /Annot
+>>
+endobj
+99 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/architecture/trainium2_arch.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 838 4118.689 857 ] /Subtype /Link /Type /Annot
+>>
+endobj
+100 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/parallel-thread-execution/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 720 915.07 739 ] /Subtype /Link /Type /Annot
+>>
+endobj
+101 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 720 1981.013 739 ] /Subtype /Link /Type /Annot
+>>
+endobj
+102 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 720 3054.321 739 ] /Subtype /Link /Type /Annot
+>>
+endobj
+103 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/tutorials/matrix_multiplication.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 720 4118.494 739 ] /Subtype /Link /Type /Annot
+>>
+endobj
+104 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/hopper-tuning-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 602 915.115 621 ] /Subtype /Link /Type /Annot
+>>
+endobj
+105 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-best-practices-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 929 602 937.97 621 ] /Subtype /Link /Type /Annot
+>>
+endobj
+106 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/performance_guidelines.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 602 1981.388 621 ] /Subtype /Link /Type /Annot
+>>
+endobj
+107 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1995.138 602 2003.013 621 ] /Subtype /Link /Type /Annot
+>>
+endobj
+108 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/pipelining.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 602 3049.686 621 ] /Subtype /Link /Type /Annot
+>>
+endobj
+109 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/tutorials/kernel-optimization.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 602 4118.869 621 ] /Subtype /Link /Type /Annot
+>>
+endobj
+110 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-best-practices-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 484 915.97 503 ] /Subtype /Link /Type /Annot
+>>
+endobj
+111 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/performance_guidelines.html)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 484 1981.388 503 ] /Subtype /Link /Type /Annot
+>>
+endobj
+112 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 484 3054.321 503 ] /Subtype /Link /Type /Annot
+>>
+endobj
+113 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/about/data-representation-overview.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 484 4119.079 503 ] /Subtype /Link /Type /Annot
+>>
+endobj
+114 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/guides/tutorials/kernel-optimization.html)
+>> /Border [ 0 0 0 ] /Rect [ 4127.414 484 4140.869 503 ] /Subtype /Link /Type /Annot
+>>
+endobj
+115 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-programming-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 907 366 912.205 385 ] /Subtype /Link /Type /Annot
+>>
+endobj
+116 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.nvidia.com/cuda/archive/13.0.2/cuda-c-best-practices-guide/index.html)
+>> /Border [ 0 0 0 ] /Rect [ 929 366 937.97 385 ] /Subtype /Link /Type /Annot
+>>
+endobj
+117 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/instruction-set-architectures/amd-instinct-mi300-cdna3-instruction-set-architecture.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 1973.138 366 1981.013 385 ] /Subtype /Link /Type /Annot
+>>
+endobj
+118 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/performance_guidelines.html)
+>> /Border [ 0 0 0 ] /Rect [ 1995.138 366 2003.388 385 ] /Subtype /Link /Type /Annot
+>>
+endobj
+119 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://docs.jax.dev/en/latest/pallas/tpu/details.html)
+>> /Border [ 0 0 0 ] /Rect [ 3039.276 366 3054.321 385 ] /Subtype /Link /Type /Annot
+>>
+endobj
+120 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://awsdocs-neuron.readthedocs-hosted.com/en/v2.33.0/nki/get-started/nki-language-guide.html)
+>> /Border [ 0 0 0 ] /Rect [ 4105.414 366 4119.589 385 ] /Subtype /Link /Type /Annot
+>>
+endobj
+121 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.yuduowu.com/learning-notes/gpu-terminology/#sources)
+>> /Border [ 0 0 0 ] /Rect [ 722 89 1001.72 111 ] /Subtype /Link /Type /Annot
+>>
+endobj
+122 0 obj
+<<
+/Annots [ 3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 
+  13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 
+  23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 
+  33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R 
+  43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 52 0 R 
+  53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 62 0 R 
+  63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 68 0 R 69 0 R 70 0 R 71 0 R 72 0 R 
+  73 0 R 74 0 R 75 0 R 76 0 R 77 0 R 78 0 R 79 0 R 80 0 R 81 0 R 82 0 R 
+  83 0 R 84 0 R 85 0 R 86 0 R 87 0 R 88 0 R 89 0 R 90 0 R 91 0 R 92 0 R 
+  93 0 R 94 0 R 95 0 R 96 0 R 97 0 R 98 0 R 99 0 R 100 0 R 101 0 R 102 0 R 
+  103 0 R 104 0 R 105 0 R 106 0 R 107 0 R 108 0 R 109 0 R 110 0 R 111 0 R 112 0 R 
+  113 0 R 114 0 R 115 0 R 116 0 R 117 0 R 118 0 R 119 0 R 120 0 R 121 0 R ] /Contents 134 0 R /MediaBox [ 0 0 2383.937 1683.78 ] /Parent 133 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+123 0 obj
+<<
+/Filter [ /FlateDecode ] /Length 684
+>>
+stream
+xœ…ÕËjÛP…á¹ŸBÃ–Rœã}KÁÒ¤…z¡é¸òq*ˆe£(ƒ¼}÷ò
+í¡ƒV`ï_HíåõíÍí8ÌİòëtìïêÜí‡q7ÕÇãÓÔ×îG½ÆEYu»¡Ÿ_îÎßıa{Z,óğİóã\·ãş¸X¯»å·|ø8OÏİ««óõæËÓ¼æ«iú‡úö®†÷Ç‡İëÅòË´«Ó0ŞÿÿÍ»§Óé¡ê8w‹Í¦ÛÕ}şô§íéóöP»å?ÿyùûó©v«ó}á?é»úxÚöuÚ÷u±¾¸Øtëø¸YÔq÷×³²ºä™ûşçvzy÷"¯MvizÕ´4­M[ÓŞt4}Ùô»¦¯š~ßôuÓ7MhúãŸ.¿4şÒøKã/¿4şÒøKã/¿4şÒøKã/¿4şÒøKã_Ñ¿:7ı9²éÏ‘MlúsdÓŸ#›şÙôçÈ¦?G6ı9²éÏ‘MlúsdÓŸ#›şÙôçX¬…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø…~_èø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø•~…_éWø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~ƒßè7ø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwø~‡ßéwøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èøƒş€?èÙ/› »»ğ÷>êŸ¦)WÕyaVÎ0Öß;õt<á>¿ z¼¬”endstream
+endobj
+124 0 obj
+<<
+/Filter [ /FlateDecode ] /Length 6197 /Length1 9432
+>>
+stream
+xœ¥:	x\U¹çÜ;™I&[“Ù’ÉÌdö›™I&³ßYÒ¬“Lö´™ì]’4i–ni“4K+´4mm±²ƒ
+*V¬ˆˆŠX¥P©P•‡Å>Šßc)ÚŞ¼ÿÜ;i’ı|Ÿ“ïÜ³Üó¯çÿÿóŸsƒ0B(íE4rµÄ‹=¹·ß#'¡ôlíßÒ)U!„5P”Ã[f‡^ıÁü#Q>„´]#ûCÉsSåùÈ¥CÿôÍ#['géÌ˜„ş9€ß¿el ÙüB†-ğşÔÖş™íhÓ]Ğ×oëßº‘­ï:ıU@£oûØÄäü×P=DŞoß¸}D|ä ô_€¾‰¨(Õ…’`îõP#Ô Ôx=ò`#ZşÃK;CãıÃè	”nTĞç¸‹Ñç°ha~“zœPC)üˆ —†ÄXÊ·ö¢ÿô‡Úßb!èHaÒP:Ê@™hÊBÙH†äH”H…rP.R£<¤AZ¤CùÀ—‘	™‘Yƒ
+Ù‘¢"äDÅÈ…Ü 1/ò!?
+ Q…Q• •¨•¡rT*QŠ¢jTƒb¨Õ¡zÔ€QjF-hZZQµ¡vÔ:QêF=hZ‹Ö¡õ¨——@pˆ =Ñ A*p&²YC–AÅª$2•„‰Q®{¹çs¼g}"ÿïıÔã—*&ñ«G}g}8ú…|ó£ßR/À1M{i‰Ñê÷¼¥B.n“‘{ÌN§ÊGøuÎ8ï2™\¤ğ°!üŞËÃJª X¬PPsï«æÁÛ\îÏ¤ ¿ l\Êo¿ÌK[üEÔ4Ô¸r|Ën†Òrh|Ò~ÏlØp†Ôøî~íóG)m;ª6ZV©ôz~Ÿ3	Ø&|«$V«É(VÈuI ‚$Ë›…u-;]]ù-ş@©9RS1­Ü­ÜnéÖ•™İs$‹˜ßØ+‡»mîÂ}F¥+ŠÊ{\G·Ñl±jÍê«İ°½‡>tqøHB–ù©İÔ/AØD1¬/šÀ^œd´Z|ŠÂšÀÿ‹wAüÈç¸Fì/¨d˜
+›<íJV¡ÈËãşÄTY­•¶*+ªÔyJ…ZM”"%3Ë¦Üf«`z5J…F£Pjpœ¹ü0 ƒa¥†¢»"àù^êY°iĞ]?^äæ²Ê”ª	X•˜ô‰nYUE‰¹G-fÿº’âz6«GáÒ9
+¼‡ÛU»9RMŸÑÎê’—¯Â#¶†"—OëT·i:“ËÅ¥ÁşÒò!}Û
+?£+Ê5kúr
+ryOâÇĞÏxBq°xŞ‚İÀ;óü¬¥ÎkétR„ÙWª—-v{K ¾"«Øí:|¬«ûØaW´ôäôÔÉRÁÃå ›€eDÑ«£ˆÚ×ÕUÔÔTÔ±ÍGón€™š>Yİ]Ç°\ŠNı¢Š3†eXâTàSªßÑ×zošiYãì:š}[.½»kÀ»¦eæfïzÌyèØ‹6àÔJÁ'âÄ®½Y&/~Š{kr+ÇÇ1ÃYĞüFô:
+‘u²¬XlZâvI(f“d§åºÌOÚŠ¦éı©éÙ…³ÇcÎ`t7ø0:…oÃ¢·i Æ=§¦§a¼üùmÀ›
+x— ¼x±Éé”.:0Fâùñõ‚£lWŒ%SÜ§ÅtŞÅ·_3ƒ½l{É'¾v¥õ­»á7Æ¶4hm;ĞÜ¼¿ÍUÃ01W1<k¤=_ßºõ¾cÛ¶ëŞØÔÒ²ÉïmYµ)@h½IÄˆaà¬ Í½¹°˜Ø8U75Åó¢†‡xÉ(Œ¦q)%¸„Yä(“ò³…§hL+BEÎXş:û5««‡ƒ
+·ãçßÄ3ÍX¡+v(=._K¬.ĞWî¨©v<ÕÜ\0Ôå +|h!¶3¼î‘eAH	»H‰ö³¬„/É§±©‚y½£ l0”:d%¹nE Ó[9}ß#Gã8|rLêuuëÌZ¿ÉâÓ$%5&§z×•ÕŒFpOó‹Ôo¾3Õ\ òÑ°Ç ªŠ×C2ìDh¢¢„ˆCâWîw||“_xıà|š­ZÅLÇOpå.øN8ìHÿ„ïRê2ß eƒâïu3ÀvC‘m¥É6[Wj’ev¿¹i8}®B¿Û\©Àû¾u¬…	hdŠynzÙhYõ–•¸ºG¹½D†B: Ÿô°&l„%¼/½ÊP4µUåOı'5ßc-*NÆL½>`2±ùù¬´b,ºn=Vs¯d¨ŒÙ‘áªêí•»!³9¤7áil“ØÍG	}¡‰Ä"™ùäàçñë^jû¥›ÀtZ^·àQ
+¶c€yå¢%³!¨,0*a„ q%Ã²¥1\Ù°u¥5æ¢‚¶¿¬¬Õ°6Ú]c-ÙVoğiµ>ƒÑ«ÓyŒÇÃ0^¯Ô·>â^Å¦¤jK¨ÃåêYª=RC*»ÊYï›Îséò‹óòŠóu®<ò0Rˆ|`å”xæõ:!c3(Ó2”Ğ²+ØÜıŠ;-ßÅ”…‚Š+›ùù‚ZƒØ©2eGFª¢;*+·E×õrïàv}Èd	A‹9¨šaˆ¯ãg!v¨–GzIûH"X(R—Ñìr™.ìt™ÌÅÅf[(ä‡øö'À•–ùYN¶¤ç¯±‰³ÓÔ…n“Á“º¢9ÛT\lÌ‰¨gò
+Q?¾ˆCœ]‡?¥*HÔØhñ[Iş$ü)ÆOs÷à¾u§ÖºæÏ|<ş¾€/.Æã$($GğSøúññ÷ÆÇÑøâş$˜eYOÂ^|êowšùñ‹Ôë‚mM3KmI(’°’¥yÔ¯E&­#Ge×”Ëºu;ËXW[°8…MHúáŠµÚª(²5—ÅükÂÁ¶@jà0·«“PÁüÔ/(²MrÇdŠ`ÇÄ~/;š„áƒâe{àwn°æE³QÀ¬¥I‡ÊïU˜ü,ã‡¨;Û½Öë[Mmï-­YòÑL™Ô?XS»µ$<RíjÎ¯*ÚÑf­((¨°ºÂ!»Æ`ĞhŒÆ/>ñ?©©íC5³±Ú]k¼m·÷;ët”ÌÉê†üá-u›Cju”)ø1µ9¢¶B÷„«0nÕèÌ­ÆÚÜÜÜ«qo€Nå ØGÁ—IfÈgQ&ÈXX'9ÎÃê›_óü1ïâ·ƒŠKÏÁŠQ5#*0fĞšğó) ÈnJ´ø† VX“"é‰¹ÙœbÃÛ½^ûñGkz]u5âævv´{ãóc%63o›İî°yãî’NE¡rc,¸†%”ù¼ âÈ—ø8²T÷Bò”¡CG%tohÚ?à÷Ì5·íu¯Õ¶İ«Kôú’ÕîH»v­{Ÿ”ØßØ¸Cu­Õ›e>G™ÑlXëğ6Fd;²©ÀÊÙ…#!
+bæß…ÂCU?|´ùÀ Ën8ĞÄıåĞlh$V=šõõîml¼®×'ğ.âqº—Ÿ 1!ùI¢Ô2ãÜn¼»’z€š™ÁE³¨gfH%ğù—áyhz	$šà3uıì,fŒ ¯wA_–ÏĞ×eøUd'…Â_l˜`ƒƒ›;oq­5lˆT‡Cå•ë=İÜóx¨ç«Rvp®±	æTDÖ:œ‘ÑššÍ%îŞê•ô”ìÚoµ#´Àçáå|YEí!ì>Ä)ğaŞ’¯ÅŸ ƒ^àaøùµ‡x¥a$_Æ³–ï«0¸}¹¼_¿6Û›Ÿ_œ{8²Yê¶w©óÔ3ş=WT?¶òò:Şğb8_B¾†íÇ<3ã~mp?À—8„Çğ*îÖ2nLXª\öÒœÈ”Ğò™2;›à™–Âa%±‰¤™Y*ÚD³Yµ}XËbMßçÕO¯}öf.ˆŸa_Iæ~K“9ûe=İğ"Ø?Óyª,f±„!èµáõ\¯ß«f@[‡.ı’Ò»ôÖ±ıT„g‘Ï?¢.ÂÚÊ–¯®`Âê¤„eÖQøæ¦A°ú¦æıÁàÀ\Kt0¤/iõVn"ñÔàÀÆFXWÁ/‚{J6Å|à‘M5ş®Rã‚Nêø<#—Dèe>‘ppLü˜Ş§ÓùôÇ¾Wµ¹´ts÷Ş!œ4¦v›ŒõX` pÿMƒ}şŠ6ò2¨à•*P‡åJIni:0HøljÚÏ×ã~ÖŠ«¸mU II«çŸdÃ•qî§WŠ•X‡­ —LğöøUñKâ!>qÌÃ²cß‡B#ÕÜ_]8w^­›¼E6vÌ¿¶¤t—{7lÃ}K8Ë(À• £ıß:-cyû¬»'¿5â/ÎÅ¥[¢µ“–ü
+[qâ¤|=œ“{lEvË²srQo6.“QÂ£÷ÊÜşãÃÜ—`%º´Šª!¦<–»øµr3â`Ë|¯‹_Wˆ©¶;*™Ãõ{¤u{WãïrMÅQ‹%êÄp«Vï©#g> ÷~oóÊL2/Æ6î½[_	ıöfî(æ4ìŞèçşCósI¡ÉÎó÷·~«èş÷;8øöÆoŞ€oRZ¾TPšKoñëFh}7±g‘Û<è°Š–A–M­xVÎ¿÷—rœui#–¾øÉà3wâ>ÈıÁ3UÜs¸¹
+;=Áºcaÿ«HpN}¹¾úRÏKwqïOÆ™ø!î~ÜÃ­âş†»¸ãB¼Ó¬7‘§““‘óç¢j‰ï¸»ñ¾!üNŠ¹á^
+_šïíÍ¡b3½¹|õü=8”¸Ã!gF>Úx4”ê-ìã?ŞG{/>?8H½00pÅ™±hátîÓ),Y84?€OşÙøoùğj|>Á|rƒÄx%dpdÌ·}ôöÖÛñé3gp÷!/8¿¿?ÿ[B·ì;ïßºy3šŸG”§Q‹Ä¨§ù•ßG+àÌj]~jU)øÈ´4GR%²Qå¦’’M•¾V7E¹[5l4Ÿµ˜ÉiäË
+Å>iåx¬v¼ÒŞPü «Ş1[¶F†ˆ•‰ÆöMMNsZBrgÊr¬ ?fºŒñd=HT
+öÊ³P¯ÍCQŞ6oÕ¦•+7qß›S*&	a8é§´°±øDqƒ½r¼66^)¥^â¾29µoÌa.ó ºQÃ>õ|œ–È{Å>Ëç%ºú©htº.Ôgj“ùõp˜‚ƒ•Á/k·ô	BVÙ™v…Ò"èUÊöû¢NyÙô²]¡ÓeB%‘œö$1‘i4ê‹{)ÊÓ¦³}š-üa$wŸB9·¨×Å…³‚PÆğ‚bñ0d£Ä ›åª	äè’…È¼(¢¡qªºj2V³y%-â6án?•çµ0á|C©ÍR¢l2m”VŒ×Õî¨*ÛZ—…7`›#œo*sV˜rs›lvğGØ­ñËã¯ ^>‘µ<PòiÏ.ÏÚÒâh^<U-73ÿ‹÷Qªp·O¯iKMcÌ—ŞÁÛ'&ˆŞÔóvJ
+¶(ƒ,Õ·,ş
+f'_–¦.±¨iÊ×T»WÆ”Š}USñŠ‘Hd¤"w¡ÆóÌ~Îo6tºÀ+¬'n0•²³›6íáµ›KŞ,Ûn)³×¹¿ìj°Mç³&3Y“‘åÏz7(XÓl	û³|EfA½BÒ´'àĞæz]í,Ûîâ‚sXáäjÕ¡v—«åÎP/]*\ädô4uZ¸Cæ3Ã%gŸğşJ½İ®7ØløMNK¹úüÂÂ|½Qó×ÎÛÑY€[4K3¬DĞ_zB”ùª5ñ´¼ì\ãœ{õ¾WŒùñÌt–_ºZí %—Q'äË ù„Ü‹aa•ñ2mûÉc_z-é¿¸Â¹Oßå.”soóB áN¡Ÿ
+w‘DŠğÿŠ&ã´Ö‘]Ù„wŞ«5¶8”p{@ğ¨ŸQÛs¼î6¿§Õ\GNƒ(Ğtxˆ6°Ö^¬(Ğä[‹ŠV‡¸gıìp{qQ[˜;³°N@ûßY'w'ëo»büínî¡EîĞÀ—òñùó>O[·³::U[¿3İYo	åëùk}PZ5‹í¨ªÚ‹MTí‚ da+ø®”‹¿Ÿ“²¼
+‰*ëÊ»‹…8÷-ÆÁ	sÄAS\
+9ê]ßv5
+qğ	ê;{vîäNâĞ²@˜ˆUÿGü—eıGñŸ;£;wî¹öqX+|‚·“,ÁJ²˜¥¡#<çMéXm
+ªZSóåv?o ©Æîa•z}Zšì/cş#üuüWbcDo—“5ÑUÉš”ù†­¥2§9·²@o0WMEm¡’~}‹’Õkóa€5¥*M‹F“-WfÊòÙBgÔj··äåd¯È–gÊŒÁÂXœğ½øŞIXÌÓHˆ»nîC¼‘:q©MˆfÄ?Š`Ÿùoü&‰ŠËó´…4-¹| ¸_^gsÎ±Ò@_ÎáŞÓ9”"¬àÎ•÷ù¾¾!*ğH.ç^ô«¿¹é+±;¿ğ2(eß@¶T’kÀ¼À¼D&Ü€Iäh?ùÁş©‚ÙŞÙ‚©ıôî²ì¸{1îãîÁ¸ÔÚÌ=,Ü‚ï¼y9GcÚ«RÉ2•„…ˆ€Göä¼kgîiNüTÃç¾Ş4që)9NıŒû–wÿäw]İ$ƒ=‰8Pg‚[òíì³7t}áÆWß¼uU—ÿ™;‚'¹Ü§1»ãiŞs@€Ügæe9İ=îÁ.n>2Ú€›¸ï740ãxÇx“ÈO!rB,îtY6¸Û`kÀëU€¨TJ±Xâ×Q‰X	C¶µ%§Òrüätjr[[Øa×Ğ)¢L·ÓéÎ¥PyvG_Wç5í~WG÷€Ù:j[Ó¬RKØ¾…1òt;æ¯EÏÓIü7XÕé}ôç/Î
+<i§@‚§ËÌX…“ºÌŸ2ÁL‚¿®Ïér:]™ÀŒÖîˆ Ÿi´‚ğ© >ã}ƒ&f‹=l‘+aû¨Õ<Ğİ±K¯Û 5\ÓÙÅÓ-€O„¿On%+Œü/Üµ-Ş·lÒšMÊ›,¦¯w’¶*Çíœ–)ÏT(b……PË•Póø„œ‘ÿæÄ°ª×n¿‘ÒL¾?ãÜ;×Ÿÿ`¨7³ä£dš>GDÿÃïßæHıÎÅ²¿“]+ã.úUèŠ‰%'¾(#á;vÆËó×råw-ÿÚ¿~êÛ(†„©ÙÈ‡ŒBÔÄP­ÈN}Y¨ã¨}Œ‚Ø…ÌPäø]s /ÎA!|…1ƒ*ña$¦nƒ÷cHEÙš²"9µåB;‹
+"•ãd€¶çŒù	…‚?Aê=ı9€›FµÔƒ@ã=¨{ T¢ZZ
+ıQ-Ğ¬¥0’QA]ã­P¿
+µ™©¨}0o/Œ…‚Ú‰”Ô£¨Œú9’Óo@ûIÀıM”Mu =î†ğµ?yşû »è7Àß_@ÒÖ"5>†¤Tô=C/ Æó×R+ ı	
+Ó(LÆ™&0øa€?‰2ğ´æQ©ˆ¢!^@Le d|åàf¤Ä&Ôµä'_YH1Ã_%êBŸCO`5Äãø&ü ş~ƒBTe¤<Ô 5C§ÎÑ":Jï¥ï ?ÙE«D{E·‰‹NŠ.$%íMz,é¼8G·Šˆï?,>+>/A½¤\2#¹OòV²<¹5y(ùúä{’ŸH~'E”bN)IiLL™IÙŸr$å©XNJ”MÕ§Ö¤nH½)õÔ¦~˜¦NkL;’ölÚ»éÖôpúúôñô[ÒI!ıƒŒÂŒpÆTÆİ'xËêG Ô¸ÜÎh$ü7Éõ¤%"ÿ?q\…6†,ëx¢Mbş©D›F…èåD[„œxa~èØ™h‹Q!I´3P ß–hg-âÁ¥ágm	?^…ÆĞv4‹ÆÑ(F#hÎä‚â†VŒl„ºí„7C0‡¼_³ÇĞ&x3À÷+ø·#06& _Àã™¼`Åğ7ÌCÀ¼È	Pch+Œ.Å:
+cËGŠPŒmƒÖì¶Ë9¨ Jf m.âP¶B¯æoAƒÀ¹Šş" 1+1­å¸‰d£€ı_áÕ_…¹úDÆQ3ı2JÃ€eÆÉÌ	´Æœ(ÅƒX´nåTŠ®¢r¥ö&`&YŸí¼.œ<ı-P}óZ«A¨°,¬!-˜ÚüQ>ï¿ê÷(?ğè‹èÿ +œ¡:endstream
+endobj
+125 0 obj
+<<
+/Ascent 1000 /CapHeight 703 /Descent -260 /Flags 262148 /FontBBox [ -130 -214 3739 983 ] /FontFile2 124 0 R 
+  /FontName /AAAAAA+OutfitArticle-SemiBold /ItalicAngle 0 /MissingWidth 683 /StemV 135 /Type /FontDescriptor
+>>
+endobj
+126 0 obj
+<<
+/BaseFont /AAAAAA+OutfitArticle-SemiBold /FirstChar 0 /FontDescriptor 125 0 R /LastChar 127 /Name /F2+0 /Subtype /TrueType 
+  /ToUnicode 123 0 R /Type /Font /Widths [ 683 683 683 683 683 683 683 683 683 683 
+  683 683 683 683 683 683 683 683 683 683 
+  683 683 683 683 683 683 683 683 683 683 
+  683 683 195 274 441 652 594 671 680 246 
+  304 304 490 555 280 462 295 393 660 367 
+  553 550 604 553 568 525 555 568 281 275 
+  555 555 555 503 747 715 631 686 747 602 
+  578 778 721 280 513 688 556 850 727 800 
+  616 820 640 569 629 696 705 992 707 679 
+  598 345 393 345 459 493 308 588 588 492 
+  588 541 419 579 562 248 257 528 247 867 
+  562 569 588 588 434 444 389 528 523 769 
+  523 526 466 334 291 334 555 683 ]
+>>
+endobj
+127 0 obj
+<<
+/Filter [ /FlateDecode ] /Length 693
+>>
+stream
+xœ…ÕÍjÛ@†á½¯BË–RìÑùKÀÒ¤,Ú”¦7àÈãÔËB–¹ûÎç/$C­À>¯„£Å™_ßİÜõ»©™ÿİCší®ßŒùx8]nóÓ®Ÿ¥¶Ùìºéõìüİí×Ãl^~x9Ny×o³å²™ÿ,ÓøÒ|¸:ŸîOÓv7]Ó®{ÎŸËåÓózü8›ß›<îú§ÿŞøp†ç¼ÏıÔ,f«U³ÉÛòÃßÖÃ÷õ>7ó=ı~ï¯—!7íù<ñot‡M>ë.ëş)Ï–‹ÅªYÆíj–ûÍ_×R{Ág·İïõøzï¢«Ò©t»H—è–}öZ«û­j¯:ª¾¨ú²ê«ª¿T}]õMÕ_«¾}ïTùSªº­Zª®ü©ò§ÊŸ*ªü©ò§ÊŸ*ªü©ò§ÊŸ*K{núË(M¥é/£4ıe”¦¿ŒÒô—Qšş2JÓ_Fiú[¼ß–ş2JÓ_Fiú[¼÷–şï½¥¿ŒÒô—1[
+ı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğı¿Ğ/ğ+ı
+¿Ò¯ğ+ı
+¿Ò¯ğ+ı
+¿Ò¯ğ+ı
+¿Ò¯ğ+ı
+¿Ò¯ğ+ı
+¿Ò¯ğ+ı
+¿Ò¯ğ+ı
+¿Ò¯ğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğı¿Ñoğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿Óïğ;ı¿ÓïğıĞğıĞğıĞğıĞğıĞğıĞğıĞğıĞÿº!^7váÛ:êNãX6Õy[VÎ®Ïou8x
+Ÿ?M&¬endstream
+endobj
+128 0 obj
+<<
+/Filter [ /FlateDecode ] /Length 6256 /Length1 9720
+>>
+stream
+xœZ	xG½ŸYÙ–#Û²e[–I–,­V’­[«•uX·ïSql×Nä#w'¾h—&i
+¤…ŞıÚWiyğ…×´¤…
+ô¢ÍGJih›ŞPÚ>xış³+Çvø %ë™ù¿ÿ1ÿY	a„P:ˆ$ÈÙ³ÚáIÜzŒ<×ØúÉñ©UgdßB«áªØ¼}Ï¦»[?¸!Ê‹vnËÆñşk¯¼!İQ˜ïÛŠ«õĞúÆ-“s»Oş¢ô›és`ıÛw®?|ÛÿF¨îxşÔäøî)´K2ŒA_·c|r#ûÀê; xtOíœ[ør#D?KOÍlœÚ’wÍ ÿèKQåÇ7 \˜û%jF:Ä;Î 7Ö •¼¼³if|3zÕ)%gø³IÎàœÅ9øêÂ­FÄu…(Ë„ÖAa”¼şİOHœÒç`_ˆŠ£¤@¥¨•#%ª@*T‰ªP5ªAj¤AZTéQ2 #¢‘	1ÈŒ,ÈŠêQ²!;r 'rVäE,ò!ùQ#
+  
+¡0jBE1G	”D)ÔŒZP+jCí¨u¢.ÔzP/êCi´õ£5h ¢!t	F#h-Z‡2h¡q4‘Õ 0œ$ GÈfz­WèUœJZ¦’2}”ŒïÇİü÷Œ–×,¹–3êùöşëİĞÅEÖw¬¢MøQôSêqĞ­æ¸¼<C‰õú<î
+eyThÒå(ŒºÚ¼ª(_Ú•_ 7T«ÍfuAmÕ>°‚?‹wQ¿‚õ4PJ}Ùµ"„¹`è‡Mµ¹Å2 ZSc–&Ş[Ù¥$<êjj,fuamå>õÊ.¨MdÆû™é‹JÍ\8ôñJEŞÿÇz©ÏSxF>CSOŞ€õ.‰G"]F]ÑX‘Qm4ª5Fã«øC¾ô-“ZMÓjµ	‘µ)|
+w
+k¥ /ã‘àšWn¨xU¹^‰O}Á¦N˜Ü³Ü¦ãe	Íê•¹p—ÀwnëÚÆßF!¾s"6=ÕÖvŠÜñ7ÚÚÀ¯qáNª@R¾iG(Ugb¸Š
+ÛÇzí¹ 2‘Y%5™uyÊrm.GáQàºÎé†ˆ®¿1Üaµ¶„ŒáÈ–ºHmÒˆÓá–¶½O\jŒØ¼~7ã¬­ÒÔ7³ÁÕ6¶>b4»†zm•ÖŞÆ­İ2,ÙöÈ‘‹ÜŸQëÁNˆ©Zˆ x)öàÜ:“)+/!¢‰âTHşÁ³&üèŸÀ!&j2E&ÍZ£Ñ˜L5EMt”1Ã“ˆE£i‚‰Ì13dÌSS«em-ƒ·Ázs“ÉÔdZ0\k2ÕÖ2vù0õ#ˆ~Àn/Is²
+Õ¢œ*ô	¶œJNQUü1Æäj´¦ØÒ˜Šcl!­Oó·§¶4&cõf»1feÛË‚å±¼ÁÚigW»jÔAã«7ºõü™o4Ù¤õ—§œŒ¿¶¡.US_%Ä(ø:*øà=ÃY¯Ù®Á
+êâ-ƒvŠ›•Jõ®Ûjíæ¼-]]-söÃG¶;šNìİs""Æ¾ÖâìZÆG€f8-E`O{[:;[¼…9GäÄ½'šYâZÀP¿†¼	2AÄ1I<wT¿Ïÿ‚é–½ÁõşÎÁ#EÿiÅ_èğ÷Ülú|~Úr`DSø4eËÆøµÄ£0ñÑùÕ«±©¯Kù„À£eá2ô+´‡ä¦ÁCº%Ã&Ã;Ä˜Õ0Œ¦ ¶òr²>^À_Æ‚Û.àÇm/¬Yã½ËÏİ »ŒäBÈÒ´Œ©!­†Ğ/üï¦~Ch‚ïÊqE?ÿY’{öob¬9À_ÆÁÇ‹ÁÃI¬ï½Uâ7‚£àöî+:;võìè8ĞÃ­v:û9_¿ÃÑ/ºkròÈàà‘“w^Ş=4´+Ş54´;Lx e,ËæÈó…„õ(¿½î½ß§&úûaìùøO G%ìUhn¢Ä°‘2KÒS,§Wê1bÊ’>¶·6n™ëŒz•¬ã™½½øP#–›ƒî6äa¹dÊ=ªO¶¸^5ÖôgíÂgøA; #à–Í*‹
+J¹%N–ã¤@.ı¿äNSTÕë²'¦ÙYjT˜Ë*ü—°‘_ùùÔs/âo¦eWÔ`1D­õ‘ºÜ\ß*™7ÓßØˆ77¾?x®ß¯&8Kˆ~+`û5ÚUæÁR¢É]úùm<¿ÑŒßÿÑºğ“|c Pİ?ş9ÏÂl5Èı	¬ÓÂ¾ıwän¢ÎÉÍ@¢e½òÏ-Dì>·£ÅbN˜-	-V4øéÖllægÚƒ®OŠ‚c6{T_^RVËC›"ñ-AÜåÁQşÁOÁ,`3øGğW’½Jô˜H—˜^à$Õ©Éhô“ÏÕÖ¹ëÂëÃ±	+À—°
+eÑíñµ#¸†?]ªÔ”6&â;bC–T}}Êl†¿ÍfÑ/‰Ï|Å²®JØ?¤×àœuü³øiu@2ÿyp@5Ì¨ŒÎBÎÓCı^òbN%&”EA¥Ùäp¾ÀeËr4.Km›³_ã	‡½ÎL9St`k³5BÓ«%JÓQ‹;u»¢Q™wmÀÑÍÖ¸&_ÚáHûL	WAM!×í¬õ®ÑLt@¯Ğ¦€·7¹œá°ÓÕDô[R…àï®³eœœ2¬>©¤ì<1o&€º¡¡øDr@\½«ÙœÄšÒrmI`s,1‹^šX;Â¿‰9KÊÚ@`m¨OZ€g3ä“ø>Èª•™C²¬}8›EÔç²I5lFšjûM5¤Uc"òÇ!·=´JÁ3/–İÊ–õâ‹’P­$JI¥”w,V)bÆÃ-ÑÇc§!ÇÚIÆØH³´2—ÍÅ§ù!|”¿N?{läÖº[…\ü}|¿»”‹sá‚\L¦âÛûúŞêëCçÑ[ÍæÂ,:;kÿjÈßZ‡²şOR/@ÕÚÅpËYîJÒåõÓ+¸ÆÀj5¬ÑÙ¬Œk&[Â¯cM€É7g1|õ1¬õêônµ³Æ]ƒŞ5\¾ù¶¥*+±ß¤Ã©ÈuwjënâÇÄÏš”’â9vmğæ%·QÂ¬å‡
+Ò¬åÊ£½É]CnÏğÔÚkûe]rE~ã¥³‘ğT+Û¯s7ìèc"üw†C6c}½Qok¸éø)™,6ìÚÕÜ¼ëwÿM£õ)mN¹Å­ëÙŒÎötÏD4‰9ÆÄ-–ã°M68#ÚdwĞ´Ã¶7'Rü1–©; –IU(TP¨?9°S-V'qÍ¦wïğ¤°tÌßÿÕtÖ¤aMÖ4Ë
+åènÈ¶„†'šÄ ‡Lzãó¡¤¶Ñôâ“î`“ç‰Ÿ$Gá`~¢Ã·±ÿ$“nq×qº4ëv³iW¯Óß_©­sC,áL|„ì…×CLêW`/NrHZ*‹9¾¶ãà¨×;z #½ÏÓ†¹µIšN®åbcú˜ó
+7q¨½ãĞ8çwÆh+Ó:L´2õtÔí|ŒèvtS—‰º-)GRä¢Ì?êš‹Åç:ÿqç£,›¹¢ƒŸÏ$.ëê¼,>àÍìïh?ñŠ²ç4u+ÏSP”š;{¥3Z|?ƒ'ù›ñÕdÕÀ ¤ÓØ40@ö'²¾èÜúì.½´rÿüB•î‚u²FÄë%À‹¾^ç|ÔÇªô@,„¯i;0êó]Ñ¹úGL¿=Úù¹X|ªµíÒ@#ÿî_sÁ­£ãŠ	_4sz’»»{v'ı“=–ù¯§³2N­”‘à$Êˆ'2|¾Mğ""gH”Ö {…5ÂütF õÀ7`\±rO…) éó¡M¼¬Ñ`ğÕf¸Q™ÃVkµÁzüoHmZ²á>XŸ'p¨³Á©Y,³Àß÷ò×á}ó§2xîäïôò{E3e×å-¯…Y„çD›de¦>…9¢±Ã,…JbpŠt›lØÏTœ‰ŸQRğ|VäñWâËóæ?B‹¶ràù¨H ¡Rè1‡¥A ®Æ‡øB|O‘À˜œj¼|şäşÍT b¶&|ìZ¶Ò²¢kŠ»§M¬¥ğuíÇXvô@{û1Ÿb¢c:nJ®õ·OÇèÄ:·blêÛ¶šà†S{ºã­˜7°¾Å¼ˆ‰W¨1ªHv^ÙàÆ$¸eÂC˜yô‰èÆ`pc”ç3XÖÌæ€.íEGYşch	èğŒD%è B–µÈ8èó5¹4!MˆFXÂ?ÆIş²ö™M4š‰™.¢ƒSaşáäùz‰v¸ô*#}õ¹+Ï !>,áğ„ã±ğ£Ç'Xv"¾Áî³—àjlïibİñ´g¨18äâŸ›«åÿG<ÃèÀ‡yĞÑúO’qYzÎÕDš:ŒáÖÖİ¸¾)¹½.ZÛb÷ÇéPŒ€óqÔîğ9Vœ£F£«aé|,úìúÔêE?ÏF!–eø Ì½{>C‰¾Ü¾4!ØV¬ËH€­ˆ5<Ğµ§9cïqyºl£Í»e©=]ø~¾‹ëmhèõác|{×îĞ!{ÈÂÑæ)3@ıŒYşİMoÒooäÏ 0÷ÃŞÑÅÀ?&ÆÏ¸D˜K.	Ùu°ätæXÍ}Éûª­{#ñ½êû`åS”O¸Ú)vşçÄnD·[³û•@"øé¡
+ÅPaSÌË
+şÃ©_+péüÕ¸(zãÈ©m¸	ïæ_ä?‡§ıü“¸ÇNpš¡._ÜûbYÉ‰Õ±ÿhòU×o.å?èÌ€©ïä¿‹ûøü[xˆ?*H¨ÉÖÀEäT”=3¨¥¾j¿{G/şoÂ¿ë‹ác1å  ­×÷,Áöì{rV²GIN_=ÌñãÇÇ$Ö³§Z[©Ó--çSÀùw×`åâaQ‚Œ@OrqzvşöBz,ş¾æƒÍbä­Ø'gs×‡nÀ?{æŒù2¯|áóøÍ…ç…3*Ù*ğsûº»™ªA¤~Ÿ“‡Ögùû&*o0­<­ª”BfZ^©²•Oal[8¼5î[ã•H<kÌ‰4´ÙRpœ{D¡‘Å¦š›§â¶ïõ^Ûš‘W›ÅÚæp¶Y;ÎÍÎñ4á¾u G	Ä1#òeØ¥8HUJîüsPÈ7,ÙA6¶5ÚÊÿdX¡¸Ñ–„Z½Á–4Ñ)™­×s½·Ç'ÄdÔSüWgçvXÛœv‹¥İéh³6ˆñçAgÍ
+}ÏÛc…š¤¦y:›næ2u¡ŠˆÉÖl67ÛLUP?*‹O§€……	U×XZVkMuÈd]ÂTĞM·¨Ûy˜®P*—Ô“°'Ä·„Ã[âì +‘x[ÂÄ$l¶$Ã¤påÈ…¸¤®Vë°x=ÊêögĞ¾àÍƒJé…µ.Ö¶ÌÄc;Sp¾¦$üN<®¯kj°7›ÌíNs¢2P·Ø¶€¦¡m	™ª¸CãLĞæV—»Ã¢VÍV!a¿Ç?€ú¾•“qe¢J/Úû|–PU°H§ªw<ƒ7Qul]]»æ_ÃWCy
+¸ÙË Bõ®È¿¢Û•¯¨Ì/Š%–¶M×4½\Ûš’’áÈt{ls(´9æğPÏ İ0ÒqÓç|® ÍtÅ.»tÛå¼?¹)ğRÓd2yi¤¡‡İïíiXcJÙíàÑ)›­™!g3Ğñ}°i)ª ¹Ù+rdá‹¦›’>£_G;|¾ÕN~`+}Í:¿Qéëw9üüKÔSó> Åjß¢¾-¾7ªÂeçÄ°­J§«‚¿ÂÓT@_U©×WVéµppÁîƒu%H½¼ÂÊ&ıå§Ã<{¤* ×«´Ã­­•:]%Ğ{N«*Jhš’ÏÿÉÛLK
+Î‘Îê÷è'Ö^‡‰2A§™×^ü4ç¯üÚá?Y@^ş‚H|—†Ğâ;H¢E|Xx$!ã’Z°£°²ˆÏ<"¶4”{ ğvÌ¥÷êhGÚãîs¼sêYGÂö»½iA×²aµÛPêëµ5ôrüÓ‹}®ú~ş™E;ï×N¾Aÿá´ –¨2 õÏ½Ç«Ø„¼“šCj€Ta!®	2Esjg<6•jB¼Ú[-–V;IEBl¤ê„ü{Ñ<˜«ğ(¥*Åùï-şµ<ø(u÷åwŒKW$Âl®jüò™BÌÿEqÈÿÛbÜÏbş‡LEŞŠ<
+Q÷÷ó?ÿ!nš›½|>#Ö;ÄV·~¢½DÁx—¥øp]1P,6Vº£‚ı‹‹G¶WiÂ%ò(ñ¿JÈuWÁz‹ËŠµœŠµ ó%sK¨"P´Zít  ­¬P(‡4`1£zT¦djºZMuµ¦¬Lë­¯Ô1L Z]SYY]Z¦ó5$º‰ÜàYx˜º{ù»W½òËÃÏà$©ÒÄlFäó|¿Ä¯¬¸²N[,Ó¨à:ïp×À††½#26Ó„Ëù?0ÚD—ğï7eX‘Ôø C¸‰µ—äÍ—7|7pïØË€ÊN|#ÙRI­Â½óŠÏÍ;W£=õHæ*íaïaíU™‡Ù«õ_‚u×áá¢ñfşvÁH[à#ÖhÊ£R•éËTRŞ{‹âáÉÃŠ“¼õ„çÚ{¼Wn}¶äo?óïãüøO=.Ú´d¡œ¥³Ò’/_{zÃíº»6¼öØ5îáü[şj¼‹×?k×>!ğ&ßeu­ËÔ¸zÿÖ¶^¨ïnÆ³«]xØåÒ§j—~ñ{‹#¸r‘ø>—ã|Ù÷còy<Jğ•ª"/OÊj)©4¯†>èêÌ/Ì©PÃ§"§0¿³ËmµÑ¹²y=ÃÔËsd9F›ulh`ŸÉ˜¢é=ƒƒ-vvÃtùF™fm­ß‰…ıèuV¨³ÀªéCÙ¯ºà©íè¬Lç„ñqJ;uN¾Š¬0Yù@cLRDd(’Èri›ÕİÕµj¹œc­6vÉ×€ ;X{ËààšNMû†D¿Ãø|;y#«Îbâ{¶¥w-›ÔV]YmQxªbõšz“±¢Jhã
+y©¼¼ÜCÓEere™Ç(¼7ÌÖŒâwMœêä‘–CTÍ•Íw‰ßÍãª;å÷'F‹CŸæK$gˆê¯¾ò&Oîoü•ìZr­äIèæˆL¾İ'ßñËÇòcríÊ_ÀgõÔ‡ş‚ø^äÁ÷¡ z–å¢¾¥¨ƒÈIu¢Fêä¦n†g@qí@vlGZü.rQZÄe¨ÿÅqêÅ_DrêäÀ#¨–Ò =U´Ô Ü5HMŞRE0nBõĞfp1jÆE(Nh,^ø/0çCÄRÁ¼(Mİ‹€Gšê†Ë‡Ò’\èÿ¥1œ»ñG@û7ÃxÜ
+÷jx»î—ÁX=ÒQÓ0ïÔ´j%/BÿûĞ¿i¨!zˆÌp7âŸ@ÍÿT«@†fd„+ßA¡]‰øz¤ Ğ7B>}j‹·â¡ıŠKAÉü8Ğ6â¯Ãú{P%BTøÊ* İäøÏ@âÿ©qp¬@p7‚şd»'_!QíGÁ¿Sè]ÒáÿÅŸQ9PÇG©5CİDıuŒ:A}&É—ø%»%·H^È)É1åÌ9óznI®1×ŸÛ™{Uîgy%yíyûóæÌ{CZ-õJ£Ò1é>éuÒïHŸÎÏËwæÏäßÿzş'«*WÙWu¯š[uÓªï­zjÕË«>–åÉJeÕ²Ù-²TA¨`¬à;/ü¡P[è/L*<ZørQuÑPÑî¢cE'‹Ş—#¹N—gäûåÇå'‹sŠŠ¢ÿ¡èdÌ.ğÊ•¾'ú2ĞZ9ä÷&GÅQhcÈSG³m
+VŸÈ¶%¨=Ÿmç@›Ï¶sÁ­Ùv²âÙ¶p¿.ÛV,ÑÁâ(v¢)´Í ­h3Ú‚æàáFN¸\Ğê‡‘pïAŸƒ'›`yŞ³w¢mğd½Ğ	O·ÀØš…¾Y 3tg!^ğo³°rÌ›@vXµMÂèrª[alåˆ5ÃØhÍÂ®»R‚p"kÖ£í E®Íğ|;‡qppN„ù30¶Z+)½¶íDUwİèı¶
+RéVğÙ4æ`|'ÌE#0fGp¹!FÖ­à²’‡í<çã6óˆe¦ì÷íp'HoğjFhh,Z-ş.iáNò»©?á…/Ü›s-úƒ3Êendstream
+endobj
+129 0 obj
+<<
+/Ascent 1000 /CapHeight 694 /Descent -260 /Flags 4 /FontBBox [ -128 -209 3614 967 ] /FontFile2 128 0 R 
+  /FontName /AAAAAA+OutfitArticle-Regular /ItalicAngle 0 /MissingWidth 686 /StemV 87 /Type /FontDescriptor
+>>
+endobj
+130 0 obj
+<<
+/BaseFont /AAAAAA+OutfitArticle-Regular /FirstChar 0 /FontDescriptor 129 0 R /LastChar 127 /Name /F3+0 /Subtype /TrueType 
+  /ToUnicode 127 0 R /Type /Font /Widths [ 686 249 432 433 686 686 686 686 686 686 
+  686 686 686 686 686 686 686 686 686 686 
+  686 686 686 686 686 686 686 686 686 686 
+  686 686 208 261 400 640 588 660 659 237 
+  303 302 490 542 275 461 290 390 656 347 
+  541 538 598 541 564 525 550 564 271 269 
+  542 542 542 505 750 696 623 688 740 590 
+  566 773 706 258 495 666 552 839 710 794 
+  606 817 630 555 625 683 688 981 691 665 
+  583 338 390 338 453 505 281 582 582 489 
+  582 536 399 579 548 224 230 498 222 855 
+  548 566 582 583 419 427 368 516 511 750 
+  504 514 447 323 278 323 542 686 ]
+>>
+endobj
+131 0 obj
+<<
+/PageMode /UseNone /Pages 133 0 R /Type /Catalog
+>>
+endobj
+132 0 obj
+<<
+/Author () /CreationDate (D:20261021102039-07'00') /Creator (anonymous) /Keywords () /ModDate (D:20261021102039-07'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (AI accelerator terminology across NVIDIA GPUs, AMD Instinct GPUs, Google TPU, AWS Trainium) /Title (AI Accelerator Terminology Cheat Sheet) /Trapped /False
+>>
+endobj
+133 0 obj
+<<
+/Count 1 /Kids [ 122 0 R ] /Type /Pages
+>>
+endobj
+134 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 9194
+>>
+stream
+GauHQgN)%.[XIVJ^sf9Skt'r*U87=Cj',b%-a(N^pHr#Y?ja2a6BN1LP2lB7ZSqlITIdl&i10)4=EM^dYlO-EI>(HZps8.'`bRothij6STD/Gt?P7iF*0L,ZjRW;ZiFk@I-5$9LqDhm^#2b18MT=U0rgRm=:5@kL5f/B@Ob/_W5CXXKi?T8$aj?Z+i@KMOd521Wpd`])0Ag1FIl!\mjF.R,&H(LLl'/r:2]bH`)S_p#OL$oY.4](s(Z_/&lQj[&r:-2FY8FC_I)T4\%s%]bjSkeLXi"<&9r@F"d&S8):Z%d4j$Wd",LLE8r<=>:)t:-45$u]h/P)#%XF*MRa`>K1Q;rSRnLCM?>\sjL%`oMV(PL1\7H-GcXu#X5<3%8h8QCqZU(oL^`qb>uHb\EN1@YO@d:gtBUsHj`I#6+(gjM;s^\[liG"tg%h9S<83kr>>T<%o24Un1NXIY)RN'2k9n)lgZ@^`8Ws,]+5=ctpk`oHm$aN*g9:E^S[LW2.A-MnfWGR&e%D81SsG&qYE7]u3oQG(*INK7]Z:,@o/0V%^R5NJ:C.fc=8Y8:hdo9!iIQj0c5i9/a^:%qicB9NllS=8@8m.Q%dA7_$:EFh'9V'!TOc7_APOV!9<iT<o&,4NW,YL#+J1kLjK&'],#.ps40/iF4$3mSmH7df`Zp)\k7JRJu!Lqs)ZBU[?Z9OkVr6L8E>.i,$oIqPEf)#9q.VW5u_\M%WZ-/3SBc.@,I(e*8.!+Yismi/[$.F%r&A3.Uk#=$2uqJm$co*If3heh>*XN;<V:$cqK:<C/(p_nEd48qCbi;(&TJ0.JYg-f?TD,02C07U9P>:"Q,\O#PY?V&o^q%J%rM]X2n$2_76d9;._U_ueN'jGKQ[cflC)9a.2h@:ml$cF+kh8,3-I)47VODlkhXG%=L]so'&_//0SC>W+g_ri6_bP#pLP\c6TZ(UDp<$g5E!nKM-q1)74[:8VilW76LX-AccLAf/O0K4Uo?d@U-k4ZOh89q7eN[iAr%p!3pTOOCUKU-.CZY(+V!Sgcem>)sR7EW(!9]V*D==ic-XM-\M9%-sg5YTd;!&>KkjlD9dfWrT)WXDTe0%**$onKE1g*VWi_6G@@:9"H,6*BP1LabJ)(0&ETZ\?k/6;s$IV&%gQmgf-2?n^IV$eF!P(9[_VHs;bNQL&&5P77uec0L@$b8quemo`].ERkmrV%YGBo+o?/_60l&\3'p_(Mq"I+#qQOlnQVLOM,H+9_'2S;S!`,OKno0;.#1hU8UGAprk1-#0;$C]ec%9&cD/m]GjpBn.5KFP^p1tid^)Xs*Z^:PjC@r*HV.8BO)Fr_MU-s'q[Y7\-Fe)l1mon%?27Y+q9.>=<tLh_13('kRsNmiFYV9p`DB,i%C^B6n^,PUD`KNKo.*$q,.PSnrW#(O4'%V!\_tQ<Sm#ci[=Ohp&grSW5FD.aP0Y6Y6RV_b8R4+%&-87KgAC'M%`+![+RN5%pF@`=iTrQoaD0emLrR7)]8prKl'1C;_OLG<u;^?$Wi^7S)8d;RF3Z@SfN&J2d5^VF=>,MG?E/tnjB]Vi5A6o7_ZADK-%M;lUqX7hc4.$B2/k*$[@aT=oj,E[pjN@jr5g:n#>@''D,qS/4>eC![q-W8?t``Z1TFsB^nb3[%arS$$JEG\q6blD[(OO%&-9D4,NB"Vjc^h0@.9j4=7WNT,2%_ep6e%W>^#DpC$'ZYpb1'O)m%#/Fr2J6,k")gW,5_K8uVF.dGpTD#@J3'*m5F9u+MtId+"V(f3`!VV1VgT"N.RgWS?83W)5c[]#6KBc)S9gOJ$/6M5KRC>%u>)LC0kK`\N7h#.-&X-:0kf3<jL@d1`J#2I36bm'A5S*d>SGbN_4,CD[E9*o3Zi2!1PZe8#F@]b(Eg.GE9p/R=ekUI^L(/H?U\2ZkhHXNgfpYtlu=:k6J`JO-cRQT[m]qrToNr6](s-"36_r\!q4O#nt"#l,RoGG5(D7p"'Zng=`PQ?kZ,`!!Ag?T@^f"s([MJ`_%8!^N81H6og=<8E."uF%QZ">[WUCN0BE@uq/%$'fpS>T.R\UEBXmA\;`1RBOp__*H:-)K\WQcn]=,g3_olJNTK7qAKNm%F=pd1[c]GX<??eKJ[S:,;nF.HbTc6!6?<?atW;6b/oie%]gSM;Eg29E:+>)9p[tX='c_@T"&&5PJ'ZJuS%_hd`Nf=r#.To%A=%GmEVRpU.''@lB($-Tr/VG;h4:Zi[!#c^'h2>3,LkXLDo/CsqJINT2TQd#'jI>j^_c/EZVoU(Zu%5OD!V3Y!tS(Pr[Vm[2"6q$Lt-3M]eufMo78GEu@p^gSRoDQds(*9^$+Q!Ar7DIIBpJ$DgONe;\uJ<bbQAAfso5DKW.o-ZqTqYhne@1Fi`#>gl[i3W`H;8%r'25&+6m9a4kQpqU['@W=&b`\,!ZhQV@#8W!q]BFg8<u`Bjo:U__SaZ('b`RNJ=+/0ng8$A29L-t)1k<oc+r"E'4ahuM?koB^D0'Xp5"LCG.R9\Eq;l?u4dQHnio5@!fiHOm<Uq"A5.%U[;o!3DHr!D!kH_/_G1JZe4du.lNW]jI0Q&'NL92:L"cR)F`CPo_>-1qm`-d*P"BiSBQ9MTQ;C;ET@cT9"d"`l@Wl3mFb?o3Ff"ReM$q-$>+_1AN*UcH<\^B6]ka+d"DE3mpH-FDd0.^fq;SC(U6b*<DRNOWjl9MY$>j<(%2+srJ3)c0>Yn\r<>4U;@KaYrdJJpUhX9g<6Zp2lprmnHb"$L%a1Ia&n&`_p2<O+o'I@P0kXCg+/A1'3*&K=/;=uZaO(grjod&[Pn:M^EZ;hT.p$QW>MO5smC\>mWI(#&nH?3.EMclN8T_R+XAr3.j'7R>[8>'rNVKK/\FDC3<l/9jld'C*&lJ0/t:@(HDg^0u"J;dbeXCIgjKfE*rKX,iJs(KjX%1I-?sNn&RoNCURA`ga&o+WL#W9-+qN*oS^^\C_3aJB/V;!^u;3<E+JW*9=gT(`0`$`9"3%%&pV8`C&QHW"i,]b>1_&PW(GG16.9Kf-BE%ifD_qQEimB6]9du)31LAS5H,YOKiU.`d"inj!*ITW:`*KTqGF44?iKqWJr5LXe_860BB3sQ<*!k'^F$)+&iis!sU1ojA:KrR*^A$;8%BJb&*)7RY1ugoM\YfDF1teo4H_.j8'%[0L_R:&k.HA_#s8IR63m-J3YKOAAciDXm^Mg(j5JBQeqaj%4n\`+:bcEWT,F=Uq2KAN`&QtI67?$Q2Er1nABfToS?)jMHH!k'a@_M5`W]:?.VU-(T,u:I%s3V`Kk->9ahBn!3fB3q@5'PL[_Ankk"eBPFWcK;a&5m&)YU*e]<6B<L85n,A-$XR<*&uOmBXTc0^2e\XDLYPMJb:,r@2p.6u;Y&f5gB;_=euFYXmSd-OJLiO"g$`1Qpp%6Jhsqdr2'?NZ`+]=C1Ra#b?(AnNse`qXc50d*h@g!OmL':'t,`qS"5ImRN%1Ko61J#7h.$9`f<dfnJP0d?o-F=bN<OZo]-,:ssF'Q#brJ6!E('Wp(OaA3$U5Ps,gG(cGNC#V1u+5iM2!XLLco"CkS0Bd4nFk3^7!3l>apmt".:V,DYb`Zgqd8=%?a#+^X9F\R8#($F.hdFoVofDHK2k^HMI[mNqb!efW6"RA<gQqNRbU_=I$^'n?B*0tpean?]9m@rYWS3'%om"$/Zsa3LORuaQ6eenq)D6N6EWbL0Wh<LOiLoDp7#AW/nhgr'F<P#o;WGIoN8$`H@!k/\RYVp*adVEhok@?sV2KC9"*MP_%CO?N$N-#MIqkQ./(@E$E%^.>VVWsU3u)R9dYAMg"gE"A%)Uk1`L8@kN;IkaJj#^;RdhKj4/p'bG,tl)e#Z=4,TQ<LK#K1$jUV'JZ.s4TGu9hP::Feg^Q$W&AP$TbE)_#2nW]nhd"TnAoC29Zm_E6,.JV!?U_fE1_5I-/aV99)5VMC1+l/4.oN8ZfTdHip"J/g[/mYt]O."L=k?lN=)l[l;P7*Wneu/u@)##pZIg=QP",,&GN4e?L#Bfme__XM+TfMCVch#=,-p^<H\Bp<<]A>At93J)7I-tY<oHJ^Heee%IE-X>XZJCC34E\12A0O#Y:@jX6'kdE`6ukojV[UiN81qt+mJ_8YhU%;X^`ogLCh\"`6<t5E*@h=oD0Tm^)hB[V\uR,WGcCl@bp)"=!.DJnqn`fLpsVOKRutS/mFi#!EmWTd!4I?.?4WTbTJo43jmnj-LHceI]cOb'2.@2oU0c(sU>E,o>XZ73.;>(EQ5%l8VY-O&&H7!s0\fpc;E@jS,\n'p>\(MK4I8<T6aM1i`/"Ah;@%b97[*@NHCZl1Il>`Q<_4t?=WK#agPBD,UD"j#AKP>CgsCY>muT`AJsG)t&n+a(YTDO$X.C0O%`Y]iZJ8RI1%"061dn:kpj"fL0&RAe5uNV<!p8m;aIgb"W=]V[lUHhJ-A!Q7c&IYj(gShs2CB"U]VGp2`8Xh)X4oF0G1ZF5A3eCjKT)j8h1\/>X?tju1XR^gCRO;b>kU/0jIlFo;KQH3=/SG_+WfpYp/;<>K`ascOR*1WpG8t?RWT`;is[*mfMe>L:@=pNRr?nVgGssF]te:_<ehM#K_RW.5+j"hR?2J\.Q00=2tigVR*'gOge2q`VkH9X91J)lUsJkF^J>_OT6+Ol?C&;uo1'jI.F0ZTO0UBhL-hmub/JX,DV%4[V4H*f9D3*iDITdqoIXD6UfOQ5$oWI<Z0/HmVp..%Gq=#!7#JW4b!ClHONSnecGV!3Q2Q9@oV[)6/6+ESU0=t^MuZR+ErrA*>#MtDVY$\'p#ZgEW1fb)n)A*"ZucNge3iE9JgT]CJ)2kXfDscVP4E]*R%b$q/F`6d:GIE-P40ZH*E'V-2sNtaH3dgI\;V8F3oL==5@C6BVMrHE^@Xt)"YXh5DsH1FV?@^CS9#i)",'NYAsnT==^Ct$.%Mgh&ol@!-GDZ_iVb\5+cPTnq2TNM'eMips4r.He!e6+RO.&6.B#YL.VppMC#D/so!H9pE[;2F#!1bs4D\Ft7Epo)KudHY[dln_WQn'aH!Q)QW+FFRaeS@d=8<0s=%^Vno1`\0iU`i70*k'%670P]#$!k^GVOt0#$na;<dGa(k%CE2^'#oj,8Jd=3p!gDP]>*6_6PJ7M2S0M?l2%a/du5Vn\Sbo[4U]AqsaTn=^Q%9U]X8k-\:InE`.!cJ`op>B2?B(%Or`bDHYP<q1_'R'7>3APrK#IjFPYUe<9>q+!PZaZ"/+SD1X?m/ndZWj0:dEi6N.u+k94h<qR%D,@.iD^k:F+1r\1L)!_3E%_p'TOTha5ZF&"eQ^#TZC?9[1a._A\f>O"X;GI>`+lBa>B?H8982UD$;TTeH>%aZMi?2pHo4\?oA42.udu79Gq3s+`018Fs6jjg<Ss5+2(DC=jeORc'@i\*/&"#`ZRh;l:bI3QU:K[L<L%OCD4a>Ca#:g4rZQaudQKdE:%1$nhb0f846ocRo?N`$a&idK<nZ%)COOBhOZSj9@au_-cV$O[k+]GIl(]#jOg"RT*p,X?#r:qbs-(K6u]$"c]%n3uYOr\jRmUZQ'bAmmfW8e1H*0%1%S:Nf\#W.t3reOMD\*!qmp[B=OM]BHc;k'jI]_o$jL3jM?F$-ui0H:^nr-]REg\fGik6_rL;1jirHGRMSCZacudbi/OH*h%F)k_+RX_&8\rKgP.DMA?c%ch2i#oR2d3u:L:g'Ob1r.Yr=V@[-FdKKt>@&<<^@=$R2oHFrbh!ufC%W8=c:/Pq!lpTBQkutr&!,g4Z)hsP+>KMT=$u=P8oO_?T^akt+=r.?7O.dt>4-23oQp$\apK#i@9F1?(0-h^+^$rR6@[%tc3mFA:-js_j^Zi2;TD+f;`BsEgXjWuuemHYZk@28PiU\C=PPmo@*$,uC$$;Zt-pR>J/Pcb+Wr'2ukb&S,e>;BPXP=ThC7N7$`cL?!ac^[5*Z0ts,HZ8F(9M\*_=u_YN+&WYIs:n+J&b`CZKgW1^]46C4'iCXqn7>X%h)sgMT;TSe,q;\!*#J/O[f.h"nh=8#rtg&dVfjkpkrQrqpAo/Q#\sR%11`/bO>"acns'NH\dl_7oh.mRX1"m=B5t#[""jV^ojA.([<p'=A>df-Au`di,)Ql8Q5%V_>rr2culh_-AjWg+'&fi=S2I1^,rVJUDl+D9.Ypn=VlM\QVUc=Q%$mF*.YNeZ!mr"WB>,K(3s)gXM/H]l/rMWXp.;k<g`U`J(?V>i:Bf\YOD:)C9LuGr]_)b+q9gu]NO5pSEc1-ANg$g8]>gY*Z-Y7VS'&J^EBA]PLfYh_O?h>'IdA`&[1.VFEbXmjQ^r,53OWWGe9XKqH#8M:R\"#Fr]hK2iW!'?PFGbq9f]^EH:(7WZ1o]9WKMqb4"OKMd6\=)pgnYNUn_O+Jk10YT-QLUZbe4<d5Db?RB\_U3[5Rps+O9qPR/;D-"1=s56(3#JS[)H(JrGe\ER>C!16DA>[DLb;qf.bg:2+2;LlHdsReo9N"p('q=G8"PKlj't<7XbS0UjjL$mGLP4[pO[YCcRc-SF#"3g%)01m4B)(0-L$7'`q[^4K=31[,"7R\K'FL\-O3S.+eT3C4cr:SO5;5^&W:0,RnQ2`$n5>J3.B2lt\@5eof>.j1G')'GF$)=*SI5l"$>b1g#k)=p7,CI9<:ftS.mf.18ap/\JdB6ZN'ScKNbgP`b\p_#Kd@shr\(4"CP;"#6WLgG-<Ki5^]6\@SHCt<+[")WN5_&1F7C']-XQ?=0g+92I'\4Z;#S62To8fo#iYT="97Qc]0RVWD@:>]N!4a0ABt9Y!1h"gFEIEEEHA(1@;+2JO,O-j(I1A3i)F.:0JRDf?0R:KaWNe+iF'@DOotOJ4__q:>i3VffsF[d(E\!l?9@sjqj,k5RgLaNh%[1Yjd6dM^@U@@[U\^-h'A#`o7=kPa\+I.X!CF=.h[Z"OuRrJndm^ff;[^e179nA_b4l(Y@,8k;o>/:Q_J;X)T'TnXFR=LoFctEq:\hF4`AueSZN%O"q_;\B(^VH4ouJUA7`gT;oA9!=*ITi5-OB^6(F&2=8^,;<>\ics&=KOPQ7'-.j\-cPkrMWdpf;/::4.>3M\%p7I90crR@G0O+U0^O[bQbb6MG@`UnK?`r4YVk$*8'%be!u3a?9im6E`8(O<[4J9!WO@msss9A9SOb5$$:2Wt0_W36'uZK']rN`s1LkBG'1+'?J[LgCU"Dk<SEY:c<q2j_3e.?-T5],4-fLAT8b4E9Fb-gmH@/j7+0TuAqM(V#"4cNDc@(r8l:Yd,;b54PMu3%o^a["qX.CLB#f<*$3bl_A<*a&TP_;'q%PRWuP#<RA-_]SZ?^VR%:;;I1g]/^V#R:ACE-ESHa!m7i1>OHjIq$^:.qK:(SP+p\'IO'%=&=C6Fj.Q%NW&OW'HHcFO0k.j`qY-P`gEP,pY(1XR]/3Ss)98VSq53"ih[FR&V4Vn2"!NiY#$?+if>^@r,_Ll.udk-J_%iZ&STm1VtGleET3/_u^(X\<Xk.jn"]_Wt"8):f-UAAW4@gON?oXT&c@B3u01\m+`/E:!05d/+RhQ\9$)pED/,1>]?7MD(a+41Zt%`rA9o,EQ?_0n%OT>@!]@-a%Zd>ZsRC\)#qR6F#>;.o:+-AqF%62YWF]G]6AN`Q3K*A(,o`*[8PnE*IXbMI7;nI';IAA'#P7,CdTHUe=NlJ$B9D`,k[NZFPrS&O6-Gg)-5jNVnFW6'rhLq)a;fh@HtIJAf99a?D0bt">8i%bg[8(r6e"V5pf\A4dkC*:*R6.SEd&dDj_:2!HO32Tr>c^l$Id+q9%,ncb'fas&f<.rYD-%fJ+N&hj1O!bAj:4)QmGg]/C`5cB[\^B'3P4?&rRGj5ZZd#X*96.RJ-?4WbCW0qX?>[:8_;U8K(/?W`8;Z)D\Mbi,+.c+6^5$&2$q!fV:mG%O]kAMc1@EpmZ1%.YY`N<n2G_Brc1q72b;>&-%`H"5?Pb'5M,u%-$Q)uMZDES3_)JUJ_FCP,s/jr>B]tODnE$4>b66[^og,\rGNk6Zg@L703F:bba08thDC%o@fJAL.[X1,HM5iFD]e(b?9Xm;PejVT]"p!8E2t[0^W*^kSH!5P>YW.G]TbPZo4`.Z31rZi0Ab5ElKb8WiB>-H7H#5f$Z=m5Ro.m],QbniB'FMau?E2j1d&.r!#?9_`?,^I%4]dpb]PslPXj6NS_3YIn$6RuE36U4eU1qcu:2sfiCQpe/f.SF#,Ei?_V@4]_mIOnTcd=#iJ?./p((!cTaC6cC$5*&CCMO>?l>+F3_6H9X6`,A7f<9l+9Tj_6Ds`?5<)*:/OOpFLc[e(#e$3E=l+$ZWnsldqfg!oaktjSh2]7<\]48,^f-6PQ(pL<0#P8ub"qZ+oeY>+/<WMf03Y8W3B',Yria?5+r@kMLm29(l3M1>NSW\>2n?fZ%?cn"M`,+'U%`E0M:r\PSfC#J\^2\rNeH:$i>cg7*5B,IeU=`&RaunKg!Q8gud\l3ObcZ8b!QVo_UZ&/84,K$=P:6FDVoF\d=2>e+Hn"IEW#j](&?/BY*9;qb$(B=#,@C#+]d'Xis(ZV+,JVSq2k+H)^%=C,rq.;BcL](U]e>b:DgN'K=UFV$^J('n<uSDS\tKY-p/dVLE1ia1`_pheMt!,*S@);dl.aJ%bulCuV#Fuh7c+-WlqaM+E'!^;#WL?@Q/i#WXi5RGTsY[8Xeo;ShY\GIZ;]li&Nm\=i0p1KCT"'!3,`&T6ZN^sMAHuH5H#UeiWRI]PD!@GVNZjnWO%]-4mZ,p[ONgW4qVbf.eB`h-d"O?a@IB;9PmB7[3PEfQPmrnEli'):C'HHIlQuB;qh#d@7!V=,p*u?8raZN[\c.R<*ghP4o95W)7jsa;Ag5CY'#qHRTJL'GfA8s'[A#OR4tG=#p+HK_KcuqK+U'^UuFJlX-)?OGt_DJ>-MR?1&:N_KhYuH34ehuLHL%)!<__b54WKa?O6J&e'Z49Nms&FjEpB'[?-L?@OHhI+?pil_r-bt)_Bp9A9C9sIRD%ESWF@@GGgEWK$AqQ4!ufM(]O-S\IspCU'S?H/o7+N0FY3BdR:@i`GX>S'a;i'cZ`#O.nn_n@7>:)p//AG@5g'IDd7"TL%'!W!3_'BCBAWbYSaRE)8jh8Y[,,;YdUK+4p,ipl_sRM9`eh^cub[oMjR_.Y&G]-M6O.LD>$<b:.LEo_f,32\+bh/79Q=@/:SS6C^1lU'TVL^eVF(rIoI;d0)~>endstream
+endobj
+xref
+0 135
+0000000000 65535 f 
+0000000061 00000 n 
+0000000120 00000 n 
+0000000227 00000 n 
+0000000444 00000 n 
+0000000674 00000 n 
+0000000872 00000 n 
+0000001112 00000 n 
+0000001329 00000 n 
+0000001559 00000 n 
+0000001757 00000 n 
+0000002005 00000 n 
+0000002223 00000 n 
+0000002454 00000 n 
+0000002754 00000 n 
+0000002956 00000 n 
+0000003210 00000 n 
+0000003451 00000 n 
+0000003669 00000 n 
+0000003969 00000 n 
+0000004200 00000 n 
+0000004399 00000 n 
+0000004640 00000 n 
+0000004895 00000 n 
+0000005113 00000 n 
+0000005413 00000 n 
+0000005612 00000 n 
+0000005861 00000 n 
+0000006059 00000 n 
+0000006273 00000 n 
+0000006460 00000 n 
+0000006705 00000 n 
+0000006913 00000 n 
+0000007127 00000 n 
+0000007314 00000 n 
+0000007569 00000 n 
+0000007777 00000 n 
+0000008077 00000 n 
+0000008264 00000 n 
+0000008466 00000 n 
+0000008721 00000 n 
+0000008939 00000 n 
+0000009137 00000 n 
+0000009351 00000 n 
+0000009538 00000 n 
+0000009740 00000 n 
+0000009994 00000 n 
+0000010212 00000 n 
+0000010410 00000 n 
+0000010710 00000 n 
+0000010912 00000 n 
+0000011166 00000 n 
+0000011384 00000 n 
+0000011684 00000 n 
+0000011886 00000 n 
+0000012127 00000 n 
+0000012381 00000 n 
+0000012599 00000 n 
+0000012899 00000 n 
+0000013098 00000 n 
+0000013300 00000 n 
+0000013554 00000 n 
+0000013803 00000 n 
+0000014021 00000 n 
+0000014321 00000 n 
+0000014520 00000 n 
+0000014777 00000 n 
+0000014975 00000 n 
+0000015275 00000 n 
+0000015477 00000 n 
+0000015722 00000 n 
+0000015920 00000 n 
+0000016134 00000 n 
+0000016336 00000 n 
+0000016590 00000 n 
+0000016808 00000 n 
+0000017028 00000 n 
+0000017328 00000 n 
+0000017527 00000 n 
+0000017781 00000 n 
+0000017999 00000 n 
+0000018227 00000 n 
+0000018527 00000 n 
+0000018726 00000 n 
+0000018928 00000 n 
+0000019169 00000 n 
+0000019367 00000 n 
+0000019667 00000 n 
+0000019869 00000 n 
+0000020072 00000 n 
+0000020313 00000 n 
+0000020511 00000 n 
+0000020725 00000 n 
+0000020912 00000 n 
+0000021115 00000 n 
+0000021360 00000 n 
+0000021576 00000 n 
+0000021788 00000 n 
+0000022086 00000 n 
+0000022271 00000 n 
+0000022514 00000 n 
+0000022731 00000 n 
+0000023030 00000 n 
+0000023228 00000 n 
+0000023476 00000 n 
+0000023673 00000 n 
+0000023892 00000 n 
+0000024119 00000 n 
+0000024418 00000 n 
+0000024619 00000 n 
+0000024865 00000 n 
+0000025084 00000 n 
+0000025311 00000 n 
+0000025509 00000 n 
+0000025765 00000 n 
+0000026011 00000 n 
+0000026228 00000 n 
+0000026447 00000 n 
+0000026746 00000 n 
+0000026973 00000 n 
+0000027171 00000 n 
+0000027411 00000 n 
+0000027611 00000 n 
+0000028712 00000 n 
+0000029473 00000 n 
+0000035762 00000 n 
+0000036003 00000 n 
+0000036743 00000 n 
+0000037513 00000 n 
+0000043861 00000 n 
+0000044095 00000 n 
+0000044834 00000 n 
+0000044906 00000 n 
+0000045269 00000 n 
+0000045332 00000 n 
+trailer
+<<
+/ID 
+[<3f1fa64026453e93a42d727fe8351ce0><3f1fa64026453e93a42d727fe8351ce0>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 132 0 R
+/Root 131 0 R
+/Size 135
+>>
+startxref
+54619
+%%EOF
