@@ -57,11 +57,15 @@ The [unfused baseline](evidence/rms-softmax/code/bench.cu) uses 9 kernels to com
 
 ## 1. CUDA Graphs: Reduce Repeated Submission Overhead
 
-[Capture the baseline’s 9 launches](evidence/rms-softmax/implementation.html#cuda-graph-capture-and-replay) and instantiate the resulting CUDA Graph. Each replay then submits the chain with 1 `cudaGraphLaunch` call. [Instantiation](https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-programming-guide/index.html#cuda-graphs) performs much of the launch setup in advance.
+[Capture the baseline’s 9 launches](evidence/rms-softmax/implementation.html#cuda-graph-capture-and-replay) and instantiate the resulting CUDA Graph. Each replay then submits the chain with 1 `cudaGraphLaunch` call.
+
+Each ordinary kernel launch requires driver work to prepare its execution. [Graph instantiation](https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-programming-guide/index.html#cuda-graphs) performs much of this preparation ahead of time, allowing subsequent replays to reuse it.
 
 ![Direct execution uses 9 CPU launch calls; CUDA Graph replay uses 1 cudaGraphLaunch call after capture and instantiation. Both execute the same ordered chain of 9 separate GPU kernels, K1 through K9.](assets/rms-graph-replay.png)
 
 *The same 9 kernels and intermediate tensors remain. Boxes and arrows show submission and execution order, not timing.*
+
+The CPU can enqueue later kernels while earlier kernels execute, hiding some submission overhead. Reducing CPU submission work therefore need not shorten completion time by the same amount. Graphs can also [reduce launch and dependency overhead on the GPU](https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/).
 
 Replay leaves these kernel bodies unchanged. A later kernel cannot inherit a completed kernel’s registers or shared-memory contents.
 
@@ -97,7 +101,9 @@ Blocks waiting at a barrier still occupy registers and shared memory; if the blo
 
 ## What the H100 Measurements Show
 
-We measured repeated execution on H100 80 GB GPUs (CUDA 12.8.1), using the same input after warmup. Setup and transfers are excluded. The megakernel uses graph replay, with grid-wide barriers for one row and row-scoped barriers for 16–64 rows. The 64-row case is split across 2 launches to fit the cooperative launch limit.
+We measured repeated execution on H100 80 GB GPUs (CUDA 12.8.1), using the same input after warmup. We time one invocation from submission until stream synchronization returns. Graph capture, instantiation, first-launch upload and data transfers are excluded.
+
+The megakernel uses graph replay, with grid-wide barriers for one row and row-scoped barriers for 16–64 rows. The 64-row case is split across 2 launches to fit the cooperative launch limit.
 
 ![Host completion time across four row counts. Each panel progresses from an unfused baseline through CUDA Graph replay, local fusion and a megakernel; graph replay remains enabled for both fusion steps.](assets/rms-completion.png)
 
@@ -115,7 +121,7 @@ In a separate experiment at 16 rows, runtime switches add input reloads, writes 
 
 Reloading the input adds **1.39 µs**; writing exponentials to global memory and reading them back adds **2.87 µs**. Both controls copy the reloaded values into shared memory and add block-level synchronization. The measured penalties therefore include these operations too; they do not isolate global-memory access cost.
 
-These results cover warm execution at one row width on H100. Application speedups and other GPUs need separate measurements. The [full results and methods](evidence/rms-softmax/results.html) include per-session timings, both barrier variants, direct launches and slower candidates.
+These results cover warm invocation latency at one row width on H100. Application speedups and other GPUs need separate measurements. The [full results and methods](evidence/rms-softmax/results.html) include per-session timings, both barrier variants, direct launches and slower candidates.
 
 ## When Is the Extra Control Worthwhile?
 
