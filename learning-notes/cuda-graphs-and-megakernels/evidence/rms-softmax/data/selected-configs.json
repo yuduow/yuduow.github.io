@@ -1,0 +1,210 @@
+{
+  "1": {
+    "baseline": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 9,
+      "pilot_median_us": 23.358875
+    },
+    "local_best": "local_recompute",
+    "local_materialize": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 3,
+      "pilot_median_us": 13.629625
+    },
+    "local_materialize2": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 2,
+      "pilot_median_us": 20.828875
+    },
+    "local_recompute": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 3,
+      "pilot_median_us": 11.8246875
+    },
+    "local_recompute2": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 2,
+      "pilot_median_us": 19.537125
+    },
+    "mega_best": "retained",
+    "retained": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 1,
+      "pilot_median_us": 10.23175
+    },
+    "row_retained": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 1,
+      "pilot_median_us": 10.8586875
+    },
+    "streaming": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 1,
+      "pilot_median_us": 42.3241875
+    }
+  },
+  "16": {
+    "baseline": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 9,
+      "pilot_median_us": 32.124625
+    },
+    "local_best": "local_recompute",
+    "local_materialize": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 3,
+      "pilot_median_us": 16.1535
+    },
+    "local_materialize2": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 2,
+      "pilot_median_us": 29.5775
+    },
+    "local_recompute": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 3,
+      "pilot_median_us": 14.9539375
+    },
+    "local_recompute2": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 2,
+      "pilot_median_us": 26.3255
+    },
+    "mega_best": "row_retained",
+    "retained": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 1,
+      "pilot_median_us": 14.3920625
+    },
+    "row_retained": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 1,
+      "pilot_median_us": 14.30075
+    },
+    "streaming": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 1,
+      "pilot_median_us": 53.4168125
+    }
+  },
+  "32": {
+    "baseline": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 9,
+      "pilot_median_us": 58.280375
+    },
+    "local_best": "local_recompute",
+    "local_materialize": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 3,
+      "pilot_median_us": 34.840625
+    },
+    "local_materialize2": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 2,
+      "pilot_median_us": 60.854625
+    },
+    "local_recompute": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 3,
+      "pilot_median_us": 22.474875
+    },
+    "local_recompute2": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 2,
+      "pilot_median_us": 38.864
+    },
+    "mega_best": "row_retained",
+    "retained": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 1,
+      "pilot_median_us": 20.47625
+    },
+    "row_retained": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 1,
+      "pilot_median_us": 19.4246875
+    },
+    "streaming": {
+      "T": 256,
+      "W": 16384,
+      "kernel_nodes": 1,
+      "pilot_median_us": 65.089
+    }
+  },
+  "64": {
+    "baseline": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 9,
+      "pilot_median_us": 131.629125
+    },
+    "local_best": "local_recompute",
+    "local_materialize": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 3,
+      "pilot_median_us": 80.279875
+    },
+    "local_materialize2": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 2,
+      "pilot_median_us": 108.949625
+    },
+    "local_recompute": {
+      "T": 128,
+      "W": 4096,
+      "kernel_nodes": 3,
+      "pilot_median_us": 56.5585
+    },
+    "local_recompute2": {
+      "T": 256,
+      "W": 16384,
+      "kernel_nodes": 2,
+      "pilot_median_us": 77.5295
+    },
+    "mega_best": "row_retained",
+    "retained": {
+      "T": 256,
+      "W": 8192,
+      "kernel_nodes": 2,
+      "pilot_median_us": 50.909375
+    },
+    "row_retained": {
+      "T": 256,
+      "W": 4096,
+      "kernel_nodes": 2,
+      "pilot_median_us": 49.618125
+    },
+    "streaming": {
+      "T": 256,
+      "W": 16384,
+      "kernel_nodes": 1,
+      "pilot_median_us": 119.5600625
+    }
+  }
+}

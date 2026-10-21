@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CUDA Graphs reduce launch overhead. When is a megakernel still worth the complexity? Follow one RMS-scaled softmax workload through graph replay, local fusion, and a megakernel on H100.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Evidence and data · Yuduo Wu</title>
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css?v=801d734e66c4">
+  <link rel="stylesheet" href="../../../blog.css?v=8e5f5b11daff">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page" id="content">
+    <header class="blog-masthead"><a href="../../../">Yuduo Wu</a><a href="../../../learning-notes/">Learning Notes</a></header>
+    <header class="post-header"><p class="post-meta"><span class="draft-label">Supporting material</span></p><h1>Evidence and data</h1><p class="post-deck">Sources, methods, and selected artifacts for CUDA Graphs, Fusion, and Megakernels.</p></header>
+    <article class="post-content">
+      <h2>Current article: one RMS-scaled softmax workload</h2>
+      <ul><li><a href="rms-softmax/">Evidence and reproduction</a> — frozen source, timing samples, dependency traces and hashes.</li><li><a href="rms-softmax/results.html">Results</a> and <a href="rms-softmax/full-results/">complete timing tables</a> — all measured candidates and both studies.</li><li><a href="rms-softmax/protocol.html">Methods</a>, <a href="rms-softmax/claim-audit.html">claim audit</a>, <a href="rms-softmax/validation-recheck.json">fresh recheck</a> and <a href="rms-softmax/figure-provenance.json">figure provenance</a>.</li></ul>
+      <h2>Historical two-example softmax experiments</h2>
+      <ul><li><a href="softmax/">Softmax evidence and reproduction</a> — selected source, raw timing samples, task traces, and hashes.</li><li><a href="softmax/protocol.html">Experiment protocol</a> and <a href="softmax/results.html">full results</a> — all shapes, ordinary-launch baselines, graph/fusion combinations, and cuDNN reference.</li><li><a href="softmax/softmax-recheck.json">Timing and trace recheck</a> and <a href="softmax/softmax-figure-provenance.json">article figure provenance</a>.</li><li><a href="fact-check.html">Historical claim audit</a> — the earlier article scope and original X audit.</li></ul>
+      <h2>Earlier experiment and original article audit</h2>
+      <ul><li><a href="protocol.html">October 18 protocol</a> and <a href="results.html">results</a> — earlier pointwise and synthetic scheduling examples.</li><li><a href="editorial-recheck.json">October 18 numerical recheck</a>, <a href="artifacts/20261018T211922Z/">selected raw data</a>, and <a href="code/">experiment source</a>.</li><li><a href="experiment-provenance.json">Earlier figure provenance</a> and <a href="claim-ledger.json">original 71-entry X claim ledger</a>.</li></ul>
+      <p>Full binary arrays and raw profiler captures remain in the research archives. Bundle manifests record the <a href="rms-softmax/bundle-manifest.json">current RMS-scaled softmax selection</a>, <a href="softmax/bundle-manifest.json">historical softmax selection</a> and <a href="bundle-manifest.json">earlier evidence selection</a>.</p>
+    </article><footer class="post-footer"><a href="../">Back to the article</a></footer>
+  </main>
+</body>
+</html>

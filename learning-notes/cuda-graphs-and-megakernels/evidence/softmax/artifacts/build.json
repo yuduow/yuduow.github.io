@@ -1,0 +1,46 @@
+{
+  "commands": [
+    [
+      "nvcc",
+      "-O3",
+      "-std=c++17",
+      "-arch=sm_90",
+      "-lineinfo",
+      "--fmad=false",
+      "-I/usr/local/lib/python3.12/site-packages/nvidia/cudnn/include",
+      "-Xptxas=-v",
+      "/workspace/bench.cu",
+      "-L/usr/local/lib/python3.12/site-packages/nvidia/cudnn/lib",
+      "-l:libcudnn.so.9",
+      "-Xlinker",
+      "-rpath",
+      "-Xlinker",
+      "/usr/local/lib/python3.12/site-packages/nvidia/cudnn/lib",
+      "-o",
+      "/workspace/bench"
+    ],
+    [
+      "nvcc",
+      "-O3",
+      "-std=c++17",
+      "-arch=sm_90",
+      "-lineinfo",
+      "--fmad=false",
+      "-I/usr/local/lib/python3.12/site-packages/nvidia/cudnn/include",
+      "--ptx",
+      "/workspace/bench.cu",
+      "-o",
+      "/workspace/bench.ptx"
+    ],
+    [
+      "cuobjdump",
+      "--dump-sass",
+      "/workspace/bench"
+    ]
+  ],
+  "library_paths": [
+    "/usr/local/lib/python3.12/site-packages/nvidia/cudnn/lib",
+    "/usr/local/lib/python3.12/site-packages/nvidia/cuda_nvrtc/lib",
+    "/usr/local/lib/python3.12/site-packages/nvidia/cublas/lib"
+  ]
+}

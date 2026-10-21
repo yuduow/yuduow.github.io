@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="NPU hardware components and low-level programming concepts across MediaTek, Qualcomm, Apple, Intel and AMD, with sources and a downloadable PDF.">
+  <meta name="theme-color" content="#ffffff">
+  <title>On-Device NPU Terminology Cheat Sheet</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' rx='12' fill='%23232e2b'/%3E%3Cpath d='M23 23h18v18H23z' fill='none' stroke='%23dae8c8' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="npu-reference/style.css">
+  <link rel="stylesheet" href="writeup.css">
+  <script defer src="npu-reference/app.js"></script>
+  <link rel="stylesheet" href="../../note-icons.css?v=4b469568df12">
+</head>
+<body>
+  <a class="skip-link" href="#reference">Skip to the reference</a>
+  <div class="page">
+    <div class="writeup-meta"><a href="../">← Learning Notes</a><time datetime="2026-10-18">October 18, 2026</time></div>
+    <header class="hero">
+      <h1><svg class="note-title-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>On-Device NPU Terminology Cheat Sheet</h1>
+      <a class="download" href="npu-terminology-cheat-sheet.pdf" download="npu-terminology-cheat-sheet.pdf">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>Download PDF
+      </a>
+    </header>
+    <div class="reference-tools">
+      <nav aria-label="Reference sections"><a href="#hardware">Hardware</a><a href="#programming-model">Programming model</a></nav>
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <input id="search" type="search" placeholder="Find a term" aria-label="Find a concept or term" autocomplete="off">
+        <button id="clear-search" aria-label="Clear search" hidden>×</button>
+      </div>
+    </div>
+    <main id="reference">
+      <div class="reading-note"><p>* Reverse-engineered Apple M1 findings. A dash means no validated mapping in the reviewed sources.</p><button id="toggle-sources" aria-pressed="false">Show citations</button></div>
+      <p class="order-note">Columns follow an approximate editorial order by platform reach. Hardware examples are generation-specific. <a href="#sources">Sources &amp; scope</a></p>
+      <p id="result-count" role="status" aria-live="polite" class="search-status" hidden></p>
+      <div id="empty-state" hidden><h2>No matching terms</h2><p>Try “vector”, “memory” or “DMA”.</p><button id="reset-search">Clear search</button></div>
+      <section class="concept-section" id="hardware" aria-labelledby="hardware-title">
+          <div class="section-heading"><h2 id="hardware-title"><span>01</span>Hardware</h2><p>Compute, conversion, memory, data movement and interconnects</p></div>
+          <table role="table" aria-label="Hardware terminology">
+            <colgroup><col class="concept-col"><col><col><col><col><col></colgroup>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="mediatek">MediaTek<small>Genio MT8370</small></th><th role="columnheader" scope="col" class="qualcomm">Qualcomm<small>Hexagon</small></th><th role="columnheader" scope="col" class="apple">Apple<small>M1 Neural Engine</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Core Ultra 200S/HX</small></th><th role="columnheader" scope="col" class="amd">AMD<small>XDNA / XDNA 2</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="accelerator apu / apusys ai processor unit hexagon npu neural engine intel npu core ultra xdna npu ryzen ai the neural-network accelerator as a whole. family names identify hardware, not a common microarchitecture.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Accelerator</span><p class="definition">The neural-network accelerator as a whole. Family names identify hardware, not a common microarchitecture.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">APU / APUSYS<span class="term-note">AI Processor Unit</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Accelerator"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">Hexagon NPU</span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Accelerator"><a class="citation" href="#source-2" aria-label="Source 2: Qualcomm: Hexagon NPU architecture">2</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Neural Engine</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Accelerator"><a class="citation" href="#source-5" aria-label="Source 5: Apple: M1 Neural Engine">5</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Intel NPU<span class="term-note">Core Ultra</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Accelerator"><a class="citation" href="#source-7" aria-label="Source 7: Intel: NCE subsystem, Core Ultra 200S / 200HX">7</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">XDNA NPU<span class="term-note">Ryzen AI</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Accelerator"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="compute grouping mdla + vp6 specialized engines scalar + vector + tensor fused accelerators neural engine core nce tile neural compute engine ai engine tile spatial array how computing resources are grouped. a core, tile or engine has a different scope on each platform.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Compute grouping</span><p class="definition">How computing resources are grouped. A core, tile or engine has a different scope on each platform.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">MDLA + VP6<span class="term-note">Specialized engines</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Compute grouping"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">Scalar + vector + tensor<span class="term-note">Fused accelerators</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Compute grouping"><a class="citation" href="#source-2" aria-label="Source 2: Qualcomm: Hexagon NPU architecture">2</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Neural Engine core</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Compute grouping"><a class="citation" href="#source-5" aria-label="Source 5: Apple: M1 Neural Engine">5</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">NCE tile<span class="term-note">Neural Compute Engine</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Compute grouping"><a class="citation" href="#source-7" aria-label="Source 7: Intel: NCE subsystem, Core Ultra 200S / 200HX">7</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">AI Engine tile<span class="term-note">Spatial array</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Compute grouping"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a> <a class="citation" href="#source-11" aria-label="Source 11: AMD/Xilinx: Ryzen AI programming guide, MLIR-AIE 1.4.4">11</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="matrix / tensor engine mdla convolution engine within the mdla accelerator hmx matrix extension mac array* multiply-accumulate datapath dpu data processing unit ai engine vector unit matrix mac operations hardware that performs many multiply-accumulate operations for matrix products and convolutions.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Matrix / tensor engine</span><p class="definition">Hardware that performs many multiply-accumulate operations for matrix products and convolutions.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">MDLA convolution engine<span class="term-note">Within the MDLA accelerator</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Matrix / tensor engine"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">HMX<span class="term-note">Matrix eXtension</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Matrix / tensor engine"><a class="citation" href="#source-4" aria-label="Source 4: Qualcomm: Hexagon V81 HMX manual, pp. 3-16">4</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">MAC array<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Multiply-accumulate datapath</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Matrix / tensor engine"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">DPU<span class="term-note">Data Processing Unit</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Matrix / tensor engine"><a class="citation" href="#source-15" aria-label="Source 15: Intel: NCE tile and DPU, Core Ultra 200S / 200HX">15</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">AI Engine vector unit<span class="term-note">Matrix MAC operations</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Matrix / tensor engine"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a> <a class="citation" href="#source-10" aria-label="Source 10: AMD: AI Engine matrix multiplication, 2025.2">10</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="compute precision fix8 / fix16 / fp16 / bf16 mdla; fix = fixed point fp16 (hmx v81 example) 37-bit float accumulation fp16 operands* wider accumulation reported int8 / fp16 npu 3 mac arrays int8 / bf16 xdna 2: also block fp16 numeric formats used for multiply operands. documented examples, not full support lists; accumulation and stored weights may use other formats.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Compute precision</span><p class="definition">Numeric formats used for multiply operands. Documented examples, not full support lists; accumulation and stored weights may use other formats.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">Fix8 / Fix16 / FP16 / BF16<span class="term-note">MDLA; Fix = fixed point</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Compute precision"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">FP16 (HMX V81 example)<span class="term-note">37-bit float accumulation</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Compute precision"><a class="citation" href="#source-4" aria-label="Source 4: Qualcomm: Hexagon V81 HMX manual, pp. 3-16">4</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">FP16 operands<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Wider accumulation reported</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Compute precision"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">INT8 / FP16<span class="term-note">NPU 3 MAC arrays</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Compute precision"><a class="citation" href="#source-16" aria-label="Source 16: Intel: Arrow Lake S &amp; HX briefing, NPU 3 architecture (p. 40)">16</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">INT8 / BF16<span class="term-note">XDNA 2: also Block FP16</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Compute precision"><a class="citation" href="#source-10" aria-label="Source 10: AMD: AI Engine matrix multiplication, 2025.2">10</a> <a class="citation" href="#source-17" aria-label="Source 17: AMD: AI Engine API basic types, 2025.2">17</a> <a class="citation" href="#source-27" aria-label="Source 27: AMD: XDNA 2 Block FP16 announcement (June 2024)">27</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="vector processor vp6 vision-p6 dsp hvx vector extensions - act-shave activation shave dsp ai engine vector processor simd a programmable processor that applies one instruction across multiple data elements (simd).">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Vector processor</span><p class="definition">A programmable processor that applies one instruction across multiple data elements (SIMD).</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">VP6<span class="term-note">Vision-P6 DSP</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Vector processor"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">HVX<span class="term-note">Vector eXtensions</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Vector processor"><a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Vector processor"></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">ACT-SHAVE<span class="term-note">Activation SHAVE DSP</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Vector processor"><a class="citation" href="#source-8" aria-label="Source 8: Intel: NCE controller and ACT-SHAVE, Core Ultra 200S / 200HX">8</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">AI Engine vector processor<span class="term-note">SIMD</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Vector processor"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="activation / elementwise element-wise engine within mdla hmx convert state activation operations elementwise / planar* activation lookup table activation function inference-pipeline stage ai engine vector processor elementwise kernels resources for pointwise arithmetic and activation functions. fixed-function stages and programmable vector processors differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Activation / elementwise</span><p class="definition">Resources for pointwise arithmetic and activation functions. Fixed-function stages and programmable vector processors differ.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">Element-wise engine<span class="term-note">Within MDLA</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Activation / elementwise"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">HMX convert state<span class="term-note">Activation operations</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Activation / elementwise"><a class="citation" href="#source-4" aria-label="Source 4: Qualcomm: Hexagon V81 HMX manual, pp. 3-16">4</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Elementwise / planar<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Activation lookup table</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Activation / elementwise"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Activation Function<span class="term-note">Inference-pipeline stage</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Activation / elementwise"><a class="citation" href="#source-16" aria-label="Source 16: Intel: Arrow Lake S &amp; HX briefing, NPU 3 architecture (p. 40)">16</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">AI Engine vector processor<span class="term-note">Elementwise kernels</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Activation / elementwise"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a> <a class="citation" href="#source-18" aria-label="Source 18: AMD/Xilinx: Kernel library, MLIR-AIE 1.4.4">18</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="numeric conversion edma numeric conversion f16 / f32 hmx convert transfer scale / round for fp16 output fp16 output rounding* after accumulation data conversion inference-pipeline stage srs path / to_vector shift-round-saturate changes numeric representation or range through format conversion, rounding or saturation. available operations differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Numeric conversion</span><p class="definition">Changes numeric representation or range through format conversion, rounding or saturation. Available operations differ.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">EDMA numeric conversion<span class="term-note">F16 / F32</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Numeric conversion"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">HMX convert transfer<span class="term-note">Scale / round for FP16 output</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Numeric conversion"><a class="citation" href="#source-4" aria-label="Source 4: Qualcomm: Hexagon V81 HMX manual, pp. 3-16">4</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">FP16 output rounding<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">After accumulation</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Numeric conversion"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Data Conversion<span class="term-note">Inference-pipeline stage</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Numeric conversion"><a class="citation" href="#source-16" aria-label="Source 16: Intel: Arrow Lake S &amp; HX briefing, NPU 3 architecture (p. 40)">16</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">SRS path / to_vector<span class="term-note">Shift-round-saturate</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Numeric conversion"><a class="citation" href="#source-24" aria-label="Source 24: AMD: AI Engine API numeric conversions, 2025.2">24</a> <a class="citation" href="#source-25" aria-label="Source 25: AMD/Xilinx: SRS hardware path, MLIR-AIE 1.4.4">25</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="control &amp; scheduling cmde mdla command engine hexagon scalar core firmware scheduler* task queues leon scheduler dpu / act-shave dispatch risc scalar processor inside each ai engine tile logic that decodes or schedules work. these examples range from command engines to scalar processors.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Control &amp; scheduling</span><p class="definition">Logic that decodes or schedules work. These examples range from command engines to scalar processors.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">CMDE<span class="term-note">MDLA command engine</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Control &amp; scheduling"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">Hexagon scalar core</span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Control &amp; scheduling"><a class="citation" href="#source-2" aria-label="Source 2: Qualcomm: Hexagon NPU architecture">2</a> <a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Firmware scheduler<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Task queues</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Control &amp; scheduling"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">LEON scheduler<span class="term-note">DPU / ACT-SHAVE dispatch</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Control &amp; scheduling"><a class="citation" href="#source-8" aria-label="Source 8: Intel: NCE controller and ACT-SHAVE, Core Ultra 200S / 200HX">8</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">RISC scalar processor<span class="term-note">Inside each AI Engine tile</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Control &amp; scheduling"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="local data memory vp6 data ram local to the vector dsp vtcm vector tightly coupled memory on-chip sram* compiler-managed scratchpad cmx sram connection matrix local data memory compute / mem tiles storage near the compute units for operands or intermediate data. caches and scratchpads have different management rules.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Local data memory</span><p class="definition">Storage near the compute units for operands or intermediate data. Caches and scratchpads have different management rules.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">VP6 data RAM<span class="term-note">Local to the vector DSP</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Local data memory"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">VTCM<span class="term-note">Vector tightly coupled memory</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Local data memory"><a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a> <a class="citation" href="#source-4" aria-label="Source 4: Qualcomm: Hexagon V81 HMX manual, pp. 3-16">4</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">On-chip SRAM<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Compiler-managed scratchpad</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Local data memory"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">CMX SRAM<span class="term-note">Connection MatriX</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Local data memory"><a class="citation" href="#source-7" aria-label="Source 7: Intel: NCE subsystem, Core Ultra 200S / 200HX">7</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Local data memory<span class="term-note">Compute / mem tiles</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Local data memory"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a> <a class="citation" href="#source-11" aria-label="Source 11: AMD/Xilinx: Ryzen AI programming guide, MLIR-AIE 1.4.4">11</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="instruction storage imem + instruction cache vp6 l1 instruction cache hexagon core - shared instruction l2 cache act-shave program memory inside each compute tile stores or caches code for programmable compute processors. program ram and hardware-managed instruction caches differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Instruction storage</span><p class="definition">Stores or caches code for programmable compute processors. Program RAM and hardware-managed instruction caches differ.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">IMEM + instruction cache<span class="term-note">VP6</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Instruction storage"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">L1 instruction cache<span class="term-note">Hexagon core</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Instruction storage"><a class="citation" href="#source-19" aria-label="Source 19: Qualcomm: Hexagon V73 manual, pp. 69 and 82">19</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Instruction storage"></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Shared instruction L2 cache<span class="term-note">ACT-SHAVE</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Instruction storage"><a class="citation" href="#source-15" aria-label="Source 15: Intel: NCE tile and DPU, Core Ultra 200S / 200HX">15</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Program memory<span class="term-note">Inside each compute tile</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Instruction storage"><a class="citation" href="#source-20" aria-label="Source 20: AMD: NPU driver architecture, Linux kernel documentation">20</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="data movement edma external dma; format conversion vmem loads / stores external dma via axi tile dma / kernel dma* operands, results and weights dma engines dram / cmx transfers tile dma / shim dma memory transfers hardware paths that transfer data between memory and compute resources; transfers may overlap computation.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Data movement</span><p class="definition">Hardware paths that transfer data between memory and compute resources; transfers may overlap computation.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">EDMA<span class="term-note">External DMA; format conversion</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Data movement"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">VMEM loads / stores<span class="term-note">External DMA via AXI</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Data movement"><a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Tile DMA / kernel DMA<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Operands, results and weights</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Data movement"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">DMA engines<span class="term-note">DRAM / CMX transfers</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Data movement"><a class="citation" href="#source-7" aria-label="Source 7: Intel: NCE subsystem, Core Ultra 200S / 200HX">7</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Tile DMA / shim DMA<span class="term-note">Memory transfers</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Data movement"><a class="citation" href="#source-11" aria-label="Source 11: AMD/Xilinx: Ryzen AI programming guide, MLIR-AIE 1.4.4">11</a> <a class="citation" href="#source-12" aria-label="Source 12: AMD/Xilinx: DMA and hardware locks, MLIR-AIE 1.4.4">12</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="interconnect apu noc on-chip network axi slave port external dma interface - - axi stream switch fabric tile-to-tile streams connections carrying data between engines and memory. memory-mapped interfaces and streaming fabrics use different protocols.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Interconnect</span><p class="definition">Connections carrying data between engines and memory. Memory-mapped interfaces and streaming fabrics use different protocols.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">APU NoC<span class="term-note">On-chip network</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Interconnect"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">AXI slave port<span class="term-note">External DMA interface</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Interconnect"><a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Interconnect"></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Interconnect"></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">AXI stream switch fabric<span class="term-note">Tile-to-tile streams</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Interconnect"><a class="citation" href="#source-12" aria-label="Source 12: AMD/Xilinx: DMA and hardware locks, MLIR-AIE 1.4.4">12</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="layout transformation transpose engine c-w / depth2space / space2depth hvx shuffle / deal vshuff / vdeal transpose configuration* task-descriptor fields - tile dma address generation to_stream / from_stream changes tensor or vector element order. dedicated transpose units, shuffle instructions and dma addressing have different scopes.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Layout transformation</span><p class="definition">Changes tensor or vector element order. Dedicated transpose units, shuffle instructions and DMA addressing have different scopes.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">Transpose engine<span class="term-note">C-W / Depth2Space / Space2Depth</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Layout transformation"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">HVX shuffle / deal<span class="term-note">vshuff / vdeal</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Layout transformation"><a class="citation" href="#source-23" aria-label="Source 23: Qualcomm: V73 HVX shuffle/deal instructions, pp. 203 and 218">23</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Transpose configuration<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Task-descriptor fields</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Layout transformation"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Layout transformation"></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Tile DMA address generation<span class="term-note">to_stream / from_stream</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Layout transformation"><a class="citation" href="#source-22" aria-label="Source 22: AMD/Xilinx: DMA data-layout transformations, MLIR-AIE 1.4.4">22</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="weight compression compressed weights mdla; codec unspecified - palette / sparse weights* m1 native streaming formats in-line weight decompression dma engines - compact weight representations reduce storage or transfer volume. compression formats do not determine compute precision.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Weight compression</span><p class="definition">Compact weight representations reduce storage or transfer volume. Compression formats do not determine compute precision.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">Compressed weights<span class="term-note">MDLA; codec unspecified</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Weight compression"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Weight compression"></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Palette / sparse weights<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">M1 native streaming formats</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Weight compression"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">In-line weight decompression<span class="term-note">DMA engines</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Weight compression"><a class="citation" href="#source-7" aria-label="Source 7: Intel: NCE subsystem, Core Ultra 200S / 200HX">7</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Weight compression"></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="address translation iommu apusys memory path hexagon mmu processor address space dart* ane iommu mmu npu memory path host iommu pasid-based isolation maps virtual or device addresses to physical memory. processor mmus and host iommus serve different address spaces.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Address translation</span><p class="definition">Maps virtual or device addresses to physical memory. Processor MMUs and host IOMMUs serve different address spaces.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">IOMMU<span class="term-note">APUSYS memory path</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Address translation"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">Hexagon MMU<span class="term-note">Processor address space</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Address translation"><a class="citation" href="#source-19" aria-label="Source 19: Qualcomm: Hexagon V73 manual, pp. 69 and 82">19</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">DART<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">ANE IOMMU</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Address translation"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">MMU<span class="term-note">NPU memory path</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Address translation"><a class="citation" href="#source-16" aria-label="Source 16: Intel: Arrow Lake S &amp; HX briefing, NPU 3 architecture (p. 40)">16</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Host IOMMU<span class="term-note">PASID-based isolation</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Address translation"><a class="citation" href="#source-20" aria-label="Source 20: AMD: NPU driver architecture, Linux kernel documentation">20</a></div></div>
+                </td>
+            </tr></tbody>
+          </table></section>
+<section class="concept-section" id="programming-model" aria-labelledby="programming-model-title">
+          <div class="section-heading"><h2 id="programming-model-title"><span>02</span>Programming model</h2><p>Execution, transfer records, tensor blocks and synchronization</p></div>
+          <table role="table" aria-label="Programming model terminology">
+            <colgroup><col class="concept-col"><col><col><col><col><col></colgroup>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="mediatek">MediaTek<small>Genio MT8370</small></th><th role="columnheader" scope="col" class="qualcomm">Qualcomm<small>Hexagon</small></th><th role="columnheader" scope="col" class="apple">Apple<small>M1 Neural Engine</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Core Ultra 200S/HX</small></th><th role="columnheader" scope="col" class="amd">AMD<small>XDNA / XDNA 2</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="execution model vp6: vliw + simd mdla: command-driven hexagon / hvx: vliw hmx: matrix instructions hardware task descriptors* register configuration dpu / act-shave work scheduled hardware tasks tile kernels + dataflow vliw / simd within tiles how instructions or tasks express parallel work at the hardware boundary. these are distinct programming models.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Execution model</span><p class="definition">How instructions or tasks express parallel work at the hardware boundary. These are distinct programming models.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term">VP6: VLIW + SIMD<span class="term-note">MDLA: command-driven</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Execution model"><a class="citation" href="#source-1" aria-label="Source 1: MediaTek: MT8370 datasheet v1.2, pp. 46-52">1</a></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">Hexagon / HVX: VLIW<span class="term-note">HMX: matrix instructions</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Execution model"><a class="citation" href="#source-2" aria-label="Source 2: Qualcomm: Hexagon NPU architecture">2</a> <a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a> <a class="citation" href="#source-4" aria-label="Source 4: Qualcomm: Hexagon V81 HMX manual, pp. 3-16">4</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Hardware task descriptors<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Register configuration</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Execution model"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">DPU / ACT-SHAVE work<span class="term-note">Scheduled hardware tasks</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Execution model"><a class="citation" href="#source-7" aria-label="Source 7: Intel: NCE subsystem, Core Ultra 200S / 200HX">7</a> <a class="citation" href="#source-8" aria-label="Source 8: Intel: NCE controller and ACT-SHAVE, Core Ultra 200S / 200HX">8</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Tile kernels + dataflow<span class="term-note">VLIW / SIMD within tiles</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Execution model"><a class="citation" href="#source-9" aria-label="Source 9: AMD: XDNA architecture">9</a> <a class="citation" href="#source-11" aria-label="Source 11: AMD/Xilinx: Ryzen AI programming guide, MLIR-AIE 1.4.4">11</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="transfer descriptors - external dma descriptor polled by the scalar core hardware task descriptor* includes dma configuration vpu_dma_descriptor npu37xx firmware record buffer descriptor (bd) tile dma transfer record records configuring a transfer or a combined compute/dma task. scope and record layout depend on the engine.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Transfer descriptors</span><p class="definition">Records configuring a transfer or a combined compute/DMA task. Scope and record layout depend on the engine.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Transfer descriptors"></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">External DMA descriptor<span class="term-note">Polled by the scalar core</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Transfer descriptors"><a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Hardware task descriptor<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Includes DMA configuration</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Transfer descriptors"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">vpu_dma_descriptor<span class="term-note">NPU37XX firmware record</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Transfer descriptors"><a class="citation" href="#source-26" aria-label="Source 26: Intel: NPU37XX DMA firmware descriptor (pinned compiler source)">26</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Buffer descriptor (BD)<span class="term-note">Tile DMA transfer record</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Transfer descriptors"><a class="citation" href="#source-12" aria-label="Source 12: AMD/Xilinx: DMA and hardware locks, MLIR-AIE 1.4.4">12</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="tensor blocking - activation crouton hmx operand block output-channel group* ocg - tile / micro-tile kernel data blocks partitions of tensor data processed or transferred together. the blocked axes, formats and sizes differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Tensor blocking</span><p class="definition">Partitions of tensor data processed or transferred together. The blocked axes, formats and sizes differ.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Tensor blocking"></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">Activation crouton<span class="term-note">HMX operand block</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Tensor blocking"><a class="citation" href="#source-4" aria-label="Source 4: Qualcomm: Hexagon V81 HMX manual, pp. 3-16">4</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Output-channel group<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">OCG</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Tensor blocking"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Tensor blocking"></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Tile / micro-tile<span class="term-note">Kernel data blocks</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Tensor blocking"><a class="citation" href="#source-18" aria-label="Source 18: AMD/Xilinx: Kernel library, MLIR-AIE 1.4.4">18</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="vector element selection - vector predicate q registers / vmux - - aie::mask vector element mask type per-element comparison results used to select vector values. architectural registers and api types are distinct levels.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Vector element selection</span><p class="definition">Per-element comparison results used to select vector values. Architectural registers and API types are distinct levels.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Vector element selection"></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">Vector predicate<span class="term-note">Q registers / vmux</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Vector element selection"><a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Vector element selection"></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Vector element selection"></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">aie::mask<span class="term-note">Vector element mask type</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Vector element selection"><a class="citation" href="#source-17" aria-label="Source 17: AMD: AI Engine API basic types, 2025.2">17</a> <a class="citation" href="#source-21" aria-label="Source 21: AMD: AI Engine API masked selection, 2025.2">21</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="synchronization - external dma sync store-release / descriptor polling task event masks* wait / signal fields hardware barriers task dependencies hardware locks core / dma coordination mechanisms that order compute and data transfers so a consumer uses data after its producer completes.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Synchronization</span><p class="definition">Mechanisms that order compute and data transfers so a consumer uses data after its producer completes.</p></th>
+              <td role="cell" class="vendor-cell mediatek">
+                  <span class="mobile-label" aria-hidden="true">MediaTek</span>
+                  <div class="vendor-content"><span class="term"><span class="unmapped" aria-label="No validated mapping in reviewed sources">-</span></span>
+                  <div class="cell-sources" hidden aria-label="MediaTek sources for Synchronization"></div></div>
+                </td><td role="cell" class="vendor-cell qualcomm">
+                  <span class="mobile-label" aria-hidden="true">Qualcomm</span>
+                  <div class="vendor-content"><span class="term">External DMA sync<span class="term-note">Store-release / descriptor polling</span></span>
+                  <div class="cell-sources" hidden aria-label="Qualcomm sources for Synchronization"><a class="citation" href="#source-3" aria-label="Source 3: Qualcomm: Hexagon V73 HVX manual, pp. 8-19">3</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Task event masks<sup class="evidence-mark" aria-label="reverse-engineered">*</sup><span class="term-note">Wait / signal fields</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Synchronization"><a class="citation" href="#source-6" aria-label="Source 6: Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Hardware barriers<span class="term-note">Task dependencies</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Synchronization"><a class="citation" href="#source-7" aria-label="Source 7: Intel: NCE subsystem, Core Ultra 200S / 200HX">7</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Hardware locks<span class="term-note">Core / DMA coordination</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Synchronization"><a class="citation" href="#source-12" aria-label="Source 12: AMD/Xilinx: DMA and hardware locks, MLIR-AIE 1.4.4">12</a></div></div>
+                </td>
+            </tr></tbody>
+          </table></section>
+      <section class="translation-notes" aria-labelledby="notes-title"><h2 id="notes-title">Notes</h2><div class="notes-grid"><article><h3>Apple: independent research</h3><p>Marked entries summarize Bryngelson’s M1 reverse engineering. Event masks describe on-die ordering; the vector-processor and vector-selection entries remain unmapped.</p></article><article><h3>Keep tile meanings separate</h3><p>Compute tiles are hardware. Croutons, output-channel groups and matrix tiles partition tensor data along different axes. Their sizes and scopes differ.</p></article><article><h3>Precision has several meanings</h3><p>INT8 is 8-bit integer. FP16 and BF16 (bfloat16) differ; Block FP16 uses shared exponents. Operand, accumulator and stored-weight precision are separate.</p></article></div></section>
+      <section class="appendix" aria-label="Sources and scope">
+        <details id="sources"><summary>Sources &amp; scope <span>27 references</span></summary>
+          <p class="source-intro">Select “Show citations” to see the sources for each vendor term. Definitions summarize the common concept.</p>
+          <ul class="qualifications"><li>Hardware examples: MediaTek MT8370 (Genio), Qualcomm Hexagon V73 HVX and V81 HMX, Apple M1, Intel Core Ultra 200S / 200HX, and AMD XDNA / XDNA 2. These are documented examples, not a claim about every current device.</li><li>MediaTek entries describe the MT8370 APUSYS: MDLA and the VP6 vector DSP. The matrix-engine entry names the convolution engine inside MDLA; MDLA also contains command and non-convolution engines. The local RAM entry belongs to VP6. CMDE decodes MDLA commands. The datasheet says hardware programming uses MediaTek&#x27;s SDK.</li><li>Qualcomm HVX means Hexagon Vector eXtensions; HMX means Hexagon Matrix eXtension. HVX V73 and HMX V81 are separate documentation examples. VMEM names vector load/store instructions, not a DMA engine. The external-DMA entries concern access through the V73 AXI slave port and explicit synchronization by the scalar core.</li><li>Intel DPU means Data Processing Unit, and ACT-SHAVE is the activation vector DSP. NCE tile, CMX, DMA and barrier details here follow the cited 200S / 200HX design. The execution row describes hardware work types, not an assertion of a public custom-kernel API.</li><li>AMD examples use AI Engine compute tiles and the Ryzen AI low-level programming guide. Compute, mem and shim tiles have different functions. Hardware locks coordinate buffer use; the software ObjectFifo abstraction is not a separate hardware engine.</li><li>Apple naming follows its M1 announcement. Entries marked * summarize independent reverse engineering in arXiv:2606.22283v2. They describe recovered hardware interfaces, not a supported custom-kernel API. Synchronization uses the recovered M1 task-descriptor event masks (section 36.3, p. 234). No cross-die predictions, inferred array dimensions, core counts or memory capacities are included.</li><li>Column order approximates platform reach, not measured NPU use. Counterpoint&#x27;s Q2 2026 smartphone SoC shipments place MediaTek (31%) ahead of Qualcomm (23%) and Apple (19%); these totals include chips without the NPUs discussed here. TechInsights&#x27; 2025 AI-PC data places Intel ahead of AMD. Combining those markets is an editorial choice, not a measured five-way ranking.</li><li>Activation / elementwise compares functional roles: the MT8370 element-wise engine, HMX convert-state operations, recovered Apple elementwise/planar and activation-lookup configuration, Intel’s NPU 3 Activation Function stage, and AMD vector kernels. It does not imply identical supported operations or separate dedicated engines on every platform.</li><li>Tensor blocking names data partitions: the HMX activation crouton, Apple M1 output-channel group (Ch. 20, section 20.4, p. 120), and AMD logical tiles / kernel micro-tiles. An output-channel group is not an activation crouton, and none is a physical compute tile. No matching MediaTek or Intel term is asserted from the reviewed sources.</li><li>Vector element selection maps the V73 HVX Q-register / vmux mechanism to AMD’s aie::mask API type at the level of per-element comparison and selection. It does not assert a dedicated AMD predicate register file. MediaTek, Apple and Intel mappings remain unvalidated in these sources.</li><li>Address translation has distinct scopes: the APUSYS IOMMU, Hexagon processor MMU, recovered Apple ANE DART (Ch. 28, p. 179), Intel NPU 3 MMU, and AMD host-IOMMU / PASID isolation. PASID identifies an address-space context; it is not itself an address-translation engine. AMD’s firmware microcontroller MMU is a separate unit.</li><li>Instruction storage follows the programmable compute units: VP6 IMEM/instruction cache, Hexagon L1 instruction cache, ACT-SHAVE shared data/instruction L2 cache, and AMD tile program memory. Apple M1 task descriptors are configuration records; no equivalent compute-instruction store is mapped in this row. Firmware instruction storage is outside this comparison.</li><li>Layout transformation compares element reordering at different granularities: the MT8370 MDLA transpose engine, HVX register shuffle/deal instructions, recovered M1 transpose fields in the hardware task descriptor, and AMD DMA address generation. It does not imply identical transforms, arbitrary tensor-transpose support, or a separate transpose engine on every device. Intel’s Data Conversion diagram label alone does not establish a layout-transform mechanism.</li><li>Weight compression: MT8370 documents compressed-weight support without naming the codec; Intel documents in-line DMA weight decompression. The Apple research reports native M1 palette and sparse weight streaming (section 3.3, p. 15), with reconstruction before the multiply array. Other compressed formats may expand in memory first. No corresponding Qualcomm or AMD mechanism is inferred from their arithmetic data types.</li><li>Numeric conversion compares functional roles: EDMA F16/F32 conversion, the HMX convert-transfer output path, recovered M1 FP16 output rounding, Intel’s labeled Data Conversion pipeline stage, and AMD SRS / accum::to_vector. Integer shift-round-saturate and floating-point conversion have different rules; no common precision, rounding mode or saturation behavior is implied. Bit reinterpretation is a separate operation.</li><li>Interconnect examples have different scopes: the MediaTek APU NoC, the Hexagon AXI slave interface for external DMA, and AMD’s AXI stream switch fabric. A memory-mapped AXI port is distinct from an AXI stream network. No equivalent Apple or Intel fabric name is asserted from the reviewed sources; CMX is identified as SRAM in this sheet.</li><li>Transfer descriptors name low-level records. The V73 HVX manual mentions external DMA descriptor polling without specifying its record layout. The Apple M1 hardware task descriptor also configures compute. Intel’s vpu_dma_descriptor is the pinned NPU37XX firmware record; AMD BDs describe tile-DMA transfers and synchronization. These records have different formats and are separate from graph nodes and runtime launches.</li><li>Compute precision lists selected multiply-operand formats for the cited engines, not every supported type or a throughput comparison. MediaTek uses Fix8/Fix16 for fixed-point MDLA modes; VP6 FP32 is separate. The V81 HMX manual covers FP16 operands with a 37-bit floating-point accumulator and does not enumerate all HMX types. The M1 research reports FP16 operands and wider accumulation (sections 3.1-3.2, pp. 13-14); it does not establish an exact IEEE FP32 accumulator specification. Intel NPU 3 labels its MAC arrays INT8/FP16. AMD documents INT8 and bfloat16 modes for XDNA1/XDNA2, plus Block FP16 on XDNA2. BF16 means bfloat16, not Block FP16 or IEEE FP16. Block FP16 shares exponents across groups of values; some API shapes use multiple instructions. An API float type or a compressed INT4 weight stream alone does not prove native FP32 or INT4 multiply arithmetic.</li><li>Reviewed on October 20, 2026 against vendor documentation and the cited independent Apple research. The new Apple entries were checked against the paper; they were not independently reproduced on hardware.</li></ul><ol class="source-list"><li id="source-1"><span class="source-number">01</span><div><a href="https://www.mediatek.com/hubfs/MediaTek%20Assets/Pdfs/Genio%20Documents/MTK_MT8370_Application-Processor-Datasheet_v1.2.pdf#page=46">MediaTek: MT8370 datasheet v1.2, pp. 46-52</a><p>MT8370-specific APUSYS, MDLA convolution/element-wise engines and CMDE, VP6 SIMD/VLIW and local RAM, EDMA, and the APUSYS IOMMU (Fig. 3-4, p. 48). VP6 IMEM/instruction cache (p. 49), MDLA transpose engine (pp. 50-51), and compressed-weight support (p. 47); the datasheet does not name its compression codec. Figure 3-4 labels the APU NoC; p. 51 lists EDMA F16-to-F32 and F32-to-F16 numeric conversion. MDLA arithmetic modes include Fix8, Fix16, FP16 and BF16 (p. 47); VP6 also has FP32, which is a separate engine (p. 49).</p></div></li><li id="source-2"><span class="source-number">02</span><div><a href="https://www.qualcomm.com/processors/hexagon">Qualcomm: Hexagon NPU architecture</a><p>Fused scalar, vector and tensor accelerators; scalar control and VLIW execution. Counts and capabilities vary by generation.</p></div></li><li id="source-3"><span class="source-number">03</span><div><a href="https://docs.qualcomm.com/bundle/publicresource/80-N2040-54.pdf#page=8">Qualcomm: Hexagon V73 HVX manual, pp. 8-19</a><p>HVX SIMD instructions, VLIW packets, vector contexts, VTCM, VMEM access and explicit synchronization of external AXI DMA; vector predicate Q registers and vmux selection (p. 15). The AXI slave port and scalar-core polling of external DMA descriptors are described on p. 18.</p></div></li><li id="source-4"><span class="source-number">04</span><div><a href="https://docs.qualcomm.com/doc/80-N2040-62/80-N2040-62_REV_AA_Qualcomm_Hexagon_V81_HMX_Programmers_Reference_Manual.pdf#page=3">Qualcomm: Hexagon V81 HMX manual, pp. 3-16</a><p>HMX matrix-multiply/convolution coprocessor, operands in VTCM, internal accumulator registers, convert state and activation operations, and the activation crouton. V81 is separate from the V73 HVX example. Convert transfer reduces accumulator values for the FP16 output path and applies configured bias, scale, shaping and rounding (pp. 12-16). Internal feedback precision and the stored output format differ. The manual covers FP16 activation/weight operands (p. 5) and a 37-bit floating-point accumulator (pp. 9-12); this is not an exhaustive HMX datatype list.</p></div></li><li id="source-5"><span class="source-number">05</span><div><a href="https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/">Apple: M1 Neural Engine</a><p>Official Neural Engine and core naming for M1. The table does not equate these cores with the compute groupings recovered in independent research.</p></div></li><li id="source-6"><span class="source-number">06</span><div><a href="https://arxiv.org/abs/2606.22283v2">Spencer H. Bryngelson: Apple Neural Engine: Architecture, Programming, and Performance (arXiv v2)</a><p>Independent reverse engineering, revised 15 Oct 2026. M1 examples: MAC datapath, output-channel groups and activation lookup (Ch. 20); compiler-managed SRAM (Ch. 21); task descriptors, elementwise/planar configuration and DMA (Ch. 23); DART address translation (Ch. 28); firmware scheduling (Ch. 29); on-die event masks (section 36.3, p. 234). Research findings, not an Apple specification. M1 native palette/sparse weight streaming (section 3.3, p. 15); transpose lowering and task-descriptor configuration (Chs. 22-23, pp. 134, 143). M1 output rounding to FP16 (section 3.1, p. 13); hardware task descriptors include DMA configuration (section 23.3, pp. 143-144). Sections 3.1-3.2 (pp. 13-14) report FP16 multiply operands and a wider accumulator, described as FP32-class rather than an exact IEEE FP32 specification.</p></div></li><li id="source-7"><span class="source-number">07</span><div><a href="https://edc.intel.com/content/www/us/en/design/products/platforms/details/arrow-lake-s/core-ultra-200s-series-processors-datasheet-volume-1-of-2/nce-subsystem/">Intel: NCE subsystem, Core Ultra 200S / 200HX</a><p>NCE tiles, ACT-SHAVE, CMX dedicated SRAM, DMA engines, task barriers and workload FIFOs. The DMA engines support in-line weight decompression; no specific encoding is asserted here.</p></div></li><li id="source-8"><span class="source-number">08</span><div><a href="https://edc.intel.com/content/www/us/en/design/products/platforms/details/arrow-lake-s/core-ultra-200s-series-processors-datasheet-volume-1-of-2/some-nce-subsystem-features/">Intel: NCE controller and ACT-SHAVE, Core Ultra 200S / 200HX</a><p>LEON scheduler, DPU / ACT-SHAVE job dispatch and activation vector processors. Scoped to this NPU generation.</p></div></li><li id="source-9"><span class="source-number">09</span><div><a href="https://www.amd.com/en/technologies/xdna.html">AMD: XDNA architecture</a><p>Spatial dataflow array of AI Engine tiles; vector and RISC scalar processors, local data/program memories, VLIW/SIMD and scheduled DMA.</p></div></li><li id="source-10"><span class="source-number">10</span><div><a href="https://download.amd.com/docnav/aiengine/xilinx2025_2/aiengine_api/aie_api/doc/group__group__mmul.html">AMD: AI Engine matrix multiplication, 2025.2</a><p>Matrix multiply and accumulate operations for AI Engine, including XDNA targets. The API wraps processor operations; it is not a separate hardware core. XDNA1/XDNA2 tables list INT8 and bfloat16 operand modes and XDNA2 block-floating-point modes. Some API shapes are emulated; the float-input modes use native bfloat16 multiplication rather than native FP32 multiplication.</p></div></li><li id="source-11"><span class="source-number">11</span><div><a href="https://xilinx.github.io/mlir-aie/1.4.4/programming_guide/">AMD/Xilinx: Ryzen AI programming guide, MLIR-AIE 1.4.4</a><p>Compute, mem and shim tiles, stream switches, per-tile kernels and spatial dataflow. Explicitly covers Ryzen AI XDNA and XDNA 2.</p></div></li><li id="source-12"><span class="source-number">12</span><div><a href="https://xilinx.github.io/mlir-aie/1.4.4/programming_guide/section-2/section-2g/">AMD/Xilinx: DMA and hardware locks, MLIR-AIE 1.4.4</a><p>Tile DMA channels, buffer descriptors, hardware locks, and synchronization between compute and data movement. Names the AXI stream switch fabric and buffer descriptor (BD) chains.</p></div></li><li id="source-13"><span class="source-number">13</span><div><a href="https://counterpointresearch.com/en/insights/global-smartphone-apsoc-market-share-quarterly">Counterpoint: Smartphone AP-SoC share, Q2 2026</a><p>Shipment proxy for mobile column order: MediaTek 31%, Qualcomm 23%, Apple 19%. Counts all smartphone SoCs, not NPU-equipped devices or active NPU use.</p></div></li><li id="source-14"><span class="source-number">14</span><div><a href="https://www.techinsights.com/blog/narrative-ai-pc-processor-market-share-2025">TechInsights: AI PC processor share, 2025</a><p>AI-PC segment ordering places Intel ahead of AMD. Does not supply a combined phone/PC installed-base ranking.</p></div></li><li id="source-15"><span class="source-number">15</span><div><a href="https://edc.intel.com/content/www/us/en/design/products/platforms/details/arrow-lake-s/core-ultra-200s-series-processors-datasheet-volume-1-of-2/nce-tile/">Intel: NCE tile and DPU, Core Ultra 200S / 200HX</a><p>DPU (Data Processing Unit), MAC processing engines, and ACT-SHAVE resources within an NCE tile. ACT-SHAVE DSPs share a data and instruction L2 cache.</p></div></li><li id="source-16"><span class="source-number">16</span><div><a href="https://download.intel.com/newsroom/2024/client-computing/IFA-ARL-Press-Briefing.pdf#page=40">Intel: Arrow Lake S &amp; HX briefing, NPU 3 architecture (p. 40)</a><p>The NPU 3 hardware diagram explicitly labels the MMU and the Activation Function stage within each inference pipeline. Scoped to Arrow Lake S/HX. The same diagram labels the Data Conversion stage. It explicitly labels the NPU 3 MAC arrays INT8/FP16.</p></div></li><li id="source-17"><span class="source-number">17</span><div><a href="https://download.amd.com/docnav/aiengine/xilinx2025_2/aiengine_api/aie_api/doc/group__group__basic__types.html">AMD: AI Engine API basic types, 2025.2</a><p>aie::mask is the API type for vector element masks returned by comparisons. It is a software representation, not a claim of a dedicated predicate register file. The guide includes XDNA1 and XDNA2. Distinguishes bfloat16 vector elements, wider accumulator types and XDNA2 bfp16ebs8/bfp16ebs16 block vectors, which group mantissas under a block exponent.</p></div></li><li id="source-18"><span class="source-number">18</span><div><a href="https://xilinx.github.io/mlir-aie/1.4.4/api/kernels/">AMD/Xilinx: Kernel library, MLIR-AIE 1.4.4</a><p>Vectorized elementwise add/mul and ReLU kernel examples. TensorLayout distinguishes the logical data tile (shape) from the kernel micro-tile (block), including matrix multiply operands. These are data and kernel concepts, distinct from hardware tiles.</p></div></li><li id="source-19"><span class="source-number">19</span><div><a href="https://docs.qualcomm.com/doc/80-N2040-53/80-N2040-53.pdf#page=69">Qualcomm: Hexagon V73 manual, pp. 69 and 82</a><p>Virtual-to-physical address translation in the Hexagon address space (p. 69) and the OS-programmed Hexagon MMU (p. 82). This processor-side MMU is distinct from a system IOMMU. The cache-memory section names the L1 instruction cache (p. 82).</p></div></li><li id="source-20"><span class="source-number">20</span><div><a href="https://docs.kernel.org/accel/amdxdna/amdnpu.html">AMD: NPU driver architecture, Linux kernel documentation</a><p>PASID-protected host access for XDNA partitions, the global IOMMU domain for privileged host buffers, and a separate microcontroller MMU for firmware isolation. Host translation and firmware translation have different scopes. Each compute tile has dedicated program and data memory.</p></div></li><li id="source-21"><span class="source-number">21</span><div><a href="https://download.amd.com/docnav/aiengine/xilinx2025_2/aiengine_api/aie_api/doc/group__group__reshape.html">AMD: AI Engine API masked selection, 2025.2</a><p>aie::select combines input values or vectors using a per-element mask. This establishes the selection role of the mask API separately from the basic-type definition.</p></div></li><li id="source-22"><span class="source-number">22</span><div><a href="https://xilinx.github.io/mlir-aie/1.4.4/programming_guide/section-2/section-2c/">AMD/Xilinx: DMA data-layout transformations, MLIR-AIE 1.4.4</a><p>AIE-ML tile DMAs transform layouts through multidimensional address generation. The to_stream / from_stream inputs describe producer read order and consumer write layout. These are DMA configurations, not a separate transpose processor.</p></div></li><li id="source-23"><span class="source-number">23</span><div><a href="https://docs.qualcomm.com/doc/80-N2040-54/80-N2040-54.pdf#page=203">Qualcomm: V73 HVX shuffle/deal instructions, pp. 203 and 218</a><p>vshuff / vdeal reorder vector elements; the cross-lane forms perform multiple-level transposes between element groups in two vectors. These are register-level instructions, not a general tensor DMA engine.</p></div></li><li id="source-24"><span class="source-number">24</span><div><a href="https://download.amd.com/docnav/aiengine/xilinx2025_2/aiengine_api/aie_api/doc/group__group__basic__types__conversion.html">AMD: AI Engine API numeric conversions, 2025.2</a><p>accum::to_vector converts accumulator values to vector elements; integer conversion can shift, round and saturate. Reinterpretation with cast_to is a separate operation, and integer shift behavior does not apply to floating-point accumulators.</p></div></li><li id="source-25"><span class="source-number">25</span><div><a href="https://xilinx.github.io/mlir-aie/1.4.4/programming_guide/section-4/section-4c/">AMD/Xilinx: SRS hardware path, MLIR-AIE 1.4.4</a><p>The AIE vector-unit SRS (shift-round-saturate) path converts accumulators to vectors before store; the UPS path performs the reverse direction. Scoped to the guide’s AIE2 / AIE2P Ryzen AI examples.</p></div></li><li id="source-26"><span class="source-number">26</span><div><a href="https://github.com/openvinotoolkit/npu_compiler/blob/20e7912fbc230725e1ca7394762348d4f480aa65/src/vpux_compiler/include/vpux/compiler/NPU37XX/dialect/NPUReg37XX/firmware_headers/details/api/vpu_dma_hw_37xx.h#L78-L105">Intel: NPU37XX DMA firmware descriptor (pinned compiler source)</a><p>The Intel-authored NPU37XX header defines vpu_dma_descriptor, including source/destination addresses, length, strides, next-link and barrier fields. This is a firmware record example, not a stable public custom-kernel API or a format shared by all NPU generations.</p></div></li><li id="source-27"><span class="source-number">27</span><div><a href="https://www.amd.com/en/newsroom/press-releases/2024-6-2-amd-extends-ai-and-high-performance-leadership-in-.html">AMD: XDNA 2 Block FP16 announcement (June 2024)</a><p>Names Block FP16 support in the XDNA 2 NPU of Ryzen AI 300 Series processors. Used only to establish that format and generation; no accuracy or performance equivalence is asserted.</p></div></li></ol>
+        </details>
+      </section>
+    </main>
+    <footer><span>20 concepts · Reviewed <time datetime="2026-10-20">20 Oct 2026</time></span><a href="npu-terminology-cheat-sheet.pdf" download>Poster PDF <span aria-hidden="true">↓</span></a></footer>
+  </div>
+</body>
+</html>

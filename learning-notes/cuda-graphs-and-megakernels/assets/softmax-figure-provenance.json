@@ -1,0 +1,323 @@
+{
+  "run_id": "20261019T175825Z",
+  "verification": {
+    "verified_files": 1372,
+    "remote_only_files": 369
+  },
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "metric": "host_single_us",
+  "error_bars": "p10 and p90 of 21 rounds; not confidence intervals",
+  "plots": {
+    "softmax-row-baseline": {
+      "cases": [
+        "row-1-128-balanced",
+        "row-4096-4096-balanced"
+      ],
+      "variants": {
+        "Baseline": "staged_stream",
+        "CUDA Graphs": "staged_graph",
+        "Fusion": "fused_stream",
+        "Fusion + graph": "fused_graph"
+      }
+    },
+    "softmax-four-way": {
+      "cases": [
+        "dag-128-0-balanced",
+        "dag-128-0-ragged"
+      ],
+      "variants": {
+        "Baseline": "separate_stream",
+        "CUDA Graphs": "separate_graph",
+        "Fusion + graph": "phased_graph",
+        "Megakernel toy + graph": "dag_graph"
+      }
+    },
+    "softmax-four-way-timeline": {
+      "case": "dag-128-0-ragged",
+      "fixture": 2,
+      "variants": {
+        "Baseline": "separate_stream",
+        "CUDA Graphs": "separate_graph",
+        "Fusion + graph": "phased_graph",
+        "Megakernel toy + graph": "dag_graph"
+      }
+    },
+    "softmax-row-readiness": {
+      "case": "dag-128-0-ragged",
+      "fixture": 2,
+      "variants": {
+        "Baseline": "separate_stream",
+        "CUDA Graphs": "separate_graph",
+        "Fusion + graph": "phased_graph",
+        "Megakernel toy + graph": "dag_graph"
+      },
+      "statistics": {
+        "separate_stream": {
+          "early_rows": 0,
+          "rows": 128,
+          "last_a_ns": 1792433163547349344
+        },
+        "separate_graph": {
+          "early_rows": 0,
+          "rows": 128,
+          "last_a_ns": 1792433163564554272
+        },
+        "phased_graph": {
+          "early_rows": 0,
+          "rows": 128,
+          "last_a_ns": 1792433163597245408
+        },
+        "dag_graph": {
+          "early_rows": 126,
+          "rows": 128,
+          "last_a_ns": 1792433163630392800
+        }
+      }
+    }
+  },
+  "presentation": {
+    "font": "Outfit Article, static weights 400 and 600 from the site's Outfit font; SIL Open Font License",
+    "colors": "Gray: baseline; blue: graph; teal: fusion (with or without graph); violet: queued megakernel",
+    "responsive": "Each figure has desktop and -mobile layouts from identical data",
+    "tiled_comparison": "Shared logarithmic x limits across the two panels",
+    "row_readiness": "One dot per row, ascending row IDs, filled only if B starts strictly before the global final A end. All local producer dependencies checked.",
+    "timeline": "Supporting artifact: all task intervals retained, independent linear panel scales; row 0 at the top"
+  },
+  "inputs": [
+    {
+      "path": "manifest.json",
+      "sha256": "5815317d1b65f6306f327aff437160fb002f58bde84ab779644e1ce765b793f1"
+    },
+    {
+      "path": "article_figures.py",
+      "sha256": "cbe66bbcc0043d25d2ce6ed8ae7f4de0bfd33630aed4b90dcb5d9d3d87933981"
+    },
+    {
+      "path": "OFL.txt",
+      "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416"
+    },
+    {
+      "path": "OutfitArticle-Regular.ttf",
+      "sha256": "e61037c76dfd8e56ebe6cd4f82aea7084d32baaae6b7000f861a151be9dc2c2b"
+    },
+    {
+      "path": "OutfitArticle-SemiBold.ttf",
+      "sha256": "6390b5750fc411e5515c6468b573c6ffd57cc8810ee540b82f3012559d0a048d"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f3141b0999318f1a15231acfc8b0e73fb21f502820ddf87b8592727c370b6d8e"
+    },
+    {
+      "path": "bench/dag-128-0-balanced/samples.jsonl",
+      "sha256": "1516c74761e27e7ab700b68ab51a5346a543bdf08b30a3a3ccf8c9d1de4e2b70"
+    },
+    {
+      "path": "bench/dag-128-0-ragged/samples.jsonl",
+      "sha256": "834935589f230d9291566e3f988ee40d398331dbc5864fdcd2cbcefb15c0c33d"
+    },
+    {
+      "path": "bench/dag-2048-0-balanced/samples.jsonl",
+      "sha256": "edbf9a79ba679fa44c40e28e178e49baf2269557cf0e68359e2c94ca9a22cdad"
+    },
+    {
+      "path": "bench/dag-2048-0-ragged/samples.jsonl",
+      "sha256": "d9300bcd7de58c5193ec6d7f6c73d385afe8f1859378e01c3b03ee3eb5d599e4"
+    },
+    {
+      "path": "bench/dag-512-0-balanced/samples.jsonl",
+      "sha256": "c9de538a0cd990dfeb5965c2bb354d3835060bf1110aeb7afd11361be1798ecd"
+    },
+    {
+      "path": "bench/dag-512-0-ragged/samples.jsonl",
+      "sha256": "8dc6e209ebc460f2f48f2c8a808319afcc47434a74104280a40590cf32384fb8"
+    },
+    {
+      "path": "bench/row-1-128-balanced/samples.jsonl",
+      "sha256": "8e6d0d8c6a4768ee1df09a29e1872aa87b3d73a9c5edfb87436610cf92c721aa"
+    },
+    {
+      "path": "bench/row-16384-1024-balanced/samples.jsonl",
+      "sha256": "0f55628ecaf554b13a37eb8bdea61c0441451e7eb2e520e41976b1ba1a3d6721"
+    },
+    {
+      "path": "bench/row-32-1024-balanced/samples.jsonl",
+      "sha256": "a5969d3ad1513b65def47a1e882b08ea07aa1c2f4c7663324e39a03a9066a8e9"
+    },
+    {
+      "path": "bench/row-4096-1024-balanced/samples.jsonl",
+      "sha256": "60821e47ab0a6126b841b1fa50a8c2f5e5632a8357890e7c28c41c4571fe6ddb"
+    },
+    {
+      "path": "bench/row-4096-128-balanced/samples.jsonl",
+      "sha256": "9230d0da4f853fdd5867e50b90335ed50bbc80a4f394ae8875f69c32e3f3b4a4"
+    },
+    {
+      "path": "bench/row-4096-4096-balanced/samples.jsonl",
+      "sha256": "70b2d32cd342d0d0395cfa8f4cec5ee4a3071f7d0b29f3167f64898a07a38483"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/dag_graph_2_trace.csv",
+      "sha256": "6cdb724ba17128e8c3d128a50f8f54d66846fe4faa1c12f9736d1c5caab37abf"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/dag_graph_3_trace.csv",
+      "sha256": "6e15f4636cccb76b9fdf686c0c84066f2f06f6150bf835420e0bca40e72eca72"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/dag_stream_2_trace.csv",
+      "sha256": "508063e5667c7a9fac9c54607affbc5d649335fb1e6992328d86c279b0a39453"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/dag_stream_3_trace.csv",
+      "sha256": "14f6830aab7541b56e9ff4d5c4a6fe22e73f43c86e527784662eb07253002390"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/phased_graph_2_trace.csv",
+      "sha256": "0e300664cb36cddf866db89787b6eb36b73340e1052d834b3c21b844326aa974"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/phased_graph_3_trace.csv",
+      "sha256": "1475bef8af2b05619edde24cef9a791729506f4d0a922d522d4f145b1152d965"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/phased_stream_2_trace.csv",
+      "sha256": "5ed96fe5601f00c04700a76205543f642a18b81fd6ebfb7af7fa88d3613288a5"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/phased_stream_3_trace.csv",
+      "sha256": "618d5f985572da9254530a5638b8c7a0a3598a7ba93d94378585da633f208730"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/separate_graph_2_trace.csv",
+      "sha256": "57843d7d93b69529891599fb57a0d9e1d2411770c62735a9a7c59690da86818b"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/separate_graph_3_trace.csv",
+      "sha256": "c97c0c824b4e275304b98125f159ee744edfb7befad6da6af74bf52de811f875"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/separate_stream_2_trace.csv",
+      "sha256": "56dd267c3050a9e14bf717b027fe9a99c32f3d0656f35e4c1b7bc5c920b34535"
+    },
+    {
+      "path": "trace/dag-128-0-balanced/separate_stream_3_trace.csv",
+      "sha256": "cb93380b53b076293815cd7b82e586b68318068a56b665626d2c3055a96ab9fc"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/dag_graph_2_trace.csv",
+      "sha256": "015276cf8f9b2e785145d5bfb6c5d6fb05d856ae4cfb7dce872ba756ebcdafea"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/dag_graph_3_trace.csv",
+      "sha256": "9d01c57776789d75005a0b0b1cdbabc4f2770360291cbb4969a62fe6db31b70e"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/dag_stream_2_trace.csv",
+      "sha256": "2f433e96aaf51bb0a9183ee0f1d3895993d9b24d6f7e8ec96afb3e1df64e95c1"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/dag_stream_3_trace.csv",
+      "sha256": "a82f5e70bda6893371c9ece094e9312a660808e419da7ad3b9ecb9a565da1638"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/phased_graph_2_trace.csv",
+      "sha256": "f3a2cddcbca4ddffa88751ca8a13ae3b34bb3d346d4717d427fb964f3b529659"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/phased_graph_3_trace.csv",
+      "sha256": "495e2b98f74c80f1b6407a8d938e4beb2116897a28ec0ceb678e658f7a4a4cb6"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/phased_stream_2_trace.csv",
+      "sha256": "ba62ebbf1b94ad489e26564b0c8ddc51e59f71c34eec488fb61b9ff32dbf4d4d"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/phased_stream_3_trace.csv",
+      "sha256": "00f74d34010b076f38aee530d0e74d678cf25a4b7104042bc7a276f04d8a71a1"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/separate_graph_2_trace.csv",
+      "sha256": "45f1cc47316ad67bbc6d88bbee462f1959145d029e5dad900327564d90e32b2f"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/separate_graph_3_trace.csv",
+      "sha256": "c31a6965b12de2c6f2a15ce5c3dc21cca88277f1286b0e90acbadcf4e361e9c5"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/separate_stream_2_trace.csv",
+      "sha256": "1ad953beb0f21e19eff3f50bcecf484a3da3b03d1ef09eb56b4889d5bf98235f"
+    },
+    {
+      "path": "trace/dag-128-0-ragged/separate_stream_3_trace.csv",
+      "sha256": "c9558a5ed17090a850edde42b726badf6e76deda9aee253f4a166e2ba3b6fa56"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "softmax-four-way-mobile.png",
+      "sha256": "520b05ac24f9da4b8cc2cebe2822127fe6d2bd2913fdbf5e2be00ebaf23eb341"
+    },
+    {
+      "path": "softmax-four-way-mobile.svg",
+      "sha256": "356cb02474585c32b4c45d002e0170bc638fcb5d43294462adae4b3750614f73"
+    },
+    {
+      "path": "softmax-four-way-timeline-mobile.png",
+      "sha256": "7c0fb670221fc1a6f4f801ebda911e20fcace890efe3e7e7afae758e4cf9853a"
+    },
+    {
+      "path": "softmax-four-way-timeline-mobile.svg",
+      "sha256": "ce8713d5369ef63cce2983402b9ec21b85f20bf2fa43306f3195ec1c09a77d61"
+    },
+    {
+      "path": "softmax-four-way-timeline.png",
+      "sha256": "30117559857b1f911ce53ec233ac98f07bec4f82c043045deee225f6b3ffad4d"
+    },
+    {
+      "path": "softmax-four-way-timeline.svg",
+      "sha256": "a4912e9e97d4b34b93dc0c7773fafcb865028b5b524ee78cec7faa13f77cf6a9"
+    },
+    {
+      "path": "softmax-four-way.png",
+      "sha256": "ab46494e781b6f7107f99dd7ccf64b275421d62e754c45150a7797b2ea32ebe2"
+    },
+    {
+      "path": "softmax-four-way.svg",
+      "sha256": "9121a81d252b3b74601432ec575789b94f520baed097645e1b0833d5bde77329"
+    },
+    {
+      "path": "softmax-row-baseline-mobile.png",
+      "sha256": "6a8ebcd3e4e86e8aac5ded90c5f3ba6e648e0da9fa9eda891574cfb03564bc48"
+    },
+    {
+      "path": "softmax-row-baseline-mobile.svg",
+      "sha256": "9ee6e7cfe257196f987159f78d3ac1aff464d94030f260c367f7684b1ee5b330"
+    },
+    {
+      "path": "softmax-row-baseline.png",
+      "sha256": "1da82c62057c3ef42ec4e78c4d4027fc5df1e102aa01a072de48b4862396687c"
+    },
+    {
+      "path": "softmax-row-baseline.svg",
+      "sha256": "68372769731a4a92deb2386e06fa3b018be99656458782a9dca71efa1ba40983"
+    },
+    {
+      "path": "softmax-row-readiness-mobile.png",
+      "sha256": "cbfdbf22a214d2feacd447bc20b3e03d1273089b66966a9b797faf0493723c4a"
+    },
+    {
+      "path": "softmax-row-readiness-mobile.svg",
+      "sha256": "2da197d8560125067ef6eb71ce5266d0ec350c82d1bc79e62ff2f0fdc0d963d2"
+    },
+    {
+      "path": "softmax-row-readiness.png",
+      "sha256": "c77626a50b5f7d39a96aaebea2f057026132d2c2a39a197ca97462e5c0aeaa2a"
+    },
+    {
+      "path": "softmax-row-readiness.svg",
+      "sha256": "488ae860bba70dd929de4f41f4410a68d9a3c06055ced1a763c6d84333cb0029"
+    }
+  ]
+}

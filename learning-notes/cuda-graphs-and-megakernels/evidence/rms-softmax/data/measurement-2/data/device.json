@@ -1,0 +1,33 @@
+{
+  "cooperative_launch": 1,
+  "cudnn_version": 91002,
+  "driver": 13030,
+  "l2_bytes": 52428800,
+  "name": "NVIDIA H100 80GB HBM3",
+  "pci_bus": 58,
+  "registers_per_sm": 65536,
+  "reserved_shared_bytes_per_block": 1024,
+  "runtime": 12080,
+  "shared_bytes_per_block_optin": 232448,
+  "shared_bytes_per_sm": 233472,
+  "sm_count": 132,
+  "trace_build": false,
+  "uuid": [
+    75,
+    222,
+    154,
+    214,
+    142,
+    211,
+    198,
+    68,
+    109,
+    34,
+    125,
+    2,
+    224,
+    225,
+    157,
+    99
+  ]
+}

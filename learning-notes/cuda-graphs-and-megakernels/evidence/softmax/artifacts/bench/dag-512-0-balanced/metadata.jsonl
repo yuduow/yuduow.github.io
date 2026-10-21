@@ -1,0 +1,14 @@
+{"kind":"device","name":"NVIDIA H100 80GB HBM3","sms":132,"l2_bytes":52428800,"global_bytes":85009367040,"driver":13030,"runtime":12080,"cudnn":91002,"cc":90,"threads":256}
+{"kind":"case","operation":"dag","rows":512,"cols":0,"pattern":"balanced","mode":"bench"}
+{"kind":"graph","variant":"separate","nodes":3,"kernel_nodes":3,"memset_nodes":0,"capture_us":124.99,"instantiate_us":1023.782,"first_replay_sync_us":37.483}
+{"kind":"graph","variant":"phased","nodes":1,"kernel_nodes":1,"memset_nodes":0,"capture_us":4.196,"instantiate_us":19.987,"first_replay_sync_us":38.393}
+{"kind":"graph","variant":"dag","nodes":2,"kernel_nodes":2,"memset_nodes":0,"capture_us":4.559,"instantiate_us":18.474,"first_replay_sync_us":3463.333}
+{"kind":"dag","rows":512,"elements":4194304,"tiles":4096,"tasks":8704,"workers":792,"active_blocks_per_sm":6,"instrumented":false}
+{"kind":"resource","kernel":"persistent","registers":40,"local_bytes":0,"static_shared_bytes":72,"active_blocks_per_sm":6}
+{"kind":"resource","kernel":"phase_a","registers":22,"local_bytes":0,"static_shared_bytes":64,"active_blocks_per_sm":8}
+{"kind":"resource","kernel":"phase_b","registers":32,"local_bytes":0,"static_shared_bytes":64,"active_blocks_per_sm":8}
+{"kind":"resource","kernel":"phase_c","registers":32,"local_bytes":0,"static_shared_bytes":0,"active_blocks_per_sm":8}
+{"kind":"queue","variant":"dag_stream","fixture":2,"head":4608,"tail":4608,"next_a":4096,"completed_c":4096}
+{"kind":"queue","variant":"dag_graph","fixture":2,"head":4608,"tail":4608,"next_a":4096,"completed_c":4096}
+{"kind":"queue","variant":"dag_stream","fixture":3,"head":4608,"tail":4608,"next_a":4096,"completed_c":4096}
+{"kind":"queue","variant":"dag_graph","fixture":3,"head":4608,"tail":4608,"next_a":4096,"completed_c":4096}

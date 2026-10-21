@@ -1,0 +1,36 @@
+{
+  "accepted_run": "20261018T211922Z",
+  "volume": "cuda-graphs-megakernel-toy-evidence",
+  "logs": [
+    "logs/graphs-megakernels-modal.log",
+    "logs/graphs-megakernels-modal-v2.log",
+    "logs/graphs-megakernels-modal-v3.log",
+    "logs/graphs-megakernels-modal-v4.log"
+  ],
+  "failures": [
+    {
+      "stage": "CPU image compilation",
+      "cause": "CUDA error macro shadowed the graph executable variable",
+      "attempts": 2,
+      "gpu_allocated": false
+    },
+    {
+      "run": "20261018T211809Z",
+      "stage": "after validated preflight, before timing",
+      "cause": "copied executable named bench collided with benchmark directory",
+      "accepted_timings": false
+    }
+  ],
+  "accepted_counts": {
+    "exact_array_checks": 272,
+    "trace_checks": 24,
+    "timing_samples": 588,
+    "raw_hash_checks": 450
+  },
+  "scope_notes": [
+    "first_replay_sync_us also includes DOT serialization and graph queries; not used for latency claims",
+    "balanced/ragged have different total work; compare implementations within each case",
+    "NCU cache-flush measurements are separate from warm-cache timing",
+    "original indexed analysis files preserved; local checks use analysis-local.json"
+  ]
+}

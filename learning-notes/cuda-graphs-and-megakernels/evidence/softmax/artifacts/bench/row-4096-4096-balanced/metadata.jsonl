@@ -1,0 +1,10 @@
+{"kind":"device","name":"NVIDIA H100 80GB HBM3","sms":132,"l2_bytes":52428800,"global_bytes":85009367040,"driver":13030,"runtime":12080,"cudnn":91002,"cc":90,"threads":256}
+{"kind":"case","operation":"row","rows":4096,"cols":4096,"pattern":"balanced","mode":"bench"}
+{"kind":"graph","variant":"staged","nodes":4,"kernel_nodes":4,"memset_nodes":0,"capture_us":38.492,"instantiate_us":2966.512,"first_replay_sync_us":178.103}
+{"kind":"graph","variant":"fused","nodes":1,"kernel_nodes":1,"memset_nodes":0,"capture_us":3.574,"instantiate_us":15.132,"first_replay_sync_us":58.744}
+{"kind":"graph","variant":"cudnn","nodes":1,"kernel_nodes":1,"memset_nodes":0,"capture_us":16.174,"instantiate_us":87.563,"first_replay_sync_us":61.568}
+{"kind":"resource","kernel":"row_max","registers":31,"local_bytes":0,"static_shared_bytes":32,"active_blocks_per_sm":8}
+{"kind":"resource","kernel":"row_exp","registers":24,"local_bytes":0,"static_shared_bytes":0,"active_blocks_per_sm":8}
+{"kind":"resource","kernel":"row_sum","registers":31,"local_bytes":0,"static_shared_bytes":32,"active_blocks_per_sm":8}
+{"kind":"resource","kernel":"row_div","registers":26,"local_bytes":0,"static_shared_bytes":0,"active_blocks_per_sm":8}
+{"kind":"resource","kernel":"row_fused","registers":53,"local_bytes":0,"static_shared_bytes":64,"active_blocks_per_sm":4}

@@ -1,0 +1,264 @@
+{
+  "validation": {
+    "case": {
+      "kind": "case",
+      "operation": "row",
+      "rows": 4096,
+      "cols": 4096,
+      "pattern": "balanced",
+      "mode": "bench"
+    },
+    "output_checks": [
+      {
+        "file": "staged_stream_2.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.5409358906400854e-07,
+        "max_row_sum_error": 4.5476098531338494e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "staged_graph_2.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.5409358906400854e-07,
+        "max_row_sum_error": 4.5476098531338494e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_stream_2.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.5409358906400854e-07,
+        "max_row_sum_error": 4.5476098531338494e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_graph_2.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.5409358906400854e-07,
+        "max_row_sum_error": 4.5476098531338494e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_stream_2.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.3763036139399247e-07,
+        "max_row_sum_error": 4.383127847340518e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_graph_2.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.3763036139399247e-07,
+        "max_row_sum_error": 4.383127847340518e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "staged_stream_3.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.278413964220462e-07,
+        "max_row_sum_error": 4.2849423254054386e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "staged_graph_3.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.278413964220462e-07,
+        "max_row_sum_error": 4.2849423254054386e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_stream_3.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.278413964220462e-07,
+        "max_row_sum_error": 4.2849423254054386e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_graph_3.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.278413964220462e-07,
+        "max_row_sum_error": 4.2849423254054386e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_stream_3.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.4712460711693325e-07,
+        "max_row_sum_error": 4.47834367145461e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_graph_3.f32",
+        "elements": 16777216,
+        "max_abs_error": 4.4712460711693325e-07,
+        "max_row_sum_error": 4.47834367145461e-07,
+        "same_algorithm_bitwise_checked": false
+      }
+    ],
+    "intermediate_checks": 0,
+    "atol": 1e-07,
+    "rtol": 2e-05,
+    "row_sum_atol": 2e-05
+  },
+  "traces": [],
+  "timings": {
+    "samples": 147,
+    "timing_variants": {
+      "cudnn_graph": {
+        "host_single_us": {
+          "p10": 55.703,
+          "median": 56.075,
+          "p90": 57.025
+        },
+        "host_enqueue_us": {
+          "p10": 1.9758125,
+          "median": 2.00165625,
+          "p90": 2.0348125
+        },
+        "host_batch_us": {
+          "p10": 49.6025625,
+          "median": 49.70571875,
+          "p90": 49.77903125
+        },
+        "event_interval_us": {
+          "p10": 49.3849983215,
+          "median": 49.4770011902,
+          "p90": 49.5760002136
+        }
+      },
+      "cudnn_stream": {
+        "host_single_us": {
+          "p10": 55.173,
+          "median": 55.666,
+          "p90": 56.788
+        },
+        "host_enqueue_us": {
+          "p10": 2.143625,
+          "median": 2.304125,
+          "p90": 2.39284375
+        },
+        "host_batch_us": {
+          "p10": 50.25484375,
+          "median": 50.3031875,
+          "p90": 50.401
+        },
+        "event_interval_us": {
+          "p10": 50.0449981689,
+          "median": 50.0960006714,
+          "p90": 50.1970024109
+        }
+      },
+      "empty_sync": {
+        "host_single_us": {
+          "p10": 1.531,
+          "median": 1.565,
+          "p90": 1.645
+        }
+      },
+      "fused_graph": {
+        "host_single_us": {
+          "p10": 53.636,
+          "median": 54.932,
+          "p90": 56.016
+        },
+        "host_enqueue_us": {
+          "p10": 1.96940625,
+          "median": 2.004375,
+          "p90": 2.02796875
+        },
+        "host_batch_us": {
+          "p10": 48.56934375,
+          "median": 48.679,
+          "p90": 48.77459375
+        },
+        "event_interval_us": {
+          "p10": 48.3520011902,
+          "median": 48.4489974976,
+          "p90": 48.5429992676
+        }
+      },
+      "fused_stream": {
+        "host_single_us": {
+          "p10": 52.816,
+          "median": 53.823,
+          "p90": 55.118
+        },
+        "host_enqueue_us": {
+          "p10": 1.892,
+          "median": 2.03228125,
+          "p90": 2.0610625
+        },
+        "host_batch_us": {
+          "p10": 49.18259375,
+          "median": 49.31759375,
+          "p90": 49.49375
+        },
+        "event_interval_us": {
+          "p10": 48.9809989929,
+          "median": 49.1090011597,
+          "p90": 49.2939987183
+        }
+      },
+      "staged_graph": {
+        "host_single_us": {
+          "p10": 169.535,
+          "median": 170.745,
+          "p90": 171.412
+        },
+        "host_enqueue_us": {
+          "p10": 1.9810625,
+          "median": 2.00321875,
+          "p90": 2.02478125
+        },
+        "host_batch_us": {
+          "p10": 162.75296875,
+          "median": 162.8214375,
+          "p90": 162.94915625
+        },
+        "event_interval_us": {
+          "p10": 162.518997192,
+          "median": 162.596008301,
+          "p90": 162.710998535
+        }
+      },
+      "staged_stream": {
+        "host_single_us": {
+          "p10": 171.533,
+          "median": 172.603,
+          "p90": 173.258
+        },
+        "host_enqueue_us": {
+          "p10": 7.50421875,
+          "median": 8.0280625,
+          "p90": 8.239375
+        },
+        "host_batch_us": {
+          "p10": 167.49675,
+          "median": 167.688125,
+          "p90": 167.84128125
+        },
+        "event_interval_us": {
+          "p10": 167.291992188,
+          "median": 167.436004639,
+          "p90": 167.630004883
+        }
+      }
+    },
+    "paired_completion_ratios": {
+      "cudnn_stream/cudnn_graph": {
+        "p10": 0.9757853518060019,
+        "median": 0.9900942213305629,
+        "p90": 1.0146053505104695
+      },
+      "fused_stream/fused_graph": {
+        "p10": 0.9508071669327657,
+        "median": 0.9847117607577001,
+        "p90": 1.0052137643378518
+      },
+      "staged_stream/staged_graph": {
+        "p10": 1.0053754692639383,
+        "median": 1.0120199766977558,
+        "p90": 1.019252661692276
+      }
+    }
+  }
+}

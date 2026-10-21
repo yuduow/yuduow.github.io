@@ -1,0 +1,264 @@
+{
+  "validation": {
+    "case": {
+      "kind": "case",
+      "operation": "row",
+      "rows": 4096,
+      "cols": 128,
+      "pattern": "balanced",
+      "mode": "bench"
+    },
+    "output_checks": [
+      {
+        "file": "staged_stream_2.f32",
+        "elements": 524288,
+        "max_abs_error": 2.4124771269562473e-07,
+        "max_row_sum_error": 2.4125696063137525e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "staged_graph_2.f32",
+        "elements": 524288,
+        "max_abs_error": 2.4124771269562473e-07,
+        "max_row_sum_error": 2.4125696063137525e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_stream_2.f32",
+        "elements": 524288,
+        "max_abs_error": 2.4124771269562473e-07,
+        "max_row_sum_error": 2.4125696063137525e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_graph_2.f32",
+        "elements": 524288,
+        "max_abs_error": 2.4124771269562473e-07,
+        "max_row_sum_error": 2.4125696063137525e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_stream_2.f32",
+        "elements": 524288,
+        "max_abs_error": 2.539449394101112e-07,
+        "max_row_sum_error": 2.5395899383440224e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_graph_2.f32",
+        "elements": 524288,
+        "max_abs_error": 2.539449394101112e-07,
+        "max_row_sum_error": 2.5395899383440224e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "staged_stream_3.f32",
+        "elements": 524288,
+        "max_abs_error": 2.747770866395882e-07,
+        "max_row_sum_error": 2.74786958298634e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "staged_graph_3.f32",
+        "elements": 524288,
+        "max_abs_error": 2.747770866395882e-07,
+        "max_row_sum_error": 2.74786958298634e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_stream_3.f32",
+        "elements": 524288,
+        "max_abs_error": 2.747770866395882e-07,
+        "max_row_sum_error": 2.74786958298634e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "fused_graph_3.f32",
+        "elements": 524288,
+        "max_abs_error": 2.747770866395882e-07,
+        "max_row_sum_error": 2.74786958298634e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_stream_3.f32",
+        "elements": 524288,
+        "max_abs_error": 2.8696413112427877e-07,
+        "max_row_sum_error": 2.8697785370290774e-07,
+        "same_algorithm_bitwise_checked": false
+      },
+      {
+        "file": "cudnn_graph_3.f32",
+        "elements": 524288,
+        "max_abs_error": 2.8696413112427877e-07,
+        "max_row_sum_error": 2.8697785370290774e-07,
+        "same_algorithm_bitwise_checked": false
+      }
+    ],
+    "intermediate_checks": 0,
+    "atol": 1e-07,
+    "rtol": 2e-05,
+    "row_sum_atol": 2e-05
+  },
+  "traces": [],
+  "timings": {
+    "samples": 147,
+    "timing_variants": {
+      "cudnn_graph": {
+        "host_single_us": {
+          "p10": 7.794,
+          "median": 7.977,
+          "p90": 8.258
+        },
+        "host_enqueue_us": {
+          "p10": 1.85121875,
+          "median": 1.87578125,
+          "p90": 1.89296875
+        },
+        "host_batch_us": {
+          "p10": 3.08990625,
+          "median": 3.1035625,
+          "p90": 3.12025
+        },
+        "event_interval_us": {
+          "p10": 2.90700006485,
+          "median": 2.92000007629,
+          "p90": 2.92599987984
+        }
+      },
+      "cudnn_stream": {
+        "host_single_us": {
+          "p10": 8.485,
+          "median": 8.672,
+          "p90": 9.018
+        },
+        "host_enqueue_us": {
+          "p10": 1.888,
+          "median": 2.0238125,
+          "p90": 2.0789375
+        },
+        "host_batch_us": {
+          "p10": 3.1984375,
+          "median": 3.218375,
+          "p90": 3.2313125
+        },
+        "event_interval_us": {
+          "p10": 3.01499986649,
+          "median": 3.03500008583,
+          "p90": 3.04600000381
+        }
+      },
+      "empty_sync": {
+        "host_single_us": {
+          "p10": 1.422,
+          "median": 1.442,
+          "p90": 1.49
+        }
+      },
+      "fused_graph": {
+        "host_single_us": {
+          "p10": 22.446,
+          "median": 22.613,
+          "p90": 22.946
+        },
+        "host_enqueue_us": {
+          "p10": 1.81709375,
+          "median": 1.83184375,
+          "p90": 1.86425
+        },
+        "host_batch_us": {
+          "p10": 17.70475,
+          "median": 17.71353125,
+          "p90": 17.723625
+        },
+        "event_interval_us": {
+          "p10": 17.5230007172,
+          "median": 17.5310001373,
+          "p90": 17.5410003662
+        }
+      },
+      "fused_stream": {
+        "host_single_us": {
+          "p10": 22.994,
+          "median": 23.184,
+          "p90": 23.8
+        },
+        "host_enqueue_us": {
+          "p10": 1.7024375,
+          "median": 1.8378125,
+          "p90": 1.911875
+        },
+        "host_batch_us": {
+          "p10": 17.84509375,
+          "median": 17.877625,
+          "p90": 17.893
+        },
+        "event_interval_us": {
+          "p10": 17.6539993286,
+          "median": 17.6919994354,
+          "p90": 17.7129993439
+        }
+      },
+      "staged_graph": {
+        "host_single_us": {
+          "p10": 21.919,
+          "median": 22.012,
+          "p90": 22.186
+        },
+        "host_enqueue_us": {
+          "p10": 1.82475,
+          "median": 1.84596875,
+          "p90": 1.8756875
+        },
+        "host_batch_us": {
+          "p10": 17.075375,
+          "median": 17.0838125,
+          "p90": 17.09834375
+        },
+        "event_interval_us": {
+          "p10": 16.892999649,
+          "median": 16.9029998779,
+          "p90": 16.9159984589
+        }
+      },
+      "staged_stream": {
+        "host_single_us": {
+          "p10": 25.079,
+          "median": 25.316,
+          "p90": 25.799
+        },
+        "host_enqueue_us": {
+          "p10": 6.8493125,
+          "median": 7.3558125,
+          "p90": 7.4853125
+        },
+        "host_batch_us": {
+          "p10": 19.8945,
+          "median": 19.92609375,
+          "p90": 19.98309375
+        },
+        "event_interval_us": {
+          "p10": 19.7089996338,
+          "median": 19.7399997711,
+          "p90": 19.8010005951
+        }
+      }
+    },
+    "paired_completion_ratios": {
+      "cudnn_stream/cudnn_graph": {
+        "p10": 1.0397652413462688,
+        "median": 1.0852830188679246,
+        "p90": 1.1470096463022506
+      },
+      "fused_stream/fused_graph": {
+        "p10": 1.0168037498894489,
+        "median": 1.0231694375663247,
+        "p90": 1.037521621501752
+      },
+      "staged_stream/staged_graph": {
+        "p10": 1.1339237303452014,
+        "median": 1.150448114280515,
+        "p90": 1.1701818841565745
+      }
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "status": "designed",
+  "workload": {
+    "name": "rms_scaled_softmax",
+    "dtype": "float32",
+    "columns": 131072,
+    "primary_rows": 16,
+    "main_rows": [
+      1,
+      16,
+      32
+    ],
+    "capacity_rows": 64,
+    "illustrative_tile_width": 8192,
+    "validation_shapes": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        257
+      ],
+      [
+        2,
+        8193
+      ],
+      [
+        2,
+        131075
+      ]
+    ],
+    "finite_inputs_only": true,
+    "input_output_alias": false,
+    "fixtures": [
+      "random",
+      "zero",
+      "constant",
+      "dominant",
+      "alternating",
+      "tile_offsets",
+      "common_offset",
+      "near_zero"
+    ],
+    "seeds": {
+      "pilot": 11,
+      "preflight": 23,
+      "timing": 41,
+      "held_out": 53
+    },
+    "eps": 1e-05,
+    "maximum_absolute_input": 1024
+  },
+  "variants": [
+    {
+      "id": "baseline",
+      "kernels": 9
+    },
+    {
+      "id": "local_materialize",
+      "kernels": 3
+    },
+    {
+      "id": "local_recompute",
+      "kernels": 3
+    },
+    {
+      "id": "local_materialize2",
+      "kernels": 2
+    },
+    {
+      "id": "local_recompute2",
+      "kernels": 2
+    },
+    {
+      "id": "streaming",
+      "kernels": 1
+    },
+    {
+      "id": "retained",
+      "kernels": "slabs"
+    },
+    {
+      "id": "roundtrip_off",
+      "kernels": "slabs"
+    },
+    {
+      "id": "roundtrip_on",
+      "kernels": "slabs"
+    },
+    {
+      "id": "input_reload",
+      "kernels": "slabs"
+    },
+    {
+      "id": "both_reload",
+      "kernels": "slabs"
+    },
+    {
+      "id": "cudnn",
+      "kernels": "measured"
+    },
+    {
+      "id": "row_retained",
+      "kernels": "cooperatively admitted slabs",
+      "synchronization": "device-scope release/acquire row barriers"
+    }
+  ],
+  "arithmetic": {
+    "exp": "expf",
+    "fast_math": false,
+    "fmad": false
+  },
+  "tuning": {
+    "tile_widths": [
+      4096,
+      8192,
+      16384,
+      131072
+    ],
+    "threads": [
+      64,
+      128,
+      256
+    ],
+    "families": [
+      "baseline",
+      "local_materialize",
+      "local_recompute",
+      "local_materialize2",
+      "local_recompute2",
+      "streaming",
+      "retained",
+      "row_retained"
+    ],
+    "max_geometries_per_family_per_shape": 12,
+    "rounds": 5,
+    "batch_invocations": 16,
+    "selection_metric": "median_graph_completion_per_invocation",
+    "freeze_before_held_out_measurements": true,
+    "scratch_bytes": 256,
+    "shared_capacity_model": "Primary local kernels: 256 bytes; retained: 4*tile_width+256 bytes. No padded local control.",
+    "cooperative_admission": "compiled occupancy API times queried SM count",
+    "oversize_batch_policy": "sequential independent row slabs"
+  },
+  "logical_global_accesses": {
+    "scope": "Dominant arrays only; logical accesses, not HBM traffic. Local2 and streaming repeat full-row work and are measured separately.",
+    "baseline_bytes_per_element": 36,
+    "materialize_bytes_per_element": 20,
+    "recompute_bytes_per_element": 16,
+    "retained_bytes_per_element": 8
+  },
+  "validation": {
+    "oracle": "Independent float64 RMS scaling then stable row softmax on saved float32 inputs",
+    "atol": 1e-07,
+    "rtol": 2e-05,
+    "row_sum_atol": 2e-05,
+    "row_l1_max": 2e-05,
+    "denominator_rtol": 2e-05,
+    "changing_input_replays": 1000,
+    "sanitizers": [
+      "memcheck",
+      "racecheck",
+      "synccheck"
+    ]
+  },
+  "timing": {
+    "allocations": 2,
+    "warmups": 10,
+    "rounds": 21,
+    "batch_invocations": 32,
+    "metrics": [
+      "host_single_completion_us",
+      "host_batch_enqueue_us",
+      "host_batch_completion_us",
+      "cuda_event_batch_us"
+    ],
+    "main_cache_policy": "warm same-variant replay",
+    "cache_eviction_rows": [
+      16,
+      64
+    ],
+    "eviction_buffer_bytes_minimum": 268435456,
+    "eviction_l2_multiplier": 4
+  },
+  "proposed_collection": {
+    "gpu": "H100!",
+    "max_active_gpu_containers": 1,
+    "automatic_retries": 0,
+    "warm_pool": 0,
+    "pilot_gpu_seconds_max": 240,
+    "timing_gpu_seconds_max_per_allocation": 180,
+    "evidence_gpu_seconds_max": 360,
+    "total_gpu_function_seconds_max": 900,
+    "include_failed_attempts_in_budget": true,
+    "compile_and_package_on_cpu": true,
+    "teardown_check_required": true
+  },
+  "prior_device_observation": {
+    "scope": "capacity planning only; query the newly allocated device before launch",
+    "source": "experiments/graphs_mlp/artifacts/20261019T233947Z/evidence/ncu-1024-fused_graph.metrics.csv",
+    "sha256": "d23165b3c4ec6507a40ff0b7b57565e88c90fb585a2829145112081ef6d89872",
+    "sm_count": 132,
+    "shared_bytes_per_sm": 233472,
+    "reserved_shared_bytes_per_block": 1024,
+    "shared_bytes_per_block_optin": 232448,
+    "registers_per_sm": 65536,
+    "threads_per_sm": 2048,
+    "blocks_per_sm": 32
+  },
+  "hypothesis": {
+    "primary_rows": 16,
+    "target_event_interval_speedup": 1.25,
+    "allocations_required": 2,
+    "not_a_completion_requirement": true,
+    "primary_comparator": "pilot-fastest of all 3/2-kernel local families and redundant single-kernel streaming"
+  },
+  "execution_revision": {
+    "parent_run": "20261020T022150Z",
+    "reason": "Same RMS-scaled softmax; compare row-scoped barriers with full-grid barriers",
+    "shared_gpu_seconds_cap": 900
+  }
+}

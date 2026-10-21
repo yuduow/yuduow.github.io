@@ -1,0 +1,373 @@
+{
+  "run_id": "20261020T023055Z",
+  "rows": [
+    {
+      "rows": 1,
+      "allocation": 1,
+      "local_family": "local_recompute_graph",
+      "mega_family": "retained",
+      "full_grid_event_us": 10.196000099182129,
+      "row_scope_event_us": 11.008000373840332,
+      "host_us": [
+        37.031,
+        28.157,
+        16.557,
+        14.881
+      ],
+      "event_us": [
+        32.16400146484375,
+        23.371999740600586,
+        11.99899959564209,
+        10.196000099182129
+      ],
+      "event_speedup": 1.1768340014634355,
+      "host_speedup": 1.1126268395941132,
+      "cudnn_event_us": 144.55099487304688
+    },
+    {
+      "rows": 1,
+      "allocation": 2,
+      "local_family": "local_recompute_graph",
+      "mega_family": "retained",
+      "full_grid_event_us": 10.152000427246094,
+      "row_scope_event_us": 11.01200008392334,
+      "host_us": [
+        36.789,
+        29.924,
+        17.405,
+        15.269
+      ],
+      "event_us": [
+        31.334001541137695,
+        24.62299919128418,
+        12.37600040435791,
+        10.152000427246094
+      ],
+      "event_speedup": 1.2190701224896534,
+      "host_speedup": 1.1398912829916825,
+      "cudnn_event_us": 146.9119873046875
+    },
+    {
+      "rows": 16,
+      "allocation": 1,
+      "local_family": "local_recompute_graph",
+      "mega_family": "row_retained",
+      "full_grid_event_us": 14.40999984741211,
+      "row_scope_event_us": 14.453999519348145,
+      "host_us": [
+        44.958,
+        39.171,
+        19.982,
+        19.201
+      ],
+      "event_us": [
+        39.76700210571289,
+        34.257999420166016,
+        15.313000679016113,
+        14.453999519348145
+      ],
+      "event_speedup": 1.0594299978022075,
+      "host_speedup": 1.0406749648455809,
+      "cudnn_event_us": 152.0030059814453
+    },
+    {
+      "rows": 16,
+      "allocation": 2,
+      "local_family": "local_recompute_graph",
+      "mega_family": "row_retained",
+      "full_grid_event_us": 14.138999938964844,
+      "row_scope_event_us": 14.14900016784668,
+      "host_us": [
+        44.393,
+        38.431,
+        19.908,
+        19.242
+      ],
+      "event_us": [
+        39.21800231933594,
+        32.80699920654297,
+        14.782000541687012,
+        14.14900016784668
+      ],
+      "event_speedup": 1.044738169929407,
+      "host_speedup": 1.0346117867165576,
+      "cudnn_event_us": 151.20999145507812
+    },
+    {
+      "rows": 32,
+      "allocation": 1,
+      "local_family": "local_recompute_graph",
+      "mega_family": "row_retained",
+      "full_grid_event_us": 20.420000076293945,
+      "row_scope_event_us": 19.006999969482422,
+      "host_us": [
+        69.855,
+        64.692,
+        27.904,
+        25.683
+      ],
+      "event_us": [
+        66.52400207519531,
+        58.35300064086914,
+        23.274999618530273,
+        19.006999969482422
+      ],
+      "event_speedup": 1.2245488323197,
+      "host_speedup": 1.0864774364365533,
+      "cudnn_event_us": 185.072998046875
+    },
+    {
+      "rows": 32,
+      "allocation": 2,
+      "local_family": "local_recompute_graph",
+      "mega_family": "row_retained",
+      "full_grid_event_us": 20.05299949645996,
+      "row_scope_event_us": 19.525001525878906,
+      "host_us": [
+        69.99,
+        64.289,
+        27.17,
+        24.643
+      ],
+      "event_us": [
+        66.36699676513672,
+        57.317996978759766,
+        22.05000114440918,
+        19.525001525878906
+      ],
+      "event_speedup": 1.1293213531985429,
+      "host_speedup": 1.10254433307633,
+      "cudnn_event_us": 183.2949981689453
+    },
+    {
+      "rows": 64,
+      "allocation": 1,
+      "local_family": "local_recompute_graph",
+      "mega_family": "row_retained",
+      "full_grid_event_us": 50.94599914550781,
+      "row_scope_event_us": 49.479000091552734,
+      "host_us": [
+        143.703,
+        137.057,
+        62.174,
+        55.701
+      ],
+      "event_us": [
+        141.58799743652344,
+        131.31300354003906,
+        56.42399978637695,
+        49.479000091552734
+      ],
+      "event_speedup": 1.1403625716359191,
+      "host_speedup": 1.1162097628408825,
+      "cudnn_event_us": 359.4739990234375
+    },
+    {
+      "rows": 64,
+      "allocation": 2,
+      "local_family": "local_recompute_graph",
+      "mega_family": "row_retained",
+      "full_grid_event_us": 50.17499923706055,
+      "row_scope_event_us": 48.10199737548828,
+      "host_us": [
+        143.014,
+        134.625,
+        61.377,
+        55.188
+      ],
+      "event_us": [
+        139.62599182128906,
+        128.05099487304688,
+        55.229000091552734,
+        48.10199737548828
+      ],
+      "event_speedup": 1.1481643820407386,
+      "host_speedup": 1.112143944335725,
+      "cudnn_event_us": 357.3580017089844
+    }
+  ],
+  "paired_primary": {
+    "1": {
+      "mega_minus_local": {
+        "host_single_us": {
+          "median_us": -0.809000000000001,
+          "p10_us": -0.9079999999999977,
+          "p90_us": -0.6170000000000009,
+          "bootstrap95_median_us": [
+            -0.8649999999999984,
+            -0.7119999999999997
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": -0.8579998016357422,
+          "p10_us": -0.9379997253417969,
+          "p90_us": -0.8050003051757812,
+          "bootstrap95_median_us": [
+            -0.8849992752075195,
+            -0.8249998092651367
+          ],
+          "paired_rounds": 21
+        }
+      },
+      "reload_input": {
+        "host_single_us": {
+          "median_us": 1.4879999999999995,
+          "p10_us": 1.2079999999999984,
+          "p90_us": 1.7059999999999995,
+          "bootstrap95_median_us": [
+            1.3610000000000007,
+            1.5479999999999983
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": 1.5380001068115234,
+          "p10_us": 1.4730005264282227,
+          "p90_us": 1.574000358581543,
+          "bootstrap95_median_us": [
+            1.5229988098144531,
+            1.5540008544921875
+          ],
+          "paired_rounds": 21
+        }
+      },
+      "roundtrip_exp": {
+        "host_single_us": {
+          "median_us": 2.8930000000000007,
+          "p10_us": 2.6030000000000015,
+          "p90_us": 3.154,
+          "bootstrap95_median_us": [
+            2.815999999999999,
+            2.950000000000003
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": 2.970998764038086,
+          "p10_us": 2.9079999923706055,
+          "p90_us": 3.0139999389648438,
+          "bootstrap95_median_us": [
+            2.950000762939453,
+            2.982001304626465
+          ],
+          "paired_rounds": 21
+        }
+      },
+      "both_added": {
+        "host_single_us": {
+          "median_us": 3.9929999999999986,
+          "p10_us": 3.632999999999999,
+          "p90_us": 4.268000000000001,
+          "bootstrap95_median_us": [
+            3.904,
+            4.1129999999999995
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": 4.0590009689331055,
+          "p10_us": 3.9739990234375,
+          "p90_us": 4.101999282836914,
+          "bootstrap95_median_us": [
+            4.017998695373535,
+            4.072999000549316
+          ],
+          "paired_rounds": 21
+        }
+      }
+    },
+    "2": {
+      "mega_minus_local": {
+        "host_single_us": {
+          "median_us": -0.6820000000000022,
+          "p10_us": -0.8719999999999999,
+          "p90_us": -0.4369999999999976,
+          "bootstrap95_median_us": [
+            -0.7600000000000016,
+            -0.5530000000000008
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": -0.6279993057250977,
+          "p10_us": -0.7079992294311523,
+          "p90_us": -0.5670003890991211,
+          "bootstrap95_median_us": [
+            -0.6549997329711914,
+            -0.6170005798339844
+          ],
+          "paired_rounds": 21
+        }
+      },
+      "reload_input": {
+        "host_single_us": {
+          "median_us": 1.2860000000000014,
+          "p10_us": 0.8939999999999984,
+          "p90_us": 1.6400000000000006,
+          "bootstrap95_median_us": [
+            1.0859999999999985,
+            1.3649999999999984
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": 1.1830005645751953,
+          "p10_us": 1.1270008087158203,
+          "p90_us": 1.2199993133544922,
+          "bootstrap95_median_us": [
+            1.148000717163086,
+            1.1979999542236328
+          ],
+          "paired_rounds": 21
+        }
+      },
+      "roundtrip_exp": {
+        "host_single_us": {
+          "median_us": 2.853999999999999,
+          "p10_us": 2.594000000000001,
+          "p90_us": 3.3150000000000013,
+          "bootstrap95_median_us": [
+            2.6769999999999996,
+            2.9840000000000018
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": 2.7639999389648438,
+          "p10_us": 2.6919984817504883,
+          "p90_us": 2.828000068664551,
+          "bootstrap95_median_us": [
+            2.740999221801758,
+            2.800999641418457
+          ],
+          "paired_rounds": 21
+        }
+      },
+      "both_added": {
+        "host_single_us": {
+          "median_us": 3.91,
+          "p10_us": 3.6960000000000015,
+          "p90_us": 4.356999999999999,
+          "bootstrap95_median_us": [
+            3.7910000000000004,
+            4.0169999999999995
+          ],
+          "paired_rounds": 21
+        },
+        "event_interval_us": {
+          "median_us": 3.8699989318847656,
+          "p10_us": 3.7879981994628906,
+          "p90_us": 3.9259986877441406,
+          "bootstrap95_median_us": [
+            3.8339996337890625,
+            3.8770008087158203
+          ],
+          "paired_rounds": 21
+        }
+      }
+    }
+  },
+  "target_event_speedup": 1.25,
+  "target_met_both_allocations": false
+}

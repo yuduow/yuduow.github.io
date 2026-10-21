@@ -1,0 +1,17 @@
+{"kind":"device","name":"NVIDIA H100 80GB HBM3","sms":132,"l2_bytes":52428800,"global_bytes":85009367040,"driver":13030,"runtime":12080,"cc_major":9,"cc_minor":0}
+{"kind":"graph","case":"pointwise_256_separate","nodes":3,"capture_us":506.11,"instantiate_us":201.552,"first_replay_sync_us":1281.909}
+{"kind":"graph","case":"pointwise_256_fused","nodes":1,"capture_us":33.32,"instantiate_us":20.129,"first_replay_sync_us":860.054}
+{"kind":"graph","case":"pointwise_32768_separate","nodes":3,"capture_us":9.731,"instantiate_us":32.367,"first_replay_sync_us":1044.956}
+{"kind":"graph","case":"pointwise_32768_fused","nodes":1,"capture_us":4.444,"instantiate_us":11.19,"first_replay_sync_us":717.253}
+{"kind":"graph","case":"pointwise_1048576_separate","nodes":3,"capture_us":11.631,"instantiate_us":33.318,"first_replay_sync_us":615.783}
+{"kind":"graph","case":"pointwise_1048576_fused","nodes":1,"capture_us":4.091,"instantiate_us":12.187,"first_replay_sync_us":555.271}
+{"kind":"graph","case":"pointwise_16777216_separate","nodes":3,"capture_us":14.816,"instantiate_us":35.132,"first_replay_sync_us":1151.032}
+{"kind":"graph","case":"pointwise_16777216_fused","nodes":1,"capture_us":5.465,"instantiate_us":12.698,"first_replay_sync_us":910.045}
+{"kind":"tiles","case":"tiles_ragged","jobs":597,"lanes":256,"shmem_bytes":116992,"active_blocks_per_sm":1,"trace":false}
+{"kind":"graph","case":"tiles_ragged_separate","nodes":2,"capture_us":22.094,"instantiate_us":38.987,"first_replay_sync_us":870.148}
+{"kind":"graph","case":"tiles_ragged_fused","nodes":1,"capture_us":5.233,"instantiate_us":10.777,"first_replay_sync_us":820.676}
+{"kind":"graph","case":"tiles_ragged_queue","nodes":2,"capture_us":6.99,"instantiate_us":13.222,"first_replay_sync_us":832.688}
+{"kind":"tiles","case":"tiles_balanced","jobs":597,"lanes":256,"shmem_bytes":116992,"active_blocks_per_sm":1,"trace":false}
+{"kind":"graph","case":"tiles_balanced_separate","nodes":2,"capture_us":15.272,"instantiate_us":34.676,"first_replay_sync_us":782.092}
+{"kind":"graph","case":"tiles_balanced_fused","nodes":1,"capture_us":4.316,"instantiate_us":12.076,"first_replay_sync_us":778.285}
+{"kind":"graph","case":"tiles_balanced_queue","nodes":2,"capture_us":5.173,"instantiate_us":11.451,"first_replay_sync_us":773.688}

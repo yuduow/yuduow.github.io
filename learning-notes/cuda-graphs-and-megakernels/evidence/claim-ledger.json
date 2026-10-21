@@ -1,0 +1,835 @@
+{
+  "article_url": "https://x.com/compose/articles/edit/2024005825090777088",
+  "original_title": "CUDA Graph vs. Mega Kernel",
+  "observed_publication": "Published Feb 22 (year not shown in UI)",
+  "observation": "Authenticated Safari accessibility content, October 18, 2026, America/Los_Angeles. Original excerpts transcribed; cover image was not fact-checked. No live edits, unpublishing, or republishing performed.",
+  "claims": [
+    {
+      "id": "C01",
+      "section": "Opening",
+      "original_excerpt": "They operate at different layers of the GPU execution stack",
+      "verdict": "qualify",
+      "finding": "Useful distinction: submission versus device implementation. Layers interact and techniques can be combined.",
+      "sources": [
+        "graphs",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C02",
+      "section": "Execution layer",
+      "original_excerpt": "Application layer — Python/C++ framework logic (PyTorch, vLLM)",
+      "verdict": "retain",
+      "finding": "A useful explanatory abstraction, not an official exhaustive CUDA taxonomy.",
+      "sources": [
+        "streams"
+      ]
+    },
+    {
+      "id": "C03",
+      "section": "Execution layer",
+      "original_excerpt": "Runtime submission layer — kernel launch and dependency scheduling",
+      "verdict": "retain",
+      "finding": "Submission and scheduling are useful concepts; some scheduling also occurs on device.",
+      "sources": [
+        "graphs",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C04",
+      "section": "Execution layer",
+      "original_excerpt": "Kernel boundary — each individual global function launch",
+      "verdict": "qualify",
+      "finding": "A kernel launch creates a grid; dependencies and execution scope matter more than a four-layer classification.",
+      "sources": [
+        "memory",
+        "streams"
+      ]
+    },
+    {
+      "id": "C05",
+      "section": "Execution layer",
+      "original_excerpt": "In-kernel execution — threads, warps, shared memory, registers",
+      "verdict": "retain",
+      "finding": "Correct examples of device execution and storage concepts.",
+      "sources": [
+        "memory"
+      ]
+    },
+    {
+      "id": "C06",
+      "section": "Execution layer",
+      "original_excerpt": "CUDA Graph -> runtime submission layer",
+      "verdict": "qualify",
+      "finding": "Also affects device dispatch; graph nodes and dependencies expose a complete workflow to CUDA.",
+      "sources": [
+        "graphs",
+        "launch"
+      ]
+    },
+    {
+      "id": "C07",
+      "section": "Execution layer",
+      "original_excerpt": "MegaKernels -> kernel boundary and in-kernel layers",
+      "verdict": "retain",
+      "finding": "Correct conceptual emphasis, with explicit dependency and resource management.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C08",
+      "section": "CUDA Graph",
+      "original_excerpt": "The normal way to run GPU code is to submit kernels one at a time from the CPU.",
+      "verdict": "qualify",
+      "finding": "Describes conventional host stream launches; CUDA also supports graph and device-side launch mechanisms.",
+      "sources": [
+        "graphs",
+        "streams"
+      ]
+    },
+    {
+      "id": "C09",
+      "section": "CUDA Graph",
+      "original_excerpt": "Each submission goes through the CUDA driver and lands on a GPU stream.",
+      "verdict": "qualify",
+      "finding": "Describe runtime/driver submission without asserting a distinct direct driver transition per framework operation.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C10",
+      "section": "CUDA Graph",
+      "original_excerpt": "it triggers the entire workflow at once",
+      "verdict": "qualify",
+      "finding": "One replay enqueues a workflow; nodes execute when their dependencies permit, not simultaneously.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C11",
+      "section": "CUDA Graph",
+      "original_excerpt": "reducing the idle time (\"jitter\") between kernels",
+      "verdict": "qualify",
+      "finding": "Can reduce submission and dispatch gaps; jitter specifically means variability and is not a synonym for all idle time.",
+      "sources": [
+        "launch"
+      ]
+    },
+    {
+      "id": "C12",
+      "section": "CUDA Graph",
+      "original_excerpt": "about 2.1 us on a regular stream, and about 1.3 us with CUDA Graph replay",
+      "verdict": "qualify",
+      "finding": "Attributed dummy-kernel observation; distinguish the observed device idle/setup interval from CPU API return time.",
+      "sources": [
+        "hazy",
+        "launch"
+      ]
+    },
+    {
+      "id": "C13",
+      "section": "CUDA Graph",
+      "original_excerpt": "That's 38% decrease.",
+      "verdict": "retain",
+      "finding": "(2.1−1.3)/2.1 = 38.095%; a reduction in that reported overhead, not end-to-end model latency.",
+      "sources": [
+        "hazy"
+      ]
+    },
+    {
+      "id": "C14",
+      "section": "CUDA Graph",
+      "original_excerpt": "do not: Fuse kernels",
+      "verdict": "retain",
+      "finding": "Replay does not itself fuse kernel bodies. Framework compilation may fuse before capture.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C15",
+      "section": "CUDA Graph",
+      "original_excerpt": "Eliminate global-memory traffic between kernels",
+      "verdict": "retain",
+      "finding": "Replay does not automatically remove the captured kernels' intermediate accesses.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C16",
+      "section": "CUDA Graph",
+      "original_excerpt": "Remove kernel-boundary synchronization",
+      "verdict": "correct",
+      "finding": "Default completion edges preserve ordering; graphs can also encode PDL programmatic edges. Avoid an unconditional prohibition.",
+      "sources": [
+        "graphs",
+        "pdl"
+      ]
+    },
+    {
+      "id": "C17",
+      "section": "CUDA Graph",
+      "original_excerpt": "Keep intermediate data in registers across kernels",
+      "verdict": "retain",
+      "finding": "No general register handoff across separate kernels.",
+      "sources": [
+        "memory"
+      ]
+    },
+    {
+      "id": "C18",
+      "section": "CUDA Graph",
+      "original_excerpt": "Each kernel inside a CUDA Graph is still an independent kernel.",
+      "verdict": "qualify",
+      "finding": "Separate kernel nodes remain distinct kernels, but they can have explicit dependencies. A graph also has non-kernel node types.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C19",
+      "section": "CUDA Graph",
+      "original_excerpt": "The graph makes dispatching cheaper.",
+      "verdict": "retain",
+      "finding": "Can amortize setup and improve repeated dispatch; retain the setup costs and measured scope.",
+      "sources": [
+        "graphs",
+        "launch"
+      ]
+    },
+    {
+      "id": "C20",
+      "section": "PDL",
+      "original_excerpt": "can launch a dependent kernel early so it can do independent work sooner",
+      "verdict": "retain",
+      "finding": "Supported on compute capability 9.0+. Concurrent execution is opportunistic.",
+      "sources": [
+        "pdl"
+      ]
+    },
+    {
+      "id": "C21",
+      "section": "PDL",
+      "original_excerpt": "dependent work still has to synchronize (cudaGridDependencySynchronize) before consuming producer results",
+      "verdict": "qualify",
+      "finding": "The required data-availability check applies; the guide also permits other means of verification. Never rely on concurrent progress.",
+      "sources": [
+        "pdl"
+      ]
+    },
+    {
+      "id": "C22",
+      "section": "PDL",
+      "original_excerpt": "this can still leave pipeline stalls for fine-grained dependencies",
+      "verdict": "retain",
+      "finding": "A possibility, not an invariant measured PDL cost.",
+      "sources": [
+        "pdl"
+      ]
+    },
+    {
+      "id": "C23",
+      "section": "Boundary overhead",
+      "original_excerpt": "Three overhead sources stack at each boundary",
+      "verdict": "correct",
+      "finding": "They may matter and overlap; do not treat them as three independent additive constants.",
+      "sources": [
+        "launch",
+        "streams"
+      ]
+    },
+    {
+      "id": "C24",
+      "section": "Boundary overhead",
+      "original_excerpt": "1.3-2.1 us of scheduling overhead",
+      "verdict": "correct",
+      "finding": "Do not reuse one microbenchmark as a universal scheduling cost.",
+      "sources": [
+        "launch",
+        "hazy"
+      ]
+    },
+    {
+      "id": "C25",
+      "section": "Boundary overhead",
+      "original_excerpt": "With in-order execution on a stream, boundaries force whole-kernel completion semantics.",
+      "verdict": "qualify",
+      "finding": "Correct for ordinary ordered launches; mention PDL and separate-stream concurrency.",
+      "sources": [
+        "streams",
+        "pdl"
+      ]
+    },
+    {
+      "id": "C26",
+      "section": "Boundary overhead",
+      "original_excerpt": "512 thread blocks on a 148-SM B200 leaves a partial final wave with only 68/148 SMs active (80 idle)",
+      "verdict": "qualify",
+      "finding": "512 mod 148 = 68 and 148−68 = 80. This requires an idealized one-resident-block-per-SM wave model; real occupancy and durations vary.",
+      "sources": [
+        "hazy",
+        "memory"
+      ]
+    },
+    {
+      "id": "C27",
+      "section": "Boundary overhead",
+      "original_excerpt": "Intermediate tensors are written to HBM, then read by the next kernel",
+      "verdict": "correct",
+      "finding": "Use global memory; L2 may serve the accesses. DRAM traffic requires counters rather than an assumption.",
+      "sources": [
+        "cache"
+      ]
+    },
+    {
+      "id": "C28",
+      "section": "Boundary overhead",
+      "original_excerpt": "Even with PDL-style overlap, dependent sections still wait on data visibility/completion.",
+      "verdict": "retain",
+      "finding": "Data dependencies still require correctness synchronization.",
+      "sources": [
+        "pdl"
+      ]
+    },
+    {
+      "id": "C29",
+      "section": "Llama estimate",
+      "original_excerpt": "around ~100 kernels for Llama-1B forward",
+      "verdict": "qualify",
+      "finding": "Keep attribution, model/configuration, and date; not a timeless launch count for every serving stack.",
+      "sources": [
+        "hazy"
+      ]
+    },
+    {
+      "id": "C30",
+      "section": "Llama estimate",
+      "original_excerpt": "~130 us of launch overhead per forward pass as a back-of-the-envelope estimate",
+      "verdict": "qualify",
+      "finding": "100×1.3 = 130 µs, but this transfers a dummy-kernel observation. It is not a validated model-runtime decomposition; remove from the main argument.",
+      "sources": [
+        "hazy",
+        "launch"
+      ]
+    },
+    {
+      "id": "C31",
+      "section": "Llama estimate",
+      "original_excerpt": "vLLM/SGLang reaching only ~50% of available H100 memory bandwidth in this workload",
+      "verdict": "qualify",
+      "finding": "Historical attributed result, not a statement about current versions or an independently reproduced counter measurement.",
+      "sources": [
+        "hazy"
+      ]
+    },
+    {
+      "id": "C32",
+      "section": "Megakernel definition",
+      "original_excerpt": "one global CUDA function that executes what would traditionally be many kernels",
+      "verdict": "retain",
+      "finding": "A useful working definition; persistent execution and large fusion are related rather than universally identical terms.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C33",
+      "section": "Megakernel definition",
+      "original_excerpt": "kernel_1: RMSNorm ... kernel_5: RMSNorm + MLP",
+      "verdict": "qualify",
+      "finding": "Illustrative partition only; actual stacks fuse and split these operations differently.",
+      "sources": [
+        "mega"
+      ]
+    },
+    {
+      "id": "C34",
+      "section": "Megakernel definition",
+      "original_excerpt": "removes inter-kernel boundaries and their associated launch/tail/bubble overhead",
+      "verdict": "correct",
+      "finding": "Removes those launches; reducing tail and pipeline costs requires a suitable internal schedule and communication design.",
+      "sources": [
+        "mpk",
+        "mla"
+      ]
+    },
+    {
+      "id": "C35",
+      "section": "Megakernel definition",
+      "original_excerpt": "For a 16-layer Llama-1B path ... ~100 boundaries removed",
+      "verdict": "qualify",
+      "finding": "A rough configuration-specific scale. K separate launches fused to one removes K−1 inter-launch boundaries; do not present an exact count without a trace.",
+      "sources": [
+        "hazy"
+      ]
+    },
+    {
+      "id": "C36",
+      "section": "Implementation",
+      "original_excerpt": "Fusing 2-3 ops is standard fusion. Fusing ~100 ops is a different problem.",
+      "verdict": "qualify",
+      "finding": "Useful scale intuition, not a formal threshold between fusion and megakernels.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C37",
+      "section": "Implementation",
+      "original_excerpt": "A common pattern is an on-GPU interpreter",
+      "verdict": "qualify",
+      "finding": "Established for the cited Hazy designs; neither all fused kernels nor all persistent kernels require an interpreter.",
+      "sources": [
+        "mla",
+        "mega"
+      ]
+    },
+    {
+      "id": "C38",
+      "section": "Implementation",
+      "original_excerpt": "each SM executes a precomputed instruction stream",
+      "verdict": "qualify",
+      "finding": "Specific to Hazy's scheduling design; CUDA ordinarily assigns blocks to SMs, not one abstract interpreter per SM by definition.",
+      "sources": [
+        "mega"
+      ]
+    },
+    {
+      "id": "C39",
+      "section": "Implementation",
+      "original_excerpt": "Schedule construction happens on CPU once and is reused.",
+      "verdict": "qualify",
+      "finding": "Schedules can be reused; input shape, batch composition, and runtime work can require updates or dynamic scheduling.",
+      "sources": [
+        "mla",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C40",
+      "section": "ThunderKittens",
+      "original_excerpt": "provides the low-level kernel framework used by Hazy's MegaKernel work",
+      "verdict": "retain",
+      "finding": "Supported by the official repositories and ThunderMLA implementation description.",
+      "sources": [
+        "tk",
+        "mega",
+        "mla"
+      ]
+    },
+    {
+      "id": "C41",
+      "section": "ThunderMLA",
+      "original_excerpt": "20-35% faster than DeepSeek FlashMLA across tested workloads",
+      "verdict": "qualify",
+      "finding": "Headline range, not every reported case: the same post includes a 7.6% speedup case and uses throughput-style speedup percentages. Use case-specific time ratios.",
+      "sources": [
+        "mla"
+      ]
+    },
+    {
+      "id": "C42",
+      "section": "ThunderMLA",
+      "original_excerpt": "41 us vs 52 us on SXM H100",
+      "verdict": "retain",
+      "finding": "Verified representative configuration. 21.15% latency reduction; 52/41 = 1.2683× speedup. Include prompt lengths, query count, and tensor parallelism.",
+      "sources": [
+        "mla"
+      ]
+    },
+    {
+      "id": "C43",
+      "section": "Look Ma",
+      "original_excerpt": "full Llama-3.2-1B forward megakernel",
+      "verdict": "retain",
+      "finding": "Scope remains the cited single-sequence 16-bit inference experiment, not arbitrary models or training.",
+      "sources": [
+        "mega"
+      ]
+    },
+    {
+      "id": "C44",
+      "section": "Look Ma",
+      "original_excerpt": "78% memory bandwidth utilization and over 1.5x speedup vs baselines on H100",
+      "verdict": "qualify",
+      "finding": "Keep historical attribution and workload. The reported baseline comparisons differ; not a generic expected speedup.",
+      "sources": [
+        "hazy"
+      ]
+    },
+    {
+      "id": "C45",
+      "section": "Look Ma",
+      "original_excerpt": "code is open-sourced",
+      "verdict": "retain",
+      "finding": "The official Hazy Megakernels repository is accessible.",
+      "sources": [
+        "mega"
+      ]
+    },
+    {
+      "id": "C46",
+      "section": "MPK",
+      "original_excerpt": "mega-kernelizes PyTorch programs with a few lines of code changes",
+      "verdict": "qualify",
+      "finding": "Author-reported interface for supported models/configurations, not a guarantee for arbitrary PyTorch programs.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C47",
+      "section": "MPK",
+      "original_excerpt": "up to 1.0-1.7x latency improvement vs vLLM/SGLang",
+      "verdict": "correct",
+      "finding": "Use the paper's 1.0–1.7× single-batch serving-performance range; say up to 1.7×, not up to a range. Keep evaluation scope.",
+      "sources": [
+        "mpkv1",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C48",
+      "section": "MPK",
+      "original_excerpt": "Qwen3-8B on A100 from 14.5 ms to 12.5 ms per-token decode latency",
+      "verdict": "retain",
+      "finding": "Present in v1 and v2 §6.3; 13.79% latency reduction and 1.16× speedup. This system-level result has multiple causes.",
+      "sources": [
+        "mpkv1",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C49",
+      "section": "Critical difference",
+      "original_excerpt": "CUDA Graphs eliminate: CPU submission overhead per kernel",
+      "verdict": "correct",
+      "finding": "Graphs amortize per-node host work into replay, which still has nonzero enqueue and device costs.",
+      "sources": [
+        "graphs",
+        "launch"
+      ]
+    },
+    {
+      "id": "C50",
+      "section": "Critical difference",
+      "original_excerpt": "Kernel boundary setup/teardown overhead",
+      "verdict": "qualify",
+      "finding": "Eliminates repeated launches across fused stages; one launch and internal task transitions remain.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C51",
+      "section": "Critical difference",
+      "original_excerpt": "Cross-kernel tail effects",
+      "verdict": "correct",
+      "finding": "Can avoid whole-kernel waits for unrelated ready work; remaining load imbalance and the final tail are not erased.",
+      "sources": [
+        "mla",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C52",
+      "section": "Critical difference",
+      "original_excerpt": "Full intermediate round-trips between separately launched kernels",
+      "verdict": "correct",
+      "finding": "Only eliminated for values actually kept local/reused. Cross-block communication may remain global; separate accesses may hit cache.",
+      "sources": [
+        "memory",
+        "cache"
+      ]
+    },
+    {
+      "id": "C53",
+      "section": "Critical difference",
+      "original_excerpt": "Many memory-pipeline bubbles caused by kernel boundaries",
+      "verdict": "qualify",
+      "finding": "Possible when an implementation actually pipelines stages; requires evidence from the chosen schedule.",
+      "sources": [
+        "mla",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C54",
+      "section": "Counter-intuitive",
+      "original_excerpt": "megakernels win by improving memory behavior. True in many cases.",
+      "verdict": "qualify",
+      "finding": "Replace an unquantified prevalence claim with specific mechanisms and measured examples.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C55",
+      "section": "Counter-intuitive",
+      "original_excerpt": "asynchronous barrier overhead around ~60 ns each",
+      "verdict": "qualify",
+      "finding": "Hazy's observed low-level overhead on its B200 implementation, not a universal CUDA primitive latency.",
+      "sources": [
+        "hazy"
+      ]
+    },
+    {
+      "id": "C56",
+      "section": "Counter-intuitive",
+      "original_excerpt": "sync plus setup/other overhead summing to about ~120 us",
+      "verdict": "correct",
+      "finding": "40+80 = 120 µs in the 600-µs B200 breakdown. Original paragraph omits the architecture and nearby context suggests H100.",
+      "sources": [
+        "hazy"
+      ]
+    },
+    {
+      "id": "C57",
+      "section": "Counter-intuitive",
+      "original_excerpt": "megakernels do not remove all global-memory traffic",
+      "verdict": "retain",
+      "finding": "Correct; storage and synchronization follow the implementation and dependency scope.",
+      "sources": [
+        "memory",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C58",
+      "section": "Counter-intuitive",
+      "original_excerpt": "Large cross-SM dependencies and broad reductions still require global-memory communication.",
+      "verdict": "qualify",
+      "finding": "Often true for these implementations; cluster/distributed shared-memory and cooperative mechanisms make 'require' too universal.",
+      "sources": [
+        "memory"
+      ]
+    },
+    {
+      "id": "C59",
+      "section": "Counter-intuitive",
+      "original_excerpt": "What they remove is the repeated boundary-induced waste",
+      "verdict": "qualify",
+      "finding": "Launches are removed; costs can reappear as internal communication, scheduling, or resource pressure.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C60",
+      "section": "Combination",
+      "original_excerpt": "A megakernel can be launched via CUDA Graphs.",
+      "verdict": "retain",
+      "finding": "It can be a kernel node, subject to normal capture/graph restrictions.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C61",
+      "section": "Combination",
+      "original_excerpt": "if ... one kernel, graph benefit is usually small",
+      "verdict": "qualify",
+      "finding": "Plausible workload hypothesis, not an established universal rule. Measure the one-kernel stream/graph pair.",
+      "sources": [
+        "launch"
+      ]
+    },
+    {
+      "id": "C62",
+      "section": "Combination",
+      "original_excerpt": "CUDA Graph value remains highest when many kernel boundaries still exist.",
+      "verdict": "qualify",
+      "finding": "Topology, host work, setup amortization, and node costs matter; launch count alone cannot rank graph benefit.",
+      "sources": [
+        "graphs",
+        "launch"
+      ]
+    },
+    {
+      "id": "C63",
+      "section": "Tradeoffs",
+      "original_excerpt": "Minimal code changes; Keeps modular kernels; Native support in common stacks; Easier debugging/maintenance",
+      "verdict": "qualify",
+      "finding": "Graphs preserve kernel modularity, but capture-safe control flow, memory lifetime, changing parameters, and debugging can require engineering. Minimal/easier are context-dependent judgments.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C64",
+      "section": "Tradeoffs",
+      "original_excerpt": "Removes cross-kernel tail effects; Enables deeper cross-op pipelining; Raises bandwidth utilization; Can reduce per-token latency",
+      "verdict": "qualify",
+      "finding": "These are opportunities under suitable implementation/workload conditions, not guaranteed properties of a single launch.",
+      "sources": [
+        "mla",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C65",
+      "section": "Tradeoffs",
+      "original_excerpt": "Harder to implement/debug; Portability/tuning ... harder; Synchronization mistakes ... dangerous; bottlenecks ... shift",
+      "verdict": "qualify",
+      "finding": "Reasonable engineering considerations; present them as tradeoffs rather than measured universal comparisons.",
+      "sources": [
+        "mpk",
+        "memory"
+      ]
+    },
+    {
+      "id": "C66",
+      "section": "Recommendation",
+      "original_excerpt": "For most teams: start with CUDA Graphs, profile, then invest ... only if boundary overhead is clearly dominant.",
+      "verdict": "judgment",
+      "finding": "Keep profiling as guidance. Avoid an unsupported claim about most teams or a rule excluding fusion benefits from memory reuse.",
+      "sources": [
+        "launch",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C67",
+      "section": "Analogy",
+      "original_excerpt": "CUDA Graphs = better dispatching. Same stations, cheaper scheduling.",
+      "verdict": "qualify",
+      "finding": "Useful mnemonic, but it omits device scheduling, DAG concurrency, and non-kernel nodes.",
+      "sources": [
+        "graphs"
+      ]
+    },
+    {
+      "id": "C68",
+      "section": "Analogy",
+      "original_excerpt": "Megakernels = express route. Remove stops between segments.",
+      "verdict": "qualify",
+      "finding": "Can remove external boundaries while retaining internal waits. Replace with the precise implementation comparison.",
+      "sources": [
+        "mpk"
+      ]
+    },
+    {
+      "id": "C69",
+      "section": "Conclusion",
+      "original_excerpt": "Both reduce end-to-end time",
+      "verdict": "correct",
+      "finding": "Both can reduce time; either can fail to improve or regress a workload.",
+      "sources": [
+        "launch",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C70",
+      "section": "Conclusion",
+      "original_excerpt": "CUDA Graphs and megakernels are not substitutes for the same thing.",
+      "verdict": "qualify",
+      "finding": "They change different aspects and can combine, while both may reduce some overlapping launch/dispatch overhead.",
+      "sources": [
+        "graphs",
+        "mpk"
+      ]
+    },
+    {
+      "id": "C71",
+      "section": "Conclusion",
+      "original_excerpt": "Choosing well starts with identifying which execution layer is actually bottlenecking",
+      "verdict": "retain",
+      "finding": "Retain as practical advice, with measurement scope and actual implementation evidence.",
+      "sources": [
+        "launch"
+      ]
+    }
+  ],
+  "sources": {
+    "graphs": {
+      "title": "NVIDIA CUDA Graphs guide, sections 4.2.1–4.2.2",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html",
+      "snapshot": "sources/graphs.html",
+      "sha256": "fa9b608c57d4841474487148cd601e9eb58db05d3f6f8db56a57f3cd8be2a157",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "launch": {
+      "title": "NVIDIA constant-time graph launch study, September 11, 2024",
+      "url": "https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/",
+      "snapshot": "sources/launch.html",
+      "sha256": "98f1a9eab028eb147009ca9905c5aee87a571708477f45ef97390369f356657e",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "streams": {
+      "title": "NVIDIA asynchronous execution guide, sections 2.5.2–2.5.3",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html",
+      "snapshot": "sources/streams.html",
+      "sha256": "125cf5383ce3c2af399bbd2296661cd681c2d3d9fa6df362e6a37db5a819220f",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "pdl": {
+      "title": "NVIDIA PDL guide, sections 4.5.1–4.5.3",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html",
+      "snapshot": "sources/pdl.html",
+      "sha256": "9e5c1433766343b0414cc96982d83331474f21c31a1fd42d77b82f7e013ec116",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "memory": {
+      "title": "NVIDIA C++ language extensions, storage and synchronization",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html",
+      "snapshot": "sources/memory.html",
+      "sha256": "cd37a792590d1ad86bfa30942a4fa0bdc186a79965b143bf8fe6d27788e859b2",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "cache": {
+      "title": "NVIDIA L2 cache control",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/l2-cache-control.html",
+      "snapshot": "sources/cache.html",
+      "sha256": "e97a0a4bb8fe49c5cfd746fc7de46f724d41f7ba1fac8d240a5ae8ec1c18475f",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "hazy": {
+      "title": "Hazy Look Ma No Bubbles, May 27, 2025",
+      "url": "https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles",
+      "snapshot": "sources/hazy.html",
+      "sha256": "e46989d56b58b544f924bb30d943e5554a87a80935488432a4f7f568aeb6e65d",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "mla": {
+      "title": "Hazy ThunderMLA, March 4, 2025",
+      "url": "https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla",
+      "snapshot": "sources/mla.html",
+      "sha256": "8b55a90aa66777d5c804dcd1cb91a42ab1e9dece26ad01c26e09b066133d65bd",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "mpk": {
+      "title": "MPK paper v2, June 10, 2026, sections 3–6",
+      "url": "https://arxiv.org/html/2512.22219v2",
+      "snapshot": "sources/mpk.html",
+      "sha256": "1fecaf21fde170e816e10b15be6110abb573e9e23ac69925ce1af4a4003e6043",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "mpkv1": {
+      "title": "MPK paper v1, December 22, 2025, section 6.3",
+      "url": "https://arxiv.org/html/2512.22219v1",
+      "snapshot": "sources/mpkv1.html",
+      "sha256": "2c45f846a09ad1676c94be4e173d5b0d9e44f76d5e5a8ef13e79e97022df0008",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "tk": {
+      "title": "ThunderKittens official repository",
+      "url": "https://github.com/HazyResearch/ThunderKittens",
+      "snapshot": "sources/tk.html",
+      "sha256": "b5533f1b2785591382143c777c99a1ec9b88b42af8c7f4a14782f70ffb9a332b",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    },
+    "mega": {
+      "title": "Hazy Megakernels official repository",
+      "url": "https://github.com/HazyResearch/Megakernels",
+      "snapshot": "sources/mega.html",
+      "sha256": "f59139cf1fdaacb4d2b4859fc2e900b7d478dda9748d8047b7bbfeaeec715862",
+      "archived_at_utc": "2026-10-18T21:16:40.798079+00:00"
+    }
+  }
+}

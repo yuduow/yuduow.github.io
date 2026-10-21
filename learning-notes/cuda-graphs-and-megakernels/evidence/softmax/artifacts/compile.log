@@ -1,0 +1,71 @@
+ptxas info    : 3 bytes gmem
+ptxas info    : Compiling entry function '_Z7phase_cILb0EEv7Payload' for 'sm_90'
+ptxas info    : Function properties for _Z7phase_cILb0EEv7Payload
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers
+ptxas info    : Compile time = 12.423 ms
+ptxas info    : Compiling entry function '_Z7phase_bILb0EEv7Payload' for 'sm_90'
+ptxas info    : Function properties for _Z7phase_bILb0EEv7Payload
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 64 bytes smem
+ptxas info    : Compile time = 11.844 ms
+ptxas info    : Compiling entry function '_Z7phase_aILb0EEv7Payload' for 'sm_90'
+ptxas info    : Function properties for _Z7phase_aILb0EEv7Payload
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 22 registers, used 1 barriers, 64 bytes smem
+ptxas info    : Compile time = 6.158 ms
+ptxas info    : Compiling entry function '_Z10persistentILb0EEv7Payloadi' for 'sm_90'
+ptxas info    : Function properties for _Z10persistentILb0EEv7Payloadi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 1 barriers, 72 bytes smem
+ptxas info    : Compile time = 71.981 ms
+ptxas info    : Compiling entry function '_Z7phase_cILb1EEv7Payload' for 'sm_90'
+ptxas info    : Function properties for _Z7phase_cILb1EEv7Payload
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers
+ptxas info    : Compile time = 12.600 ms
+ptxas info    : Compiling entry function '_Z7phase_bILb1EEv7Payload' for 'sm_90'
+ptxas info    : Function properties for _Z7phase_bILb1EEv7Payload
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 64 bytes smem
+ptxas info    : Compile time = 11.766 ms
+ptxas info    : Compiling entry function '_Z7phase_aILb1EEv7Payload' for 'sm_90'
+ptxas info    : Function properties for _Z7phase_aILb1EEv7Payload
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 22 registers, used 1 barriers, 64 bytes smem
+ptxas info    : Compile time = 7.136 ms
+ptxas info    : Compiling entry function '_Z10persistentILb1EEv7Payloadi' for 'sm_90'
+ptxas info    : Function properties for _Z10persistentILb1EEv7Payloadi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 40 registers, used 1 barriers, 72 bytes smem
+ptxas info    : Compile time = 75.102 ms
+ptxas info    : Compiling entry function '_Z16initialize_queue7Payload' for 'sm_90'
+ptxas info    : Function properties for _Z16initialize_queue7Payload
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, used 0 barriers
+ptxas info    : Compile time = 2.051 ms
+ptxas info    : Compiling entry function '_Z9row_fusedPKfPfi' for 'sm_90'
+ptxas info    : Function properties for _Z9row_fusedPKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 53 registers, used 1 barriers, 64 bytes smem
+ptxas info    : Compile time = 23.638 ms
+ptxas info    : Compiling entry function '_Z7row_divPKfS0_Pfi' for 'sm_90'
+ptxas info    : Function properties for _Z7row_divPKfS0_Pfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 26 registers, used 0 barriers
+ptxas info    : Compile time = 8.227 ms
+ptxas info    : Compiling entry function '_Z7row_sumPKfPfi' for 'sm_90'
+ptxas info    : Function properties for _Z7row_sumPKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 31 registers, used 1 barriers, 32 bytes smem
+ptxas info    : Compile time = 6.198 ms
+ptxas info    : Compiling entry function '_Z7row_expPKfS0_Pfi' for 'sm_90'
+ptxas info    : Function properties for _Z7row_expPKfS0_Pfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 24 registers, used 0 barriers
+ptxas info    : Compile time = 4.058 ms
+ptxas info    : Compiling entry function '_Z7row_maxPKfPfi' for 'sm_90'
+ptxas info    : Function properties for _Z7row_maxPKfPfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 31 registers, used 1 barriers, 32 bytes smem
+ptxas info    : Compile time = 6.106 ms

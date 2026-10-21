@@ -1,0 +1,58 @@
+[
+  {
+    "phase": "pilot",
+    "run_id": "20261020T022150Z",
+    "limit_seconds": 240,
+    "status": "complete",
+    "elapsed_seconds": 37.282409013
+  },
+  {
+    "phase": "measurement-1",
+    "run_id": "20261020T022150Z",
+    "limit_seconds": 180,
+    "status": "complete",
+    "elapsed_seconds": 13.231497387000001
+  },
+  {
+    "phase": "measurement-2",
+    "run_id": "20261020T022150Z",
+    "limit_seconds": 180,
+    "status": "complete",
+    "elapsed_seconds": 18.597409839999997
+  },
+  {
+    "phase": "evidence",
+    "run_id": "20261020T022150Z",
+    "limit_seconds": 360,
+    "status": "complete",
+    "elapsed_seconds": 72.989305307
+  },
+  {
+    "phase": "pilot",
+    "run_id": "20261020T023055Z",
+    "limit_seconds": 240,
+    "status": "complete",
+    "elapsed_seconds": 40.234682226
+  },
+  {
+    "phase": "measurement-1",
+    "run_id": "20261020T023055Z",
+    "limit_seconds": 180,
+    "status": "complete",
+    "elapsed_seconds": 14.200253243
+  },
+  {
+    "phase": "measurement-2",
+    "run_id": "20261020T023055Z",
+    "limit_seconds": 180,
+    "status": "complete",
+    "elapsed_seconds": 12.519659385
+  },
+  {
+    "phase": "evidence",
+    "run_id": "20261020T023055Z",
+    "limit_seconds": 360,
+    "status": "complete",
+    "elapsed_seconds": 101.72026393899999
+  }
+]

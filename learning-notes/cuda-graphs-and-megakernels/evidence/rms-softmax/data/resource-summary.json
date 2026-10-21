@@ -1,0 +1,898 @@
+[
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 6.14,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 20.205,
+    "instantiate_us": 17.742,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 1,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 4.157,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 17.945,
+    "instantiate_us": 8.639,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 1,
+    "slab_rows": 1
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 3.304,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 18.894,
+    "instantiate_us": 13.236,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 1,
+    "slab_rows": 1
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 3.124,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 23.174,
+    "instantiate_us": 10.822,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 16,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 2.19,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 22.776,
+    "instantiate_us": 8.474,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 16,
+    "slab_rows": 16
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 4.19,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 23.963,
+    "instantiate_us": 11.257,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 16,
+    "slab_rows": 16
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 3.513,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 29.887,
+    "instantiate_us": 10.11,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 32,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 8192,
+    "capture_us": 3.596,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 30.396,
+    "instantiate_us": 10.647,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 33024,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 32,
+    "slab_rows": 32
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 2.131,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 28.682,
+    "instantiate_us": 8.255,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 32,
+    "slab_rows": 32
+  },
+  {
+    "allocation": 1,
+    "T": 128,
+    "W": 4096,
+    "capture_us": 3.287,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 64.573,
+    "instantiate_us": 11.057,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 16,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 16,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 16,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 64,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 8192,
+    "capture_us": 4.878,
+    "columns": 131072,
+    "cooperative": [
+      1,
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 62.757,
+    "instantiate_us": 24.293,
+    "kernel_nodes": 2,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0,
+      0
+    ],
+    "nodes": 2,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 33024,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 64,
+    "slab_rows": 49
+  },
+  {
+    "allocation": 1,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 5.007,
+    "columns": 131072,
+    "cooperative": [
+      1,
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 60.094,
+    "instantiate_us": 21.484,
+    "kernel_nodes": 2,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0,
+      0
+    ],
+    "nodes": 2,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 64,
+    "slab_rows": 33
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 2.489,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 20.973,
+    "instantiate_us": 9.723,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 1,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 1.8,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 18.891,
+    "instantiate_us": 6.676,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 1,
+    "slab_rows": 1
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 1.602,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 18.564,
+    "instantiate_us": 5.422,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 1,
+    "slab_rows": 1
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 2.653,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 23.306,
+    "instantiate_us": 8.997,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 16,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 1.683,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 22.283,
+    "instantiate_us": 7.385,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 16,
+    "slab_rows": 16
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 1.691,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 22.087,
+    "instantiate_us": 4.9,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 16,
+    "slab_rows": 16
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 3.021,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 29.993,
+    "instantiate_us": 11.161,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 32,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 8192,
+    "capture_us": 4.505,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 31.655,
+    "instantiate_us": 13.103,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 33024,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 32,
+    "slab_rows": 32
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 4.483,
+    "columns": 131072,
+    "cooperative": [
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 29.833,
+    "instantiate_us": 11.18,
+    "kernel_nodes": 1,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0
+    ],
+    "nodes": 1,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 32,
+    "slab_rows": 32
+  },
+  {
+    "allocation": 2,
+    "T": 128,
+    "W": 4096,
+    "capture_us": 5.977,
+    "columns": 131072,
+    "cooperative": [
+      0,
+      0,
+      0
+    ],
+    "family": "local_recompute",
+    "first_replay_sync_us": 64.169,
+    "instantiate_us": 18.356,
+    "kernel_nodes": 3,
+    "kind": "variant",
+    "label": "local_recompute",
+    "node_types": [
+      0,
+      0,
+      0
+    ],
+    "nodes": 3,
+    "resources": {
+      "A": {
+        "active_blocks_per_sm": 16,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      },
+      "B": {
+        "active_blocks_per_sm": 16,
+        "dynamic_shared_bytes": 256,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      },
+      "C": {
+        "active_blocks_per_sm": 16,
+        "dynamic_shared_bytes": 0,
+        "local_bytes": 0,
+        "registers": 31,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 64,
+    "slab_rows": 0
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 8192,
+    "capture_us": 10.389,
+    "columns": 131072,
+    "cooperative": [
+      1,
+      1
+    ],
+    "family": "retained",
+    "first_replay_sync_us": 60.728,
+    "instantiate_us": 22.035,
+    "kernel_nodes": 2,
+    "kind": "variant",
+    "label": "retained",
+    "node_types": [
+      0,
+      0
+    ],
+    "nodes": 2,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 6,
+        "dynamic_shared_bytes": 33024,
+        "local_bytes": 0,
+        "registers": 34,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 64,
+    "slab_rows": 49
+  },
+  {
+    "allocation": 2,
+    "T": 256,
+    "W": 4096,
+    "capture_us": 4.099,
+    "columns": 131072,
+    "cooperative": [
+      1,
+      1
+    ],
+    "family": "row_retained",
+    "first_replay_sync_us": 58.283,
+    "instantiate_us": 17.007,
+    "kernel_nodes": 2,
+    "kind": "variant",
+    "label": "row_retained",
+    "node_types": [
+      0,
+      0
+    ],
+    "nodes": 2,
+    "resources": {
+      "cooperative": {
+        "active_blocks_per_sm": 8,
+        "dynamic_shared_bytes": 16640,
+        "local_bytes": 0,
+        "registers": 32,
+        "static_shared_bytes": 0
+      }
+    },
+    "rows": 64,
+    "slab_rows": 33
+  }
+]

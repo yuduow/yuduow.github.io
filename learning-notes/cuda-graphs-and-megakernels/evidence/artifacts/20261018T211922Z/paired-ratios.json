@@ -1,0 +1,170 @@
+[
+  {
+    "case": "pointwise_1048576",
+    "variant": "pointwise_1048576_fused_graph",
+    "baseline": "pointwise_1048576_separate_stream",
+    "paired_host_speedup_median": 2.0887722980062957
+  },
+  {
+    "case": "pointwise_1048576",
+    "variant": "pointwise_1048576_fused_stream",
+    "baseline": "pointwise_1048576_separate_stream",
+    "paired_host_speedup_median": 1.7762458322069028
+  },
+  {
+    "case": "pointwise_1048576",
+    "variant": "pointwise_1048576_separate_graph",
+    "baseline": "pointwise_1048576_separate_stream",
+    "paired_host_speedup_median": 1.1898394125723837
+  },
+  {
+    "case": "pointwise_1048576",
+    "variant": "pointwise_1048576_separate_stream",
+    "baseline": "pointwise_1048576_separate_stream",
+    "paired_host_speedup_median": 1.0
+  },
+  {
+    "case": "pointwise_16777216",
+    "variant": "pointwise_16777216_fused_graph",
+    "baseline": "pointwise_16777216_separate_stream",
+    "paired_host_speedup_median": 2.760307645905595
+  },
+  {
+    "case": "pointwise_16777216",
+    "variant": "pointwise_16777216_fused_stream",
+    "baseline": "pointwise_16777216_separate_stream",
+    "paired_host_speedup_median": 2.7596791867048154
+  },
+  {
+    "case": "pointwise_16777216",
+    "variant": "pointwise_16777216_separate_graph",
+    "baseline": "pointwise_16777216_separate_stream",
+    "paired_host_speedup_median": 1.0097748930783943
+  },
+  {
+    "case": "pointwise_16777216",
+    "variant": "pointwise_16777216_separate_stream",
+    "baseline": "pointwise_16777216_separate_stream",
+    "paired_host_speedup_median": 1.0
+  },
+  {
+    "case": "pointwise_256",
+    "variant": "pointwise_256_fused_graph",
+    "baseline": "pointwise_256_separate_stream",
+    "paired_host_speedup_median": 1.9968115942028986
+  },
+  {
+    "case": "pointwise_256",
+    "variant": "pointwise_256_fused_stream",
+    "baseline": "pointwise_256_separate_stream",
+    "paired_host_speedup_median": 1.6364728495915426
+  },
+  {
+    "case": "pointwise_256",
+    "variant": "pointwise_256_separate_graph",
+    "baseline": "pointwise_256_separate_stream",
+    "paired_host_speedup_median": 1.4991816693944355
+  },
+  {
+    "case": "pointwise_256",
+    "variant": "pointwise_256_separate_stream",
+    "baseline": "pointwise_256_separate_stream",
+    "paired_host_speedup_median": 1.0
+  },
+  {
+    "case": "pointwise_32768",
+    "variant": "pointwise_32768_fused_graph",
+    "baseline": "pointwise_32768_separate_stream",
+    "paired_host_speedup_median": 1.9681564245810057
+  },
+  {
+    "case": "pointwise_32768",
+    "variant": "pointwise_32768_fused_stream",
+    "baseline": "pointwise_32768_separate_stream",
+    "paired_host_speedup_median": 1.6346713205351948
+  },
+  {
+    "case": "pointwise_32768",
+    "variant": "pointwise_32768_separate_graph",
+    "baseline": "pointwise_32768_separate_stream",
+    "paired_host_speedup_median": 1.4348939657821946
+  },
+  {
+    "case": "pointwise_32768",
+    "variant": "pointwise_32768_separate_stream",
+    "baseline": "pointwise_32768_separate_stream",
+    "paired_host_speedup_median": 1.0
+  },
+  {
+    "case": "tiles_balanced",
+    "variant": "tiles_balanced_fused_graph",
+    "baseline": "tiles_balanced_separate_stream",
+    "paired_host_speedup_median": 1.0455347272855564
+  },
+  {
+    "case": "tiles_balanced",
+    "variant": "tiles_balanced_fused_stream",
+    "baseline": "tiles_balanced_separate_stream",
+    "paired_host_speedup_median": 1.0292233632366692
+  },
+  {
+    "case": "tiles_balanced",
+    "variant": "tiles_balanced_queue_graph",
+    "baseline": "tiles_balanced_separate_stream",
+    "paired_host_speedup_median": 1.0859724458758275
+  },
+  {
+    "case": "tiles_balanced",
+    "variant": "tiles_balanced_queue_stream",
+    "baseline": "tiles_balanced_separate_stream",
+    "paired_host_speedup_median": 1.059537692295404
+  },
+  {
+    "case": "tiles_balanced",
+    "variant": "tiles_balanced_separate_graph",
+    "baseline": "tiles_balanced_separate_stream",
+    "paired_host_speedup_median": 1.0220250162567417
+  },
+  {
+    "case": "tiles_balanced",
+    "variant": "tiles_balanced_separate_stream",
+    "baseline": "tiles_balanced_separate_stream",
+    "paired_host_speedup_median": 1.0
+  },
+  {
+    "case": "tiles_ragged",
+    "variant": "tiles_ragged_fused_graph",
+    "baseline": "tiles_ragged_separate_stream",
+    "paired_host_speedup_median": 0.985164028533248
+  },
+  {
+    "case": "tiles_ragged",
+    "variant": "tiles_ragged_fused_stream",
+    "baseline": "tiles_ragged_separate_stream",
+    "paired_host_speedup_median": 0.9838197702182646
+  },
+  {
+    "case": "tiles_ragged",
+    "variant": "tiles_ragged_queue_graph",
+    "baseline": "tiles_ragged_separate_stream",
+    "paired_host_speedup_median": 1.0199494347183133
+  },
+  {
+    "case": "tiles_ragged",
+    "variant": "tiles_ragged_queue_stream",
+    "baseline": "tiles_ragged_separate_stream",
+    "paired_host_speedup_median": 0.9972049144153335
+  },
+  {
+    "case": "tiles_ragged",
+    "variant": "tiles_ragged_separate_graph",
+    "baseline": "tiles_ragged_separate_stream",
+    "paired_host_speedup_median": 1.0153919290603308
+  },
+  {
+    "case": "tiles_ragged",
+    "variant": "tiles_ragged_separate_stream",
+    "baseline": "tiles_ragged_separate_stream",
+    "paired_host_speedup_median": 1.0
+  }
+]

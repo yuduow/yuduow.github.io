@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CUDA Graphs reduce launch overhead. When is a megakernel still worth the complexity? Follow one RMS-scaled softmax workload through graph replay, local fusion, and a megakernel on H100.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Claim audit · Yuduo Wu</title>
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css?v=801d734e66c4">
+  <link rel="stylesheet" href="../../../blog.css?v=8e5f5b11daff">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page evidence-page" id="content">
+    <header class="blog-masthead"><a href="../../../">Yuduo Wu</a><a href="../../../learning-notes/">Learning Notes</a></header>
+    <header class="post-header"><p class="post-meta"><span class="draft-label">Supporting material</span><a href="../">CUDA Graphs, Fusion, and Megakernels</a></p><h1>Claim audit</h1></header>
+    <article class="post-content"><p>Historical supporting material. The current article uses the <a href="rms-softmax/">single RMS-scaled softmax workload</a>. This page retains an earlier experiment or claim audit.</p>
+<h2 id="agent-loop-discussion-october-19-2026">Agent-loop discussion — October 19, 2026</h2>
+<p>The two closing discussion sentences distinguish the engineering cost of exploring implementations from their execution cost. <a href="https://arxiv.org/abs/2502.10517">KernelBench</a> reports improved kernel-generation results with iterative execution and profiling feedback; extending that mechanism to megakernel schedules is explicitly an inference, not a demonstrated megakernel result. The paragraph also acknowledges that smaller fused kernels benefit from the same tooling and retains end-to-end comparison as the deciding evidence. No new experiment or general megakernel speedup is claimed; the measurements and figures are unchanged.</p>
+<h2 id="factual-and-narrative-review-october-19-2026">Factual and narrative review — October 19, 2026</h2>
+<p>The latest pass checks the current three-part article for a mid-level engineering audience. Six primary sources were consulted again: CUDA Graphs, L2 caching, Cooperative Groups, Programmatic Dependent Launch, Hazy Research's Llama megakernel, and Triton's stable-softmax tutorial. The captured CUDA implementation, timing harness, compiler output, graph metadata, and saved validation were inspected directly.</p>
+<p>The <a href="softmax/proofread-recheck.json">machine-readable review</a> records the manuscript hash before the agent-loop addition, every quoted latency, 12 freshly recomputed timing cases, all 24 dependency traces, graph node counts, resource metadata, figure hashes, and source URLs. All 1,764 timing records match saved summaries; 1,372 local raw artifacts match the full-run manifest, and the 369 remote-only files are explicitly accounted for. The previously saved 360 output and 768 intermediate checks reconcile with the case reports and unchanged tolerances. Large binary arrays were not downloaded or numerically revalidated in this pass; no GPU rerun was necessary.</p>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Review finding</th>
+<th>Final wording or treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One host call is easy to confuse with one GPU kernel</td>
+<td>The opening now poses that exact distinction; replay retains the four supplied kernels.</td>
+</tr>
+<tr>
+<td>Timing scope appeared after the first result</td>
+<td>Host completion, synchronization, warmup/setup exclusions, and the 21-round scope now precede the numbers.</td>
+</tr>
+<tr>
+<td>cuDNN comparisons needed an explicit submission mode</td>
+<td>Both quoted cuDNN values are graph replay: 56.08 µs at 4096×4096 and 7.98 µs at 4096×128. No cross-mode comparison is implied.</td>
+</tr>
+<tr>
+<td>Local fusion needed a clearer bridge to megakernels</td>
+<td>Section 3 moves from one block per row to consumers with cross-block producers.</td>
+</tr>
+<tr>
+<td>Combining tile exponential sums requires rescaling</td>
+<td>B now gives the stable combination formula <code>z = sum_t(z_t * exp(m_t-m))</code>, matching the captured CUDA source and the independent reference.</td>
+</tr>
+<tr>
+<td>Ready does not imply immediately scheduled</td>
+<td>The queue discussion distinguishes dependency eligibility from worker availability and contention.</td>
+</tr>
+<tr>
+<td>The queued graph contains two kernels</td>
+<td>Queue initialization and the persistent kernel are explicitly included in timing. This is not presented as a one-kernel end-to-end measurement.</td>
+</tr>
+<tr>
+<td>Equal workload size was not defined in the article</td>
+<td>The caption now gives balanced/ragged row lengths and equal element/task totals. All saved metadata agree.</td>
+</tr>
+<tr>
+<td>Trace results must not be confused with completion timings</td>
+<td>The earlier B starts are identified as an instrumented trace; the slowdown is explicitly from uninstrumented measurements.</td>
+</tr>
+<tr>
+<td>The toy does not establish a general megakernel ranking</td>
+<td>Its negative result remains limited to this centralized queue. The conclusion calls for comparison with good fused and library implementations.</td>
+</tr>
+<tr>
+<td>Separate kernels can expose concurrency</td>
+<td>PDL is qualified by producer-data availability and nonguaranteed overlap; independent streams/branches remain acknowledged as untested alternatives.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The narrative now follows the title and opening question directly: repeated submission work → intermediate storage within a block → dependency scheduling across blocks → the conditions that justify a megakernel. It keeps the three-section structure, four-way baseline comparison, subtitle, and February 22 article date. Original experimental data and figures are unchanged.</p>
+<h2 id="current-article-recheck-october-19-2026">Current article recheck — October 19, 2026</h2>
+<p>The current draft follows three topics: CUDA Graphs, fusion, and megakernels, preceded by an ordinary-launch baseline. The October 18 checks below concern the earlier examples. The new figures use accepted softmax run <code>20261019T175825Z</code>; no GPU experiment was repeated for this editorial change.</p>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Claim or design choice</th>
+<th>Evidence and scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline means no graph replay or fusion</td>
+<td>Separate kernels in one ordinary stream. Normal compiler optimizations remain enabled. This is an educational decomposition, not an optimized-library baseline.</td>
+</tr>
+<tr>
+<td>Stable FP32 softmax</td>
+<td>Finite-input formula checked against the <a href="https://triton-lang.org/main/getting-started/tutorials/02-fused-softmax.html">Triton tutorial</a> and <a href="softmax/code/bench.cu">captured CUDA source</a>. FP32 is the arithmetic policy, not an added cast workload.</td>
+</tr>
+<tr>
+<td>Graph replay retains supplied kernel bodies and arrays</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">CUDA Graphs guide</a>; source and graph DOT files retain four row kernels or three tiled kernels.</td>
+</tr>
+<tr>
+<td>All quoted latency values and plotted quantiles</td>
+<td>Recomputed all 12 cases from raw JSONL and compared with saved summaries. All match. <a href="softmax/softmax-recheck.json">Fresh recheck</a>. Host completion includes synchronization and excludes setup/transfers. Quantiles are not confidence intervals.</td>
+</tr>
+<tr>
+<td>Local row fusion avoids a full global exponential array</td>
+<td>Source inspection and compiler/runtime resource metadata; no reported local-memory allocation. Reduction scratch uses shared memory. No claim that logical array accesses equal HBM traffic.</td>
+</tr>
+<tr>
+<td>Fusion can help and can lose to cuDNN</td>
+<td>All six shapes and both submission modes retained in <a href="softmax/results.html">full results</a>. The narrow-row counterexample remains in the article. Timings do not isolate storage versus launch savings.</td>
+</tr>
+<tr>
+<td>The four-way scheduling plot uses the same algorithm</td>
+<td>The baseline, graph, phase-fused, and queue paths share A/B/C helpers and global intermediates. Both persistent paths share the compiled kernel and worker count. Queue initialization is included. <a href="softmax/code/bench.cu">Source</a>.</td>
+</tr>
+<tr>
+<td>Balanced and ragged cases have equal total work</td>
+<td>128 rows × 8192 elements = 1,048,576 elements. Ragged groups: 36,864 + 7 × 4096 = 65,536 elements per eight rows. Both have 1024 tile producers, 128 row combines, and 1024 tile consumers.</td>
+</tr>
+<tr>
+<td>Cooperative fusion retains global phase barriers</td>
+<td>Source calls grid synchronization between A/B/C phases; <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cooperative-groups.html">Cooperative Groups documentation</a>.</td>
+</tr>
+<tr>
+<td>126 of 128 B tasks begin before the last A ends</td>
+<td>Rechecked fixture 2 of the ragged queue graph; every B follows its own producers. All 24 traces pass coverage/visit/dependency checks. Traces are instrumented and do not measure utilization.</td>
+</tr>
+<tr>
+<td>A task queue is a megakernel mechanism, not its definition</td>
+<td>The toy is explicitly labeled. <a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">Hazy Research</a> uses precomputed instruction schedules. The toy slowdown does not establish performance of model-scale megakernels.</td>
+</tr>
+<tr>
+<td>Graphs, fusion, and megakernels can combine</td>
+<td>Both persistent kernels were tested under ordinary launches and graph replay. This is a teaching sequence, not a universal performance ranking.</td>
+</tr>
+<tr>
+<td>Full phase boundaries are specific to the controls</td>
+<td>Independent streams/branches and <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">PDL</a> are qualified alternatives, not tested here.</td>
+</tr>
+<tr>
+<td>360 outputs, 768 intermediates, 24 traces</td>
+<td><a href="softmax/artifacts/summary.json">Saved independent validation</a> with FP64 references and predeclared tolerances. The current pass rechecks hashes, timings, and traces; large saved arrays were not downloaded again.</td>
+</tr>
+<tr>
+<td>H100 suffices for these examples</td>
+<td>Actual H100 run completed; hardware metadata, compiler logs, graph captures, and sanitizer outputs are included in <a href="softmax/">selected evidence</a>. No cross-GPU speedup generalization.</td>
+</tr>
+<tr>
+<td>February 22 article date versus October 19 measurements</td>
+<td>Both are labeled separately. No publication year inferred from the original X date.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <a href="softmax/softmax-figure-provenance.json">new figure provenance</a> maps every label to its exact case and variant. It records hashes separately from the immutable raw-run manifest. The <a href="softmax/bundle-manifest.json">site selection manifest</a> distinguishes included artifacts from the full remote archive. The current draft is 1,180 whitespace-delimited words, versus approximately 1,441 before the three-part restructuring.</p>
+<h3>Audience-level edit</h3>
+<p>The article now assumes a mid-level engineering reader. Definitions of kernels, streams, thread blocks, softmax output properties, and the FP32 expansion have been removed. FP32 remains as an experiment parameter. The workload formula, baseline, graph-versus-fusion distinction, synchronization controls, measurement scopes, and all numerical results are retained. This is an editorial change; no experiment or figure was rerun.</p>
+<h2 id="blog-draft-recheck-october-18-2026">Blog draft recheck — October 18, 2026</h2>
+<p>This pass checks the shortened site edition. The earlier 71-entry audit below covers the original X article, not a claim count for the current blog post. Current CUDA documentation and the cited research were consulted again; every retained numerical result was recomputed from the saved H100 data. No new GPU run was needed.</p>
+<p>The revised article removes the historical benchmark-number detour and the illustrative SM-wave arithmetic. It also removes the inference that the pointwise timings establish how much of the improvement comes from memory work. The opening now explains the common goal and the ambiguity of “one launch,” followed by definitions of the execution and storage concepts used in the examples.</p>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Current claim or assumption</th>
+<th>Finding and scope</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Both approaches can submit multiple operations through one host call</td>
+<td>Supported for a host-launched graph and a single fused kernel; one graph call may execute multiple kernels. This is a motivating comparison, not a guarantee of speedup.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">CUDA Graphs</a>; <a href="https://arxiv.org/html/2512.22219v2">MPK</a></td>
+</tr>
+<tr>
+<td>Host/device, kernel, thread block, and SM definitions</td>
+<td>Supported; resource limits govern how many blocks can be resident.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html">Programming model</a></td>
+</tr>
+<tr>
+<td>Ordinary same-stream ordering does not require the host to wait between launches</td>
+<td>Supported; other streams may expose independent work.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">Asynchronous execution</a></td>
+</tr>
+<tr>
+<td>Capture, instantiation, replay, non-kernel nodes, and dependencies</td>
+<td>Supported; graph replay retains the supplied kernel functions. Capturing calls is distinct from compiler fusion.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">Graph structure and execution</a></td>
+</tr>
+<tr>
+<td>Graph benefits include host work and device dispatch; setup must be recovered</td>
+<td>Supported as possible performance effects, not fixed microsecond costs.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements">NVIDIA launch study</a></td>
+</tr>
+<tr>
+<td>PDL is a qualified exception to full-completion ordering</td>
+<td>Supported from compute capability 9.0. The consumer must establish producer-result availability, and execution overlap is not guaranteed. The toy code does not enable PDL.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">PDL</a>; <a href="code/bench.cu">benchmark source</a></td>
+</tr>
+<tr>
+<td>Registers, shared memory, and global arrays have different scopes and lifetimes</td>
+<td>Supported. The article does not claim all cross-block communication must use global memory, or that a launch boundary requires HBM access.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/writing-cuda-kernels.html">Storage model</a>; <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/l2-cache-control.html">L2</a></td>
+</tr>
+<tr>
+<td>Fusion and persistent worker reuse are distinct implementation choices</td>
+<td>Supported by the cited designs and the two toy implementations. No operation-count threshold or universal interpreter requirement is asserted.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">Hazy</a>; <a href="https://arxiv.org/html/2512.22219v2">MPK</a>; <a href="code/bench.cu">benchmark source</a></td>
+</tr>
+<tr>
+<td>Fusion can permit local consumers while preserving internal waits and resource costs</td>
+<td>Supported as an opportunity. Register/shared-memory use constrains residency, and the measured fused scheduling case is a counterexample to guaranteed lower latency.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy">Resource limits</a>; <a href="editorial-recheck.json">recomputed results</a></td>
+</tr>
+<tr>
+<td>Pointwise arithmetic preserves rounding after each FP32 operation</td>
+<td>CUDA uses explicit round-to-nearest add/multiply intrinsics. Saved PTX retains those operations; all stored pointwise outputs match FP32 CPU references.</td>
+<td><a href="code/bench.cu">CUDA source</a>; <a href="artifacts/20261018T211922Z/bench.ptx">PTX</a>; <a href="editorial-recheck.json">recheck</a></td>
+</tr>
+<tr>
+<td>3/1 kernel counts, 3/1 host submissions, 24N/8N logical bytes</td>
+<td>Source and graph metadata agree. Byte counts count array accesses only; they are not DRAM measurements. Capture/setup and synchronization are outside the submission counts.</td>
+<td><a href="artifacts/20261018T211922Z/bench/metadata.jsonl">Graph metadata</a>; <a href="code/bench.cu">source</a></td>
+</tr>
+<tr>
+<td>Same-code stream/graph pairs test submission; fusion changes multiple factors</td>
+<td>Supported by inspection of launch lambdas and pointers. Reworded to avoid attributing the latency difference exclusively to traffic or dispatch.</td>
+<td><a href="code/bench.cu">source</a></td>
+</tr>
+<tr>
+<td>Four sizes, H100 80GB HBM3, 132 SMs, 50 MiB L2, largest input 64 MiB</td>
+<td>Device fields and sizes verified. 16,777,216 × 4 bytes = 67,108,864 bytes = 64 MiB.</td>
+<td><a href="artifacts/20261018T211922Z/bench/metadata.jsonl">metadata</a>; <a href="code/bench.cu">source</a></td>
+</tr>
+<tr>
+<td>Captured pointers stay fixed while inputs change for correctness checks</td>
+<td>Source and saved fixtures agree. Timing uses a fixed fixture within each configuration; the article does not claim timing over all fixtures.</td>
+<td><a href="code/bench.cu">source</a>; <a href="editorial-recheck.json">CPU reference checks</a></td>
+</tr>
+<tr>
+<td>21 samples per configuration, shuffled variant order, exact timing boundaries</td>
+<td>Verified against source and all 588 samples. Completion includes host submission and stream synchronization. CUDA-event batches can include host-starvation gaps.</td>
+<td><a href="code/bench.cu">source</a>; <a href="artifacts/20261018T211922Z/bench/samples.jsonl">samples</a></td>
+</tr>
+<tr>
+<td>All eight displayed pointwise medians and the pointwise plot's percentile statistics</td>
+<td>All 28 configurations recomputed from raw samples and matched saved summaries. No performance change or fresh GPU allocation is implied.</td>
+<td><a href="editorial-recheck.json">recheck</a>; <a href="experiment-provenance.json">figure provenance</a></td>
+</tr>
+<tr>
+<td>597 jobs, 256 threads, 256/8,192 producer iterations, 512 consumer iterations, 132 queue workers</td>
+<td>Verified against code and metadata. Long jobs are indices divisible by eight, including index zero. Queue reset is included before every invocation, including as a graph memset node.</td>
+<td><a href="code/bench.cu">source</a>; <a href="artifacts/20261018T211922Z/bench/metadata.jsonl">metadata</a></td>
+</tr>
+<tr>
+<td>All scheduling variants retain global intermediate accesses</td>
+<td>Source uses volatile loads/stores and block barriers; PTX retains both. This does not hold cache behavior or scheduler costs constant. Volatile is not presented as a synchronization primitive.</td>
+<td><a href="code/bench.cu">source</a>; <a href="artifacts/20261018T211922Z/bench.ptx">PTX</a></td>
+</tr>
+<tr>
+<td>One active block per SM is an artificial occupancy limit</td>
+<td>Verified occupancy API assertions for each kernel. The reservation is 116,992 shared-memory bytes; the text now says at most one block, not guaranteed utilization of every SM.</td>
+<td><a href="code/bench.cu">source</a>; <a href="artifacts/20261018T211922Z/bench/metadata.jsonl">metadata</a></td>
+</tr>
+<tr>
+<td>0 versus 596 early B starts out of 597 jobs in graph traces</td>
+<td>Recomputed for both saved fixtures. Stage timestamps measure recorded intervals; they do not independently prove instruction utilization or isolate idle causes.</td>
+<td><a href="editorial-recheck.json">all 24 trace checks</a>; <a href="artifacts/20261018T211922Z/">trace files</a></td>
+</tr>
+<tr>
+<td>Ragged host medians of 206.85, 212.52, and 205.79 µs</td>
+<td>Recomputed from 21 samples each. The wording describes this run and avoids claiming a statistically established queue speedup.</td>
+<td><a href="editorial-recheck.json">recheck</a></td>
+</tr>
+<tr>
+<td>Balanced and ragged times cannot isolate imbalance</td>
+<td>Producer iteration totals differ: 611,328 balanced versus 748,032 ragged, before multiplying by 256 threads. This limitation is now explicit in the article.</td>
+<td><a href="code/bench.cu">source</a>; <a href="editorial-recheck.json">recheck</a></td>
+</tr>
+<tr>
+<td>272 exact comparisons, 24 trace checks, 588 timing samples</td>
+<td>Re-ran CPU references on the full saved binary data: 112 preflight + 112 benchmark + 48 trace comparisons. Recomputed trace coverage/order and all timing groups.</td>
+<td><a href="editorial-recheck.json">recheck</a>; <a href="code/analyze.py">independent analyzer</a></td>
+</tr>
+<tr>
+<td>Site evidence is a selected bundle</td>
+<td>Clarified in the article: all timing samples and selected data are on the site; full binary arrays and raw profiler files remain in the research archive.</td>
+<td><a href="bundle-manifest.json">bundle manifest</a>; <a href="./">evidence index</a></td>
+</tr>
+<tr>
+<td>Choosing graphs, fusion, persistence, or a combination</td>
+<td>Presented as measurement guidance. No universal ranking, model speedup, or proof of cross-block synchronization correctness is claimed.</td>
+<td><a href="results.html">toy results</a>; <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">CUDA Graphs</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The <a href="editorial-recheck.json">machine-readable recheck</a> records the manuscript hash, fresh numerical checks, and source references. Figures retain the original data provenance. Profiling limitations and the contaminated first-replay setup field remain documented in <a href="results.html">detailed results</a>; neither is used to support a new performance claim.</p>
+<h3>Reading order and subtitle refinement</h3>
+<p>The opening question is now a subtitle. The current reading order is: three operations and stream ordering; graph replay; local fusion and its measured costs; blocks, SMs, and persistent workers in the scheduling example; model-scale tradeoffs and PDL; then an explicit answer about when further fusion is worth building. PDL remains a qualified exception to ordinary dependencies, introduced after the examples so it does not interrupt the basic explanation. The measured values, figures, and scope limitations are unchanged.</p>
+<h3>Concision and confidence pass</h3>
+<p>The latest pass rechecked the ten cited primary sources, inspected the benchmark and emitted PTX, and recomputed all 28 timing groups from 588 samples plus coverage and dependency ordering for all 24 traces. Every statistic matches the previous recheck. The original exact CPU-reference validation remains applicable; neither the experiment code nor its saved data changed, and no new GPU run was made.</p>
+<p>The article removes repeated transitions and the speculative suggestion that fusion will offer little benefit once submission is addressed. It retains the limits on causal attribution, HBM traffic, instrumented traces, artificial occupancy, and model-level extrapolation. The long-job indices are explicit. The opening question, easy-to-advanced progression, and February 22 display date are unchanged.</p>
+<h2 id="original-x-article-audit">Original X article audit</h2>
+<p>71 substantive claims and assumptions audited against primary sources. Verdicts describe the original wording; grouped rows cover closely related bullets. Coverage includes every prose section, numerical example, tradeoff list, and conclusion. The cover illustration is outside this text audit.</p>
+<p>The X item is already published. The inspected UI offers unpublishing to drafts before revision; the corrected local manuscript leaves the published version live. The UI's February 22 date does not display a year, so no publication year is inferred.</p>
+<p>The central corrections concern universal launch constants, CPU versus device timing, global memory versus HBM, remaining tails and synchronization, the B200 runtime breakdown, percentage denominators, and historical benchmark scope. Source snapshots are retained locally for research with hashes; citations point to the originals.</p>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Original section and excerpt</th>
+<th>Verdict</th>
+<th>Verified finding</th>
+<th>Primary evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C01</td>
+<td>Opening: They operate at different layers of the GPU execution stack</td>
+<td>qualify</td>
+<td>Useful distinction: submission versus device implementation. Layers interact and techniques can be combined.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C02</td>
+<td>Execution layer: Application layer — Python/C++ framework logic (PyTorch, vLLM)</td>
+<td>retain</td>
+<td>A useful explanatory abstraction, not an official exhaustive CUDA taxonomy.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">streams</a></td>
+</tr>
+<tr>
+<td>C03</td>
+<td>Execution layer: Runtime submission layer — kernel launch and dependency scheduling</td>
+<td>retain</td>
+<td>Submission and scheduling are useful concepts; some scheduling also occurs on device.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C04</td>
+<td>Execution layer: Kernel boundary — each individual global function launch</td>
+<td>qualify</td>
+<td>A kernel launch creates a grid; dependencies and execution scope matter more than a four-layer classification.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">streams</a></td>
+</tr>
+<tr>
+<td>C05</td>
+<td>Execution layer: In-kernel execution — threads, warps, shared memory, registers</td>
+<td>retain</td>
+<td>Correct examples of device execution and storage concepts.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a></td>
+</tr>
+<tr>
+<td>C06</td>
+<td>Execution layer: CUDA Graph -&gt; runtime submission layer</td>
+<td>qualify</td>
+<td>Also affects device dispatch; graph nodes and dependencies expose a complete workflow to CUDA.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C07</td>
+<td>Execution layer: MegaKernels -&gt; kernel boundary and in-kernel layers</td>
+<td>retain</td>
+<td>Correct conceptual emphasis, with explicit dependency and resource management.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C08</td>
+<td>CUDA Graph: The normal way to run GPU code is to submit kernels one at a time from the CPU.</td>
+<td>qualify</td>
+<td>Describes conventional host stream launches; CUDA also supports graph and device-side launch mechanisms.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">streams</a></td>
+</tr>
+<tr>
+<td>C09</td>
+<td>CUDA Graph: Each submission goes through the CUDA driver and lands on a GPU stream.</td>
+<td>qualify</td>
+<td>Describe runtime/driver submission without asserting a distinct direct driver transition per framework operation.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C10</td>
+<td>CUDA Graph: it triggers the entire workflow at once</td>
+<td>qualify</td>
+<td>One replay enqueues a workflow; nodes execute when their dependencies permit, not simultaneously.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C11</td>
+<td>CUDA Graph: reducing the idle time (&quot;jitter&quot;) between kernels</td>
+<td>qualify</td>
+<td>Can reduce submission and dispatch gaps; jitter specifically means variability and is not a synonym for all idle time.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C12</td>
+<td>CUDA Graph: about 2.1 us on a regular stream, and about 1.3 us with CUDA Graph replay</td>
+<td>qualify</td>
+<td>Attributed dummy-kernel observation; distinguish the observed device idle/setup interval from CPU API return time.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a>, <a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C13</td>
+<td>CUDA Graph: That's 38% decrease.</td>
+<td>retain</td>
+<td>(2.1−1.3)/2.1 = 38.095%; a reduction in that reported overhead, not end-to-end model latency.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C14</td>
+<td>CUDA Graph: do not: Fuse kernels</td>
+<td>retain</td>
+<td>Replay does not itself fuse kernel bodies. Framework compilation may fuse before capture.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C15</td>
+<td>CUDA Graph: Eliminate global-memory traffic between kernels</td>
+<td>retain</td>
+<td>Replay does not automatically remove the captured kernels' intermediate accesses.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C16</td>
+<td>CUDA Graph: Remove kernel-boundary synchronization</td>
+<td>correct</td>
+<td>Default completion edges preserve ordering; graphs can also encode PDL programmatic edges. Avoid an unconditional prohibition.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">pdl</a></td>
+</tr>
+<tr>
+<td>C17</td>
+<td>CUDA Graph: Keep intermediate data in registers across kernels</td>
+<td>retain</td>
+<td>No general register handoff across separate kernels.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a></td>
+</tr>
+<tr>
+<td>C18</td>
+<td>CUDA Graph: Each kernel inside a CUDA Graph is still an independent kernel.</td>
+<td>qualify</td>
+<td>Separate kernel nodes remain distinct kernels, but they can have explicit dependencies. A graph also has non-kernel node types.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C19</td>
+<td>CUDA Graph: The graph makes dispatching cheaper.</td>
+<td>retain</td>
+<td>Can amortize setup and improve repeated dispatch; retain the setup costs and measured scope.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C20</td>
+<td>PDL: can launch a dependent kernel early so it can do independent work sooner</td>
+<td>retain</td>
+<td>Supported on compute capability 9.0+. Concurrent execution is opportunistic.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">pdl</a></td>
+</tr>
+<tr>
+<td>C21</td>
+<td>PDL: dependent work still has to synchronize (cudaGridDependencySynchronize) before consuming producer results</td>
+<td>qualify</td>
+<td>The required data-availability check applies; the guide also permits other means of verification. Never rely on concurrent progress.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">pdl</a></td>
+</tr>
+<tr>
+<td>C22</td>
+<td>PDL: this can still leave pipeline stalls for fine-grained dependencies</td>
+<td>retain</td>
+<td>A possibility, not an invariant measured PDL cost.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">pdl</a></td>
+</tr>
+<tr>
+<td>C23</td>
+<td>Boundary overhead: Three overhead sources stack at each boundary</td>
+<td>correct</td>
+<td>They may matter and overlap; do not treat them as three independent additive constants.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">streams</a></td>
+</tr>
+<tr>
+<td>C24</td>
+<td>Boundary overhead: 1.3-2.1 us of scheduling overhead</td>
+<td>correct</td>
+<td>Do not reuse one microbenchmark as a universal scheduling cost.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a>, <a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C25</td>
+<td>Boundary overhead: With in-order execution on a stream, boundaries force whole-kernel completion semantics.</td>
+<td>qualify</td>
+<td>Correct for ordinary ordered launches; mention PDL and separate-stream concurrency.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">streams</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">pdl</a></td>
+</tr>
+<tr>
+<td>C26</td>
+<td>Boundary overhead: 512 thread blocks on a 148-SM B200 leaves a partial final wave with only 68/148 SMs active (80 idle)</td>
+<td>qualify</td>
+<td>512 mod 148 = 68 and 148−68 = 80. This requires an idealized one-resident-block-per-SM wave model; real occupancy and durations vary.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a></td>
+</tr>
+<tr>
+<td>C27</td>
+<td>Boundary overhead: Intermediate tensors are written to HBM, then read by the next kernel</td>
+<td>correct</td>
+<td>Use global memory; L2 may serve the accesses. DRAM traffic requires counters rather than an assumption.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/l2-cache-control.html">cache</a></td>
+</tr>
+<tr>
+<td>C28</td>
+<td>Boundary overhead: Even with PDL-style overlap, dependent sections still wait on data visibility/completion.</td>
+<td>retain</td>
+<td>Data dependencies still require correctness synchronization.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/programmatic-dependent-launch.html">pdl</a></td>
+</tr>
+<tr>
+<td>C29</td>
+<td>Llama estimate: around ~100 kernels for Llama-1B forward</td>
+<td>qualify</td>
+<td>Keep attribution, model/configuration, and date; not a timeless launch count for every serving stack.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C30</td>
+<td>Llama estimate: ~130 us of launch overhead per forward pass as a back-of-the-envelope estimate</td>
+<td>qualify</td>
+<td>100×1.3 = 130 µs, but this transfers a dummy-kernel observation. It is not a validated model-runtime decomposition; remove from the main argument.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a>, <a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C31</td>
+<td>Llama estimate: vLLM/SGLang reaching only ~50% of available H100 memory bandwidth in this workload</td>
+<td>qualify</td>
+<td>Historical attributed result, not a statement about current versions or an independently reproduced counter measurement.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C32</td>
+<td>Megakernel definition: one global CUDA function that executes what would traditionally be many kernels</td>
+<td>retain</td>
+<td>A useful working definition; persistent execution and large fusion are related rather than universally identical terms.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C33</td>
+<td>Megakernel definition: kernel_1: RMSNorm ... kernel_5: RMSNorm + MLP</td>
+<td>qualify</td>
+<td>Illustrative partition only; actual stacks fuse and split these operations differently.</td>
+<td><a href="https://github.com/HazyResearch/Megakernels">mega</a></td>
+</tr>
+<tr>
+<td>C34</td>
+<td>Megakernel definition: removes inter-kernel boundaries and their associated launch/tail/bubble overhead</td>
+<td>correct</td>
+<td>Removes those launches; reducing tail and pipeline costs requires a suitable internal schedule and communication design.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a>, <a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a></td>
+</tr>
+<tr>
+<td>C35</td>
+<td>Megakernel definition: For a 16-layer Llama-1B path ... ~100 boundaries removed</td>
+<td>qualify</td>
+<td>A rough configuration-specific scale. K separate launches fused to one removes K−1 inter-launch boundaries; do not present an exact count without a trace.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C36</td>
+<td>Implementation: Fusing 2-3 ops is standard fusion. Fusing ~100 ops is a different problem.</td>
+<td>qualify</td>
+<td>Useful scale intuition, not a formal threshold between fusion and megakernels.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C37</td>
+<td>Implementation: A common pattern is an on-GPU interpreter</td>
+<td>qualify</td>
+<td>Established for the cited Hazy designs; neither all fused kernels nor all persistent kernels require an interpreter.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a>, <a href="https://github.com/HazyResearch/Megakernels">mega</a></td>
+</tr>
+<tr>
+<td>C38</td>
+<td>Implementation: each SM executes a precomputed instruction stream</td>
+<td>qualify</td>
+<td>Specific to Hazy's scheduling design; CUDA ordinarily assigns blocks to SMs, not one abstract interpreter per SM by definition.</td>
+<td><a href="https://github.com/HazyResearch/Megakernels">mega</a></td>
+</tr>
+<tr>
+<td>C39</td>
+<td>Implementation: Schedule construction happens on CPU once and is reused.</td>
+<td>qualify</td>
+<td>Schedules can be reused; input shape, batch composition, and runtime work can require updates or dynamic scheduling.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C40</td>
+<td>ThunderKittens: provides the low-level kernel framework used by Hazy's MegaKernel work</td>
+<td>retain</td>
+<td>Supported by the official repositories and ThunderMLA implementation description.</td>
+<td><a href="https://github.com/HazyResearch/ThunderKittens">tk</a>, <a href="https://github.com/HazyResearch/Megakernels">mega</a>, <a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a></td>
+</tr>
+<tr>
+<td>C41</td>
+<td>ThunderMLA: 20-35% faster than DeepSeek FlashMLA across tested workloads</td>
+<td>qualify</td>
+<td>Headline range, not every reported case: the same post includes a 7.6% speedup case and uses throughput-style speedup percentages. Use case-specific time ratios.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a></td>
+</tr>
+<tr>
+<td>C42</td>
+<td>ThunderMLA: 41 us vs 52 us on SXM H100</td>
+<td>retain</td>
+<td>Verified representative configuration. 21.15% latency reduction; 52/41 = 1.2683× speedup. Include prompt lengths, query count, and tensor parallelism.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a></td>
+</tr>
+<tr>
+<td>C43</td>
+<td>Look Ma: full Llama-3.2-1B forward megakernel</td>
+<td>retain</td>
+<td>Scope remains the cited single-sequence 16-bit inference experiment, not arbitrary models or training.</td>
+<td><a href="https://github.com/HazyResearch/Megakernels">mega</a></td>
+</tr>
+<tr>
+<td>C44</td>
+<td>Look Ma: 78% memory bandwidth utilization and over 1.5x speedup vs baselines on H100</td>
+<td>qualify</td>
+<td>Keep historical attribution and workload. The reported baseline comparisons differ; not a generic expected speedup.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C45</td>
+<td>Look Ma: code is open-sourced</td>
+<td>retain</td>
+<td>The official Hazy Megakernels repository is accessible.</td>
+<td><a href="https://github.com/HazyResearch/Megakernels">mega</a></td>
+</tr>
+<tr>
+<td>C46</td>
+<td>MPK: mega-kernelizes PyTorch programs with a few lines of code changes</td>
+<td>qualify</td>
+<td>Author-reported interface for supported models/configurations, not a guarantee for arbitrary PyTorch programs.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C47</td>
+<td>MPK: up to 1.0-1.7x latency improvement vs vLLM/SGLang</td>
+<td>correct</td>
+<td>Use the paper's 1.0–1.7× single-batch serving-performance range; say up to 1.7×, not up to a range. Keep evaluation scope.</td>
+<td><a href="https://arxiv.org/html/2512.22219v1">mpkv1</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C48</td>
+<td>MPK: Qwen3-8B on A100 from 14.5 ms to 12.5 ms per-token decode latency</td>
+<td>retain</td>
+<td>Present in v1 and v2 §6.3; 13.79% latency reduction and 1.16× speedup. This system-level result has multiple causes.</td>
+<td><a href="https://arxiv.org/html/2512.22219v1">mpkv1</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C49</td>
+<td>Critical difference: CUDA Graphs eliminate: CPU submission overhead per kernel</td>
+<td>correct</td>
+<td>Graphs amortize per-node host work into replay, which still has nonzero enqueue and device costs.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C50</td>
+<td>Critical difference: Kernel boundary setup/teardown overhead</td>
+<td>qualify</td>
+<td>Eliminates repeated launches across fused stages; one launch and internal task transitions remain.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C51</td>
+<td>Critical difference: Cross-kernel tail effects</td>
+<td>correct</td>
+<td>Can avoid whole-kernel waits for unrelated ready work; remaining load imbalance and the final tail are not erased.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C52</td>
+<td>Critical difference: Full intermediate round-trips between separately launched kernels</td>
+<td>correct</td>
+<td>Only eliminated for values actually kept local/reused. Cross-block communication may remain global; separate accesses may hit cache.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/l2-cache-control.html">cache</a></td>
+</tr>
+<tr>
+<td>C53</td>
+<td>Critical difference: Many memory-pipeline bubbles caused by kernel boundaries</td>
+<td>qualify</td>
+<td>Possible when an implementation actually pipelines stages; requires evidence from the chosen schedule.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C54</td>
+<td>Counter-intuitive: megakernels win by improving memory behavior. True in many cases.</td>
+<td>qualify</td>
+<td>Replace an unquantified prevalence claim with specific mechanisms and measured examples.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C55</td>
+<td>Counter-intuitive: asynchronous barrier overhead around ~60 ns each</td>
+<td>qualify</td>
+<td>Hazy's observed low-level overhead on its B200 implementation, not a universal CUDA primitive latency.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C56</td>
+<td>Counter-intuitive: sync plus setup/other overhead summing to about ~120 us</td>
+<td>correct</td>
+<td>40+80 = 120 µs in the 600-µs B200 breakdown. Original paragraph omits the architecture and nearby context suggests H100.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-05-27-no-bubbles">hazy</a></td>
+</tr>
+<tr>
+<td>C57</td>
+<td>Counter-intuitive: megakernels do not remove all global-memory traffic</td>
+<td>retain</td>
+<td>Correct; storage and synchronization follow the implementation and dependency scope.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C58</td>
+<td>Counter-intuitive: Large cross-SM dependencies and broad reductions still require global-memory communication.</td>
+<td>qualify</td>
+<td>Often true for these implementations; cluster/distributed shared-memory and cooperative mechanisms make 'require' too universal.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a></td>
+</tr>
+<tr>
+<td>C59</td>
+<td>Counter-intuitive: What they remove is the repeated boundary-induced waste</td>
+<td>qualify</td>
+<td>Launches are removed; costs can reappear as internal communication, scheduling, or resource pressure.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C60</td>
+<td>Combination: A megakernel can be launched via CUDA Graphs.</td>
+<td>retain</td>
+<td>It can be a kernel node, subject to normal capture/graph restrictions.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C61</td>
+<td>Combination: if ... one kernel, graph benefit is usually small</td>
+<td>qualify</td>
+<td>Plausible workload hypothesis, not an established universal rule. Measure the one-kernel stream/graph pair.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C62</td>
+<td>Combination: CUDA Graph value remains highest when many kernel boundaries still exist.</td>
+<td>qualify</td>
+<td>Topology, host work, setup amortization, and node costs matter; launch count alone cannot rank graph benefit.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+<tr>
+<td>C63</td>
+<td>Tradeoffs: Minimal code changes; Keeps modular kernels; Native support in common stacks; Easier debugging/maintenance</td>
+<td>qualify</td>
+<td>Graphs preserve kernel modularity, but capture-safe control flow, memory lifetime, changing parameters, and debugging can require engineering. Minimal/easier are context-dependent judgments.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C64</td>
+<td>Tradeoffs: Removes cross-kernel tail effects; Enables deeper cross-op pipelining; Raises bandwidth utilization; Can reduce per-token latency</td>
+<td>qualify</td>
+<td>These are opportunities under suitable implementation/workload conditions, not guaranteed properties of a single launch.</td>
+<td><a href="https://hazyresearch.stanford.edu/blog/2025-03-04-thundermla">mla</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C65</td>
+<td>Tradeoffs: Harder to implement/debug; Portability/tuning ... harder; Synchronization mistakes ... dangerous; bottlenecks ... shift</td>
+<td>qualify</td>
+<td>Reasonable engineering considerations; present them as tradeoffs rather than measured universal comparisons.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a>, <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">memory</a></td>
+</tr>
+<tr>
+<td>C66</td>
+<td>Recommendation: For most teams: start with CUDA Graphs, profile, then invest ... only if boundary overhead is clearly dominant.</td>
+<td>judgment</td>
+<td>Keep profiling as guidance. Avoid an unsupported claim about most teams or a rule excluding fusion benefits from memory reuse.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C67</td>
+<td>Analogy: CUDA Graphs = better dispatching. Same stations, cheaper scheduling.</td>
+<td>qualify</td>
+<td>Useful mnemonic, but it omits device scheduling, DAG concurrency, and non-kernel nodes.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a></td>
+</tr>
+<tr>
+<td>C68</td>
+<td>Analogy: Megakernels = express route. Remove stops between segments.</td>
+<td>qualify</td>
+<td>Can remove external boundaries while retaining internal waits. Replace with the precise implementation comparison.</td>
+<td><a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C69</td>
+<td>Conclusion: Both reduce end-to-end time</td>
+<td>correct</td>
+<td>Both can reduce time; either can fail to improve or regress a workload.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C70</td>
+<td>Conclusion: CUDA Graphs and megakernels are not substitutes for the same thing.</td>
+<td>qualify</td>
+<td>They change different aspects and can combine, while both may reduce some overlapping launch/dispatch overhead.</td>
+<td><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html">graphs</a>, <a href="https://arxiv.org/html/2512.22219v2">mpk</a></td>
+</tr>
+<tr>
+<td>C71</td>
+<td>Conclusion: Choosing well starts with identifying which execution layer is actually bottlenecking</td>
+<td>retain</td>
+<td>Retain as practical advice, with measurement scope and actual implementation evidence.</td>
+<td><a href="https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/">launch</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>Counts: correct 11, judgment 1, qualify 38, retain 21.</p>
+<p><code>retain</code> means supported within stated scope, not independently reproduced. <code>qualify</code> narrows wording. <code>correct</code> replaces a misleading or false generalization. <code>judgment</code> distinguishes advice from an empirical fact.</p>
+<p>The <a href="../">corrected manuscript</a> incorporates the findings and two controlled examples. The <a href="protocol.html">protocol</a> separates planned tests from measured outcomes. Historical serving results are attributed reports; the new toy measurements cannot independently reproduce or validate them.</p>
+</article>
+    <footer class="post-footer"><nav><a href="../">Back to the article</a><a href="./">Evidence index</a></nav></footer>
+  </main>
+</body>
+</html>

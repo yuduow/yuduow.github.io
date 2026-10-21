@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CUDA Graphs reduce launch overhead. When is a megakernel still worth the complexity? Follow one RMS-scaled softmax workload through graph replay, local fusion, and a megakernel on H100.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Results: RMS-scaled softmax on H100 · Yuduo Wu</title>
+  <link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../../styles.css?v=801d734e66c4">
+  <link rel="stylesheet" href="../../../../blog.css?v=8e5f5b11daff">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page evidence-page" id="content">
+    <header class="blog-masthead"><a href="../../../../">Yuduo Wu</a><a href="../../../../learning-notes/">Learning Notes</a></header>
+<header class="post-header"><p class="post-meta"><span class="draft-label">Supporting material</span><a href="../../">CUDA Graphs, Fusion, and Megakernels</a></p><h1>Results: RMS-scaled softmax on H100</h1></header><article class="post-content"><p><a href="full-results/">Complete timing tables</a> include every measured variant in both studies, every shape, both GPU sessions, direct launches and cache-eviction diagnostics. Archived labels A1/A2 or allocation 1/2 mean separate GPU measurement sessions, each with 21 warm rounds per variant. Download <a href="full-results/raw-timing-samples.csv">all raw samples</a> or <a href="full-results/all-timing-quantiles.csv">p10/median/p90 quantiles</a>. The <a href="protocol.html">methods</a> define each metric and the <a href="claim-audit.html">claim audit</a> sets the interpretation limits.</p>
+<h2 id="article-comparison">Article comparison</h2>
+<p>All values below are per-session medians in microseconds. The main article averages the two medians and shows their range; these tables preserve the individual sessions. Each input row has 131,072 elements. Local fusion and megakernel configurations were frozen from pilot results. CUDA Graphs, local fusion and megakernel columns all use graph replay; the unfused baseline uses direct launches. The first four timing columns report host completion time; the last two report the CUDA event interval.</p>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Rows</th>
+<th>Session</th>
+<th style="text-align:right">Unfused baseline</th>
+<th style="text-align:right">CUDA Graphs</th>
+<th style="text-align:right">Local fusion</th>
+<th style="text-align:right">Megakernel</th>
+<th style="text-align:right">Local fusion (event)</th>
+<th style="text-align:right">Megakernel (event)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td style="text-align:right">37.031</td>
+<td style="text-align:right">28.157</td>
+<td style="text-align:right">16.557</td>
+<td style="text-align:right">14.881</td>
+<td style="text-align:right">11.999</td>
+<td style="text-align:right">10.196</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td style="text-align:right">36.789</td>
+<td style="text-align:right">29.924</td>
+<td style="text-align:right">17.405</td>
+<td style="text-align:right">15.269</td>
+<td style="text-align:right">12.376</td>
+<td style="text-align:right">10.152</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1</td>
+<td style="text-align:right">44.958</td>
+<td style="text-align:right">39.171</td>
+<td style="text-align:right">19.982</td>
+<td style="text-align:right">19.201</td>
+<td style="text-align:right">15.313</td>
+<td style="text-align:right">14.454</td>
+</tr>
+<tr>
+<td>16</td>
+<td>2</td>
+<td style="text-align:right">44.393</td>
+<td style="text-align:right">38.431</td>
+<td style="text-align:right">19.908</td>
+<td style="text-align:right">19.242</td>
+<td style="text-align:right">14.782</td>
+<td style="text-align:right">14.149</td>
+</tr>
+<tr>
+<td>32</td>
+<td>1</td>
+<td style="text-align:right">69.855</td>
+<td style="text-align:right">64.692</td>
+<td style="text-align:right">27.904</td>
+<td style="text-align:right">25.683</td>
+<td style="text-align:right">23.275</td>
+<td style="text-align:right">19.007</td>
+</tr>
+<tr>
+<td>32</td>
+<td>2</td>
+<td style="text-align:right">69.990</td>
+<td style="text-align:right">64.289</td>
+<td style="text-align:right">27.170</td>
+<td style="text-align:right">24.643</td>
+<td style="text-align:right">22.050</td>
+<td style="text-align:right">19.525</td>
+</tr>
+<tr>
+<td>64</td>
+<td>1</td>
+<td style="text-align:right">143.703</td>
+<td style="text-align:right">137.057</td>
+<td style="text-align:right">62.174</td>
+<td style="text-align:right">55.701</td>
+<td style="text-align:right">56.424</td>
+<td style="text-align:right">49.479</td>
+</tr>
+<tr>
+<td>64</td>
+<td>2</td>
+<td style="text-align:right">143.014</td>
+<td style="text-align:right">134.625</td>
+<td style="text-align:right">61.377</td>
+<td style="text-align:right">55.188</td>
+<td style="text-align:right">55.229</td>
+<td style="text-align:right">48.102</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="what-the-results-establish">What the results establish</h2>
+<p>The primary 16-row case achieves 1.045–1.059× CUDA event interval speedup and 1.035–1.041× host completion speedup over the fastest tested local family. The predeclared 1.25× primary event target was missed. Speedups are ratios of per-session medians, not pooled measurements or a claim of statistical significance.</p>
+<p>Recomputation beats materialization in both sessions at all four measured shapes, for both host completion time and CUDA event intervals after warmup. The one-/two-kernel local alternatives are slower in these trials. This is evidence about the tested candidates, not global optimality of the three-kernel approach.</p>
+<p>The pilot-selected row-scoped path is not uniformly faster than the grid-wide variant on held-out measurements. At 16 rows, for example, grid-wide event medians are 14.410 / 14.139 µs and row-scoped medians are 14.454 / 14.149 µs. Both remain visible in the full tables; the article does not reselect winners after measurement.</p>
+<p>The grid-wide and row-scoped kernels have different <a href="data/resource-summary.json">register counts and active-block limits</a>, and use different tile widths at 32 and 64 rows. Their timing difference does not isolate the effect of barrier scope.</p>
+<p>At 32 rows, the row-scoped kernel uses 32 registers per thread and 16,640 dynamic shared bytes; its occupancy query permits up to eight active blocks per SM. Grid-wide uses 34 registers and 33,024 dynamic shared bytes, with a limit of six active blocks per SM. These are queried capacity limits, not measurements of actual block residency or utilization. Selected tile widths are 4,096 and 8,192 respectively. At 64 rows both megakernel variants need two launches, as recorded in the metadata.</p>
+<p>The grid-wide same-binary retention controls add input reloads and/or writes and reloads of exponentials through global memory. Each session computes medians of paired per-round host differences, not differences of unpaired percentile endpoints. Input reload: 1.488 / 1.286 µs; exponential writes and reloads: 2.893 / 2.854 µs; both: 3.993 / 3.910 µs. The figure averages each pair of medians and shows their range. The source and compiled-resource records support the fixed-binary comparison. These controls include shared staging and do not isolate physical HBM traffic or explain the complete cross-implementation gap.</p>
+<p>Direct launch of a single cooperative kernel can outperform graph replay here. The selected row-scoped 16-row variant has ordinary host completion medians of 18.434 / 18.774 µs, versus graph medians of 19.201 / 19.242 µs. The four-way graph plot is a controlled comparison, not a claim that the last graph-replayed point is the fastest possible execution mode.</p>
+<h2 id="validation-scope">Validation scope</h2>
+<p>The fresh CPU pass recomputed 544 warm timing metric groups from raw records, checked 208 available saved small-array outputs against independent references, and rechecked all 66 dependency traces in the final study. Maximum fresh small-array row L1 error was 9.15e-08. The <a href="validation-recheck.json">machine-readable recheck</a> names every verified source and distinguishes these checks from the archived full-size numerical audit.</p>
+<p>The full-size audit, intermediate checks, changing-input stress, sanitizers and profiler records are summarized in the <a href="data/summary.json">accepted run summary</a>. All accepted outputs met the original fixed tolerances. Full binary arrays and raw profiler databases remain archived. The <a href="data/archive-readback-verification.json">readback record</a> verifies the saved archives; the <a href="data/gpu-teardown.json">teardown record</a> records the stopped experiment apps. No new GPU allocation was started for this post update.</p>
+<p>The initial grid-wide study is retained in a separate section of the full tables, not pooled into the final study's error bars. Setup/first-replay timings are in metadata. GPU execution-ledger seconds are not billing time.</p>
+</article><footer class="post-footer"><nav><a href="../../">Back to the article</a><a href="./">RMS-scaled softmax evidence</a><a href="../">All evidence</a></nav></footer>
+  </main>
+</body>
+</html>

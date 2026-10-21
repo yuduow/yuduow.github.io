@@ -1,0 +1,34 @@
+{
+  "run": "artifacts/20261018T211922Z",
+  "verified_raw_files": 450,
+  "figures": {
+    "pointwise-latency.svg": {
+      "sha256": "9a7c60651ec152133e83b672af3fcd36a9d4b557d8fc530d52b93e53944c7060",
+      "sources": [
+        "artifacts/20261018T211922Z/bench/samples.jsonl"
+      ]
+    },
+    "pointwise-latency.png": {
+      "sha256": "493b5c86051d7d0f3eeb5f69a265636e58077d9526a94ae7383b22a861a326ae",
+      "sources": [
+        "artifacts/20261018T211922Z/bench/samples.jsonl"
+      ]
+    },
+    "ragged-timeline.svg": {
+      "sha256": "67b446250415cf475944227fddf44588942b757831ac2fafc27c4bdb8ee92d33",
+      "sources": [
+        "artifacts/20261018T211922Z/trace/tiles_ragged/tiles_ragged_separate_graph_fixture0_trace.csv",
+        "artifacts/20261018T211922Z/trace/tiles_ragged/tiles_ragged_fused_graph_fixture0_trace.csv",
+        "artifacts/20261018T211922Z/trace/tiles_ragged/tiles_ragged_queue_graph_fixture0_trace.csv"
+      ]
+    },
+    "ragged-timeline.png": {
+      "sha256": "7ef832b05ba3844ea0af9c230b597f87c398c18622b7cb217e4bb3010dec4a9c",
+      "sources": [
+        "artifacts/20261018T211922Z/trace/tiles_ragged/tiles_ragged_separate_graph_fixture0_trace.csv",
+        "artifacts/20261018T211922Z/trace/tiles_ragged/tiles_ragged_fused_graph_fixture0_trace.csv",
+        "artifacts/20261018T211922Z/trace/tiles_ragged/tiles_ragged_queue_graph_fixture0_trace.csv"
+      ]
+    }
+  }
+}

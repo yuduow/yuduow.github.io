@@ -1,0 +1,1169 @@
+study,allocation,rows,variant,label,cache_policy,metric,samples,p10_us,median_us,p90_us
+initial_full_grid,1,1,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.347,1.378,1.458
+initial_full_grid,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,145.68099975585938,145.7779998779297,145.8300018310547
+initial_full_grid,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,150.916,151.362,151.843
+initial_full_grid,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,2.5990625,2.63353125,2.75490625
+initial_full_grid,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,145.86925,145.97128125,146.0206875
+initial_full_grid,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,10.12299919128418,10.152000427246094,10.196000099182129
+initial_full_grid,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,15.518,15.93,16.166
+initial_full_grid,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,2.6015,2.65271875,2.73825
+initial_full_grid,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,10.31175,10.34821875,10.382125
+initial_full_grid,1,1,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,10.609000205993652,10.644000053405762,10.743000030517578
+initial_full_grid,1,1,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,16.116,16.352,16.559
+initial_full_grid,1,1,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,2.60015625,2.65553125,2.71071875
+initial_full_grid,1,1,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,10.795125,10.8300625,10.9296875
+initial_full_grid,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,9.170999526977539,9.189000129699707,9.199999809265137
+initial_full_grid,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,14.747,14.89,15.308
+initial_full_grid,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,2.09646875,2.136875,2.3548125
+initial_full_grid,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,9.36084375,9.3763125,9.3985
+initial_full_grid,1,1,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,10.152000427246094,10.1899995803833,10.232999801635742
+initial_full_grid,1,1,retained_graph,Full-grid retained + graph,warm,host_single_us,21,15.795,15.931,16.122
+initial_full_grid,1,1,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,2.63725,2.67046875,2.81540625
+initial_full_grid,1,1,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,10.33915625,10.37734375,10.422125
+initial_full_grid,1,1,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,11.846999168395996,11.859999656677246,11.878999710083008
+initial_full_grid,1,1,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,17.185,17.46,17.84
+initial_full_grid,1,1,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,2.6196875,2.64971875,2.69571875
+initial_full_grid,1,1,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,12.03990625,12.04796875,12.06790625
+initial_full_grid,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,42.43899917602539,42.49300003051758,42.53300094604492
+initial_full_grid,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,47.78,48.059,48.338
+initial_full_grid,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,2.6305,2.65278125,2.817375
+initial_full_grid,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,42.6231875,42.6768125,42.7199375
+initial_full_grid,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,19.1200008392334,19.128999710083008,19.145000457763672
+initial_full_grid,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,24.369,24.819,24.968
+initial_full_grid,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,2.606375,2.63340625,2.69684375
+initial_full_grid,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,19.30671875,19.31584375,19.329625
+initial_full_grid,1,1,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,13.312000274658203,13.322000503540039,13.333999633789062
+initial_full_grid,1,1,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,18.557,18.945,19.199
+initial_full_grid,1,1,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,2.630875,2.6531875,2.79546875
+initial_full_grid,1,1,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,13.4985,13.51171875,13.52415625
+initial_full_grid,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,11.454000473022461,11.480999946594238,11.539000511169434
+initial_full_grid,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,16.8,17.137,17.506
+initial_full_grid,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,2.5986875,2.67009375,2.71009375
+initial_full_grid,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,11.64071875,11.6654375,11.724
+initial_full_grid,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,10.916999816894531,10.978999137878418,11.067000389099121
+initial_full_grid,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,16.466,16.756,16.993
+initial_full_grid,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,2.63353125,2.65728125,2.71175
+initial_full_grid,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,11.10553125,11.1704375,11.26525
+initial_full_grid,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,13.175999641418457,13.203999519348145,13.236000061035156
+initial_full_grid,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,18.729,18.927,19.397
+initial_full_grid,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,6.22646875,6.3653125,6.947625
+initial_full_grid,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,13.36115625,13.39065625,13.417875
+initial_full_grid,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,20.635000228881836,20.66200065612793,20.671998977661133
+initial_full_grid,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,26.182,26.293,26.511
+initial_full_grid,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,2.57928125,2.65465625,2.7874375
+initial_full_grid,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,20.823,20.85384375,20.8585
+initial_full_grid,1,1,baseline_graph,Unfused + graph,warm,event_interval_us,21,22.822999954223633,22.84800148010254,22.8700008392334
+initial_full_grid,1,1,baseline_graph,Unfused + graph,warm,host_single_us,21,28.527,28.826,29.138
+initial_full_grid,1,1,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,2.6581875,2.71521875,2.84921875
+initial_full_grid,1,1,baseline_graph,Unfused + graph,warm,host_batch_us,21,23.0168125,23.0345,23.06078125
+initial_full_grid,1,1,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,30.005001068115234,30.06399917602539,30.09800148010254
+initial_full_grid,1,1,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,35.471,35.864,36.226
+initial_full_grid,1,1,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,18.8564375,19.17165625,20.809375
+initial_full_grid,1,1,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,30.1956875,30.2529375,30.29453125
+initial_full_grid,1,16,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.358,1.418,1.551
+initial_full_grid,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,151.88099670410156,152.04100036621094,152.1529998779297
+initial_full_grid,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,157.247,157.793,158.421
+initial_full_grid,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,2.54103125,2.619375,2.74615625
+initial_full_grid,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,152.072,152.23546875,152.3614375
+initial_full_grid,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,14.32800006866455,14.383999824523926,14.40999984741211
+initial_full_grid,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,19.775,20.157,20.358
+initial_full_grid,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,2.5854375,2.6311875,2.69634375
+initial_full_grid,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,14.52009375,14.57153125,14.60128125
+initial_full_grid,1,16,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,15.683999061584473,15.72900104522705,15.765000343322754
+initial_full_grid,1,16,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,21.021,21.418,21.685
+initial_full_grid,1,16,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,2.60053125,2.629375,2.6953125
+initial_full_grid,1,16,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,15.88009375,15.9189375,15.9935
+initial_full_grid,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,13.487000465393066,13.519999504089355,13.541999816894531
+initial_full_grid,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,19.021,19.301,19.575
+initial_full_grid,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,2.09640625,2.14078125,2.3485
+initial_full_grid,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,13.67496875,13.70796875,13.728875
+initial_full_grid,1,16,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,14.197000503540039,14.23900032043457,14.293000221252441
+initial_full_grid,1,16,retained_graph,Full-grid retained + graph,warm,host_single_us,21,19.597,19.992,20.121
+initial_full_grid,1,16,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,2.59796875,2.63646875,2.7498125
+initial_full_grid,1,16,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,14.38115625,14.4225,14.47903125
+initial_full_grid,1,16,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,14.852999687194824,14.880999565124512,14.898000717163086
+initial_full_grid,1,16,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,20.078,20.513,20.727
+initial_full_grid,1,16,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,2.55403125,2.6370625,2.819
+initial_full_grid,1,16,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,15.04334375,15.0703125,15.0875625
+initial_full_grid,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,53.11600112915039,53.16699981689453,53.29399871826172
+initial_full_grid,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,58.254,58.843,59.209
+initial_full_grid,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,2.5686875,2.621875,2.65584375
+initial_full_grid,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,53.3036875,53.35246875,53.48034375
+initial_full_grid,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,25.83100128173828,25.864999771118164,25.888999938964844
+initial_full_grid,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,31.177,31.46,31.692
+initial_full_grid,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,2.58078125,2.6195625,2.651
+initial_full_grid,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,26.01734375,26.04903125,26.07625
+initial_full_grid,1,16,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,16.027999877929688,16.052000045776367,16.071998596191406
+initial_full_grid,1,16,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,21.183,21.6,21.751
+initial_full_grid,1,16,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,2.5826875,2.6344375,2.74871875
+initial_full_grid,1,16,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,16.21065625,16.2355,16.25996875
+initial_full_grid,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,19.576000213623047,19.60700035095215,19.663000106811523
+initial_full_grid,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,25.023,25.314,25.534
+initial_full_grid,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,2.54609375,2.62953125,2.692875
+initial_full_grid,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,19.76421875,19.80365625,19.850375
+initial_full_grid,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,18.049999237060547,18.09200096130371,18.118999481201172
+initial_full_grid,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,23.436,23.908,24.108
+initial_full_grid,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,2.59240625,2.63371875,2.763875
+initial_full_grid,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,18.23459375,18.27446875,18.308625
+initial_full_grid,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,16.690000534057617,16.72599983215332,16.76799964904785
+initial_full_grid,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,22.11,22.366,22.861
+initial_full_grid,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,6.1520625,6.2540625,6.82740625
+initial_full_grid,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,16.8814375,16.909875,16.965625
+initial_full_grid,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,29.20800018310547,29.24700164794922,29.274999618530273
+initial_full_grid,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,34.516,34.738,35.062
+initial_full_grid,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,2.5509375,2.62025,2.74709375
+initial_full_grid,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,29.3926875,29.43365625,29.4685
+initial_full_grid,1,16,baseline_graph,Unfused + graph,warm,event_interval_us,21,32.67900085449219,32.749000549316406,32.83300018310547
+initial_full_grid,1,16,baseline_graph,Unfused + graph,warm,host_single_us,21,39.752,39.966,40.237
+initial_full_grid,1,16,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,2.60915625,2.67490625,2.72775
+initial_full_grid,1,16,baseline_graph,Unfused + graph,warm,host_batch_us,21,32.8799375,32.94540625,33.023
+initial_full_grid,1,16,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,40.04899978637695,40.11000061035156,40.20100021362305
+initial_full_grid,1,16,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,45.673,46.145,46.663
+initial_full_grid,1,16,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,18.5428125,18.79675,20.75228125
+initial_full_grid,1,16,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,40.2500625,40.30275,40.38825
+initial_full_grid,1,16,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,27.381600000000002,27.638,28.4362
+initial_full_grid,1,16,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,26.0048,26.38,27.19
+initial_full_grid,1,16,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,68.9692,69.88,70.3746
+initial_full_grid,1,16,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,26.1532,26.548,27.0654
+initial_full_grid,1,16,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,23.966,24.294,24.7768
+initial_full_grid,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,26.3196,27.046,27.4788
+initial_full_grid,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,29.682000000000002,30.265,31.0212
+initial_full_grid,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,173.35479999999998,174.271,174.8342
+initial_full_grid,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,48.1892,48.838,49.1752
+initial_full_grid,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,51.6036,52.181,52.5236
+initial_full_grid,1,16,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,27.197,27.744,28.2726
+initial_full_grid,1,16,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,53.2476,54.166,54.585
+initial_full_grid,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,31.6018,32.044,32.625
+initial_full_grid,1,16,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,25.953,26.398,27.3136
+initial_full_grid,1,16,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,46.7132,47.274,48.0688
+initial_full_grid,1,32,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.376,1.407,1.438
+initial_full_grid,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,209.11500549316406,209.45799255371094,209.61199951171875
+initial_full_grid,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,214.479,216.045,218.031
+initial_full_grid,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,2.612875,2.64140625,2.71146875
+initial_full_grid,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,209.31225,209.65178125,209.8130625
+initial_full_grid,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,19.80499839782715,19.847000122070312,19.885000228881836
+initial_full_grid,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,25.285,25.542,25.877
+initial_full_grid,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,2.583,2.69028125,2.79975
+initial_full_grid,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,19.99146875,20.04021875,20.06809375
+initial_full_grid,1,32,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,22.124000549316406,22.16200065612793,22.198999404907227
+initial_full_grid,1,32,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,27.382,27.731,28.177
+initial_full_grid,1,32,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,2.63446875,2.67740625,2.75253125
+initial_full_grid,1,32,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,22.308625,22.34825,22.38553125
+initial_full_grid,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,18.904001235961914,18.93899917602539,18.975000381469727
+initial_full_grid,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,24.53,24.814,25.162
+initial_full_grid,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,2.10065625,2.167875,2.35475
+initial_full_grid,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,19.09178125,19.1348125,19.17071875
+initial_full_grid,1,32,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,19.761999130249023,19.823999404907227,19.858999252319336
+initial_full_grid,1,32,retained_graph,Full-grid retained + graph,warm,host_single_us,21,25.29,25.571,25.86
+initial_full_grid,1,32,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,2.6033125,2.6793125,2.7985
+initial_full_grid,1,32,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,19.95734375,20.0113125,20.04528125
+initial_full_grid,1,32,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,21.87200164794922,21.90999984741211,21.965999603271484
+initial_full_grid,1,32,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,27.009,27.242,27.692
+initial_full_grid,1,32,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,2.6196875,2.68696875,2.7404375
+initial_full_grid,1,32,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,22.0578125,22.09728125,22.151875
+initial_full_grid,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,60.51300048828125,60.6140022277832,60.72100067138672
+initial_full_grid,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,65.864,66.189,66.664
+initial_full_grid,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,2.60121875,2.6505625,2.7206875
+initial_full_grid,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,60.698375,60.798875,60.909
+initial_full_grid,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,36.31100082397461,36.38800048828125,36.49799728393555
+initial_full_grid,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,41.905,42.113,42.649
+initial_full_grid,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,2.63165625,2.66815625,2.7985625
+initial_full_grid,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,36.521375,36.58084375,36.6990625
+initial_full_grid,1,32,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,34.336997985839844,34.430999755859375,34.486000061035156
+initial_full_grid,1,32,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,40.564,41.069,42.121
+initial_full_grid,1,32,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,2.57634375,2.6411875,2.7580625
+initial_full_grid,1,32,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,34.52953125,34.624875,34.68134375
+initial_full_grid,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,33.39099884033203,33.49500274658203,33.62699890136719
+initial_full_grid,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,40.888,41.159,41.619
+initial_full_grid,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,2.62984375,2.668375,2.7570625
+initial_full_grid,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,33.59134375,33.70546875,33.82515625
+initial_full_grid,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,31.6510009765625,31.720001220703125,31.78799819946289
+initial_full_grid,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,38.993,39.306,39.594
+initial_full_grid,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,2.63125,2.684375,2.75128125
+initial_full_grid,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,31.84840625,31.91771875,31.98465625
+initial_full_grid,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,23.59000015258789,23.63800048828125,23.72100067138672
+initial_full_grid,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,29.204,29.427,29.747
+initial_full_grid,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,6.24959375,6.37096875,6.9395
+initial_full_grid,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,23.7781875,23.8258125,23.911375
+initial_full_grid,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,61.544002532958984,61.909000396728516,62.2130012512207
+initial_full_grid,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,68.171,68.997,69.884
+initial_full_grid,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,2.57728125,2.635375,2.7425
+initial_full_grid,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,61.74003125,62.11134375,62.4078125
+initial_full_grid,1,32,baseline_graph,Unfused + graph,warm,event_interval_us,21,56.946998596191406,57.03999710083008,57.12699890136719
+initial_full_grid,1,32,baseline_graph,Unfused + graph,warm,host_single_us,21,63.715,64.038,64.575
+initial_full_grid,1,32,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,2.63728125,2.709375,2.81875
+initial_full_grid,1,32,baseline_graph,Unfused + graph,warm,host_batch_us,21,57.14003125,57.24390625,57.33015625
+initial_full_grid,1,32,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,66.68499755859375,66.79100036621094,67.03999328613281
+initial_full_grid,1,32,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,69.745,70.847,72.319
+initial_full_grid,1,32,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,18.75425,19.04365625,20.9379375
+initial_full_grid,1,32,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,66.87984375,66.98409375,67.23640625
+initial_full_grid,1,64,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.456,1.481,1.538
+initial_full_grid,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,357.3000183105469,357.7229919433594,358.3169860839844
+initial_full_grid,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,361.826,363.986,366.33
+initial_full_grid,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.7256875,1.75240625,1.86328125
+initial_full_grid,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,357.5265625,357.95196875,358.548125
+initial_full_grid,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,50.76599884033203,51.00899887084961,51.284000396728516
+initial_full_grid,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,57.893,58.314,58.967
+initial_full_grid,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.7334375,1.7606875,1.88896875
+initial_full_grid,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,50.99790625,51.235,51.51090625
+initial_full_grid,1,64,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,56.013999938964844,56.19599914550781,56.37799835205078
+initial_full_grid,1,64,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,63.018,63.437,63.7
+initial_full_grid,1,64,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.739875,1.7608125,1.8813125
+initial_full_grid,1,64,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,56.2394375,56.41771875,56.60215625
+initial_full_grid,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,51.59299850463867,51.720001220703125,52.06700134277344
+initial_full_grid,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,56.352,56.963,57.652
+initial_full_grid,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,3.3135625,3.3570625,3.68040625
+initial_full_grid,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,51.79434375,51.91975,52.2990625
+initial_full_grid,1,64,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,50.57500076293945,50.82999801635742,51.01499938964844
+initial_full_grid,1,64,retained_graph,Full-grid retained + graph,warm,host_single_us,21,57.754,57.979,58.661
+initial_full_grid,1,64,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.75165625,1.76996875,1.8680625
+initial_full_grid,1,64,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,50.79915625,51.053375,51.2396875
+initial_full_grid,1,64,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,56.31999969482422,56.404998779296875,56.48500061035156
+initial_full_grid,1,64,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,62.161,62.818,63.557
+initial_full_grid,1,64,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.73703125,1.76778125,1.80503125
+initial_full_grid,1,64,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,56.5518125,56.65709375,56.75265625
+initial_full_grid,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,121.75199890136719,123.46699523925781,124.83700561523438
+initial_full_grid,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,129.606,130.531,132.288
+initial_full_grid,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.73153125,1.75628125,1.88478125
+initial_full_grid,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,121.9759375,123.694375,125.05365625
+initial_full_grid,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,74.87999725341797,76.56800079345703,76.99199676513672
+initial_full_grid,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,81.229,82.842,84.017
+initial_full_grid,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.7331875,1.751125,1.82603125
+initial_full_grid,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,75.10484375,76.7956875,77.22215625
+initial_full_grid,1,64,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,80.03699493408203,80.08799743652344,80.1500015258789
+initial_full_grid,1,64,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,85.582,86.734,87.205
+initial_full_grid,1,64,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.7309375,1.75053125,1.83765625
+initial_full_grid,1,64,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,80.26165625,80.31384375,80.37940625
+initial_full_grid,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,67.14800262451172,67.31300354003906,67.6050033569336
+initial_full_grid,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,74.324,74.957,75.668
+initial_full_grid,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.73490625,1.7491875,1.8823125
+initial_full_grid,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,67.3848125,67.53615625,67.83034375
+initial_full_grid,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,62.49800109863281,62.69300079345703,62.97600173950195
+initial_full_grid,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,69.565,70.045,70.57
+initial_full_grid,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.735375,1.7541875,1.89434375
+initial_full_grid,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,62.72690625,62.9163125,63.2025
+initial_full_grid,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,58.99599838256836,59.09299850463867,59.176002502441406
+initial_full_grid,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,62.281,62.927,63.917
+initial_full_grid,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.8385,4.90959375,5.18321875
+initial_full_grid,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,59.1971875,59.30578125,59.41984375
+initial_full_grid,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,108.30199432373047,108.53599548339844,108.93499755859375
+initial_full_grid,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,114.628,115.299,116.082
+initial_full_grid,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.73453125,1.7518125,1.87415625
+initial_full_grid,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,108.5245,108.76259375,109.20346875
+initial_full_grid,1,64,baseline_graph,Unfused + graph,warm,event_interval_us,21,130.6820068359375,130.8380126953125,130.96200561523438
+initial_full_grid,1,64,baseline_graph,Unfused + graph,warm,host_single_us,21,136.551,137.514,137.937
+initial_full_grid,1,64,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.756875,1.780125,1.83671875
+initial_full_grid,1,64,baseline_graph,Unfused + graph,warm,host_batch_us,21,130.89096875,131.0624375,131.16934375
+initial_full_grid,1,64,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,142.114990234375,142.28599548339844,142.46099853515625
+initial_full_grid,1,64,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,143.884,144.783,145.567
+initial_full_grid,1,64,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,14.61628125,14.75034375,15.2135
+initial_full_grid,1,64,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,142.335,142.488625,142.666375
+initial_full_grid,1,64,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,88.5946,89.317,90.4006
+initial_full_grid,1,64,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,57.975,58.387,59.113600000000005
+initial_full_grid,1,64,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,135.7866,136.731,138.4142
+initial_full_grid,1,64,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,58.1492,58.614,59.2256
+initial_full_grid,1,64,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,56.388000000000005,56.82,57.5402
+initial_full_grid,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,68.4786,68.917,69.3146
+initial_full_grid,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,69.2278,69.907,70.6888
+initial_full_grid,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,361.762,364.795,367.437
+initial_full_grid,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,87.6716,88.691,89.932
+initial_full_grid,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,116.4206,117.076,117.7732
+initial_full_grid,1,64,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,63.4306,63.865,64.97139999999999
+initial_full_grid,1,64,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,146.6686,147.964,149.66
+initial_full_grid,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,74.89240000000001,75.231,75.84
+initial_full_grid,1,64,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,68.0688,68.512,69.123
+initial_full_grid,1,64,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,139.2524,139.837,141.2052
+initial_full_grid,2,1,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.63,1.724,1.816
+initial_full_grid,2,1,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,10.41100025177002,10.460999488830566,10.494000434875488
+initial_full_grid,2,1,retained_graph,Full-grid retained + graph,warm,host_single_us,21,15.647,15.744,16.26
+initial_full_grid,2,1,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.4464375,1.510375,1.7053125
+initial_full_grid,2,1,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,10.6304375,10.68084375,10.72446875
+initial_full_grid,2,1,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,10.840999603271484,10.875,10.907999992370605
+initial_full_grid,2,1,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,16.154,16.228,16.596
+initial_full_grid,2,1,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.47496875,1.50584375,1.576875
+initial_full_grid,2,1,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,11.05953125,11.0933125,11.13675
+initial_full_grid,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,21.43600082397461,21.450000762939453,21.469999313354492
+initial_full_grid,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,26.617,27.013,27.229
+initial_full_grid,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.43553125,1.466875,1.506875
+initial_full_grid,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,21.64446875,21.67175,21.7036875
+initial_full_grid,2,1,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,14.079999923706055,14.086999893188477,14.095000267028809
+initial_full_grid,2,1,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,19.19,19.279,19.728
+initial_full_grid,2,1,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.4395,1.477375,1.557375
+initial_full_grid,2,1,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,14.29325,14.31015625,14.32053125
+initial_full_grid,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,10.413999557495117,10.452000617980957,10.482000350952148
+initial_full_grid,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,15.59,15.8,16.706
+initial_full_grid,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.46309375,1.4916875,1.6839375
+initial_full_grid,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,10.63784375,10.676375,10.70778125
+initial_full_grid,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,19.796998977661133,19.819000244140625,19.839000701904297
+initial_full_grid,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,25.022,25.399,25.603
+initial_full_grid,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.4283125,1.48490625,1.619375
+initial_full_grid,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,20.0055,20.041375,20.0584375
+initial_full_grid,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,144.2989959716797,144.4810028076172,144.68798828125
+initial_full_grid,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,149.837,150.226,151.414
+initial_full_grid,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.44046875,1.47725,1.52759375
+initial_full_grid,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,144.51446875,144.68359375,144.89765625
+initial_full_grid,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,9.42199993133545,9.460999488830566,9.483999252319336
+initial_full_grid,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,16.285,17.441,18.431
+initial_full_grid,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,3.7004375,3.83215625,4.17625
+initial_full_grid,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,9.62275,9.6588125,9.6808125
+initial_full_grid,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,42.44700241088867,42.573001861572266,42.67499923706055
+initial_full_grid,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,47.816,48.062,48.6
+initial_full_grid,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.4375625,1.48009375,1.5935625
+initial_full_grid,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,42.6785,42.776125,42.88284375
+initial_full_grid,2,1,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,12.154000282287598,12.157999992370605,12.163000106811523
+initial_full_grid,2,1,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,17.26,17.386,17.977
+initial_full_grid,2,1,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.4450625,1.48365625,1.51375
+initial_full_grid,2,1,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,12.36021875,12.384625,12.391
+initial_full_grid,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,11.803000450134277,11.87399959564209,11.89699935913086
+initial_full_grid,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,17.056,17.29,17.623
+initial_full_grid,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.46221875,1.50046875,1.5610625
+initial_full_grid,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,11.99996875,12.0964375,12.12803125
+initial_full_grid,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,11.141999244689941,11.173999786376953,11.246999740600586
+initial_full_grid,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,16.334,16.543,16.939
+initial_full_grid,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.43084375,1.4890625,1.59896875
+initial_full_grid,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,11.373875,11.396875,11.47590625
+initial_full_grid,2,1,baseline_graph,Unfused + graph,warm,event_interval_us,21,24.035999298095703,24.042999267578125,24.049001693725586
+initial_full_grid,2,1,baseline_graph,Unfused + graph,warm,host_single_us,21,29.166,29.353,30.016
+initial_full_grid,2,1,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.4620625,1.49771875,1.64734375
+initial_full_grid,2,1,baseline_graph,Unfused + graph,warm,host_batch_us,21,24.2404375,24.24965625,24.27221875
+initial_full_grid,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,14.184000015258789,14.222999572753906,14.286999702453613
+initial_full_grid,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,20.859,23.116,23.48
+initial_full_grid,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,11.16225,11.44153125,12.48425
+initial_full_grid,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,14.382125,14.42384375,14.4808125
+initial_full_grid,2,1,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,33.643001556396484,35.38699722290039,38.26499938964844
+initial_full_grid,2,1,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,42.328,44.444,46.898
+initial_full_grid,2,1,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,33.148125,35.01653125,38.05328125
+initial_full_grid,2,1,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,33.84415625,35.58621875,38.47171875
+initial_full_grid,2,16,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.597,1.646,1.807
+initial_full_grid,2,16,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,14.368000030517578,14.402000427246094,14.468000411987305
+initial_full_grid,2,16,retained_graph,Full-grid retained + graph,warm,host_single_us,21,19.495,19.728,20.114
+initial_full_grid,2,16,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.32640625,1.4645625,1.507375
+initial_full_grid,2,16,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,14.56753125,14.61040625,14.69121875
+initial_full_grid,2,16,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,15.91100025177002,15.942999839782715,15.984000205993652
+initial_full_grid,2,16,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,20.958,21.218,21.427
+initial_full_grid,2,16,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.3210625,1.4536875,1.52115625
+initial_full_grid,2,16,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,16.11728125,16.1480625,16.201
+initial_full_grid,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,29.270000457763672,29.290000915527344,29.308000564575195
+initial_full_grid,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,34.41,34.817,35.108
+initial_full_grid,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.3295625,1.45834375,1.74753125
+initial_full_grid,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,29.489875,29.5103125,29.5414375
+initial_full_grid,2,16,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,16.138999938964844,16.150999069213867,16.18899917602539
+initial_full_grid,2,16,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,21.14,21.411,21.818
+initial_full_grid,2,16,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.34040625,1.45259375,1.5223125
+initial_full_grid,2,16,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,16.35475,16.378625,16.40990625
+initial_full_grid,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,14.53600025177002,14.588000297546387,14.604999542236328
+initial_full_grid,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,19.512,19.885,20.236
+initial_full_grid,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.34521875,1.43015625,1.50665625
+initial_full_grid,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,14.74434375,14.79909375,14.83425
+initial_full_grid,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,25.812000274658203,25.855998992919922,25.8799991607666
+initial_full_grid,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,30.821,31.217,31.358
+initial_full_grid,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.35771875,1.4771875,1.54359375
+initial_full_grid,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,26.04046875,26.06125,26.1008125
+initial_full_grid,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,150.06600952148438,150.11599731445312,150.20401000976562
+initial_full_grid,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,155.167,155.874,157.186
+initial_full_grid,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.3450625,1.4408125,1.5103125
+initial_full_grid,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,150.289375,150.32984375,150.42103125
+initial_full_grid,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,13.600000381469727,13.635000228881836,13.670000076293945
+initial_full_grid,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,20.589,21.636,22.0
+initial_full_grid,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,3.57978125,3.83578125,4.2414375
+initial_full_grid,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,13.7956875,13.83259375,13.86575
+initial_full_grid,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,53.06800079345703,53.121002197265625,53.34199905395508
+initial_full_grid,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,58.222,58.767,59.44
+initial_full_grid,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.325125,1.42571875,1.51928125
+initial_full_grid,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,53.28325,53.3409375,53.493625
+initial_full_grid,2,16,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,14.763999938964844,14.777000427246094,14.782999992370605
+initial_full_grid,2,16,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,19.755,19.95,20.698
+initial_full_grid,2,16,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.367875,1.431625,1.4989375
+initial_full_grid,2,16,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,14.97575,14.986875,15.00615625
+initial_full_grid,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,19.677000045776367,19.70599937438965,19.753999710083008
+initial_full_grid,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,24.688,25.068,25.455
+initial_full_grid,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.30171875,1.4634375,1.5096875
+initial_full_grid,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,19.87746875,19.9241875,19.9705
+initial_full_grid,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,18.410999298095703,18.446001052856445,18.475000381469727
+initial_full_grid,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,23.521,23.868,24.254
+initial_full_grid,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.3765,1.4381875,1.50125
+initial_full_grid,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,18.63303125,18.67378125,18.716625
+initial_full_grid,2,16,baseline_graph,Unfused + graph,warm,event_interval_us,21,31.672998428344727,31.709999084472656,31.78999900817871
+initial_full_grid,2,16,baseline_graph,Unfused + graph,warm,host_single_us,21,38.144,38.344,38.88
+initial_full_grid,2,16,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.33521875,1.48221875,1.5278125
+initial_full_grid,2,16,baseline_graph,Unfused + graph,warm,host_batch_us,21,31.90365625,31.942375,32.012125
+initial_full_grid,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,16.5570011138916,16.6200008392334,16.665000915527344
+initial_full_grid,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,23.364,24.376,24.795
+initial_full_grid,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,10.5164375,11.07759375,11.873625
+initial_full_grid,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,16.7550625,16.81540625,16.863625
+initial_full_grid,2,16,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,42.35700225830078,42.47800064086914,42.611000061035156
+initial_full_grid,2,16,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,47.669,48.038,50.136
+initial_full_grid,2,16,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,31.69565625,33.9720625,37.2885625
+initial_full_grid,2,16,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,42.5614375,42.68915625,42.82215625
+initial_full_grid,2,16,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,25.523600000000002,26.48,28.621199999999998
+initial_full_grid,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,47.7252,48.406,48.657
+initial_full_grid,2,16,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,53.2112,55.019,56.403200000000005
+initial_full_grid,2,16,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,68.24719999999999,68.781,69.5322
+initial_full_grid,2,16,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,25.8154,26.21,26.8668
+initial_full_grid,2,16,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,25.7798,26.38,28.4426
+initial_full_grid,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,51.3444,51.741,52.3304
+initial_full_grid,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,171.1488,172.156,172.5686
+initial_full_grid,2,16,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,27.2216,27.421,28.0056
+initial_full_grid,2,16,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,46.0792,46.664,48.391600000000004
+initial_full_grid,2,16,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,27.2364,27.587,27.944599999999998
+initial_full_grid,2,16,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,24.8294,26.137,26.7776
+initial_full_grid,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,30.65,31.11,31.527
+initial_full_grid,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,29.453599999999998,29.833,30.3814
+initial_full_grid,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,28.22,29.22,29.974400000000003
+initial_full_grid,2,32,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.639,1.702,1.906
+initial_full_grid,2,32,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,20.420000076293945,20.53499984741211,20.582000732421875
+initial_full_grid,2,32,retained_graph,Full-grid retained + graph,warm,host_single_us,21,25.73,26.137,26.56
+initial_full_grid,2,32,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.3505625,1.46559375,1.51075
+initial_full_grid,2,32,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,20.64909375,20.7416875,20.78790625
+initial_full_grid,2,32,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,22.952999114990234,22.989999771118164,23.031999588012695
+initial_full_grid,2,32,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,28.114,28.303,28.703
+initial_full_grid,2,32,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.3655,1.4664375,1.5079375
+initial_full_grid,2,32,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,23.15025,23.2185625,23.2524375
+initial_full_grid,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,60.571998596191406,60.82699966430664,61.012001037597656
+initial_full_grid,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,66.69,67.683,68.154
+initial_full_grid,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.36903125,1.46375,1.53146875
+initial_full_grid,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,60.8025625,61.05678125,61.2445625
+initial_full_grid,2,32,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,35.080997467041016,35.20800018310547,35.30399703979492
+initial_full_grid,2,32,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,41.203,41.79,42.96
+initial_full_grid,2,32,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.3445625,1.454,1.60009375
+initial_full_grid,2,32,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,35.29671875,35.4344375,35.5536875
+initial_full_grid,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,20.60700035095215,20.643999099731445,20.69500160217285
+initial_full_grid,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,25.829,26.106,26.67
+initial_full_grid,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.36096875,1.45275,1.50790625
+initial_full_grid,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,20.8274375,20.862125,20.90759375
+initial_full_grid,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,37.81800079345703,37.91999816894531,37.981998443603516
+initial_full_grid,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,44.28,44.907,45.32
+initial_full_grid,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.35003125,1.47196875,1.5325625
+initial_full_grid,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,38.05953125,38.1466875,38.208875
+initial_full_grid,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,193.71701049804688,193.9720001220703,194.16799926757812
+initial_full_grid,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,199.917,200.674,204.055
+initial_full_grid,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.3490625,1.476125,1.52003125
+initial_full_grid,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,193.95853125,194.205125,194.4008125
+initial_full_grid,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,19.499000549316406,19.540998458862305,19.56999969482422
+initial_full_grid,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,26.396,27.645,28.079
+initial_full_grid,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,3.63975,3.88653125,3.9726875
+initial_full_grid,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,19.696,19.740125,19.7579375
+initial_full_grid,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,63.65700149536133,63.75899887084961,64.00699615478516
+initial_full_grid,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,68.022,69.824,71.644
+initial_full_grid,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.3491875,1.46196875,1.5146875
+initial_full_grid,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,63.85796875,63.969875,64.21825
+initial_full_grid,2,32,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,21.75,21.79800033569336,21.86699867248535
+initial_full_grid,2,32,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,26.972,27.337,27.722
+initial_full_grid,2,32,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.3491875,1.4749375,1.50978125
+initial_full_grid,2,32,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,21.9693125,22.022,22.08884375
+initial_full_grid,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,33.68899917602539,33.7609977722168,33.89900207519531
+initial_full_grid,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,40.847,41.149,41.84
+initial_full_grid,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.361125,1.46275,1.5071875
+initial_full_grid,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,33.9135625,33.9829375,34.12434375
+initial_full_grid,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,31.513002395629883,31.578998565673828,31.637001037597656
+initial_full_grid,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,38.748,39.023,39.416
+initial_full_grid,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.3451875,1.48175,1.5195
+initial_full_grid,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,31.73890625,31.80475,31.86509375
+initial_full_grid,2,32,baseline_graph,Unfused + graph,warm,event_interval_us,21,57.80400085449219,57.91600036621094,58.027000427246094
+initial_full_grid,2,32,baseline_graph,Unfused + graph,warm,host_single_us,21,64.34,64.8,65.725
+initial_full_grid,2,32,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.3796875,1.4781875,1.52421875
+initial_full_grid,2,32,baseline_graph,Unfused + graph,warm,host_batch_us,21,58.03765625,58.1514375,58.2566875
+initial_full_grid,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,23.56599998474121,23.6200008392334,23.669998168945312
+initial_full_grid,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,30.045,31.426,31.897
+initial_full_grid,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,10.9076875,11.479625,11.72203125
+initial_full_grid,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,23.77284375,23.8295,23.87584375
+initial_full_grid,2,32,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,67.8219985961914,67.92499542236328,68.00699615478516
+initial_full_grid,2,32,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,72.164,73.647,74.23
+initial_full_grid,2,32,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,32.79728125,34.2404375,35.07953125
+initial_full_grid,2,32,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,68.0305625,68.1358125,68.21584375
+initial_full_grid,2,64,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.645,1.686,2.558
+initial_full_grid,2,64,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,50.07400131225586,50.1619987487793,50.37699890136719
+initial_full_grid,2,64,retained_graph,Full-grid retained + graph,warm,host_single_us,21,57.806,58.119,58.518
+initial_full_grid,2,64,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.39375,1.447875,1.47921875
+initial_full_grid,2,64,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,50.3056875,50.39284375,50.60821875
+initial_full_grid,2,64,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,55.4640007019043,55.638999938964844,55.79100036621094
+initial_full_grid,2,64,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,62.957,63.274,63.976
+initial_full_grid,2,64,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.376375,1.4475,1.512
+initial_full_grid,2,64,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,55.6959375,55.86509375,56.0214375
+initial_full_grid,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,107.90499877929688,108.18900299072266,108.39600372314453
+initial_full_grid,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,114.785,115.472,116.047
+initial_full_grid,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.381625,1.4534375,1.51003125
+initial_full_grid,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,108.1441875,108.42196875,108.62846875
+initial_full_grid,2,64,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,79.3010025024414,79.41299438476562,79.64300537109375
+initial_full_grid,2,64,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,85.851,86.446,87.036
+initial_full_grid,2,64,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.3848125,1.46509375,1.6106875
+initial_full_grid,2,64,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,79.5381875,79.64765625,79.87
+initial_full_grid,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,50.066001892089844,50.19199752807617,50.50699996948242
+initial_full_grid,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,57.705,58.008,58.506
+initial_full_grid,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.345875,1.4344375,1.51028125
+initial_full_grid,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,50.293125,50.4178125,50.72965625
+initial_full_grid,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,74.90399932861328,75.54899597167969,76.19599914550781
+initial_full_grid,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,81.798,82.509,83.9
+initial_full_grid,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.3548125,1.4325625,1.48303125
+initial_full_grid,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,75.1291875,75.779,76.42696875
+initial_full_grid,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,358.34698486328125,358.6029968261719,359.1759948730469
+initial_full_grid,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,364.024,366.168,368.312
+initial_full_grid,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.3994375,1.444375,1.52359375
+initial_full_grid,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,358.58059375,358.84621875,359.4134375
+initial_full_grid,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,51.39400100708008,51.55099868774414,51.7130012512207
+initial_full_grid,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,58.109,59.089,62.471
+initial_full_grid,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,7.3690625,7.71371875,8.05453125
+initial_full_grid,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,51.60996875,51.76746875,51.92009375
+initial_full_grid,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,119.7249984741211,122.13700103759766,123.33499908447266
+initial_full_grid,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,127.205,130.597,131.923
+initial_full_grid,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.40953125,1.48959375,1.55975
+initial_full_grid,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,120.0281875,122.37465625,123.67678125
+initial_full_grid,2,64,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,54.80500030517578,55.016998291015625,55.31100082397461
+initial_full_grid,2,64,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,61.383,61.969,62.711
+initial_full_grid,2,64,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.38984375,1.47528125,1.5125
+initial_full_grid,2,64,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,55.032,55.2420625,55.538875
+initial_full_grid,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,66.42399597167969,66.6780014038086,66.98600006103516
+initial_full_grid,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,74.077,74.481,75.474
+initial_full_grid,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.3625625,1.447,1.53259375
+initial_full_grid,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,66.65590625,66.91296875,67.21928125
+initial_full_grid,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,62.16600036621094,62.277000427246094,62.41200256347656
+initial_full_grid,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,69.498,70.031,71.029
+initial_full_grid,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.38034375,1.444,1.57490625
+initial_full_grid,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,62.3981875,62.51571875,62.6398125
+initial_full_grid,2,64,baseline_graph,Unfused + graph,warm,event_interval_us,21,128.13900756835938,128.25399780273438,128.375
+initial_full_grid,2,64,baseline_graph,Unfused + graph,warm,host_single_us,21,134.666,135.771,137.077
+initial_full_grid,2,64,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.4135625,1.50503125,1.60959375
+initial_full_grid,2,64,baseline_graph,Unfused + graph,warm,host_batch_us,21,128.37259375,128.4758125,128.62515625
+initial_full_grid,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,57.913002014160156,58.005001068115234,58.20899963378906
+initial_full_grid,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,63.573,64.474,66.513
+initial_full_grid,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,10.728625,11.21025,11.615125
+initial_full_grid,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,58.11828125,58.2114375,58.41971875
+initial_full_grid,2,64,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,141.05799865722656,141.19400024414062,141.3889923095703
+initial_full_grid,2,64,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,145.217,146.706,148.463
+initial_full_grid,2,64,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,32.79059375,33.630375,35.54190625
+initial_full_grid,2,64,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,141.3104375,141.4040625,141.59928125
+initial_full_grid,2,64,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,57.373400000000004,57.985,58.8208
+initial_full_grid,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,87.8652,88.831,89.7994
+initial_full_grid,2,64,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,147.7364,149.623,151.0054
+initial_full_grid,2,64,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,133.8508,134.977,137.071
+initial_full_grid,2,64,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,57.832,58.156,58.9686
+initial_full_grid,2,64,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,67.2334,68.122,68.65220000000001
+initial_full_grid,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,116.5924,116.987,117.7548
+initial_full_grid,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,364.4054,366.509,368.75939999999997
+initial_full_grid,2,64,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,63.395,64.048,64.563
+initial_full_grid,2,64,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,137.0992,138.018,138.7982
+initial_full_grid,2,64,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,88.1954,88.633,89.6494
+initial_full_grid,2,64,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,58.2186,59.064,59.794
+initial_full_grid,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,74.41619999999999,75.177,75.8222
+initial_full_grid,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,69.385,70.071,70.63980000000001
+initial_full_grid,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,70.152,70.729,71.2752
+row_scope_followup,1,1,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.327,1.356,1.409
+row_scope_followup,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,144.31298828125,144.55099487304688,144.63299560546875
+row_scope_followup,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,148.652,149.324,149.799
+row_scope_followup,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.4976875,1.51328125,1.52271875
+row_scope_followup,1,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,144.51421875,144.75428125,144.83003125
+row_scope_followup,1,1,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,10.994999885559082,11.008000373840332,11.039999961853027
+row_scope_followup,1,1,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,15.539,15.674,15.808
+row_scope_followup,1,1,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.50615625,1.52440625,1.54453125
+row_scope_followup,1,1,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,11.18640625,11.21434375,11.23525
+row_scope_followup,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,10.270999908447266,10.305999755859375,10.32800006866455
+row_scope_followup,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,14.83,14.969,15.068
+row_scope_followup,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.4936875,1.5220625,1.53421875
+row_scope_followup,1,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,10.45140625,10.50659375,10.52815625
+row_scope_followup,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,9.229000091552734,9.232999801635742,9.23799991607666
+row_scope_followup,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,14.037,14.168,14.474
+row_scope_followup,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,1.41590625,1.4494375,1.57346875
+row_scope_followup,1,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,9.40796875,9.41109375,9.4205
+row_scope_followup,1,1,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,10.14900016784668,10.196000099182129,10.241000175476074
+row_scope_followup,1,1,retained_graph,Full-grid retained + graph,warm,host_single_us,21,14.752,14.881,15.113
+row_scope_followup,1,1,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.5170625,1.52725,1.71834375
+row_scope_followup,1,1,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,10.35309375,10.39603125,10.4415625
+row_scope_followup,1,1,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,11.986000061035156,11.99899959564209,12.009000778198242
+row_scope_followup,1,1,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,16.484,16.557,16.629
+row_scope_followup,1,1,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.50209375,1.51446875,1.530625
+row_scope_followup,1,1,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,12.17953125,12.19896875,12.20940625
+row_scope_followup,1,1,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,10.863999366760254,10.895999908447266,10.930999755859375
+row_scope_followup,1,1,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,15.492,15.61,15.773
+row_scope_followup,1,1,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.51565625,1.536,1.6761875
+row_scope_followup,1,1,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,11.06728125,11.09178125,11.125375
+row_scope_followup,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,42.433998107910156,42.468997955322266,42.51300048828125
+row_scope_followup,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,46.826,47.129,47.329
+row_scope_followup,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.49321875,1.513875,1.6873125
+row_scope_followup,1,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,42.61934375,42.665125,42.71446875
+row_scope_followup,1,1,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,13.909000396728516,13.914000511169434,13.926000595092773
+row_scope_followup,1,1,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,18.379,18.486,18.693
+row_scope_followup,1,1,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.50725,1.5184375,1.5308125
+row_scope_followup,1,1,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,14.0953125,14.11525,14.12725
+row_scope_followup,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,11.040999412536621,11.07699966430664,11.118999481201172
+row_scope_followup,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,15.669,15.805,15.896
+row_scope_followup,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.50978125,1.51628125,1.6236875
+row_scope_followup,1,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,11.24040625,11.27859375,11.3151875
+row_scope_followup,1,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,9.79699993133545,9.819000244140625,9.845999717712402
+row_scope_followup,1,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,14.709,14.776,15.179
+row_scope_followup,1,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,1.41834375,1.42609375,1.55703125
+row_scope_followup,1,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,9.974375,9.997625,10.05296875
+row_scope_followup,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,13.663000106811523,13.706999778747559,13.736000061035156
+row_scope_followup,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,18.372,18.589,18.799
+row_scope_followup,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.088,4.12440625,4.5815
+row_scope_followup,1,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,13.84259375,13.88925,13.91665625
+row_scope_followup,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,21.336999893188477,21.360000610351562,21.39699935913086
+row_scope_followup,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,25.891,25.976,26.226
+row_scope_followup,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.49921875,1.51484375,1.5319375
+row_scope_followup,1,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,21.53684375,21.56128125,21.5995625
+row_scope_followup,1,1,baseline_graph,Unfused + graph,warm,event_interval_us,21,23.357999801635742,23.371999740600586,23.381999969482422
+row_scope_followup,1,1,baseline_graph,Unfused + graph,warm,host_single_us,21,28.077,28.157,28.311
+row_scope_followup,1,1,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.5163125,1.532,1.5469375
+row_scope_followup,1,1,baseline_graph,Unfused + graph,warm,host_batch_us,21,23.5371875,23.55471875,23.56325
+row_scope_followup,1,1,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,32.12099838256836,32.16400146484375,32.236000061035156
+row_scope_followup,1,1,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,36.758,37.031,37.578
+row_scope_followup,1,1,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,12.3820625,12.563625,13.58365625
+row_scope_followup,1,1,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,32.32153125,32.360125,32.44778125
+row_scope_followup,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,19.48699951171875,19.52199935913086,19.538999557495117
+row_scope_followup,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,23.916,24.102,24.335
+row_scope_followup,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.4955,1.518875,1.53415625
+row_scope_followup,1,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,19.68309375,19.71225,19.73996875
+row_scope_followup,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,11.656000137329102,11.675000190734863,11.714000701904297
+row_scope_followup,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,16.179,16.32,16.542
+row_scope_followup,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.506125,1.52484375,1.53478125
+row_scope_followup,1,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,11.8449375,11.87746875,11.91290625
+row_scope_followup,1,16,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.347,1.37,1.422
+row_scope_followup,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,151.8979949951172,152.0030059814453,152.10501098632812
+row_scope_followup,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,156.587,157.144,157.991
+row_scope_followup,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.50546875,1.51565625,1.545375
+row_scope_followup,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,152.103,152.20278125,152.3073125
+row_scope_followup,1,16,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,14.38700008392334,14.453999519348145,14.506999969482422
+row_scope_followup,1,16,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,19.063,19.201,19.341
+row_scope_followup,1,16,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.517125,1.52515625,1.54009375
+row_scope_followup,1,16,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,14.59453125,14.65534375,14.710375
+row_scope_followup,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,14.347000122070312,14.38599967956543,14.441999435424805
+row_scope_followup,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,19.044,19.251,19.439
+row_scope_followup,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.5156875,1.526125,1.5421875
+row_scope_followup,1,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,14.551875,14.58184375,14.633875
+row_scope_followup,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,13.360000610351562,13.39799976348877,13.435999870300293
+row_scope_followup,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,18.252,18.493,18.755
+row_scope_followup,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,1.42503125,1.43653125,1.54909375
+row_scope_followup,1,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,13.539625,13.58346875,13.617
+row_scope_followup,1,16,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,14.364999771118164,14.40999984741211,14.442999839782715
+row_scope_followup,1,16,retained_graph,Full-grid retained + graph,warm,host_single_us,21,19.049,19.2,19.494
+row_scope_followup,1,16,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.51696875,1.52778125,1.54171875
+row_scope_followup,1,16,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,14.56046875,14.61446875,14.66275
+row_scope_followup,1,16,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,15.27400016784668,15.313000679016113,15.333999633789062
+row_scope_followup,1,16,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,19.858,19.982,20.118
+row_scope_followup,1,16,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.5185625,1.5301875,1.5404375
+row_scope_followup,1,16,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,15.48540625,15.5184375,15.5365
+row_scope_followup,1,16,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,15.867000579833984,15.930998802185059,15.96500015258789
+row_scope_followup,1,16,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,20.534,20.708,20.86
+row_scope_followup,1,16,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.50865625,1.52384375,1.53475
+row_scope_followup,1,16,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,16.0724375,16.1356875,16.16721875
+row_scope_followup,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,53.24599838256836,53.382999420166016,53.47700119018555
+row_scope_followup,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,57.84,58.145,58.836
+row_scope_followup,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.50875,1.52034375,1.6321875
+row_scope_followup,1,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,53.4510625,53.59540625,53.67465625
+row_scope_followup,1,16,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,16.735000610351562,16.783000946044922,16.819000244140625
+row_scope_followup,1,16,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,21.315,21.417,21.549
+row_scope_followup,1,16,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.51475,1.52878125,1.549625
+row_scope_followup,1,16,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,16.9321875,16.98675,17.02540625
+row_scope_followup,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,17.317001342773438,17.356000900268555,17.395999908447266
+row_scope_followup,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,21.981,22.134,22.244
+row_scope_followup,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.51096875,1.52609375,1.53840625
+row_scope_followup,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,17.5223125,17.552,17.59978125
+row_scope_followup,1,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,13.354999542236328,13.404999732971191,13.440999984741211
+row_scope_followup,1,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,18.233,18.434,18.748
+row_scope_followup,1,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,1.4246875,1.44046875,1.55753125
+row_scope_followup,1,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,13.53690625,13.58828125,13.6315
+row_scope_followup,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,16.354999542236328,16.39099884033203,16.411001205444336
+row_scope_followup,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,21.249,21.485,21.812
+row_scope_followup,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.10078125,4.1255625,4.4915625
+row_scope_followup,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,16.5330625,16.57403125,16.6045625
+row_scope_followup,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,30.618000030517578,30.704999923706055,30.7810001373291
+row_scope_followup,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,35.256,35.384,35.603
+row_scope_followup,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.5103125,1.51709375,1.540375
+row_scope_followup,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,30.8215625,30.90975,31.00640625
+row_scope_followup,1,16,baseline_graph,Unfused + graph,warm,event_interval_us,21,34.1870002746582,34.257999420166016,34.32699966430664
+row_scope_followup,1,16,baseline_graph,Unfused + graph,warm,host_single_us,21,38.929,39.171,39.684
+row_scope_followup,1,16,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.5286875,1.543625,1.55809375
+row_scope_followup,1,16,baseline_graph,Unfused + graph,warm,host_batch_us,21,34.3851875,34.44375,34.52865625
+row_scope_followup,1,16,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,39.705997467041016,39.76700210571289,39.843997955322266
+row_scope_followup,1,16,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,44.474,44.958,45.309
+row_scope_followup,1,16,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,12.45415625,12.6256875,13.7456875
+row_scope_followup,1,16,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,39.89996875,39.978375,40.049875
+row_scope_followup,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,26.020999908447266,26.06999969482422,26.088998794555664
+row_scope_followup,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,30.644,30.835,31.068
+row_scope_followup,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.51071875,1.522125,1.5365625
+row_scope_followup,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,26.22221875,26.271375,26.2936875
+row_scope_followup,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,18.37700080871582,18.446001052856445,18.506999969482422
+row_scope_followup,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,22.887,23.297,23.486
+row_scope_followup,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.5149375,1.527625,1.54421875
+row_scope_followup,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,18.58346875,18.647875,18.71121875
+row_scope_followup,1,16,row_retained_graph,Row-scoped retained + graph,external_eviction,host_single_us,15,24.0274,24.337,24.5894
+row_scope_followup,1,16,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,27.6766,27.985,28.632
+row_scope_followup,1,16,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,27.454,27.702,28.0092
+row_scope_followup,1,16,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,172.77960000000002,173.625,174.3074
+row_scope_followup,1,16,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,68.15039999999999,68.549,69.2664
+row_scope_followup,1,16,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,24.267599999999998,24.798,25.1638
+row_scope_followup,1,16,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,24.551,24.978,25.24
+row_scope_followup,1,16,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,52.405,53.453,54.4864
+row_scope_followup,1,16,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,25.9212,26.142,26.848200000000002
+row_scope_followup,1,16,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,22.432,22.718,23.3656
+row_scope_followup,1,16,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,47.263600000000004,48.112,48.7888
+row_scope_followup,1,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,52.031,52.544,52.9736
+row_scope_followup,1,16,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,25.5408,25.848,26.058600000000002
+row_scope_followup,1,16,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,28.3124,28.754,29.3248
+row_scope_followup,1,16,row_retained_stream,"Row-scoped retained, ordinary launches",external_eviction,host_single_us,15,22.267,22.488,23.2908
+row_scope_followup,1,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,47.3518,47.744,47.950199999999995
+row_scope_followup,1,16,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,25.637999999999998,25.873,26.2316
+row_scope_followup,1,32,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.355,1.39,1.417
+row_scope_followup,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,184.8769989013672,185.072998046875,185.15199279785156
+row_scope_followup,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,188.774,189.775,192.585
+row_scope_followup,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.49221875,1.51215625,1.5234375
+row_scope_followup,1,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,185.06690625,185.27665625,185.35271875
+row_scope_followup,1,32,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,18.950000762939453,19.006999969482422,19.062999725341797
+row_scope_followup,1,32,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,25.357,25.683,25.79
+row_scope_followup,1,32,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.5020625,1.51621875,1.53409375
+row_scope_followup,1,32,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,19.15159375,19.2123125,19.26765625
+row_scope_followup,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,20.625999450683594,20.652999877929688,20.702001571655273
+row_scope_followup,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,25.162,25.364,25.76
+row_scope_followup,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.50390625,1.51975,1.5338125
+row_scope_followup,1,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,20.81465625,20.8516875,20.90065625
+row_scope_followup,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,19.386999130249023,19.4060001373291,19.44999885559082
+row_scope_followup,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,24.171,24.433,24.715
+row_scope_followup,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,1.40959375,1.42290625,1.55796875
+row_scope_followup,1,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,19.56709375,19.602625,19.6315
+row_scope_followup,1,32,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,20.304000854492188,20.420000076293945,20.47800064086914
+row_scope_followup,1,32,retained_graph,Full-grid retained + graph,warm,host_single_us,21,24.977,25.136,25.328
+row_scope_followup,1,32,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.500625,1.51775,1.53653125
+row_scope_followup,1,32,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,20.50653125,20.61128125,20.6783125
+row_scope_followup,1,32,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,23.225000381469727,23.274999618530273,23.31300163269043
+row_scope_followup,1,32,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,27.647,27.904,28.128
+row_scope_followup,1,32,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.50059375,1.51971875,1.6765625
+row_scope_followup,1,32,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,23.42971875,23.4781875,23.51815625
+row_scope_followup,1,32,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,22.83799934387207,22.930999755859375,22.9950008392334
+row_scope_followup,1,32,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,27.559,27.686,27.825
+row_scope_followup,1,32,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.50728125,1.52090625,1.54309375
+row_scope_followup,1,32,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,23.0489375,23.119125,23.19809375
+row_scope_followup,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,62.862998962402344,62.954002380371094,63.080997467041016
+row_scope_followup,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,68.319,69.067,69.999
+row_scope_followup,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.5001875,1.51378125,1.53121875
+row_scope_followup,1,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,63.06584375,63.15003125,63.3103125
+row_scope_followup,1,32,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,34.18400192260742,34.255001068115234,34.3120002746582
+row_scope_followup,1,32,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,39.116,39.76,40.421
+row_scope_followup,1,32,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.50384375,1.51490625,1.5290625
+row_scope_followup,1,32,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,34.39084375,34.45725,34.52278125
+row_scope_followup,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,31.812000274658203,31.849000930786133,31.929000854492188
+row_scope_followup,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,38.24,38.455,39.026
+row_scope_followup,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.50103125,1.5164375,1.5304375
+row_scope_followup,1,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,32.01634375,32.056875,32.13309375
+row_scope_followup,1,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,18.770999908447266,18.826000213623047,18.874000549316406
+row_scope_followup,1,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,23.793,24.008,24.281
+row_scope_followup,1,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,1.4091875,1.42503125,1.55459375
+row_scope_followup,1,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,18.950375,19.01603125,19.053375
+row_scope_followup,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,23.671998977661133,23.731000900268555,23.79199981689453
+row_scope_followup,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,28.476,28.818,29.103
+row_scope_followup,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.07046875,4.10425,4.4895625
+row_scope_followup,1,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,23.86484375,23.9188125,23.9734375
+row_scope_followup,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,61.582000732421875,61.7339973449707,61.980003356933594
+row_scope_followup,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,67.213,67.975,68.932
+row_scope_followup,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.49321875,1.5151875,1.649
+row_scope_followup,1,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,61.78490625,61.9443125,62.181875
+row_scope_followup,1,32,baseline_graph,Unfused + graph,warm,event_interval_us,21,58.250999450683594,58.35300064086914,58.43299865722656
+row_scope_followup,1,32,baseline_graph,Unfused + graph,warm,host_single_us,21,64.271,64.692,65.203
+row_scope_followup,1,32,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.51334375,1.5256875,1.5501875
+row_scope_followup,1,32,baseline_graph,Unfused + graph,warm,host_batch_us,21,58.45965625,58.55696875,58.64175
+row_scope_followup,1,32,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,66.37799835205078,66.52400207519531,66.85599517822266
+row_scope_followup,1,32,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,69.074,69.855,71.196
+row_scope_followup,1,32,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,12.28625,12.49096875,13.65221875
+row_scope_followup,1,32,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,66.5905625,66.73471875,67.07059375
+row_scope_followup,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,40.582000732421875,42.36499786376953,42.461997985839844
+row_scope_followup,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,46.18,47.727,48.167
+row_scope_followup,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.5040625,1.52190625,1.54046875
+row_scope_followup,1,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,40.78121875,42.5685625,42.664375
+row_scope_followup,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,33.625999450683594,33.73299789428711,33.80099868774414
+row_scope_followup,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,39.974,40.331,40.663
+row_scope_followup,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.50203125,1.515875,1.53490625
+row_scope_followup,1,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,33.830125,33.93446875,34.00528125
+row_scope_followup,1,64,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.365,1.394,1.424
+row_scope_followup,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,359.14599609375,359.4739990234375,359.63800048828125
+row_scope_followup,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,364.14,365.669,367.198
+row_scope_followup,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.50246875,1.52165625,1.532
+row_scope_followup,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,359.34578125,359.673125,359.83959375
+row_scope_followup,1,64,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,49.375999450683594,49.479000091552734,49.63199996948242
+row_scope_followup,1,64,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,55.279,55.701,56.289
+row_scope_followup,1,64,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.51153125,1.52596875,1.61728125
+row_scope_followup,1,64,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,49.57678125,49.6831875,49.83521875
+row_scope_followup,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,50.93000030517578,51.00300216674805,51.11199951171875
+row_scope_followup,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,57.334,57.634,58.135
+row_scope_followup,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.50009375,1.51965625,1.5400625
+row_scope_followup,1,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,51.130625,51.205625,51.31321875
+row_scope_followup,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,51.84499740600586,51.89299774169922,51.98299789428711
+row_scope_followup,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,56.154,56.558,57.378
+row_scope_followup,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,2.8425625,2.86759375,3.08646875
+row_scope_followup,1,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,52.0529375,52.10575,52.1908125
+row_scope_followup,1,64,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,50.8380012512207,50.94599914550781,51.07699966430664
+row_scope_followup,1,64,retained_graph,Full-grid retained + graph,warm,host_single_us,21,57.26,57.488,58.063
+row_scope_followup,1,64,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.51278125,1.5215,1.52965625
+row_scope_followup,1,64,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,51.03859375,51.15015625,51.2764375
+row_scope_followup,1,64,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,56.32200241088867,56.42399978637695,56.529998779296875
+row_scope_followup,1,64,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,61.577,62.174,62.669
+row_scope_followup,1,64,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.5085,1.5223125,1.53390625
+row_scope_followup,1,64,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,56.5246875,56.62646875,56.73696875
+row_scope_followup,1,64,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,56.27400207519531,56.34199905395508,56.444000244140625
+row_scope_followup,1,64,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,62.599,62.947,63.929
+row_scope_followup,1,64,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.51209375,1.52396875,1.54365625
+row_scope_followup,1,64,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,56.47821875,56.54628125,56.64553125
+row_scope_followup,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,122.80500030517578,123.24099731445312,123.50399780273438
+row_scope_followup,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,127.47,130.65,132.434
+row_scope_followup,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.50434375,1.5130625,1.5324375
+row_scope_followup,1,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,123.01090625,123.44184375,123.701875
+row_scope_followup,1,64,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,79.76499938964844,79.86799621582031,79.947998046875
+row_scope_followup,1,64,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,85.192,85.879,86.317
+row_scope_followup,1,64,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.50440625,1.5204375,1.5511875
+row_scope_followup,1,64,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,79.96771875,80.0715625,80.15734375
+row_scope_followup,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,63.00800323486328,63.0780029296875,63.14399719238281
+row_scope_followup,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,69.423,69.928,70.706
+row_scope_followup,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.51140625,1.52309375,1.54465625
+row_scope_followup,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,63.20834375,63.28121875,63.3475625
+row_scope_followup,1,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,49.913002014160156,50.071998596191406,50.301998138427734
+row_scope_followup,1,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,54.136,54.648,55.151
+row_scope_followup,1,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,2.8470625,2.869,3.11675
+row_scope_followup,1,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,50.16175,50.28109375,50.5084375
+row_scope_followup,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,58.729000091552734,58.87699890136719,58.97700119018555
+row_scope_followup,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,62.028,62.515,63.547
+row_scope_followup,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.085,4.1023125,4.45678125
+row_scope_followup,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,58.9159375,59.0876875,59.19046875
+row_scope_followup,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,108.30400085449219,108.62200164794922,108.7300033569336
+row_scope_followup,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,113.901,114.373,115.315
+row_scope_followup,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.50890625,1.5174375,1.5395625
+row_scope_followup,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,108.5104375,108.8221875,108.93403125
+row_scope_followup,1,64,baseline_graph,Unfused + graph,warm,event_interval_us,21,131.27999877929688,131.31300354003906,131.46499633789062
+row_scope_followup,1,64,baseline_graph,Unfused + graph,warm,host_single_us,21,136.465,137.057,137.915
+row_scope_followup,1,64,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.5260625,1.53946875,1.56465625
+row_scope_followup,1,64,baseline_graph,Unfused + graph,warm,host_batch_us,21,131.48640625,131.521875,131.672875
+row_scope_followup,1,64,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,141.43499755859375,141.58799743652344,141.7169952392578
+row_scope_followup,1,64,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,143.232,143.703,144.722
+row_scope_followup,1,64,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,12.31746875,12.40575,13.42928125
+row_scope_followup,1,64,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,141.64790625,141.801625,141.93240625
+row_scope_followup,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,77.7509994506836,77.89500427246094,78.00299835205078
+row_scope_followup,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,82.747,83.699,84.43
+row_scope_followup,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.5039375,1.51625,1.55078125
+row_scope_followup,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,77.961,78.0966875,78.20515625
+row_scope_followup,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,67.89000701904297,67.98099517822266,68.08900451660156
+row_scope_followup,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,74.465,74.761,75.192
+row_scope_followup,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.51028125,1.521375,1.54109375
+row_scope_followup,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,68.095125,68.187375,68.2990625
+row_scope_followup,1,64,row_retained_graph,Row-scoped retained + graph,external_eviction,host_single_us,15,56.8966,57.229,57.9212
+row_scope_followup,1,64,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,88.09020000000001,88.512,89.3302
+row_scope_followup,1,64,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,69.161,69.695,70.7098
+row_scope_followup,1,64,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,368.97159999999997,369.658,371.1086
+row_scope_followup,1,64,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,136.1018,136.646,137.8034
+row_scope_followup,1,64,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,57.5154,57.929,58.2226
+row_scope_followup,1,64,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,57.896,58.015,58.5822
+row_scope_followup,1,64,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,145.9382,146.788,147.8056
+row_scope_followup,1,64,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,63.4394,63.867,64.3702
+row_scope_followup,1,64,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,55.8474,56.33,57.0086
+row_scope_followup,1,64,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,138.007,139.224,139.9022
+row_scope_followup,1,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,116.19919999999999,116.557,117.2616
+row_scope_followup,1,64,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,67.1738,67.764,68.232
+row_scope_followup,1,64,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,74.67,75.031,75.5962
+row_scope_followup,1,64,row_retained_stream,"Row-scoped retained, ordinary launches",external_eviction,host_single_us,15,54.8564,55.624,56.120799999999996
+row_scope_followup,1,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,88.1358,88.724,89.4948
+row_scope_followup,1,64,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,67.402,68.012,68.58959999999999
+row_scope_followup,2,1,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.403,1.438,1.511
+row_scope_followup,2,1,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,10.060999870300293,10.152000427246094,10.175000190734863
+row_scope_followup,2,1,retained_graph,Full-grid retained + graph,warm,host_single_us,21,15.091,15.269,15.525
+row_scope_followup,2,1,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.80178125,1.8254375,2.0348125
+row_scope_followup,2,1,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,10.2505625,10.34834375,10.3693125
+row_scope_followup,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,10.170000076293945,10.20099925994873,10.229000091552734
+row_scope_followup,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,15.24,15.432,15.702
+row_scope_followup,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.7931875,1.81396875,2.0126875
+row_scope_followup,2,1,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,10.36015625,10.3918125,10.45015625
+row_scope_followup,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,21.352001190185547,21.362998962402344,21.37299919128418
+row_scope_followup,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,26.33,26.458,26.56
+row_scope_followup,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.783625,1.81396875,1.92896875
+row_scope_followup,2,1,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,21.54434375,21.55696875,21.56940625
+row_scope_followup,2,1,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,13.835000038146973,13.845000267028809,13.85099983215332
+row_scope_followup,2,1,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,18.661,18.914,19.092
+row_scope_followup,2,1,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.79640625,1.81571875,1.924
+row_scope_followup,2,1,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,14.026875,14.0346875,14.041125
+row_scope_followup,2,1,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,10.972000122070312,11.01200008392334,11.056000709533691
+row_scope_followup,2,1,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,15.942,16.087,16.277
+row_scope_followup,2,1,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.81125,1.83215625,1.9575625
+row_scope_followup,2,1,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,11.16415625,11.2108125,11.2600625
+row_scope_followup,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,19.607999801635742,19.621999740600586,19.631999969482422
+row_scope_followup,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,24.581,24.741,24.799
+row_scope_followup,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.7785,1.81559375,1.89159375
+row_scope_followup,2,1,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,19.79896875,19.8149375,19.83803125
+row_scope_followup,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,11.645000457763672,11.659000396728516,11.714999198913574
+row_scope_followup,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,16.712,16.804,16.964
+row_scope_followup,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.79259375,1.8125,1.8968125
+row_scope_followup,2,1,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,11.84228125,11.86178125,11.91796875
+row_scope_followup,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,9.244999885559082,9.258000373840332,9.27299976348877
+row_scope_followup,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,14.519,14.721,15.073
+row_scope_followup,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,1.6795,1.6924375,1.99325
+row_scope_followup,2,1,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,9.4365625,9.4550625,9.46546875
+row_scope_followup,2,1,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,10.798999786376953,10.864999771118164,10.91200065612793
+row_scope_followup,2,1,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,15.768,15.934,16.06
+row_scope_followup,2,1,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.797125,1.82003125,1.91421875
+row_scope_followup,2,1,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,11.00840625,11.058,11.10275
+row_scope_followup,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,146.75299072265625,146.9119873046875,147.1090087890625
+row_scope_followup,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,151.738,151.983,152.783
+row_scope_followup,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.77090625,1.7945,1.91025
+row_scope_followup,2,1,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,146.94296875,147.1055,147.30109375
+row_scope_followup,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,10.960000038146973,11.005000114440918,11.059000015258789
+row_scope_followup,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,15.947,16.127,16.312
+row_scope_followup,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.79953125,1.8246875,2.04246875
+row_scope_followup,2,1,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,11.1483125,11.20346875,11.261125
+row_scope_followup,2,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,9.820999145507812,9.844000816345215,9.873000144958496
+row_scope_followup,2,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,15.18,15.351,15.567
+row_scope_followup,2,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,1.6680625,1.6959375,1.969125
+row_scope_followup,2,1,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,10.01253125,10.03475,10.06884375
+row_scope_followup,2,1,baseline_graph,Unfused + graph,warm,event_interval_us,21,24.610000610351562,24.62299919128418,24.63599967956543
+row_scope_followup,2,1,baseline_graph,Unfused + graph,warm,host_single_us,21,29.745,29.924,30.081
+row_scope_followup,2,1,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.80625,1.83303125,2.0233125
+row_scope_followup,2,1,baseline_graph,Unfused + graph,warm,host_batch_us,21,24.79940625,24.8128125,24.82721875
+row_scope_followup,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,13.581999778747559,13.597000122070312,13.628999710083008
+row_scope_followup,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,18.864,19.147,19.419
+row_scope_followup,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.97978125,5.03653125,5.7864375
+row_scope_followup,2,1,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,13.7710625,13.79028125,13.82625
+row_scope_followup,2,1,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,31.295001983642578,31.334001541137695,31.364999771118164
+row_scope_followup,2,1,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,36.505,36.789,37.335
+row_scope_followup,2,1,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,15.28803125,15.54546875,17.10790625
+row_scope_followup,2,1,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,31.50359375,31.5304375,31.55665625
+row_scope_followup,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,42.57099914550781,42.615997314453125,42.67900085449219
+row_scope_followup,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,47.483,47.708,48.071
+row_scope_followup,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.79346875,1.80853125,1.9793125
+row_scope_followup,2,1,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,42.76390625,42.808125,42.86996875
+row_scope_followup,2,1,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,12.371000289916992,12.37600040435791,12.38599967956543
+row_scope_followup,2,1,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,17.256,17.405,17.504
+row_scope_followup,2,1,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.7960625,1.82959375,1.98153125
+row_scope_followup,2,1,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,12.5618125,12.56909375,12.57853125
+row_scope_followup,2,16,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.396,1.43,1.593
+row_scope_followup,2,16,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,14.088000297546387,14.138999938964844,14.204000473022461
+row_scope_followup,2,16,retained_graph,Full-grid retained + graph,warm,host_single_us,21,19.199,19.341,19.45
+row_scope_followup,2,16,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.77375,1.79340625,1.9278125
+row_scope_followup,2,16,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,14.283625,14.33075,14.39775
+row_scope_followup,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,14.144999504089355,14.166999816894531,14.248000144958496
+row_scope_followup,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,18.95,19.306,19.48
+row_scope_followup,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.77,1.7988125,1.88521875
+row_scope_followup,2,16,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,14.33846875,14.38396875,14.444
+row_scope_followup,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,28.91499900817871,28.95800018310547,28.972999572753906
+row_scope_followup,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,33.939,34.068,34.402
+row_scope_followup,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.757,1.77778125,1.8000625
+row_scope_followup,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,29.121375,29.15609375,29.171625
+row_scope_followup,2,16,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,16.13599967956543,16.145999908447266,16.16200065612793
+row_scope_followup,2,16,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,21.055,21.21,21.473
+row_scope_followup,2,16,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.77865625,1.80421875,1.83228125
+row_scope_followup,2,16,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,16.332875,16.34290625,16.36871875
+row_scope_followup,2,16,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,14.083000183105469,14.14900016784668,14.210000038146973
+row_scope_followup,2,16,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,19.068,19.242,19.447
+row_scope_followup,2,16,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.7728125,1.790125,1.8024375
+row_scope_followup,2,16,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,14.28409375,14.339625,14.40253125
+row_scope_followup,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,26.016000747680664,26.054000854492188,26.066999435424805
+row_scope_followup,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,31.011,31.165,31.31
+row_scope_followup,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.76828125,1.78734375,1.88025
+row_scope_followup,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,26.21165625,26.248375,26.27475
+row_scope_followup,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,18.024999618530273,18.04199981689453,18.089000701904297
+row_scope_followup,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,23.045,23.164,23.373
+row_scope_followup,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.7749375,1.7928125,1.88453125
+row_scope_followup,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,18.2180625,18.23490625,18.2931875
+row_scope_followup,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,13.144000053405762,13.161999702453613,13.180999755859375
+row_scope_followup,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,18.412,18.72,18.844
+row_scope_followup,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,1.6560625,1.6710625,1.82065625
+row_scope_followup,2,16,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,13.3420625,13.35778125,13.37215625
+row_scope_followup,2,16,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,15.319000244140625,15.356999397277832,15.383999824523926
+row_scope_followup,2,16,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,20.368,20.469,20.686
+row_scope_followup,2,16,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.76853125,1.7900625,1.80196875
+row_scope_followup,2,16,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,15.5135625,15.55315625,15.58209375
+row_scope_followup,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,151.11599731445312,151.20999145507812,151.3939971923828
+row_scope_followup,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,155.953,156.491,157.052
+row_scope_followup,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.757875,1.77025,1.78878125
+row_scope_followup,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,151.3099375,151.4060625,151.58925
+row_scope_followup,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,16.91400146484375,16.95199966430664,16.98699951171875
+row_scope_followup,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,22.01,22.157,22.291
+row_scope_followup,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.778,1.7946875,1.822625
+row_scope_followup,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,17.1064375,17.14409375,17.20259375
+row_scope_followup,2,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,13.1850004196167,13.220000267028809,13.251999855041504
+row_scope_followup,2,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,18.555,18.774,18.966
+row_scope_followup,2,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,1.65803125,1.67371875,1.82121875
+row_scope_followup,2,16,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,13.37353125,13.4096875,13.4464375
+row_scope_followup,2,16,baseline_graph,Unfused + graph,warm,event_interval_us,21,32.779998779296875,32.80699920654297,32.843997955322266
+row_scope_followup,2,16,baseline_graph,Unfused + graph,warm,host_single_us,21,37.989,38.431,38.52
+row_scope_followup,2,16,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.78375,1.80540625,1.8478125
+row_scope_followup,2,16,baseline_graph,Unfused + graph,warm,host_batch_us,21,32.97365625,33.00225,33.0410625
+row_scope_followup,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,16.341001510620117,16.385000228881836,16.43400001525879
+row_scope_followup,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,21.646,21.909,22.162
+row_scope_followup,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.900125,4.9473125,5.3274375
+row_scope_followup,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,16.53421875,16.5749375,16.63425
+row_scope_followup,2,16,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,39.17399978637695,39.21800231933594,39.33199691772461
+row_scope_followup,2,16,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,44.096,44.393,45.098
+row_scope_followup,2,16,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,14.9811875,15.14184375,16.34125
+row_scope_followup,2,16,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,39.36496875,39.4143125,39.564875
+row_scope_followup,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,52.56899642944336,52.597999572753906,52.7339973449707
+row_scope_followup,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,57.484,57.702,58.019
+row_scope_followup,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.7568125,1.7708125,1.78596875
+row_scope_followup,2,16,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,52.76234375,52.79534375,52.940875
+row_scope_followup,2,16,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,14.767000198364258,14.782000541687012,14.790999412536621
+row_scope_followup,2,16,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,19.764,19.908,20.011
+row_scope_followup,2,16,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.77878125,1.79603125,1.81971875
+row_scope_followup,2,16,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,14.95771875,14.98009375,14.9893125
+row_scope_followup,2,16,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,25.7958,26.163,27.0436
+row_scope_followup,2,16,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,45.5018,45.917,46.5614
+row_scope_followup,2,16,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,50.82,51.255,51.7016
+row_scope_followup,2,16,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,25.692,26.189,26.465
+row_scope_followup,2,16,row_retained_stream,"Row-scoped retained, ordinary launches",external_eviction,host_single_us,15,22.4116,22.697,23.178
+row_scope_followup,2,16,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,24.901600000000002,25.102,25.6994
+row_scope_followup,2,16,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,51.6778,52.519,53.7036
+row_scope_followup,2,16,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,68.19019999999999,68.458,69.0268
+row_scope_followup,2,16,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,22.6564,22.908,23.4966
+row_scope_followup,2,16,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,27.709600000000002,27.954,28.4156
+row_scope_followup,2,16,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,47.4574,47.921,48.4612
+row_scope_followup,2,16,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,26.8604,27.3,27.6164
+row_scope_followup,2,16,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,171.691,172.691,173.7446
+row_scope_followup,2,16,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,28.549,28.941,29.6238
+row_scope_followup,2,16,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,24.736,24.985,25.537
+row_scope_followup,2,16,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,25.8844,26.707,26.9158
+row_scope_followup,2,16,row_retained_graph,Row-scoped retained + graph,external_eviction,host_single_us,15,24.485,24.823,25.244799999999998
+row_scope_followup,2,32,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.374,1.388,1.44
+row_scope_followup,2,32,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,20.01300048828125,20.05299949645996,20.089000701904297
+row_scope_followup,2,32,retained_graph,Full-grid retained + graph,warm,host_single_us,21,24.992,25.113,25.275
+row_scope_followup,2,32,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.7720625,1.77915625,1.82015625
+row_scope_followup,2,32,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,20.20665625,20.24965625,20.31121875
+row_scope_followup,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,19.923999786376953,19.985000610351562,20.01599884033203
+row_scope_followup,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,24.975,25.181,25.381
+row_scope_followup,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.76328125,1.77628125,1.89540625
+row_scope_followup,2,32,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,20.1385625,20.17778125,20.21871875
+row_scope_followup,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,60.78799819946289,60.887001037597656,61.17599868774414
+row_scope_followup,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,65.769,66.992,68.581
+row_scope_followup,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.75003125,1.77209375,1.8401875
+row_scope_followup,2,32,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,61.01334375,61.1145625,61.3978125
+row_scope_followup,2,32,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,34.53300094604492,34.62199783325195,34.7400016784668
+row_scope_followup,2,32,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,40.132,40.725,41.13
+row_scope_followup,2,32,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.75115625,1.77696875,1.8705
+row_scope_followup,2,32,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,34.75621875,34.8458125,34.96421875
+row_scope_followup,2,32,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,19.472999572753906,19.525001525878906,19.56100082397461
+row_scope_followup,2,32,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,24.546,24.643,24.858
+row_scope_followup,2,32,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.75915625,1.77975,1.95878125
+row_scope_followup,2,32,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,19.67459375,19.7241875,19.75646875
+row_scope_followup,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,38.137996673583984,38.23899841308594,38.29100036621094
+row_scope_followup,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,44.15,44.337,44.73
+row_scope_followup,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.7479375,1.76659375,1.7913125
+row_scope_followup,2,32,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,38.33209375,38.43703125,38.49321875
+row_scope_followup,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,33.30000305175781,33.402000427246094,33.566001892089844
+row_scope_followup,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,40.165,40.42,40.653
+row_scope_followup,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.76328125,1.7781875,1.7986875
+row_scope_followup,2,32,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,33.5165,33.62553125,33.793
+row_scope_followup,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,19.084999084472656,19.11199951171875,19.147998809814453
+row_scope_followup,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,24.358,24.598,24.76
+row_scope_followup,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,1.6323125,1.65240625,1.7846875
+row_scope_followup,2,32,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,19.27575,19.30584375,19.34125
+row_scope_followup,2,32,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,22.14900016784668,22.173999786376953,22.204999923706055
+row_scope_followup,2,32,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,27.014,27.388,27.623
+row_scope_followup,2,32,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.762625,1.77784375,1.79253125
+row_scope_followup,2,32,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,22.34284375,22.37359375,22.3986875
+row_scope_followup,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,183.12899780273438,183.2949981689453,183.4290008544922
+row_scope_followup,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,188.393,189.275,190.534
+row_scope_followup,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.75134375,1.7699375,1.79328125
+row_scope_followup,2,32,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,183.34946875,183.519,183.654875
+row_scope_followup,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,31.44999885559082,31.527002334594727,31.551000595092773
+row_scope_followup,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,38.455,38.658,39.039
+row_scope_followup,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.755,1.76321875,1.7838125
+row_scope_followup,2,32,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,31.67859375,31.751125,31.77375
+row_scope_followup,2,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,18.540000915527344,18.56599998474121,18.631000518798828
+row_scope_followup,2,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,23.692,24.098,24.314
+row_scope_followup,2,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,1.6300625,1.64090625,1.790625
+row_scope_followup,2,32,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,18.72584375,18.75603125,18.83784375
+row_scope_followup,2,32,baseline_graph,Unfused + graph,warm,event_interval_us,21,57.23800277709961,57.317996978759766,57.40399932861328
+row_scope_followup,2,32,baseline_graph,Unfused + graph,warm,host_single_us,21,63.499,64.289,64.74
+row_scope_followup,2,32,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.7766875,1.7950625,1.84775
+row_scope_followup,2,32,baseline_graph,Unfused + graph,warm,host_batch_us,21,57.460375,57.544875,57.63309375
+row_scope_followup,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,23.235000610351562,23.28700065612793,23.368999481201172
+row_scope_followup,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,28.273,28.669,29.156
+row_scope_followup,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.8146875,4.85840625,5.26846875
+row_scope_followup,2,32,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,23.42609375,23.4809375,23.563
+row_scope_followup,2,32,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,66.21599578857422,66.36699676513672,66.48600006103516
+row_scope_followup,2,32,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,68.874,69.99,71.037
+row_scope_followup,2,32,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,14.5935,14.843375,15.8839375
+row_scope_followup,2,32,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,66.4469375,66.58478125,66.71784375
+row_scope_followup,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,61.61699676513672,61.72999954223633,61.94599914550781
+row_scope_followup,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,66.238,67.122,67.724
+row_scope_followup,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.75071875,1.76725,1.7888125
+row_scope_followup,2,32,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,61.8153125,61.9536875,62.1384375
+row_scope_followup,2,32,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,21.97300148010254,22.05000114440918,22.089998245239258
+row_scope_followup,2,32,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,26.936,27.17,27.467
+row_scope_followup,2,32,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.7708125,1.78190625,1.89153125
+row_scope_followup,2,32,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,22.18790625,22.2439375,22.2836875
+row_scope_followup,2,64,empty_sync,Empty stream synchronization,warm,host_single_us,21,1.384,1.407,1.471
+row_scope_followup,2,64,retained_graph,Full-grid retained + graph,warm,event_interval_us,21,50.03300094604492,50.17499923706055,50.40299987792969
+row_scope_followup,2,64,retained_graph,Full-grid retained + graph,warm,host_single_us,21,57.026,57.239,57.565
+row_scope_followup,2,64,retained_graph,Full-grid retained + graph,warm,host_enqueue_us,21,1.6543125,1.66265625,1.68509375
+row_scope_followup,2,64,retained_graph,Full-grid retained + graph,warm,host_batch_us,21,50.24628125,50.37325,50.62525
+row_scope_followup,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,event_interval_us,21,49.94200134277344,50.06700134277344,50.202999114990234
+row_scope_followup,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_single_us,21,56.88,57.136,57.738
+row_scope_followup,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_enqueue_us,21,1.64634375,1.66125,1.67140625
+row_scope_followup,2,64,roundtrip_off_graph,Same-binary control: retain X and E,warm,host_batch_us,21,50.161625,50.241125,50.42159375
+row_scope_followup,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,event_interval_us,21,107.6780014038086,107.8239974975586,107.93799591064453
+row_scope_followup,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_single_us,21,113.703,114.274,114.924
+row_scope_followup,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_enqueue_us,21,1.64771875,1.66084375,1.8051875
+row_scope_followup,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",warm,host_batch_us,21,107.90328125,108.04228125,108.15984375
+row_scope_followup,2,64,local_materialize_graph,Local3: materialize E + graph,warm,event_interval_us,21,78.30000305175781,78.4010009765625,78.4990005493164
+row_scope_followup,2,64,local_materialize_graph,Local3: materialize E + graph,warm,host_single_us,21,83.772,84.732,85.401
+row_scope_followup,2,64,local_materialize_graph,Local3: materialize E + graph,warm,host_enqueue_us,21,1.64275,1.6621875,1.6744375
+row_scope_followup,2,64,local_materialize_graph,Local3: materialize E + graph,warm,host_batch_us,21,78.5215,78.62175,78.717625
+row_scope_followup,2,64,row_retained_graph,Row-scoped retained + graph,warm,event_interval_us,21,47.979000091552734,48.10199737548828,48.21500015258789
+row_scope_followup,2,64,row_retained_graph,Row-scoped retained + graph,warm,host_single_us,21,54.937,55.188,55.82
+row_scope_followup,2,64,row_retained_graph,Row-scoped retained + graph,warm,host_enqueue_us,21,1.65415625,1.667,1.78515625
+row_scope_followup,2,64,row_retained_graph,Row-scoped retained + graph,warm,host_batch_us,21,48.196375,48.32528125,48.4370625
+row_scope_followup,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,event_interval_us,21,75.90299987792969,75.94400024414062,76.18600463867188
+row_scope_followup,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_single_us,21,82.003,82.439,83.169
+row_scope_followup,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_enqueue_us,21,1.64825,1.66665625,1.71028125
+row_scope_followup,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",warm,host_batch_us,21,76.12071875,76.198875,76.40740625
+row_scope_followup,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,event_interval_us,21,66.38999938964844,66.54900360107422,66.89099884033203
+row_scope_followup,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_single_us,21,73.429,73.875,74.548
+row_scope_followup,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_enqueue_us,21,1.63871875,1.6540625,1.68065625
+row_scope_followup,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,warm,host_batch_us,21,66.6120625,66.76875,67.11034375
+row_scope_followup,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,event_interval_us,21,51.134002685546875,51.21900177001953,51.297000885009766
+row_scope_followup,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_single_us,21,55.82,56.195,56.88
+row_scope_followup,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_enqueue_us,21,3.11828125,3.1391875,3.40625
+row_scope_followup,2,64,retained_stream,"Full-grid retained, ordinary launches",warm,host_batch_us,21,51.3599375,51.4195625,51.50875
+row_scope_followup,2,64,input_reload_graph,Same-binary control: reload X,warm,event_interval_us,21,55.38999938964844,55.44300079345703,55.512001037597656
+row_scope_followup,2,64,input_reload_graph,Same-binary control: reload X,warm,host_single_us,21,62.319,62.865,63.218
+row_scope_followup,2,64,input_reload_graph,Same-binary control: reload X,warm,host_enqueue_us,21,1.64328125,1.66296875,1.67446875
+row_scope_followup,2,64,input_reload_graph,Same-binary control: reload X,warm,host_batch_us,21,55.61103125,55.6735,55.737
+row_scope_followup,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,event_interval_us,21,357.0570068359375,357.3580017089844,357.7939758300781
+row_scope_followup,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_single_us,21,361.625,363.215,365.549
+row_scope_followup,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_enqueue_us,21,1.63121875,1.65809375,1.6665
+row_scope_followup,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,warm,host_batch_us,21,357.27640625,357.579875,358.01503125
+row_scope_followup,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,event_interval_us,21,62.49599838256836,62.551998138427734,62.6609992980957
+row_scope_followup,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_single_us,21,69.265,69.693,70.494
+row_scope_followup,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_enqueue_us,21,1.64409375,1.6591875,1.672375
+row_scope_followup,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,warm,host_batch_us,21,62.7168125,62.77265625,62.8845625
+row_scope_followup,2,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,event_interval_us,21,49.2869987487793,49.439002990722656,49.5989990234375
+row_scope_followup,2,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_single_us,21,53.647,54.172,54.988
+row_scope_followup,2,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_enqueue_us,21,3.120625,3.14084375,3.399
+row_scope_followup,2,64,row_retained_stream,"Row-scoped retained, ordinary launches",warm,host_batch_us,21,49.51609375,49.63615625,49.79353125
+row_scope_followup,2,64,baseline_graph,Unfused + graph,warm,event_interval_us,21,127.94700622558594,128.05099487304688,128.1699981689453
+row_scope_followup,2,64,baseline_graph,Unfused + graph,warm,host_single_us,21,134.0,134.625,135.229
+row_scope_followup,2,64,baseline_graph,Unfused + graph,warm,host_enqueue_us,21,1.6643125,1.67975,1.68934375
+row_scope_followup,2,64,baseline_graph,Unfused + graph,warm,host_batch_us,21,128.17540625,128.28371875,128.40071875
+row_scope_followup,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,event_interval_us,21,57.8599967956543,57.948997497558594,58.06800079345703
+row_scope_followup,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_single_us,21,61.327,62.292,62.884
+row_scope_followup,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_enqueue_us,21,4.52875,4.55934375,4.9316875
+row_scope_followup,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",warm,host_batch_us,21,58.0555,58.1506875,58.27671875
+row_scope_followup,2,64,baseline_stream,"Unfused, ordinary launches",warm,event_interval_us,21,139.51100158691406,139.62599182128906,139.85800170898438
+row_scope_followup,2,64,baseline_stream,"Unfused, ordinary launches",warm,host_single_us,21,141.401,143.014,144.367
+row_scope_followup,2,64,baseline_stream,"Unfused, ordinary launches",warm,host_enqueue_us,21,13.62565625,13.7438125,14.93003125
+row_scope_followup,2,64,baseline_stream,"Unfused, ordinary launches",warm,host_batch_us,21,139.71059375,139.83084375,140.05840625
+row_scope_followup,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,event_interval_us,21,120.53099822998047,120.76200103759766,120.8759994506836
+row_scope_followup,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_single_us,21,125.178,126.713,128.375
+row_scope_followup,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_enqueue_us,21,1.643125,1.66146875,1.67696875
+row_scope_followup,2,64,streaming_graph,Local1: repeat full-row work + graph,warm,host_batch_us,21,120.74953125,120.9801875,121.09825
+row_scope_followup,2,64,local_recompute_graph,Local3: recompute E + graph,warm,event_interval_us,21,55.09300231933594,55.229000091552734,55.33599853515625
+row_scope_followup,2,64,local_recompute_graph,Local3: recompute E + graph,warm,host_single_us,21,60.797,61.377,61.979
+row_scope_followup,2,64,local_recompute_graph,Local3: recompute E + graph,warm,host_enqueue_us,21,1.644625,1.661625,1.67440625
+row_scope_followup,2,64,local_recompute_graph,Local3: recompute E + graph,warm,host_batch_us,21,55.31453125,55.44965625,55.55903125
+row_scope_followup,2,64,input_reload_graph,Same-binary control: reload X,external_eviction,host_single_us,15,62.9304,63.579,65.5466
+row_scope_followup,2,64,baseline_graph,Unfused + graph,external_eviction,host_single_us,15,136.026,136.988,137.9608
+row_scope_followup,2,64,local_materialize2_graph,"Local2: repeat full-row stats, materialize E + graph",external_eviction,host_single_us,15,115.8682,116.578,117.8224
+row_scope_followup,2,64,local_recompute_graph,Local3: recompute E + graph,external_eviction,host_single_us,15,66.5086,67.31,67.83200000000001
+row_scope_followup,2,64,row_retained_stream,"Row-scoped retained, ordinary launches",external_eviction,host_single_us,15,54.1788,54.672,55.444399999999995
+row_scope_followup,2,64,roundtrip_off_graph,Same-binary control: retain X and E,external_eviction,host_single_us,15,57.0938,57.594,58.4774
+row_scope_followup,2,64,baseline_stream,"Unfused, ordinary launches",external_eviction,host_single_us,15,144.2836,146.005,146.40820000000002
+row_scope_followup,2,64,streaming_graph,Local1: repeat full-row work + graph,external_eviction,host_single_us,15,134.7888,135.583,136.1942
+row_scope_followup,2,64,retained_stream,"Full-grid retained, ordinary launches",external_eviction,host_single_us,15,55.858599999999996,56.122,56.704
+row_scope_followup,2,64,roundtrip_on_graph,Same-binary control: roundtrip E,external_eviction,host_single_us,15,69.4774,69.946,70.8132
+row_scope_followup,2,64,local_recompute2_graph,"Local2: repeat full-row stats, recompute E + graph",external_eviction,host_single_us,15,86.855,87.88,88.1208
+row_scope_followup,2,64,local_materialize_graph,Local3: materialize E + graph,external_eviction,host_single_us,15,86.9862,88.111,88.569
+row_scope_followup,2,64,cudnn_graph,RMS preprocessing + cuDNN + graph,external_eviction,host_single_us,15,362.491,363.848,364.64480000000003
+row_scope_followup,2,64,both_reload_graph,Same-binary control: reload X and roundtrip E,external_eviction,host_single_us,15,74.273,74.714,75.35759999999999
+row_scope_followup,2,64,retained_graph,Full-grid retained + graph,external_eviction,host_single_us,15,57.1316,57.625,58.1768
+row_scope_followup,2,64,local_recompute_stream,"Local3: recompute E, ordinary launches",external_eviction,host_single_us,15,67.4584,67.913,69.3216
+row_scope_followup,2,64,row_retained_graph,Row-scoped retained + graph,external_eviction,host_single_us,15,55.3192,55.995,56.754

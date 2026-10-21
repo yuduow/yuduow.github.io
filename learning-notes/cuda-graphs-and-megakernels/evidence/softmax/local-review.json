@@ -1,0 +1,57 @@
+{
+  "hashes": {
+    "verified_files": 1372,
+    "remote_only_files": 369
+  },
+  "cases": {
+    "dag-128-0-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "dag-128-0-ragged": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "dag-2048-0-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "dag-2048-0-ragged": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "dag-512-0-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "dag-512-0-ragged": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "row-1-128-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "row-16384-1024-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "row-32-1024-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "row-4096-1024-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "row-4096-128-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    },
+    "row-4096-4096-balanced": {
+      "samples": 147,
+      "timing_variants": 6
+    }
+  },
+  "traces_rechecked": 24
+}

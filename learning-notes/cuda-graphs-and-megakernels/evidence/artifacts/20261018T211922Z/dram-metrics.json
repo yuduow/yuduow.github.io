@@ -1,0 +1,162 @@
+{
+  "separate_graph": [
+    {
+      "id": 0,
+      "kernel": "add_one(const float *, float *, int)",
+      "metrics": {
+        "dram__bytes_read.sum": {
+          "value": 67.115264,
+          "unit": "Mbyte"
+        },
+        "dram__bytes_write.sum": {
+          "value": 50.995968,
+          "unit": "Mbyte"
+        },
+        "lts__t_bytes.sum": {
+          "value": 202.73152,
+          "unit": "Mbyte"
+        },
+        "launch__registers_per_thread": {
+          "value": 16.0,
+          "unit": "register/thread"
+        },
+        "launch__shared_mem_per_block": {
+          "value": 1.024,
+          "unit": "Kbyte/block"
+        }
+      }
+    },
+    {
+      "id": 1,
+      "kernel": "square(const float *, float *, int)",
+      "metrics": {
+        "dram__bytes_read.sum": {
+          "value": 67.11296,
+          "unit": "Mbyte"
+        },
+        "dram__bytes_write.sum": {
+          "value": 48.168192,
+          "unit": "Mbyte"
+        },
+        "lts__t_bytes.sum": {
+          "value": 202.731456,
+          "unit": "Mbyte"
+        },
+        "launch__registers_per_thread": {
+          "value": 16.0,
+          "unit": "register/thread"
+        },
+        "launch__shared_mem_per_block": {
+          "value": 1.024,
+          "unit": "Kbyte/block"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "kernel": "half_value(const float *, float *, int)",
+      "metrics": {
+        "dram__bytes_read.sum": {
+          "value": 67.113216,
+          "unit": "Mbyte"
+        },
+        "dram__bytes_write.sum": {
+          "value": 48.596736,
+          "unit": "Mbyte"
+        },
+        "lts__t_bytes.sum": {
+          "value": 203.837536,
+          "unit": "Mbyte"
+        },
+        "launch__registers_per_thread": {
+          "value": 16.0,
+          "unit": "register/thread"
+        },
+        "launch__shared_mem_per_block": {
+          "value": 1.024,
+          "unit": "Kbyte/block"
+        }
+      }
+    }
+  ],
+  "fused_graph": [
+    {
+      "id": 0,
+      "kernel": "fused_pointwise(const float *, float *, int)",
+      "metrics": {
+        "dram__bytes_read.sum": {
+          "value": 67.114496,
+          "unit": "Mbyte"
+        },
+        "dram__bytes_write.sum": {
+          "value": 51.713536,
+          "unit": "Mbyte"
+        },
+        "lts__t_bytes.sum": {
+          "value": 203.711168,
+          "unit": "Mbyte"
+        },
+        "launch__registers_per_thread": {
+          "value": 16.0,
+          "unit": "register/thread"
+        },
+        "launch__shared_mem_per_block": {
+          "value": 1.024,
+          "unit": "Kbyte/block"
+        }
+      }
+    },
+    {
+      "id": 1,
+      "kernel": "fused_pointwise(const float *, float *, int)",
+      "metrics": {
+        "dram__bytes_read.sum": {
+          "value": 67.113984,
+          "unit": "Mbyte"
+        },
+        "dram__bytes_write.sum": {
+          "value": 48.562432,
+          "unit": "Mbyte"
+        },
+        "lts__t_bytes.sum": {
+          "value": 203.710336,
+          "unit": "Mbyte"
+        },
+        "launch__registers_per_thread": {
+          "value": 16.0,
+          "unit": "register/thread"
+        },
+        "launch__shared_mem_per_block": {
+          "value": 1.024,
+          "unit": "Kbyte/block"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "kernel": "fused_pointwise(const float *, float *, int)",
+      "metrics": {
+        "dram__bytes_read.sum": {
+          "value": 67.111936,
+          "unit": "Mbyte"
+        },
+        "dram__bytes_write.sum": {
+          "value": 48.496384,
+          "unit": "Mbyte"
+        },
+        "lts__t_bytes.sum": {
+          "value": 203.707808,
+          "unit": "Mbyte"
+        },
+        "launch__registers_per_thread": {
+          "value": 16.0,
+          "unit": "register/thread"
+        },
+        "launch__shared_mem_per_block": {
+          "value": 1.024,
+          "unit": "Kbyte/block"
+        }
+      }
+    }
+  ]
+}

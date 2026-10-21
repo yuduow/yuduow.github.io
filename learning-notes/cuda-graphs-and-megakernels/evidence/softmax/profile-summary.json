@@ -1,0 +1,119 @@
+{
+  "run_id": "20261019T175825Z",
+  "compute": {
+    "compute-dag-dag_graph.ncu-repz": {
+      "command": [
+        "ncu",
+        "--import",
+        "/evidence/20261019T175825Z/compute-dag-dag_graph.ncu-repz",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base"
+      ],
+      "kernels": 2,
+      "metric_rows": 2,
+      "traffic_bytes": {
+        "dram__bytes_read.sum": 16885504.0,
+        "dram__bytes_write.sum": 2160384.0,
+        "lts__t_bytes.sum": 340998400.0
+      },
+      "source_sha256": "afed63f7c5f8422127cb804433d31281424420d6ec5e74bd0ce5c4a7c42814b4"
+    },
+    "compute-dag-separate_graph.ncu-repz": {
+      "command": [
+        "ncu",
+        "--import",
+        "/evidence/20261019T175825Z/compute-dag-separate_graph.ncu-repz",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base"
+      ],
+      "kernels": 3,
+      "metric_rows": 3,
+      "traffic_bytes": {
+        "dram__bytes_read.sum": 33660928.0,
+        "dram__bytes_write.sum": 762880.0,
+        "lts__t_bytes.sum": 82082784.0
+      },
+      "source_sha256": "c8e99658aa44aaf7f8821c0831459fa335098304353866ccce24c1d09b83aeb7"
+    },
+    "compute-row-cudnn_graph.ncu-repz": {
+      "command": [
+        "ncu",
+        "--import",
+        "/evidence/20261019T175825Z/compute-row-cudnn_graph.ncu-repz",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base"
+      ],
+      "kernels": 1,
+      "metric_rows": 1,
+      "traffic_bytes": {
+        "dram__bytes_read.sum": 67136000.0,
+        "dram__bytes_write.sum": 47370240.0,
+        "lts__t_bytes.sum": 203987648.0
+      },
+      "source_sha256": "9ab124cd3ef566fd74ca5ed029dd80d869aaf83d54ae1529318613f504dbf0ef"
+    },
+    "compute-row-fused_graph.ncu-repz": {
+      "command": [
+        "ncu",
+        "--import",
+        "/evidence/20261019T175825Z/compute-row-fused_graph.ncu-repz",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base"
+      ],
+      "kernels": 1,
+      "metric_rows": 1,
+      "traffic_bytes": {
+        "dram__bytes_read.sum": 67132416.0,
+        "dram__bytes_write.sum": 46965248.0,
+        "lts__t_bytes.sum": 204046560.0
+      },
+      "source_sha256": "d2ec5beced35fd05679ee10b815911e9bcc0f92a4c673b87ad2be3fad0206823"
+    },
+    "compute-row-staged_graph.ncu-repz": {
+      "command": [
+        "ncu",
+        "--import",
+        "/evidence/20261019T175825Z/compute-row-staged_graph.ncu-repz",
+        "--csv",
+        "--page",
+        "raw",
+        "--print-units",
+        "base"
+      ],
+      "kernels": 4,
+      "metric_rows": 4,
+      "traffic_bytes": {
+        "dram__bytes_read.sum": 268501760.0,
+        "dram__bytes_write.sum": 99250944.0,
+        "lts__t_bytes.sum": 612034208.0
+      },
+      "source_sha256": "4e499f0ef57e8a994f35f99527ac37ee439a961adca1080a60e981ac56a38dbc"
+    }
+  },
+  "systems": {
+    "systems-dag.sqlite": {
+      "kernels": 12,
+      "graph_node_intervals": 6,
+      "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+      "source_sha256": "56f6dd5af98495468ff84cd3747a376694577c00d63350d0b285bd112b7c31bb"
+    },
+    "systems-row.sqlite": {
+      "kernels": 12,
+      "graph_node_intervals": 6,
+      "table": "CUPTI_ACTIVITY_KIND_KERNEL",
+      "source_sha256": "74a2dd280a499e385b2cbe84d0105b119d64bb62fa53d0e34aa9552f7e339f27"
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "run_id": "20261020T023055Z",
+  "required_checks_passed": true,
+  "output_checks": 1336,
+  "intermediate_checks": 6738,
+  "bitwise_groups": 103,
+  "trace_checks": 66,
+  "traced_tasks": 155136,
+  "stress_replays": 12000,
+  "sanitizer_checks": 6,
+  "profiler_captures": 32,
+  "gpu_seconds": 310.77548034,
+  "max_row_l1_error": 4.393764917807412e-07,
+  "timing": [
+    {
+      "allocation": 1,
+      "rows": 1,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    },
+    {
+      "allocation": 1,
+      "rows": 16,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    },
+    {
+      "allocation": 1,
+      "rows": 32,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    },
+    {
+      "allocation": 1,
+      "rows": 64,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    },
+    {
+      "allocation": 2,
+      "rows": 1,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    },
+    {
+      "allocation": 2,
+      "rows": 16,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    },
+    {
+      "allocation": 2,
+      "rows": 32,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    },
+    {
+      "allocation": 2,
+      "rows": 64,
+      "records": 357,
+      "variants": [
+        "baseline_graph",
+        "baseline_stream",
+        "both_reload_graph",
+        "cudnn_graph",
+        "input_reload_graph",
+        "local_materialize2_graph",
+        "local_materialize_graph",
+        "local_recompute2_graph",
+        "local_recompute_graph",
+        "local_recompute_stream",
+        "retained_graph",
+        "retained_stream",
+        "roundtrip_off_graph",
+        "roundtrip_on_graph",
+        "row_retained_graph",
+        "row_retained_stream",
+        "streaming_graph"
+      ]
+    }
+  ],
+  "sass_controls": [
+    {
+      "rows": 1,
+      "W": 4096,
+      "T": 256,
+      "static_global_access_instruction_counts": {
+        "0": {
+          "LDG": 92,
+          "STG": 11
+        },
+        "1": {
+          "LDG": 150,
+          "STG": 40
+        }
+      }
+    },
+    {
+      "rows": 16,
+      "W": 4096,
+      "T": 256,
+      "static_global_access_instruction_counts": {
+        "0": {
+          "LDG": 92,
+          "STG": 11
+        },
+        "1": {
+          "LDG": 150,
+          "STG": 40
+        }
+      }
+    },
+    {
+      "rows": 32,
+      "W": 8192,
+      "T": 256,
+      "static_global_access_instruction_counts": {
+        "0": {
+          "LDG": 92,
+          "STG": 11
+        },
+        "1": {
+          "LDG": 150,
+          "STG": 40
+        }
+      }
+    },
+    {
+      "rows": 64,
+      "W": 8192,
+      "T": 256,
+      "static_global_access_instruction_counts": {
+        "0": {
+          "LDG": 92,
+          "STG": 11
+        },
+        "1": {
+          "LDG": 150,
+          "STG": 40
+        }
+      }
+    }
+  ]
+}

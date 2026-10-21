@@ -1,0 +1,17 @@
+{
+  "preflight": {
+    "checks": 112,
+    "trace_checks": 0,
+    "timing_groups": 0
+  },
+  "bench": {
+    "checks": 112,
+    "trace_checks": 0,
+    "timing_groups": 28
+  },
+  "trace": {
+    "checks": 48,
+    "trace_checks": 24,
+    "timing_groups": 0
+  }
+}

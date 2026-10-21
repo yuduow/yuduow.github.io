@@ -1,0 +1,114 @@
+{
+  "ncu-16-baseline": {
+    "dram_read_bytes": 3381248.0,
+    "dram_write_bytes": 17011712.0,
+    "l2_bytes": 105136288.0,
+    "warp_instructions": 6126064.0,
+    "kernels": 9
+  },
+  "ncu-16-both_reload": {
+    "dram_read_bytes": 1583360.0,
+    "dram_write_bytes": 1386496.0,
+    "l2_bytes": 58144128.0,
+    "warp_instructions": 6739053.0,
+    "kernels": 1
+  },
+  "ncu-16-cudnn": {
+    "dram_read_bytes": 2588160.0,
+    "dram_write_bytes": 5305600.0,
+    "l2_bytes": 89403808.0,
+    "warp_instructions": 2660432.0,
+    "kernels": 3
+  },
+  "ncu-16-input_reload": {
+    "dram_read_bytes": 841472.0,
+    "dram_write_bytes": 402944.0,
+    "l2_bytes": 36294656.0,
+    "warp_instructions": 5712819.0,
+    "kernels": 1
+  },
+  "ncu-16-local_materialize": {
+    "dram_read_bytes": 2355712.0,
+    "dram_write_bytes": 2660096.0,
+    "l2_bytes": 58244416.0,
+    "warp_instructions": 4926576.0,
+    "kernels": 3
+  },
+  "ncu-16-local_materialize2": {
+    "dram_read_bytes": 1326848.0,
+    "dram_write_bytes": 2102272.0,
+    "l2_bytes": 84225120.0,
+    "warp_instructions": 7758704.0,
+    "kernels": 2
+  },
+  "ncu-16-local_recompute": {
+    "dram_read_bytes": 2344448.0,
+    "dram_write_bytes": 1270016.0,
+    "l2_bytes": 44997024.0,
+    "warp_instructions": 5581936.0,
+    "kernels": 3
+  },
+  "ncu-16-local_recompute2": {
+    "dram_read_bytes": 25856.0,
+    "dram_write_bytes": 182528.0,
+    "l2_bytes": 74648352.0,
+    "warp_instructions": 8418160.0,
+    "kernels": 2
+  },
+  "ncu-16-retained": {
+    "dram_read_bytes": 21760.0,
+    "dram_write_bytes": 160000.0,
+    "l2_bytes": 26628224.0,
+    "warp_instructions": 5057365.0,
+    "kernels": 1
+  },
+  "ncu-16-roundtrip_off": {
+    "dram_read_bytes": 1339904.0,
+    "dram_write_bytes": 751104.0,
+    "l2_bytes": 28213760.0,
+    "warp_instructions": 5159943.0,
+    "kernels": 1
+  },
+  "ncu-16-roundtrip_on": {
+    "dram_read_bytes": 1438208.0,
+    "dram_write_bytes": 1264640.0,
+    "l2_bytes": 49799712.0,
+    "warp_instructions": 6188193.0,
+    "kernels": 1
+  },
+  "ncu-16-row_retained": {
+    "dram_read_bytes": 24832.0,
+    "dram_write_bytes": 178688.0,
+    "l2_bytes": 27012128.0,
+    "warp_instructions": 5022412.0,
+    "kernels": 1
+  },
+  "ncu-16-streaming": {
+    "dram_read_bytes": 940032.0,
+    "dram_write_bytes": 799488.0,
+    "l2_bytes": 161214720.0,
+    "warp_instructions": 21726720.0,
+    "kernels": 1
+  },
+  "ncu-64-local_recompute": {
+    "dram_read_bytes": 70247168.0,
+    "dram_write_bytes": 33053184.0,
+    "l2_bytes": 196319296.0,
+    "warp_instructions": 18534848.0,
+    "kernels": 3
+  },
+  "ncu-64-retained": {
+    "dram_read_bytes": 33587712.0,
+    "dram_write_bytes": 29978624.0,
+    "l2_bytes": 113898944.0,
+    "warp_instructions": 16860728.0,
+    "kernels": 2
+  },
+  "ncu-64-row_retained": {
+    "dram_read_bytes": 33583616.0,
+    "dram_write_bytes": 31083264.0,
+    "l2_bytes": 123159968.0,
+    "warp_instructions": 20119666.0,
+    "kernels": 2
+  }
+}

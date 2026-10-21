@@ -1,0 +1,29 @@
+{
+  "run_id": "20261020T023055Z",
+  "volume": "cuda-graphs-scaled-softmax-evidence",
+  "full_archive": "20261020T023055Z.tar.gz",
+  "full_archive_bytes": 10521439938,
+  "full_archive_sha256": "5101d6e43a797b29a9e5a4b758771913539b165c6ccac5db8183a7bf171a84a4",
+  "review_archive": "20261020T023055Z-review.tar.gz",
+  "review_archive_bytes": 15225064,
+  "review_archive_sha256": "c85ee9a64584459b4df60397479ec80b047e4113abfc058197b47dfb987687a8",
+  "full_readback": {
+    "cpu_only": true,
+    "all_full_archives_readback_verified": true,
+    "archives": [
+      {
+        "path": "20261020T022150Z.tar.gz",
+        "bytes": 9662959343,
+        "sha256": "b56c87b3d4420d860ffd2b9e54ceb8cb3c609645e52ff3ff8d06caf5e0c7aa87",
+        "readback_verified": true
+      },
+      {
+        "path": "20261020T023055Z.tar.gz",
+        "bytes": 10521439938,
+        "sha256": "5101d6e43a797b29a9e5a4b758771913539b165c6ccac5db8183a7bf171a84a4",
+        "readback_verified": true
+      }
+    ],
+    "seconds": 74.406802333
+  }
+}

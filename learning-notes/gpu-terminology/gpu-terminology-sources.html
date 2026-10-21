@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A concise GPU terminology reference across NVIDIA CUDA, AMD HIP, Intel SYCL and Apple Metal, with primary-source links and a downloadable PDF.">
+  <meta name="theme-color" content="#ffffff">
+  <title>GPU Terminology Cheat Sheet</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' rx='12' fill='%23232e2b'/%3E%3Cpath d='M23 23h18v18H23z' fill='none' stroke='%23dae8c8' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="gpu-reference/style.css">
+  <link rel="stylesheet" href="writeup.css">
+  <script defer src="gpu-reference/app.js"></script>
+  <link rel="stylesheet" href="../../note-icons.css?v=4b469568df12">
+</head>
+<body>
+  <a class="skip-link" href="#reference">Skip to the reference</a>
+  <div class="page">
+    <div class="writeup-meta"><a href="../">← Learning Notes</a><time datetime="2025-12-15">December 15, 2025</time></div>
+    <header class="hero">
+      <div><h1><svg class="note-title-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>GPU Terminology Cheat Sheet</h1><p class="intro">NVIDIA, AMD, Intel and Apple. One reference.</p></div>
+      <a class="download" href="gpu-terminology-cheat-sheet.pdf" download="gpu-terminology-cheat-sheet.pdf">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>Download PDF
+      </a>
+    </header>
+    <div class="reference-tools">
+      <nav aria-label="Reference sections"><a href="#execution">Execution</a><a href="#hardware">Hardware</a><a href="#memory">Memory</a><a href="#coordination">Sync</a><a href="#performance">Performance</a></nav>
+      <div class="search-box">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <input id="search" type="search" placeholder="Find a term" aria-label="Find a concept or term" autocomplete="off">
+        <button id="clear-search" aria-label="Clear search" hidden>×</button>
+      </div>
+    </div>
+    <main id="reference">
+      <div class="reading-note"><p>Common roles and scopes. Hardware and API details vary.</p><button id="toggle-sources" aria-pressed="false">Show citations</button></div>
+      <p id="result-count" role="status" aria-live="polite" class="search-status" hidden></p>
+      <div id="empty-state" hidden><h2>No matching terms</h2><p>Try “warp”, “thread” or “memory”.</p><button id="reset-search">Clear search</button></div>
+      <section class="concept-section" id="execution" aria-labelledby="execution-title">
+          <div class="section-heading"><h2 id="execution-title"><span>01</span>Execution</h2><p>How the work is divided</p></div>
+          <table role="table" aria-label="Execution terminology">
+            <colgroup><col class="concept-col"><col><col><col><col></colgroup>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="launch grid grid grid nd-range grid the full set of threads or work-items in one kernel launch.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Launch grid</span><p class="definition">The full set of threads or work-items in one kernel launch.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Grid</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Launch grid"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Grid</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Launch grid"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">ND-range</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Launch grid"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Grid</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Launch grid"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="cooperating threads thread block thread block work-group in hardware docs work-group threadgroup a group that can share memory and synchronize at a group barrier.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Cooperating threads</span><p class="definition">A group that can share memory and synchronize at a group barrier.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Thread block</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Cooperating threads"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Thread block<span class="term-note">Work-group in hardware docs</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Cooperating threads"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a> <a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Work-group</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Cooperating threads"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a> <a class="citation" href="#source-10" aria-label="Source 9: Intel: Shared Local Memory">9</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Threadgroup</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Cooperating threads"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a> <a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="execution subgroup warp wavefront warp in hip sub-group simd-group threads grouped for instruction execution. width and synchronization rules depend on the target.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Execution subgroup</span><p class="definition">Threads grouped for instruction execution. Width and synchronization rules depend on the target.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Warp</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Execution subgroup"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA: Advanced Kernel Programming">2</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Wavefront<span class="term-note">Warp in HIP</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Execution subgroup"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Sub-group</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Execution subgroup"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">SIMD-group</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Execution subgroup"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="one invocation thread thread work-item thread one indexed execution of the kernel, with its own private state.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">One invocation</span><p class="definition">One indexed execution of the kernel, with its own private state.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Thread</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for One invocation"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Thread</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for One invocation"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Work-item</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for One invocation"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Thread</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for One invocation"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                </td>
+            </tr></tbody>
+          </table></section>
+<section class="concept-section" id="hardware" aria-labelledby="hardware-title">
+          <div class="section-heading"><h2 id="hardware-title"><span>02</span>Hardware</h2><p>Closest roles; hardware boundaries and counts differ</p></div>
+          <table role="table" aria-label="Hardware terminology">
+            <colgroup><col class="concept-col"><col><col><col><col></colgroup>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="compute block streaming multiprocessor sm compute unit (cu) cdna 1-4 example xe-core shader core a hardware block that executes groups of threads. size and resources differ across vendors.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Compute block</span><p class="definition">A hardware block that executes groups of threads. Size and resources differ across vendors.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Streaming Multiprocessor<span class="term-note">SM</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Compute block"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA: Advanced Kernel Programming">2</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Compute Unit (CU)<span class="term-note">CDNA 1-4 example</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Compute block"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a> <a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Xe-core</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Compute block"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a> <a class="citation" href="#source-9" aria-label="Source 8: Intel: Xe GPU Architecture">8</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Shader core</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Compute block"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                </td>
+            </tr></tbody>
+          </table></section>
+<section class="concept-section" id="memory" aria-labelledby="memory-title">
+          <div class="section-heading"><h2 id="memory-title"><span>03</span>Memory</h2><p>Who owns the data, and where it lives</p></div>
+          <table role="table" aria-label="Memory terminology">
+            <colgroup><col class="concept-col"><col><col><col><col></colgroup>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="registers registers vector / scalar registers vgprs / sgprs general register file grf registers storage for values used by executing instructions. allocation and physical backing vary.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Registers</span><p class="definition">Storage for values used by executing instructions. Allocation and physical backing vary.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Registers</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Registers"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Vector / scalar registers<span class="term-note">VGPRs / SGPRs</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Registers"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">General Register File<span class="term-note">GRF</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Registers"><a class="citation" href="#source-9" aria-label="Source 8: Intel: Xe GPU Architecture">8</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Registers</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Registers"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="group-shared memory shared memory local data share lds shared local memory slm threadgroup memory program-managed storage shared by threads in one cooperating group.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Group-shared memory</span><p class="definition">Program-managed storage shared by threads in one cooperating group.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Shared memory</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Group-shared memory"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Local Data Share<span class="term-note">LDS</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Group-shared memory"><a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Shared Local Memory<span class="term-note">SLM</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Group-shared memory"><a class="citation" href="#source-10" aria-label="Source 9: Intel: Shared Local Memory">9</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Threadgroup memory</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Group-shared memory"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a> <a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="private memory local memory scratch memory scratch memory thread stack / spills per-thread storage outside registers, used for spills, stack data and other private values.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Private memory</span><p class="definition">Per-thread storage outside registers, used for spills, stack data and other private values.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Local memory</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Private memory"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Scratch memory</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Private memory"><a class="citation" href="#source-46" aria-label="Source 30: LLVM: AMDGPU private address space">30</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Scratch memory</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Private memory"><a class="citation" href="#source-45" aria-label="Source 29: Intel: Optimizing Explicit SIMD Kernels">29</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Thread stack / spills</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Private memory"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a> <a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="device-wide memory global memory global memory global memory device address space memory accessible to gpu threads across cooperating groups. coordinate conflicting accesses to avoid data races.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Device-wide memory</span><p class="definition">Memory accessible to GPU threads across cooperating groups. Coordinate conflicting accesses to avoid data races.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Global memory</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Device-wide memory"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Global memory</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Device-wide memory"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Global memory</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Device-wide memory"><a class="citation" href="#source-10" aria-label="Source 9: Intel: Shared Local Memory">9</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Device address space</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Device-wide memory"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="caches l1 / l2 caches vector / scalar caches; l2 cdna example l1 / l2 caches xe-hpc example shader-core caches; gpu last-level cache hardware-managed storage that reuses recently accessed data. cache levels and sharing scopes differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Caches</span><p class="definition">Hardware-managed storage that reuses recently accessed data. Cache levels and sharing scopes differ.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">L1 / L2 caches</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Caches"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Vector / scalar caches; L2<span class="term-note">CDNA example</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Caches"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a> <a class="citation" href="#source-6" aria-label="Source 6: AMD: CDNA compute unit">6</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">L1 / L2 caches<span class="term-note">Xe-HPC example</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Caches"><a class="citation" href="#source-48" aria-label="Source 32: Intel: Data Center GPU Max Series product brief">32</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Shader-core caches;<span class="term-note">GPU last-level cache</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Caches"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                </td>
+            </tr></tbody>
+          </table></section>
+<section class="concept-section" id="coordination" aria-labelledby="coordination-title">
+          <div class="section-heading"><h2 id="coordination-title"><span>04</span>Coordination</h2><p>How lanes cooperate and the host submits work</p></div>
+          <table role="table" aria-label="Coordination terminology">
+            <colgroup><col class="concept-col"><col><col><col><col></colgroup>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="group barrier __syncthreads() __syncthreads() group_barrier(g) sycl work-group threadgroup_barrier(flags) a rendezvous for cooperating threads. follow the api’s participation and memory-fence rules.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Group barrier</span><p class="definition">A rendezvous for cooperating threads. Follow the API’s participation and memory-fence rules.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">__syncthreads()</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Group barrier"><a class="citation" href="#source-1" aria-label="Source 1: NVIDIA: Writing SIMT Kernels">1</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">__syncthreads()</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Group barrier"><a class="citation" href="#source-17" aria-label="Source 13: AMD: HIP C++ language extensions">13</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">group_barrier(g)<span class="term-note">SYCL work-group</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Group barrier"><a class="citation" href="#source-38" aria-label="Source 23: Khronos: SYCL group functions">23</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">threadgroup_barrier(flags)</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Group barrier"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="lane exchange __shfl_sync __shfl select_from_group sycl sub-group simd_shuffle read a value from another lane in the same execution subgroup.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Lane exchange</span><p class="definition">Read a value from another lane in the same execution subgroup.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">__shfl_sync</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Lane exchange"><a class="citation" href="#source-37" aria-label="Source 22: NVIDIA: C/C++ language extensions">22</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">__shfl</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Lane exchange"><a class="citation" href="#source-17" aria-label="Source 13: AMD: HIP C++ language extensions">13</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">select_from_group<span class="term-note">SYCL sub-group</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Lane exchange"><a class="citation" href="#source-13" aria-label="Source 10: Khronos: SYCL group algorithms">10</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">simd_shuffle</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Lane exchange"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="atomic addition atomicadd example atomicadd example fetch_add sycl::atomic_ref member atomic_fetch_add_explicit example add to a scalar memory value indivisibly. supported types, memory order and scope depend on the api.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Atomic addition</span><p class="definition">Add to a scalar memory value indivisibly. Supported types, memory order and scope depend on the API.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">atomicAdd<span class="term-note">Example</span></span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Atomic addition"><a class="citation" href="#source-37" aria-label="Source 22: NVIDIA: C/C++ language extensions">22</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">atomicAdd<span class="term-note">Example</span></span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Atomic addition"><a class="citation" href="#source-17" aria-label="Source 13: AMD: HIP C++ language extensions">13</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">fetch_add<span class="term-note">sycl::atomic_ref member</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Atomic addition"><a class="citation" href="#source-15" aria-label="Source 12: Khronos: SYCL atomic_ref">12</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">atomic_fetch_add_explicit<span class="term-note">Example</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Atomic addition"><a class="citation" href="#source-27" aria-label="Source 16: Apple: Metal Shading Language specification 4.1, 4 June 2026">16</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="work submission cuda stream hip stream sycl queue mtlcommandqueue mtl4commandqueue submit gpu work through a stream or queue. ordering and dependency rules differ.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Work submission</span><p class="definition">Submit GPU work through a stream or queue. Ordering and dependency rules differ.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">CUDA stream</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Work submission"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA: Asynchronous Execution">3</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">HIP stream</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Work submission"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">SYCL queue</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Work submission"><a class="citation" href="#source-14" aria-label="Source 11: Khronos: SYCL queues">11</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">MTLCommandQueue<span class="term-note">MTL4CommandQueue</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Work submission"><a class="citation" href="#source-32" aria-label="Source 19: Apple: Resource synchronization">19</a> <a class="citation" href="#source-42" aria-label="Source 26: Apple: MTLCommandQueue">26</a> <a class="citation" href="#source-43" aria-label="Source 27: Apple: MTL4CommandQueue">27</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="work dependencies cuda event hip event sycl event mtlevent mtlsharedevent record or signal progress so dependent work can wait. event models differ across apis.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Work dependencies</span><p class="definition">Record or signal progress so dependent work can wait. Event models differ across APIs.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">CUDA event</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Work dependencies"><a class="citation" href="#source-3" aria-label="Source 3: NVIDIA: Asynchronous Execution">3</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">HIP event</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Work dependencies"><a class="citation" href="#source-44" aria-label="Source 28: AMD: HIP event management">28</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">SYCL event</span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Work dependencies"><a class="citation" href="#source-39" aria-label="Source 24: Khronos: SYCL events">24</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">MTLEvent<span class="term-note">MTLSharedEvent</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Work dependencies"><a class="citation" href="#source-33" aria-label="Source 20: Apple: MTLEvent">20</a> <a class="citation" href="#source-34" aria-label="Source 21: Apple: MTLSharedEvent">21</a></div></div>
+                </td>
+            </tr></tbody>
+          </table></section>
+<section class="concept-section" id="performance" aria-labelledby="performance-title">
+          <div class="section-heading"><h2 id="performance-title"><span>05</span>Performance</h2><p>The same questions, with different counters</p></div>
+          <table role="table" aria-label="Performance terminology">
+            <colgroup><col class="concept-col"><col><col><col><col></colgroup>
+            <thead role="rowgroup"><tr role="row"><th role="columnheader" scope="col">Concept &amp; meaning</th><th role="columnheader" scope="col" class="nvidia">NVIDIA<small>CUDA</small></th><th role="columnheader" scope="col" class="amd">AMD<small>HIP</small></th><th role="columnheader" scope="col" class="intel">Intel<small>Xe · SYCL</small></th><th role="columnheader" scope="col" class="apple">Apple<small>Metal</small></th></tr></thead>
+            <tbody role="rowgroup"><tr role="row" data-concept data-search="occupancy warp occupancy wave occupancy xe-core occupancy hardware threads thread occupancy simd-groups resident execution state, measured as a count or share of capacity. higher occupancy need not mean higher performance.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Occupancy</span><p class="definition">Resident execution state, measured as a count or share of capacity. Higher occupancy need not mean higher performance.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Warp occupancy</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Occupancy"><a class="citation" href="#source-47" aria-label="Source 31: NVIDIA: CUDA Best Practices Guide — Occupancy">31</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Wave occupancy</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Occupancy"><a class="citation" href="#source-5" aria-label="Source 5: AMD: HIP hardware implementation">5</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">Xe-core occupancy<span class="term-note">Hardware threads</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Occupancy"><a class="citation" href="#source-8" aria-label="Source 7: Intel: Thread Mapping and GPU Occupancy">7</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">Thread occupancy<span class="term-note">SIMD-groups</span></span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Occupancy"><a class="citation" href="#source-23" aria-label="Source 15: Apple: Explore GPU advancements in M3 and A17 Pro">15</a></div></div>
+                </td>
+            </tr><tr role="row" data-concept data-search="divergence warp divergence wavefront divergence simd divergence within a sub-group simd-group divergence threads in an execution subgroup take different code paths, which can reduce useful parallel work.">
+              <th role="rowheader" scope="row" class="concept"><span class="concept-name">Divergence</span><p class="definition">Threads in an execution subgroup take different code paths, which can reduce useful parallel work.</p></th>
+              <td role="cell" class="vendor-cell nvidia">
+                  <span class="mobile-label" aria-hidden="true">NVIDIA</span>
+                  <div class="vendor-content"><span class="term">Warp divergence</span>
+                  <div class="cell-sources" hidden aria-label="NVIDIA sources for Divergence"><a class="citation" href="#source-2" aria-label="Source 2: NVIDIA: Advanced Kernel Programming">2</a></div></div>
+                </td><td role="cell" class="vendor-cell amd">
+                  <span class="mobile-label" aria-hidden="true">AMD</span>
+                  <div class="vendor-content"><span class="term">Wavefront divergence</span>
+                  <div class="cell-sources" hidden aria-label="AMD sources for Divergence"><a class="citation" href="#source-4" aria-label="Source 4: AMD: HIP programming model">4</a></div></div>
+                </td><td role="cell" class="vendor-cell intel">
+                  <span class="mobile-label" aria-hidden="true">Intel</span>
+                  <div class="vendor-content"><span class="term">SIMD divergence<span class="term-note">Within a sub-group</span></span>
+                  <div class="cell-sources" hidden aria-label="Intel sources for Divergence"><a class="citation" href="#source-20" aria-label="Source 14: Intel: Removing Conditional Checks">14</a></div></div>
+                </td><td role="cell" class="vendor-cell apple">
+                  <span class="mobile-label" aria-hidden="true">Apple</span>
+                  <div class="vendor-content"><span class="term">SIMD-group divergence</span>
+                  <div class="cell-sources" hidden aria-label="Apple sources for Divergence"><a class="citation" href="#source-28" aria-label="Source 17: Apple: Creating threads and threadgroups">17</a></div></div>
+                </td>
+            </tr></tbody>
+          </table></section>
+      <section class="translation-notes" aria-labelledby="notes-title"><h2 id="notes-title">Notes</h2><div class="notes-grid"><article><h3>Memory names are easy to mix up</h3><p>CUDA local memory is private to a thread. Intel SLM and Metal threadgroup memory are shared within a group. Metal private resource storage controls CPU access.</p></article><article><h3>Hardware counts are not interchangeable</h3><p>SM, CU, Xe-core and shader core describe different hardware organizations. Their counts do not measure equal amounts of compute.</p></article><article><h3>Use the API’s synchronization rules</h3><p>A subgroup does not guarantee implicit synchronization. Barriers, shuffles, atomics and queues each have participation and ordering rules.</p></article></div></section>
+      <section class="appendix" aria-label="Sources and scope">
+        <details id="sources"><summary>Sources &amp; scope <span>32 references</span></summary>
+          <p class="source-intro">Select “Show citations” to see the sources for each vendor term. Definitions summarize the common concept.</p>
+          <ul class="qualifications"><li>The comparison covers CUDA, HIP, SYCL on Intel GPUs, and Metal on Apple silicon. SYCL is a vendor-neutral standard.</li><li>Shared definitions summarize a common role or scope. They do not imply identical hardware, performance or API semantics.</li><li>Hardware examples use AMD CDNA 1-4, the Intel Xe family, and Apple M3 / A17 Pro documentation. Organization, cache labels and feature availability vary by generation.</li><li>Metal thread memory is per-thread. Metal private resource storage means GPU-only access; it can still be accessed by many GPU threads.</li></ul><ol class="source-list"><li id="source-1"><span class="source-number">01</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/writing-cuda-kernels.html">NVIDIA: Writing SIMT Kernels</a><p>Thread hierarchy, shared memory, registers, device-backed local memory and caches.</p></div></li><li id="source-2"><span class="source-number">02</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/03-advanced/advanced-kernel-programming.html">NVIDIA: Advanced Kernel Programming</a><p>SMs, warps, hardware multithreading, divergence and independent thread scheduling.</p></div></li><li id="source-3"><span class="source-number">03</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html">NVIDIA: Asynchronous Execution</a><p>Streams, events, ordering and asynchronous submission.</p></div></li><li id="source-4"><span class="source-number">04</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/understand/programming_model.html">AMD: HIP programming model</a><p>HIP kernels, threads, blocks, grids, wavefronts, memory and streams. Generation-specific width claims are not used.</p></div></li><li id="source-5"><span class="source-number">05</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/understand/hardware_implementation.html">AMD: HIP hardware implementation</a><p>Documented CU organization, registers, caches and occupancy. Hardware examples are scoped to CDNA 1-4.</p></div></li><li id="source-6"><span class="source-number">06</span><div><a href="https://rocm.docs.amd.com/projects/rocprofiler-compute/en/docs-6.3.0/conceptual/compute-unit.html">AMD: CDNA compute unit</a><p>CDNA compute units, vector/scalar execution resources, LDS and caches.</p></div></li><li id="source-8"><span class="source-number">07</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/thread-mapping-and-gpu-occupancy.html">Intel: Thread Mapping and GPU Occupancy</a><p>Work-item to lane, sub-group to hardware thread, work-group to Xe-core; target-dependent SIMD sizes and occupancy.</p></div></li><li id="source-9"><span class="source-number">08</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/intel-xe-gpu-architecture.html">Intel: Xe GPU Architecture</a><p>Xe-core, GRF and shared local memory. Cache-level naming follows the separate Data Center GPU Max Series product brief.</p></div></li><li id="source-10"><span class="source-number">09</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/shared-local-memory.html">Intel: Shared Local Memory</a><p>Work-group scratchpad, SLM and local_accessor.</p></div></li><li id="source-13"><span class="source-number">10</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/group-algorithms-library.html">Khronos: SYCL group algorithms</a><p>Sub-group algorithms, including select_from_group. Barrier semantics are documented in the separate SYCL group functions reference.</p></div></li><li id="source-14"><span class="source-number">11</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/queue.html">Khronos: SYCL queues</a><p>Queue submission, in_order and event profiling.</p></div></li><li id="source-15"><span class="source-number">12</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/atomic_ref.html">Khronos: SYCL atomic_ref</a><p>Atomic operations, memory order, scope and address space.</p></div></li><li id="source-17"><span class="source-number">13</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/how-to/hip_cpp_language_extensions.html">AMD: HIP C++ language extensions</a><p>HIP synchronization, shuffle and atomic intrinsics.</p></div></li><li id="source-20"><span class="source-number">14</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2025-2/removing-conditional-checks.html">Intel: Removing Conditional Checks</a><p>SIMD divergence within a sub-group, divergent control paths and their potential performance cost.</p></div></li><li id="source-23"><span class="source-number">15</span><div><a href="https://developer.apple.com/videos/play/tech-talks/111375/">Apple: Explore GPU advancements in M3 and A17 Pro</a><p>Apple family 9 (M3 and A17 Pro) examples: shader cores, registers, cached storage, stack, caches and thread occupancy.</p></div></li><li id="source-27"><span class="source-number">16</span><div><a href="https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf">Apple: Metal Shading Language specification 4.1, 4 June 2026</a><p>Sections 4.1, 4.3 and 4.4: device, thread and threadgroup address spaces. Sections 6.10 and 6.16: barriers, SIMD exchange and atomics.</p></div></li><li id="source-28"><span class="source-number">17</span><div><a href="https://developer.apple.com/documentation/metal/creating-threads-and-threadgroups">Apple: Creating threads and threadgroups</a><p>Kernel, grid, threadgroup, thread, SIMD-group, divergence and runtime execution width.</p></div></li><li id="source-30"><span class="source-number">18</span><div><a href="https://developer.apple.com/documentation/metal/choosing-a-resource-storage-mode-for-apple-gpus">Apple: Choosing a resource storage mode for Apple GPUs</a><p>Unified system memory, shared/private resource accessibility, and memoryless texture storage.</p></div></li><li id="source-32"><span class="source-number">19</span><div><a href="https://developer.apple.com/documentation/metal/resource-synchronization">Apple: Resource synchronization</a><p>MTL4CommandQueue requires explicit handling of access conflicts; Metal 4 compute commands can overlap.</p></div></li><li id="source-33"><span class="source-number">20</span><div><a href="https://developer.apple.com/documentation/metal/mtlevent">Apple: MTLEvent</a><p>Monotonically increasing event values and signal/wait synchronization within one Metal device.</p></div></li><li id="source-34"><span class="source-number">21</span><div><a href="https://developer.apple.com/documentation/metal/mtlsharedevent">Apple: MTLSharedEvent</a><p>Synchronization involving the CPU, multiple Metal devices or processes.</p></div></li><li id="source-37"><span class="source-number">22</span><div><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/cpp-language-extensions.html">NVIDIA: C/C++ language extensions</a><p>Warp shuffle intrinsics, atomics, supported types and participation rules.</p></div></li><li id="source-38"><span class="source-number">23</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/group-functions.html">Khronos: SYCL group functions</a><p>group_barrier, group convergence and memory synchronization.</p></div></li><li id="source-39"><span class="source-number">24</span><div><a href="https://github.khronos.org/SYCL_Reference/iface/event.html">Khronos: SYCL events</a><p>Command completion, dependencies, waiting and profiling information.</p></div></li><li id="source-40"><span class="source-number">25</span><div><a href="https://www.khronos.org/sycl/">Khronos: SYCL overview</a><p>SYCL is a cross-vendor standard, not an Intel-exclusive programming model.</p></div></li><li id="source-42"><span class="source-number">26</span><div><a href="https://developer.apple.com/documentation/metal/mtlcommandqueue">Apple: MTLCommandQueue</a><p>Creates and schedules command buffers; queue submission and per-command hazard rules are distinct.</p></div></li><li id="source-43"><span class="source-number">27</span><div><a href="https://developer.apple.com/documentation/metal/mtl4commandqueue">Apple: MTL4CommandQueue</a><p>Commits command buffers and encodes event signal/wait operations in Metal 4.</p></div></li><li id="source-44"><span class="source-number">28</span><div><a href="https://rocm.docs.amd.com/projects/HIP/en/latest/reference/hip_runtime_api/modules/event_management.html">AMD: HIP event management</a><p>hipEvent_t, recording, waiting, queries, timing and timing-disable flags.</p></div></li><li id="source-45"><span class="source-number">29</span><div><a href="https://www.intel.com/content/www/us/en/docs/oneapi/optimization-guide-gpu/2024-2/optimizing-explicit-simd-kernels.html">Intel: Optimizing Explicit SIMD Kernels</a><p>GRF operand storage and register spilling to scratch memory. This source supplies the scratch-memory name, independently of the implicit-SIMD thread mapping.</p></div></li><li id="source-46"><span class="source-number">30</span><div><a href="https://llvm.org/docs/AMDGPUUsage.html#address-spaces">LLVM: AMDGPU private address space</a><p>Private (scratch) storage for individual work-items, including register spills and stack allocation.</p></div></li><li id="source-47"><span class="source-number">31</span><div><a href="https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#occupancy">NVIDIA: CUDA Best Practices Guide — Occupancy</a><p>Active-warps-to-capacity occupancy ratio; higher occupancy does not necessarily improve performance.</p></div></li><li id="source-48"><span class="source-number">32</span><div><a href="https://www.intel.com/content/dam/www/central-libraries/us/en/documents/2023-01/data-center-gpu-max-series-product-brief.pdf">Intel: Data Center GPU Max Series product brief</a><p>Pages 1 and 3 identify Xe-HPC (Max Series) L1 and L2 caches. Product-specific terminology is used for the cache example.</p></div></li></ol>
+        </details>
+      </section>
+    </main>
+    <footer><span>17 concepts · Reviewed <time datetime="2026-10-20">20 Oct 2026</time></span><a href="gpu-terminology-cheat-sheet.pdf" download>Poster PDF <span aria-hidden="true">↓</span></a></footer>
+  </div>
+</body>
+</html>

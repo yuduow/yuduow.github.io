@@ -1,0 +1,5 @@
+{
+  "source_manifest_sha256": "481bbcf456a04a0c0abf1051149d40c9819e471eac3927ca4a980451c6231092",
+  "selected_configs_sha256": "a69ac4f2f0d75c687b5f42f981b4e945208fcbf2e9e7a41435c4b9ad3b21a2bf",
+  "selection": "disjoint pilot fixture before either measurement allocation"
+}

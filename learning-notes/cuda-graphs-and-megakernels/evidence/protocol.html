@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CUDA Graphs reduce launch overhead. When is a megakernel still worth the complexity? Follow one RMS-scaled softmax workload through graph replay, local fusion, and a megakernel on H100.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Experiment protocol · Yuduo Wu</title>
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css?v=801d734e66c4">
+  <link rel="stylesheet" href="../../../blog.css?v=8e5f5b11daff">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page evidence-page" id="content">
+    <header class="blog-masthead"><a href="../../../">Yuduo Wu</a><a href="../../../learning-notes/">Learning Notes</a></header>
+    <header class="post-header"><p class="post-meta"><span class="draft-label">Supporting material</span><a href="../">CUDA Graphs, Fusion, and Megakernels</a></p><h1>Experiment protocol</h1></header>
+    <article class="post-content"><p>Historical supporting material. The current article uses the <a href="rms-softmax/">single RMS-scaled softmax workload</a>. This page retains an earlier experiment or claim audit.</p>
+<p>Protocol fixed before GPU execution on October 18, 2026. These examples accompany the <a href="../">corrected article</a>. They test mechanisms, not LLM serving performance.</p>
+<h2 id="example-a-submission-and-intermediate-storage">Example A: submission and intermediate storage</h2>
+<p>For contiguous FP32 x, compute three explicitly rounded operations:</p>
+<div class="code-block"><div class="code-header"><span>Plain text</span><span class="code-note"></span></div><pre tabindex="0" aria-label="Plain text code"><code class="syntax">a[i] = round32(x[i] + 1)
+b[i] = round32(a[i] * a[i])
+y[i] = round32(b[i] * 0.5)
+</code></pre></div>
+<p>Compare a 2 by 2 design: three separate kernels or one locally fused kernel; ordinary stream launches or replay of a captured CUDA Graph. Captured kernel node counts must be 3 and 1. Inputs, output pointers, arithmetic, stream, and 256-thread block geometry are fixed within each comparison. Fusion keeps a and b in thread-local values; there are no reductions or inter-thread dependencies. This is ordinary fusion, not a model-scale persistent runtime.</p>
+<p>N = 256, 32,768, 1,048,576, and 16,777,216 elements. The largest input alone occupies 64 MiB; record actual L2 capacity. Three kernels perform 24N logical bytes of array reads/writes; the fused kernel performs 8N. These are algorithmic global-memory bytes, not measured HBM bytes. Repeated inputs and warm caches are deliberate. Hardware DRAM counters, if available, determine actual device-memory transfers.</p>
+<p>Validate all four variants on three deterministic fixtures before timing and again on a held-out fixture afterward. Inputs are bounded dyadic FP32 numbers, enabling exact comparison with an independent NumPy oracle that rounds each operation. Preserve input/output binary files and hashes. No tolerance changes after failure.</p>
+<h2 id="example-b-tile-dependencies-and-ragged-work">Example B: tile dependencies and ragged work</h2>
+<p>Each job owns 256 uint32 values. Stage A applies a per-job number of iterations of <code>v = 1664525*v + 1013904223</code> modulo 2^32. Stage B applies 512 iterations of <code>v = 22695477*v + 1</code>. A[j] is needed only by B[j]. Most A jobs take 256 iterations; every eighth takes 8,192. Also run a balanced 1,024-iteration control. Use 4*S + floor(S/2) + 3 jobs, where S is the recorded SM count, deliberately leaving a partial nominal wave.</p>
+<p>The balanced and ragged cases have different total A work. Compare implementations within each case; their difference is not an estimate of the cost of imbalance alone. For the accepted 132-SM run, 597 jobs imply 748,032 ragged A iterations summed across jobs versus 611,328 balanced iterations, before multiplying by 256 lanes.</p>
+<p>Compare six variants: separate A/B kernels, one fused CTA per job, and a persistent atomic work queue with S worker CTAs; each under stream and graph submission. The queue counter is reset by a device memset on every invocation, including graph replay; record this as a non-kernel graph node and a real overhead. All variants deliberately store and reload A through a volatile global-memory array. They therefore retain the intermediate even with one kernel. There are no cross-CTA producer/consumer waits: a worker completes both stages for its job. A block barrier separates stages. This intentionally simple persistent queue is not an interpreter or a reproduction of Hazy/MPK.</p>
+<p>Reserve just over half the device's per-SM shared memory per CTA in all three implementations and verify one active CTA per SM with CUDA's occupancy API. The unused reservation creates a controlled one-slot scheduling example; it is not an optimized implementation. Do not infer physical SM placement from block indices. Record <code>%smid</code> in traces.</p>
+<p>Validate all variants against a separately derived affine-composition oracle modulo 2^32, including changed seeds after timing. Save complete intermediate/output arrays. In a separate instrumented run, record <code>%globaltimer</code> stage intervals, job, worker, and actual SM for every job. Verify complete job coverage, A-before-B for each job, absence of B-before-all-A in the separate variant, and measure whether fused variants exhibit B-before-unrelated-A-completion. Instrumented durations do not enter performance tables. Queue scheduling, tail behavior, and speed remain empirical outcomes.</p>
+<h2 id="measurement-and-artifacts">Measurement and artifacts</h2>
+<ul>
+<li>One exact Modal <code>H100!</code>, one container, no retries, no warm pool, 600-second function limit. Sequential commands each have narrower timeouts. CPU image construction precedes allocation. Upload only these public experimental sources and the existing public NVIDIA profiler installer.</li>
+<li>CUDA 12.8.1 development image; nvcc <code>-O3 -std=c++17 -arch=sm_90 -lineinfo --fmad=false</code>. Save compiler output, PTX, SASS, executable, source snapshots, GPU identity, driver/runtime versions, resources, and pre/post device state.</li>
+<li>Ten warmups per variant. Twenty-one rounds with shuffled variant order, fixed host seed. Two distinct measurements: one synchronized host invocation per round (no timing events), and a batch of 128 invocations (32 for largest A) bracketed by CUDA events. Save host enqueue time, host batch completion time, and event interval per invocation. Event intervals include any GPU idle time waiting for host submission; they are not isolated kernel durations. Never add enqueue and GPU times.</li>
+<li>Graph capture, instantiation, and first replay occur outside timing. Save setup timings and graph DOT files. No allocation, host/device input copy, validation, or disk IO inside timed regions. B's counter reset remains included.</li>
+<li>Keep all samples. Report medians and p10/p90; paired ratios compare each round's same-allocation results. No claims of cross-machine significance from these rounds.</li>
+<li>Separate Nsight Systems captures establish launch topology. Separate Nsight Compute samples for large A inspect DRAM traffic and resources if permissions allow. Keep errors instead of inventing counters. Full reports remain private because profiler files can contain process metadata. Export only derived CUDA activity and metric data for illustrations.</li>
+<li>Archive on a dedicated Modal Volume, download locally, independently validate arrays and traces, and hash every artifact. Record teardown. No deployment or continuous GPU service.</li>
+</ul>
+<p>Run after reviewing this protocol:</p>
+<div class="code-block"><div class="code-header"><span>Bash</span><span class="code-note"></span></div><pre tabindex="0" aria-label="Bash code"><code class="syntax">.venv-modal/bin/modal<span class="w"> </span>run<span class="w"> </span>experiments/graphs_megakernels/modal_app.py
+</code></pre></div>
+<p>Re-analyze an existing download without GPU execution:</p>
+<div class="code-block"><div class="code-header"><span>Bash</span><span class="code-note"></span></div><pre tabindex="0" aria-label="Bash code"><code class="syntax">.venv-modal/bin/python<span class="w"> </span>experiments/graphs_megakernels/analyze.py<span class="w"> </span>experiments/graphs_megakernels/artifacts/RUN_ID
+</code></pre></div>
+<p>Suggested illustrations: 2 by 2 latency panels across N; logical bytes beside measured DRAM bytes; actual per-SM job intervals for B; graph DOT nodes beside emitted kernel entry points. A measured lack of speedup is a valid outcome. Neither example establishes PDL performance, cross-SM semaphore correctness, LLM bandwidth utilization, or production megakernel performance.</p>
+<h2 id="completed-evidence">Completed evidence</h2>
+<p>The accepted run is <code>20261018T211922Z</code>: <a href="results.html">results</a>, <a href="artifacts/20261018T211922Z/">full local artifact directory</a>, <a href="artifacts/20261018T211922Z/verification.json">local verification</a>, and <a href="artifacts/20261018T211922Z/manifest.json">remote raw manifest</a>. It passed 272 exact array checks, 24 trace checks, and all 450 original file hashes. The 588 timing samples represent 28 configurations with 21 rounds each. Figures are generated from saved data, not hand-drawn performance traces.</p>
+<p>Full evidence and the archive also remain on <code>cuda-graphs-megakernel-toy-evidence</code>. The earlier <code>20261018T211809Z</code> run passed preflight, then failed before timing because a copied executable occupied the intended benchmark directory. It is retained remotely and excluded from results. Two earlier CPU image compilation failures are retained in <a href="run-notes.json">run notes</a>. No failed run is pooled with accepted measurements.</p>
+<p>Profiling succeeded. Systems' default graph mode records complete graph activities rather than node durations; named Compute samples and graph dumps supply the per-node implementation evidence. Compute's default cache flushes differ from the warm-cache benchmark. The results report describes these boundaries and the broader scope of an unused first-replay metadata field.</p>
+</article>
+    <footer class="post-footer"><nav><a href="../">Back to the article</a><a href="./">Evidence index</a></nav></footer>
+  </main>
+</body>
+</html>

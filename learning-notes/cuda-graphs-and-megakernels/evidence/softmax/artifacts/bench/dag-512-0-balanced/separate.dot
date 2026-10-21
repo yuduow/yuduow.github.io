@@ -1,0 +1,40 @@
+digraph dot {
+subgraph cluster_1 {
+label="graph_1" graph[style="dashed"];
+"graph_1_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 2) | _Z7phase_aILb0EEv7Payload\<\<\<4096,256,0\>\>\>}
+| {{node handle | func handle} | {0x00005637E035FAD0 | 0x00005637E02EB510}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+| {cluster dim | (0,0,0)}
+| {preferred cluster dim | (0,0,0)}
+| {cluster scheduling policy preference | 1}
+}"];
+
+"graph_1_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 1) | _Z7phase_bILb0EEv7Payload\<\<\<512,256,0\>\>\>}
+| {{node handle | func handle} | {0x00005637E03602D8 | 0x00005637E02E2ED0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+| {cluster dim | (0,0,0)}
+| {preferred cluster dim | (0,0,0)}
+| {cluster scheduling policy preference | 1}
+}"];
+
+"graph_1_node_2"[style="bold" shape="record" label="{KERNEL
+| {ID | 2 (topoId: 0) | _Z7phase_cILb0EEv7Payload\<\<\<4096,256,0\>\>\>}
+| {{node handle | func handle} | {0x00005637E0360AE0 | 0x00005637E02DA8C0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+| {cluster dim | (0,0,0)}
+| {preferred cluster dim | (0,0,0)}
+| {cluster scheduling policy preference | 1}
+}"];
+
+"graph_1_node_0" -> "graph_1_node_1" [headlabel=0];
+"graph_1_node_1" -> "graph_1_node_2" [headlabel=0];
+}
+}

@@ -1,0 +1,28 @@
+digraph dot {
+subgraph cluster_7 {
+label="graph_7" graph[style="dashed"];
+"graph_7_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 1) | _Z16initialize_queue7Payload\<\<\<18,256,0\>\>\>}
+| {{node handle | func handle} | {0x00005625283312D8 | 0x00005625282E8CB0}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 0}
+| {priority | 0}
+| {cluster dim | (0,0,0)}
+| {preferred cluster dim | (0,0,0)}
+| {cluster scheduling policy preference | 1}
+}"];
+
+"graph_7_node_1"[style="bold" shape="record" label="{KERNEL
+| {ID | 1 (topoId: 0) | _Z10persistentILb0EEv7Payloadi\<\<\<792,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000562528331AE0 | 0x00005625282BEB10}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 1}
+| {priority | 0}
+| {cluster dim | (0,0,0)}
+| {preferred cluster dim | (0,0,0)}
+| {cluster scheduling policy preference | 1}
+}"];
+
+"graph_7_node_0" -> "graph_7_node_1" [headlabel=0];
+}
+}

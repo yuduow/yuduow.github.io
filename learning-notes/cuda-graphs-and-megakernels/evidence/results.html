@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CUDA Graphs reduce launch overhead. When is a megakernel still worth the complexity? Follow one RMS-scaled softmax workload through graph replay, local fusion, and a megakernel on H100.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>H100 experiment results · Yuduo Wu</title>
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../styles.css?v=801d734e66c4">
+  <link rel="stylesheet" href="../../../blog.css?v=8e5f5b11daff">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page evidence-page" id="content">
+    <header class="blog-masthead"><a href="../../../">Yuduo Wu</a><a href="../../../learning-notes/">Learning Notes</a></header>
+    <header class="post-header"><p class="post-meta"><span class="draft-label">Supporting material</span><a href="../">CUDA Graphs, Fusion, and Megakernels</a></p><h1>H100 experiment results</h1></header>
+    <article class="post-content"><p>Historical supporting material. The current article uses the <a href="rms-softmax/">single RMS-scaled softmax workload</a>. This page retains an earlier experiment or claim audit.</p>
+<p>Saved run <code>20261018T211922Z</code> on NVIDIA H100 80GB HBM3, 132 SMs, 52,428,800 L2 bytes. Runtime 12080; driver API 13030. Function work elapsed 55.4 seconds, excluding final hashing and archive construction. Hardware/clock state is retained in device-before/after files.</p>
+<p>All 450 originally indexed files passed SHA-256 and size verification. Independent CPU oracles checked preflight, benchmark, and trace outputs. The failed earlier run is retained separately on the Modal Volume and contributes no timings.</p>
+<h2 id="pointwise-example">Pointwise example</h2>
+<p>Medians over 21 shuffled rounds. Single = submission through stream completion. Enqueue = batched host submission only. Event = batched device timeline interval per invocation, including possible host starvation; not an isolated kernel duration. p10/p90 and all samples remain in analysis.json and samples.jsonl.</p>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th style="text-align:right">N</th>
+<th>Variant</th>
+<th style="text-align:right">Host single µs</th>
+<th style="text-align:right">Host enqueue µs</th>
+<th style="text-align:right">Event interval µs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">256</td>
+<td>separate_stream</td>
+<td style="text-align:right">13.778</td>
+<td style="text-align:right">7.708</td>
+<td style="text-align:right">7.734</td>
+</tr>
+<tr>
+<td style="text-align:right">256</td>
+<td>separate_graph</td>
+<td style="text-align:right">9.215</td>
+<td style="text-align:right">1.206</td>
+<td style="text-align:right">4.203</td>
+</tr>
+<tr>
+<td style="text-align:right">256</td>
+<td>fused_stream</td>
+<td style="text-align:right">8.550</td>
+<td style="text-align:right">2.613</td>
+<td style="text-align:right">2.637</td>
+</tr>
+<tr>
+<td style="text-align:right">256</td>
+<td>fused_graph</td>
+<td style="text-align:right">6.939</td>
+<td style="text-align:right">1.227</td>
+<td style="text-align:right">1.954</td>
+</tr>
+<tr>
+<td style="text-align:right">32,768</td>
+<td>separate_stream</td>
+<td style="text-align:right">14.019</td>
+<td style="text-align:right">7.871</td>
+<td style="text-align:right">7.896</td>
+</tr>
+<tr>
+<td style="text-align:right">32,768</td>
+<td>separate_graph</td>
+<td style="text-align:right">9.804</td>
+<td style="text-align:right">1.204</td>
+<td style="text-align:right">4.892</td>
+</tr>
+<tr>
+<td style="text-align:right">32,768</td>
+<td>fused_stream</td>
+<td style="text-align:right">8.667</td>
+<td style="text-align:right">2.627</td>
+<td style="text-align:right">2.653</td>
+</tr>
+<tr>
+<td style="text-align:right">32,768</td>
+<td>fused_graph</td>
+<td style="text-align:right">7.124</td>
+<td style="text-align:right">1.233</td>
+<td style="text-align:right">2.069</td>
+</tr>
+<tr>
+<td style="text-align:right">1,048,576</td>
+<td>separate_stream</td>
+<td style="text-align:right">19.986</td>
+<td style="text-align:right">7.837</td>
+<td style="text-align:right">13.579</td>
+</tr>
+<tr>
+<td style="text-align:right">1,048,576</td>
+<td>separate_graph</td>
+<td style="text-align:right">16.837</td>
+<td style="text-align:right">1.199</td>
+<td style="text-align:right">11.651</td>
+</tr>
+<tr>
+<td style="text-align:right">1,048,576</td>
+<td>fused_stream</td>
+<td style="text-align:right">11.270</td>
+<td style="text-align:right">2.608</td>
+<td style="text-align:right">4.521</td>
+</tr>
+<tr>
+<td style="text-align:right">1,048,576</td>
+<td>fused_graph</td>
+<td style="text-align:right">9.657</td>
+<td style="text-align:right">1.206</td>
+<td style="text-align:right">4.491</td>
+</tr>
+<tr>
+<td style="text-align:right">16,777,216</td>
+<td>separate_stream</td>
+<td style="text-align:right">182.558</td>
+<td style="text-align:right">8.083</td>
+<td style="text-align:right">176.937</td>
+</tr>
+<tr>
+<td style="text-align:right">16,777,216</td>
+<td>separate_graph</td>
+<td style="text-align:right">180.452</td>
+<td style="text-align:right">1.246</td>
+<td style="text-align:right">173.833</td>
+</tr>
+<tr>
+<td style="text-align:right">16,777,216</td>
+<td>fused_stream</td>
+<td style="text-align:right">66.033</td>
+<td style="text-align:right">2.700</td>
+<td style="text-align:right">59.216</td>
+</tr>
+<tr>
+<td style="text-align:right">16,777,216</td>
+<td>fused_graph</td>
+<td style="text-align:right">66.310</td>
+<td style="text-align:right">1.246</td>
+<td style="text-align:right">58.614</td>
+</tr>
+</tbody>
+</table></div>
+<p><img src="../assets/pointwise-latency.png" alt="Pointwise timings" / loading="lazy" decoding="async"></p>
+<p>The graph node checks confirm 3 kernel nodes for separate pointwise and 1 for fused. Arithmetic and pointers stay fixed within comparisons. Logical global-memory array traffic is 24N versus 8N bytes. DRAM metrics below must not be equated to those logical counts.</p>
+<h2 id="ragged-and-balanced-scheduling">Ragged and balanced scheduling</h2>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Variant</th>
+<th style="text-align:right">Host single µs</th>
+<th style="text-align:right">Event interval µs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tiles_balanced</td>
+<td>fused_graph</td>
+<td style="text-align:right">127.480</td>
+<td style="text-align:right">120.861</td>
+</tr>
+<tr>
+<td>tiles_balanced</td>
+<td>fused_stream</td>
+<td style="text-align:right">129.751</td>
+<td style="text-align:right">120.888</td>
+</tr>
+<tr>
+<td>tiles_balanced</td>
+<td>queue_graph</td>
+<td style="text-align:right">122.708</td>
+<td style="text-align:right">117.091</td>
+</tr>
+<tr>
+<td>tiles_balanced</td>
+<td>queue_stream</td>
+<td style="text-align:right">125.765</td>
+<td style="text-align:right">117.188</td>
+</tr>
+<tr>
+<td>tiles_balanced</td>
+<td>separate_graph</td>
+<td style="text-align:right">130.583</td>
+<td style="text-align:right">124.045</td>
+</tr>
+<tr>
+<td>tiles_balanced</td>
+<td>separate_stream</td>
+<td style="text-align:right">133.529</td>
+<td style="text-align:right">124.945</td>
+</tr>
+<tr>
+<td>tiles_ragged</td>
+<td>fused_graph</td>
+<td style="text-align:right">212.524</td>
+<td style="text-align:right">206.862</td>
+</tr>
+<tr>
+<td>tiles_ragged</td>
+<td>fused_stream</td>
+<td style="text-align:right">213.161</td>
+<td style="text-align:right">207.189</td>
+</tr>
+<tr>
+<td>tiles_ragged</td>
+<td>queue_graph</td>
+<td style="text-align:right">205.790</td>
+<td style="text-align:right">199.510</td>
+</tr>
+<tr>
+<td>tiles_ragged</td>
+<td>queue_stream</td>
+<td style="text-align:right">210.059</td>
+<td style="text-align:right">199.574</td>
+</tr>
+<tr>
+<td>tiles_ragged</td>
+<td>separate_graph</td>
+<td style="text-align:right">206.854</td>
+<td style="text-align:right">199.225</td>
+</tr>
+<tr>
+<td>tiles_ragged</td>
+<td>separate_stream</td>
+<td style="text-align:right">209.892</td>
+<td style="text-align:right">200.198</td>
+</tr>
+</tbody>
+</table></div>
+<p>Separate B waits for all A. Fused and queue variants retain the global intermediate while allowing each job's B after its own A. Occupancy checks limit residency to at most one active thread block per SM through an artificial shared-memory reservation. Queue reset is included in every invocation and graph; it is a memset node in addition to the persistent kernel. Balanced and ragged cases have different total producer iteration counts (611,328 versus 748,032 before multiplying by 256 threads), so their timings cannot isolate the cost of imbalance.</p>
+<p class="overflow-hint">Scroll horizontally to see the full table.</p><div class="table-scroll" role="region" aria-label="Data table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Trace fixture 0</th>
+<th style="text-align:right">Jobs starting B before the last A completes</th>
+<th style="text-align:right">Instrumented span µs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tiles_ragged_fused_graph_fixture0_trace.csv</td>
+<td style="text-align:right">596 / 597</td>
+<td style="text-align:right">197.088</td>
+</tr>
+<tr>
+<td>tiles_ragged_queue_graph_fixture0_trace.csv</td>
+<td style="text-align:right">596 / 597</td>
+<td style="text-align:right">199.616</td>
+</tr>
+<tr>
+<td>tiles_ragged_separate_graph_fixture0_trace.csv</td>
+<td style="text-align:right">0 / 597</td>
+<td style="text-align:right">183.936</td>
+</tr>
+</tbody>
+</table></div>
+<p><img src="../assets/ragged-timeline.png" alt="Recorded stage intervals" / loading="lazy" decoding="async"></p>
+<p>Each panel is a separate instrumented launch aligned to its first A timestamp, with a common horizontal scale. Each mark comes from thread-zero globaltimer observations around a stage ending with a block barrier. Bars are recorded intervals, not a direct SM utilization counter. All observed SMs and jobs are included; gaps are not an independently measured breakdown of idle causes. Instrumentation, changed scheduling, and tracing overhead exclude these spans from the latency comparison.</p>
+<h2 id="profiling-evidence">Profiling evidence</h2>
+<p>Nsight Systems exported 4 SQLite captures and 20 CUDA activity records. Only CUDA activity records and directly referenced kernel names are exported in cuda-activities.json. Raw reports remain private.</p>
+<ul>
+<li>separate_graph: 3 exported metric rows. Raw CSV is metrics-separate_graph.stdout; counters were collected separately from timing.</li>
+<li>fused_graph: 3 exported metric rows. Raw CSV is metrics-fused_graph.stdout; counters were collected separately from timing.</li>
+</ul>
+<p>Systems records 9 separate-stream kernel activities, 3 fused-stream kernel activities, and 6 whole-graph activities. Its default graph capture records graph executions rather than individual node durations. Graph DOT/API checks and Compute's named graph-kernel samples supply the node evidence; do not infer missing node times from the Systems capture.</p>
+<p>Compute counters use the default all-cache-flush policy per replay, separate from the warm-cache benchmark. Auto-scaled CSV units are preserved per metric; Mbyte is decimal MB. Kernel-scoped store counters may omit dirty cache lines written back outside that kernel's interval. The counters cannot establish a 3× HBM ratio in the warm loop. <a href="https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html#cache-control">Nsight Compute cache control</a>.</p>
+<p>Missing or failed profiling commands are recorded in commands.json and their stderr; availability of a report alone does not prove useful counters. Separate-graph Compute samples cover one three-kernel invocation; fused samples cover three one-kernel invocations, so compare per-invocation traffic using kernel IDs rather than summing both files indiscriminately.</p>
+<p>Graph setup metadata retains a field named first_replay_sync_us. Its original interval also includes graph queries and DOT serialization after instantiation; it is not a clean first-replay latency and is excluded from all performance claims. Capture and instantiation fields retain their narrower scopes. Original indexed files remain unchanged; local revalidation writes analysis-local.json.</p>
+<h2 id="scope">Scope</h2>
+<p>These measurements establish this toy workload on one allocation. They do not reproduce historical LLM benchmarks, isolate universal launch constants, benchmark PDL, or validate a cross-SM semaphore runtime. The persistent queue has a deliberately simple scheduler and resource limit. Its result is not a general comparison of persistent versus nonpersistent execution.</p>
+</article>
+    <footer class="post-footer"><nav><a href="../">Back to the article</a><a href="./">Evidence index</a></nav></footer>
+  </main>
+</body>
+</html>

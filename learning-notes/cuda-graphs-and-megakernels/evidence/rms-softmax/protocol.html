@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CUDA Graphs reduce launch overhead. When is a megakernel still worth the complexity? Follow one RMS-scaled softmax workload through graph replay, local fusion, and a megakernel on H100.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Methods: one RMS-scaled softmax workload · Yuduo Wu</title>
+  <link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../../styles.css?v=801d734e66c4">
+  <link rel="stylesheet" href="../../../../blog.css?v=8e5f5b11daff">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page evidence-page" id="content">
+    <header class="blog-masthead"><a href="../../../../">Yuduo Wu</a><a href="../../../../learning-notes/">Learning Notes</a></header>
+<header class="post-header"><p class="post-meta"><span class="draft-label">Supporting material</span><a href="../../">CUDA Graphs, Fusion, and Megakernels</a></p><h1>Methods: one RMS-scaled softmax workload</h1></header><article class="post-content"><h2 id="operator-and-inputs">Operator and inputs</h2>
+<p>The input is a 2D tensor with 131,072 elements per row. The output is <code>softmax(x / sqrt(mean(x*x) + 1e-5))</code>, using subtraction of the row maximum before the exponential. This differs from ordinary softmax. The tested finite-input contract bounds the input magnitude at 1,024. The source and configuration retain the actual input cases, compiler flags and fixed validation tolerances.</p>
+<p>The workload has two sets of row-wide reductions in the tested decomposition: sum of squares and maximum before exponentiation, then sum of exponentials before normalization. This decomposition is an implementation choice, not a proof that every correct algorithm needs three phases.</p>
+<p>The NumPy function in the article defines the mathematical operator; the timed kernels are CUDA C++. Input and output tensors use contiguous row-major float32 storage, and CUDA reductions use float arithmetic. Numerical agreement is tested within the fixed tolerances, not required to be bitwise identical to NumPy. The positive inverse RMS allows subtraction of the unscaled row maximum before multiplication.</p>
+<p>Warm timing uses the deterministic hash-generated <code>random</code> fixture, seed 41, with values in [-8, 8] at 1/1,024 increments. The same device-resident input is replayed between warmup and measurement. The broader correctness fixtures are not all benchmarked input distributions. The <a href="code/bench.cu">frozen input generator</a> specifies these details.</p>
+<h2 id="platform-and-compilation">Platform and compilation</h2>
+<p>The two measurement sessions used separately provisioned NVIDIA H100 80GB HBM3 GPUs with distinct device UUIDs, each with 132 SMs and 50 MiB L2. The archived labels “allocation 1” and “allocation 2” refer to these GPU sessions, not CUDA memory allocation or single timing samples. The image pins CUDA 12.8.1 development tools on Ubuntu 24.04 and cuDNN 9.10.2.21. Saved device records report runtime 12080 and driver 13030; these are the API's numeric version encodings. The build uses <code>nvcc -O3 -std=c++17 -arch=sm_90 --fmad=false</code>; <code>--use_fast_math</code> is not enabled. The <a href="code/modal_app.py">image definition</a>, <a href="code/build.py">build script</a> and device records below preserve the recorded environment.</p>
+<h2 id="implementations-and-controls">Implementations and controls</h2>
+<ul>
+<li>Unfused baseline: nine CUDA kernels, direct stream launches and capture of the same nine nodes.</li>
+<li>Local fusion, three kernels: sum of squares and maximum in one tiled pass, exponentials and their tile sums in a second, normalization in a third. Both materialized and recomputed exponential paths are tested. Recompute is the pilot-selected local family at all four shapes.</li>
+<li>Local fusion, two kernels: each output tile repeats whole-row statistics to remove one boundary. Both materialized and recomputed exponential paths are retained.</li>
+<li>Local fusion, one kernel: each output tile repeats whole-row statistics and normalization work. A full-row tile was also considered in the pilot. These controls show that launch count alone does not determine performance.</li>
+<li>Megakernel with grid-wide barriers: one cooperative block owns a tile across two grid synchronizations, reusing one shared-memory buffer for the input and then exponentials.</li>
+<li>Megakernel with row-scoped barriers: the same storage strategy with device-scope release/acquire row-scoped barriers. Cooperative launch admission bounds the grid to the compiled residency budget.</li>
+<li>Same-binary controls: retain input values and then exponentials in the same shared-memory buffer, reload the input, write and reload exponentials through global memory, or both. Runtime flags keep the compiled code, resources, tile geometry and launch count fixed. Added accesses include shared-memory staging; this is not an isolated HBM-latency experiment.</li>
+<li>RMS preprocessing plus cuDNN is a diagnostic control. The preprocessing was not exhaustively tuned; the article makes no library-speedup claim.</li>
+</ul>
+<p>Tile widths and thread counts were tuned per family in the pilot. Local kernels were not padded to reserve the retained path's larger shared-memory allocation. The final selection was frozen before two separate H100 80 GB sessions were measured. The megakernel with grid-wide barriers is selected at one row; the megakernel with row-scoped barriers at 16, 32 and 64 rows. Both megakernel variants use two cooperative launches at 64 rows. Frozen source, configuration and exact resources are in the <a href="code/">source listing</a> and measurement metadata below.</p>
+<p>The source calls the selected local fusion variant <code>local_recompute</code>, the megakernel with grid-wide barriers <code>retained</code>, and the megakernel with row-scoped barriers <code>row_retained</code>. These identifiers remain unchanged in archived code and data.</p>
+<h2 id="timing">Timing</h2>
+<p>Warm measurements use 21 shuffled rounds per variant, ten warmup invocations per variant per round, and batches of 32. The two sessions use the same frozen code, selected configurations and input fixture; the shape order is reversed in the second session and variant order is shuffled independently. Detailed results report each session separately. Their quantiles describe variability across rounds, not confidence intervals across a GPU population.</p>
+<p>The main article uses the arithmetic mean of the two session medians for each shape, variant and metric. Whiskers span those two medians; they are neither within-session percentiles nor confidence intervals. Speedups divide these average latencies rather than averaging speedup ratios. For the retention controls, each session first computes the median of round-paired latency differences; the figure then averages those two medians and shows their range. This is a descriptive summary of two sessions, not a fleet-wide performance estimate. Raw samples, per-session p10/median/p90 and <a href="figure-provenance.json">figure provenance</a> remain available.</p>
+<ul>
+<li>Host completion time: one invocation followed by stream synchronization.</li>
+<li>Host enqueue time: submission of a batch, divided by batch size; excludes the completion wait.</li>
+<li>Host batch completion time: submission of 32 invocations, recording the stop event, and waiting for that event, divided by batch size. The start-event record occurs before this host timer starts.</li>
+<li>CUDA event interval: a bracketed batch divided by batch size. Host supply gaps can appear inside this interval; it is not pure kernel compute time.</li>
+</ul>
+<p>Memory allocation, transfers, compilation, graph capture/instantiation and profiler runs are outside warm timing. Capture/instantiate/first-replay records are retained in variant metadata. Separate external-eviction diagnostics touch a buffer of at least 256 MiB before each invocation, outside the interval, for 15 rounds. This does not guarantee that all cache state is cold.</p>
+<h2 id="validation-and-provenance">Validation and provenance</h2>
+<p>The original independent CPU audit compared direct and graph outputs and intermediate tensors with references computed from saved inputs in FP64, using fixed tolerances. It also checked row sums, nonnegativity, changing-input replays, trace dependencies, sanitizer results, frozen hashes and archive readback. This website's <a href="validation-recheck.json">fresh recheck</a> explicitly separates locally repeated checks from those archived full-size checks.</p>
+<p>The <a href="code/PROTOCOL.md">source protocol</a>, <a href="code/config.json">configuration</a>, <a href="data/summary.json">run summary</a>, <a href="data/gpu-ledger.json">GPU ledger</a> and <a href="data/frozen-manifest.json">freeze manifest</a> retain the original acceptance rules. The primary 16-row 1.25× event-speedup target was not achieved; numerical correctness and evidence requirements passed. A target miss is not a validation failure and is not concealed by selecting a different headline shape.</p>
+<p><a href="data/measurement-1/data/metadata.jsonl">Session 1 metadata</a> · <a href="data/measurement-2/data/metadata.jsonl">Session 2 metadata</a> · <a href="data/measurement-1/data/device.json">Session 1 device</a> · <a href="data/measurement-2/data/device.json">Session 2 device</a></p>
+</article><footer class="post-footer"><nav><a href="../../">Back to the article</a><a href="./">RMS-scaled softmax evidence</a><a href="../">All evidence</a></nav></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{
+  "generated_from_frozen_measurements": true,
+  "script_sha256": "e35cda96db2b0ca8365856749f40036e4eedf024dd40ea6d77e3715f628dbdf2",
+  "sources": [
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/selected-configs.json",
+      "sha256": "46c0db2332568d5afae528c513991bc04075b558c4d4f1fd2d1e570a813e24b2"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-1/data/metadata.jsonl",
+      "sha256": "a8e13fd167eb54199da48677a1b4ad948d2b9b9657d0ab046a6c9a387e653abc"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-1/data/b1/timings.jsonl",
+      "sha256": "2ed15074689130feafac9f3977af68252f4da3cc715609fefb6d1cada4321b88"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-1/data/b16/timings.jsonl",
+      "sha256": "03d1b76c5bf11e606fda80ee41bc52cd5d5e97ca357a4c3f8e2653d91be93729"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-1/data/b32/timings.jsonl",
+      "sha256": "9579f2d9e74eb6af9eaa7be0c46cbfdf1e8c6b2118e62703eb6f68b766228f82"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-1/data/b64/timings.jsonl",
+      "sha256": "5485c4476da28b24957c7c4396bc29ca76133067262109211a934a6e178ad0a9"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-2/data/metadata.jsonl",
+      "sha256": "1a1cd698af9facb283e76029cb4ee9254760a13b2fda8f6dbbc4684798577c0f"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-2/data/b1/timings.jsonl",
+      "sha256": "5564ed4bbbc8b1466d772465a5c78fa35d81140511d06c5d902f47f44ce108d7"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-2/data/b16/timings.jsonl",
+      "sha256": "c7bd686ea359eff1830675d6a378e3b71b2f6248ecbf1644aa228935842c3e0a"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-2/data/b32/timings.jsonl",
+      "sha256": "f8bdf26900665853cf2f7bf3e337fd0c5123046ab8df4234bf5c214a393ccf12"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax/artifacts/20261020T022150Z/measurement-2/data/b64/timings.jsonl",
+      "sha256": "83d611578b60543189b144f588474e6472c00a52352cbea1e95a9cefd02965bd"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/selected-configs.json",
+      "sha256": "a69ac4f2f0d75c687b5f42f981b4e945208fcbf2e9e7a41435c4b9ad3b21a2bf"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-1/data/metadata.jsonl",
+      "sha256": "72207142f11e976f19ba77d6194dde5ffcff52173844129813be0684d3407b13"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-1/data/b1/timings.jsonl",
+      "sha256": "488462254f6a203d6305dbcf87afeb55319b3fc4545124c1023dbbf33c8587af"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-1/data/b16/timings.jsonl",
+      "sha256": "c98c99f152af6d8948243e589b7e1b05a8bd93582c76e46f5281fed8fe4f2911"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-1/data/b32/timings.jsonl",
+      "sha256": "60e14d1551483f3f0cadcd19e73630233de1142e01da2231cdf394c59dc85da6"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-1/data/b64/timings.jsonl",
+      "sha256": "36e4d5fb9a3e0cfd0eb40ff3c9282a0e0a9741c208f8a4a873cf959fafc28c83"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-2/data/metadata.jsonl",
+      "sha256": "c571c989273c102ed94e6f76df93d5380301a8f35b96a6cee3343f1708ed0946"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-2/data/b1/timings.jsonl",
+      "sha256": "395a96f2c6b9007b2da9c32515684b771e505dff760f70bada069561e96304cf"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-2/data/b16/timings.jsonl",
+      "sha256": "3388347a7fc6f79a80c6a3213bb3579c81bf7265f66ac5e022ec5127f3fc8d96"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-2/data/b32/timings.jsonl",
+      "sha256": "f3d41bb6699c499ac4895ded53cd57de158f80a7dba1a05f98440e30fb5972c9"
+    },
+    {
+      "path": "/Users/1duo/Work/YuduoTechBlog/experiments/graphs_scaled_softmax_row/artifacts/20261020T023055Z/measurement-2/data/b64/timings.jsonl",
+      "sha256": "350303d726397d70b5c0fa6f39849795261fa19b08fc0f1239bc9512826d1449"
+    }
+  ],
+  "raw_timing_rows": 7632,
+  "quantile_rows": 1168,
+  "outputs": [
+    {
+      "path": "FULL_RESULTS.md",
+      "bytes": 31483,
+      "sha256": "b943e528e5f11a0d985a6e7f8c66440923bbfadf23113582862e8721bc5dc213"
+    },
+    {
+      "path": "all-timing-quantiles.csv",
+      "bytes": 160713,
+      "sha256": "733fb2a1ca8da235f8383f14f4a90143f30652ef9a8e583aa72e685f17b9303a"
+    },
+    {
+      "path": "raw-timing-samples.csv",
+      "bytes": 753805,
+      "sha256": "91ae6be2f94d98484e04e37bea7de416583303e04ad7446ad548886de99e7576"
+    }
+  ]
+}

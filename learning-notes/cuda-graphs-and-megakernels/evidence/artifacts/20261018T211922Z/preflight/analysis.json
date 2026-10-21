@@ -1,0 +1,566 @@
+{
+  "validation": [
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_graph_fixture0.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_stream_fixture0.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_graph_fixture0.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_stream_fixture0.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_graph_fixture1.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_stream_fixture1.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_graph_fixture1.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_stream_fixture1.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_graph_fixture2.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_stream_fixture2.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_graph_fixture2.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_stream_fixture2.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_graph_fixture3.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_fused_stream_fixture3.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_graph_fixture3.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_1048576/pointwise_1048576_separate_stream_fixture3.f32",
+      "elements": 1048576,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_graph_fixture0.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_stream_fixture0.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_graph_fixture0.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_stream_fixture0.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_graph_fixture1.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_stream_fixture1.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_graph_fixture1.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_stream_fixture1.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_graph_fixture2.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_stream_fixture2.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_graph_fixture2.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_stream_fixture2.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_graph_fixture3.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_fused_stream_fixture3.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_graph_fixture3.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_16777216/pointwise_16777216_separate_stream_fixture3.f32",
+      "elements": 16777216,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_graph_fixture0.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_stream_fixture0.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_graph_fixture0.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_stream_fixture0.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_graph_fixture1.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_stream_fixture1.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_graph_fixture1.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_stream_fixture1.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_graph_fixture2.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_stream_fixture2.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_graph_fixture2.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_stream_fixture2.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_graph_fixture3.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_fused_stream_fixture3.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_graph_fixture3.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_256/pointwise_256_separate_stream_fixture3.f32",
+      "elements": 256,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_graph_fixture0.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_stream_fixture0.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_graph_fixture0.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_stream_fixture0.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_graph_fixture1.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_stream_fixture1.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_graph_fixture1.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_stream_fixture1.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_graph_fixture2.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_stream_fixture2.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_graph_fixture2.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_stream_fixture2.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_graph_fixture3.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_fused_stream_fixture3.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_graph_fixture3.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "pointwise_32768/pointwise_32768_separate_stream_fixture3.f32",
+      "elements": 32768,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_graph_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_graph_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_stream_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_stream_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_graph_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_graph_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_stream_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_stream_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_graph_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_graph_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_stream_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_stream_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_graph_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_graph_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_stream_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_fused_stream_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_graph_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_graph_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_stream_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_queue_stream_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_graph_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_graph_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_stream_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_balanced/tiles_balanced_separate_stream_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_graph_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_graph_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_stream_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_stream_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_graph_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_graph_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_stream_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_stream_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_graph_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_graph_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_stream_fixture0.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_stream_fixture0_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_graph_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_graph_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_stream_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_fused_stream_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_graph_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_graph_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_stream_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_queue_stream_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_graph_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_graph_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_stream_fixture1.u32",
+      "elements": 152832,
+      "exact": true
+    },
+    {
+      "path": "tiles_ragged/tiles_ragged_separate_stream_fixture1_intermediate.u32",
+      "elements": 152832,
+      "exact": true
+    }
+  ],
+  "traces": [],
+  "timings": []
+}

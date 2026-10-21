@@ -1,0 +1,3644 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="324pt" height="1036.8pt" viewBox="0 0 324 1036.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 1036.8 
+L 324 1036.8 
+L 324 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 22.68 309.182253 
+L 307.8 309.182253 
+L 307.8 168 
+L 22.68 168 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 22.68 309.182253 
+L 22.68 168 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2"/>
+     <g id="text_1">
+      <!-- 0 -->
+      <g style="fill: #617084" transform="translate(18.941156 328.582253) scale(0.114 -0.114)">
+       <defs>
+        <path id="OutfitArticle-Regular-82" d="M 2112 -64 
+Q 1613 -64 1200 217 
+Q 787 499 544 1014 
+Q 301 1530 301 2227 
+Q 301 2925 541 3437 
+Q 781 3949 1190 4227 
+Q 1600 4506 2093 4506 
+Q 2598 4506 3008 4227 
+Q 3418 3949 3658 3437 
+Q 3898 2925 3898 2221 
+Q 3898 1523 3658 1008 
+Q 3418 493 3011 214 
+Q 2605 -64 2112 -64 
+z
+M 2099 506 
+Q 2451 506 2716 701 
+Q 2982 896 3136 1280 
+Q 3290 1664 3290 2227 
+Q 3290 2790 3136 3171 
+Q 2982 3552 2713 3747 
+Q 2445 3942 2093 3942 
+Q 1747 3942 1478 3747 
+Q 1210 3552 1059 3171 
+Q 909 2790 909 2227 
+Q 909 1664 1059 1280 
+Q 1210 896 1478 701 
+Q 1747 506 2099 506 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#OutfitArticle-Regular-82"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 93.96 309.182253 
+L 93.96 168 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_2">
+      <!-- 10 -->
+      <g style="fill: #617084" transform="translate(88.243078 328.582253) scale(0.114 -0.114)">
+       <defs>
+        <path id="OutfitArticle-Regular-83" d="M 1107 0 
+L 1107 4442 
+L 1702 4442 
+L 1702 0 
+L 1107 0 
+z
+M 198 3904 
+L 198 4442 
+L 1638 4442 
+L 1638 3904 
+L 198 3904 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#OutfitArticle-Regular-83"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(34.703125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 165.24 309.182253 
+L 165.24 168 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_3">
+      <!-- 20 -->
+      <g style="fill: #617084" transform="translate(158.417812 328.582253) scale(0.114 -0.114)">
+       <defs>
+        <path id="OutfitArticle-Regular-84" d="M 211 365 
+L 1850 2093 
+Q 2099 2349 2240 2537 
+Q 2381 2726 2441 2886 
+Q 2502 3046 2502 3219 
+Q 2502 3558 2284 3750 
+Q 2067 3942 1722 3942 
+Q 1382 3942 1126 3779 
+Q 870 3616 672 3277 
+L 250 3629 
+Q 512 4064 883 4285 
+Q 1254 4506 1741 4506 
+Q 2150 4506 2454 4346 
+Q 2758 4186 2924 3898 
+Q 3091 3610 3091 3226 
+Q 3091 2950 3024 2732 
+Q 2957 2515 2787 2288 
+Q 2618 2061 2317 1747 
+L 992 384 
+L 211 365 
+z
+M 211 0 
+L 211 365 
+L 723 538 
+L 3194 538 
+L 3194 0 
+L 211 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#OutfitArticle-Regular-84"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(54.09375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 236.52 309.182253 
+L 236.52 168 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_4">
+      <!-- 30 -->
+      <g style="fill: #617084" transform="translate(229.714734 328.582253) scale(0.114 -0.114)">
+       <defs>
+        <path id="OutfitArticle-Regular-85" d="M 1581 -64 
+Q 1146 -64 790 99 
+Q 435 262 192 576 
+L 602 986 
+Q 749 762 1005 630 
+Q 1261 499 1574 499 
+Q 1869 499 2083 611 
+Q 2298 723 2422 928 
+Q 2547 1133 2547 1402 
+Q 2547 1677 2422 1878 
+Q 2298 2080 2074 2189 
+Q 1850 2298 1542 2298 
+Q 1427 2298 1312 2282 
+Q 1197 2266 1088 2234 
+L 1344 2579 
+Q 1466 2637 1606 2669 
+Q 1747 2701 1888 2701 
+Q 2246 2701 2531 2534 
+Q 2816 2368 2985 2067 
+Q 3155 1766 3155 1370 
+Q 3155 947 2953 624 
+Q 2752 301 2400 118 
+Q 2048 -64 1581 -64 
+z
+M 1088 2234 
+L 1088 2598 
+L 2387 4077 
+L 3104 4083 
+L 1766 2566 
+L 1088 2234 
+z
+M 403 3904 
+L 403 4442 
+L 3104 4442 
+L 3104 4083 
+L 2579 3904 
+L 403 3904 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#OutfitArticle-Regular-85"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(53.796875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 307.8 309.182253 
+L 307.8 168 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_5">
+      <!-- 40 -->
+      <g style="fill: #617084" transform="translate(300.652734 328.582253) scale(0.114 -0.114)">
+       <defs>
+        <path id="OutfitArticle-Regular-86" d="M 211 1530 
+L 1830 4442 
+L 2509 4442 
+L 858 1530 
+L 211 1530 
+z
+M 211 1158 
+L 211 1530 
+L 467 1696 
+L 3616 1696 
+L 3616 1158 
+L 211 1158 
+z
+M 2381 0 
+L 2381 2938 
+L 2976 2938 
+L 2976 0 
+L 2381 0 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#OutfitArticle-Regular-86"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(59.796875 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 22.68 189.434033 
+L 285.77448 189.434033 
+L 285.77448 195.338018 
+L 22.68 195.338018 
+z
+" clip-path="url(#p76f8c1f29c)" style="fill: #66758a"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 22.68 215.103533 
+L 229.680684 215.103533 
+L 229.680684 221.007518 
+L 22.68 221.007518 
+z
+" clip-path="url(#p76f8c1f29c)" style="fill: #3867d6"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 22.68 240.773034 
+L 143.720568 240.773034 
+L 143.720568 246.677019 
+L 22.68 246.677019 
+z
+" clip-path="url(#p76f8c1f29c)" style="fill: #8357aa"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 22.68 266.442534 
+L 130.1346 266.442534 
+L 130.1346 272.346519 
+L 22.68 272.346519 
+z
+" clip-path="url(#p76f8c1f29c)" style="fill: #087f73"/>
+   </g>
+   <g id="text_6">
+    <!-- Unfused Baseline -->
+    <g style="fill: #17283b" transform="translate(22.68 181.409175) scale(0.126 -0.126)">
+     <defs>
+      <path id="OutfitArticle-Regular-30" d="M 2189 -64 
+Q 1696 -64 1309 157 
+Q 922 378 698 765 
+Q 474 1152 474 1645 
+L 474 4442 
+L 1075 4442 
+L 1075 1658 
+Q 1075 1306 1222 1050 
+Q 1370 794 1622 653 
+Q 1875 512 2189 512 
+Q 2515 512 2761 653 
+Q 3008 794 3152 1050 
+Q 3296 1306 3296 1651 
+L 3296 4442 
+L 3904 4442 
+L 3904 1638 
+Q 3904 1146 3680 762 
+Q 3456 378 3072 157 
+Q 2688 -64 2189 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-5b" d="M 2573 0 
+L 2573 1773 
+Q 2573 2118 2355 2342 
+Q 2138 2566 1792 2566 
+Q 1562 2566 1382 2464 
+Q 1203 2362 1100 2182 
+Q 998 2003 998 1773 
+L 762 1907 
+Q 762 2253 915 2521 
+Q 1069 2790 1344 2947 
+Q 1619 3104 1965 3104 
+Q 2310 3104 2576 2931 
+Q 2842 2758 2995 2480 
+Q 3149 2202 3149 1888 
+L 3149 0 
+L 2573 0 
+z
+M 422 0 
+L 422 3040 
+L 998 3040 
+L 998 0 
+L 422 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-4d" d="M 858 0 
+L 858 3494 
+Q 858 3834 1005 4086 
+Q 1152 4339 1411 4486 
+Q 1670 4634 2016 4634 
+Q 2278 4634 2470 4544 
+Q 2662 4454 2822 4282 
+L 2445 3910 
+Q 2362 4000 2259 4048 
+Q 2157 4096 2010 4096 
+Q 1734 4096 1584 3936 
+Q 1434 3776 1434 3494 
+L 1434 0 
+L 858 0 
+z
+M 109 2515 
+L 109 3040 
+L 2400 3040 
+L 2400 2515 
+L 109 2515 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-6c" d="M 1651 -64 
+Q 1274 -64 976 105 
+Q 678 275 512 576 
+Q 346 877 346 1274 
+L 346 3040 
+L 922 3040 
+L 922 1299 
+Q 922 1050 1008 867 
+Q 1094 685 1260 589 
+Q 1427 493 1651 493 
+Q 1990 493 2182 707 
+Q 2374 922 2374 1299 
+L 2374 3040 
+L 2950 3040 
+L 2950 1274 
+Q 2950 877 2784 576 
+Q 2618 275 2326 105 
+Q 2035 -64 1651 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-69" d="M 1389 -64 
+Q 1133 -64 905 3 
+Q 678 70 486 195 
+Q 294 320 154 493 
+L 525 864 
+Q 691 659 908 560 
+Q 1126 461 1395 461 
+Q 1664 461 1811 553 
+Q 1958 646 1958 813 
+Q 1958 979 1840 1072 
+Q 1722 1165 1536 1225 
+Q 1350 1286 1142 1347 
+Q 934 1408 748 1504 
+Q 563 1600 444 1766 
+Q 326 1933 326 2208 
+Q 326 2483 460 2684 
+Q 595 2886 835 2995 
+Q 1075 3104 1414 3104 
+Q 1773 3104 2051 2979 
+Q 2330 2854 2509 2605 
+L 2138 2234 
+Q 2010 2400 1821 2489 
+Q 1632 2579 1395 2579 
+Q 1146 2579 1014 2492 
+Q 883 2406 883 2253 
+Q 883 2099 998 2016 
+Q 1114 1933 1302 1875 
+Q 1491 1818 1696 1757 
+Q 1901 1696 2086 1593 
+Q 2272 1491 2390 1318 
+Q 2509 1146 2509 864 
+Q 2509 435 2205 185 
+Q 1901 -64 1389 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-48" d="M 1830 -64 
+Q 1376 -64 1011 144 
+Q 646 352 435 710 
+Q 224 1069 224 1523 
+Q 224 1971 432 2329 
+Q 640 2688 995 2896 
+Q 1350 3104 1792 3104 
+Q 2214 3104 2537 2912 
+Q 2861 2720 3043 2381 
+Q 3226 2042 3226 1613 
+Q 3226 1549 3219 1475 
+Q 3213 1402 3194 1306 
+L 627 1306 
+L 627 1786 
+L 2886 1786 
+L 2675 1600 
+Q 2675 1907 2566 2121 
+Q 2458 2336 2259 2454 
+Q 2061 2573 1779 2573 
+Q 1485 2573 1261 2445 
+Q 1037 2317 915 2086 
+Q 794 1856 794 1542 
+Q 794 1222 922 982 
+Q 1050 742 1286 611 
+Q 1523 480 1830 480 
+Q 2086 480 2300 569 
+Q 2515 659 2669 838 
+L 3040 461 
+Q 2822 205 2505 70 
+Q 2189 -64 1830 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-46" d="M 1709 -64 
+Q 1286 -64 953 144 
+Q 621 352 425 710 
+Q 230 1069 230 1517 
+Q 230 1965 425 2323 
+Q 621 2682 953 2893 
+Q 1286 3104 1709 3104 
+Q 2048 3104 2323 2960 
+Q 2598 2816 2768 2563 
+Q 2938 2310 2957 1978 
+L 2957 1062 
+Q 2938 736 2771 480 
+Q 2605 224 2329 80 
+Q 2054 -64 1709 -64 
+z
+M 1805 480 
+Q 2093 480 2307 614 
+Q 2522 749 2643 982 
+Q 2765 1216 2765 1517 
+Q 2765 1830 2640 2060 
+Q 2515 2291 2300 2425 
+Q 2086 2560 1798 2560 
+Q 1510 2560 1292 2425 
+Q 1075 2291 950 2057 
+Q 826 1824 826 1523 
+Q 826 1216 950 982 
+Q 1075 749 1296 614 
+Q 1517 480 1805 480 
+z
+M 3309 0 
+L 2726 0 
+L 2726 819 
+L 2835 1562 
+L 2726 2298 
+L 2726 4570 
+L 3309 4570 
+L 3309 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-9e" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-a" d="M 928 0 
+L 928 525 
+L 2272 525 
+Q 2656 525 2873 752 
+Q 3091 979 3091 1299 
+Q 3091 1517 2995 1693 
+Q 2899 1869 2716 1971 
+Q 2534 2074 2291 2074 
+L 928 2074 
+L 928 2598 
+L 2202 2598 
+Q 2522 2598 2710 2768 
+Q 2899 2938 2899 3258 
+Q 2899 3578 2700 3747 
+Q 2502 3917 2176 3917 
+L 928 3917 
+L 928 4442 
+L 2189 4442 
+Q 2624 4442 2915 4285 
+Q 3206 4128 3356 3872 
+Q 3507 3616 3507 3309 
+Q 3507 2950 3312 2681 
+Q 3117 2413 2739 2259 
+L 2790 2451 
+Q 3219 2298 3459 1987 
+Q 3699 1677 3699 1254 
+Q 3699 902 3526 620 
+Q 3354 339 3030 169 
+Q 2707 0 2240 0 
+L 928 0 
+z
+M 525 0 
+L 525 4442 
+L 1126 4442 
+L 1126 0 
+L 525 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-3b" d="M 1715 -64 
+Q 1299 -64 960 144 
+Q 621 352 425 710 
+Q 230 1069 230 1517 
+Q 230 1965 425 2323 
+Q 621 2682 957 2893 
+Q 1293 3104 1715 3104 
+Q 2061 3104 2333 2960 
+Q 2605 2816 2771 2563 
+Q 2938 2310 2957 1978 
+L 2957 1062 
+Q 2938 736 2774 480 
+Q 2611 224 2339 80 
+Q 2067 -64 1715 -64 
+z
+M 1811 480 
+Q 2240 480 2502 771 
+Q 2765 1062 2765 1517 
+Q 2765 1830 2646 2064 
+Q 2528 2298 2310 2429 
+Q 2093 2560 1805 2560 
+Q 1517 2560 1296 2425 
+Q 1075 2291 950 2057 
+Q 826 1824 826 1523 
+Q 826 1216 950 982 
+Q 1075 749 1299 614 
+Q 1523 480 1811 480 
+z
+M 2726 0 
+L 2726 819 
+L 2835 1562 
+L 2726 2298 
+L 2726 3040 
+L 3309 3040 
+L 3309 0 
+L 2726 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-59" d="M 422 0 
+L 422 4570 
+L 998 4570 
+L 998 0 
+L 422 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-50" d="M 429 0 
+L 429 3040 
+L 1005 3040 
+L 1005 0 
+L 429 0 
+z
+M 717 3648 
+Q 557 3648 454 3753 
+Q 352 3859 352 4019 
+Q 352 4173 454 4278 
+Q 557 4384 717 4384 
+Q 877 4384 979 4278 
+Q 1082 4173 1082 4019 
+Q 1082 3859 979 3753 
+Q 877 3648 717 3648 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-Regular-30"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(68.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(122.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(162.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(214 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(256.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-46" transform="translate(310.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(368.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a" transform="translate(389.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(451.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(509.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(552.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(606.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(628.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(650.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(705.5 0)"/>
+    </g>
+   </g>
+   <g id="text_7">
+    <!-- 36.9 -->
+    <g style="fill: #17283b" transform="translate(283.02 181.357175) scale(0.128 -0.128)">
+     <defs>
+      <path id="OutfitArticle-SemiBold-85" d="M 1594 -64 
+Q 1139 -64 761 99 
+Q 384 262 128 570 
+L 704 1139 
+Q 832 947 1069 832 
+Q 1306 717 1581 717 
+Q 1837 717 2022 809 
+Q 2208 902 2313 1072 
+Q 2419 1242 2419 1466 
+Q 2419 1702 2313 1868 
+Q 2208 2035 2009 2124 
+Q 1811 2214 1536 2214 
+Q 1414 2214 1286 2198 
+Q 1158 2182 1069 2150 
+L 1453 2637 
+Q 1613 2688 1769 2723 
+Q 1926 2758 2061 2758 
+Q 2406 2758 2684 2595 
+Q 2963 2432 3126 2134 
+Q 3290 1837 3290 1434 
+Q 3290 986 3078 650 
+Q 2867 314 2486 125 
+Q 2106 -64 1594 -64 
+z
+M 1069 2150 
+L 1069 2650 
+L 2221 3987 
+L 3219 4000 
+L 2029 2637 
+L 1069 2150 
+z
+M 378 3744 
+L 378 4499 
+L 3219 4499 
+L 3219 4000 
+L 2509 3744 
+L 378 3744 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-SemiBold-88" d="M 1818 -64 
+Q 1357 -64 989 144 
+Q 621 352 406 707 
+Q 192 1062 192 1498 
+Q 192 2093 602 2694 
+L 1850 4499 
+L 2848 4499 
+L 1485 2592 
+L 1165 2502 
+Q 1235 2650 1334 2758 
+Q 1434 2867 1594 2924 
+Q 1754 2982 1997 2982 
+Q 2400 2982 2726 2793 
+Q 3053 2605 3251 2275 
+Q 3450 1946 3450 1517 
+Q 3450 1075 3232 716 
+Q 3014 358 2643 147 
+Q 2272 -64 1818 -64 
+z
+M 1818 717 
+Q 2042 717 2214 822 
+Q 2387 928 2489 1110 
+Q 2592 1293 2592 1523 
+Q 2592 1754 2489 1936 
+Q 2387 2118 2214 2220 
+Q 2042 2323 1818 2323 
+Q 1594 2323 1418 2217 
+Q 1242 2112 1142 1933 
+Q 1043 1754 1043 1523 
+Q 1043 1293 1142 1110 
+Q 1242 928 1418 822 
+Q 1594 717 1818 717 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-SemiBold-a0" d="M 947 -64 
+Q 717 -64 569 89 
+Q 422 243 422 467 
+Q 422 691 569 844 
+Q 717 998 947 998 
+Q 1171 998 1318 844 
+Q 1466 691 1466 467 
+Q 1466 243 1318 89 
+Q 1171 -64 947 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-SemiBold-8b" d="M 787 0 
+L 2157 1907 
+L 2470 2003 
+Q 2394 1856 2294 1744 
+Q 2195 1632 2041 1574 
+Q 1888 1517 1638 1517 
+Q 1242 1517 912 1705 
+Q 582 1894 384 2227 
+Q 186 2560 186 2989 
+Q 186 3424 403 3785 
+Q 621 4147 992 4358 
+Q 1363 4570 1818 4570 
+Q 2278 4570 2646 4358 
+Q 3014 4147 3228 3795 
+Q 3443 3443 3443 3008 
+Q 3443 2413 3027 1805 
+L 1779 0 
+L 787 0 
+z
+M 1818 2182 
+Q 2042 2182 2214 2284 
+Q 2387 2387 2486 2569 
+Q 2586 2752 2586 2976 
+Q 2586 3213 2486 3392 
+Q 2387 3571 2214 3676 
+Q 2042 3782 1818 3782 
+Q 1594 3782 1418 3676 
+Q 1242 3571 1142 3392 
+Q 1043 3213 1043 2976 
+Q 1043 2746 1142 2566 
+Q 1242 2387 1421 2284 
+Q 1600 2182 1818 2182 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-SemiBold-85"/>
+     <use xlink:href="#OutfitArticle-SemiBold-88" transform="translate(55 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(111.796875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(136.796875 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_1">
+    <path d="M 284.911992 192.386025 
+L 286.636968 192.386025 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_11">
+    <defs>
+     <path id="m31e2efa215" d="M 0 2.6 
+L 0 -2.6 
+" style="stroke: #17283b"/>
+    </defs>
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="284.911992" y="192.386025" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_12">
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="286.636968" y="192.386025" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_8">
+    <!-- + CUDA Graph -->
+    <g style="fill: #17283b" transform="translate(22.68 207.078676) scale(0.126 -0.126)">
+     <defs>
+      <path id="OutfitArticle-Regular-d6" d="M 378 1882 
+L 378 2400 
+L 3091 2400 
+L 3091 1882 
+L 378 1882 
+z
+M 1472 3565 
+L 2003 3565 
+L 2003 717 
+L 1472 717 
+L 1472 3565 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-b" d="M 2541 -64 
+Q 2061 -64 1651 112 
+Q 1242 288 938 601 
+Q 634 915 467 1331 
+Q 301 1747 301 2221 
+Q 301 2701 467 3117 
+Q 634 3533 938 3843 
+Q 1242 4154 1648 4330 
+Q 2054 4506 2534 4506 
+Q 3059 4506 3456 4326 
+Q 3853 4147 4160 3840 
+L 3744 3424 
+Q 3533 3661 3229 3795 
+Q 2925 3930 2534 3930 
+Q 2182 3930 1888 3805 
+Q 1594 3680 1376 3449 
+Q 1158 3219 1040 2905 
+Q 922 2592 922 2221 
+Q 922 1850 1040 1536 
+Q 1158 1222 1376 992 
+Q 1594 762 1888 637 
+Q 2182 512 2534 512 
+Q 2950 512 3257 649 
+Q 3565 787 3776 1024 
+L 4192 614 
+Q 3885 294 3472 115 
+Q 3059 -64 2541 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-d" d="M 922 0 
+L 922 550 
+L 2157 550 
+Q 2650 550 3021 764 
+Q 3392 979 3600 1356 
+Q 3808 1734 3808 2227 
+Q 3808 2714 3597 3091 
+Q 3386 3469 3014 3680 
+Q 2643 3891 2157 3891 
+L 928 3891 
+L 928 4442 
+L 2170 4442 
+Q 2656 4442 3069 4275 
+Q 3482 4109 3786 3808 
+Q 4090 3507 4259 3104 
+Q 4429 2701 4429 2221 
+Q 4429 1747 4259 1340 
+Q 4090 934 3789 633 
+Q 3488 333 3075 166 
+Q 2662 0 2182 0 
+L 922 0 
+z
+M 525 0 
+L 525 4442 
+L 1126 4442 
+L 1126 0 
+L 525 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-1" d="M 198 0 
+L 2016 4442 
+L 2451 4442 
+L 4262 0 
+L 3610 0 
+L 2118 3757 
+L 2342 3757 
+L 838 0 
+L 198 0 
+z
+M 1062 1005 
+L 1062 1530 
+L 3398 1530 
+L 3398 1005 
+L 1062 1005 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-15" d="M 2534 -64 
+Q 2067 -64 1660 112 
+Q 1254 288 950 601 
+Q 646 915 473 1331 
+Q 301 1747 301 2227 
+Q 301 2707 473 3120 
+Q 646 3533 953 3846 
+Q 1261 4160 1673 4333 
+Q 2086 4506 2573 4506 
+Q 3104 4506 3552 4301 
+Q 4000 4096 4301 3712 
+L 3885 3296 
+Q 3674 3603 3328 3766 
+Q 2982 3930 2573 3930 
+Q 2086 3930 1712 3712 
+Q 1338 3494 1130 3110 
+Q 922 2726 922 2227 
+Q 922 1722 1133 1338 
+Q 1344 954 1702 736 
+Q 2061 518 2522 518 
+Q 2989 518 3331 697 
+Q 3674 877 3859 1225 
+Q 4045 1574 4045 2080 
+L 4410 1818 
+L 2490 1818 
+L 2490 2368 
+L 4666 2368 
+L 4666 2278 
+Q 4666 1504 4394 982 
+Q 4122 461 3638 198 
+Q 3155 -64 2534 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-68" d="M 422 0 
+L 422 3040 
+L 998 3040 
+L 998 0 
+L 422 0 
+z
+M 998 1734 
+L 781 1830 
+Q 781 2413 1049 2758 
+Q 1318 3104 1824 3104 
+Q 2054 3104 2240 3024 
+Q 2426 2944 2586 2758 
+L 2208 2368 
+Q 2112 2470 1997 2515 
+Q 1882 2560 1728 2560 
+Q 1408 2560 1203 2355 
+Q 998 2150 998 1734 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-65" d="M 2022 -64 
+Q 1677 -64 1398 80 
+Q 1120 224 953 480 
+Q 787 736 768 1062 
+L 768 1978 
+Q 787 2310 956 2563 
+Q 1126 2816 1404 2960 
+Q 1683 3104 2022 3104 
+Q 2438 3104 2774 2893 
+Q 3110 2682 3302 2323 
+Q 3494 1965 3494 1517 
+Q 3494 1069 3302 710 
+Q 3110 352 2774 144 
+Q 2438 -64 2022 -64 
+z
+M 422 -1274 
+L 422 3040 
+L 998 3040 
+L 998 2240 
+L 890 1504 
+L 998 762 
+L 998 -1274 
+L 422 -1274 
+z
+M 1926 480 
+Q 2214 480 2432 614 
+Q 2650 749 2778 982 
+Q 2906 1216 2906 1523 
+Q 2906 1824 2778 2061 
+Q 2650 2298 2432 2429 
+Q 2214 2560 1933 2560 
+Q 1645 2560 1427 2429 
+Q 1210 2298 1088 2061 
+Q 966 1824 966 1517 
+Q 966 1216 1084 982 
+Q 1203 749 1424 614 
+Q 1645 480 1926 480 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-4f" d="M 2573 0 
+L 2573 1773 
+Q 2573 2118 2355 2342 
+Q 2138 2566 1792 2566 
+Q 1562 2566 1382 2464 
+Q 1203 2362 1100 2182 
+Q 998 2003 998 1773 
+L 762 1907 
+Q 762 2253 915 2521 
+Q 1069 2790 1344 2947 
+Q 1619 3104 1965 3104 
+Q 2310 3104 2576 2950 
+Q 2842 2797 2995 2521 
+Q 3149 2246 3149 1888 
+L 3149 0 
+L 2573 0 
+z
+M 422 0 
+L 422 4570 
+L 998 4570 
+L 998 0 
+L 422 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-b" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-30" transform="translate(143.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-d" transform="translate(212.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1" transform="translate(286.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(352.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-15" transform="translate(373.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(450.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(489.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-65" transform="translate(547.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4f" transform="translate(606 0)"/>
+    </g>
+   </g>
+   <g id="text_9">
+    <!-- 29.0 -->
+    <g style="fill: #17283b" transform="translate(282.302 207.026676) scale(0.128 -0.128)">
+     <defs>
+      <path id="OutfitArticle-SemiBold-84" d="M 166 499 
+L 1862 2272 
+Q 2042 2464 2154 2614 
+Q 2266 2765 2317 2902 
+Q 2368 3040 2368 3181 
+Q 2368 3462 2185 3622 
+Q 2003 3782 1715 3782 
+Q 1421 3782 1193 3628 
+Q 966 3475 768 3142 
+L 173 3648 
+Q 442 4102 842 4336 
+Q 1242 4570 1760 4570 
+Q 2202 4570 2531 4397 
+Q 2861 4224 3040 3917 
+Q 3219 3610 3219 3200 
+Q 3219 2925 3152 2701 
+Q 3085 2477 2928 2256 
+Q 2771 2035 2496 1760 
+L 1261 499 
+L 166 499 
+z
+M 166 0 
+L 166 499 
+L 909 755 
+L 3315 755 
+L 3315 0 
+L 166 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-SemiBold-82" d="M 2125 -64 
+Q 1594 -64 1165 224 
+Q 736 512 483 1037 
+Q 230 1562 230 2259 
+Q 230 2957 480 3475 
+Q 730 3994 1155 4282 
+Q 1581 4570 2106 4570 
+Q 2643 4570 3068 4282 
+Q 3494 3994 3744 3472 
+Q 3994 2950 3994 2246 
+Q 3994 1549 3744 1027 
+Q 3494 506 3072 221 
+Q 2650 -64 2125 -64 
+z
+M 2112 723 
+Q 2419 723 2643 896 
+Q 2867 1069 2992 1408 
+Q 3117 1747 3117 2253 
+Q 3117 2758 2992 3097 
+Q 2867 3437 2640 3606 
+Q 2413 3776 2106 3776 
+Q 1805 3776 1581 3606 
+Q 1357 3437 1232 3101 
+Q 1107 2765 1107 2259 
+Q 1107 1747 1232 1408 
+Q 1357 1069 1581 896 
+Q 1805 723 2112 723 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-SemiBold-84"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(55.296875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(105.796875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-82" transform="translate(133.203125 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_2">
+    <path d="M 223.383096 218.055526 
+L 235.978272 218.055526 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_13">
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="223.383096" y="218.055526" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_14">
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="235.978272" y="218.055526" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_10">
+    <!-- + Local Fusion -->
+    <g style="fill: #17283b" transform="translate(22.68 232.748176) scale(0.126 -0.126)">
+     <defs>
+      <path id="OutfitArticle-Regular-1e" d="M 525 0 
+L 525 4442 
+L 1126 4442 
+L 1126 0 
+L 525 0 
+z
+M 934 0 
+L 934 550 
+L 3315 550 
+L 3315 0 
+L 934 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-5d" d="M 1811 -64 
+Q 1363 -64 1004 147 
+Q 646 358 435 720 
+Q 224 1082 224 1530 
+Q 224 1971 435 2326 
+Q 646 2682 1004 2893 
+Q 1363 3104 1811 3104 
+Q 2253 3104 2614 2896 
+Q 2976 2688 3187 2329 
+Q 3398 1971 3398 1530 
+Q 3398 1082 3187 720 
+Q 2976 358 2614 147 
+Q 2253 -64 1811 -64 
+z
+M 1811 493 
+Q 2099 493 2323 627 
+Q 2547 762 2675 995 
+Q 2803 1229 2803 1530 
+Q 2803 1824 2672 2054 
+Q 2541 2285 2320 2416 
+Q 2099 2547 1811 2547 
+Q 1523 2547 1299 2416 
+Q 1075 2285 947 2054 
+Q 819 1824 819 1530 
+Q 819 1229 947 995 
+Q 1075 762 1299 627 
+Q 1523 493 1811 493 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-44" d="M 1811 -64 
+Q 1363 -64 1001 147 
+Q 640 358 432 720 
+Q 224 1082 224 1523 
+Q 224 1971 432 2329 
+Q 640 2688 1001 2896 
+Q 1363 3104 1811 3104 
+Q 2163 3104 2464 2973 
+Q 2765 2842 2982 2592 
+L 2598 2208 
+Q 2458 2374 2256 2460 
+Q 2054 2547 1811 2547 
+Q 1523 2547 1299 2416 
+Q 1075 2285 947 2054 
+Q 819 1824 819 1523 
+Q 819 1222 947 992 
+Q 1075 762 1299 627 
+Q 1523 493 1811 493 
+Q 2054 493 2256 579 
+Q 2458 666 2605 832 
+L 2982 448 
+Q 2771 205 2467 70 
+Q 2163 -64 1811 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-14" d="M 525 0 
+L 525 4442 
+L 1126 4442 
+L 1126 0 
+L 525 0 
+z
+M 934 1952 
+L 934 2502 
+L 3251 2502 
+L 3251 1952 
+L 934 1952 
+z
+M 934 3891 
+L 934 4442 
+L 3360 4442 
+L 3360 3891 
+L 934 3891 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1e" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(128.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(184.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(232.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(291 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(313.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-14" transform="translate(334 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(390.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(442.1875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(484.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(507.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(563.890625 0)"/>
+    </g>
+   </g>
+   <g id="text_11">
+    <!-- 17.0 -->
+    <g style="fill: #17283b" transform="translate(285.232 232.696176) scale(0.128 -0.128)">
+     <defs>
+      <path id="OutfitArticle-SemiBold-83" d="M 1030 0 
+L 1030 4499 
+L 1888 4499 
+L 1888 0 
+L 1030 0 
+z
+M 147 3744 
+L 147 4499 
+L 1824 4499 
+L 1824 3744 
+L 147 3744 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-SemiBold-89" d="M 768 0 
+L 2349 3994 
+L 3206 3994 
+L 1670 0 
+L 768 0 
+z
+M 147 3744 
+L 147 4499 
+L 3206 4499 
+L 3206 3994 
+L 2880 3744 
+L 147 3744 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(82.90625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-82" transform="translate(110.3125 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_3">
+    <path d="M 140.698296 243.725026 
+L 146.74284 243.725026 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_15">
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="140.698296" y="243.725026" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_16">
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="146.74284" y="243.725026" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_12">
+    <!-- + Megakernel -->
+    <g style="fill: #17283b" transform="translate(22.68 258.417677) scale(0.126 -0.126)">
+     <defs>
+      <path id="OutfitArticle-Regular-1f" d="M 525 0 
+L 525 4442 
+L 947 4442 
+L 2829 1350 
+L 2541 1350 
+L 4422 4442 
+L 4845 4442 
+L 4845 0 
+L 4243 0 
+L 4243 3386 
+L 4384 3347 
+L 2899 909 
+L 2477 909 
+L 992 3347 
+L 1126 3386 
+L 1126 0 
+L 525 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-4e" d="M 1683 -1338 
+Q 1216 -1338 854 -1165 
+Q 493 -992 275 -678 
+L 646 -301 
+Q 832 -538 1088 -662 
+Q 1344 -787 1696 -787 
+Q 2163 -787 2435 -540 
+Q 2707 -294 2707 122 
+L 2707 877 
+L 2810 1562 
+L 2707 2240 
+L 2707 3040 
+L 3283 3040 
+L 3283 122 
+Q 3283 -314 3081 -640 
+Q 2880 -966 2518 -1152 
+Q 2157 -1338 1683 -1338 
+z
+M 1683 51 
+Q 1267 51 937 249 
+Q 608 448 416 797 
+Q 224 1146 224 1581 
+Q 224 2016 416 2358 
+Q 608 2701 937 2902 
+Q 1267 3104 1683 3104 
+Q 2042 3104 2317 2963 
+Q 2592 2822 2755 2569 
+Q 2918 2317 2931 1978 
+L 2931 1171 
+Q 2912 838 2749 585 
+Q 2586 333 2310 192 
+Q 2035 51 1683 51 
+z
+M 1798 595 
+Q 2080 595 2294 716 
+Q 2509 838 2624 1059 
+Q 2739 1280 2739 1574 
+Q 2739 1869 2620 2089 
+Q 2502 2310 2291 2435 
+Q 2080 2560 1792 2560 
+Q 1504 2560 1286 2435 
+Q 1069 2310 944 2089 
+Q 819 1869 819 1581 
+Q 819 1293 944 1069 
+Q 1069 845 1289 720 
+Q 1510 595 1798 595 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-58" d="M 2368 0 
+L 947 1555 
+L 2355 3040 
+L 3053 3040 
+L 1485 1402 
+L 1510 1734 
+L 3110 0 
+L 2368 0 
+z
+M 422 0 
+L 422 4570 
+L 998 4570 
+L 998 0 
+L 422 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1f" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(158.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(212.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(270.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(328.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(375.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(429.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(469.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(524.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(578 0)"/>
+    </g>
+   </g>
+   <g id="text_13">
+    <!-- 15.1 -->
+    <g style="fill: #17283b" transform="translate(288.778 258.365677) scale(0.128 -0.128)">
+     <defs>
+      <path id="OutfitArticle-SemiBold-87" d="M 1600 -64 
+Q 1133 -64 749 99 
+Q 365 262 109 570 
+L 685 1139 
+Q 813 947 1053 832 
+Q 1293 717 1581 717 
+Q 1843 717 2038 813 
+Q 2234 909 2346 1085 
+Q 2458 1261 2458 1498 
+Q 2458 1747 2346 1920 
+Q 2234 2093 2048 2182 
+Q 1862 2272 1632 2272 
+Q 1389 2272 1193 2211 
+Q 998 2150 819 2016 
+L 870 2566 
+Q 992 2694 1126 2774 
+Q 1261 2854 1430 2896 
+Q 1600 2938 1830 2938 
+Q 2323 2938 2652 2736 
+Q 2982 2534 3155 2198 
+Q 3328 1862 3328 1459 
+Q 3328 1018 3110 672 
+Q 2893 326 2505 131 
+Q 2118 -64 1600 -64 
+z
+M 819 2016 
+L 403 2426 
+L 608 4499 
+L 1395 4499 
+L 1165 2394 
+L 819 2016 
+z
+M 742 3744 
+L 608 4499 
+L 3078 4499 
+L 3078 3744 
+L 742 3744 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(89.90625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(111.90625 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_4">
+    <path d="M 128.751768 269.394527 
+L 131.517432 269.394527 
+" clip-path="url(#p76f8c1f29c)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_17">
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="128.751768" y="269.394527" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_18">
+    <g clip-path="url(#p76f8c1f29c)">
+     <use xlink:href="#m31e2efa215" x="131.517432" y="269.394527" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- Megakernel: 11.2% less time vs local fusion -->
+    <g style="fill: #617084" transform="translate(22.68 303.206452) scale(0.116 -0.116)">
+     <defs>
+      <path id="OutfitArticle-Regular-a2" d="M 864 -64 
+Q 685 -64 566 61 
+Q 448 186 448 352 
+Q 448 538 566 656 
+Q 685 774 864 774 
+Q 1043 774 1161 656 
+Q 1280 538 1280 352 
+Q 1280 186 1161 61 
+Q 1043 -64 864 -64 
+z
+M 864 1933 
+Q 685 1933 566 2054 
+Q 448 2176 448 2349 
+Q 448 2534 566 2652 
+Q 685 2771 864 2771 
+Q 1043 2771 1161 2652 
+Q 1280 2534 1280 2349 
+Q 1280 2176 1161 2054 
+Q 1043 1933 864 1933 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-a0" d="M 928 -64 
+Q 749 -64 630 61 
+Q 512 186 512 358 
+Q 512 538 630 656 
+Q 749 774 928 774 
+Q 1107 774 1225 656 
+Q 1344 538 1344 358 
+Q 1344 186 1225 61 
+Q 1107 -64 928 -64 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-e2" d="M 397 0 
+L 3245 4442 
+L 3827 4442 
+L 979 0 
+L 397 0 
+z
+M 3002 -64 
+Q 2752 -64 2547 57 
+Q 2342 179 2220 380 
+Q 2099 582 2099 838 
+Q 2099 1088 2220 1289 
+Q 2342 1491 2547 1612 
+Q 2752 1734 3002 1734 
+Q 3251 1734 3459 1612 
+Q 3667 1491 3788 1289 
+Q 3910 1088 3910 838 
+Q 3910 582 3788 380 
+Q 3667 179 3462 57 
+Q 3258 -64 3002 -64 
+z
+M 3002 390 
+Q 3194 390 3315 515 
+Q 3437 640 3437 838 
+Q 3437 1030 3312 1155 
+Q 3187 1280 3002 1280 
+Q 2816 1280 2694 1155 
+Q 2573 1030 2573 838 
+Q 2573 640 2694 515 
+Q 2816 390 3002 390 
+z
+M 1216 2707 
+Q 973 2707 768 2828 
+Q 563 2950 441 3155 
+Q 320 3360 320 3610 
+Q 320 3866 438 4064 
+Q 557 4262 761 4384 
+Q 966 4506 1216 4506 
+Q 1472 4506 1677 4384 
+Q 1882 4262 2003 4064 
+Q 2125 3866 2125 3610 
+Q 2125 3360 2003 3155 
+Q 1882 2950 1680 2828 
+Q 1478 2707 1216 2707 
+z
+M 1216 3162 
+Q 1408 3162 1529 3286 
+Q 1651 3411 1651 3610 
+Q 1651 3808 1526 3929 
+Q 1402 4051 1216 4051 
+Q 1030 4051 912 3929 
+Q 794 3808 794 3610 
+Q 794 3411 912 3286 
+Q 1030 3162 1216 3162 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-6b" d="M 890 0 
+L 890 4314 
+L 1466 4314 
+L 1466 0 
+L 890 0 
+z
+M 141 2515 
+L 141 3040 
+L 2214 3040 
+L 2214 2515 
+L 141 2515 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-5a" d="M 422 0 
+L 422 3040 
+L 998 3040 
+L 998 0 
+L 422 0 
+z
+M 2477 0 
+L 2477 1837 
+Q 2477 2176 2269 2371 
+Q 2061 2566 1747 2566 
+Q 1536 2566 1369 2476 
+Q 1203 2387 1100 2227 
+Q 998 2067 998 1843 
+L 762 1958 
+Q 762 2304 912 2560 
+Q 1062 2816 1324 2960 
+Q 1587 3104 1914 3104 
+Q 2234 3104 2493 2963 
+Q 2752 2822 2902 2566 
+Q 3053 2310 3053 1958 
+L 3053 0 
+L 2477 0 
+z
+M 4531 0 
+L 4531 1837 
+Q 4531 2176 4323 2371 
+Q 4115 2566 3808 2566 
+Q 3597 2566 3427 2476 
+Q 3258 2387 3155 2227 
+Q 3053 2067 3053 1843 
+L 2726 1958 
+Q 2746 2310 2915 2563 
+Q 3085 2816 3353 2960 
+Q 3622 3104 3942 3104 
+Q 4275 3104 4537 2963 
+Q 4800 2822 4957 2566 
+Q 5114 2310 5114 1952 
+L 5114 0 
+L 4531 0 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-71" d="M 1466 0 
+L 70 3040 
+L 710 3040 
+L 1830 474 
+L 1459 474 
+L 2586 3040 
+L 3200 3040 
+L 1805 0 
+L 1466 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-Regular-1f"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(83.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(137.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(195.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(253.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(300.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(354.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(394.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(449.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(503 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a2" transform="translate(525.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(552.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-83" transform="translate(573.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-83" transform="translate(607.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a0" transform="translate(642.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-84" transform="translate(671.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e2" transform="translate(725.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(791.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(812.390625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(834.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(888.1875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(930.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(973.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6b" transform="translate(994.390625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1031.1875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5a" transform="translate(1053.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1139.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1192.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-71" transform="translate(1213.484375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1263.171875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1305.875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1326.671875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1348.875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(1405.46875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(1453.46875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1511.671875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1533.875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(1554.671875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(1594.578125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1646.171875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1688.875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1711.28125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(1767.875 0)"/>
+    </g>
+   </g>
+   <g id="text_15">
+    <!-- 0–40 µs -->
+    <g style="fill: #617084" transform="translate(267.397344 156.70542) scale(0.11 -0.11)">
+     <defs>
+      <path id="OutfitArticle-Regular-b0" d="M 422 1382 
+L 422 1875 
+L 3091 1875 
+L 3091 1382 
+L 422 1382 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-Regular-e1" d="M 627 -1197 
+L 627 3040 
+L 1203 3040 
+L 1203 -1197 
+L 627 -1197 
+z
+M 2022 -64 
+Q 1491 -64 1203 272 
+Q 915 608 915 1133 
+L 1203 1267 
+Q 1203 877 1411 685 
+Q 1619 493 1926 493 
+Q 2234 493 2445 681 
+Q 2656 870 2656 1274 
+L 2656 3040 
+L 3232 3040 
+L 3232 1203 
+Q 3232 838 3078 550 
+Q 2925 262 2653 99 
+Q 2381 -64 2022 -64 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-Regular-82"/>
+     <use xlink:href="#OutfitArticle-Regular-b0" transform="translate(65.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-86" transform="translate(120.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-82" transform="translate(180.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(245.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e1" transform="translate(266.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(324.59375 0)"/>
+    </g>
+   </g>
+   <g id="text_16">
+    <!-- 1 × 131,072 -->
+    <g style="fill: #17283b" transform="translate(22.68 150) scale(0.15 -0.15)">
+     <defs>
+      <path id="OutfitArticle-SemiBold-9e" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-SemiBold-d8" d="M 858 698 
+L 333 1222 
+L 2701 3590 
+L 3226 3066 
+L 858 698 
+z
+M 2643 749 
+L 378 3014 
+L 902 3539 
+L 3168 1274 
+L 2643 749 
+z
+" transform="scale(0.015625)"/>
+      <path id="OutfitArticle-SemiBold-a1" d="M 365 -762 
+L 819 83 
+L 1082 154 
+Q 1037 70 979 12 
+Q 922 -45 845 -45 
+Q 685 -45 544 96 
+Q 403 237 403 448 
+Q 403 678 556 838 
+Q 710 998 941 998 
+Q 1152 998 1312 838 
+Q 1472 678 1472 448 
+Q 1472 358 1433 233 
+Q 1395 109 1293 -83 
+L 800 -992 
+L 365 -762 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-d8" transform="translate(56.203125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(111.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(131.203125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(167.90625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(222.90625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a1" transform="translate(259.609375 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-82" transform="translate(285.515625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(348.421875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(400.328125 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_7">
+    <path d="M 22.68 537.897502 
+L 307.8 537.897502 
+L 307.8 396.715249 
+L 22.68 396.715249 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_3">
+    <g id="xtick_6">
+     <g id="line2d_19">
+      <path d="M 22.68 537.897502 
+L 22.68 396.715249 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_20"/>
+     <g id="text_17">
+      <!-- 0 -->
+      <g style="fill: #617084" transform="translate(18.941156 557.297502) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-82"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_21">
+      <path d="M 79.704 537.897502 
+L 79.704 396.715249 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_22"/>
+     <g id="text_18">
+      <!-- 10 -->
+      <g style="fill: #617084" transform="translate(73.987078 557.297502) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-83"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(34.703125 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_23">
+      <path d="M 136.728 537.897502 
+L 136.728 396.715249 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_24"/>
+     <g id="text_19">
+      <!-- 20 -->
+      <g style="fill: #617084" transform="translate(129.905812 557.297502) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-84"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(54.09375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_25">
+      <path d="M 193.752 537.897502 
+L 193.752 396.715249 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_26"/>
+     <g id="text_20">
+      <!-- 30 -->
+      <g style="fill: #617084" transform="translate(186.946734 557.297502) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-85"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(53.796875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_27">
+      <path d="M 250.776 537.897502 
+L 250.776 396.715249 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_28"/>
+     <g id="text_21">
+      <!-- 40 -->
+      <g style="fill: #617084" transform="translate(243.628734 557.297502) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-86"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(59.796875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_29">
+      <path d="M 307.8 537.897502 
+L 307.8 396.715249 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_30"/>
+     <g id="text_22">
+      <!-- 50 -->
+      <g style="fill: #617084" transform="translate(300.977813 557.297502) scale(0.114 -0.114)">
+       <defs>
+        <path id="OutfitArticle-Regular-87" d="M 1587 -64 
+Q 1133 -64 777 99 
+Q 422 262 179 576 
+L 589 986 
+Q 736 762 995 630 
+Q 1254 499 1574 499 
+Q 1875 499 2102 614 
+Q 2330 730 2461 938 
+Q 2592 1146 2592 1434 
+Q 2592 1728 2464 1933 
+Q 2336 2138 2121 2243 
+Q 1907 2349 1651 2349 
+Q 1389 2349 1174 2285 
+Q 960 2221 768 2067 
+L 774 2451 
+Q 883 2586 1024 2669 
+Q 1165 2752 1344 2797 
+Q 1523 2842 1760 2842 
+Q 2221 2842 2541 2650 
+Q 2861 2458 3030 2131 
+Q 3200 1805 3200 1402 
+Q 3200 979 2992 646 
+Q 2784 314 2419 125 
+Q 2054 -64 1587 -64 
+z
+M 768 2067 
+L 442 2394 
+L 640 4442 
+L 1190 4442 
+L 966 2336 
+L 768 2067 
+z
+M 762 3904 
+L 640 4442 
+L 2976 4442 
+L 2976 3904 
+L 762 3904 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#OutfitArticle-Regular-87"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(54.09375 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_4"/>
+   <g id="patch_8">
+    <path d="M 22.68 418.149282 
+L 277.437571 418.149282 
+L 277.437571 424.053267 
+L 22.68 424.053267 
+z
+" clip-path="url(#p6ddad99bc2)" style="fill: #66758a"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 22.68 443.818783 
+L 243.938822 443.818783 
+L 243.938822 449.722768 
+L 22.68 449.722768 
+z
+" clip-path="url(#p6ddad99bc2)" style="fill: #3867d6"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 22.68 469.488283 
+L 136.414368 469.488283 
+L 136.414368 475.392268 
+L 22.68 475.392268 
+z
+" clip-path="url(#p6ddad99bc2)" style="fill: #8357aa"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 22.68 495.157783 
+L 132.288682 495.157783 
+L 132.288682 501.061769 
+L 22.68 501.061769 
+z
+" clip-path="url(#p6ddad99bc2)" style="fill: #087f73"/>
+   </g>
+   <g id="text_23">
+    <!-- Unfused Baseline -->
+    <g style="fill: #17283b" transform="translate(22.68 410.124424) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-30"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(68.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(122.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(162.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(214 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(256.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-46" transform="translate(310.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(368.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a" transform="translate(389.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(451.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(509.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(552.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(606.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(628.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(650.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(705.5 0)"/>
+    </g>
+   </g>
+   <g id="text_24">
+    <!-- 44.7 -->
+    <g style="fill: #17283b" transform="translate(283.094 410.072424) scale(0.128 -0.128)">
+     <defs>
+      <path id="OutfitArticle-SemiBold-86" d="M 160 1587 
+L 1696 4499 
+L 2656 4499 
+L 1082 1587 
+L 160 1587 
+z
+M 160 1075 
+L 160 1587 
+L 480 1837 
+L 3706 1837 
+L 3706 1075 
+L 160 1075 
+z
+M 2285 0 
+L 2285 2867 
+L 3142 2867 
+L 3142 0 
+L 2285 0 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-SemiBold-86"/>
+     <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(59.109375 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(116.421875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(140.515625 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_5">
+    <path d="M 275.826643 421.101275 
+L 279.048499 421.101275 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_31">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="275.826643" y="421.101275" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_32">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="279.048499" y="421.101275" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_25">
+    <!-- + CUDA Graph -->
+    <g style="fill: #17283b" transform="translate(22.68 435.793925) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-b" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-30" transform="translate(143.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-d" transform="translate(212.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1" transform="translate(286.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(352.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-15" transform="translate(373.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(450.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(489.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-65" transform="translate(547.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4f" transform="translate(606 0)"/>
+    </g>
+   </g>
+   <g id="text_26">
+    <!-- 38.8 -->
+    <g style="fill: #17283b" transform="translate(282.776 435.741925) scale(0.128 -0.128)">
+     <defs>
+      <path id="OutfitArticle-SemiBold-8a" d="M 1779 -64 
+Q 1299 -64 950 102 
+Q 602 269 406 569 
+Q 211 870 211 1248 
+Q 211 1562 332 1818 
+Q 454 2074 681 2250 
+Q 909 2426 1216 2496 
+L 1197 2285 
+Q 941 2349 761 2509 
+Q 582 2669 492 2889 
+Q 403 3110 403 3347 
+Q 403 3712 579 3987 
+Q 755 4262 1065 4416 
+Q 1376 4570 1779 4570 
+Q 2182 4570 2489 4416 
+Q 2797 4262 2973 3987 
+Q 3149 3712 3149 3347 
+Q 3149 3110 3059 2889 
+Q 2970 2669 2794 2509 
+Q 2618 2349 2355 2285 
+L 2336 2496 
+Q 2650 2426 2874 2250 
+Q 3098 2074 3219 1818 
+Q 3341 1562 3341 1248 
+Q 3341 870 3149 569 
+Q 2957 269 2605 102 
+Q 2253 -64 1779 -64 
+z
+M 1779 698 
+Q 1990 698 2156 784 
+Q 2323 870 2416 1024 
+Q 2509 1178 2509 1370 
+Q 2509 1568 2416 1718 
+Q 2323 1869 2156 1955 
+Q 1990 2042 1779 2042 
+Q 1562 2042 1398 1955 
+Q 1235 1869 1139 1718 
+Q 1043 1568 1043 1370 
+Q 1043 1178 1139 1024 
+Q 1235 870 1398 784 
+Q 1562 698 1779 698 
+z
+M 1779 2701 
+Q 2029 2701 2189 2861 
+Q 2349 3021 2349 3270 
+Q 2349 3526 2189 3686 
+Q 2029 3846 1779 3846 
+Q 1530 3846 1366 3686 
+Q 1203 3526 1203 3277 
+Q 1203 3021 1366 2861 
+Q 1530 2701 1779 2701 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-SemiBold-85"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8a" transform="translate(55 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(110.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8a" transform="translate(140 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_6">
+    <path d="M 241.828934 446.770775 
+L 246.04871 446.770775 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_33">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="241.828934" y="446.770775" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_34">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="246.04871" y="446.770775" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_27">
+    <!-- + Local Fusion -->
+    <g style="fill: #17283b" transform="translate(22.68 461.463425) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1e" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(128.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(184.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(232.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(291 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(313.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-14" transform="translate(334 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(390.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(442.1875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(484.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(507.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(563.890625 0)"/>
+    </g>
+   </g>
+   <g id="text_28">
+    <!-- 19.9 -->
+    <g style="fill: #17283b" transform="translate(286.168 461.411425) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(87.203125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(112.203125 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_7">
+    <path d="M 136.203379 472.440276 
+L 136.625357 472.440276 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_35">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="136.203379" y="472.440276" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_36">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="136.625357" y="472.440276" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_29">
+    <!-- + Megakernel -->
+    <g style="fill: #17283b" transform="translate(22.68 487.132926) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1f" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(158.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(212.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(270.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(328.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(375.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(429.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(469.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(524.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(578 0)"/>
+    </g>
+   </g>
+   <g id="text_30">
+    <!-- 19.2 -->
+    <g style="fill: #17283b" transform="translate(285.784 487.080926) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(87.203125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(116.703125 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_8">
+    <path d="M 132.171782 498.109776 
+L 132.405581 498.109776 
+" clip-path="url(#p6ddad99bc2)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_37">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="132.171782" y="498.109776" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_38">
+    <g clip-path="url(#p6ddad99bc2)">
+     <use xlink:href="#m31e2efa215" x="132.405581" y="498.109776" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_31">
+    <!-- Megakernel: 3.6% less time vs local fusion -->
+    <g style="fill: #617084" transform="translate(22.68 531.921702) scale(0.116 -0.116)">
+     <defs>
+      <path id="OutfitArticle-Regular-88" d="M 1805 -64 
+Q 1363 -64 1014 141 
+Q 666 346 461 691 
+Q 256 1037 256 1459 
+Q 256 2048 666 2630 
+L 1971 4442 
+L 2669 4442 
+L 1331 2618 
+L 1114 2502 
+Q 1190 2637 1299 2729 
+Q 1408 2822 1568 2873 
+Q 1728 2925 1946 2925 
+Q 2336 2925 2653 2739 
+Q 2970 2554 3165 2230 
+Q 3360 1907 3360 1478 
+Q 3360 1056 3152 704 
+Q 2944 352 2589 144 
+Q 2234 -64 1805 -64 
+z
+M 1805 499 
+Q 2074 499 2288 630 
+Q 2502 762 2627 982 
+Q 2752 1203 2752 1478 
+Q 2752 1754 2627 1974 
+Q 2502 2195 2288 2323 
+Q 2074 2451 1805 2451 
+Q 1536 2451 1321 2323 
+Q 1107 2195 982 1974 
+Q 858 1754 858 1478 
+Q 858 1203 982 979 
+Q 1107 755 1321 627 
+Q 1536 499 1805 499 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#OutfitArticle-Regular-1f"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(83.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(137.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(195.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(253.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(300.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(354.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(394.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(449.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(503 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a2" transform="translate(525.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(552.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-85" transform="translate(573.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a0" transform="translate(624.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-88" transform="translate(650.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e2" transform="translate(706.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(772.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(793.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(815.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(869.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(912 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(954.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6b" transform="translate(975.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1012.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5a" transform="translate(1034.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1120.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1173.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-71" transform="translate(1194.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1244.28125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1286.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1307.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1329.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(1386.578125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(1434.578125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1492.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1514.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(1535.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(1575.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1627.28125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1669.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1692.390625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(1748.984375 0)"/>
+    </g>
+   </g>
+   <g id="text_32">
+    <!-- 0–50 µs -->
+    <g style="fill: #617084" transform="translate(268.024688 385.420669) scale(0.11 -0.11)">
+     <use xlink:href="#OutfitArticle-Regular-82"/>
+     <use xlink:href="#OutfitArticle-Regular-b0" transform="translate(65.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-87" transform="translate(120.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-82" transform="translate(174.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(240.1875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e1" transform="translate(260.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(318.890625 0)"/>
+    </g>
+   </g>
+   <g id="text_33">
+    <!-- 16 × 131,072 -->
+    <g style="fill: #17283b" transform="translate(22.68 378.715249) scale(0.15 -0.15)">
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-88" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(93.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-d8" transform="translate(113 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(168.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(188 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(224.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(279.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a1" transform="translate(316.40625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-82" transform="translate(342.3125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(405.21875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(457.125 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_12">
+    <path d="M 22.68 766.612751 
+L 307.8 766.612751 
+L 307.8 625.430498 
+L 22.68 625.430498 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_5">
+    <g id="xtick_12">
+     <g id="line2d_39">
+      <path d="M 22.68 766.612751 
+L 22.68 625.430498 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_40"/>
+     <g id="text_34">
+      <!-- 0 -->
+      <g style="fill: #617084" transform="translate(18.941156 786.012751) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-82"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_41">
+      <path d="M 93.96 766.612751 
+L 93.96 625.430498 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_42"/>
+     <g id="text_35">
+      <!-- 20 -->
+      <g style="fill: #617084" transform="translate(87.137813 786.012751) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-84"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(54.09375 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_43">
+      <path d="M 165.24 766.612751 
+L 165.24 625.430498 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_44"/>
+     <g id="text_36">
+      <!-- 40 -->
+      <g style="fill: #617084" transform="translate(158.092734 786.012751) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-86"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(59.796875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_45">
+      <path d="M 236.52 766.612751 
+L 236.52 625.430498 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_46"/>
+     <g id="text_37">
+      <!-- 60 -->
+      <g style="fill: #617084" transform="translate(229.566 786.012751) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-88"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(56.40625 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_47">
+      <path d="M 307.8 766.612751 
+L 307.8 625.430498 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_48"/>
+     <g id="text_38">
+      <!-- 80 -->
+      <g style="fill: #617084" transform="translate(300.926156 786.012751) scale(0.114 -0.114)">
+       <defs>
+        <path id="OutfitArticle-Regular-8a" d="M 1760 -64 
+Q 1318 -64 982 102 
+Q 646 269 460 563 
+Q 275 858 275 1229 
+Q 275 1530 390 1779 
+Q 506 2029 730 2205 
+Q 954 2381 1254 2458 
+L 1274 2285 
+Q 1018 2355 838 2512 
+Q 659 2669 566 2883 
+Q 474 3098 474 3341 
+Q 474 3686 640 3948 
+Q 806 4211 1097 4361 
+Q 1389 4512 1760 4512 
+Q 2138 4512 2426 4361 
+Q 2714 4211 2880 3948 
+Q 3046 3686 3046 3341 
+Q 3046 3098 2953 2883 
+Q 2861 2669 2685 2512 
+Q 2509 2355 2253 2285 
+L 2266 2458 
+Q 2573 2381 2793 2205 
+Q 3014 2029 3132 1779 
+Q 3251 1530 3251 1229 
+Q 3251 858 3065 563 
+Q 2880 269 2544 102 
+Q 2208 -64 1760 -64 
+z
+M 1760 480 
+Q 2029 480 2230 585 
+Q 2432 691 2550 876 
+Q 2669 1062 2669 1306 
+Q 2669 1542 2550 1728 
+Q 2432 1914 2230 2019 
+Q 2029 2125 1760 2125 
+Q 1498 2125 1293 2019 
+Q 1088 1914 969 1728 
+Q 851 1542 851 1306 
+Q 851 1062 969 876 
+Q 1088 691 1293 585 
+Q 1498 480 1760 480 
+z
+M 1760 2592 
+Q 2080 2592 2285 2790 
+Q 2490 2989 2490 3302 
+Q 2490 3610 2285 3805 
+Q 2080 4000 1760 4000 
+Q 1446 4000 1241 3805 
+Q 1037 3610 1037 3302 
+Q 1037 2989 1241 2790 
+Q 1446 2592 1760 2592 
+z
+" transform="scale(0.015625)"/>
+       </defs>
+       <use xlink:href="#OutfitArticle-Regular-8a"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(55 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_6"/>
+   <g id="patch_13">
+    <path d="M 22.68 646.864531 
+L 271.88379 646.864531 
+L 271.88379 652.768516 
+L 22.68 652.768516 
+z
+" clip-path="url(#p78a5128aa5)" style="fill: #66758a"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 22.68 672.534032 
+L 252.524142 672.534032 
+L 252.524142 678.438017 
+L 22.68 678.438017 
+z
+" clip-path="url(#p78a5128aa5)" style="fill: #3867d6"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 22.68 698.203532 
+L 120.821868 698.203532 
+L 120.821868 704.107517 
+L 22.68 704.107517 
+z
+" clip-path="url(#p78a5128aa5)" style="fill: #8357aa"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 22.68 723.873033 
+L 112.360932 723.873033 
+L 112.360932 729.777018 
+L 22.68 729.777018 
+z
+" clip-path="url(#p78a5128aa5)" style="fill: #087f73"/>
+   </g>
+   <g id="text_39">
+    <!-- Unfused Baseline -->
+    <g style="fill: #17283b" transform="translate(22.68 638.839674) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-30"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(68.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(122.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(162.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(214 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(256.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-46" transform="translate(310.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(368.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a" transform="translate(389.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(451.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(509.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(552.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(606.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(628.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(650.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(705.5 0)"/>
+    </g>
+   </g>
+   <g id="text_40">
+    <!-- 69.9 -->
+    <g style="fill: #17283b" transform="translate(283.788 638.787674) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-88"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(55.296875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(105.796875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(130.796875 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_9">
+    <path d="M 271.64322 649.816524 
+L 272.12436 649.816524 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_49">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="271.64322" y="649.816524" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_50">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="272.12436" y="649.816524" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_41">
+    <!-- + CUDA Graph -->
+    <g style="fill: #17283b" transform="translate(22.68 664.509174) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-b" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-30" transform="translate(143.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-d" transform="translate(212.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1" transform="translate(286.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(352.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-15" transform="translate(373.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(450.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(489.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-65" transform="translate(547.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4f" transform="translate(606 0)"/>
+    </g>
+   </g>
+   <g id="text_42">
+    <!-- 64.5 -->
+    <g style="fill: #17283b" transform="translate(282.34 664.457174) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-88"/>
+     <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(56.796875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(114.109375 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(143.609375 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_10">
+    <path d="M 251.805996 675.486024 
+L 253.242288 675.486024 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_51">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="251.805996" y="675.486024" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_52">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="253.242288" y="675.486024" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_43">
+    <!-- + Local Fusion -->
+    <g style="fill: #17283b" transform="translate(22.68 690.178675) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1e" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(128.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(184.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(232.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(291 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(313.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-14" transform="translate(334 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(390.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(442.1875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(484.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(507.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(563.890625 0)"/>
+    </g>
+   </g>
+   <g id="text_44">
+    <!-- 27.5 -->
+    <g style="fill: #17283b" transform="translate(284.184 690.126675) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-84"/>
+     <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(53.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(99.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(129.203125 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_11">
+    <path d="M 119.51388 701.155525 
+L 122.129856 701.155525 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_53">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="119.51388" y="701.155525" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_54">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="122.129856" y="701.155525" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_45">
+    <!-- + Megakernel -->
+    <g style="fill: #17283b" transform="translate(22.68 715.848175) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1f" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(158.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(212.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(270.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(328.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(375.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(429.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(469.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(524.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(578 0)"/>
+    </g>
+   </g>
+   <g id="text_46">
+    <!-- 25.2 -->
+    <g style="fill: #17283b" transform="translate(283.058 715.796175) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-84"/>
+     <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(55.296875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(108.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(138 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_12">
+    <path d="M 110.507652 726.825025 
+L 114.214212 726.825025 
+" clip-path="url(#p78a5128aa5)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_55">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="110.507652" y="726.825025" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_56">
+    <g clip-path="url(#p78a5128aa5)">
+     <use xlink:href="#m31e2efa215" x="114.214212" y="726.825025" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_47">
+    <!-- Megakernel: 8.6% less time vs local fusion -->
+    <g style="fill: #617084" transform="translate(22.68 760.636951) scale(0.116 -0.116)">
+     <use xlink:href="#OutfitArticle-Regular-1f"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(83.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(137.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(195.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(253.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(300.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(354.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(394.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(449.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(503 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a2" transform="translate(525.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(552.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-8a" transform="translate(573.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a0" transform="translate(628.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-88" transform="translate(654.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e2" transform="translate(710.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(776.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(797.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(819.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(873.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(916 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(958.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6b" transform="translate(979.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1016.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5a" transform="translate(1038.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1124.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1177.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-71" transform="translate(1198.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1248.28125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1290.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1311.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1333.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(1390.578125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(1438.578125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1496.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1518.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(1539.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(1579.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1631.28125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1673.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1696.390625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(1752.984375 0)"/>
+    </g>
+   </g>
+   <g id="text_48">
+    <!-- 0–80 µs -->
+    <g style="fill: #617084" transform="translate(267.925 614.135918) scale(0.11 -0.11)">
+     <use xlink:href="#OutfitArticle-Regular-82"/>
+     <use xlink:href="#OutfitArticle-Regular-b0" transform="translate(65.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-8a" transform="translate(120.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-82" transform="translate(175.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(241.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e1" transform="translate(261.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(319.796875 0)"/>
+    </g>
+   </g>
+   <g id="text_49">
+    <!-- 32 × 131,072 -->
+    <g style="fill: #17283b" transform="translate(22.68 607.430498) scale(0.15 -0.15)">
+     <use xlink:href="#OutfitArticle-SemiBold-85"/>
+     <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(55 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(110.296875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-d8" transform="translate(129.796875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(185.296875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(204.796875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(241.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(296.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a1" transform="translate(333.203125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-82" transform="translate(359.109375 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(422.015625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(473.921875 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="axes_4">
+   <g id="patch_17">
+    <path d="M 22.68 995.328 
+L 307.8 995.328 
+L 307.8 854.145747 
+L 22.68 854.145747 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_7">
+    <g id="xtick_17">
+     <g id="line2d_57">
+      <path d="M 22.68 995.328 
+L 22.68 854.145747 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_58"/>
+     <g id="text_50">
+      <!-- 0 -->
+      <g style="fill: #617084" transform="translate(18.941156 1014.728) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-82"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_18">
+     <g id="line2d_59">
+      <path d="M 93.96 995.328 
+L 93.96 854.145747 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_60"/>
+     <g id="text_51">
+      <!-- 40 -->
+      <g style="fill: #617084" transform="translate(86.812734 1014.728) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-86"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(59.796875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_19">
+     <g id="line2d_61">
+      <path d="M 165.24 995.328 
+L 165.24 854.145747 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_62"/>
+     <g id="text_52">
+      <!-- 80 -->
+      <g style="fill: #617084" transform="translate(158.366156 1014.728) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-8a"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(55 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_20">
+     <g id="line2d_63">
+      <path d="M 236.52 995.328 
+L 236.52 854.145747 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_64"/>
+     <g id="text_53">
+      <!-- 120 -->
+      <g style="fill: #617084" transform="translate(227.719734 1014.728) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-83"/>
+       <use xlink:href="#OutfitArticle-Regular-84" transform="translate(34.703125 0)"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(88.796875 0)"/>
+      </g>
+     </g>
+    </g>
+    <g id="xtick_21">
+     <g id="line2d_65">
+      <path d="M 307.8 995.328 
+L 307.8 854.145747 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_66"/>
+     <g id="text_54">
+      <!-- 160 -->
+      <g style="fill: #617084" transform="translate(298.867922 1014.728) scale(0.114 -0.114)">
+       <use xlink:href="#OutfitArticle-Regular-83"/>
+       <use xlink:href="#OutfitArticle-Regular-88" transform="translate(34.703125 0)"/>
+       <use xlink:href="#OutfitArticle-Regular-82" transform="translate(91.109375 0)"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_8"/>
+   <g id="patch_18">
+    <path d="M 22.68 875.57978 
+L 278.144847 875.57978 
+L 278.144847 881.483765 
+L 22.68 881.483765 
+z
+" clip-path="url(#p7e114897b6)" style="fill: #66758a"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 22.68 901.249281 
+L 264.748662 901.249281 
+L 264.748662 907.153266 
+L 22.68 907.153266 
+z
+" clip-path="url(#p7e114897b6)" style="fill: #3867d6"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 22.68 926.918781 
+L 132.763941 926.918781 
+L 132.763941 932.822766 
+L 22.68 932.822766 
+z
+" clip-path="url(#p7e114897b6)" style="fill: #8357aa"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 22.68 952.588282 
+L 121.482099 952.588282 
+L 121.482099 958.492267 
+L 22.68 958.492267 
+z
+" clip-path="url(#p7e114897b6)" style="fill: #087f73"/>
+   </g>
+   <g id="text_55">
+    <!-- Unfused Baseline -->
+    <g style="fill: #17283b" transform="translate(22.68 867.554923) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-30"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(68.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(122.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(162.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(214 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(256.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-46" transform="translate(310.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(368.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a" transform="translate(389.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(451.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(509.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(552.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(606.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(628.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(650.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(705.5 0)"/>
+    </g>
+   </g>
+   <g id="text_56">
+    <!-- 143.4 -->
+    <g style="fill: #17283b" transform="translate(277.424 867.502923) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(97.109375 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(149.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(176.90625 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_13">
+    <path d="M 277.530948 878.531773 
+L 278.758746 878.531773 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_67">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="277.530948" y="878.531773" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_68">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="278.758746" y="878.531773" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_57">
+    <!-- + CUDA Graph -->
+    <g style="fill: #17283b" transform="translate(22.68 893.224423) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-b" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-30" transform="translate(143.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-d" transform="translate(212.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1" transform="translate(286.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(352.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-15" transform="translate(373.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(450.984375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(489.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-65" transform="translate(547.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4f" transform="translate(606 0)"/>
+    </g>
+   </g>
+   <g id="text_58">
+    <!-- 135.8 -->
+    <g style="fill: #17283b" transform="translate(278.372 893.172423) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-83"/>
+     <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(36.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(91.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(144.90625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8a" transform="translate(174.40625 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_14">
+    <path d="M 262.58175 904.201273 
+L 266.915574 904.201273 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_69">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="262.58175" y="904.201273" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_70">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="266.915574" y="904.201273" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_59">
+    <!-- + Local Fusion -->
+    <g style="fill: #17283b" transform="translate(22.68 918.893924) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1e" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(128.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(184.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(232.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(291 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(313.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-14" transform="translate(334 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(390.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(442.1875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(484.890625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(507.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(563.890625 0)"/>
+    </g>
+   </g>
+   <g id="text_60">
+    <!-- 61.8 -->
+    <g style="fill: #17283b" transform="translate(285.182 918.841924) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-88"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(55 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(91.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-8a" transform="translate(121.203125 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_15">
+    <path d="M 132.053814 929.870774 
+L 133.474068 929.870774 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_71">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="132.053814" y="929.870774" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_72">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="133.474068" y="929.870774" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_61">
+    <!-- + Megakernel -->
+    <g style="fill: #17283b" transform="translate(22.68 944.563424) scale(0.126 -0.126)">
+     <use xlink:href="#OutfitArticle-Regular-d6"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-1f" transform="translate(75 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(158.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(212.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(270.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(328.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(375.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(429.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(469.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(524.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(578 0)"/>
+    </g>
+   </g>
+   <g id="text_62">
+    <!-- 55.4 -->
+    <g style="fill: #17283b" transform="translate(282.698 944.511424) scale(0.128 -0.128)">
+     <use xlink:href="#OutfitArticle-SemiBold-87"/>
+     <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(55.296875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(108.5 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(135.703125 0)"/>
+    </g>
+   </g>
+   <g id="LineCollection_16">
+    <path d="M 121.025016 955.540274 
+L 121.939182 955.540274 
+" clip-path="url(#p7e114897b6)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+   </g>
+   <g id="line2d_73">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="121.025016" y="955.540274" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="line2d_74">
+    <g clip-path="url(#p7e114897b6)">
+     <use xlink:href="#m31e2efa215" x="121.939182" y="955.540274" style="fill: #1f77b4; stroke: #17283b"/>
+    </g>
+   </g>
+   <g id="text_63">
+    <!-- Megakernel: 10.2% less time vs local fusion -->
+    <g style="fill: #617084" transform="translate(22.68 989.3522) scale(0.116 -0.116)">
+     <use xlink:href="#OutfitArticle-Regular-1f"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(83.90625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(137.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(195.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-58" transform="translate(253.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(300.703125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-68" transform="translate(354.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(394.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(449.40625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(503 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a2" transform="translate(525.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(552.296875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-83" transform="translate(573.09375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-82" transform="translate(607.796875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-a0" transform="translate(670.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-84" transform="translate(699.6875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e2" transform="translate(753.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(819.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(840.578125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(862.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(916.375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(959.078125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1001.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6b" transform="translate(1022.578125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1059.375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5a" transform="translate(1081.78125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1167.28125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1220.875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-71" transform="translate(1241.671875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1291.359375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1334.0625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1354.859375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1377.0625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-44" transform="translate(1433.65625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(1481.65625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1539.859375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1562.0625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(1582.859375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(1622.765625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1674.359375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1717.0625 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1739.46875 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(1796.0625 0)"/>
+    </g>
+   </g>
+   <g id="text_64">
+    <!-- 0–160 µs -->
+    <g style="fill: #617084" transform="translate(263.952969 842.851167) scale(0.11 -0.11)">
+     <use xlink:href="#OutfitArticle-Regular-82"/>
+     <use xlink:href="#OutfitArticle-Regular-b0" transform="translate(65.59375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-83" transform="translate(120.5 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-88" transform="translate(155.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-82" transform="translate(211.609375 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(277.203125 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-e1" transform="translate(298 0)"/>
+     <use xlink:href="#OutfitArticle-Regular-69" transform="translate(355.90625 0)"/>
+    </g>
+   </g>
+   <g id="text_65">
+    <!-- 64 × 131,072 -->
+    <g style="fill: #17283b" transform="translate(22.68 836.145747) scale(0.15 -0.15)">
+     <use xlink:href="#OutfitArticle-SemiBold-88"/>
+     <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(56.796875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(117.203125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-d8" transform="translate(136.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(192.203125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(211.703125 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(248.40625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(303.40625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-a1" transform="translate(340.109375 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-82" transform="translate(366.015625 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(428.921875 0)"/>
+     <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(480.828125 0)"/>
+    </g>
+   </g>
+  </g>
+  <g id="text_66">
+   <!-- Time per Invocation -->
+   <g style="fill: #17283b" transform="translate(14.58 36.5) scale(0.185 -0.185)">
+    <defs>
+     <path id="OutfitArticle-SemiBold-2f" d="M 1574 0 
+L 1574 4403 
+L 2451 4403 
+L 2451 0 
+L 1574 0 
+z
+M 141 3725 
+L 141 4499 
+L 3885 4499 
+L 3885 3725 
+L 141 3725 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-50" d="M 371 0 
+L 371 3091 
+L 1216 3091 
+L 1216 0 
+L 371 0 
+z
+M 794 3590 
+Q 589 3590 454 3728 
+Q 320 3866 320 4070 
+Q 320 4269 454 4409 
+Q 589 4550 794 4550 
+Q 1005 4550 1136 4409 
+Q 1267 4269 1267 4070 
+Q 1267 3866 1136 3728 
+Q 1005 3590 794 3590 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-5a" d="M 371 0 
+L 371 3091 
+L 1210 3091 
+L 1210 0 
+L 371 0 
+z
+M 2387 0 
+L 2387 1824 
+Q 2387 2093 2217 2243 
+Q 2048 2394 1798 2394 
+Q 1632 2394 1497 2326 
+Q 1363 2259 1286 2131 
+Q 1210 2003 1210 1824 
+L 883 1984 
+Q 883 2342 1040 2604 
+Q 1197 2867 1465 3011 
+Q 1734 3155 2074 3155 
+Q 2394 3155 2656 3011 
+Q 2918 2867 3072 2608 
+Q 3226 2349 3226 1984 
+L 3226 0 
+L 2387 0 
+z
+M 4403 0 
+L 4403 1824 
+Q 4403 2093 4233 2243 
+Q 4064 2394 3814 2394 
+Q 3654 2394 3516 2326 
+Q 3379 2259 3302 2131 
+Q 3226 2003 3226 1824 
+L 2746 1939 
+Q 2771 2310 2944 2582 
+Q 3117 2854 3398 3004 
+Q 3680 3155 4026 3155 
+Q 4371 3155 4646 3011 
+Q 4922 2867 5082 2598 
+Q 5242 2330 5242 1958 
+L 5242 0 
+L 4403 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-48" d="M 1850 -64 
+Q 1363 -64 985 144 
+Q 608 352 387 717 
+Q 166 1082 166 1549 
+Q 166 2010 380 2371 
+Q 595 2733 966 2947 
+Q 1338 3162 1792 3162 
+Q 2240 3162 2582 2960 
+Q 2925 2758 3120 2409 
+Q 3315 2061 3315 1619 
+Q 3315 1536 3305 1449 
+Q 3296 1363 3270 1254 
+L 672 1248 
+L 672 1875 
+L 2880 1882 
+L 2541 1619 
+Q 2528 1894 2441 2080 
+Q 2355 2266 2192 2365 
+Q 2029 2464 1792 2464 
+Q 1542 2464 1356 2352 
+Q 1171 2240 1072 2038 
+Q 973 1837 973 1562 
+Q 973 1280 1078 1072 
+Q 1184 864 1382 752 
+Q 1581 640 1843 640 
+Q 2080 640 2272 720 
+Q 2464 800 2605 960 
+L 3098 467 
+Q 2874 205 2550 70 
+Q 2227 -64 1850 -64 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-65" d="M 2086 -64 
+Q 1754 -64 1485 73 
+Q 1216 211 1056 448 
+Q 896 685 883 992 
+L 883 2086 
+Q 896 2394 1059 2634 
+Q 1222 2874 1488 3014 
+Q 1754 3155 2086 3155 
+Q 2515 3155 2854 2944 
+Q 3194 2733 3389 2368 
+Q 3584 2003 3584 1542 
+Q 3584 1088 3389 723 
+Q 3194 358 2854 147 
+Q 2515 -64 2086 -64 
+z
+M 371 -1293 
+L 371 3091 
+L 1210 3091 
+L 1210 2278 
+L 1069 1530 
+L 1203 781 
+L 1203 -1293 
+L 371 -1293 
+z
+M 1939 710 
+Q 2170 710 2349 816 
+Q 2528 922 2627 1110 
+Q 2726 1299 2726 1549 
+Q 2726 1792 2627 1981 
+Q 2528 2170 2349 2275 
+Q 2170 2381 1939 2381 
+Q 1715 2381 1536 2275 
+Q 1357 2170 1257 1981 
+Q 1158 1792 1158 1549 
+Q 1158 1299 1257 1110 
+Q 1357 922 1533 816 
+Q 1709 710 1939 710 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-68" d="M 371 0 
+L 371 3091 
+L 1210 3091 
+L 1210 0 
+L 371 0 
+z
+M 1210 1709 
+L 883 1926 
+Q 941 2496 1216 2825 
+Q 1491 3155 2010 3155 
+Q 2234 3155 2413 3081 
+Q 2592 3008 2739 2842 
+L 2214 2240 
+Q 2144 2317 2045 2355 
+Q 1946 2394 1818 2394 
+Q 1549 2394 1379 2224 
+Q 1210 2054 1210 1709 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-17" d="M 461 0 
+L 461 4499 
+L 1331 4499 
+L 1331 0 
+L 461 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-5b" d="M 2451 0 
+L 2451 1773 
+Q 2451 2048 2278 2221 
+Q 2106 2394 1830 2394 
+Q 1651 2394 1510 2317 
+Q 1370 2240 1290 2099 
+Q 1210 1958 1210 1773 
+L 883 1939 
+Q 883 2304 1040 2576 
+Q 1197 2848 1475 3001 
+Q 1754 3155 2106 3155 
+Q 2445 3155 2713 2985 
+Q 2982 2816 3136 2544 
+Q 3290 2272 3290 1958 
+L 3290 0 
+L 2451 0 
+z
+M 371 0 
+L 371 3091 
+L 1210 3091 
+L 1210 0 
+L 371 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-71" d="M 1376 0 
+L 13 3091 
+L 934 3091 
+L 1914 544 
+L 1459 544 
+L 2445 3091 
+L 3334 3091 
+L 1978 0 
+L 1376 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-5d" d="M 1824 -64 
+Q 1357 -64 982 150 
+Q 608 365 387 733 
+Q 166 1101 166 1555 
+Q 166 2010 384 2371 
+Q 602 2733 979 2947 
+Q 1357 3162 1818 3162 
+Q 2291 3162 2665 2947 
+Q 3040 2733 3257 2371 
+Q 3475 2010 3475 1555 
+Q 3475 1101 3257 733 
+Q 3040 365 2665 150 
+Q 2291 -64 1824 -64 
+z
+M 1818 717 
+Q 2054 717 2236 822 
+Q 2419 928 2518 1117 
+Q 2618 1306 2618 1549 
+Q 2618 1792 2515 1977 
+Q 2413 2163 2233 2268 
+Q 2054 2374 1818 2374 
+Q 1587 2374 1408 2268 
+Q 1229 2163 1126 1977 
+Q 1024 1792 1024 1549 
+Q 1024 1306 1126 1117 
+Q 1229 928 1408 822 
+Q 1587 717 1818 717 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-44" d="M 1830 -64 
+Q 1357 -64 979 147 
+Q 602 358 384 723 
+Q 166 1088 166 1542 
+Q 166 2003 384 2368 
+Q 602 2733 982 2947 
+Q 1363 3162 1830 3162 
+Q 2195 3162 2502 3027 
+Q 2810 2893 3034 2643 
+L 2496 2099 
+Q 2374 2234 2204 2304 
+Q 2035 2374 1830 2374 
+Q 1600 2374 1417 2268 
+Q 1235 2163 1129 1980 
+Q 1024 1798 1024 1549 
+Q 1024 1306 1129 1117 
+Q 1235 928 1417 822 
+Q 1600 717 1830 717 
+Q 2042 717 2211 790 
+Q 2381 864 2502 1005 
+L 3046 461 
+Q 2810 205 2502 70 
+Q 2195 -64 1830 -64 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-3b" d="M 1664 -64 
+Q 1242 -64 902 147 
+Q 563 358 371 723 
+Q 179 1088 179 1542 
+Q 179 2003 371 2368 
+Q 563 2733 902 2944 
+Q 1242 3155 1664 3155 
+Q 1997 3155 2259 3020 
+Q 2522 2886 2678 2646 
+Q 2835 2406 2848 2106 
+L 2848 992 
+Q 2835 685 2678 448 
+Q 2522 211 2259 73 
+Q 1997 -64 1664 -64 
+z
+M 1818 710 
+Q 2170 710 2387 944 
+Q 2605 1178 2605 1549 
+Q 2605 1792 2505 1981 
+Q 2406 2170 2230 2275 
+Q 2054 2381 1818 2381 
+Q 1587 2381 1411 2275 
+Q 1235 2170 1136 1981 
+Q 1037 1792 1037 1549 
+Q 1037 1299 1136 1110 
+Q 1235 922 1411 816 
+Q 1587 710 1818 710 
+z
+M 2560 0 
+L 2560 832 
+L 2694 1587 
+L 2560 2330 
+L 2560 3091 
+L 3392 3091 
+L 3392 0 
+L 2560 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-SemiBold-6b" d="M 826 0 
+L 826 4378 
+L 1664 4378 
+L 1664 0 
+L 826 0 
+z
+M 102 2355 
+L 102 3091 
+L 2387 3091 
+L 2387 2355 
+L 102 2355 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#OutfitArticle-SemiBold-2f"/>
+    <use xlink:href="#OutfitArticle-SemiBold-50" transform="translate(62.90625 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-5a" transform="translate(87.703125 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-48" transform="translate(174.40625 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(228.5 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-65" transform="translate(248 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-48" transform="translate(306.796875 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-68" transform="translate(360.890625 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(404.296875 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-17" transform="translate(423.796875 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-5b" transform="translate(451.796875 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-71" transform="translate(508 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-5d" transform="translate(558.890625 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-44" transform="translate(615.796875 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-3b" transform="translate(663.90625 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-6b" transform="translate(722.703125 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-50" transform="translate(761.609375 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-5d" transform="translate(786.40625 0)"/>
+    <use xlink:href="#OutfitArticle-SemiBold-5b" transform="translate(843.3125 0)"/>
+   </g>
+  </g>
+  <g id="text_67">
+   <!-- Host completion time · µs · lower is better -->
+   <g style="fill: #617084" transform="translate(14.58 64) scale(0.12 -0.12)">
+    <defs>
+     <path id="OutfitArticle-Regular-16" d="M 525 0 
+L 525 4442 
+L 1126 4442 
+L 1126 0 
+L 525 0 
+z
+M 3392 0 
+L 3392 4442 
+L 3994 4442 
+L 3994 0 
+L 3392 0 
+z
+M 934 2022 
+L 934 2573 
+L 3539 2573 
+L 3539 2022 
+L 934 2022 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-Regular-a9" d="M 416 1907 
+Q 237 1907 118 2032 
+Q 0 2157 0 2329 
+Q 0 2509 118 2627 
+Q 237 2745 416 2745 
+Q 595 2745 713 2627 
+Q 832 2509 832 2329 
+Q 832 2157 713 2032 
+Q 595 1907 416 1907 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-Regular-72" d="M 1293 0 
+L 90 3040 
+L 691 3040 
+L 1562 672 
+L 1370 672 
+L 2234 3040 
+L 2566 3040 
+L 3430 672 
+L 3238 672 
+L 4109 3040 
+L 4710 3040 
+L 3514 0 
+L 3174 0 
+L 2298 2298 
+L 2509 2298 
+L 1626 0 
+L 1293 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-Regular-43" d="M 2022 -64 
+Q 1677 -64 1398 80 
+Q 1120 224 953 480 
+Q 787 736 768 1062 
+L 768 1978 
+Q 787 2310 956 2563 
+Q 1126 2816 1404 2960 
+Q 1683 3104 2022 3104 
+Q 2438 3104 2774 2893 
+Q 3110 2682 3302 2323 
+Q 3494 1965 3494 1517 
+Q 3494 1069 3302 710 
+Q 3110 352 2774 144 
+Q 2438 -64 2022 -64 
+z
+M 422 0 
+L 422 4570 
+L 998 4570 
+L 998 2298 
+L 890 1562 
+L 998 819 
+L 998 0 
+L 422 0 
+z
+M 1926 480 
+Q 2214 480 2432 614 
+Q 2650 749 2778 982 
+Q 2906 1216 2906 1523 
+Q 2906 1824 2778 2061 
+Q 2650 2298 2432 2429 
+Q 2214 2560 1933 2560 
+Q 1645 2560 1427 2429 
+Q 1210 2298 1088 2061 
+Q 966 1824 966 1517 
+Q 966 1216 1084 982 
+Q 1203 749 1424 614 
+Q 1645 480 1926 480 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-Regular-7f" d="M 890 0 
+L 890 4314 
+L 1466 4314 
+L 1466 0 
+L 890 0 
+z
+M 141 2515 
+L 141 3040 
+L 4026 3040 
+L 4026 2515 
+L 141 2515 
+z
+M 2701 0 
+L 2701 4314 
+L 3277 4314 
+L 3277 0 
+L 2701 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#OutfitArticle-Regular-16"/>
+    <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(70.59375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(127.1875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-6b" transform="translate(169.890625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(206.6875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-44" transform="translate(227.484375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(275.484375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5a" transform="translate(332.078125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-65" transform="translate(417.578125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-59" transform="translate(475.78125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(497.984375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-6b" transform="translate(550.171875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-50" transform="translate(586.96875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(609.375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(665.96875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(720.765625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-6b" transform="translate(741.5625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-50" transform="translate(778.359375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5a" transform="translate(800.765625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(886.265625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(939.859375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-a9" transform="translate(960.65625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(973.65625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-e1" transform="translate(994.453125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1052.359375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1095.0625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-a9" transform="translate(1115.859375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1128.859375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1149.65625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1171.859375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-72" transform="translate(1227.046875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1300.640625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-68" transform="translate(1354.234375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1396.140625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1416.9375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1439.34375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1482.046875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-43" transform="translate(1502.84375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1561.046875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-7f" transform="translate(1614.640625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1678.234375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-68" transform="translate(1731.828125 0)"/>
+   </g>
+  </g>
+  <g id="text_68">
+   <!-- Rows × columns · scales differ across panels -->
+   <g style="fill: #617084" transform="translate(14.58 89.5) scale(0.115 -0.115)">
+    <defs>
+     <path id="OutfitArticle-Regular-2d" d="M 928 1933 
+L 928 2438 
+L 2131 2438 
+Q 2522 2438 2733 2636 
+Q 2944 2835 2944 3174 
+Q 2944 3494 2736 3705 
+Q 2528 3917 2138 3917 
+L 928 3917 
+L 928 4442 
+L 2157 4442 
+Q 2579 4442 2892 4278 
+Q 3206 4115 3376 3833 
+Q 3546 3552 3546 3187 
+Q 3546 2810 3376 2528 
+Q 3206 2246 2892 2089 
+Q 2579 1933 2157 1933 
+L 928 1933 
+z
+M 525 0 
+L 525 4442 
+L 1126 4442 
+L 1126 0 
+L 525 0 
+z
+M 3085 0 
+L 1472 1990 
+L 2042 2189 
+L 3846 0 
+L 3085 0 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-Regular-d8" d="M 787 813 
+L 410 1190 
+L 2688 3469 
+L 3066 3091 
+L 787 813 
+z
+M 2637 858 
+L 448 3046 
+L 826 3424 
+L 3014 1235 
+L 2637 858 
+z
+" transform="scale(0.015625)"/>
+     <path id="OutfitArticle-Regular-78" d="M 858 0 
+L 858 3373 
+Q 858 3725 1008 3990 
+Q 1158 4256 1427 4413 
+Q 1696 4570 2048 4570 
+Q 2406 4570 2636 4416 
+Q 2867 4262 2979 3996 
+Q 3091 3731 3091 3398 
+L 2669 3398 
+Q 2662 3693 2508 3869 
+Q 2355 4045 2048 4045 
+Q 1747 4045 1590 3869 
+Q 1434 3693 1434 3386 
+L 1434 0 
+L 858 0 
+z
+M 109 2515 
+L 109 3040 
+L 4211 3040 
+L 4211 2515 
+L 109 2515 
+z
+M 2669 0 
+L 2669 3494 
+Q 2669 3834 2816 4086 
+Q 2963 4339 3222 4486 
+Q 3482 4634 3827 4634 
+Q 4090 4634 4282 4544 
+Q 4474 4454 4634 4282 
+L 4256 3910 
+Q 4173 4000 4070 4048 
+Q 3968 4096 3821 4096 
+Q 3546 4096 3395 3936 
+Q 3245 3776 3245 3494 
+L 3245 0 
+L 2669 0 
+z
+" transform="scale(0.015625)"/>
+    </defs>
+    <use xlink:href="#OutfitArticle-Regular-2d"/>
+    <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(60.09375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-72" transform="translate(115.28125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(189.078125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(231.78125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-d8" transform="translate(252.578125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(306.78125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-44" transform="translate(327.578125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(375.578125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-59" transform="translate(432.171875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-6c" transform="translate(454.375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5a" transform="translate(505.96875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(591.46875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(646.265625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(688.96875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-a9" transform="translate(709.765625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(722.765625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(743.5625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-44" transform="translate(786.265625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(834.265625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-59" transform="translate(892.46875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(914.671875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(968.265625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1010.96875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-46" transform="translate(1031.765625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-50" transform="translate(1089.96875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-78" transform="translate(1112.375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1177.875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-68" transform="translate(1231.46875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1273.375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(1294.171875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-44" transform="translate(1352.375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-68" transform="translate(1401.28125 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5d" transform="translate(1439.890625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1496.484375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1539.1875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(1581.890625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-65" transform="translate(1602.6875 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-3b" transform="translate(1660.890625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(1719.09375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-48" transform="translate(1773.890625 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-59" transform="translate(1827.484375 0)"/>
+    <use xlink:href="#OutfitArticle-Regular-69" transform="translate(1849.6875 0)"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p76f8c1f29c">
+   <rect x="22.68" y="168" width="285.12" height="141.182253"/>
+  </clipPath>
+  <clipPath id="p6ddad99bc2">
+   <rect x="22.68" y="396.715249" width="285.12" height="141.182253"/>
+  </clipPath>
+  <clipPath id="p78a5128aa5">
+   <rect x="22.68" y="625.430498" width="285.12" height="141.182253"/>
+  </clipPath>
+  <clipPath id="p7e114897b6">
+   <rect x="22.68" y="854.145747" width="285.12" height="141.182253"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,16 @@
+digraph dot {
+subgraph cluster_4 {
+label="graph_4" graph[style="dashed"];
+"graph_4_node_0"[style="bold" shape="record" label="{KERNEL
+| {ID | 0 (topoId: 0) | _Z10persistentILb0EEv7Payloadi\<\<\<792,256,0\>\>\>}
+| {{node handle | func handle} | {0x0000555F86B2C3D0 | 0x0000555F86ABB420}}
+| {accessPolicyWindow | {base_ptr | num_bytes | hitRatio | hitProp | missProp} | {0x0000000000000000 | 0 | 0.000000 | N | N}}
+| {cooperative | 1}
+| {priority | 0}
+| {cluster dim | (0,0,0)}
+| {preferred cluster dim | (0,0,0)}
+| {cluster scheduling policy preference | 1}
+}"];
+
+}
+}

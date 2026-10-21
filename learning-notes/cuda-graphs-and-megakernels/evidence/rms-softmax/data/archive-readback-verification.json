@@ -1,0 +1,19 @@
+{
+  "cpu_only": true,
+  "all_full_archives_readback_verified": true,
+  "archives": [
+    {
+      "path": "20261020T022150Z.tar.gz",
+      "bytes": 9662959343,
+      "sha256": "b56c87b3d4420d860ffd2b9e54ceb8cb3c609645e52ff3ff8d06caf5e0c7aa87",
+      "readback_verified": true
+    },
+    {
+      "path": "20261020T023055Z.tar.gz",
+      "bytes": 10521439938,
+      "sha256": "5101d6e43a797b29a9e5a4b758771913539b165c6ccac5db8183a7bf171a84a4",
+      "readback_verified": true
+    }
+  ],
+  "seconds": 74.406802333
+}

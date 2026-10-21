@@ -1,0 +1,111 @@
+{
+  "verified_at_utc": "2026-10-20T02:47:01.422993+00:00",
+  "gpu_teardown_verified": true,
+  "running_containers": [],
+  "study_apps": [
+    {
+      "app_id": "ap-0uVzWnGUZwKxMrOUQuDz4h",
+      "description": "cuda-graphs-scaled-softmax-archive-verification",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:44:31-07:00",
+      "stopped_at": "2026-10-19 19:46:05-07:00"
+    },
+    {
+      "app_id": "ap-Xib4r7WQk4sYA5BJaV8SSx",
+      "description": "cuda-graphs-scaled-softmax-row-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:36:13-07:00",
+      "stopped_at": "2026-10-19 19:41:05-07:00"
+    },
+    {
+      "app_id": "ap-YVN8hQiC1mM62nIEkdhiHB",
+      "description": "cuda-graphs-scaled-softmax-row-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:33:45-07:00",
+      "stopped_at": "2026-10-19 19:35:44-07:00"
+    },
+    {
+      "app_id": "ap-Lcf1jFmh44xZfO64Ys18sN",
+      "description": "cuda-graphs-scaled-softmax-row-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:32:54-07:00",
+      "stopped_at": "2026-10-19 19:33:19-07:00"
+    },
+    {
+      "app_id": "ap-HOxYrsyPTud3Rl8DDpJucQ",
+      "description": "cuda-graphs-scaled-softmax-row-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:32:13-07:00",
+      "stopped_at": "2026-10-19 19:32:38-07:00"
+    },
+    {
+      "app_id": "ap-4GD7NnI3VXodcoYjkUSg79",
+      "description": "cuda-graphs-scaled-softmax-row-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:31:08-07:00",
+      "stopped_at": "2026-10-19 19:32:04-07:00"
+    },
+    {
+      "app_id": "ap-YfjuP3b02uMftSraqcCSTc",
+      "description": "cuda-graphs-scaled-softmax-row-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:28:51-07:00",
+      "stopped_at": "2026-10-19 19:31:03-07:00"
+    },
+    {
+      "app_id": "ap-mWUqmjGJKUWOvdgYLOIixQ",
+      "description": "cuda-graphs-scaled-softmax-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:28:34-07:00",
+      "stopped_at": "2026-10-19 19:31:59-07:00"
+    },
+    {
+      "app_id": "ap-Ih4NqSSYREBZzk5RMG2632",
+      "description": "cuda-graphs-scaled-softmax-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:26:13-07:00",
+      "stopped_at": "2026-10-19 19:27:46-07:00"
+    },
+    {
+      "app_id": "ap-V2UWdGBUbPzqyel0gDG6K4",
+      "description": "cuda-graphs-scaled-softmax-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:24:17-07:00",
+      "stopped_at": "2026-10-19 19:24:53-07:00"
+    },
+    {
+      "app_id": "ap-6TQb9gwOiiYfE63lA0cPjn",
+      "description": "cuda-graphs-scaled-softmax-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:23:30-07:00",
+      "stopped_at": "2026-10-19 19:24:09-07:00"
+    },
+    {
+      "app_id": "ap-B2UxT6mcs4v7931olYap1H",
+      "description": "cuda-graphs-scaled-softmax-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:22:03-07:00",
+      "stopped_at": "2026-10-19 19:23:13-07:00"
+    },
+    {
+      "app_id": "ap-U3S4pZ4xGTNhhzO1NDmyp9",
+      "description": "cuda-graphs-scaled-softmax-study",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-19 19:19:13-07:00",
+      "stopped_at": "2026-10-19 19:21:58-07:00"
+    }
+  ]
+}

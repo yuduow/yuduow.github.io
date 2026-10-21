@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CUDA Graphs reduce launch overhead. When is a megakernel still worth the complexity? Follow one RMS-scaled softmax workload through graph replay, local fusion, and a megakernel on H100.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Softmax evidence and reproduction · Yuduo Wu</title>
+  <link rel="icon" href="../../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../../styles.css?v=801d734e66c4">
+  <link rel="stylesheet" href="../../../../blog.css?v=8e5f5b11daff">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page evidence-page" id="content">
+    <header class="blog-masthead"><a href="../../../../">Yuduo Wu</a><a href="../../../../learning-notes/">Learning Notes</a></header>
+<header class="post-header"><p class="post-meta"><span class="draft-label">Supporting material</span><a href="../../">CUDA Graphs, Fusion, and Megakernels</a></p><h1>Softmax evidence and reproduction</h1></header><article class="post-content"><p>Historical two-example experiment. The current article uses the <a href="../rms-softmax/">single RMS-scaled softmax workload</a>.</p>
+<p>Run <strong>20261019T175825Z</strong>, collected October 19, 2026 on one NVIDIA H100 80GB HBM3. The article keeps its original February 22 date.</p>
+<ul>
+<li><a href="protocol.html">Protocol</a>: workload definitions, controls, fixed tolerances, and measurement scopes.</li>
+<li><a href="results.html">Full results</a>: all shapes, cuDNN reference, timing distributions, and profiling limitations.</li>
+<li><a href="softmax-figure-provenance.json">Article figure provenance</a>: exact configuration mapping and input/output hashes.</li>
+<li><a href="proofread-recheck.json">Latest factual and narrative review</a>: manuscript hash, exact latency mapping, graph counts, resources, and freshly checked data.</li>
+<li><a href="softmax-recheck.json">Fresh timing and trace recheck</a>: 12 timing cases and 24 dependency traces recomputed from saved samples.</li>
+<li><a href="timings.csv">All timing summaries</a>, <a href="artifacts/summary.json">saved validation summary</a>, and <a href="profile-summary.json">profiler counter exports</a>.</li>
+<li><a href="bundle-manifest.json">Selected site bundle manifest</a>, distinct from the <a href="artifacts/manifest.json">complete raw-run manifest</a>.</li>
+</ul>
+<p>The baseline uses ordinary stream launches with no graph replay or fusion; normal compiler optimizations still apply. The tiled comparison labels the cooperative phase-barrier kernel as fusion, and the ready-task kernel as a <strong>megakernel toy</strong>. Both can run inside a graph. This toy is not a model-scale megakernel performance result, and its queue initialization is included.</p>
+<p>The complete raw run retains 1,741 files / 9.37 GB in Modal Volume <code>cuda-graphs-softmax-evidence</code>, directory <code>/20261019T175825Z/</code>, with an archive at <code>/20261019T175825Z.tar.gz</code>. This site contains selected source, samples, traces, and text exports; large binary arrays and original profiler databases remain in that archive. Local review verified 1,372 files, with 369 remote-only files explicitly recorded. No GPU rerun was needed for the article restructuring.</p>
+<h2 id="reproduction">Reproduction</h2>
+<p>The CUDA source, analyzer, build script, and Modal runner below are the captured run versions. Figure and export scripts are subsequent CPU postprocessing. With the complete review bundle, run <code>python article_figures.py RUN_DIRECTORY OUTPUT_DIRECTORY</code> to rebuild the four-way figures. It verifies hashes, recomputes timing summaries, and checks trace coverage and ordering. The selected website bundle is not a substitute for the full review bundle when rerunning that command.</p>
+<h2 id="selected-files">Selected files</h2>
+<ul>
+<li><a href="artifacts/bench/dag-128-0-balanced/analysis.json">artifacts/bench/dag-128-0-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/dag-128-0-balanced/dag.dot">artifacts/bench/dag-128-0-balanced/dag.dot</a></li>
+<li><a href="artifacts/bench/dag-128-0-balanced/metadata.jsonl">artifacts/bench/dag-128-0-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/dag-128-0-balanced/phased.dot">artifacts/bench/dag-128-0-balanced/phased.dot</a></li>
+<li><a href="artifacts/bench/dag-128-0-balanced/samples.jsonl">artifacts/bench/dag-128-0-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/dag-128-0-balanced/separate.dot">artifacts/bench/dag-128-0-balanced/separate.dot</a></li>
+<li><a href="artifacts/bench/dag-128-0-ragged/analysis.json">artifacts/bench/dag-128-0-ragged/analysis.json</a></li>
+<li><a href="artifacts/bench/dag-128-0-ragged/dag.dot">artifacts/bench/dag-128-0-ragged/dag.dot</a></li>
+<li><a href="artifacts/bench/dag-128-0-ragged/metadata.jsonl">artifacts/bench/dag-128-0-ragged/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/dag-128-0-ragged/phased.dot">artifacts/bench/dag-128-0-ragged/phased.dot</a></li>
+<li><a href="artifacts/bench/dag-128-0-ragged/samples.jsonl">artifacts/bench/dag-128-0-ragged/samples.jsonl</a></li>
+<li><a href="artifacts/bench/dag-128-0-ragged/separate.dot">artifacts/bench/dag-128-0-ragged/separate.dot</a></li>
+<li><a href="artifacts/bench/dag-2048-0-balanced/analysis.json">artifacts/bench/dag-2048-0-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/dag-2048-0-balanced/dag.dot">artifacts/bench/dag-2048-0-balanced/dag.dot</a></li>
+<li><a href="artifacts/bench/dag-2048-0-balanced/metadata.jsonl">artifacts/bench/dag-2048-0-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/dag-2048-0-balanced/phased.dot">artifacts/bench/dag-2048-0-balanced/phased.dot</a></li>
+<li><a href="artifacts/bench/dag-2048-0-balanced/samples.jsonl">artifacts/bench/dag-2048-0-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/dag-2048-0-balanced/separate.dot">artifacts/bench/dag-2048-0-balanced/separate.dot</a></li>
+<li><a href="artifacts/bench/dag-2048-0-ragged/analysis.json">artifacts/bench/dag-2048-0-ragged/analysis.json</a></li>
+<li><a href="artifacts/bench/dag-2048-0-ragged/dag.dot">artifacts/bench/dag-2048-0-ragged/dag.dot</a></li>
+<li><a href="artifacts/bench/dag-2048-0-ragged/metadata.jsonl">artifacts/bench/dag-2048-0-ragged/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/dag-2048-0-ragged/phased.dot">artifacts/bench/dag-2048-0-ragged/phased.dot</a></li>
+<li><a href="artifacts/bench/dag-2048-0-ragged/samples.jsonl">artifacts/bench/dag-2048-0-ragged/samples.jsonl</a></li>
+<li><a href="artifacts/bench/dag-2048-0-ragged/separate.dot">artifacts/bench/dag-2048-0-ragged/separate.dot</a></li>
+<li><a href="artifacts/bench/dag-512-0-balanced/analysis.json">artifacts/bench/dag-512-0-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/dag-512-0-balanced/dag.dot">artifacts/bench/dag-512-0-balanced/dag.dot</a></li>
+<li><a href="artifacts/bench/dag-512-0-balanced/metadata.jsonl">artifacts/bench/dag-512-0-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/dag-512-0-balanced/phased.dot">artifacts/bench/dag-512-0-balanced/phased.dot</a></li>
+<li><a href="artifacts/bench/dag-512-0-balanced/samples.jsonl">artifacts/bench/dag-512-0-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/dag-512-0-balanced/separate.dot">artifacts/bench/dag-512-0-balanced/separate.dot</a></li>
+<li><a href="artifacts/bench/dag-512-0-ragged/analysis.json">artifacts/bench/dag-512-0-ragged/analysis.json</a></li>
+<li><a href="artifacts/bench/dag-512-0-ragged/dag.dot">artifacts/bench/dag-512-0-ragged/dag.dot</a></li>
+<li><a href="artifacts/bench/dag-512-0-ragged/metadata.jsonl">artifacts/bench/dag-512-0-ragged/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/dag-512-0-ragged/phased.dot">artifacts/bench/dag-512-0-ragged/phased.dot</a></li>
+<li><a href="artifacts/bench/dag-512-0-ragged/samples.jsonl">artifacts/bench/dag-512-0-ragged/samples.jsonl</a></li>
+<li><a href="artifacts/bench/dag-512-0-ragged/separate.dot">artifacts/bench/dag-512-0-ragged/separate.dot</a></li>
+<li><a href="artifacts/bench/row-1-128-balanced/analysis.json">artifacts/bench/row-1-128-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/row-1-128-balanced/cudnn.dot">artifacts/bench/row-1-128-balanced/cudnn.dot</a></li>
+<li><a href="artifacts/bench/row-1-128-balanced/fused.dot">artifacts/bench/row-1-128-balanced/fused.dot</a></li>
+<li><a href="artifacts/bench/row-1-128-balanced/metadata.jsonl">artifacts/bench/row-1-128-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/row-1-128-balanced/samples.jsonl">artifacts/bench/row-1-128-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/row-1-128-balanced/staged.dot">artifacts/bench/row-1-128-balanced/staged.dot</a></li>
+<li><a href="artifacts/bench/row-16384-1024-balanced/analysis.json">artifacts/bench/row-16384-1024-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/row-16384-1024-balanced/cudnn.dot">artifacts/bench/row-16384-1024-balanced/cudnn.dot</a></li>
+<li><a href="artifacts/bench/row-16384-1024-balanced/fused.dot">artifacts/bench/row-16384-1024-balanced/fused.dot</a></li>
+<li><a href="artifacts/bench/row-16384-1024-balanced/metadata.jsonl">artifacts/bench/row-16384-1024-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/row-16384-1024-balanced/samples.jsonl">artifacts/bench/row-16384-1024-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/row-16384-1024-balanced/staged.dot">artifacts/bench/row-16384-1024-balanced/staged.dot</a></li>
+<li><a href="artifacts/bench/row-32-1024-balanced/analysis.json">artifacts/bench/row-32-1024-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/row-32-1024-balanced/cudnn.dot">artifacts/bench/row-32-1024-balanced/cudnn.dot</a></li>
+<li><a href="artifacts/bench/row-32-1024-balanced/fused.dot">artifacts/bench/row-32-1024-balanced/fused.dot</a></li>
+<li><a href="artifacts/bench/row-32-1024-balanced/metadata.jsonl">artifacts/bench/row-32-1024-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/row-32-1024-balanced/samples.jsonl">artifacts/bench/row-32-1024-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/row-32-1024-balanced/staged.dot">artifacts/bench/row-32-1024-balanced/staged.dot</a></li>
+<li><a href="artifacts/bench/row-4096-1024-balanced/analysis.json">artifacts/bench/row-4096-1024-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/row-4096-1024-balanced/cudnn.dot">artifacts/bench/row-4096-1024-balanced/cudnn.dot</a></li>
+<li><a href="artifacts/bench/row-4096-1024-balanced/fused.dot">artifacts/bench/row-4096-1024-balanced/fused.dot</a></li>
+<li><a href="artifacts/bench/row-4096-1024-balanced/metadata.jsonl">artifacts/bench/row-4096-1024-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/row-4096-1024-balanced/samples.jsonl">artifacts/bench/row-4096-1024-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/row-4096-1024-balanced/staged.dot">artifacts/bench/row-4096-1024-balanced/staged.dot</a></li>
+<li><a href="artifacts/bench/row-4096-128-balanced/analysis.json">artifacts/bench/row-4096-128-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/row-4096-128-balanced/cudnn.dot">artifacts/bench/row-4096-128-balanced/cudnn.dot</a></li>
+<li><a href="artifacts/bench/row-4096-128-balanced/fused.dot">artifacts/bench/row-4096-128-balanced/fused.dot</a></li>
+<li><a href="artifacts/bench/row-4096-128-balanced/metadata.jsonl">artifacts/bench/row-4096-128-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/row-4096-128-balanced/samples.jsonl">artifacts/bench/row-4096-128-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/row-4096-128-balanced/staged.dot">artifacts/bench/row-4096-128-balanced/staged.dot</a></li>
+<li><a href="artifacts/bench/row-4096-4096-balanced/analysis.json">artifacts/bench/row-4096-4096-balanced/analysis.json</a></li>
+<li><a href="artifacts/bench/row-4096-4096-balanced/cudnn.dot">artifacts/bench/row-4096-4096-balanced/cudnn.dot</a></li>
+<li><a href="artifacts/bench/row-4096-4096-balanced/fused.dot">artifacts/bench/row-4096-4096-balanced/fused.dot</a></li>
+<li><a href="artifacts/bench/row-4096-4096-balanced/metadata.jsonl">artifacts/bench/row-4096-4096-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/bench/row-4096-4096-balanced/samples.jsonl">artifacts/bench/row-4096-4096-balanced/samples.jsonl</a></li>
+<li><a href="artifacts/bench/row-4096-4096-balanced/staged.dot">artifacts/bench/row-4096-4096-balanced/staged.dot</a></li>
+<li><a href="artifacts/bench.ptx">artifacts/bench.ptx</a></li>
+<li><a href="artifacts/bench.sass">artifacts/bench.sass</a></li>
+<li><a href="artifacts/build.json">artifacts/build.json</a></li>
+<li><a href="artifacts/compile.log">artifacts/compile.log</a></li>
+<li><a href="artifacts/config.json">artifacts/config.json</a></li>
+<li><a href="artifacts/device-after.stdout">artifacts/device-after.stdout</a></li>
+<li><a href="artifacts/device-before.stdout">artifacts/device-before.stdout</a></li>
+<li><a href="artifacts/manifest.json">artifacts/manifest.json</a></li>
+<li><a href="artifacts/memcheck-dag.stderr">artifacts/memcheck-dag.stderr</a></li>
+<li><a href="artifacts/memcheck-dag.stdout">artifacts/memcheck-dag.stdout</a></li>
+<li><a href="artifacts/memcheck-row.stderr">artifacts/memcheck-row.stderr</a></li>
+<li><a href="artifacts/memcheck-row.stdout">artifacts/memcheck-row.stdout</a></li>
+<li><a href="artifacts/summary.json">artifacts/summary.json</a></li>
+<li><a href="artifacts/synccheck-dag.stderr">artifacts/synccheck-dag.stderr</a></li>
+<li><a href="artifacts/synccheck-dag.stdout">artifacts/synccheck-dag.stdout</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/analysis.json">artifacts/trace/dag-128-0-balanced/analysis.json</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/dag_graph_2_trace.csv">artifacts/trace/dag-128-0-balanced/dag_graph_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/dag_graph_3_trace.csv">artifacts/trace/dag-128-0-balanced/dag_graph_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/dag_stream_2_trace.csv">artifacts/trace/dag-128-0-balanced/dag_stream_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/dag_stream_3_trace.csv">artifacts/trace/dag-128-0-balanced/dag_stream_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/metadata.jsonl">artifacts/trace/dag-128-0-balanced/metadata.jsonl</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/phased_graph_2_trace.csv">artifacts/trace/dag-128-0-balanced/phased_graph_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/phased_graph_3_trace.csv">artifacts/trace/dag-128-0-balanced/phased_graph_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/phased_stream_2_trace.csv">artifacts/trace/dag-128-0-balanced/phased_stream_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/phased_stream_3_trace.csv">artifacts/trace/dag-128-0-balanced/phased_stream_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/separate_graph_2_trace.csv">artifacts/trace/dag-128-0-balanced/separate_graph_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/separate_graph_3_trace.csv">artifacts/trace/dag-128-0-balanced/separate_graph_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/separate_stream_2_trace.csv">artifacts/trace/dag-128-0-balanced/separate_stream_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/separate_stream_3_trace.csv">artifacts/trace/dag-128-0-balanced/separate_stream_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-balanced/tile_offsets.i32">artifacts/trace/dag-128-0-balanced/tile_offsets.i32</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/analysis.json">artifacts/trace/dag-128-0-ragged/analysis.json</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/dag_graph_2_trace.csv">artifacts/trace/dag-128-0-ragged/dag_graph_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/dag_graph_3_trace.csv">artifacts/trace/dag-128-0-ragged/dag_graph_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/dag_stream_2_trace.csv">artifacts/trace/dag-128-0-ragged/dag_stream_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/dag_stream_3_trace.csv">artifacts/trace/dag-128-0-ragged/dag_stream_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/metadata.jsonl">artifacts/trace/dag-128-0-ragged/metadata.jsonl</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/phased_graph_2_trace.csv">artifacts/trace/dag-128-0-ragged/phased_graph_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/phased_graph_3_trace.csv">artifacts/trace/dag-128-0-ragged/phased_graph_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/phased_stream_2_trace.csv">artifacts/trace/dag-128-0-ragged/phased_stream_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/phased_stream_3_trace.csv">artifacts/trace/dag-128-0-ragged/phased_stream_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/separate_graph_2_trace.csv">artifacts/trace/dag-128-0-ragged/separate_graph_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/separate_graph_3_trace.csv">artifacts/trace/dag-128-0-ragged/separate_graph_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/separate_stream_2_trace.csv">artifacts/trace/dag-128-0-ragged/separate_stream_2_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/separate_stream_3_trace.csv">artifacts/trace/dag-128-0-ragged/separate_stream_3_trace.csv</a></li>
+<li><a href="artifacts/trace/dag-128-0-ragged/tile_offsets.i32">artifacts/trace/dag-128-0-ragged/tile_offsets.i32</a></li>
+<li><a href="code/analyze.py">code/analyze.py</a></li>
+<li><a href="code/article_figures.py">code/article_figures.py</a></li>
+<li><a href="code/bench.cu">code/bench.cu</a></li>
+<li><a href="code/build.py">code/build.py</a></li>
+<li><a href="code/modal_app.py">code/modal_app.py</a></li>
+<li><a href="code/profile_exports.py">code/profile_exports.py</a></li>
+<li><a href="code/report.py">code/report.py</a></li>
+<li><a href="code/site_evidence.py">code/site_evidence.py</a></li>
+<li><a href="figure-provenance.json">figure-provenance.json</a></li>
+<li><a href="figures/dag-completion.png">figures/dag-completion.png</a></li>
+<li><a href="figures/dag-completion.svg">figures/dag-completion.svg</a></li>
+<li><a href="figures/profile-traffic.png">figures/profile-traffic.png</a></li>
+<li><a href="figures/profile-traffic.svg">figures/profile-traffic.svg</a></li>
+<li><a href="figures/row-completion.png">figures/row-completion.png</a></li>
+<li><a href="figures/row-completion.svg">figures/row-completion.svg</a></li>
+<li><a href="figures/task-ordering.png">figures/task-ordering.png</a></li>
+<li><a href="figures/task-ordering.svg">figures/task-ordering.svg</a></li>
+<li><a href="local-review.json">local-review.json</a></li>
+<li><a href="profile-exports/compute-dag-dag_graph-metrics.csv">profile-exports/compute-dag-dag_graph-metrics.csv</a></li>
+<li><a href="profile-exports/compute-dag-separate_graph-metrics.csv">profile-exports/compute-dag-separate_graph-metrics.csv</a></li>
+<li><a href="profile-exports/compute-row-cudnn_graph-metrics.csv">profile-exports/compute-row-cudnn_graph-metrics.csv</a></li>
+<li><a href="profile-exports/compute-row-fused_graph-metrics.csv">profile-exports/compute-row-fused_graph-metrics.csv</a></li>
+<li><a href="profile-exports/compute-row-staged_graph-metrics.csv">profile-exports/compute-row-staged_graph-metrics.csv</a></li>
+<li><a href="profile-summary.json">profile-summary.json</a></li>
+<li><a href="protocol.md">protocol.md</a></li>
+<li><a href="results.md">results.md</a></li>
+<li><a href="softmax-figure-provenance.json">softmax-figure-provenance.json</a></li>
+<li><a href="softmax-recheck.json">softmax-recheck.json</a></li>
+<li><a href="timings.csv">timings.csv</a></li>
+<li><a href="trace-validation.json">trace-validation.json</a></li>
+</ul>
+</article><footer class="post-footer"><nav><a href="../../">Back to the article</a><a href="./">Softmax evidence</a><a href="../">All evidence</a></nav></footer>
+  </main>
+</body>
+</html>
