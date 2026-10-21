@@ -1,0 +1,295 @@
+{
+  "run_id": "20261020T023055Z",
+  "archived_provenance_sha256": "3453e662f6bab3da6fb61146ab5c5606dd4c84c5c54daaf925e14586f414904b",
+  "scope": "Reader-facing presentation. Archived evidence, original figures, all observations and aggregation remain unchanged.",
+  "review": {
+    "completion_session_medians_verified": 32,
+    "retention_session_medians_verified": 6,
+    "launch_counts_verified": 24,
+    "numeric_and_axis_equality": true,
+    "clarifications": [
+      "Tile-lifetime view explicitly identifies the row-scoped variant.",
+      "Graph kernels are labeled by dependency order without implying internal execution-stream assignment."
+    ]
+  },
+  "style": {
+    "font": "Outfit Article / website Outfit",
+    "desktop_type_scale": 1.12,
+    "mobile_type_scale": 1.08,
+    "palette": [
+      "#64748b",
+      "#315fe2",
+      "#8650b8",
+      "#008578"
+    ]
+  },
+  "script_sha256": "6d99a903562ce0699e4bf6726f6bfc7a7920fa8dff46fb5b4194025e676fff8c",
+  "figures_script_sha256": "d1571864c0891e75002e52b2d1ff28b9381983ddf2230e2a8fa74a538579e8ef",
+  "inputs": [
+    {
+      "path": "data/selected-configs.json",
+      "sha256": "a69ac4f2f0d75c687b5f42f981b4e945208fcbf2e9e7a41435c4b9ad3b21a2bf"
+    },
+    {
+      "path": "code/config.json",
+      "sha256": "d17c5a5e1e9836e7187a62b8bf817f2b9df210033d110af5c614a9fa6981a8a5"
+    },
+    {
+      "path": "code/bench.cu",
+      "sha256": "dd94a8fc5c7c6fcf32e3b4635ec1158ec3878ff79b057d9a33b5cc16cb8e77f7"
+    },
+    {
+      "path": "code/kernels.cuh",
+      "sha256": "f641e2877f88b12c857cab923ca0c07d47247019967f1278ac6949817b6e1ce2"
+    },
+    {
+      "path": "data/measurement-1/data/metadata.jsonl",
+      "sha256": "72207142f11e976f19ba77d6194dde5ffcff52173844129813be0684d3407b13"
+    },
+    {
+      "path": "data/measurement-1/data/b1/timings.jsonl",
+      "sha256": "488462254f6a203d6305dbcf87afeb55319b3fc4545124c1023dbbf33c8587af"
+    },
+    {
+      "path": "data/measurement-1/data/b16/timings.jsonl",
+      "sha256": "c98c99f152af6d8948243e589b7e1b05a8bd93582c76e46f5281fed8fe4f2911"
+    },
+    {
+      "path": "data/measurement-1/data/b32/timings.jsonl",
+      "sha256": "60e14d1551483f3f0cadcd19e73630233de1142e01da2231cdf394c59dc85da6"
+    },
+    {
+      "path": "data/measurement-1/data/b64/timings.jsonl",
+      "sha256": "36e4d5fb9a3e0cfd0eb40ff3c9282a0e0a9741c208f8a4a873cf959fafc28c83"
+    },
+    {
+      "path": "data/measurement-2/data/metadata.jsonl",
+      "sha256": "c571c989273c102ed94e6f76df93d5380301a8f35b96a6cee3343f1708ed0946"
+    },
+    {
+      "path": "data/measurement-2/data/b1/timings.jsonl",
+      "sha256": "395a96f2c6b9007b2da9c32515684b771e505dff760f70bada069561e96304cf"
+    },
+    {
+      "path": "data/measurement-2/data/b16/timings.jsonl",
+      "sha256": "3388347a7fc6f79a80c6a3213bb3579c81bf7265f66ac5e022ec5127f3fc8d96"
+    },
+    {
+      "path": "data/measurement-2/data/b32/timings.jsonl",
+      "sha256": "f3d41bb6699c499ac4895ded53cd57de158f80a7dba1a05f98440e30fb5972c9"
+    },
+    {
+      "path": "data/measurement-2/data/b64/timings.jsonl",
+      "sha256": "350303d726397d70b5c0fa6f39849795261fa19b08fc0f1239bc9512826d1449"
+    }
+  ],
+  "layout_check_method": "Font metric rectangles include Outfit leading; overlaps are diagnostics for visual review, not glyph intersection claims. Canvas bounds cover all visible labels.",
+  "layout_checks": [
+    {
+      "mobile": false,
+      "heading": "RMS Scaled Softmax",
+      "outside": [],
+      "font_metric_overlaps": [
+        [
+          "RMS Scaled Softmax",
+          "Row-wise operations \u00b7 input B \u00d7 131,072"
+        ]
+      ]
+    },
+    {
+      "mobile": false,
+      "heading": "Fewer Submissions, Same Kernels",
+      "outside": [],
+      "font_metric_overlaps": [
+        [
+          "Fewer Submissions, Same Kernels",
+          "Repeated execution of the 9-kernel baseline"
+        ],
+        [
+          "Repeated execution of the 9-kernel baseline",
+          "Direct Launches"
+        ]
+      ]
+    },
+    {
+      "mobile": false,
+      "heading": "9 Kernels Become 3",
+      "outside": [],
+      "font_metric_overlaps": [
+        [
+          "9 Kernels Become 3",
+          "Input: B \u00d7 131,072 \u00b7 same calculation"
+        ],
+        [
+          "Input: B \u00d7 131,072 \u00b7 same calculation",
+          "Baseline"
+        ],
+        [
+          "Baseline",
+          "9 kernels"
+        ],
+        [
+          "Local Fusion",
+          "3 kernels"
+        ]
+      ]
+    },
+    {
+      "mobile": false,
+      "heading": "1 Tile Across 3 Phases",
+      "outside": [],
+      "font_metric_overlaps": [
+        [
+          "1 Tile Across 3 Phases",
+          "Input: B \u00d7 131,072 \u00b7 row-scoped variant"
+        ]
+      ]
+    },
+    {
+      "mobile": true,
+      "heading": "RMS Scaled Softmax",
+      "outside": [],
+      "font_metric_overlaps": []
+    },
+    {
+      "mobile": true,
+      "heading": "Fewer Submissions, Same Kernels",
+      "outside": [],
+      "font_metric_overlaps": []
+    },
+    {
+      "mobile": true,
+      "heading": "9 Kernels Become 3",
+      "outside": [],
+      "font_metric_overlaps": []
+    },
+    {
+      "mobile": true,
+      "heading": "1 Tile Across 3 Phases",
+      "outside": [],
+      "font_metric_overlaps": []
+    },
+    {
+      "mobile": false,
+      "heading": "Time per Invocation",
+      "outside": [],
+      "font_metric_overlaps": []
+    },
+    {
+      "mobile": true,
+      "heading": "Time per Invocation",
+      "outside": [],
+      "font_metric_overlaps": []
+    },
+    {
+      "mobile": false,
+      "heading": "Reloading Adds Latency",
+      "outside": [],
+      "font_metric_overlaps": []
+    },
+    {
+      "mobile": true,
+      "heading": "Reloading Adds Latency",
+      "outside": [],
+      "font_metric_overlaps": []
+    }
+  ],
+  "figures": [
+    {
+      "path": "presentation/assets/rms-computation.svg",
+      "sha256": "9c053a1699029d32c7f08517ed8f10a21b41c4d5bd1e61b09727caab6e5eb99e"
+    },
+    {
+      "path": "presentation/assets/rms-computation.png",
+      "sha256": "e88e20bc5847efbdae854fa8c2594893bc3cc48740e2d2c7ee9d93d7bb08a2dc"
+    },
+    {
+      "path": "presentation/assets/rms-graph-replay.svg",
+      "sha256": "984acc184fe0af7c634ca5c8c0e5aedebaac2b929f8285000b16392546f501ec"
+    },
+    {
+      "path": "presentation/assets/rms-graph-replay.png",
+      "sha256": "f4f1e9b667999e66194e0c7f7786558fd305c1699b4bdb2f88bdfd8d71b5bcdb"
+    },
+    {
+      "path": "presentation/assets/rms-local-fusion.svg",
+      "sha256": "86deef280dddd0d927c8a5553039c8350f331e8e26bae0c1ba01f0953a424fa7"
+    },
+    {
+      "path": "presentation/assets/rms-local-fusion.png",
+      "sha256": "2030f15b2753538f0cc577068902b3609ab185eb7a3ef66e9bd53fbb1bc3196d"
+    },
+    {
+      "path": "presentation/assets/rms-storage.svg",
+      "sha256": "a9d9f212f4c19acb1e9c39a4d7445b52369a31604d72916ea98b9334dade504f"
+    },
+    {
+      "path": "presentation/assets/rms-storage.png",
+      "sha256": "a3b43adc416336b9f1a7a54fafa7dec1bacf9f2c91123266ed07a238a190d2dc"
+    },
+    {
+      "path": "presentation/assets/rms-computation-mobile.svg",
+      "sha256": "847f02e20a6c79489fca95a9db43d36f39d858a7efdd8aed66320d3114b3b587"
+    },
+    {
+      "path": "presentation/assets/rms-computation-mobile.png",
+      "sha256": "610bdb9fbeb5676376de4aae6c5ccde376ab09f19bca341fde58ff24aa3da3ee"
+    },
+    {
+      "path": "presentation/assets/rms-graph-replay-mobile.svg",
+      "sha256": "567519a5d7d9f65ad80e0a803c6f080fa104e8538bc800b18fda2ee5fa45f8c8"
+    },
+    {
+      "path": "presentation/assets/rms-graph-replay-mobile.png",
+      "sha256": "02e5a2b5eef7a23c7061cfacf01350bce24948e01eec33fd8eb415707c21d636"
+    },
+    {
+      "path": "presentation/assets/rms-local-fusion-mobile.svg",
+      "sha256": "0dc7c85b81c2cea5b353c840102144e60f59aab0243532e7459901467c09ea3b"
+    },
+    {
+      "path": "presentation/assets/rms-local-fusion-mobile.png",
+      "sha256": "2747a8c70274c0ee5c5d235f84d7080cda55c193f3dc3a76ce7da631c653cd38"
+    },
+    {
+      "path": "presentation/assets/rms-storage-mobile.svg",
+      "sha256": "d9358bbcc517882fec68ade44f5e8f69e1cb092292e5f597c21482c2eb6c805c"
+    },
+    {
+      "path": "presentation/assets/rms-storage-mobile.png",
+      "sha256": "d3a4a39eb5eab405bc0b3b25262b6de360c02161d9b92acf412abe46cd27c182"
+    },
+    {
+      "path": "presentation/assets/rms-completion.svg",
+      "sha256": "2aa9e1495ebb29c1a45aef5d73b2611d74c15c7580fad333cd0548372913418b"
+    },
+    {
+      "path": "presentation/assets/rms-completion.png",
+      "sha256": "2f605222c79f734d36986625f832cb781f4fe1137a784a507f3282971bc78c52"
+    },
+    {
+      "path": "presentation/assets/rms-completion-mobile.svg",
+      "sha256": "deee2348ff4b14950cf2723edc5f5172c9a36c6aab9bd7079e791318fe6437c5"
+    },
+    {
+      "path": "presentation/assets/rms-completion-mobile.png",
+      "sha256": "624df26c57e2e1f01efef706e0be1f36b5e90b33f46c8e219a5e3d52044b5f03"
+    },
+    {
+      "path": "presentation/assets/rms-retention.svg",
+      "sha256": "ffb288a6caa1422890d3a5e9ec52081a2c17c67bba7ea2b4b0b9f0f59561743a"
+    },
+    {
+      "path": "presentation/assets/rms-retention.png",
+      "sha256": "f33c6f220607db03a5db6220a2d1553877f07f446a14a9045b336852fd1a3276"
+    },
+    {
+      "path": "presentation/assets/rms-retention-mobile.svg",
+      "sha256": "c25bb8712dab8fffae7d79920129ee1da3dec261254be1a824eec39a03e6b7c3"
+    },
+    {
+      "path": "presentation/assets/rms-retention-mobile.png",
+      "sha256": "8bfd6cb3d0536cce0090824c7692cff5e0da802585e41539ddadebe5e5f27fe7"
+    }
+  ]
+}

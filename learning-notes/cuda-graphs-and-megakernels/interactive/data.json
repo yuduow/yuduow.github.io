@@ -1,0 +1,206 @@
+{
+  "source": "../evidence/rms-softmax/figure-provenance.json",
+  "source_sha256": "3453e662f6bab3da6fb61146ab5c5606dd4c84c5c54daaf925e14586f414904b",
+  "run_id": "20261020T023055Z",
+  "columns": 131072,
+  "aggregation": {
+    "center": "Arithmetic mean of the two per-session medians; sessions have equal weight.",
+    "whiskers": "Minimum and maximum of those two medians; not a confidence interval or within-session quantiles.",
+    "retention": "Within each session, first take the median of round-paired changes against roundtrip_off_graph.",
+    "speedup": "Ratio of averaged per-session median latencies; not an average of per-session speedup ratios."
+  },
+  "completion": [
+    {
+      "rows": 1,
+      "variant": "baseline_stream",
+      "metric": "host_single_us",
+      "session_medians": [
+        37.031,
+        36.789
+      ],
+      "mean": 36.91,
+      "min": 36.789,
+      "max": 37.031
+    },
+    {
+      "rows": 1,
+      "variant": "baseline_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        28.157,
+        29.924
+      ],
+      "mean": 29.0405,
+      "min": 28.157,
+      "max": 29.924
+    },
+    {
+      "rows": 1,
+      "variant": "local_recompute_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        16.557,
+        17.405
+      ],
+      "mean": 16.981,
+      "min": 16.557,
+      "max": 17.405
+    },
+    {
+      "rows": 1,
+      "variant": "retained_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        14.881,
+        15.269
+      ],
+      "mean": 15.075,
+      "min": 14.881,
+      "max": 15.269
+    },
+    {
+      "rows": 16,
+      "variant": "baseline_stream",
+      "metric": "host_single_us",
+      "session_medians": [
+        44.958,
+        44.393
+      ],
+      "mean": 44.6755,
+      "min": 44.393,
+      "max": 44.958
+    },
+    {
+      "rows": 16,
+      "variant": "baseline_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        39.171,
+        38.431
+      ],
+      "mean": 38.801,
+      "min": 38.431,
+      "max": 39.171
+    },
+    {
+      "rows": 16,
+      "variant": "local_recompute_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        19.982,
+        19.908
+      ],
+      "mean": 19.945,
+      "min": 19.908,
+      "max": 19.982
+    },
+    {
+      "rows": 16,
+      "variant": "row_retained_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        19.201,
+        19.242
+      ],
+      "mean": 19.2215,
+      "min": 19.201,
+      "max": 19.242
+    },
+    {
+      "rows": 32,
+      "variant": "baseline_stream",
+      "metric": "host_single_us",
+      "session_medians": [
+        69.855,
+        69.99
+      ],
+      "mean": 69.9225,
+      "min": 69.855,
+      "max": 69.99
+    },
+    {
+      "rows": 32,
+      "variant": "baseline_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        64.692,
+        64.289
+      ],
+      "mean": 64.4905,
+      "min": 64.289,
+      "max": 64.692
+    },
+    {
+      "rows": 32,
+      "variant": "local_recompute_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        27.904,
+        27.17
+      ],
+      "mean": 27.537,
+      "min": 27.17,
+      "max": 27.904
+    },
+    {
+      "rows": 32,
+      "variant": "row_retained_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        25.683,
+        24.643
+      ],
+      "mean": 25.163,
+      "min": 24.643,
+      "max": 25.683
+    },
+    {
+      "rows": 64,
+      "variant": "baseline_stream",
+      "metric": "host_single_us",
+      "session_medians": [
+        143.703,
+        143.014
+      ],
+      "mean": 143.3585,
+      "min": 143.014,
+      "max": 143.703
+    },
+    {
+      "rows": 64,
+      "variant": "baseline_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        137.057,
+        134.625
+      ],
+      "mean": 135.841,
+      "min": 134.625,
+      "max": 137.057
+    },
+    {
+      "rows": 64,
+      "variant": "local_recompute_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        62.174,
+        61.377
+      ],
+      "mean": 61.7755,
+      "min": 61.377,
+      "max": 62.174
+    },
+    {
+      "rows": 64,
+      "variant": "row_retained_graph",
+      "metric": "host_single_us",
+      "session_medians": [
+        55.701,
+        55.188
+      ],
+      "mean": 55.444500000000005,
+      "min": 55.188,
+      "max": 55.701
+    }
+  ]
+}

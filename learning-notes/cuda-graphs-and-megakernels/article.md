@@ -93,7 +93,7 @@ Our [**megakernel**](evidence/rms-softmax/implementation.html#megakernel-and-row
 
 ![Local fusion rereads the input in 3 kernels; the megakernel retains a tile in shared memory across two row-scoped barriers.](assets/rms-storage.png)
 
-*The continuous green region represents one block’s shared-memory buffer, reused for input values and then exponentials across two row-scoped barriers. Small statistics still use global memory. This schematic shows storage, not measured timing.*
+*The continuous green region represents one block’s shared-memory buffer, reused for input values and then exponentials across two row-scoped barriers. Small statistics still use global memory. This row-scoped variant is used for 16–64 rows in the main comparison; the single-row measurement uses grid-wide barriers. The schematic shows storage, not measured timing.*
 
 Grid-wide barriers wait for every block in the launch. Row-scoped barriers wait only for blocks processing the same row, so independent rows need not reach each phase together. Our row-scoped barrier uses device-scope release/acquire atomics to make each block’s statistics visible before other blocks consume them.
 
