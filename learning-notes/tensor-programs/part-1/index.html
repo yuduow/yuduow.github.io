@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Semantic Graphs · One linear layer, four ways to express the computation.">
+  <meta name="robots" content="index, follow">
+  <meta name="color-scheme" content="light dark">
+  <title>Tensor Programs → GPU Kernels, Explained. Part 1 · Yuduo Wu</title>
+  <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css?v=b391d3241dd2">
+  <link rel="stylesheet" href="../assets/blog.css?v=be0a9ac5359c">
+  <link rel="stylesheet" href="../../../note-icons.css?v=4b469568df12">
+<style>
+.tensor-series-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;margin:0 0 2rem;font-size:.9rem}
+.tensor-series-nav a{padding:.4rem .65rem;border:1px solid var(--line);border-radius:5px;text-decoration:none}
+.tensor-series-nav a[aria-current=page]{color:var(--accent);border-color:var(--accent)}
+.tensor-program-post .figure-scroll img{min-width:0}
+@media(max-width:640px){.tensor-program-post .figure-scroll img{min-width:720px}}
+@media print{.tensor-series-nav{display:none}.tensor-program-post .figure-scroll img{min-width:0}}
+</style><style>
+.ir-code{--ir-fn:#0550ae;--ir-type:#0f766e;--ir-var:#1e293b;--ir-kw:#6d28d9;--ir-num:#b45309;--ir-punct:#475569;--ir-str:#15803d;--ir-comment:#64748b}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ir-code{--ir-fn:#93c5fd;--ir-type:#67e8f9;--ir-var:#e2e8f0;--ir-kw:#c4b5fd;--ir-num:#fcd34d;--ir-punct:#a5b4c8;--ir-str:#a7f3d0;--ir-comment:#94a3b8}}
+:root[data-theme="dark"] .ir-code, .ir-explorer .ir-code, .code-block .ir-code{--ir-fn:#93c5fd;--ir-type:#67e8f9;--ir-var:#e2e8f0;--ir-kw:#c4b5fd;--ir-num:#fcd34d;--ir-punct:#a5b4c8;--ir-str:#a7f3d0;--ir-comment:#94a3b8}
+.ir-code .nf, .ir-code .nc {color:var(--ir-fn);font-weight:600}
+.ir-code .kt, .ir-code .nb {color:var(--ir-type)}
+.ir-code .nv {color:var(--ir-var)}
+.ir-code .na, .ir-code .no, .ir-code .k, .ir-code .kc {color:var(--ir-kw)}
+.ir-code .mi, .ir-code .mf {color:var(--ir-num)}
+.ir-code .p, .ir-code .o {color:var(--ir-punct)}
+.ir-code .s, .ir-code .s1, .ir-code .s2 {color:var(--ir-str)}
+.ir-code .c, .ir-code .c1 {color:var(--ir-comment)}
+</style>
+<link rel="canonical" href="https://www.yuduowu.com/learning-notes/tensor-programs/part-1/">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <main class="page post-page tensor-program-post" id="content">
+    <header class="blog-masthead"><a href="../../../learning-notes/">Learning Notes</a><a class="blog-author" href="../../../">Yuduo Wu</a></header>
+    <header class="post-header">
+      <p class="post-meta"><span>14 min read</span><span><time datetime="2026-10-18">October 18, 2026</time></span></p>
+      <h1><svg class="note-title-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M8 6 2 12l6 6m8-12 6 6-6 6M14 3l-4 18"/></svg>Tensor Programs → GPU Kernels, Explained. Part 1</h1>
+      <p class="post-subtitle">Semantic Graphs · One linear layer, four ways to express the computation.</p>
+    </header>
+    <nav class="tensor-series-nav" aria-label="Series parts"><a href="../part-1/" aria-current="page">Part 1 · Semantic Graphs</a> <span>Part 2 · Scheduling and Code Generation (forthcoming)</span></nav>
+    <details class="mobile-toc"><summary>In This Post</summary><ol><li><a href="#one-program-and-one-numerical-contract">One Program and One Numerical Contract</a></li><li><a href="#pytorch-inductor-retains-matmul-and-explicit-casts">Inductor Retains MatMul and Explicit Casts</a></li><li><a href="#max-preserves-explicit-matrix-semantics">MAX Preserves Explicit Matrix Semantics</a></li><li><a href="#tinygrad-decomposes-matmul-into-uops">TinyGrad Decomposes MatMul into UOps</a></li><li><a href="#luminal-retains-equivalent-expressions">Luminal Retains Equivalent Expressions</a></li><li><a href="#what-the-semantic-ir-makes-available">What the Semantic IR Makes Available</a></li></ol></details>
+    <div class="post-grid">
+      <article class="post-content" aria-label="Tensor Programs → GPU Kernels, Explained. Part 1"><p>One line of PyTorch can become very different compiler graphs. For a linear layer, a machine learning compiler can keep matrix multiplication explicit, expand it into multiplication and reduction, or retain several equivalent forms. Each choice changes what later stages can optimize directly and what structure they must rediscover before selecting GPU code.</p>
+<p>To see how compilers make these decisions under the hood, we trace a toy example of <a href="#linear-operation">one linear operation</a> through <a href="https://github.com/pytorch/pytorch"><strong>PyTorch Inductor</strong></a>, <a href="https://github.com/modular/modular"><strong>MAX</strong></a>, <a href="https://github.com/tinygrad/tinygrad"><strong>TinyGrad</strong></a>, and <a href="https://github.com/luminal-ai/luminal"><strong>Luminal</strong></a>, all targeting an NVIDIA H100 GPU. Part 1 examines each compiler's <strong>intermediate representation (IR)</strong>—its operations, types, and value dependencies—before kernel boundaries are frozen. <span>Part 2 (forthcoming)</span> continues through storage allocation, implementation selection, kernel scheduling, code generation, and execution.</p>
+<p>The PyTorch line below specifies the computation. Our <a href="../evidence/experiments/cuda_case/adapters.py">comparison setup</a> builds it through each system's frontend, using the same input shapes and numerical contract. The excerpts are saved captures from selected semantic stages.</p>
+<div id="linear-operation" class="code-block"><div class="code-header"><span>Python</span><span class="code-note"></span></div><pre tabindex="0" aria-label="Python code"><code class="syntax ir-code"><span class="c1"># FP16 PyTorch tensors; contiguous row-major inputs:</span>
+<span class="c1"># x: [1024, 768], weight: [1024, 768] ([out_features, in_features]),</span>
+<span class="c1"># b: [1024] -&gt; y: [1024, 1024]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">weight</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div>
+<figure><div class="figure-scroll"><img src="../assets/h100-program.svg?v=c26ba2a7b03d" alt="A directed acyclic graph: weight feeds transpose; x and the transposed weight feed matrix multiplication; the projection proj and bias b feed addition to produce y." loading="lazy" decoding="async"></div><figcaption>Figure 1.1. The source computation as a directed acyclic graph (DAG). Arrows show value dependencies. The operation nodes do not specify GPU kernel boundaries, and the transpose does not necessarily copy data. The FP16 result <code>proj</code> is rounded before bias addition.</figcaption></figure>
+<h2 id="one-program-and-one-numerical-contract">One Program and One Numerical Contract</h2>
+<p>PyTorch's <a href="https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html"><code>nn.Linear(768, 1024)</code></a> defines the transformation <code>y = x @ weight.T + b</code>, with <code>weight</code> shaped <code>[out_features, in_features] = [1024, 768]</code>. Our <a href="../evidence/experiments/cuda_case/next_workloads.py">toy workload</a> uses that weight convention with contiguous row-major inputs and explicitly constructs transpose, MatMul, and add operations. It is not a trace of <code>nn.Linear</code>.</p>
+<p>Each of the 1,024 input rows has 768 features and produces 1,024 output features. The <code>[1024, 1024]</code> <strong>projection</strong> <code>proj</code> sums products over the shared input dimension <code>K = 768</code>; this sum is the <strong>contraction</strong>. In the formula, <code>m</code> indexes input rows, <code>n</code> indexes output features, and <code>k</code> indexes input features. We name the intermediate <code>proj</code> even though the source expression stays on one line. <code>FP16</code> and <code>FP32</code> mean 16-bit and 32-bit floating point.</p>
+<math display="block" aria-label="proj sub m n equals FP16 rounding of the sum from k equals zero to 767 of x sub m k times weight sub n k, accumulated in FP32"><msub><mtext>proj</mtext><mrow><mi>m</mi><mo>,</mo><mi>n</mi></mrow></msub><mo>=</mo><mtext>FP16</mtext><mo>(</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mn>767</mn></munderover><msub><mi>x</mi><mrow><mi>m</mi><mo>,</mo><mi>k</mi></mrow></msub><mo>·</mo><msub><mtext>weight</mtext><mrow><mi>n</mi><mo>,</mo><mi>k</mi></mrow></msub><mo>)</mo></math>
+<p>Adding the <code>[1024]</code> bias <code>b</code> is an <strong>epilogue</strong>: every row uses the same <code>b[n]</code> for output column <code>n</code>.</p>
+<p>In eager FP16 execution, the separate <code>torch.matmul</code> returns the FP16 tensor <code>proj</code> before <code>+ b</code> runs. We preserve that rounding boundary and additionally require FP32 matrix arithmetic:</p>
+<ol>
+<li><strong>FP32 matrix arithmetic.</strong> Products accumulate in FP32 without first rounding each product to FP16. The <a href="../evidence/experiments/cuda_case/next_workloads.py">contract</a> allows the order of summation to vary.</li>
+<li><strong>FP16 projection rounding.</strong> The matrix result <code>proj</code> is rounded to FP16 <em>before</em> bias addition, and the final output <code>y</code> is FP16.</li>
+</ol>
+<p>Rounding before bias can change the answer, so it constrains which rewrites are legal. These are requirements of this comparison; the <code>nn.Linear</code> API does not promise an FP16 intermediate before bias addition. A fused kernel must preserve our rounding step, but it can keep <code>proj</code> in registers instead of storing it in memory.</p>
+<p>With that, we can compare what each representation keeps explicit, what that enables, and what later stages must still decide.</p>
+<h2 id="pytorch-inductor-retains-matmul-and-explicit-casts" class="compiler-heading"><img class="compiler-logo" src="../assets/compiler-pytorch.webp?v=415a6b08be20" alt="" aria-hidden="true" width="36" height="36"><span>Inductor Retains MatMul and Explicit Casts</span></h2>
+<blockquote>
+<p>We wanted TorchInductor to share similar abstractions to PyTorch eager to allow support of all of PyTorch, with a thin translation layer.</p>
+<p>— <a href="https://docs.pytorch.org/assets/pytorch2-2.pdf#page=8">PyTorch 2 paper, §4.1</a></p>
+</blockquote>
+<p><strong>Inductor</strong> is the default compilation backend for <a href="https://docs.pytorch.org/docs/stable/torch.compiler.html"><code>torch.compile()</code></a>. Its <a href="https://docs.pytorch.org/assets/pytorch2-2.pdf#page=8">design principles</a> prioritize broad PyTorch coverage: tensor strides, views, and in-place updates must fit the compiler's model. A view changes how tensor elements are indexed while sharing the underlying storage. Mirroring PyTorch's tensor and storage abstractions reduces the translation needed to support those behaviors. Implementing the compiler in Python also makes it easier for PyTorch users to extend. In our example, the transposed weight is a concrete reason to preserve view semantics while optimizing the surrounding computation.</p>
+<p>The captured <strong>FX graph</strong> represents tensor operations and their dependencies. It mixes <strong>ATen</strong> tensor operators (<code>torch.ops.aten.*</code>) with smaller <strong>PrimTorch</strong> primitives (<code>torch.ops.prims.*</code>), such as dtype conversions. The <a href="../evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/inductor-default/trace-0/torch-debug/torch_compile_debug/run_2026_10_18_06_59_53_413986-pid_2301/torchinductor/model__0_inference_0.0/fx_graph_readable.py">compiled FX graph</a> retains <code>aten.mm</code> while surrounding the bias epilogue with explicit primitive casts:</p>
+<section class="ir-explorer" data-explorer="inductor" aria-label="Explore the Inductor graph">
+<div class="ir-explorer-head"><strong>Explore the Inductor graph</strong><p>Bold labels describe the computation; monospace names match the IR. Select a node to inspect its inputs and captured code.</p><span class="ir-legend"><i></i> Operation <i class="tensor"></i> Tensor / input view</span></div>
+<div class="ir-canvas-scroll" tabindex="0" aria-label="Inductor graph; scroll horizontally on narrow screens"><div class="ir-canvas" style="height:540px"><svg viewBox="0 0 900 540" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="inductor-arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0.5L7.5 4L0 7.5Z" fill="#64748b"/></marker><marker id="inductor-arrow-active" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M0 0.5L8.5 4.5L0 8.5Z" fill="#2464bb"/></marker></defs><path d="M 210 73.0 C 222.5 73.0, 222.5 73.0, 235 73.0" data-from="weight" data-to="permute" marker-end="url(#inductor-arrow)"/><path d="M 430 310.0 C 442.5 310.0, 442.5 207.0, 455 207.0" data-from="x" data-to="mm" marker-end="url(#inductor-arrow)"/><path d="M 430 73.0 C 442.5 73.0, 442.5 177.0, 455 177.0" data-from="permute" data-to="mm" marker-end="url(#inductor-arrow)"/><path d="M 650 192.0 C 662.5 192.0, 662.5 192.0, 675 192.0" data-from="mm" data-to="castp" marker-end="url(#inductor-arrow)"/><path d="M 210 460.0 C 222.5 460.0, 222.5 460.0, 235 460.0" data-from="b" data-to="castb" marker-end="url(#inductor-arrow)"/><path d="M 775 240 C 775 323.5, 555 323.5, 555 407" data-from="castp" data-to="add" marker-end="url(#inductor-arrow)"/><path d="M 430 460.0 C 442.5 460.0, 442.5 460.0, 455 460.0" data-from="castb" data-to="add" marker-end="url(#inductor-arrow)"/><path d="M 650 460.0 C 662.5 460.0, 662.5 460.0, 675 460.0" data-from="add" data-to="out" marker-end="url(#inductor-arrow)"/></svg><button type="button" class="ir-node tensor" style="left:2.2222222222222223%;top:25px" data-node="weight" aria-pressed="false" aria-controls="inductor-weight-detail"><strong>Weight</strong><code class="ir-name">arg0_1</code><span>[1024, 768] · FP16</span></button><button type="button" class="ir-node operation" style="left:26.666666666666668%;top:25px" data-node="permute" aria-pressed="false" aria-controls="inductor-permute-detail"><strong>Transpose</strong><code class="ir-name">aten.permute → permute</code><span>[768, 1024] · FP16</span></button><button type="button" class="ir-node tensor" style="left:26.666666666666668%;top:262px" data-node="x" aria-pressed="false" aria-controls="inductor-x-detail"><strong>Input x</strong><code class="ir-name">arg1_1</code><span>[1024, 768] · FP16</span></button><button type="button" class="ir-node operation" style="left:51.111111111111114%;top:144px" data-node="mm" aria-pressed="true" aria-controls="inductor-mm-detail"><strong>MatMul</strong><code class="ir-name">aten.mm → mm</code><span>[1024, 1024] · FP16</span></button><button type="button" class="ir-node operation" style="left:75.55555555555556%;top:144px" data-node="castp" aria-pressed="false" aria-controls="inductor-castp-detail"><strong>Cast to FP32</strong><code class="ir-name">convert_<wbr>element_<wbr>type_2</code><span>[1024, 1024] · FP32</span></button><button type="button" class="ir-node tensor" style="left:2.2222222222222223%;top:412px" data-node="b" aria-pressed="false" aria-controls="inductor-b-detail"><strong>Bias b</strong><code class="ir-name">arg2_1</code><span>[1024] · FP16</span></button><button type="button" class="ir-node operation" style="left:26.666666666666668%;top:412px" data-node="castb" aria-pressed="false" aria-controls="inductor-castb-detail"><strong>Cast to FP32</strong><code class="ir-name">convert_<wbr>element_<wbr>type_3</code><span>[1024] · FP32</span></button><button type="button" class="ir-node operation" style="left:51.111111111111114%;top:412px" data-node="add" aria-pressed="false" aria-controls="inductor-add-detail"><strong>Add bias</strong><code class="ir-name">aten.add → add</code><span>[1024, 1024] · FP32</span></button><button type="button" class="ir-node operation" style="left:75.55555555555556%;top:412px" data-node="out" aria-pressed="false" aria-controls="inductor-out-detail"><strong>Output y</strong><code class="ir-name">convert_<wbr>element_<wbr>type_4</code><span>[1024, 1024] · FP16</span></button></div></div>
+<div class="ir-controls"><button type="button" data-step="-1" aria-label="Previous Inductor node">← Previous</button><span data-position></span><button type="button" data-step="1" aria-label="Next Inductor node">Next →</button></div>
+<div class="ir-inspector" aria-live="polite"><div class="ir-detail" id="inductor-weight-detail" data-detail="weight" hidden><strong>Weight</strong><dl><dt>IR name(s)</dt><dd><code>arg0_1</code></dd><dt>Inputs</dt><dd>Graph input</dd><dt>Shape / type</dt><dd>[1024, 768] · FP16</dd></dl><p>Input weight; the graph signature records its shape and dtype.</p><details class="ir-node-code" open><summary>Captured lines 2</summary><pre class="ir-code"><code>    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg0_1</span><span class="p">:</span> <span class="s2">"f16[1024, 768]"</span><span class="p">,</span> <span class="n">arg1_1</span><span class="p">:</span> <span class="s2">"f16[1024, 768]"</span><span class="p">,</span> <span class="n">arg2_1</span><span class="p">:</span> <span class="s2">"f16[1024]"</span><span class="p">):</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-permute-detail" data-detail="permute" hidden><strong>Transpose</strong><dl><dt>IR name(s)</dt><dd><code>aten.permute → permute</code></dd><dt>Inputs</dt><dd>Weight (arg0_1)</dd><dt>Shape / type</dt><dd>[768, 1024] · FP16</dd></dl><p>Permutes the two axes. This graph node does not establish that data is copied.</p><details class="ir-node-code" open><summary>Captured lines 4</summary><pre class="ir-code"><code>        <span class="n">permute</span><span class="p">:</span> <span class="s2">"f16[768, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.aten.permute.default</span><span class="p">(</span><span class="n">arg0_1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>  <span class="n">arg0_1</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-x-detail" data-detail="x" hidden><strong>Input x</strong><dl><dt>IR name(s)</dt><dd><code>arg1_1</code></dd><dt>Inputs</dt><dd>Graph input</dd><dt>Shape / type</dt><dd>[1024, 768] · FP16</dd></dl><p>Input activations. Their last dimension contracts with the first dimension of permute.</p><details class="ir-node-code" open><summary>Captured lines 2</summary><pre class="ir-code"><code>    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg0_1</span><span class="p">:</span> <span class="s2">"f16[1024, 768]"</span><span class="p">,</span> <span class="n">arg1_1</span><span class="p">:</span> <span class="s2">"f16[1024, 768]"</span><span class="p">,</span> <span class="n">arg2_1</span><span class="p">:</span> <span class="s2">"f16[1024]"</span><span class="p">):</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-mm-detail" data-detail="mm" ><strong>MatMul</strong><dl><dt>IR name(s)</dt><dd><code>aten.mm → mm</code></dd><dt>Inputs</dt><dd>Input x (arg1_1), Transpose (aten.permute → permute)</dd><dt>Shape / type</dt><dd>[1024, 1024] · FP16</dd></dl><p>Retains matrix multiplication as one ATen operation. Its output is the FP16 projection; accumulation precision is controlled by the compiler settings.</p><details class="ir-node-code" open><summary>Captured lines 7</summary><pre class="ir-code"><code>        <span class="n">mm</span><span class="p">:</span> <span class="s2">"f16[1024, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.aten.mm.default</span><span class="p">(</span><span class="n">arg1_1</span><span class="p">,</span> <span class="n">permute</span><span class="p">);</span>  <span class="n">arg1_1</span> <span class="o">=</span> <span class="n">permute</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-castp-detail" data-detail="castp" hidden><strong>Cast to FP32</strong><dl><dt>IR name(s)</dt><dd><code>convert_element_type_2</code></dd><dt>Inputs</dt><dd>MatMul (aten.mm → mm)</dd><dt>Shape / type</dt><dd>[1024, 1024] · FP32</dd></dl><p>Output: [1024, 1024], FP32. Widening mm does not restore precision discarded by its FP16 rounding.</p><details class="ir-node-code" open><summary>Captured lines 10</summary><pre class="ir-code"><code>        <span class="n">convert_element_type_2</span><span class="p">:</span> <span class="s2">"f32[1024, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.prims.convert_element_type.default</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span> <span class="kt">torch.float32</span><span class="p">);</span>  <span class="n">mm</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-b-detail" data-detail="b" hidden><strong>Bias b</strong><dl><dt>IR name(s)</dt><dd><code>arg2_1</code></dd><dt>Inputs</dt><dd>Graph input</dd><dt>Shape / type</dt><dd>[1024] · FP16</dd></dl><p>One bias value for each output column.</p><details class="ir-node-code" open><summary>Captured lines 2</summary><pre class="ir-code"><code>    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg0_1</span><span class="p">:</span> <span class="s2">"f16[1024, 768]"</span><span class="p">,</span> <span class="n">arg1_1</span><span class="p">:</span> <span class="s2">"f16[1024, 768]"</span><span class="p">,</span> <span class="n">arg2_1</span><span class="p">:</span> <span class="s2">"f16[1024]"</span><span class="p">):</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-castb-detail" data-detail="castb" hidden><strong>Cast to FP32</strong><dl><dt>IR name(s)</dt><dd><code>convert_element_type_3</code></dd><dt>Inputs</dt><dd>Bias b (arg2_1)</dd><dt>Shape / type</dt><dd>[1024] · FP32</dd></dl><p>Output: [1024], FP32. Widens bias before the broadcast addition.</p><details class="ir-node-code" open><summary>Captured lines 11</summary><pre class="ir-code"><code>        <span class="n">convert_element_type_3</span><span class="p">:</span> <span class="s2">"f32[1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.prims.convert_element_type.default</span><span class="p">(</span><span class="n">arg2_1</span><span class="p">,</span> <span class="kt">torch.float32</span><span class="p">);</span>  <span class="n">arg2_1</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-add-detail" data-detail="add" hidden><strong>Add bias</strong><dl><dt>IR name(s)</dt><dd><code>aten.add → add</code></dd><dt>Inputs</dt><dd>Cast to FP32 (convert_element_type_2), Cast to FP32 (convert_element_type_3)</dd><dt>Shape / type</dt><dd>[1024, 1024] · FP32</dd></dl><p>Broadcasts the bias across rows and adds it to the widened, previously rounded projection.</p><details class="ir-node-code" open><summary>Captured lines 14</summary><pre class="ir-code"><code>        <span class="n">add</span><span class="p">:</span> <span class="s2">"f32[1024, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.aten.add.Tensor</span><span class="p">(</span><span class="n">convert_element_type_2</span><span class="p">,</span> <span class="n">convert_element_type_3</span><span class="p">);</span>  <span class="n">convert_element_type_2</span> <span class="o">=</span> <span class="n">convert_element_type_3</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></details></div><div class="ir-detail" id="inductor-out-detail" data-detail="out" hidden><strong>Output y</strong><dl><dt>IR name(s)</dt><dd><code>convert_element_type_4</code></dd><dt>Inputs</dt><dd>Add bias (aten.add → add)</dd><dt>Shape / type</dt><dd>[1024, 1024] · FP16</dd></dl><p>Narrows the addition result to the output dtype.</p><details class="ir-node-code" open><summary>Captured lines 17</summary><pre class="ir-code"><code>        <span class="n">convert_element_type_4</span><span class="p">:</span> <span class="s2">"f16[1024, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.prims.convert_element_type.default</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="kt">torch.float16</span><span class="p">);</span>  <span class="n">add</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></details></div></div><p class="ir-reading-note">The matrix result is already FP16. The later FP32 cast widens that rounded value before bias addition. Arrows show value dependencies, not kernel launches.</p>
+<details class="ir-full-code" open><summary>Full captured excerpt</summary><div class="code-block"><div class="code-header"><span>PyTorch FX</span><span class="code-note"></span></div><pre tabindex="0" aria-label="PyTorch FX code"><code class="syntax ir-code"><span class="n">permute</span><span class="p">:</span> <span class="s2">"f16[768, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.aten.permute.default</span><span class="p">(</span><span class="n">arg0_1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>  <span class="n">arg0_1</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">mm</span><span class="p">:</span> <span class="s2">"f16[1024, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.aten.mm.default</span><span class="p">(</span><span class="n">arg1_1</span><span class="p">,</span> <span class="n">permute</span><span class="p">);</span>  <span class="n">arg1_1</span> <span class="o">=</span> <span class="n">permute</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">convert_element_type_2</span><span class="p">:</span> <span class="s2">"f32[1024, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.prims.convert_element_type.default</span><span class="p">(</span><span class="n">mm</span><span class="p">,</span>
+    <span class="kt">torch.float32</span><span class="p">);</span>  <span class="n">mm</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">convert_element_type_3</span><span class="p">:</span> <span class="s2">"f32[1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.prims.convert_element_type.default</span><span class="p">(</span><span class="n">arg2_1</span><span class="p">,</span>
+    <span class="kt">torch.float32</span><span class="p">);</span>  <span class="n">arg2_1</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">add</span><span class="p">:</span> <span class="s2">"f32[1024, 1024]"</span> <span class="o">=</span> <span class="nf">torch.ops.aten.add.Tensor</span><span class="p">(</span><span class="n">convert_element_type_2</span><span class="p">,</span>
+    <span class="n">convert_element_type_3</span><span class="p">);</span>  <span class="n">convert_element_type_2</span> <span class="o">=</span> <span class="n">convert_element_type_3</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">convert_element_type_4</span><span class="p">:</span> <span class="s2">"f16[1024, 1024]"</span> <span class="o">=</span>
+    <span class="nf">torch.ops.prims.convert_element_type.default</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="kt">torch.float16</span><span class="p">);</span>  <span class="n">add</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div></details></section>
+<p>Here <code>arg0_1</code>, <code>arg1_1</code>, and <code>arg2_1</code> are <code>weight</code>, <code>x</code>, and <code>b</code>; each node carries static shape and dtype metadata (<code>&quot;f16[1024, 1024]&quot;</code>), and <code>= None</code> clears references after their last use in this graph listing. <code>aten.mm</code> returns the FP16 projection. The two FP32 casts inserted by our comparison setup widen that already-rounded result and the bias for addition; the final cast returns FP16. This preserves the projection's rounding boundary while performing the addition in FP32.</p>
+<p>Keeping <code>aten.mm</code> gives later stages an explicit contraction to match to a library call or matrix template, while the visible bias arithmetic can participate in pointwise optimization. Fusion must connect those two representations while preserving the projection rounding.</p>
+<h2 id="max-preserves-explicit-matrix-semantics" class="compiler-heading"><img class="compiler-logo" src="../assets/compiler-modular.svg?v=06c5717f763f" alt="" aria-hidden="true" width="36" height="36"><span>MAX Preserves Explicit Matrix Semantics</span></h2>
+<blockquote>
+<p>MAX offers a layered architecture that lets you work at the level of abstraction that best fits your needs.</p>
+<p>— <a href="https://max.modular.com/stable/api/python/">MAX Python API overview</a></p>
+</blockquote>
+<p>Like Inductor, MAX keeps MatMul explicit. The difference in this capture is how much detail surrounds it: MAX retains a compact transpose–MatMul–add graph, while the Inductor capture exposes the epilogue's widening and narrowing casts.</p>
+<p>Modular's <a href="https://github.com/modular/modular/blob/f912f5cc269e22e395e2da35225731db4464e75a/KGEN/docs/DesignOverview.md">kernel-generation design rationale</a> emphasizes established compiler techniques, predictable lowering, and extensibility without changing compiler source. The goal is to let kernel authors support new algorithms and hardware without waiting for compiler developers to encode every optimization. Parameterized kernel implementations carry that expertise; author-supplied constraints can limit the implementation search.</p>
+<p>MAX exposes a <a href="https://max.modular.com/stable/api/python/">graph-building API and runtime</a> for model authors, while <a href="https://mojolang.org/docs/vision/">Mojo</a> gives kernel authors a general-purpose language with explicit low-level control beyond the restrictions of an embedded domain-specific language (DSL). MAX lowers graphs through successive compiler representations. Its <a href="../evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/max-default/trace-0/01-semantic.mlir">input graph</a> uses <a href="https://mlir.llvm.org/"><strong>MLIR</strong> (Multi-Level Intermediate Representation)</a>. Modular's <code>rmo</code> <strong>dialect</strong> supplies the operation and type vocabulary shown below. Names such as <code>%2</code> identify values, each defined once—<strong>SSA</strong>, or Static Single Assignment:</p>
+<div class="code-block"><div class="code-header"><span>MLIR</span><span class="code-note"></span></div><pre tabindex="0" aria-label="MLIR code"><code class="syntax ir-code"><span class="nv">%2</span> <span class="o">=</span> <span class="nf">rmo.mo.transpose</span><span class="p">(</span><span class="nv">%arg1</span><span class="p">,</span> <span class="nv">%1</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">],</span> <span class="kt">f16</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;,</span> <span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">2</span><span class="p">],</span>
+    <span class="kt">si64</span><span class="p">&gt;)</span> <span class="o">-&gt;</span> <span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">768</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> <span class="kt">f16</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;</span>
+<span class="nv">%3</span> <span class="o">=</span> <span class="nf">rmo.matmul</span><span class="p">(</span><span class="nv">%arg0</span><span class="p">,</span> <span class="nv">%2</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">768</span><span class="p">],</span> <span class="kt">f16</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;,</span> <span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">768</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span>
+    <span class="kt">f16</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;)</span> <span class="o">-&gt;</span> <span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> <span class="kt">f16</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;</span>
+<span class="nv">%4</span> <span class="o">=</span> <span class="nf">rmo.add</span><span class="p">(</span><span class="nv">%3</span><span class="p">,</span> <span class="nv">%arg2</span><span class="p">)</span> <span class="p">:</span> <span class="p">(</span><span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> <span class="kt">f16</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;,</span> <span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">1024</span><span class="p">],</span> <span class="kt">f16</span><span class="p">,</span>
+    <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;)</span> <span class="o">-&gt;</span> <span class="kt">!mo.tensor</span><span class="p">&lt;[</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">],</span> <span class="kt">f16</span><span class="p">,</span> <span class="n">gpu</span><span class="p">:</span><span class="mi">0</span><span class="p">&gt;</span>
+</code></pre></div>
+<figure><div class="figure-scroll"><img src="../assets/h100-max-semantic.svg?v=dcc419d44c22" alt="MAX value flow: weight feeds transpose; x and the transposed weight feed MatMul; the FP16 projection and bias feed add. SSA names match the excerpt." loading="lazy" decoding="async"></div><figcaption>Figure 1.2. Read the MAX excerpt as a value graph: <code>%2</code> is the transposed weight, <code>%3</code> the projection, and <code>%4</code> the output. Blue boxes are operations; white boxes are tensors. The permutation constant and full type signatures are omitted.</figcaption></figure>
+<p><code>%arg0</code>, <code>%arg1</code>, and <code>%arg2</code> are <code>x</code>, <code>weight</code>, and <code>b</code>, and <code>%1</code> is the <code>[1, 0]</code> permutation constant that swaps the two axes. The <code>!mo.tensor&lt;[shape], dtype, device&gt;</code> signatures record each input and output's shape, storage dtype (<code>f16</code>), and device (<code>gpu:0</code>). They do not specify the internal accumulation precision of <code>rmo.matmul</code>.</p>
+<p>This is an example of <a href="https://mlir.llvm.org/docs/Rationale/Rationale/#introduction-and-motivation">progressive lowering</a>: keep useful structure until a stage can map it to the target. Here MatMul remains available for implementation selection; the graph alone does not reveal the tuning policy or kernel schedule.</p>
+<h2 id="tinygrad-decomposes-matmul-into-uops" class="compiler-heading"><img class="compiler-logo" src="../assets/compiler-tinygrad.svg?v=2ca7e5cd1a4c" alt="" aria-hidden="true" width="36" height="36"><span>TinyGrad Decomposes MatMul into UOps</span></h2>
+<blockquote>
+<p>Everything in Tensor is syntactic sugar around constructing a graph of UOps.</p>
+<p>— <a href="https://docs.tinygrad.org/developer/developer/#frontend">TinyGrad developer documentation</a></p>
+</blockquote>
+<p>TinyGrad takes a different starting point from both Inductor and MAX: the contraction is already decomposed in this semantic capture. Its <a href="https://github.com/tinygrad/tinygrad/blob/8e21758540cac8dd235828aaaf925a78d4b0c0eb/README.md">design</a> emphasizes a small, modifiable stack and a limited set of low-level operations for accelerator support. Expressing tensor APIs through shared primitives reduces the operation-specific machinery a backend must implement. Lazy graph construction lets the compiler see their composition before deciding what to execute.</p>
+<p>The <a href="https://docs.tinygrad.org/developer/developer/#frontend">frontend builds a graph of UOps</a>. A <strong>UOp</strong> is an IR node: <code>op</code> names the operation, <code>src</code> holds its inputs, and <code>arg</code> stores metadata. With no primitive <code>matmul</code> UOp, the frontend decomposes the contraction into 3D broadcast views (<code>[1024, 1024, 768]</code>), elementwise multiplication (<code>Ops.MUL</code>), and sum reduction (<code>Ops.REDUCE</code>) (<a href="../evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/tinygrad-default/trace-0/01-semantic.uop.txt">semantic UOps</a>):</p>
+<div class="code-block"><div class="code-header"><span>TinyGrad UOps</span><span class="code-note"></span></div><pre tabindex="0" aria-label="TinyGrad UOps code"><code class="syntax ir-code"><span class="nc">UOp</span><span class="p">(</span><span class="nf">Ops.ADD</span><span class="p">,</span> <span class="na">arg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="na">src</span><span class="o">=</span><span class="p">(</span>
+  <span class="nc">UOp</span><span class="p">(</span><span class="nf">Ops.CAST</span><span class="p">,</span> <span class="na">arg</span><span class="o">=</span><span class="kt">dtypes.f16</span><span class="p">,</span> <span class="na">src</span><span class="o">=</span><span class="p">(</span>
+    <span class="nc">UOp</span><span class="p">(</span><span class="nf">Ops.REDUCE</span><span class="p">,</span> <span class="na">arg</span><span class="o">=</span><span class="p">(</span><span class="nf">Ops.ADD</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="na">src</span><span class="o">=</span><span class="p">(</span>
+      <span class="nc">UOp</span><span class="p">(</span><span class="nf">Ops.PERMUTE</span><span class="p">,</span> <span class="na">arg</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="na">src</span><span class="o">=</span><span class="p">(</span>
+        <span class="nc">UOp</span><span class="p">(</span><span class="nf">Ops.CAST</span><span class="p">,</span> <span class="na">arg</span><span class="o">=</span><span class="kt">dtypes.f32</span><span class="p">,</span> <span class="na">src</span><span class="o">=</span><span class="p">(</span>
+          <span class="nc">UOp</span><span class="p">(</span><span class="nf">Ops.MUL</span><span class="p">,</span> <span class="na">arg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="na">src</span><span class="o">=</span><span class="p">(</span>
+</code></pre></div>
+<figure><div class="figure-scroll"><img src="../assets/h100-tinygrad-uop.svg?v=2e0ca2d1b3e9" alt="TinyGrad value flow: input and weight views feed multiply, FP32 cast, permutation and reduction, FP16 projection rounding, then bias addition." loading="lazy" decoding="async"></div><figcaption>Figure 1.3. Read the TinyGrad excerpt from inputs to output, reversing its root-first nesting. White boxes are inputs; blue boxes are operations. Input views and permutation/reduction are grouped. The virtual 3D product describes indexing, and the arrows do not specify GPU kernels.</figcaption></figure>
+<p>The dump prints root-first from output <code>y</code> (<code>Ops.ADD</code>) inward through <code>src=(...)</code>. Read Figure 1.3 in the opposite direction, from inputs to output. Movement ops reshape <code>x</code> (<code>ParamArg(1)</code>) to <code>[1024, 1, 768]</code> and permute/reshape <code>weight</code> (<code>ParamArg(15)</code>) to <code>[1, 1024, 768]</code>. Broadcasting aligns them over <code>[m, n, k] = [1024, 1024, 768]</code>: each virtual element is the product <code>x[m,k] × weight[n,k]</code>. These views change indexing without allocating a 3D buffer.</p>
+<p>The graph casts the product to FP32, permutes <code>k</code> to the front (<code>[768, 1024, 1024]</code>), and sums that leading axis. In <code>arg=(Ops.ADD, 1)</code>, <code>1</code> means one leading axis is reduced. The result is cast to FP16 before adding bias (<code>ParamArg(17)</code>).</p>
+<p>In the pinned version, <code>matmul(..., dtype=float32)</code> delegates to <code>dot</code>, expressed as <code>(x*w).sum(..., dtype=dtype)</code>. This is why <code>CAST(dtypes.f32)</code> wraps <code>MUL</code> in the dump (<a href="https://github.com/tinygrad/tinygrad/blob/8e21758540cac8dd235828aaaf925a78d4b0c0eb/tinygrad/mixin/op.py#L367-L409">matrix frontend</a>, <a href="https://github.com/tinygrad/tinygrad/blob/8e21758540cac8dd235828aaaf925a78d4b0c0eb/tinygrad/mixin/reduce.py#L44-L45">reduction cast</a>). The nesting records the logical expression; it does not by itself establish the precision of the executed multiplication.</p>
+<p>Here the same indexing and fusion rewrites can work across views, contraction, and bias. Using a specialized matrix instruction then requires recognizing the contraction pattern again. The small vocabulary also leaves <a href="https://docs.tinygrad.org/developer/runtime/">code generation, allocation, and execution support</a> as target-specific work.</p>
+<h2 id="luminal-retains-equivalent-expressions" class="compiler-heading"><img class="compiler-logo" src="../assets/compiler-luminal.svg?v=2bed980952ad" alt="" aria-hidden="true" width="36" height="36"><span>Luminal Retains Equivalent Expressions</span></h2>
+<blockquote>
+<p>Luminal tries to search every possible decision to give the compiler the flexibility to discover complex optimizations.</p>
+<p>— <a href="https://github.com/luminal-ai/luminal/blob/77d3060f01dc9d6f649687cf16a651e3f288aa0c/README.md#search">Luminal README, “Search”</a></p>
+</blockquote>
+<p>Like TinyGrad, Luminal starts from primitive operations. Its distinctive <a href="https://github.com/luminal-ai/luminal/blob/77d3060f01dc9d6f649687cf16a651e3f288aa0c/README.md#search">design goal</a> is to use search to reduce reliance on hand-written performance heuristics. Equivalence rules describe which forms are legal; plan selection determines which available implementation is worth using. In this capture, a primitive contraction and recognized matrix forms remain available together.</p>
+<p>The initial graph expresses matrix multiplication through 3D broadcast views, multiplication (<code>LogicalMul</code>), and reduction (<code>LogicalReduceSum</code>). Because its frontend computes in the operands' dtype, our comparison setup inserts explicit FP32 input casts before multiplication and an FP16 projection cast after reduction (<a href="../evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/01-logical.egg">logical program</a>):</p>
+<div class="code-block"><div class="code-header"><span>Egglog</span><span class="code-note"></span></div><pre tabindex="0" aria-label="Egglog code"><code class="syntax ir-code"><span class="p">(</span><span class="k">let</span> <span class="nv">v4</span> <span class="p">(</span><span class="nf">LogicalCast</span> <span class="nv">v0</span> <span class="p">(</span><span class="kt">F32</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">let</span> <span class="nv">v5</span> <span class="p">(</span><span class="nf">LogicalCast</span> <span class="nv">v3</span> <span class="p">(</span><span class="kt">F32</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">let</span> <span class="nv">v8</span> <span class="p">(</span><span class="nf">LogicalMul</span> <span class="nv">v6</span> <span class="nv">v7</span><span class="p">))</span>
+<span class="p">(</span><span class="k">let</span> <span class="nv">v9</span> <span class="p">(</span><span class="nf">LogicalReduceSum</span> <span class="nv">v8</span> <span class="mi">0</span><span class="p">))</span>
+<span class="p">(</span><span class="k">let</span> <span class="nv">v10</span> <span class="p">(</span><span class="nf">LogicalCast</span> <span class="nv">v9</span> <span class="p">(</span><span class="kt">F16</span><span class="p">)))</span>
+<span class="p">(</span><span class="k">let</span> <span class="nv">v13</span> <span class="p">(</span><span class="nf">LogicalAdd</span> <span class="nv">v10</span> <span class="nv">v12</span><span class="p">))</span>
+</code></pre></div>
+<p>Each <code>let</code> binds a value. The inputs <code>v0</code>, <code>v1</code>, and <code>v2</code> are <code>x</code>, <code>weight</code>, and <code>b</code>. The omitted <code>LogicalIndexMapApply</code> bindings describe views: <code>v3</code> transposes <code>weight</code> to <code>[768, 1024]</code>, then <code>v6</code> and <code>v7</code> broadcast the FP32 inputs (<code>v4</code>, <code>v5</code>) across <code>[1024, 1024, 768]</code>.</p>
+<p><code>LogicalMul</code> forms the products, and <code>LogicalReduceSum v8 0</code> sums the trailing <code>K = 768</code> axis (<code>axis_from_end = 0</code>). The projection is rounded to FP16 in <code>v10</code> before the final addition. The omitted <code>v12</code> view broadcasts the bias across <code>[1024, 1024]</code>.</p>
+<p>Rewriting expands the initial logical program into an <strong>e-graph</strong> of equivalent expressions discovered under the available rules. An <strong>e-class</strong> represents one value; its <strong>e-nodes</strong> are alternative expressions for that value. The view below focuses on four classes from the <a href="../evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/02-saturated-egraph.json">captured e-graph</a>. Start with the FP32 projection: a sum of products, a matrix multiply, and a transposed product all belong to the same class. Selecting an expression reveals its operand classes, which can themselves contain alternatives.</p>
+<p><strong>Extraction</strong> chooses compatible alternatives to form a plan; selecting a node in this view only inspects the capture. Equivalence does not imply equal cost: the reduction and matrix forms can lead to different generated kernels or library calls. Retaining alternatives keeps those options open, at the cost of graph growth and plan search (<a href="https://arxiv.org/abs/2004.03082">e-graph background</a>). The available rules and search budget limit what can be found; the capture does not guarantee the fastest implementation.</p>
+<figure class="eg-figure"><section class="eg-explorer" aria-label="Luminal e-graph explorer">
+<header><strong>One value, several equivalent expressions</strong><p>A dashed boundary is an <b>e-class</b>. Each solid card is an <b>e-node</b> inside it. Inspect an expression to see the e-classes it reads.</p></header>
+<div class="eg-layout"><nav aria-label="Inspect an e-class"><button type="button" data-eg-class="52" aria-pressed="false" aria-controls="eg-class-52"><strong>Transposed weight</strong><code>LogicalTensor-52</code></button><button type="button" data-eg-class="69" aria-pressed="true" aria-controls="eg-class-69"><strong>FP32 projection</strong><code>LogicalTensor-69</code></button><button type="button" data-eg-class="70" aria-pressed="false" aria-controls="eg-class-70"><strong>Rounded projection</strong><code>LogicalTensor-70</code></button><button type="button" data-eg-class="87" aria-pressed="false" aria-controls="eg-class-87"><strong>Output with bias</strong><code>LogicalTensor-87</code></button></nav><div><div class="eg-class-panel" id="eg-class-52" data-eg-panel="52" hidden>
+<div class="eg-cluster"><div class="eg-cluster-title"><strong>Transposed weight</strong><code>LogicalTensor-52</code><span>[768, 1024] · FP16</span></div><p class="eg-equivalence">Same value · alternative expressions</p><div class="eg-alternatives"><button type="button" class="eg-alt" data-eg-node="function-0-LogicalIndexMapApply" aria-pressed="true" aria-controls="eg-detail-function-0-LogicalIndexMapApply"><strong>Coordinate swap</strong><code>Logical<wbr>Index<wbr>Map<wbr>Apply</code><span>weight.T</span></button><button type="button" class="eg-alt" data-eg-node="function-0-LogicalHelperMatrixTranspose" aria-pressed="false" aria-controls="eg-detail-function-0-LogicalHelperMatrixTranspose"><strong>Transpose helper</strong><code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code><span>transpose(weight)</span></button></div><p class="eg-count">2 of 4 captured members shown above. All belong to this e-class.</p></div>
+<div class="eg-inspector" aria-live="polite"><div class="eg-detail" data-eg-detail="function-0-LogicalIndexMapApply" id="eg-detail-function-0-LogicalIndexMapApply" ><strong>Coordinate swap</strong><p>The index map swaps the two coordinates without prescribing a copy.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-40</code><span>Weight</span></li><li><code>IndexMap-51</code><span>Coordinate swap</span></li><li><code>Shape-46</code><span>[768, 1024]</span></li></ul><span>→ <code>Logical<wbr>Index<wbr>Map<wbr>Apply</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-0-LogicalIndexMapApply&quot;: {
+    &quot;op&quot;: &quot;LogicalIndexMapApply&quot;,
+    &quot;children&quot;: [
+      &quot;function-1-LogicalTensorInputLit&quot;,
+      &quot;function-0-IndexMapLit&quot;,
+      &quot;function-10-shape-of&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-52&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div><div class="eg-detail" data-eg-detail="function-0-LogicalHelperMatrixTranspose" id="eg-detail-function-0-LogicalHelperMatrixTranspose" hidden><strong>Transpose helper</strong><p>The same value is also represented by a matrix transpose helper.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-40</code><span>Weight</span></li></ul><span>→ <code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-0-LogicalHelperMatrixTranspose&quot;: {
+    &quot;op&quot;: &quot;LogicalHelperMatrixTranspose&quot;,
+    &quot;children&quot;: [
+      &quot;function-5-LogicalHelperMatrixTranspose&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-52&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div></div>
+<details class="eg-more"><summary>Other captured members (2)</summary><p>These include representation links (<code>logical-of</code>) and additional views. Records retain the original child node IDs.</p><details><summary><code>logical-of</code><span class="eg-record-id">function-5-logical-of</span></summary><pre><code>{
+  &quot;function-5-logical-of&quot;: {
+    &quot;op&quot;: &quot;logical-of&quot;,
+    &quot;children&quot;: [
+      &quot;function-145-layout-tensor-list-nth-from-end&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-52&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details><details><summary><code>logical-of</code><span class="eg-record-id">function-15-logical-of</span></summary><pre><code>{
+  &quot;function-15-logical-of&quot;: {
+    &quot;op&quot;: &quot;logical-of&quot;,
+    &quot;children&quot;: [
+      &quot;function-15-LayoutTensorLit&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-52&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></details></div><div class="eg-class-panel" id="eg-class-69" data-eg-panel="69" >
+<div class="eg-cluster"><div class="eg-cluster-title"><strong>FP32 projection</strong><code>LogicalTensor-69</code><span>[1024, 1024] · FP32</span></div><p class="eg-equivalence">Same value · alternative expressions</p><div class="eg-alternatives"><button type="button" class="eg-alt" data-eg-node="function-0-LogicalReduceSum" aria-pressed="true" aria-controls="eg-detail-function-0-LogicalReduceSum"><strong>Sum of products</strong><code>Logical<wbr>Reduce<wbr>Sum</code><span>sum_k F32(x[m,k]) × F32(weight[n,k])</span></button><button type="button" class="eg-alt" data-eg-node="function-0-LogicalHelperMatrixMultiply" aria-pressed="false" aria-controls="eg-detail-function-0-LogicalHelperMatrixMultiply"><strong>Matrix multiply</strong><code>Logical<wbr>Helper<wbr>Matrix<wbr>Multiply</code><span>F32(x) @ F32(weight.T)</span></button><button type="button" class="eg-alt" data-eg-node="function-8-LogicalHelperMatrixTranspose" aria-pressed="false" aria-controls="eg-detail-function-8-LogicalHelperMatrixTranspose"><strong>Transposed product</strong><code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code><span>(F32(weight) @ F32(x.T)).T</span></button></div><p class="eg-count">3 of 6 captured members shown above. All belong to this e-class.</p></div>
+<div class="eg-inspector" aria-live="polite"><div class="eg-detail" data-eg-detail="function-0-LogicalReduceSum" id="eg-detail-function-0-LogicalReduceSum" ><strong>Sum of products</strong><p>Reduces the broadcast product over K = 768. The product is another e-class, so its operands can have alternatives too.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-68</code><span>Broadcast products</span></li><li><code>i64-0</code><span>Trailing axis (0)</span></li></ul><span>→ <code>Logical<wbr>Reduce<wbr>Sum</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-0-LogicalReduceSum&quot;: {
+    &quot;op&quot;: &quot;LogicalReduceSum&quot;,
+    &quot;children&quot;: [
+      &quot;function-1-LogicalMul&quot;,
+      &quot;primitive-i64-0&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div><div class="eg-detail" data-eg-detail="function-0-LogicalHelperMatrixMultiply" id="eg-detail-function-0-LogicalHelperMatrixMultiply" hidden><strong>Matrix multiply</strong><p>Recognizes the contraction as a matrix operation. Its children refer to the FP32 input e-classes, not to one fixed implementation of each input.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-53</code><span>FP32 input x</span></li><li><code>LogicalTensor-54</code><span>FP32 transposed weight</span></li></ul><span>→ <code>Logical<wbr>Helper<wbr>Matrix<wbr>Multiply</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-0-LogicalHelperMatrixMultiply&quot;: {
+    &quot;op&quot;: &quot;LogicalHelperMatrixMultiply&quot;,
+    &quot;children&quot;: [
+      &quot;function-7-LogicalHelperMatrixTranspose&quot;,
+      &quot;function-20-logical-of&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div><div class="eg-detail" data-eg-detail="function-8-LogicalHelperMatrixTranspose" id="eg-detail-function-8-LogicalHelperMatrixTranspose" hidden><strong>Transposed product</strong><p>Transposes the reversed contraction in e-class 2063. That class also refers back to this one: e-graphs can contain cycles.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-2063</code><span>Reversed contraction</span></li></ul><span>→ <code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-8-LogicalHelperMatrixTranspose&quot;: {
+    &quot;op&quot;: &quot;LogicalHelperMatrixTranspose&quot;,
+    &quot;children&quot;: [
+      &quot;function-9-LogicalIndexMapApply&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div></div>
+<details class="eg-more"><summary>Other captured members (3)</summary><p>These include representation links (<code>logical-of</code>) and additional views. Records retain the original child node IDs.</p><details><summary><code>Logical<wbr>Index<wbr>Map<wbr>Apply</code><span class="eg-record-id">function-14-LogicalIndexMapApply</span></summary><pre><code>{
+  &quot;function-14-LogicalIndexMapApply&quot;: {
+    &quot;op&quot;: &quot;LogicalIndexMapApply&quot;,
+    &quot;children&quot;: [
+      &quot;function-45-logical-of&quot;,
+      &quot;function-7-IndexMapLit&quot;,
+      &quot;function-14-shape-of&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details><details><summary><code>logical-of</code><span class="eg-record-id">function-13-logical-of</span></summary><pre><code>{
+  &quot;function-13-logical-of&quot;: {
+    &quot;op&quot;: &quot;logical-of&quot;,
+    &quot;children&quot;: [
+      &quot;function-13-LayoutTensorLit&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details><details><summary><code>logical-of</code><span class="eg-record-id">function-46-logical-of</span></summary><pre><code>{
+  &quot;function-46-logical-of&quot;: {
+    &quot;op&quot;: &quot;logical-of&quot;,
+    &quot;children&quot;: [
+      &quot;function-100-layout-tensor-list-nth-from-end&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></details></div><div class="eg-class-panel" id="eg-class-70" data-eg-panel="70" hidden>
+<div class="eg-cluster"><div class="eg-cluster-title"><strong>Rounded projection</strong><code>LogicalTensor-70</code><span>[1024, 1024] · FP16</span></div><p class="eg-equivalence">Same value · alternative expressions</p><div class="eg-alternatives"><button type="button" class="eg-alt" data-eg-node="function-2-LogicalCast" aria-pressed="true" aria-controls="eg-detail-function-2-LogicalCast"><strong>Round to FP16</strong><code>Logical<wbr>Cast</code><span>proj = FP16(projection)</span></button></div><p class="eg-count">1 of 2 captured members shown above. All belong to this e-class.</p></div>
+<div class="eg-inspector" aria-live="polite"><div class="eg-detail" data-eg-detail="function-2-LogicalCast" id="eg-detail-function-2-LogicalCast" ><strong>Round to FP16</strong><p>The cast reads projection e-class 69. Every compatible choice for that input must preserve this rounding before bias addition.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-69</code><span>FP32 projection</span></li><li><code>Dtype-4</code><span>FP16</span></li></ul><span>→ <code>Logical<wbr>Cast</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-2-LogicalCast&quot;: {
+    &quot;op&quot;: &quot;LogicalCast&quot;,
+    &quot;children&quot;: [
+      &quot;function-13-logical-of&quot;,
+      &quot;function-6-dtype-of&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-70&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div></div>
+<details class="eg-more"><summary>Other captured members (1)</summary><p>These include representation links (<code>logical-of</code>) and additional views. Records retain the original child node IDs.</p><details><summary><code>logical-of</code><span class="eg-record-id">function-14-logical-of</span></summary><pre><code>{
+  &quot;function-14-logical-of&quot;: {
+    &quot;op&quot;: &quot;logical-of&quot;,
+    &quot;children&quot;: [
+      &quot;function-26-layout-tensor-list-nth-from-end&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-70&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></details></div><div class="eg-class-panel" id="eg-class-87" data-eg-panel="87" hidden>
+<div class="eg-cluster"><div class="eg-cluster-title"><strong>Output with bias</strong><code>LogicalTensor-87</code><span>[1024, 1024] · FP16</span></div><p class="eg-equivalence">Same value · alternative expressions</p><div class="eg-alternatives"><button type="button" class="eg-alt" data-eg-node="function-0-LogicalAdd" aria-pressed="true" aria-controls="eg-detail-function-0-LogicalAdd"><strong>Projection + bias</strong><code>Logical<wbr>Add</code><span>proj + b[n]</span></button><button type="button" class="eg-alt" data-eg-node="function-1-LogicalAdd" aria-pressed="false" aria-controls="eg-detail-function-1-LogicalAdd"><strong>Bias + projection</strong><code>Logical<wbr>Add</code><span>b[n] + proj</span></button></div><p class="eg-count">2 of 4 captured members shown above. All belong to this e-class.</p></div>
+<div class="eg-inspector" aria-live="polite"><div class="eg-detail" data-eg-detail="function-0-LogicalAdd" id="eg-detail-function-0-LogicalAdd" ><strong>Projection + bias</strong><p>Reads the rounded projection (70) and broadcast bias (86).</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-70</code><span>Rounded projection</span></li><li><code>LogicalTensor-86</code><span>Broadcast bias</span></li></ul><span>→ <code>Logical<wbr>Add</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-0-LogicalAdd&quot;: {
+    &quot;op&quot;: &quot;LogicalAdd&quot;,
+    &quot;children&quot;: [
+      &quot;function-2-LogicalCast&quot;,
+      &quot;function-4-LogicalIndexMapApply&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-87&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div><div class="eg-detail" data-eg-detail="function-1-LogicalAdd" id="eg-detail-function-1-LogicalAdd" hidden><strong>Bias + projection</strong><p>The capture retains the operand-swapped addition in the same output e-class.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-86</code><span>Broadcast bias</span></li><li><code>LogicalTensor-70</code><span>Rounded projection</span></li></ul><span>→ <code>Logical<wbr>Add</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-1-LogicalAdd&quot;: {
+    &quot;op&quot;: &quot;LogicalAdd&quot;,
+    &quot;children&quot;: [
+      &quot;function-9-logical-of&quot;,
+      &quot;function-14-logical-of&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-87&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></div></div>
+<details class="eg-more"><summary>Other captured members (2)</summary><p>These include representation links (<code>logical-of</code>) and additional views. Records retain the original child node IDs.</p><details><summary><code>logical-of</code><span class="eg-record-id">function-3-logical-of</span></summary><pre><code>{
+  &quot;function-3-logical-of&quot;: {
+    &quot;op&quot;: &quot;logical-of&quot;,
+    &quot;children&quot;: [
+      &quot;function-3-layout-tensor-of&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-87&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details><details><summary><code>logical-of</code><span class="eg-record-id">function-22-logical-of</span></summary><pre><code>{
+  &quot;function-22-logical-of&quot;: {
+    &quot;op&quot;: &quot;logical-of&quot;,
+    &quot;children&quot;: [
+      &quot;function-22-LayoutTensorLit&quot;
+    ],
+    &quot;eclass&quot;: &quot;LogicalTensor-87&quot;,
+    &quot;cost&quot;: 1.0,
+    &quot;subsumed&quot;: false
+  }
+}</code></pre></details></details></div></div></div>
+<div class="eg-boundary"><strong>From inputs to output</strong><span><code>x</code> and <code>weight</code>: [1024, 768] · FP16. Transposed weight is class <code>52</code>; logical FP32 casts feed the contraction.</span><span>FP32 projection <code>69</code> → FP16 rounding <code>70</code> → add bias <code>b[n]</code> → output <code>87</code></span><span>Bias: [1024] · FP16, broadcast across output rows. The rounding step remains before addition for every projection alternative.</span></div>
+<p class="eg-backends"><strong>Library alternatives.</strong> The captured backend retains FP32-storage and FP16-storage cuBLASLt candidates for the contraction. The FP16-storage path requires the research patch described below. These library sites live in additional representation classes.</p>
+<p class="eg-scope">Selection here only inspects the capture. Extraction later chooses compatible implementations across classes; it does not run every alternative. This view shows four e-classes, not the entire e-graph or every possible program.</p>
+</section><noscript><style>.eg-explorer .eg-class-panel[hidden],.eg-explorer .eg-detail[hidden]{display:block}.eg-layout>nav{display:none}.eg-layout{display:block}.eg-class-panel{margin-bottom:20px}</style></noscript><style>
+.eg-explorer{margin:2rem 0 1rem;border:1px solid #ced9e7;border-radius:16px;background:#f7f9fc;color:#152234;font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:22px}
+.eg-explorer header>strong{font-size:22px}.eg-explorer p{font-size:14px;margin:8px 0 16px}.eg-explorer code{font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;color:#174e96;background:transparent;padding:0;overflow-wrap:anywhere;white-space:normal}
+.eg-layout{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;margin-top:20px}.eg-layout>nav{display:flex;flex-direction:column;gap:9px;align-self:start;position:static;padding:0;margin:0;border:0;background:none}
+.eg-explorer button{font:inherit;text-align:left;color:inherit;cursor:pointer;border:1px solid #bdcde1;background:#fff;border-radius:8px;padding:12px;min-width:0;width:100%;margin:0;box-sizing:border-box}.eg-explorer button strong,.eg-explorer button code,.eg-explorer button span{display:block}.eg-explorer button code{margin:5px 0}.eg-explorer button[aria-pressed=true]{border-color:#2464bb;box-shadow:0 0 0 2px #2464bb25}.eg-layout>nav button[aria-pressed=true]{background:#e7f0ff}.eg-explorer button:focus-visible,.eg-explorer summary:focus-visible{outline:3px solid #8251cb;outline-offset:3px}
+.eg-cluster{border:2px dashed #8c79ad;border-radius:12px;background:#f2eff8;padding:16px}.eg-cluster-title{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px}.eg-cluster-title>strong{font-size:18px}.eg-cluster-title>span{width:100%;color:#526276;font-size:12px}.eg-explorer .eg-equivalence{font-size:12px;color:#675482;margin:12px 0 10px}
+.eg-alternatives{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}.eg-explorer .eg-alt{background:#fff;align-self:stretch;display:flex;flex-direction:column;gap:4px}.eg-alt>span{font-size:12px;color:#526276;overflow-wrap:anywhere}.eg-explorer .eg-count{font-size:12px;color:#675482;margin:12px 0 0}
+.eg-inspector{border:1px solid #d3ddeb;background:#fff;border-radius:10px;padding:16px;margin-top:14px}.eg-detail>strong{font-size:16px}.eg-class-panel[hidden],.eg-detail[hidden]{display:none}.eg-operands{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px;color:#526276}.eg-operands ul{padding:0;margin:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}.eg-operands li{border:1px dashed #ad9bbd;padding:6px 8px;border-radius:6px}.eg-operands li>*{display:block}.eg-operands li>span{font-size:11px;overflow-wrap:anywhere}.eg-operands>span:last-child{max-width:100%}
+.eg-explorer summary{cursor:pointer;color:#174e96;font-size:13px;padding:8px 0}.eg-explorer pre{background:#111b2b;color:#e2e8f0;padding:14px;border-radius:8px;overflow:auto;max-width:100%;white-space:pre;font-size:12px}.eg-explorer pre code{color:inherit;white-space:pre;overflow-wrap:normal}.eg-more{margin-top:10px}.eg-record-id{display:block;color:#526276;font-size:11px;overflow-wrap:anywhere}
+.eg-boundary{border-top:1px solid #ced9e7;margin-top:18px;padding-top:14px;font-size:13px}.eg-boundary strong,.eg-boundary>span{display:block}.eg-boundary>span{margin-top:5px}.eg-explorer .eg-backends{font-size:12px;color:#526276;margin:12px 0 0}.eg-explorer .eg-scope{font-size:12px;color:#526276;margin:10px 0 0}
+@media(max-width:640px){.eg-explorer{padding:16px}.eg-layout{grid-template-columns:1fr}.eg-layout>nav{display:grid;grid-template-columns:1fr 1fr}.eg-alternatives{grid-template-columns:1fr}.eg-explorer header>strong{font-size:20px}}
+@media print{.eg-layout{display:block}.eg-layout>nav{display:none}.eg-class-panel[hidden],.eg-detail[hidden]{display:block}.eg-class-panel{margin-bottom:18px}.eg-more{display:block}}
+</style><script>
+document.querySelectorAll('.eg-explorer').forEach(root=>{
+ root.querySelectorAll('[data-eg-class]').forEach(button=>button.addEventListener('click',()=>{
+  const id=button.dataset.egClass;
+  root.querySelectorAll('[data-eg-class]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  root.querySelectorAll('[data-eg-panel]').forEach(p=>p.hidden=p.dataset.egPanel!==id);
+ }));
+ root.querySelectorAll('[data-eg-node]').forEach(button=>button.addEventListener('click',()=>{
+  const panel=button.closest('[data-eg-panel]');
+  panel.querySelectorAll('[data-eg-node]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+  panel.querySelectorAll('[data-eg-detail]').forEach(p=>p.hidden=p.dataset.egDetail!==button.dataset.egNode);
+ }));
+});
+</script><figcaption>Figure 1.4. Selected e-classes from the <a href="../evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/02-saturated-egraph.json">captured e-graph</a>, with equivalent expressions, operand references, and required FP16 rounding. All 16 members of these four classes are inspectable. <span>Part 2 (forthcoming)</span> follows extraction and measurement of concrete execution plans.</figcaption></figure>
+<p>Backend rules attach implementation alternatives such as <code>CublasLtLogicalMatmulSite</code>. In this captured toy example, the FP16-storage Tensor Core alternative requires our <a href="../evidence/experiments/cuda_case/patches/luminal-fp16-f32-compute.patch">backend patch</a>; the unmodified pinned backend handles the explicit-FP32 graph using materialized FP32 operands. Both storage alternatives remain available, and both preserve the FP16 projection cast before bias addition (<a href="../evidence/experiments/cuda_case/patches/README.md">patch rationale</a>, <a href="../evidence/experiments/cuda_case/luminal-fp16-results.md">validation</a>).</p>
+<h2 id="what-the-semantic-ir-makes-available">What the Semantic IR Makes Available</h2>
+<p>Figure 1.5 separates <strong>how the contraction is expressed</strong> (left versus right) from <strong>whether equivalent forms are retained together</strong> (top versus bottom). Locate TinyGrad, Inductor, and MAX first, then notice that Luminal spans both columns: decomposing MatMul into primitives does not prevent a compiler from recognizing and retaining a matrix operation later.</p>
+<figure><div class="figure-scroll"><img src="../assets/h100-semantics.svg?v=86e15f008b8d" alt="Two-axis map of the captured contractions. TinyGrad shows primitives; Inductor and MAX show explicit MatMul. Luminal spans both columns with three equivalent expressions—sum of products, direct MatMul, and transposed product—followed by an ellipsis for other captured members." loading="lazy" decoding="async"></div><figcaption>Figure 1.5. Positions describe the contraction in these captures. The dashed boundary shows <strong>three of six captured members of one projection e-class</strong>; ≡ means they represent the same value, and … stands for the other three expressions in that class. The formulas use FP32 operands. A complete plan selects compatible members across many e-classes; these are expressions for one value, not complete programs. The earlier e-graph explorer exposes all six members.</figcaption></figure>
+<p>The practical question is <strong>what information the next optimization needs</strong>. Library dispatch benefits from a recognizable contraction; an indexing rewrite needs access to element addresses; choosing among equivalent forms needs a way to compare implementation costs. No single level exposes all of these equally well. Lowering makes some details available while removing structure that another optimization may need.</p>
+<p>Retaining alternatives can coexist with progressive lowering: a compiler can preserve several forms at one stage and lower selected forms later. The design choice is where to commit, how much structure to retain, and how much compilation time and memory to spend on that flexibility. Every choice must still respect the numerical contract.</p>
+<p>These semantic captures establish what later stages can work with, but do not yet determine the GPU kernel sequence or which design runs fastest. <span>Part 2: Scheduling and Code Generation (forthcoming)</span> follows the same representations into concrete storage choices, library calls, generated kernels, and measured execution.</p>
+<style>
+.ir-explorer{margin:2rem 0;border:1px solid #ced9e7;border-radius:16px;background:#f7f9fc;color:#152234;overflow:hidden;font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ir-explorer-head{padding:20px 22px 8px}.ir-explorer-head>strong{font-size:21px}.ir-explorer .ir-explorer-head p{margin:6px 0 10px;font-size:14px}.ir-legend{display:flex;align-items:center;gap:8px;color:#526276;font-size:12px}.ir-legend i{display:inline-block;width:13px;height:13px;background:#e7f0ff;border:1px solid #aebed1;border-radius:3px}.ir-legend .tensor{background:#fff;margin-left:12px}
+.ir-canvas-scroll{overflow-x:auto}.ir-canvas{position:relative;width:100%;min-width:760px}.ir-canvas>svg{position:absolute;width:100%;height:100%;overflow:visible}.ir-canvas>svg>path{fill:none;stroke:#94a3b8;stroke-width:1.5}.ir-canvas>svg>path.related{stroke:#2464bb;stroke-width:2.5}
+.ir-explorer .ir-node{position:absolute;box-sizing:border-box;width:21.111%;height:96px;margin:0;padding:8px 11px;display:flex;flex-direction:column;justify-content:center;border:1px solid #bdcde1;border-radius:9px;background:#e7f0ff;color:#152234;text-align:left;cursor:pointer;font:13px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.ir-explorer .ir-node.tensor{background:#fff}.ir-node strong,.ir-node span,.ir-node .ir-name{display:block}.ir-explorer .ir-node .ir-name{font:11px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;color:#174e96;background:transparent;padding:0;margin:5px 0;overflow-wrap:anywhere;white-space:normal}.ir-node strong,.ir-node span{overflow-wrap:anywhere}.ir-node strong{font-size:14px}.ir-node span{font-size:11px;color:#475569;margin-top:3px}.ir-explorer .ir-node[aria-pressed=true]{border:2px solid #2464bb;box-shadow:0 0 0 3px #2464bb20}.ir-explorer .ir-node.input-related{border-color:#2464bb}.ir-explorer button:focus-visible,.ir-canvas-scroll:focus-visible,.ir-explorer summary:focus-visible{outline:3px solid #8251cb;outline-offset:3px}
+.ir-controls{display:flex;align-items:center;justify-content:space-between;padding:4px 22px 14px;font-size:12px;color:#526276}.ir-explorer .ir-controls button{background:#fff;color:#174e96;border:1px solid #bdcde1;border-radius:6px;padding:7px 12px;font:inherit;cursor:pointer}.ir-controls button:disabled{opacity:.4;cursor:default}
+.ir-inspector{margin:0 20px;padding:16px 18px;background:#fff;border:1px solid #d3ddeb;border-radius:10px}.ir-detail[hidden]{display:none}.ir-detail>strong{font-size:17px}.ir-detail dl{display:grid;grid-template-columns:105px 1fr;gap:4px 12px;margin:10px 0;font-size:13px}.ir-detail dt{color:#526276}.ir-detail dd{margin:0}.ir-explorer .ir-detail p{font-size:14px;margin:10px 0}.ir-explorer summary,.ir-static>summary{cursor:pointer;font-size:14px;color:#174e96;padding:8px 0}.ir-explorer pre{background:#111b2b;color:#e2e8f0;padding:15px;overflow:auto;white-space:pre;font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;border-radius:8px}.ir-explorer pre code{background:transparent;color:inherit;font:inherit;padding:0}
+.ir-explorer .ir-reading-note{padding:12px 22px;margin:0;font-size:12px;color:#526276}.ir-full-code{border-top:1px solid #d3ddeb;padding:6px 22px 12px}.ir-full-code .code-block{margin:8px 0}.ir-static{margin:0 0 2rem}.ir-static>summary{padding:8px 0}
+
+@media print{.ir-explorer{break-inside:auto}.ir-controls{display:none}.ir-explorer .ir-detail[hidden]{display:block}.ir-node-code,.ir-full-code{display:block}.ir-canvas{min-width:760px;zoom:.7}}
+</style><script>
+document.querySelectorAll('[data-explorer]').forEach(root=>{
+ const buttons=[...root.querySelectorAll('[data-node]')];
+ const paths=[...root.querySelectorAll('path[data-to]')];
+ let index=Math.max(0,buttons.findIndex(b=>b.getAttribute('aria-pressed')==='true'));
+ function select(next){
+  index=Math.max(0,Math.min(buttons.length-1,next));
+  const key=buttons[index].dataset.node;
+  const inputs=paths.filter(p=>p.dataset.to===key).map(p=>p.dataset.from);
+  buttons.forEach((b,i)=>{b.setAttribute('aria-pressed',String(i===index));b.classList.toggle('input-related',inputs.includes(b.dataset.node));});
+  root.querySelectorAll('[data-detail]').forEach(p=>{p.hidden=p.dataset.detail!==key;});
+  paths.forEach(p=>{const rel=p.dataset.to===key;p.classList.toggle('related',rel);p.setAttribute('marker-end',`url(#${root.dataset.explorer}-arrow${rel?'-active':''})`);});
+  root.querySelector('[data-position]').textContent=`${index+1} / ${buttons.length} nodes`;
+  root.querySelector('[data-step="-1"]').disabled=index===0;
+  root.querySelector('[data-step="1"]').disabled=index===buttons.length-1;
+ }
+ buttons.forEach((b,i)=>b.addEventListener('click',()=>select(i)));
+ root.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>select(index+Number(b.dataset.step))));
+ select(index);
+});
+</script><style>
+h2.compiler-heading{display:flex;align-items:flex-start;gap:.45em}
+.compiler-heading .compiler-logo{display:block;flex:0 0 36px;width:36px;height:36px;box-sizing:border-box;object-fit:contain;padding:4px;margin:0;border:1px solid #dce2ea;border-radius:7px;background:#fff;color-scheme:light}
+.compiler-heading>span{min-width:0}
+</style></article>
+      <nav class="post-toc" aria-label="Article sections"><p>In This Post</p><ol><li><a href="#one-program-and-one-numerical-contract">One Program and One Numerical Contract</a></li><li><a href="#pytorch-inductor-retains-matmul-and-explicit-casts">Inductor Retains MatMul and Explicit Casts</a></li><li><a href="#max-preserves-explicit-matrix-semantics">MAX Preserves Explicit Matrix Semantics</a></li><li><a href="#tinygrad-decomposes-matmul-into-uops">TinyGrad Decomposes MatMul into UOps</a></li><li><a href="#luminal-retains-equivalent-expressions">Luminal Retains Equivalent Expressions</a></li><li><a href="#what-the-semantic-ir-makes-available">What the Semantic IR Makes Available</a></li></ol></nav>
+    </div>
+    <footer class="post-footer"><nav><a href="../../">Learning Notes</a><a href="../part-1/" aria-current="page">Part 1 · Semantic Graphs</a> <span>Part 2 · Scheduling and Code Generation (forthcoming)</span></nav>
+    </footer>
+  </main>
+</body>
+</html>

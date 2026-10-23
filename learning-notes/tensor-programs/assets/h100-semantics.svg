@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 574" role="img" aria-labelledby="title desc">
+<title id="title">Representation and Retained Alternatives</title><desc id="desc">Columns distinguish primitive contraction expressions from explicit MatMul. The upper row shows TinyGrad on the primitive side and Inductor and MAX on the MatMul side. The lower row shows three of six captured members of one Luminal e-class spanning both representations, linked by equivalence rather than execution order.</desc>
+<style>
+:root{--paper:#f7f9fc;--panel:#fff;--ink:#152234;--muted:#526276;--line:#cfdae5;--soft:#eaf0f6;--blue:#2260b0;--blue-soft:#e7f0ff;--teal:#086e66;--teal-soft:#dff4ee;--purple:#7753ab;--purple-soft:#f0eafa}
+@media(prefers-color-scheme:dark){:root{--paper:#151d29;--panel:#1c2735;--ink:#e9eff8;--muted:#b1bfd0;--line:#43536a;--soft:#29374a;--blue:#8ebaff;--blue-soft:#213c60;--teal:#83d8c9;--teal-soft:#163e3b;--purple:#c9a9f5;--purple-soft:#392e4d}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:var(--ink);font-size:18px}
+.title{font-size:25px;font-weight:650;letter-spacing:-.5px}.label{font-size:13px;letter-spacing:1.5px;fill:var(--muted);font-weight:600}.small{font-size:15px;fill:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px}.node-name{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;fill:var(--blue)}.node-shape{font-size:13px;fill:var(--muted)}.muted{fill:var(--muted)}.bold{font-weight:600}.blue{fill:var(--blue)}.teal{fill:var(--teal)}.purple{fill:var(--purple)}
+</style>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="var(--muted)"/></marker></defs>
+<rect width="1000" height="574" rx="18" fill="var(--paper)"/>
+
+<text x="24" y="43" class="title" text-anchor="start">Representation and Retained Alternatives</text>
+<text x="24" y="76" class="small" text-anchor="start">The same contraction can change representation without immediately discarding the earlier form.</text>
+<text x="385" y="119" class="bold" text-anchor="middle">Primitives</text>
+<text x="786" y="119" class="bold" text-anchor="middle">Explicit MatMul</text>
+<text x="24" y="216" class="bold" text-anchor="start">One form shown</text>
+<text x="24" y="241" class="small" text-anchor="start">in the working graph</text>
+<rect x="210" y="141" width="350" height="201" rx="10" fill="var(--soft)" stroke="var(--line)"/>
+<rect x="604" y="141" width="372" height="201" rx="10" fill="var(--soft)" stroke="var(--line)"/>
+<rect x="230" y="186" width="310" height="94" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="246" y="208" class="bold" text-anchor="start">TinyGrad</text>
+<text x="246" y="229" class="node-name" text-anchor="start">Ops.MUL; Ops.REDUCE</text>
+<text x="246" y="251" class="node-shape" text-anchor="start">Multiply, reduction, indexing</text>
+<rect x="624" y="157" width="332" height="70" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="640" y="179" class="bold" text-anchor="start">Inductor</text>
+<text x="640" y="200" class="node-name" text-anchor="start">aten.mm + explicit epilogue casts</text>
+<rect x="624" y="239" width="332" height="70" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="640" y="261" class="bold" text-anchor="start">MAX</text>
+<text x="640" y="282" class="node-name" text-anchor="start">rmo.matmul + tensor types</text>
+<text x="385" y="327" class="small" text-anchor="middle">Recognize the contraction pattern</text>
+<text x="786" y="327" class="small" text-anchor="middle">Match the matrix operation directly</text>
+<text x="24" y="434" class="bold" text-anchor="start">Equivalent forms</text>
+<text x="24" y="459" class="small" text-anchor="start">retained together</text>
+<rect x="210" y="371" width="766" height="179" rx="10" fill="var(--purple-soft)" stroke="var(--purple)" stroke-dasharray="7 5"/>
+<text x="230" y="402" class="bold" text-anchor="start">Luminal · projection e-class · 3 of 6 members shown</text>
+<rect x="230" y="420" width="210" height="74" rx="10" fill="var(--panel)" stroke="var(--line)"/>
+<text x="246" y="442" class="bold" text-anchor="start">Sum of products</text>
+<text x="246" y="463" class="node-name" text-anchor="start">Σₖ X[m,k] W[n,k]</text>
+<text x="455" y="466" class="title purple" text-anchor="middle">≡</text>
+<rect x="470" y="420" width="210" height="74" rx="10" fill="var(--panel)" stroke="var(--line)"/>
+<text x="486" y="442" class="bold" text-anchor="start">Matrix multiply</text>
+<text x="486" y="463" class="node-name" text-anchor="start">X @ W.T</text>
+<text x="695" y="466" class="title purple" text-anchor="middle">≡</text>
+<rect x="710" y="420" width="210" height="74" rx="10" fill="var(--panel)" stroke="var(--line)"/>
+<text x="726" y="442" class="bold" text-anchor="start">Transposed product</text>
+<text x="726" y="463" class="node-name" text-anchor="start">(W @ X.T).T</text>
+<text x="945" y="466" class="title purple" text-anchor="middle">…</text>
+<text x="593" y="528" class="small" text-anchor="middle">X = FP32(x), W = FP32(weight).  … = three other expressions in this e-class.</text>
+</svg>

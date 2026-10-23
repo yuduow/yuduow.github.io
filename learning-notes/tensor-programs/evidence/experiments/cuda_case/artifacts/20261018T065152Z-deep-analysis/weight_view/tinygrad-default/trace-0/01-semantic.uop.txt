@@ -1,0 +1,30 @@
+UOp(Ops.ADD, arg=None, src=(
+  UOp(Ops.CAST, arg=dtypes.f16, src=(
+    UOp(Ops.REDUCE, arg=(Ops.ADD, 1), src=(
+      UOp(Ops.PERMUTE, arg=(2, 0, 1), src=(
+        UOp(Ops.CAST, arg=dtypes.f32, src=(
+          UOp(Ops.MUL, arg=None, src=(
+            UOp(Ops.RESHAPE, arg=None, src=(
+              UOp(Ops.RESHAPE, arg=None, src=(
+                UOp(Ops.BUFFER, arg=ParamArg(1, dtypes.f16, device='CUDA', buffer=UOp.new_buffer('CUDA', 786432, dtypes.f16, 1).buffer), src=(
+                  x8:=UOp(Ops.CONST, arg=786432, src=()),)),
+                x9:=UOp(Ops.STACK, arg=None, src=(
+                  x10:=UOp(Ops.CONST, arg=1024, src=()),
+                  x11:=UOp(Ops.CONST, arg=768, src=()),)),)),
+              UOp(Ops.STACK, arg=None, src=(
+                x10,
+                x13:=UOp(Ops.CONST, arg=1, src=()),
+                x11,)),)),
+            UOp(Ops.PERMUTE, arg=(0, 2, 1), src=(
+              UOp(Ops.RESHAPE, arg=None, src=(
+                UOp(Ops.PERMUTE, arg=(1, 0), src=(
+                  UOp(Ops.RESHAPE, arg=None, src=(
+                    UOp(Ops.BUFFER, arg=ParamArg(15, dtypes.f16, device='CUDA', buffer=UOp.new_buffer('CUDA', 786432, dtypes.f16, 15).buffer), src=(
+                      x8,)),
+                    x9,)),)),
+                UOp(Ops.STACK, arg=None, src=(
+                  x13,
+                  x11,
+                  x10,)),)),)),)),)),)),)),)),
+  UOp(Ops.BUFFER, arg=ParamArg(17, dtypes.f16, device='CUDA', buffer=UOp.new_buffer('CUDA', 1024, dtypes.f16, 17).buffer), src=(
+    x10,)),))

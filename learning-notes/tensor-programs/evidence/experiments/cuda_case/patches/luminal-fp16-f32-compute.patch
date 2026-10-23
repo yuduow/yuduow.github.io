@@ -1,0 +1,50 @@
+diff --git a/crates/luminal_cuda_lite/src/ops/cublaslt/device_call.rs b/crates/luminal_cuda_lite/src/ops/cublaslt/device_call.rs
+index facdb25..7a4629a 100644
+--- a/crates/luminal_cuda_lite/src/ops/cublaslt/device_call.rs
++++ b/crates/luminal_cuda_lite/src/ops/cublaslt/device_call.rs
+@@ -116,6 +116,7 @@ impl Layout {
+     fn new(desc: &LtDesc, dtype: luminal::dtype::PlanDtype) -> Result<Self> {
+         let dtype = match dtype {
+             luminal::dtype::PlanDtype::F32 => sys::cudaDataType_t::CUDA_R_32F,
++            luminal::dtype::PlanDtype::F16 => sys::cudaDataType_t::CUDA_R_16F,
+             luminal::dtype::PlanDtype::Bf16 => sys::cudaDataType_t::CUDA_R_16BF,
+             dtype => return Err(anyhow!("cuBLASLt unsupported matrix dtype {dtype:?}")),
+         };
+diff --git a/crates/luminal_cuda_lite/src/ops/cublaslt/egg/cublaslt_marker_site.egg b/crates/luminal_cuda_lite/src/ops/cublaslt/egg/cublaslt_marker_site.egg
+index dd8287f..de7cf58 100644
+--- a/crates/luminal_cuda_lite/src/ops/cublaslt/egg/cublaslt_marker_site.egg
++++ b/crates/luminal_cuda_lite/src/ops/cublaslt/egg/cublaslt_marker_site.egg
+@@ -69,3 +69,33 @@
+   :name "cuda_lite/cublaslt/egg/cublaslt_marker_site: BF16 matmul with F32 output"
+ )
+ ; ============================================================================
++
++; FP16 storage with explicit FP32 arithmetic. Widening FP16 to FP32 is
++; exact; an FP16 product fits in FP32. Consume the original storage while
++; retaining the F32 result and reduction contract. This is NOT a rule for
++; cast(F16 matmul, F32): that graph rounds products/reduction in F16.
++(rule
++  (
++    (= ?out (LogicalHelperMatrixMultiply ?aw ?bw))
++    (= ?aw (LogicalCast ?a (F32)))
++    (= ?bw (LogicalCast ?b (F32)))
++    (= (dtype-of ?a) (F16))
++    (= (dtype-of ?b) (F16))
++    (= (dtype-of ?out) (F32))
++  )
++  ((let ?site (CublasLtLogicalMatmulSite ?a ?b ?out)))
++  :ruleset backend
++  :name "cuda_lite/cublaslt/egg/cublaslt_marker_site: FP16 storage with explicit FP32 arithmetic"
++)
++
++; Let the existing F32 transpose-sandwich rule expose the same exact
++; widening on a transposed operand. Transposition changes indices only.
++(rule
++  (
++    (= ?out (LogicalHelperMatrixTranspose (LogicalCast ?a (F32))))
++    (= (dtype-of ?a) (F16))
++  )
++  ((union ?out (LogicalCast (LogicalHelperMatrixTranspose ?a) (F32))))
++  :ruleset backend
++  :name "cuda_lite/cublaslt/egg/cublaslt_marker_site: transpose commutes with FP16 widening"
++)

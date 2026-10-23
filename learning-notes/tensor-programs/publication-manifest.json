@@ -1,0 +1,102 @@
+{
+  "scope": "Part 1, directly linked evidence, and listing entries",
+  "part_2": "Unpublished; links replaced with forthcoming notices",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "087b7162a542082f6e570756af24ad705ba8d4bdf45b9ad8b8f81fe2534cc7a4"
+    },
+    {
+      "path": "learning-notes/index.html",
+      "sha256": "5e2a18c9eed6a28761f454b257dbd14b728da5129928f0f83c3c813a58d40f8d"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/blog.css",
+      "sha256": "be0a9ac5359c98cacd7a2c3a00deee1e0d0d4c86c06afc048084d556665c647b"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/compiler-luminal.svg",
+      "sha256": "2bed980952ad2e7e665d3a6441323e653f3b67ec3b12c2ce371690cb86597f20"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/compiler-modular.svg",
+      "sha256": "06c5717f763f528f8de099f8989cbcf5b335ebb73a76671d67d7dbb95373324f"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/compiler-pytorch.webp",
+      "sha256": "415a6b08be20695c6a92f30b09658c594413621c3a1d888c6cd5bcf50f912fb6"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/compiler-tinygrad.svg",
+      "sha256": "2ca7e5cd1a4c5958b690174a365526bb03db7b98f605fe55ec30be1bdb10e0a9"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/h100-max-semantic.svg",
+      "sha256": "dcc419d44c2296cea720a986531419e8b4825becaede4c475722d7c013a2672c"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/h100-program.svg",
+      "sha256": "c26ba2a7b03d6d4e1d9b946cbb5dc479e52a9232d758b2c04a9aef022358c996"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/h100-semantics.svg",
+      "sha256": "86e15f008b8df9f60b29cc1d9c3c28aee2941b49d7966d6b224d85f39c4d5d70"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/h100-tinygrad-uop.svg",
+      "sha256": "2e0ca2d1b3e95af63957ebd3f6deca2dc2a7288fd85426ca0426c78e6211c19f"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/styles.css",
+      "sha256": "b391d3241dd2b98f73896d41593467af52cc81ef6c4559e95a0e9bfdddc3697c"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/adapters.py",
+      "sha256": "9cc9fe3ccedba5b2f715396d7ccfa68e55f7d4b85150310307d21a438fd89b6f"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/inductor-default/trace-0/torch-debug/torch_compile_debug/run_2026_10_18_06_59_53_413986-pid_2301/torchinductor/model__0_inference_0.0/fx_graph_readable.py",
+      "sha256": "eebd013129966a4bda1b7277f70f9ea77fc8e9d498d3b1c1164fbf002c7da554"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/max-default/trace-0/01-semantic.mlir",
+      "sha256": "b40a79b028f9a6ceb33e6993b8be2eb87cd300b7c5c98a1766406ff05edc450a"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/tinygrad-default/trace-0/01-semantic.uop.txt",
+      "sha256": "c9fb602b6623260b044505c68930b44a2b3b76e11b9c2075a1cd6917fc53f8b3"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/01-logical.egg",
+      "sha256": "78ec6e687d0c99605dcadb5cddcdda69e097ae412b0cae353ce82b490163b6c8"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/02-saturated-egraph.json",
+      "sha256": "41be9007051c50d0e9626f29c20c12c5055f531ad9b245d796292d49936d6aba"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/luminal-fp16-results.md",
+      "sha256": "b85169add86c66d415c2f17db42cbf8023dd9ffef29757b62e1bbb64448e2cd3"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/next_workloads.py",
+      "sha256": "00ce32f85201bc735ffdf9529209f0196f3cedfc937b39ac74a9e2eed2296e0e"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/patches/README.md",
+      "sha256": "83709e287e4409410702ab3fc8d611ed33da25742f24944963baf1d39f7ce703"
+    },
+    {
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/patches/luminal-fp16-f32-compute.patch",
+      "sha256": "e6cda78f95d75e745fd8de1575d7f82aaa03bee65bce12a34afbc7532fa57189"
+    },
+    {
+      "path": "learning-notes/tensor-programs/index.html",
+      "sha256": "f5026491f9201341e795dacd13c3f733db0c83fefb840078a3ea5bccc1742da2"
+    },
+    {
+      "path": "learning-notes/tensor-programs/part-1/index.html",
+      "sha256": "74d1e528b22e947f91f1109b914c6accff1da43326c6ee28c3b15f462c841a4b"
+    }
+  ]
+}

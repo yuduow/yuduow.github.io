@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+<title id="title">TinyGrad Expresses MatMul as Broadcast, Multiply, and Reduce</title><desc id="desc">Input and weight views feed multiplication, then an FP32 cast, a grouped permutation and reduction, an FP16 projection cast, and bias addition. All edges are logical value dependencies, not kernel launches.</desc>
+<style>
+:root{--paper:#f7f9fc;--panel:#fff;--ink:#152234;--muted:#526276;--line:#cfdae5;--soft:#eaf0f6;--blue:#2260b0;--blue-soft:#e7f0ff;--teal:#086e66;--teal-soft:#dff4ee;--purple:#7753ab;--purple-soft:#f0eafa}
+@media(prefers-color-scheme:dark){:root{--paper:#151d29;--panel:#1c2735;--ink:#e9eff8;--muted:#b1bfd0;--line:#43536a;--soft:#29374a;--blue:#8ebaff;--blue-soft:#213c60;--teal:#83d8c9;--teal-soft:#163e3b;--purple:#c9a9f5;--purple-soft:#392e4d}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:var(--ink);font-size:18px}
+.title{font-size:25px;font-weight:650;letter-spacing:-.5px}.label{font-size:13px;letter-spacing:1.5px;fill:var(--muted);font-weight:600}.small{font-size:15px;fill:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px}.node-name{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;fill:var(--blue)}.node-shape{font-size:13px;fill:var(--muted)}.muted{fill:var(--muted)}.bold{font-weight:600}.blue{fill:var(--blue)}.teal{fill:var(--teal)}.purple{fill:var(--purple)}
+</style>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="var(--muted)"/></marker></defs>
+<rect width="1000" height="560" rx="18" fill="var(--paper)"/>
+
+<text x="24" y="43" class="title" text-anchor="start">TinyGrad Expresses MatMul as Broadcast, Multiply, and Reduce</text>
+<rect x="24" y="85" width="220" height="100" rx="10" fill="var(--panel)" stroke="var(--line)"/>
+<text x="40" y="107" class="bold" text-anchor="start">Input x</text>
+<text x="40" y="128" class="node-name" text-anchor="start">ParamArg(1)</text>
+<text x="40" y="150" class="node-shape" text-anchor="start">[1024, 768] · FP16</text>
+<text x="40" y="169" class="node-shape" text-anchor="start">View → [1024, 1, 768]</text>
+<rect x="24" y="245" width="220" height="100" rx="10" fill="var(--panel)" stroke="var(--line)"/>
+<text x="40" y="267" class="bold" text-anchor="start">Weight</text>
+<text x="40" y="288" class="node-name" text-anchor="start">ParamArg(15)</text>
+<text x="40" y="310" class="node-shape" text-anchor="start">[1024, 768] · FP16</text>
+<text x="40" y="329" class="node-shape" text-anchor="start">View → [1, 1024, 768]</text>
+<rect x="270" y="165" width="220" height="96" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="286" y="187" class="bold" text-anchor="start">Multiply</text>
+<text x="286" y="208" class="node-name" text-anchor="start">Ops.MUL</text>
+<text x="286" y="230" class="node-shape" text-anchor="start">Virtual [1024, 1024, 768]</text>
+<rect x="516" y="165" width="220" height="96" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="532" y="187" class="bold" text-anchor="start">Cast to FP32</text>
+<text x="532" y="208" class="node-name" text-anchor="start">Ops.CAST</text>
+<text x="532" y="230" class="node-shape" text-anchor="start">[1024, 1024, 768] · FP32</text>
+<rect x="762" y="165" width="214" height="96" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="778" y="187" class="bold" text-anchor="start">Permute + sum</text>
+<text x="778" y="208" class="node-name" text-anchor="start">Ops.PERMUTE →</text>
+<text x="778" y="225" class="node-name" text-anchor="start">Ops.REDUCE</text>
+<text x="778" y="248" class="node-shape" text-anchor="start">[1024, 1024] · FP32</text>
+<rect x="762" y="315" width="214" height="96" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="778" y="337" class="bold" text-anchor="start">Round projection</text>
+<text x="778" y="358" class="node-name" text-anchor="start">Ops.CAST</text>
+<text x="778" y="380" class="node-shape" text-anchor="start">proj: [1024, 1024] · FP16</text>
+<rect x="270" y="385" width="220" height="96" rx="10" fill="var(--panel)" stroke="var(--line)"/>
+<text x="286" y="407" class="bold" text-anchor="start">Bias b</text>
+<text x="286" y="428" class="node-name" text-anchor="start">ParamArg(17)</text>
+<text x="286" y="450" class="node-shape" text-anchor="start">[1024] · FP16</text>
+<rect x="516" y="385" width="220" height="96" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="532" y="407" class="bold" text-anchor="start">Add bias</text>
+<text x="532" y="428" class="node-name" text-anchor="start">Ops.ADD</text>
+<text x="532" y="450" class="node-shape" text-anchor="start">y: [1024, 1024] · FP16</text>
+<path d="M250 135L262 205" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M250 295L262 225" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M496 213L508 213" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M742 213L754 213" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M869 267L869 307" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M869 417L869 433" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+<path d="M869 433L744 433" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M496 433L508 433" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="24" y="515" class="small" text-anchor="start">Views change indexing; the virtual 3D product does not require an allocated buffer.</text>
+<text x="24" y="542" class="small" text-anchor="start">Permute moves K = 768 to the front; REDUCE sums that leading axis. proj rounds before bias addition.</text>
+</svg>
