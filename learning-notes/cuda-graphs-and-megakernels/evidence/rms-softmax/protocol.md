@@ -6,7 +6,7 @@ The input is a 2D tensor with 131,072 elements per row. The output is `softmax(x
 
 The workload has two sets of row-wide reductions in the tested decomposition: sum of squares and maximum before exponentiation, then sum of exponentials before normalization. This decomposition is an implementation choice, not a proof that every correct algorithm needs three phases.
 
-The NumPy function in the article defines the mathematical operator; the timed kernels are CUDA C++. Input and output tensors use contiguous row-major float32 storage, and CUDA reductions use float arithmetic. Numerical agreement is tested within the fixed tolerances, not required to be bitwise identical to NumPy. The positive inverse RMS allows subtraction of the unscaled row maximum before multiplication.
+The PyTorch module in the article defines the mathematical operator; the timed kernels are CUDA C++. Input and output tensors use contiguous row-major float32 storage, and CUDA reductions use float arithmetic. Numerical agreement is tested within the fixed tolerances, not required to be bitwise identical to the NumPy FP64 reference. The positive inverse RMS allows subtraction of the unscaled row maximum before multiplication.
 
 Warm timing uses the deterministic hash-generated `random` fixture, seed 41, with values in [-8, 8] at 1/1,024 increments. The same device-resident input is replayed between warmup and measurement. The broader correctness fixtures are not all benchmarked input distributions. The [frozen input generator](code/bench.cu) specifies these details.
 

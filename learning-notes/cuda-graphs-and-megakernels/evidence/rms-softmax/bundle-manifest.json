@@ -4,13 +4,13 @@
   "files": [
     {
       "path": "claim-audit.html",
-      "bytes": 8280,
-      "sha256": "4a460a9d0f282a632f8fb51c190d38459325463f6aecc670eca00a3b67c52174"
+      "bytes": 8226,
+      "sha256": "1f72c3aaef40fb738f787e89517638feec8463ecdbea38816734c8b3e5a9e6d0"
     },
     {
       "path": "claim-audit.md",
-      "bytes": 6621,
-      "sha256": "534d5a1bfe0dbacdd04bee4c7e2520ae4acdc3db947c25e0cae13f620125ce5b"
+      "bytes": 6567,
+      "sha256": "de7cd5d4355c63ecda7a81ec4174ced35cfd4ad34c6ce8e6b3f78956b3485618"
     },
     {
       "path": "code/PROTOCOL.md",
@@ -654,13 +654,13 @@
     },
     {
       "path": "protocol.html",
-      "bytes": 9898,
-      "sha256": "8948277a0e41c8d9d745df12cd3b88beb145000ac9bed632edf1dc693ff4bcd1"
+      "bytes": 9917,
+      "sha256": "e24f85dac6907ac16511d59242e507b66d3dd6e7d571a10f571c8003d38435e8"
     },
     {
       "path": "protocol.md",
-      "bytes": 7905,
-      "sha256": "98b1e8bdb13354bc80fa0f1f35600cae2300d75070c346ac42581e963299cd93"
+      "bytes": 7924,
+      "sha256": "641b783c29983b04f787beba23bf303a6bae1bd5547ae5adff48642ca1d6f99c"
     },
     {
       "path": "results.html",

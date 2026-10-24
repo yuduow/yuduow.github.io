@@ -119,7 +119,7 @@ In a separate experiment at 16 rows, runtime switches add input reloads, writes 
 
 *Extra host completion time when reloading values instead of keeping them in shared memory. Dots average the two sessions’ median penalties; whiskers span them.*
 
-Reloading the input adds **1.39 µs**; writing exponentials to global memory and reading them back adds **2.87 µs**. Both controls copy the reloaded values into shared memory and add block-level synchronization. The measured penalties therefore include these operations too; they do not isolate global-memory access cost.
+Reloading the input adds **1.39 µs**; writing exponentials to global memory and reading them back adds **2.87 µs**. Each control copies the reloaded values into shared memory and adds block-level synchronization. The measured penalties therefore include these operations too; they do not isolate global-memory access cost.
 
 These results cover warm invocation latency at one row width on H100. Application speedups and other GPUs need separate measurements. The [full results and methods](evidence/rms-softmax/results.html) include per-session timings, both barrier variants, direct launches and slower candidates.
 
