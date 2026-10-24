@@ -2,6 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="324pt" height="979.2pt" viewBox="0 0 324 979.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<style>@media (prefers-color-scheme:dark){:root{--plot-paper:#12151c;--plot-ink:#f4f6fb;--plot-muted:#b4bdcb;--plot-line:#354153;--plot-edge:#96a7bd;--plot-gray:#a0aec0;--plot-blue:#89a7ff;--plot-purple:#c19be4;--plot-green:#65c9b3;--plot-marker:#89a7ff;--plot-panel:#1c2432;--plot-chip:#253040;--plot-purple-panel:#2b2438;--plot-green-panel:#18332e;--plot-blue-panel:#1c2c48;--plot-blue-edge:#718cbe;--plot-purple-edge:#8f77aa;--plot-purple-line:#756784;--plot-green-edge:#568e7f}}</style>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -25,7 +26,7 @@ L 324 979.2
 L 324 0 
 L 0 0 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
@@ -34,19 +35,19 @@ L 309.42 293.286109
 L 309.42 150 
 L 21.06 150 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
       <path d="M 21.06 293.286109 
 L 21.06 150 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_2"/>
      <g id="text_1">
       <!-- 0 -->
-      <g style="fill: #617084" transform="translate(17.714719 310.486109) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(17.714719 310.486109) scale(0.102 -0.102)">
        <defs>
         <path id="OutfitArticle-Regular-82" d="M 2112 -64 
 Q 1613 -64 1200 217 
@@ -86,12 +87,12 @@ z
      <g id="line2d_3">
       <path d="M 93.15 293.286109 
 L 93.15 150 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_4"/>
      <g id="text_2">
       <!-- 10 -->
-      <g style="fill: #617084" transform="translate(88.034859 310.486109) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(88.034859 310.486109) scale(0.102 -0.102)">
        <defs>
         <path id="OutfitArticle-Regular-83" d="M 1107 0 
 L 1107 4442 
@@ -116,12 +117,12 @@ z
      <g id="line2d_5">
       <path d="M 165.24 293.286109 
 L 165.24 150 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_6"/>
      <g id="text_3">
       <!-- 20 -->
-      <g style="fill: #617084" transform="translate(159.135938 310.486109) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(159.135938 310.486109) scale(0.102 -0.102)">
        <defs>
         <path id="OutfitArticle-Regular-84" d="M 211 365 
 L 1850 2093 
@@ -162,12 +163,12 @@ z
      <g id="line2d_7">
       <path d="M 237.33 293.286109 
 L 237.33 150 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_8"/>
      <g id="text_4">
       <!-- 30 -->
-      <g style="fill: #617084" transform="translate(231.241078 310.486109) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(231.241078 310.486109) scale(0.102 -0.102)">
        <defs>
         <path id="OutfitArticle-Regular-85" d="M 1581 -64 
 Q 1146 -64 790 99 
@@ -218,12 +219,12 @@ z
      <g id="line2d_9">
       <path d="M 309.42 293.286109 
 L 309.42 150 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_10"/>
      <g id="text_5">
       <!-- 40 -->
-      <g style="fill: #617084" transform="translate(303.025078 310.486109) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(303.025078 310.486109) scale(0.102 -0.102)">
        <defs>
         <path id="OutfitArticle-Regular-86" d="M 211 1530 
 L 1830 4442 
@@ -259,7 +260,7 @@ L 287.14419 166.767523
 L 287.14419 173.141954 
 L 21.06 173.141954 
 z
-" clip-path="url(#p9371660148)" style="fill: #64748b"/>
+" clip-path="url(#p9371660148)" style="fill: var(--plot-gray, #64748b)"/>
    </g>
    <g id="patch_4">
     <path d="M 21.06 194.482438 
@@ -267,7 +268,7 @@ L 230.412965 194.482438
 L 230.412965 200.856869 
 L 21.06 200.856869 
 z
-" clip-path="url(#p9371660148)" style="fill: #315fe2"/>
+" clip-path="url(#p9371660148)" style="fill: var(--plot-blue, #315fe2)"/>
    </g>
    <g id="patch_5">
     <path d="M 21.06 222.197353 
@@ -275,7 +276,7 @@ L 143.476029 222.197353
 L 143.476029 228.571783 
 L 21.06 228.571783 
 z
-" clip-path="url(#p9371660148)" style="fill: #8650b8"/>
+" clip-path="url(#p9371660148)" style="fill: var(--plot-purple, #8650b8)"/>
    </g>
    <g id="patch_6">
     <path d="M 21.06 249.912268 
@@ -283,11 +284,11 @@ L 129.735675 249.912268
 L 129.735675 256.286698 
 L 21.06 256.286698 
 z
-" clip-path="url(#p9371660148)" style="fill: #008578"/>
+" clip-path="url(#p9371660148)" style="fill: var(--plot-green, #008578)"/>
    </g>
    <g id="text_6">
     <!-- Unfused Baseline -->
-    <g style="fill: #17283b" transform="translate(21.06 157.835165) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 157.835165) scale(0.12204 -0.12204)">
      <defs>
       <path id="OutfitArticle-Regular-30" d="M 2189 -64 
 Q 1696 -64 1309 157 
@@ -604,7 +605,7 @@ z
    </g>
    <g id="text_7">
     <!-- 36.9 -->
-    <g style="fill: #17283b" transform="translate(285.375656 157.666475) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(285.375656 157.666475) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-85" d="M 1594 -64 
 Q 1139 -64 761 99 
@@ -734,26 +735,26 @@ z
    <g id="LineCollection_1">
     <path d="M 286.271901 169.954739 
 L 288.016479 169.954739 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_11">
     <defs>
      <path id="m31e2efa215" d="M 0 2.6 
 L 0 -2.6 
-" style="stroke: #17283b"/>
+" style="stroke: var(--plot-ink, #17283b)"/>
     </defs>
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="286.271901" y="169.954739" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="286.271901" y="169.954739" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_12">
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="288.016479" y="169.954739" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="288.016479" y="169.954739" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_8">
     <!-- + CUDA Graph -->
-    <g style="fill: #17283b" transform="translate(21.06 184.3354) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 184.3354) scale(0.12204 -0.12204)">
      <defs>
       <path id="OutfitArticle-Regular-d6" d="M 378 1882 
 L 378 2400 
@@ -975,7 +976,7 @@ z
    </g>
    <g id="text_9">
     <!-- 29.0 -->
-    <g style="fill: #17283b" transform="translate(284.678972 185.38139) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(284.678972 185.38139) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-84" d="M 166 499 
 L 1862 2272 
@@ -1045,21 +1046,21 @@ z
    <g id="LineCollection_2">
     <path d="M 224.043813 197.669653 
 L 236.782116 197.669653 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_13">
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="224.043813" y="197.669653" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="224.043813" y="197.669653" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_14">
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="236.782116" y="197.669653" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="236.782116" y="197.669653" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_10">
     <!-- + Local Fusion -->
-    <g style="fill: #17283b" transform="translate(21.06 213.203974) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 213.203974) scale(0.12204 -0.12204)">
      <defs>
       <path id="OutfitArticle-Regular-1e" d="M 525 0 
 L 525 4442 
@@ -1166,7 +1167,7 @@ z
    </g>
    <g id="text_11">
     <!-- 17.0 -->
-    <g style="fill: #17283b" transform="translate(287.521987 213.096305) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(287.521987 213.096305) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-83" d="M 1030 0 
 L 1030 4499 
@@ -1205,21 +1206,21 @@ z
    <g id="LineCollection_3">
     <path d="M 140.419413 225.384568 
 L 146.532645 225.384568 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_15">
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="140.419413" y="225.384568" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="140.419413" y="225.384568" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_16">
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="146.532645" y="225.384568" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="146.532645" y="225.384568" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_12">
     <!-- + Megakernel -->
-    <g style="fill: #17283b" transform="translate(21.06 239.70421) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 239.70421) scale(0.12204 -0.12204)">
      <defs>
       <path id="OutfitArticle-Regular-1f" d="M 525 0 
 L 525 4442 
@@ -1321,7 +1322,7 @@ z
    </g>
    <g id="text_13">
     <!-- 15.1 -->
-    <g style="fill: #17283b" transform="translate(290.962716 240.742327) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(290.962716 240.742327) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-87" d="M 1600 -64 
 Q 1133 -64 749 99 
@@ -1372,21 +1373,21 @@ z
    <g id="LineCollection_4">
     <path d="M 128.337129 253.099483 
 L 131.134221 253.099483 
-" clip-path="url(#p9371660148)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p9371660148)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_17">
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="128.337129" y="253.099483" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="128.337129" y="253.099483" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_18">
     <g clip-path="url(#p9371660148)">
-     <use xlink:href="#m31e2efa215" x="131.134221" y="253.099483" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="131.134221" y="253.099483" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_14">
     <!-- Megakernel: 11.2% less time vs local fusion -->
-    <g style="fill: #617084" transform="translate(21.06 285.120193) scale(0.1134 -0.1134)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(21.06 285.120193) scale(0.1134 -0.1134)">
      <defs>
       <path id="OutfitArticle-Regular-a2" d="M 864 -64 
 Q 685 -64 566 61 
@@ -1588,7 +1589,7 @@ z
    </g>
    <g id="text_15">
     <!-- 1 × 131,072  ·  0–40 µs -->
-    <g style="fill: #17283b" transform="translate(21.06 130) scale(0.1458 -0.1458)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 130) scale(0.1458 -0.1458)">
      <defs>
       <path id="OutfitArticle-SemiBold-9e" transform="scale(0.015625)"/>
       <path id="OutfitArticle-SemiBold-d8" d="M 858 698 
@@ -1750,19 +1751,19 @@ L 309.42 508.215273
 L 309.42 364.929164 
 L 21.06 364.929164 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
    </g>
    <g id="matplotlib.axis_3">
     <g id="xtick_6">
      <g id="line2d_19">
       <path d="M 21.06 508.215273 
 L 21.06 364.929164 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_20"/>
      <g id="text_16">
       <!-- 0 -->
-      <g style="fill: #617084" transform="translate(17.714719 525.415273) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(17.714719 525.415273) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-82"/>
       </g>
      </g>
@@ -1771,12 +1772,12 @@ L 21.06 364.929164
      <g id="line2d_21">
       <path d="M 78.732 508.215273 
 L 78.732 364.929164 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_22"/>
      <g id="text_17">
       <!-- 10 -->
-      <g style="fill: #617084" transform="translate(73.616859 525.415273) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(73.616859 525.415273) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-83"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(34.703125 0)"/>
       </g>
@@ -1786,12 +1787,12 @@ L 78.732 364.929164
      <g id="line2d_23">
       <path d="M 136.404 508.215273 
 L 136.404 364.929164 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_24"/>
      <g id="text_18">
       <!-- 20 -->
-      <g style="fill: #617084" transform="translate(130.299937 525.415273) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(130.299937 525.415273) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-84"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(54.09375 0)"/>
       </g>
@@ -1801,12 +1802,12 @@ L 136.404 364.929164
      <g id="line2d_25">
       <path d="M 194.076 508.215273 
 L 194.076 364.929164 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_26"/>
      <g id="text_19">
       <!-- 30 -->
-      <g style="fill: #617084" transform="translate(187.987078 525.415273) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(187.987078 525.415273) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-85"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(53.796875 0)"/>
       </g>
@@ -1816,12 +1817,12 @@ L 194.076 364.929164
      <g id="line2d_27">
       <path d="M 251.748 508.215273 
 L 251.748 364.929164 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_28"/>
      <g id="text_20">
       <!-- 40 -->
-      <g style="fill: #617084" transform="translate(245.353078 525.415273) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(245.353078 525.415273) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-86"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(59.796875 0)"/>
       </g>
@@ -1831,12 +1832,12 @@ L 251.748 364.929164
      <g id="line2d_29">
       <path d="M 309.42 508.215273 
 L 309.42 364.929164 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_30"/>
      <g id="text_21">
       <!-- 50 -->
-      <g style="fill: #617084" transform="translate(303.315937 525.415273) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(303.315937 525.415273) scale(0.102 -0.102)">
        <defs>
         <path id="OutfitArticle-Regular-87" d="M 1587 -64 
 Q 1133 -64 777 99 
@@ -1891,7 +1892,7 @@ L 278.712544 381.696687
 L 278.712544 388.071117 
 L 21.06 388.071117 
 z
-" clip-path="url(#pb95c883ccf)" style="fill: #64748b"/>
+" clip-path="url(#pb95c883ccf)" style="fill: var(--plot-gray, #64748b)"/>
    </g>
    <g id="patch_9">
     <path d="M 21.06 409.411602 
@@ -1899,7 +1900,7 @@ L 244.833127 409.411602
 L 244.833127 415.786032 
 L 21.06 415.786032 
 z
-" clip-path="url(#pb95c883ccf)" style="fill: #315fe2"/>
+" clip-path="url(#pb95c883ccf)" style="fill: var(--plot-blue, #315fe2)"/>
    </g>
    <g id="patch_10">
     <path d="M 21.06 437.126516 
@@ -1907,7 +1908,7 @@ L 136.086804 437.126516
 L 136.086804 443.500947 
 L 21.06 443.500947 
 z
-" clip-path="url(#pb95c883ccf)" style="fill: #8650b8"/>
+" clip-path="url(#pb95c883ccf)" style="fill: var(--plot-purple, #8650b8)"/>
    </g>
    <g id="patch_11">
     <path d="M 21.06 464.841431 
@@ -1915,11 +1916,11 @@ L 131.914235 464.841431
 L 131.914235 471.215862 
 L 21.06 471.215862 
 z
-" clip-path="url(#pb95c883ccf)" style="fill: #008578"/>
+" clip-path="url(#pb95c883ccf)" style="fill: var(--plot-green, #008578)"/>
    </g>
    <g id="text_22">
     <!-- Unfused Baseline -->
-    <g style="fill: #17283b" transform="translate(21.06 372.764328) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 372.764328) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-30"/>
      <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(68.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(122.5 0)"/>
@@ -1940,7 +1941,7 @@ z
    </g>
    <g id="text_23">
     <!-- 44.7 -->
-    <g style="fill: #17283b" transform="translate(285.447459 372.526747) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(285.447459 372.526747) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-86"/>
      <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(59.109375 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(116.421875 0)"/>
@@ -1950,21 +1951,21 @@ z
    <g id="LineCollection_5">
     <path d="M 277.08331 384.883902 
 L 280.341778 384.883902 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_31">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="277.08331" y="384.883902" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="277.08331" y="384.883902" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_32">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="280.341778" y="384.883902" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="280.341778" y="384.883902" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_24">
     <!-- + CUDA Graph -->
-    <g style="fill: #17283b" transform="translate(21.06 399.264564) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 399.264564) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-b" transform="translate(75 0)"/>
@@ -1981,7 +1982,7 @@ L 280.341778 384.883902
    </g>
    <g id="text_25">
     <!-- 38.8 -->
-    <g style="fill: #17283b" transform="translate(285.1389 400.310554) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(285.1389 400.310554) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-8a" d="M 1779 -64 
 Q 1299 -64 950 102 
@@ -2046,21 +2047,21 @@ z
    <g id="LineCollection_6">
     <path d="M 242.699263 412.598817 
 L 246.966991 412.598817 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_33">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="242.699263" y="412.598817" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="242.699263" y="412.598817" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_34">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="246.966991" y="412.598817" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="246.966991" y="412.598817" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_26">
     <!-- + Local Fusion -->
-    <g style="fill: #17283b" transform="translate(21.06 428.133138) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 428.133138) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-1e" transform="translate(75 0)"/>
@@ -2079,7 +2080,7 @@ L 246.966991 412.598817
    </g>
    <g id="text_27">
     <!-- 19.9 -->
-    <g style="fill: #17283b" transform="translate(288.4302 428.025469) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(288.4302 428.025469) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-83"/>
      <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(36.703125 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(87.203125 0)"/>
@@ -2089,21 +2090,21 @@ L 246.966991 412.598817
    <g id="LineCollection_7">
     <path d="M 135.873418 440.313732 
 L 136.30019 440.313732 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_35">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="135.873418" y="440.313732" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="135.873418" y="440.313732" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_36">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="136.30019" y="440.313732" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="136.30019" y="440.313732" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_28">
     <!-- + Megakernel -->
-    <g style="fill: #17283b" transform="translate(21.06 454.633373) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 454.633373) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-1f" transform="translate(75 0)"/>
@@ -2120,7 +2121,7 @@ L 136.30019 440.313732
    </g>
    <g id="text_29">
     <!-- 19.2 -->
-    <g style="fill: #17283b" transform="translate(288.0576 455.740383) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(288.0576 455.740383) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-83"/>
      <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(36.703125 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(87.203125 0)"/>
@@ -2130,21 +2131,21 @@ L 136.30019 440.313732
    <g id="LineCollection_8">
     <path d="M 131.796007 468.028646 
 L 132.032462 468.028646 
-" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#pb95c883ccf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_37">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="131.796007" y="468.028646" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="131.796007" y="468.028646" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_38">
     <g clip-path="url(#pb95c883ccf)">
-     <use xlink:href="#m31e2efa215" x="132.032462" y="468.028646" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="132.032462" y="468.028646" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_30">
     <!-- Megakernel: 3.6% less time vs local fusion -->
-    <g style="fill: #617084" transform="translate(21.06 500.049357) scale(0.1134 -0.1134)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(21.06 500.049357) scale(0.1134 -0.1134)">
      <defs>
       <path id="OutfitArticle-Regular-88" d="M 1805 -64 
 Q 1363 -64 1014 141 
@@ -2227,7 +2228,7 @@ z
    </g>
    <g id="text_31">
     <!-- 16 × 131,072  ·  0–50 µs -->
-    <g style="fill: #17283b" transform="translate(21.06 344.929164) scale(0.1458 -0.1458)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 344.929164) scale(0.1458 -0.1458)">
      <use xlink:href="#OutfitArticle-SemiBold-83"/>
      <use xlink:href="#OutfitArticle-SemiBold-88" transform="translate(36.703125 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(93.5 0)"/>
@@ -2262,19 +2263,19 @@ L 309.42 723.144436
 L 309.42 579.858327 
 L 21.06 579.858327 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
    </g>
    <g id="matplotlib.axis_5">
     <g id="xtick_12">
      <g id="line2d_39">
       <path d="M 21.06 723.144436 
 L 21.06 579.858327 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_40"/>
      <g id="text_32">
       <!-- 0 -->
-      <g style="fill: #617084" transform="translate(17.714719 740.344436) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(17.714719 740.344436) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-82"/>
       </g>
      </g>
@@ -2283,12 +2284,12 @@ L 21.06 579.858327
      <g id="line2d_41">
       <path d="M 93.15 723.144436 
 L 93.15 579.858327 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_42"/>
      <g id="text_33">
       <!-- 20 -->
-      <g style="fill: #617084" transform="translate(87.045938 740.344436) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(87.045938 740.344436) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-84"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(54.09375 0)"/>
       </g>
@@ -2298,12 +2299,12 @@ L 93.15 579.858327
      <g id="line2d_43">
       <path d="M 165.24 723.144436 
 L 165.24 579.858327 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_44"/>
      <g id="text_34">
       <!-- 40 -->
-      <g style="fill: #617084" transform="translate(158.845078 740.344436) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(158.845078 740.344436) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-86"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(59.796875 0)"/>
       </g>
@@ -2313,12 +2314,12 @@ L 165.24 579.858327
      <g id="line2d_45">
       <path d="M 237.33 723.144436 
 L 237.33 579.858327 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_46"/>
      <g id="text_35">
       <!-- 60 -->
-      <g style="fill: #617084" transform="translate(231.108 740.344436) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(231.108 740.344436) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-88"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(56.40625 0)"/>
       </g>
@@ -2328,12 +2329,12 @@ L 237.33 579.858327
      <g id="line2d_47">
       <path d="M 309.42 723.144436 
 L 309.42 579.858327 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_48"/>
      <g id="text_36">
       <!-- 80 -->
-      <g style="fill: #617084" transform="translate(303.269719 740.344436) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(303.269719 740.344436) scale(0.102 -0.102)">
        <defs>
         <path id="OutfitArticle-Regular-8a" d="M 1760 -64 
 Q 1318 -64 982 102 
@@ -2402,7 +2403,7 @@ L 273.095651 596.625851
 L 273.095651 603.000281 
 L 21.06 603.000281 
 z
-" clip-path="url(#p3b8f604dbf)" style="fill: #64748b"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: var(--plot-gray, #64748b)"/>
    </g>
    <g id="patch_14">
     <path d="M 21.06 624.340765 
@@ -2410,7 +2411,7 @@ L 253.516007 624.340765
 L 253.516007 630.715196 
 L 21.06 630.715196 
 z
-" clip-path="url(#p3b8f604dbf)" style="fill: #315fe2"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: var(--plot-blue, #315fe2)"/>
    </g>
    <g id="patch_15">
     <path d="M 21.06 652.05568 
@@ -2418,7 +2419,7 @@ L 120.317116 652.05568
 L 120.317116 658.43011 
 L 21.06 658.43011 
 z
-" clip-path="url(#p3b8f604dbf)" style="fill: #8650b8"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: var(--plot-purple, #8650b8)"/>
    </g>
    <g id="patch_16">
     <path d="M 21.06 679.770595 
@@ -2426,11 +2427,11 @@ L 111.760033 679.770595
 L 111.760033 686.145025 
 L 21.06 686.145025 
 z
-" clip-path="url(#p3b8f604dbf)" style="fill: #008578"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: var(--plot-green, #008578)"/>
    </g>
    <g id="text_37">
     <!-- Unfused Baseline -->
-    <g style="fill: #17283b" transform="translate(21.06 587.693492) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 587.693492) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-30"/>
      <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(68.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(122.5 0)"/>
@@ -2451,7 +2452,7 @@ z
    </g>
    <g id="text_38">
     <!-- 69.9 -->
-    <g style="fill: #17283b" transform="translate(286.120856 587.524803) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(286.120856 587.524803) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-88"/>
      <use xlink:href="#OutfitArticle-SemiBold-8b" transform="translate(55.296875 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(105.796875 0)"/>
@@ -2461,21 +2462,21 @@ z
    <g id="LineCollection_9">
     <path d="M 272.852348 599.813066 
 L 273.338955 599.813066 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_49">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="272.852348" y="599.813066" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="272.852348" y="599.813066" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_50">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="273.338955" y="599.813066" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="273.338955" y="599.813066" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_39">
     <!-- + CUDA Graph -->
-    <g style="fill: #17283b" transform="translate(21.06 614.193727) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 614.193727) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-b" transform="translate(75 0)"/>
@@ -2492,7 +2493,7 @@ L 273.338955 599.813066
    </g>
    <g id="text_40">
     <!-- 64.5 -->
-    <g style="fill: #17283b" transform="translate(284.715844 615.170825) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(284.715844 615.170825) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-88"/>
      <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(56.796875 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(114.109375 0)"/>
@@ -2502,21 +2503,21 @@ L 273.338955 599.813066
    <g id="LineCollection_10">
     <path d="M 252.789701 627.527981 
 L 254.242314 627.527981 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_51">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="252.789701" y="627.527981" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="252.789701" y="627.527981" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_52">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="254.242314" y="627.527981" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="254.242314" y="627.527981" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_41">
     <!-- + Local Fusion -->
-    <g style="fill: #17283b" transform="translate(21.06 643.062301) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 643.062301) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-1e" transform="translate(75 0)"/>
@@ -2535,7 +2536,7 @@ L 254.242314 627.527981
    </g>
    <g id="text_42">
     <!-- 27.5 -->
-    <g style="fill: #17283b" transform="translate(286.5051 642.954632) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(286.5051 642.954632) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-84"/>
      <use xlink:href="#OutfitArticle-SemiBold-89" transform="translate(53.5 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(99.703125 0)"/>
@@ -2545,21 +2546,21 @@ L 254.242314 627.527981
    <g id="LineCollection_11">
     <path d="M 118.994265 655.242895 
 L 121.639968 655.242895 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_53">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="118.994265" y="655.242895" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="118.994265" y="655.242895" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_54">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="121.639968" y="655.242895" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="121.639968" y="655.242895" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_43">
     <!-- + Megakernel -->
-    <g style="fill: #17283b" transform="translate(21.06 669.562537) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 669.562537) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-1f" transform="translate(75 0)"/>
@@ -2576,7 +2577,7 @@ L 121.639968 655.242895
    </g>
    <g id="text_44">
     <!-- 25.2 -->
-    <g style="fill: #17283b" transform="translate(285.412528 670.669547) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(285.412528 670.669547) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-84"/>
      <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(55.296875 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(108.5 0)"/>
@@ -2586,21 +2587,21 @@ L 121.639968 655.242895
    <g id="LineCollection_12">
     <path d="M 109.885694 682.95781 
 L 113.634373 682.95781 
-" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p3b8f604dbf)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_55">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="109.885694" y="682.95781" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="109.885694" y="682.95781" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_56">
     <g clip-path="url(#p3b8f604dbf)">
-     <use xlink:href="#m31e2efa215" x="113.634373" y="682.95781" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="113.634373" y="682.95781" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_45">
     <!-- Megakernel: 8.6% less time vs local fusion -->
-    <g style="fill: #617084" transform="translate(21.06 714.97852) scale(0.1134 -0.1134)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(21.06 714.97852) scale(0.1134 -0.1134)">
      <use xlink:href="#OutfitArticle-Regular-1f"/>
      <use xlink:href="#OutfitArticle-Regular-48" transform="translate(83.90625 0)"/>
      <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(137.5 0)"/>
@@ -2647,7 +2648,7 @@ L 113.634373 682.95781
    </g>
    <g id="text_46">
     <!-- 32 × 131,072  ·  0–80 µs -->
-    <g style="fill: #17283b" transform="translate(21.06 559.858327) scale(0.1458 -0.1458)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 559.858327) scale(0.1458 -0.1458)">
      <use xlink:href="#OutfitArticle-SemiBold-85"/>
      <use xlink:href="#OutfitArticle-SemiBold-84" transform="translate(55 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(110.296875 0)"/>
@@ -2682,19 +2683,19 @@ L 309.42 938.0736
 L 309.42 794.787491 
 L 21.06 794.787491 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
    </g>
    <g id="matplotlib.axis_7">
     <g id="xtick_17">
      <g id="line2d_57">
       <path d="M 21.06 938.0736 
 L 21.06 794.787491 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_58"/>
      <g id="text_47">
       <!-- 0 -->
-      <g style="fill: #617084" transform="translate(17.714719 955.2736) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(17.714719 955.2736) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-82"/>
       </g>
      </g>
@@ -2703,12 +2704,12 @@ L 21.06 794.787491
      <g id="line2d_59">
       <path d="M 93.15 938.0736 
 L 93.15 794.787491 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_60"/>
      <g id="text_48">
       <!-- 40 -->
-      <g style="fill: #617084" transform="translate(86.755078 955.2736) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(86.755078 955.2736) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-86"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(59.796875 0)"/>
       </g>
@@ -2718,12 +2719,12 @@ L 93.15 794.787491
      <g id="line2d_61">
       <path d="M 165.24 938.0736 
 L 165.24 794.787491 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_62"/>
      <g id="text_49">
       <!-- 80 -->
-      <g style="fill: #617084" transform="translate(159.089719 955.2736) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(159.089719 955.2736) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-8a"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(55 0)"/>
       </g>
@@ -2733,12 +2734,12 @@ L 165.24 794.787491
      <g id="line2d_63">
       <path d="M 237.33 938.0736 
 L 237.33 794.787491 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_64"/>
      <g id="text_50">
       <!-- 120 -->
-      <g style="fill: #617084" transform="translate(229.456078 955.2736) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(229.456078 955.2736) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-83"/>
        <use xlink:href="#OutfitArticle-Regular-84" transform="translate(34.703125 0)"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(88.796875 0)"/>
@@ -2749,12 +2750,12 @@ L 237.33 794.787491
      <g id="line2d_65">
       <path d="M 309.42 938.0736 
 L 309.42 794.787491 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #dce3ed; stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-opacity: 0.7; stroke-width: 0.65; stroke-linecap: square"/>
      </g>
      <g id="line2d_66"/>
      <g id="text_51">
       <!-- 160 -->
-      <g style="fill: #617084" transform="translate(301.428141 955.2736) scale(0.102 -0.102)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(301.428141 955.2736) scale(0.102 -0.102)">
        <use xlink:href="#OutfitArticle-Regular-83"/>
        <use xlink:href="#OutfitArticle-Regular-88" transform="translate(34.703125 0)"/>
        <use xlink:href="#OutfitArticle-Regular-82" transform="translate(91.109375 0)"/>
@@ -2769,7 +2770,7 @@ L 279.427857 811.555014
 L 279.427857 817.929445 
 L 21.06 817.929445 
 z
-" clip-path="url(#p603dddface)" style="fill: #64748b"/>
+" clip-path="url(#p603dddface)" style="fill: var(--plot-gray, #64748b)"/>
    </g>
    <g id="patch_19">
     <path d="M 21.06 839.269929 
@@ -2777,7 +2778,7 @@ L 265.879442 839.269929
 L 265.879442 845.644359 
 L 21.06 845.644359 
 z
-" clip-path="url(#p603dddface)" style="fill: #315fe2"/>
+" clip-path="url(#p603dddface)" style="fill: var(--plot-blue, #315fe2)"/>
    </g>
    <g id="patch_20">
     <path d="M 21.06 866.984844 
@@ -2785,7 +2786,7 @@ L 132.394895 866.984844
 L 132.394895 873.359274 
 L 21.06 873.359274 
 z
-" clip-path="url(#p603dddface)" style="fill: #8650b8"/>
+" clip-path="url(#p603dddface)" style="fill: var(--plot-purple, #8650b8)"/>
    </g>
    <g id="patch_21">
     <path d="M 21.06 894.699758 
@@ -2793,11 +2794,11 @@ L 120.98485 894.699758
 L 120.98485 901.074189 
 L 21.06 901.074189 
 z
-" clip-path="url(#p603dddface)" style="fill: #008578"/>
+" clip-path="url(#p603dddface)" style="fill: var(--plot-green, #008578)"/>
    </g>
    <g id="text_52">
     <!-- Unfused Baseline -->
-    <g style="fill: #17283b" transform="translate(21.06 802.622656) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 802.622656) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-30"/>
      <use xlink:href="#OutfitArticle-Regular-5b" transform="translate(68.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-4d" transform="translate(122.5 0)"/>
@@ -2818,7 +2819,7 @@ z
    </g>
    <g id="text_53">
     <!-- 143.4 -->
-    <g style="fill: #17283b" transform="translate(279.945787 802.385074) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(279.945787 802.385074) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-83"/>
      <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(36.703125 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(97.109375 0)"/>
@@ -2829,21 +2830,21 @@ z
    <g id="LineCollection_13">
     <path d="M 278.806982 814.74223 
 L 280.048732 814.74223 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_67">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="278.806982" y="814.74223" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="278.806982" y="814.74223" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_68">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="280.048732" y="814.74223" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="280.048732" y="814.74223" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_54">
     <!-- + CUDA Graph -->
-    <g style="fill: #17283b" transform="translate(21.06 829.122891) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 829.122891) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-b" transform="translate(75 0)"/>
@@ -2860,7 +2861,7 @@ L 280.048732 814.74223
    </g>
    <g id="text_55">
     <!-- 135.8 -->
-    <g style="fill: #17283b" transform="translate(280.865644 830.168881) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(280.865644 830.168881) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-83"/>
      <use xlink:href="#OutfitArticle-SemiBold-85" transform="translate(36.703125 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(91.703125 0)"/>
@@ -2871,21 +2872,21 @@ L 280.048732 814.74223
    <g id="LineCollection_14">
     <path d="M 263.687906 842.457144 
 L 268.070978 842.457144 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_69">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="263.687906" y="842.457144" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="263.687906" y="842.457144" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_70">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="268.070978" y="842.457144" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="268.070978" y="842.457144" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_56">
     <!-- + Local Fusion -->
-    <g style="fill: #17283b" transform="translate(21.06 857.991465) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 857.991465) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-1e" transform="translate(75 0)"/>
@@ -2904,7 +2905,7 @@ L 268.070978 842.457144
    </g>
    <g id="text_57">
     <!-- 61.8 -->
-    <g style="fill: #17283b" transform="translate(287.473472 857.883796) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(287.473472 857.883796) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-88"/>
      <use xlink:href="#OutfitArticle-SemiBold-83" transform="translate(55 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(91.703125 0)"/>
@@ -2914,21 +2915,21 @@ L 268.070978 842.457144
    <g id="LineCollection_15">
     <path d="M 131.676698 870.172059 
 L 133.113091 870.172059 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_71">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="131.676698" y="870.172059" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="131.676698" y="870.172059" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_72">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="133.113091" y="870.172059" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="133.113091" y="870.172059" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_58">
     <!-- + Megakernel -->
-    <g style="fill: #17283b" transform="translate(21.06 884.4917) scale(0.12204 -0.12204)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 884.4917) scale(0.12204 -0.12204)">
      <use xlink:href="#OutfitArticle-Regular-d6"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(54.203125 0)"/>
      <use xlink:href="#OutfitArticle-Regular-1f" transform="translate(75 0)"/>
@@ -2945,7 +2946,7 @@ L 133.113091 870.172059
    </g>
    <g id="text_59">
     <!-- 55.4 -->
-    <g style="fill: #17283b" transform="translate(285.063216 885.529818) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(285.063216 885.529818) scale(0.1242 -0.1242)">
      <use xlink:href="#OutfitArticle-SemiBold-87"/>
      <use xlink:href="#OutfitArticle-SemiBold-87" transform="translate(55.296875 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-a0" transform="translate(108.5 0)"/>
@@ -2955,21 +2956,21 @@ L 133.113091 870.172059
    <g id="LineCollection_16">
     <path d="M 120.522573 897.886974 
 L 121.447127 897.886974 
-" clip-path="url(#p603dddface)" style="fill: none; stroke: #17283b; stroke-width: 1.15"/>
+" clip-path="url(#p603dddface)" style="fill: none; stroke: var(--plot-ink, #17283b); stroke-width: 1.15"/>
    </g>
    <g id="line2d_73">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="120.522573" y="897.886974" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="120.522573" y="897.886974" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="line2d_74">
     <g clip-path="url(#p603dddface)">
-     <use xlink:href="#m31e2efa215" x="121.447127" y="897.886974" style="fill: #1f77b4; stroke: #17283b"/>
+     <use xlink:href="#m31e2efa215" x="121.447127" y="897.886974" style="fill: var(--plot-marker, #1f77b4); stroke: var(--plot-ink, #17283b)"/>
     </g>
    </g>
    <g id="text_60">
     <!-- Megakernel: 10.2% less time vs local fusion -->
-    <g style="fill: #617084" transform="translate(21.06 929.907684) scale(0.1134 -0.1134)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(21.06 929.907684) scale(0.1134 -0.1134)">
      <use xlink:href="#OutfitArticle-Regular-1f"/>
      <use xlink:href="#OutfitArticle-Regular-48" transform="translate(83.90625 0)"/>
      <use xlink:href="#OutfitArticle-Regular-4e" transform="translate(137.5 0)"/>
@@ -3017,7 +3018,7 @@ L 121.447127 897.886974
    </g>
    <g id="text_61">
     <!-- 64 × 131,072  ·  0–160 µs -->
-    <g style="fill: #17283b" transform="translate(21.06 774.787491) scale(0.1458 -0.1458)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 774.787491) scale(0.1458 -0.1458)">
      <use xlink:href="#OutfitArticle-SemiBold-88"/>
      <use xlink:href="#OutfitArticle-SemiBold-86" transform="translate(56.796875 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-9e" transform="translate(117.203125 0)"/>
@@ -3048,7 +3049,7 @@ L 121.447127 897.886974
   </g>
   <g id="text_62">
    <!-- Time per Invocation -->
-   <g style="fill: #17283b" transform="translate(14.58 36.286939) scale(0.1836 -0.1836)">
+   <g style="fill: var(--plot-ink, #17283b)" transform="translate(14.58 36.286939) scale(0.1836 -0.1836)">
     <defs>
      <path id="OutfitArticle-SemiBold-2f" d="M 1574 0 
 L 1574 4403 
@@ -3382,7 +3383,7 @@ z
   </g>
   <g id="text_63">
    <!-- Host completion time · µs · lower is better -->
-   <g style="fill: #617084" transform="translate(14.58 62.804048) scale(0.11556 -0.11556)">
+   <g style="fill: var(--plot-muted, #617084)" transform="translate(14.58 62.804048) scale(0.11556 -0.11556)">
     <defs>
      <path id="OutfitArticle-Regular-16" d="M 525 0 
 L 525 4442 
@@ -3560,7 +3561,7 @@ z
   </g>
   <g id="text_64">
    <!-- Rows × columns · scales differ across panels -->
-   <g style="fill: #617084" transform="translate(14.58 87.260808) scale(0.11016 -0.11016)">
+   <g style="fill: var(--plot-muted, #617084)" transform="translate(14.58 87.260808) scale(0.11016 -0.11016)">
     <defs>
      <path id="OutfitArticle-Regular-2d" d="M 928 1933 
 L 928 2438 

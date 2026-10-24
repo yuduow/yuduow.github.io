@@ -24,7 +24,7 @@
     ]
   },
   "script_sha256": "6d99a903562ce0699e4bf6726f6bfc7a7920fa8dff46fb5b4194025e676fff8c",
-  "figures_script_sha256": "d1571864c0891e75002e52b2d1ff28b9381983ddf2230e2a8fa74a538579e8ef",
+  "figures_script_sha256": "20e22714c739dd6bc4f9896741a78c837f6415e0b7ebf656927b1271256ce4aa",
   "inputs": [
     {
       "path": "data/selected-configs.json",
@@ -197,7 +197,7 @@
   "figures": [
     {
       "path": "presentation/assets/rms-computation.svg",
-      "sha256": "9c053a1699029d32c7f08517ed8f10a21b41c4d5bd1e61b09727caab6e5eb99e"
+      "sha256": "3b0185c3336f0c2e406a5d4c40594f47215cafe9bf3680aaab94eca6a33bc3a4"
     },
     {
       "path": "presentation/assets/rms-computation.png",
@@ -205,7 +205,7 @@
     },
     {
       "path": "presentation/assets/rms-graph-replay.svg",
-      "sha256": "984acc184fe0af7c634ca5c8c0e5aedebaac2b929f8285000b16392546f501ec"
+      "sha256": "a3fcb08364ec23b2bc2ebfa8b4bf2778352e224cf65948d0122108652b2752f1"
     },
     {
       "path": "presentation/assets/rms-graph-replay.png",
@@ -213,7 +213,7 @@
     },
     {
       "path": "presentation/assets/rms-local-fusion.svg",
-      "sha256": "86deef280dddd0d927c8a5553039c8350f331e8e26bae0c1ba01f0953a424fa7"
+      "sha256": "98a7756dbdd48e352c5fc187240eb2b618e5ab5810f76a83ec0d1c29c7b01087"
     },
     {
       "path": "presentation/assets/rms-local-fusion.png",
@@ -221,7 +221,7 @@
     },
     {
       "path": "presentation/assets/rms-storage.svg",
-      "sha256": "a9d9f212f4c19acb1e9c39a4d7445b52369a31604d72916ea98b9334dade504f"
+      "sha256": "8863ceb3cff1d4a36526bc715dc1f424f25c7c64ec7ffab60c75d1ae246b7f3d"
     },
     {
       "path": "presentation/assets/rms-storage.png",
@@ -229,7 +229,7 @@
     },
     {
       "path": "presentation/assets/rms-computation-mobile.svg",
-      "sha256": "847f02e20a6c79489fca95a9db43d36f39d858a7efdd8aed66320d3114b3b587"
+      "sha256": "59d7aa76238e63dcce02c75844485d2132c093fa3fbf5b6b8db1d61f045de5c5"
     },
     {
       "path": "presentation/assets/rms-computation-mobile.png",
@@ -237,7 +237,7 @@
     },
     {
       "path": "presentation/assets/rms-graph-replay-mobile.svg",
-      "sha256": "567519a5d7d9f65ad80e0a803c6f080fa104e8538bc800b18fda2ee5fa45f8c8"
+      "sha256": "3be2de37ee4852e113735a8e9edb6f555f32baf691875e8dcc22b7b44fbab88c"
     },
     {
       "path": "presentation/assets/rms-graph-replay-mobile.png",
@@ -245,7 +245,7 @@
     },
     {
       "path": "presentation/assets/rms-local-fusion-mobile.svg",
-      "sha256": "0dc7c85b81c2cea5b353c840102144e60f59aab0243532e7459901467c09ea3b"
+      "sha256": "f2ee7928918006f667f1ef498ca70c09548fadf5749dcafb3f3272942797077c"
     },
     {
       "path": "presentation/assets/rms-local-fusion-mobile.png",
@@ -253,7 +253,7 @@
     },
     {
       "path": "presentation/assets/rms-storage-mobile.svg",
-      "sha256": "d9358bbcc517882fec68ade44f5e8f69e1cb092292e5f597c21482c2eb6c805c"
+      "sha256": "2fe4c0a56927d671a26bd6afd2757ff12517886d8a0650c401f23e681a1c02d2"
     },
     {
       "path": "presentation/assets/rms-storage-mobile.png",
@@ -261,7 +261,7 @@
     },
     {
       "path": "presentation/assets/rms-completion.svg",
-      "sha256": "2aa9e1495ebb29c1a45aef5d73b2611d74c15c7580fad333cd0548372913418b"
+      "sha256": "bdc9bdbfcd6f9d2bfaf83aa1e35fa5bbd87f8a795984be3a64bcc051ef3030e0"
     },
     {
       "path": "presentation/assets/rms-completion.png",
@@ -269,7 +269,7 @@
     },
     {
       "path": "presentation/assets/rms-completion-mobile.svg",
-      "sha256": "deee2348ff4b14950cf2723edc5f5172c9a36c6aab9bd7079e791318fe6437c5"
+      "sha256": "bab980ef423dddf7476139c76154366c867093b01876986e09e1206cee9bea4f"
     },
     {
       "path": "presentation/assets/rms-completion-mobile.png",
@@ -277,7 +277,7 @@
     },
     {
       "path": "presentation/assets/rms-retention.svg",
-      "sha256": "ffb288a6caa1422890d3a5e9ec52081a2c17c67bba7ea2b4b0b9f0f59561743a"
+      "sha256": "d980163bbc4aabb51813c97e1059fdfc92d5bf74f4d26530a970c4877b35969a"
     },
     {
       "path": "presentation/assets/rms-retention.png",
@@ -285,7 +285,7 @@
     },
     {
       "path": "presentation/assets/rms-retention-mobile.svg",
-      "sha256": "c25bb8712dab8fffae7d79920129ee1da3dec261254be1a824eec39a03e6b7c3"
+      "sha256": "0e341d678a0305a676f2659f2adae6d779d405b5fcf2cad359d344aba7086ca6"
     },
     {
       "path": "presentation/assets/rms-retention-mobile.png",

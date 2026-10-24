@@ -12,7 +12,7 @@
     },
     {
       "path": "learning-notes/tensor-programs/assets/blog.css",
-      "sha256": "be0a9ac5359c98cacd7a2c3a00deee1e0d0d4c86c06afc048084d556665c647b"
+      "sha256": "fd7ed2b5e417d9430867db0d005f0a97ff490ae68144866a988a749673ab3d2a"
     },
     {
       "path": "learning-notes/tensor-programs/assets/compiler-luminal.svg",
@@ -44,7 +44,7 @@
     },
     {
       "path": "learning-notes/tensor-programs/assets/styles.css",
-      "sha256": "b391d3241dd2b98f73896d41593467af52cc81ef6c4559e95a0e9bfdddc3697c"
+      "sha256": "a0621467cdb2bcc33d33e98bbe81124a7fb55c25e960ba9f779790e232577c7a"
     },
     {
       "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/adapters.py",
@@ -88,11 +88,11 @@
     },
     {
       "path": "learning-notes/tensor-programs/index.html",
-      "sha256": "f5026491f9201341e795dacd13c3f733db0c83fefb840078a3ea5bccc1742da2"
+      "sha256": "dca42db737ea6244685107ab09db2984cc2cb0ab29ef08d5f6432985fdccddb3"
     },
     {
       "path": "learning-notes/tensor-programs/part-1/index.html",
-      "sha256": "31a691f0f5acf0d018d7eef997e3134e2f5d496b69959b58d37f95380707cdd2"
+      "sha256": "607334355594aecdc109f65fcdc60b12bd1d6f1ee316ed5114badec3265a8e44"
     }
   ]
 }

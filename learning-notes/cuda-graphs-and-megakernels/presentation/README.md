@@ -6,4 +6,6 @@ Run `python presentation/render.py` from the article directory with Matplotlib a
 
 The article renderer selects these presentation assets when present. The archived evidence and original figure assets remain byte-for-byte intact. `provenance.json` identifies the inputs, scripts, outputs and text-layout checks for this edition.
 
+SVG paint colors follow the embedding page's light or dark color scheme, including backgrounds, labels, arrows, and plot ranges. PNG exports retain the light palette for social articles. The adaptive SVG palette does not change geometry or measured values.
+
 Layout diagnostics use full font metric rectangles, including Outfit’s generous leading. Those rectangles can overlap even when painted glyphs do not. Review diagnostics in the rendered SVG/PNG; the article edition received a visual check of all 12 layouts.

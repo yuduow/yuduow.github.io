@@ -1,5 +1,6 @@
 """Reader-facing presentation edition; numerical inputs stay in the archived evidence bundle."""
 from pathlib import Path
+import re
 
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
@@ -13,6 +14,35 @@ LINE = '#dce3ed'
 EDGE = '#8795a8'
 COLORS = ['#64748b', '#315fe2', '#8650b8', '#008578']
 METHODS = ['Unfused Baseline', '+ CUDA Graph', '+ Local Fusion', '+ Megakernel']
+
+# Keep the exported PNG palette unchanged, while embedded SVGs follow the page's
+# color scheme. Map paint declarations only; coordinates, paths and data stay intact.
+SVG_PALETTE = {
+    '#ffffff': ('paper', '#12151c'), '#17283b': ('ink', '#f4f6fb'),
+    '#617084': ('muted', '#b4bdcb'), '#dce3ed': ('line', '#354153'),
+    '#8795a8': ('edge', '#96a7bd'), '#64748b': ('gray', '#a0aec0'),
+    '#315fe2': ('blue', '#89a7ff'), '#8650b8': ('purple', '#c19be4'),
+    '#008578': ('green', '#65c9b3'), '#1f77b4': ('marker', '#89a7ff'),
+    '#f7f9fc': ('panel', '#1c2432'), '#f0f3f7': ('chip', '#253040'),
+    '#f8f5fc': ('purple-panel', '#2b2438'), '#edf7f5': ('green-panel', '#18332e'),
+    '#edf3ff': ('blue-panel', '#1c2c48'), '#9bb4e8': ('blue-edge', '#718cbe'),
+    '#c3aed6': ('purple-edge', '#8f77aa'), '#d9cfe3': ('purple-line', '#756784'),
+    '#a7cfc4': ('green-edge', '#568e7f'),
+}
+
+
+def adapt_svg_theme(path):
+    """Add an adaptive palette without rerendering the figure geometry."""
+    svg = path.read_text()
+    def paint(match):
+        prop, color = match.groups()
+        token = SVG_PALETTE[color][0]
+        return f'{prop}: var(--plot-{token}, {color})'
+    svg = re.sub(r'(fill|stroke): (#[0-9a-f]{6})\b', paint, svg)
+    dark = ';'.join(f'--plot-{token}:{color}' for token, color in SVG_PALETTE.values())
+    style = f'\n<style>@media (prefers-color-scheme:dark){{:root{{{dark}}}}}</style>'
+    svg = re.sub(r'(<svg\b[^>]*>)', lambda m: m[0] + style, svg, count=1)
+    path.write_text(svg)
 FUSION_PHASES = [
     {'baseline': [('baseline_square', 'Square x'),
                   ('baseline_energy', 'Tile Sum of x²'),
@@ -334,6 +364,8 @@ def render_figures(timing, cfg, assets: Path, workload):
             path = assets / (name + ('-mobile' if mobile else '') + '.' + ext)
             fig.savefig(path, bbox_inches=None, pad_inches=0, facecolor='white',
                         metadata={'Date': None} if ext == 'svg' else None)
+            if ext == 'svg':
+                adapt_svg_theme(path)
             outputs.append(path)
         plt.close(fig)
 

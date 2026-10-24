@@ -2,7 +2,7 @@
 .figure-explorer {
   --viz-blue: #315fe2;
   --viz-purple: #8650b8;
-  --viz-green: #008578;
+  --viz-green: #006b60;
   --viz-gray: #64748b;
   --viz-ink: #17283b;
   --viz-muted: #617084;
@@ -16,6 +16,7 @@
   border: 1px solid var(--line);
   border-radius: 16px;
   background: var(--bg);
+  color: var(--ink);
   overflow: hidden;
   font-size: .98rem;
   line-height: 1.5;
@@ -155,7 +156,8 @@
   .lane-boundary { min-height: 58px; font-size: .76rem; }
   .lane-output { min-height: 69px; }
   .tile-counts { gap: 8px; font-size: .75rem; }
-  .phase-steps { gap: 3px; }
+  .phase-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+  .phase-steps button:last-child { grid-column: 1 / -1; }
   .phase-steps button { font-size: .77rem; min-height: 45px; }
   .replay-kernels { padding: 9px 6px; gap: 4px; }
   .replay-kernels button { font-size: .73rem; }
@@ -175,7 +177,7 @@
   .viz-controls button { font-size: .79rem; padding-inline: .6rem; }
 }
 @media (prefers-color-scheme: dark) {
-  .figure-explorer { --viz-blue: #89a7ff; --viz-purple: #c19be4; --viz-green: #65c9b3; --viz-gray: #a0aec0; --viz-ink: #f4f6fb; --viz-muted: #b4bdcb; --viz-line: #354153; }
+  :root:not([data-theme="light"]) .figure-explorer { --viz-blue: #89a7ff; --viz-purple: #c19be4; --viz-green: #65c9b3; --viz-gray: #a0aec0; --viz-ink: #f4f6fb; --viz-muted: #b4bdcb; --viz-line: #354153; }
 }
 :root[data-theme="dark"] .figure-explorer { --viz-blue: #89a7ff; --viz-purple: #c19be4; --viz-green: #65c9b3; --viz-gray: #a0aec0; --viz-ink: #f4f6fb; --viz-muted: #b4bdcb; --viz-line: #354153; }
 @media (prefers-reduced-motion: reduce) {

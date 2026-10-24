@@ -357,7 +357,7 @@
 .figure-scroll {
   max-width: 100%;
   overflow-x: auto;
-  background: #fff;
+  background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 14px;
   box-shadow: none;

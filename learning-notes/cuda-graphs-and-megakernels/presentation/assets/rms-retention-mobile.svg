@@ -2,6 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="324pt" height="352.8pt" viewBox="0 0 324 352.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<style>@media (prefers-color-scheme:dark){:root{--plot-paper:#12151c;--plot-ink:#f4f6fb;--plot-muted:#b4bdcb;--plot-line:#354153;--plot-edge:#96a7bd;--plot-gray:#a0aec0;--plot-blue:#89a7ff;--plot-purple:#c19be4;--plot-green:#65c9b3;--plot-marker:#89a7ff;--plot-panel:#1c2432;--plot-chip:#253040;--plot-purple-panel:#2b2438;--plot-green-panel:#18332e;--plot-blue-panel:#1c2c48;--plot-blue-edge:#718cbe;--plot-purple-edge:#8f77aa;--plot-purple-line:#756784;--plot-green-edge:#568e7f}}</style>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -25,7 +26,7 @@ L 324 352.8
 L 324 0 
 L 0 0 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
@@ -34,29 +35,29 @@ L 309.42 296.352
 L 309.42 116 
 L 21.06 116 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
    </g>
    <g id="LineCollection_1">
     <path d="M 21.06 153.215492 
 L 309.42 153.215492 
-" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: #dce3ed; stroke-width: 0.8"/>
+" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-width: 0.8"/>
    </g>
    <g id="LineCollection_2">
     <path d="M 21.06 210.470095 
 L 309.42 210.470095 
-" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: #dce3ed; stroke-width: 0.8"/>
+" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-width: 0.8"/>
    </g>
    <g id="LineCollection_3">
     <path d="M 21.06 267.724698 
 L 309.42 267.724698 
-" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: #dce3ed; stroke-width: 0.8"/>
+" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: var(--plot-line, #dce3ed); stroke-width: 0.8"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1"/>
      <g id="text_1">
       <!-- 0 -->
-      <g style="fill: #617084" transform="translate(17.616328 314.852) scale(0.105 -0.105)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(17.616328 314.852) scale(0.105 -0.105)">
        <defs>
         <path id="OutfitArticle-Regular-82" d="M 2112 -64 
 Q 1613 -64 1200 217 
@@ -96,7 +97,7 @@ z
      <g id="line2d_2"/>
      <g id="text_2">
       <!-- 1 -->
-      <g style="fill: #617084" transform="translate(76.910086 314.852) scale(0.105 -0.105)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(76.910086 314.852) scale(0.105 -0.105)">
        <defs>
         <path id="OutfitArticle-Regular-83" d="M 1107 0 
 L 1107 4442 
@@ -120,7 +121,7 @@ z
      <g id="line2d_3"/>
      <g id="text_3">
       <!-- 2 -->
-      <g style="fill: #617084" transform="translate(133.564078 314.852) scale(0.105 -0.105)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(133.564078 314.852) scale(0.105 -0.105)">
        <defs>
         <path id="OutfitArticle-Regular-84" d="M 211 365 
 L 1850 2093 
@@ -160,7 +161,7 @@ z
      <g id="line2d_4"/>
      <g id="text_4">
       <!-- 3 -->
-      <g style="fill: #617084" transform="translate(191.251664 314.852) scale(0.105 -0.105)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(191.251664 314.852) scale(0.105 -0.105)">
        <defs>
         <path id="OutfitArticle-Regular-85" d="M 1581 -64 
 Q 1146 -64 790 99 
@@ -210,7 +211,7 @@ z
      <g id="line2d_5"/>
      <g id="text_5">
       <!-- 4 -->
-      <g style="fill: #617084" transform="translate(248.608664 314.852) scale(0.105 -0.105)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(248.608664 314.852) scale(0.105 -0.105)">
        <defs>
         <path id="OutfitArticle-Regular-86" d="M 211 1530 
 L 1830 4442 
@@ -241,7 +242,7 @@ z
      <g id="line2d_6"/>
      <g id="text_6">
       <!-- 5 -->
-      <g style="fill: #617084" transform="translate(306.580078 314.852) scale(0.105 -0.105)">
+      <g style="fill: var(--plot-muted, #617084)" transform="translate(306.580078 314.852) scale(0.105 -0.105)">
        <defs>
         <path id="OutfitArticle-Regular-87" d="M 1587 -64 
 Q 1133 -64 777 99 
@@ -289,7 +290,7 @@ z
     </g>
     <g id="text_7">
      <!-- Additional host completion time (µs) -->
-     <g style="fill: #617084" transform="translate(78.038893 341.919404) scale(0.11016 -0.11016)">
+     <g style="fill: var(--plot-muted, #617084)" transform="translate(78.038893 341.919404) scale(0.11016 -0.11016)">
       <defs>
        <path id="OutfitArticle-Regular-1" d="M 198 0 
 L 2016 4442 
@@ -767,7 +768,7 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_8">
     <!-- Reload input x -->
-    <g style="fill: #17283b" transform="translate(21.06 132.681873) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 132.681873) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-Regular-2d" d="M 928 1933 
 L 928 2438 
@@ -862,7 +863,7 @@ z
    </g>
    <g id="text_9">
     <!-- +1.39 µs -->
-    <g style="fill: #008578" transform="translate(265.216444 132.725537) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-green, #008578)" transform="translate(265.216444 132.725537) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-d6" d="M 326 1779 
 L 326 2509 
@@ -1046,26 +1047,26 @@ z
    <g id="LineCollection_4">
     <path d="M 95.226192 153.215492 
 L 106.875936 153.215492 
-" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: #008578; stroke-width: 1.5"/>
+" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: var(--plot-green, #008578); stroke-width: 1.5"/>
    </g>
    <g id="line2d_7">
     <defs>
      <path id="m7659b45645" d="M 0 3 
 L 0 -3 
-" style="stroke: #008578"/>
+" style="stroke: var(--plot-green, #008578)"/>
     </defs>
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m7659b45645" x="95.226192" y="153.215492" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m7659b45645" x="95.226192" y="153.215492" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="line2d_8">
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m7659b45645" x="106.875936" y="153.215492" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m7659b45645" x="106.875936" y="153.215492" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="text_10">
     <!-- Write + reload E -->
-    <g style="fill: #17283b" transform="translate(21.06 191.110555) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 191.110555) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-Regular-36" d="M 1658 0 
 L 205 4442 
@@ -1164,7 +1165,7 @@ z
    </g>
    <g id="text_11">
     <!-- +2.87 µs -->
-    <g style="fill: #008578" transform="translate(263.627072 189.980141) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-green, #008578)" transform="translate(263.627072 189.980141) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-84" d="M 166 499 
 L 1862 2272 
@@ -1276,21 +1277,21 @@ z
    <g id="LineCollection_5">
     <path d="M 185.655888 210.470095 
 L 187.905096 210.470095 
-" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: #008578; stroke-width: 1.5"/>
+" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: var(--plot-green, #008578); stroke-width: 1.5"/>
    </g>
    <g id="line2d_9">
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m7659b45645" x="185.655888" y="210.470095" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m7659b45645" x="185.655888" y="210.470095" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="line2d_10">
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m7659b45645" x="187.905096" y="210.470095" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m7659b45645" x="187.905096" y="210.470095" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="text_12">
     <!-- Both -->
-    <g style="fill: #17283b" transform="translate(21.06 248.365158) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(21.06 248.365158) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-Regular-a" d="M 928 0 
 L 928 525 
@@ -1339,7 +1340,7 @@ z
    </g>
    <g id="text_13">
     <!-- +3.95 µs -->
-    <g style="fill: #008578" transform="translate(263.764856 247.234744) scale(0.1242 -0.1242)">
+    <g style="fill: var(--plot-green, #008578)" transform="translate(263.764856 247.234744) scale(0.1242 -0.1242)">
      <defs>
       <path id="OutfitArticle-SemiBold-87" d="M 1600 -64 
 Q 1133 -64 749 99 
@@ -1394,16 +1395,16 @@ z
    <g id="LineCollection_6">
     <path d="M 246.55752 267.724698 
 L 251.344296 267.724698 
-" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: #008578; stroke-width: 1.5"/>
+" clip-path="url(#pde0e37ed83)" style="fill: none; stroke: var(--plot-green, #008578); stroke-width: 1.5"/>
    </g>
    <g id="line2d_11">
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m7659b45645" x="246.55752" y="267.724698" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m7659b45645" x="246.55752" y="267.724698" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="line2d_12">
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m7659b45645" x="251.344296" y="267.724698" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m7659b45645" x="251.344296" y="267.724698" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="line2d_13">
@@ -1418,26 +1419,26 @@ C -2.683901 -1.55874 -3 -0.795609 -3 0
 C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
 C -1.55874 2.683901 -0.795609 3 0 3 
 z
-" style="stroke: #008578"/>
+" style="stroke: var(--plot-green, #008578)"/>
     </defs>
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m5734c1e6da" x="101.051064" y="153.215492" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m5734c1e6da" x="101.051064" y="153.215492" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="line2d_14">
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m5734c1e6da" x="186.780492" y="210.470095" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m5734c1e6da" x="186.780492" y="210.470095" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
    <g id="line2d_15">
     <g clip-path="url(#pde0e37ed83)">
-     <use xlink:href="#m5734c1e6da" x="248.950908" y="267.724698" style="fill: #008578; stroke: #008578"/>
+     <use xlink:href="#m5734c1e6da" x="248.950908" y="267.724698" style="fill: var(--plot-green, #008578); stroke: var(--plot-green, #008578)"/>
     </g>
    </g>
   </g>
   <g id="text_14">
    <!-- Reloading Adds Latency -->
-   <g style="fill: #17283b" transform="translate(14.58 36.286939) scale(0.1836 -0.1836)">
+   <g style="fill: var(--plot-ink, #17283b)" transform="translate(14.58 36.286939) scale(0.1836 -0.1836)">
     <defs>
      <path id="OutfitArticle-SemiBold-2d" d="M 1101 1882 
 L 1101 2560 
@@ -1816,7 +1817,7 @@ z
   </g>
   <g id="text_15">
    <!-- 16 × 131,072 · grid-wide barriers -->
-   <g style="fill: #617084" transform="translate(14.58 62.746268) scale(0.11556 -0.11556)">
+   <g style="fill: var(--plot-muted, #617084)" transform="translate(14.58 62.746268) scale(0.11556 -0.11556)">
     <defs>
      <path id="OutfitArticle-Regular-88" d="M 1805 -64 
 Q 1363 -64 1014 141 
@@ -2058,7 +2059,7 @@ z
   </g>
   <g id="text_16">
    <!-- Same compiled kernel · two GPU sessions -->
-   <g style="fill: #617084" transform="translate(14.58 87.205728) scale(0.11016 -0.11016)">
+   <g style="fill: var(--plot-muted, #617084)" transform="translate(14.58 87.205728) scale(0.11016 -0.11016)">
     <defs>
      <path id="OutfitArticle-Regular-2e" d="M 1760 -64 
 Q 1235 -64 864 128 

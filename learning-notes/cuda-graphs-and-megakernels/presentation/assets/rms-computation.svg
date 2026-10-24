@@ -2,6 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="828pt" height="364.166667pt" viewBox="0 0 828 364.166667" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<style>@media (prefers-color-scheme:dark){:root{--plot-paper:#12151c;--plot-ink:#f4f6fb;--plot-muted:#b4bdcb;--plot-line:#354153;--plot-edge:#96a7bd;--plot-gray:#a0aec0;--plot-blue:#89a7ff;--plot-purple:#c19be4;--plot-green:#65c9b3;--plot-marker:#89a7ff;--plot-panel:#1c2432;--plot-chip:#253040;--plot-purple-panel:#2b2438;--plot-green-panel:#18332e;--plot-blue-panel:#1c2c48;--plot-blue-edge:#718cbe;--plot-purple-edge:#8f77aa;--plot-purple-line:#756784;--plot-green-edge:#568e7f}}</style>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -25,7 +26,7 @@ L 828 364.166667
 L 828 0 
 L 0 0 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
@@ -33,90 +34,90 @@ z
 L 147.966667 216.2 
 L 147.966667 136.466667 
 L 171.270163 136.466667 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 167.670163 134.666667 
 L 171.270163 136.466667 
 L 167.670163 138.266667 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_3">
     <path d="M 121.9 216.2 
 L 147.966667 216.2 
 L 147.966667 299.766667 
 L 205.770163 299.766667 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 202.170163 297.966667 
 L 205.770163 299.766667 
 L 202.170163 301.566667 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_4">
     <path d="M 121.9 216.2 
 L 435.770163 216.2 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 432.170163 214.4 
 L 435.770163 216.2 
 L 432.170163 218 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
     <path d="M 388.7 136.466667 
 L 530.533333 136.466667 
 L 530.533333 178.936829 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 532.333333 175.336829 
 L 530.533333 178.936829 
 L 528.733333 175.336829 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_6">
     <path d="M 354.2 299.766667 
 L 530.533333 299.766667 
 L 530.533333 258.063171 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 528.733333 261.663171 
 L 530.533333 258.063171 
 L 532.333333 261.663171 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
     <path d="M 624.833333 216.2 
 L 644.766667 216.2 
 L 644.766667 131.1 
 L 661.936829 131.1 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 658.336829 129.3 
 L 661.936829 131.1 
 L 658.336829 132.9 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_8">
     <path d="M 624.833333 216.2 
 L 644.766667 216.2 
 L 644.766667 302.066667 
 L 661.936829 302.066667 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 658.336829 300.266667 
 L 661.936829 302.066667 
 L 658.336829 303.866667 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke-dasharray: 3.3,3.3; stroke-dashoffset: 0; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_9">
     <path d="M 736 165.6 
 L 736 266.336829 
-" clip-path="url(#p30f1107a57)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 737.8 262.736829 
 L 736 266.336829 
 L 734.2 262.736829 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_10">
     <path d="M 24.533333 180.166667 
@@ -129,7 +130,7 @@ Q 18.4 252.233333 18.4 246.1
 L 18.4 186.3 
 Q 18.4 180.166667 24.533333 180.166667 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #f7f9fc; stroke: #dce3ed; stroke-width: 0.9; stroke-linejoin: miter"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-panel, #f7f9fc); stroke: var(--plot-line, #dce3ed); stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_11">
     <path d="M 178.633333 96.6 
@@ -142,7 +143,7 @@ Q 172.5 176.333333 172.5 170.2
 L 172.5 102.733333 
 Q 172.5 96.6 178.633333 96.6 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #f7f9fc; stroke: #dce3ed; stroke-width: 0.9; stroke-linejoin: miter"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-panel, #f7f9fc); stroke: var(--plot-line, #dce3ed); stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_12">
     <path d="M 213.133333 267.566667 
@@ -155,7 +156,7 @@ Q 207 331.966667 207 325.833333
 L 207 273.7 
 Q 207 267.566667 213.133333 267.566667 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #f7f9fc; stroke: #dce3ed; stroke-width: 0.9; stroke-linejoin: miter"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-panel, #f7f9fc); stroke: var(--plot-line, #dce3ed); stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_13">
     <path d="M 443.133333 180.166667 
@@ -168,7 +169,7 @@ Q 437 256.833333 437 250.7
 L 437 186.3 
 Q 437 180.166667 443.133333 180.166667 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #f7f9fc; stroke: #dce3ed; stroke-width: 0.9; stroke-linejoin: miter"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-panel, #f7f9fc); stroke: var(--plot-line, #dce3ed); stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_14">
     <path d="M 669.3 96.6 
@@ -181,7 +182,7 @@ Q 663.166667 165.6 663.166667 159.466667
 L 663.166667 102.733333 
 Q 663.166667 96.6 669.3 96.6 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #f7f9fc; stroke: #dce3ed; stroke-width: 0.9; stroke-linejoin: miter"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-panel, #f7f9fc); stroke: var(--plot-line, #dce3ed); stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_15">
     <path d="M 669.3 267.566667 
@@ -194,11 +195,11 @@ Q 663.166667 336.566667 663.166667 330.433333
 L 663.166667 273.7 
 Q 663.166667 267.566667 669.3 267.566667 
 z
-" clip-path="url(#p30f1107a57)" style="fill: #edf7f5; stroke: #008578; stroke-width: 0.9; stroke-linejoin: miter"/>
+" clip-path="url(#p30f1107a57)" style="fill: var(--plot-green-panel, #edf7f5); stroke: var(--plot-green, #008578); stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- RMS Scaled Softmax -->
-    <g style="fill: #17283b" transform="translate(28.98 39.906533) scale(0.224 -0.224)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(28.98 39.906533) scale(0.224 -0.224)">
      <defs>
       <path id="OutfitArticle-SemiBold-2d" d="M 1101 1882 
 L 1101 2560 
@@ -579,7 +580,7 @@ z
    </g>
    <g id="text_2">
     <!-- Row-wise operations · input B × 131,072 -->
-    <g style="fill: #617084" transform="translate(28.98 61.952473) scale(0.1288 -0.1288)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(28.98 61.952473) scale(0.1288 -0.1288)">
      <defs>
       <path id="OutfitArticle-Regular-2d" d="M 928 1933 
 L 928 2438 
@@ -1157,10 +1158,10 @@ L 315.324375 228.206
 L 315.324375 204.194 
 L 305.675625 204.194 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
     </g>
     <!-- x -->
-    <g style="fill: #617084" transform="translate(307.475625 219.05) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(307.475625 219.05) scale(0.12 -0.12)">
      <defs>
       <path id="OutfitArticle-Regular-73" d="M 2419 0 
 L 1472 1331 
@@ -1196,10 +1197,10 @@ L 462.828854 148.472667
 L 462.828854 124.460667 
 L 454.104479 124.460667 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
     </g>
     <!-- s -->
-    <g style="fill: #617084" transform="translate(455.904479 139.316667) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(455.904479 139.316667) scale(0.12 -0.12)">
      <use xlink:href="#OutfitArticle-Regular-69"/>
     </g>
    </g>
@@ -1210,10 +1211,10 @@ L 461.563333 311.772667
 L 461.563333 287.760667 
 L 447.703333 287.760667 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
     </g>
     <!-- m -->
-    <g style="fill: #617084" transform="translate(449.503333 302.676667) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(449.503333 302.676667) scale(0.12 -0.12)">
      <defs>
       <path id="OutfitArticle-Regular-5a" d="M 422 0 
 L 422 3040 
@@ -1267,10 +1268,10 @@ L 740.482187 228.206
 L 740.482187 204.194 
 L 731.517812 204.194 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
     </g>
     <!-- z -->
-    <g style="fill: #617084" transform="translate(733.317812 219.05) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(733.317812 219.05) scale(0.12 -0.12)">
      <defs>
       <path id="OutfitArticle-Regular-77" d="M 179 314 
 L 1984 2726 
@@ -1299,7 +1300,7 @@ z
    </g>
    <g id="text_7">
     <!-- Input -->
-    <g style="fill: #17283b" transform="translate(54.37795 195.7843) scale(0.1344 -0.1344)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(54.37795 195.7843) scale(0.1344 -0.1344)">
      <defs>
       <path id="OutfitArticle-SemiBold-17" d="M 461 0 
 L 461 4499 
@@ -1401,7 +1402,7 @@ z
    </g>
    <g id="text_8">
     <!-- x -->
-    <g style="fill: #17283b" transform="translate(66.441488 222.451417) scale(0.1232 -0.1232)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(66.441488 222.451417) scale(0.1232 -0.1232)">
      <defs>
       <path id="DejaVuSansMono-5b" d="M 3494 3500 
 L 2241 1825 
@@ -1424,7 +1425,7 @@ z
    </g>
    <g id="text_9">
     <!-- B × N -->
-    <g style="fill: #617084" transform="translate(56.404375 247.749708) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(56.404375 247.749708) scale(0.12 -0.12)">
      <defs>
       <path id="OutfitArticle-Regular-20" d="M 525 0 
 L 525 4442 
@@ -1457,7 +1458,7 @@ z
    </g>
    <g id="text_10">
     <!-- Inverse RMS -->
-    <g style="fill: #17283b" transform="translate(243.58015 114.879667) scale(0.1344 -0.1344)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(243.58015 114.879667) scale(0.1344 -0.1344)">
      <defs>
       <path id="OutfitArticle-SemiBold-71" d="M 1376 0 
 L 13 3091 
@@ -1540,7 +1541,7 @@ z
    </g>
    <g id="text_11">
     <!-- s = 1 / sqrt( -->
-    <g style="fill: #17283b" transform="translate(232.389338 134.7203) scale(0.1232 -0.1232)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(232.389338 134.7203) scale(0.1232 -0.1232)">
      <defs>
       <path id="DejaVuSansMono-56" d="M 3041 3378 
 L 3041 2816 
@@ -1701,7 +1702,7 @@ z
      <use xlink:href="#DejaVuSansMono-b" transform="translate(722.4375 0)"/>
     </g>
     <!-- mean(x*x) + eps) -->
-    <g style="fill: #17283b" transform="translate(221.2638 151.364812) scale(0.1232 -0.1232)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(221.2638 151.364812) scale(0.1232 -0.1232)">
      <defs>
       <path id="DejaVuSansMono-50" d="M 2113 3144 
 Q 2219 3369 2383 3476 
@@ -1910,7 +1911,7 @@ z
    </g>
    <g id="text_12">
     <!-- B × 1 -->
-    <g style="fill: #617084" transform="translate(269.032188 170.929708) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(269.032188 170.929708) scale(0.12 -0.12)">
      <use xlink:href="#OutfitArticle-Regular-a"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(62.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-d8" transform="translate(83.09375 0)"/>
@@ -1920,7 +1921,7 @@ z
    </g>
    <g id="text_13">
     <!-- Row Maximum -->
-    <g style="fill: #17283b" transform="translate(236.20705 283.224967) scale(0.1344 -0.1344)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(236.20705 283.224967) scale(0.1344 -0.1344)">
      <defs>
       <path id="OutfitArticle-SemiBold-72" d="M 1197 0 
 L 38 3091 
@@ -1974,7 +1975,7 @@ z
    </g>
    <g id="text_14">
     <!-- m = max(x) -->
-    <g style="fill: #17283b" transform="translate(243.514875 306.204217) scale(0.1232 -0.1232)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(243.514875 306.204217) scale(0.1232 -0.1232)">
      <use xlink:href="#DejaVuSansMono-50"/>
      <use xlink:href="#DejaVuSansMono-3" transform="translate(60.203125 0)"/>
      <use xlink:href="#DejaVuSansMono-20" transform="translate(120.40625 0)"/>
@@ -1989,7 +1990,7 @@ z
    </g>
    <g id="text_15">
     <!-- B × 1 -->
-    <g style="fill: #617084" transform="translate(269.032188 328.403042) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(269.032188 328.403042) scale(0.12 -0.12)">
      <use xlink:href="#OutfitArticle-Regular-a"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(62.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-d8" transform="translate(83.09375 0)"/>
@@ -1999,7 +2000,7 @@ z
    </g>
    <g id="text_16">
     <!-- Exponentials -->
-    <g style="fill: #17283b" transform="translate(491.556367 196.7007) scale(0.1344 -0.1344)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(491.556367 196.7007) scale(0.1344 -0.1344)">
      <defs>
       <path id="OutfitArticle-SemiBold-f" d="M 461 0 
 L 461 4499 
@@ -2043,7 +2044,7 @@ z
    </g>
    <g id="text_17">
     <!-- E = exp((x - m) * s) -->
-    <g style="fill: #17283b" transform="translate(456.746417 224.959479) scale(0.1232 -0.1232)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(456.746417 224.959479) scale(0.1232 -0.1232)">
      <defs>
       <path id="DejaVuSansMono-28" d="M 616 4666 
 L 3384 4666 
@@ -2092,7 +2093,7 @@ z
    </g>
    <g id="text_18">
     <!-- B × N -->
-    <g style="fill: #617084" transform="translate(517.171042 251.797708) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(517.171042 251.797708) scale(0.12 -0.12)">
      <use xlink:href="#OutfitArticle-Regular-a"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(62.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-d8" transform="translate(83.09375 0)"/>
@@ -2102,7 +2103,7 @@ z
    </g>
    <g id="text_19">
     <!-- Row Sum -->
-    <g style="fill: #17283b" transform="translate(708.45325 113.0613) scale(0.1344 -0.1344)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(708.45325 113.0613) scale(0.1344 -0.1344)">
      <use xlink:href="#OutfitArticle-SemiBold-2d"/>
      <use xlink:href="#OutfitArticle-SemiBold-5d" transform="translate(61.296875 0)"/>
      <use xlink:href="#OutfitArticle-SemiBold-72" transform="translate(117.109375 0)"/>
@@ -2114,7 +2115,7 @@ z
    </g>
    <g id="text_20">
     <!-- z = sum(E) -->
-    <g style="fill: #17283b" transform="translate(698.914875 137.72155) scale(0.1232 -0.1232)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(698.914875 137.72155) scale(0.1232 -0.1232)">
      <defs>
       <path id="DejaVuSansMono-5d" d="M 709 3506 
 L 3250 3506 
@@ -2163,7 +2164,7 @@ z
    </g>
    <g id="text_21">
     <!-- B × 1 -->
-    <g style="fill: #617084" transform="translate(724.432188 161.484375) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(724.432188 161.484375) scale(0.12 -0.12)">
      <use xlink:href="#OutfitArticle-Regular-a"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(62.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-d8" transform="translate(83.09375 0)"/>
@@ -2173,7 +2174,7 @@ z
    </g>
    <g id="text_22">
     <!-- Normalize -->
-    <g style="fill: #008578" transform="translate(704.69215 284.087817) scale(0.1344 -0.1344)">
+    <g style="fill: var(--plot-green, #008578)" transform="translate(704.69215 284.087817) scale(0.1344 -0.1344)">
      <defs>
       <path id="OutfitArticle-SemiBold-20" d="M 461 0 
 L 461 4499 
@@ -2231,7 +2232,7 @@ z
    </g>
    <g id="text_23">
     <!-- y = E / z -->
-    <g style="fill: #17283b" transform="translate(702.623388 308.036604) scale(0.1232 -0.1232)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(702.623388 308.036604) scale(0.1232 -0.1232)">
      <defs>
       <path id="DejaVuSansMono-5c" d="M 2681 1125 
 Q 2538 759 2316 163 
@@ -2265,7 +2266,7 @@ z
    </g>
    <g id="text_24">
     <!-- B × N -->
-    <g style="fill: #617084" transform="translate(722.254375 332.451042) scale(0.12 -0.12)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(722.254375 332.451042) scale(0.12 -0.12)">
      <use xlink:href="#OutfitArticle-Regular-a"/>
      <use xlink:href="#OutfitArticle-Regular-9e" transform="translate(62.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-d8" transform="translate(83.09375 0)"/>

@@ -2,6 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns:xlink="http://www.w3.org/1999/xlink" width="324pt" height="504pt" viewBox="0 0 324 504" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<style>@media (prefers-color-scheme:dark){:root{--plot-paper:#12151c;--plot-ink:#f4f6fb;--plot-muted:#b4bdcb;--plot-line:#354153;--plot-edge:#96a7bd;--plot-gray:#a0aec0;--plot-blue:#89a7ff;--plot-purple:#c19be4;--plot-green:#65c9b3;--plot-marker:#89a7ff;--plot-panel:#1c2432;--plot-chip:#253040;--plot-purple-panel:#2b2438;--plot-green-panel:#18332e;--plot-blue-panel:#1c2c48;--plot-blue-edge:#718cbe;--plot-purple-edge:#8f77aa;--plot-purple-line:#756784;--plot-green-edge:#568e7f}}</style>
  <metadata>
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
@@ -25,7 +26,7 @@ L 324 504
 L 324 0 
 L 0 0 
 z
-" style="fill: #ffffff"/>
+" style="fill: var(--plot-paper, #ffffff)"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
@@ -39,7 +40,7 @@ Q 16.2 253.8 16.2 247.5
 L 16.2 215.1 
 Q 16.2 208.8 22.5 208.8 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f7f9fc; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-panel, #f7f9fc); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 23.4 216.9 
@@ -52,17 +53,17 @@ Q 19.8 242.1 19.8 238.5
 L 19.8 220.5 
 Q 19.8 216.9 23.4 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 45.9 229.5 
 Q 48.6 229.5 50.517376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 48.517376 228.5 
 L 50.517376 229.5 
 L 48.517376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_5">
     <path d="M 23.4 160.2 
@@ -75,17 +76,17 @@ Q 19.8 185.4 19.8 181.8
 L 19.8 163.8 
 Q 19.8 160.2 23.4 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 32.4 188.1 
 L 32.4 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 34.2 209.370163 
 L 32.4 212.970163 
 L 30.6 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_7">
     <path d="M 55.8 216.9 
@@ -98,17 +99,17 @@ Q 52.2 242.1 52.2 238.5
 L 52.2 220.5 
 Q 52.2 216.9 55.8 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_8">
     <path d="M 78.3 229.5 
 Q 81 229.5 82.917376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 80.917376 228.5 
 L 82.917376 229.5 
 L 80.917376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_9">
     <path d="M 55.8 160.2 
@@ -121,17 +122,17 @@ Q 52.2 185.4 52.2 181.8
 L 52.2 163.8 
 Q 52.2 160.2 55.8 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_10">
     <path d="M 64.8 188.1 
 L 64.8 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 66.6 209.370163 
 L 64.8 212.970163 
 L 63 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_11">
     <path d="M 88.2 216.9 
@@ -144,17 +145,17 @@ Q 84.6 242.1 84.6 238.5
 L 84.6 220.5 
 Q 84.6 216.9 88.2 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_12">
     <path d="M 110.7 229.5 
 Q 113.4 229.5 115.317376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 113.317376 228.5 
 L 115.317376 229.5 
 L 113.317376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_13">
     <path d="M 88.2 160.2 
@@ -167,17 +168,17 @@ Q 84.6 185.4 84.6 181.8
 L 84.6 163.8 
 Q 84.6 160.2 88.2 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_14">
     <path d="M 97.2 188.1 
 L 97.2 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 99 209.370163 
 L 97.2 212.970163 
 L 95.4 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_15">
     <path d="M 120.6 216.9 
@@ -190,17 +191,17 @@ Q 117 242.1 117 238.5
 L 117 220.5 
 Q 117 216.9 120.6 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_16">
     <path d="M 143.1 229.5 
 Q 145.8 229.5 147.717376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 145.717376 228.5 
 L 147.717376 229.5 
 L 145.717376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_17">
     <path d="M 120.6 160.2 
@@ -213,17 +214,17 @@ Q 117 185.4 117 181.8
 L 117 163.8 
 Q 117 160.2 120.6 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_18">
     <path d="M 129.6 188.1 
 L 129.6 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 131.4 209.370163 
 L 129.6 212.970163 
 L 127.8 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_19">
     <path d="M 153 216.9 
@@ -236,17 +237,17 @@ Q 149.4 242.1 149.4 238.5
 L 149.4 220.5 
 Q 149.4 216.9 153 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_20">
     <path d="M 175.5 229.5 
 Q 178.2 229.5 180.117376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 178.117376 228.5 
 L 180.117376 229.5 
 L 178.117376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_21">
     <path d="M 153 160.2 
@@ -259,17 +260,17 @@ Q 149.4 185.4 149.4 181.8
 L 149.4 163.8 
 Q 149.4 160.2 153 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_22">
     <path d="M 162 188.1 
 L 162 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 163.8 209.370163 
 L 162 212.970163 
 L 160.2 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_23">
     <path d="M 185.4 216.9 
@@ -282,17 +283,17 @@ Q 181.8 242.1 181.8 238.5
 L 181.8 220.5 
 Q 181.8 216.9 185.4 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_24">
     <path d="M 207.9 229.5 
 Q 210.6 229.5 212.517376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 210.517376 228.5 
 L 212.517376 229.5 
 L 210.517376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_25">
     <path d="M 185.4 160.2 
@@ -305,17 +306,17 @@ Q 181.8 185.4 181.8 181.8
 L 181.8 163.8 
 Q 181.8 160.2 185.4 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_26">
     <path d="M 194.4 188.1 
 L 194.4 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 196.2 209.370163 
 L 194.4 212.970163 
 L 192.6 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_27">
     <path d="M 217.8 216.9 
@@ -328,17 +329,17 @@ Q 214.2 242.1 214.2 238.5
 L 214.2 220.5 
 Q 214.2 216.9 217.8 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_28">
     <path d="M 240.3 229.5 
 Q 243 229.5 244.917376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 242.917376 228.5 
 L 244.917376 229.5 
 L 242.917376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_29">
     <path d="M 217.8 160.2 
@@ -351,17 +352,17 @@ Q 214.2 185.4 214.2 181.8
 L 214.2 163.8 
 Q 214.2 160.2 217.8 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_30">
     <path d="M 226.8 188.1 
 L 226.8 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 228.6 209.370163 
 L 226.8 212.970163 
 L 225 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_31">
     <path d="M 250.2 216.9 
@@ -374,17 +375,17 @@ Q 246.6 242.1 246.6 238.5
 L 246.6 220.5 
 Q 246.6 216.9 250.2 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_32">
     <path d="M 272.7 229.5 
 Q 275.4 229.5 277.317376 229.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 275.317376 228.5 
 L 277.317376 229.5 
 L 275.317376 230.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_33">
     <path d="M 250.2 160.2 
@@ -397,17 +398,17 @@ Q 246.6 185.4 246.6 181.8
 L 246.6 163.8 
 Q 246.6 160.2 250.2 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_34">
     <path d="M 259.2 188.1 
 L 259.2 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 261 209.370163 
 L 259.2 212.970163 
 L 257.4 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_35">
     <path d="M 282.6 216.9 
@@ -420,7 +421,7 @@ Q 279 242.1 279 238.5
 L 279 220.5 
 Q 279 216.9 282.6 216.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_36">
     <path d="M 282.6 160.2 
@@ -433,17 +434,17 @@ Q 279 185.4 279 181.8
 L 279 163.8 
 Q 279 160.2 282.6 160.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f0f3f7; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-chip, #f0f3f7); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_37">
     <path d="M 291.6 188.1 
 L 291.6 212.970163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 293.4 209.370163 
 L 291.6 212.970163 
 L 289.8 209.370163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="patch_38">
     <path d="M 22.5 415.8 
@@ -456,7 +457,7 @@ Q 16.2 460.8 16.2 454.5
 L 16.2 422.1 
 Q 16.2 415.8 22.5 415.8 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #f7f9fc; stroke: #dce3ed; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-panel, #f7f9fc); stroke: var(--plot-line, #dce3ed); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_39">
     <path d="M 23.4 423.9 
@@ -469,17 +470,17 @@ Q 19.8 449.1 19.8 445.5
 L 19.8 427.5 
 Q 19.8 423.9 23.4 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_40">
     <path d="M 45.9 436.5 
 Q 48.6 436.5 50.517376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 48.517376 435.5 
 L 50.517376 436.5 
 L 48.517376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_41">
     <path d="M 55.8 423.9 
@@ -492,17 +493,17 @@ Q 52.2 449.1 52.2 445.5
 L 52.2 427.5 
 Q 52.2 423.9 55.8 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_42">
     <path d="M 78.3 436.5 
 Q 81 436.5 82.917376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 80.917376 435.5 
 L 82.917376 436.5 
 L 80.917376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_43">
     <path d="M 88.2 423.9 
@@ -515,17 +516,17 @@ Q 84.6 449.1 84.6 445.5
 L 84.6 427.5 
 Q 84.6 423.9 88.2 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_44">
     <path d="M 110.7 436.5 
 Q 113.4 436.5 115.317376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 113.317376 435.5 
 L 115.317376 436.5 
 L 113.317376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_45">
     <path d="M 120.6 423.9 
@@ -538,17 +539,17 @@ Q 117 449.1 117 445.5
 L 117 427.5 
 Q 117 423.9 120.6 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_46">
     <path d="M 143.1 436.5 
 Q 145.8 436.5 147.717376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 145.717376 435.5 
 L 147.717376 436.5 
 L 145.717376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_47">
     <path d="M 153 423.9 
@@ -561,17 +562,17 @@ Q 149.4 449.1 149.4 445.5
 L 149.4 427.5 
 Q 149.4 423.9 153 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_48">
     <path d="M 175.5 436.5 
 Q 178.2 436.5 180.117376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 178.117376 435.5 
 L 180.117376 436.5 
 L 178.117376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_49">
     <path d="M 185.4 423.9 
@@ -584,17 +585,17 @@ Q 181.8 449.1 181.8 445.5
 L 181.8 427.5 
 Q 181.8 423.9 185.4 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_50">
     <path d="M 207.9 436.5 
 Q 210.6 436.5 212.517376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 210.517376 435.5 
 L 212.517376 436.5 
 L 210.517376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_51">
     <path d="M 217.8 423.9 
@@ -607,17 +608,17 @@ Q 214.2 449.1 214.2 445.5
 L 214.2 427.5 
 Q 214.2 423.9 217.8 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_52">
     <path d="M 240.3 436.5 
 Q 243 436.5 244.917376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 242.917376 435.5 
 L 244.917376 436.5 
 L 242.917376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_53">
     <path d="M 250.2 423.9 
@@ -630,17 +631,17 @@ Q 246.6 449.1 246.6 445.5
 L 246.6 427.5 
 Q 246.6 423.9 250.2 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_54">
     <path d="M 272.7 436.5 
 Q 275.4 436.5 277.317376 436.5 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
     <path d="M 275.317376 435.5 
 L 277.317376 436.5 
 L 275.317376 437.5 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #8795a8; stroke: #8795a8; stroke-width: 0.7; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-edge, #8795a8); stroke: var(--plot-edge, #8795a8); stroke-width: 0.7; stroke-linecap: round"/>
    </g>
    <g id="patch_55">
     <path d="M 282.6 423.9 
@@ -653,7 +654,7 @@ Q 279 449.1 279 445.5
 L 279 427.5 
 Q 279 423.9 282.6 423.9 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #ffffff; stroke: #8795a8; stroke-width: 0.8; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-paper, #ffffff); stroke: var(--plot-edge, #8795a8); stroke-width: 0.8; stroke-linejoin: miter"/>
    </g>
    <g id="patch_56">
     <path d="M 78.3 367.2 
@@ -666,21 +667,21 @@ Q 73.8 392.4 73.8 387.9
 L 73.8 371.7 
 Q 73.8 367.2 78.3 367.2 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #edf3ff; stroke: #9bb4e8; stroke-width: 0.9; stroke-linejoin: miter"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-blue-panel, #edf3ff); stroke: var(--plot-blue-edge, #9bb4e8); stroke-width: 0.9; stroke-linejoin: miter"/>
    </g>
    <g id="patch_57">
     <path d="M 162 395.1 
 L 162 411.870163 
-" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: #315fe2; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: none; stroke: var(--plot-blue, #315fe2); stroke-width: 1.1; stroke-linecap: round"/>
     <path d="M 163.8 408.270163 
 L 162 411.870163 
 L 160.2 408.270163 
 z
-" clip-path="url(#p3a95c738a8)" style="fill: #315fe2; stroke: #315fe2; stroke-width: 1.1; stroke-linecap: round"/>
+" clip-path="url(#p3a95c738a8)" style="fill: var(--plot-blue, #315fe2); stroke: var(--plot-blue, #315fe2); stroke-width: 1.1; stroke-linecap: round"/>
    </g>
    <g id="text_1">
     <!-- Fewer Submissions, Same Kernels -->
-    <g style="fill: #17283b" transform="translate(11.34 37.24389) scale(0.1728 -0.1728)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(11.34 37.24389) scale(0.1728 -0.1728)">
      <defs>
       <path id="OutfitArticle-SemiBold-14" d="M 461 0 
 L 461 4499 
@@ -1127,7 +1128,7 @@ z
    </g>
    <g id="text_2">
     <!-- Repeated execution of the 9-kernel baseline -->
-    <g style="fill: #617084" transform="translate(11.34 59.021012) scale(0.11124 -0.11124)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(11.34 59.021012) scale(0.11124 -0.11124)">
      <defs>
       <path id="OutfitArticle-Regular-2d" d="M 928 1933 
 L 928 2438 
@@ -1711,7 +1712,7 @@ z
    </g>
    <g id="text_3">
     <!-- Direct Launches -->
-    <g style="fill: #64748b" transform="translate(16.2 99) scale(0.135 -0.135)">
+    <g style="fill: var(--plot-gray, #64748b)" transform="translate(16.2 99) scale(0.135 -0.135)">
      <defs>
       <path id="OutfitArticle-SemiBold-d" d="M 1056 0 
 L 1056 774 
@@ -1837,7 +1838,7 @@ z
    </g>
    <g id="text_4">
     <!-- Each invocation -->
-    <g style="fill: #617084" transform="translate(16.2 122.4) scale(0.1026 -0.1026)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(16.2 122.4) scale(0.1026 -0.1026)">
      <defs>
       <path id="OutfitArticle-Regular-f" d="M 525 0 
 L 525 4442 
@@ -1895,7 +1896,7 @@ z
    </g>
    <g id="text_5">
     <!-- CPU · 9 launch calls -->
-    <g style="fill: #17283b" transform="translate(16.2 145.8) scale(0.108 -0.108)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(16.2 145.8) scale(0.108 -0.108)">
      <defs>
       <path id="OutfitArticle-Regular-b" d="M 2541 -64 
 Q 2061 -64 1651 112 
@@ -2010,7 +2011,7 @@ z
    </g>
    <g id="text_6">
     <!-- K1 -->
-    <g style="fill: #17283b" transform="translate(27.233859 233.039719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(27.233859 233.039719) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-1d" d="M 3270 0 
 L 1030 2317 
@@ -2048,13 +2049,13 @@ z
    </g>
    <g id="text_7">
     <!-- 1 -->
-    <g style="fill: #17283b" transform="translate(30.630141 176.339719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(30.630141 176.339719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-83"/>
     </g>
    </g>
    <g id="text_8">
     <!-- K2 -->
-    <g style="fill: #17283b" transform="translate(58.644937 233.090719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(58.644937 233.090719) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-84" d="M 211 365 
 L 1850 2093 
@@ -2092,13 +2093,13 @@ z
    </g>
    <g id="text_9">
     <!-- 2 -->
-    <g style="fill: #17283b" transform="translate(62.041219 176.390719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(62.041219 176.390719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-84"/>
     </g>
    </g>
    <g id="text_10">
     <!-- K3 -->
-    <g style="fill: #17283b" transform="translate(91.060078 232.988719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(91.060078 232.988719) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-85" d="M 1581 -64 
 Q 1146 -64 790 99 
@@ -2146,13 +2147,13 @@ z
    </g>
    <g id="text_11">
     <!-- 3 -->
-    <g style="fill: #17283b" transform="translate(94.456359 176.288719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(94.456359 176.288719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-85"/>
     </g>
    </g>
    <g id="text_12">
     <!-- K4 -->
-    <g style="fill: #17283b" transform="translate(123.154078 233.039719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(123.154078 233.039719) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-86" d="M 211 1530 
 L 1830 4442 
@@ -2181,13 +2182,13 @@ z
    </g>
    <g id="text_13">
     <!-- 4 -->
-    <g style="fill: #17283b" transform="translate(126.550359 176.339719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(126.550359 176.339719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-86"/>
     </g>
    </g>
    <g id="text_14">
     <!-- K5 -->
-    <g style="fill: #17283b" transform="translate(155.844938 232.988719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(155.844938 232.988719) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-87" d="M 1587 -64 
 Q 1133 -64 777 99 
@@ -2235,13 +2236,13 @@ z
    </g>
    <g id="text_15">
     <!-- 5 -->
-    <g style="fill: #17283b" transform="translate(159.241219 176.288719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(159.241219 176.288719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-87"/>
     </g>
    </g>
    <g id="text_16">
     <!-- K6 -->
-    <g style="fill: #17283b" transform="translate(188.127 232.988719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(188.127 232.988719) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-88" d="M 1805 -64 
 Q 1363 -64 1014 141 
@@ -2284,13 +2285,13 @@ z
    </g>
    <g id="text_17">
     <!-- 6 -->
-    <g style="fill: #17283b" transform="translate(191.523281 176.288719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(191.523281 176.288719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-88"/>
     </g>
    </g>
    <g id="text_18">
     <!-- K7 -->
-    <g style="fill: #17283b" transform="translate(220.726219 233.039719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(220.726219 233.039719) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-89" d="M 896 0 
 L 2560 4090 
@@ -2313,13 +2314,13 @@ z
    </g>
    <g id="text_19">
     <!-- 7 -->
-    <g style="fill: #17283b" transform="translate(224.1225 176.339719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(224.1225 176.339719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-89"/>
     </g>
    </g>
    <g id="text_20">
     <!-- K8 -->
-    <g style="fill: #17283b" transform="translate(252.998719 233.0445) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(252.998719 233.0445) scale(0.102 -0.102)">
      <defs>
       <path id="OutfitArticle-Regular-8a" d="M 1760 -64 
 Q 1318 -64 982 102 
@@ -2381,26 +2382,26 @@ z
    </g>
    <g id="text_21">
     <!-- 8 -->
-    <g style="fill: #17283b" transform="translate(256.395 176.3445) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(256.395 176.3445) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-8a"/>
     </g>
    </g>
    <g id="text_22">
     <!-- K9 -->
-    <g style="fill: #17283b" transform="translate(285.327 233.090719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(285.327 233.090719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-8b" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_23">
     <!-- 9 -->
-    <g style="fill: #17283b" transform="translate(288.723281 176.390719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(288.723281 176.390719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-8b"/>
     </g>
    </g>
    <g id="text_24">
     <!-- GPU · 9 separate kernels -->
-    <g style="fill: #17283b" transform="translate(16.2 273.6) scale(0.108 -0.108)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(16.2 273.6) scale(0.108 -0.108)">
      <defs>
       <path id="OutfitArticle-Regular-15" d="M 2534 -64 
 Q 2067 -64 1660 112 
@@ -2464,7 +2465,7 @@ z
    </g>
    <g id="text_25">
     <!-- CUDA Graph Replay -->
-    <g style="fill: #315fe2" transform="translate(16.2 306) scale(0.135 -0.135)">
+    <g style="fill: var(--plot-blue, #315fe2)" transform="translate(16.2 306) scale(0.135 -0.135)">
      <defs>
       <path id="OutfitArticle-SemiBold-b" d="M 2547 -64 
 Q 2054 -64 1632 112 
@@ -2675,7 +2676,7 @@ z
    </g>
    <g id="text_26">
     <!-- After capture + instantiation -->
-    <g style="fill: #617084" transform="translate(16.2 329.4) scale(0.1026 -0.1026)">
+    <g style="fill: var(--plot-muted, #617084)" transform="translate(16.2 329.4) scale(0.1026 -0.1026)">
      <defs>
       <path id="OutfitArticle-Regular-1" d="M 198 0 
 L 2016 4442 
@@ -2741,7 +2742,7 @@ z
    </g>
    <g id="text_27">
     <!-- CPU · 1 replay call -->
-    <g style="fill: #17283b" transform="translate(16.2 352.8) scale(0.108 -0.108)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(16.2 352.8) scale(0.108 -0.108)">
      <defs>
       <path id="OutfitArticle-Regular-74" d="M 1421 -26 
 L 102 3040 
@@ -2784,70 +2785,70 @@ z
    </g>
    <g id="text_28">
     <!-- K1 -->
-    <g style="fill: #17283b" transform="translate(27.233859 440.039719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(27.233859 440.039719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-83" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_29">
     <!-- K2 -->
-    <g style="fill: #17283b" transform="translate(58.644937 440.090719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(58.644937 440.090719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-84" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_30">
     <!-- K3 -->
-    <g style="fill: #17283b" transform="translate(91.060078 439.988719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(91.060078 439.988719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-85" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_31">
     <!-- K4 -->
-    <g style="fill: #17283b" transform="translate(123.154078 440.039719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(123.154078 440.039719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-86" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_32">
     <!-- K5 -->
-    <g style="fill: #17283b" transform="translate(155.844938 439.988719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(155.844938 439.988719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-87" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_33">
     <!-- K6 -->
-    <g style="fill: #17283b" transform="translate(188.127 439.988719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(188.127 439.988719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-88" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_34">
     <!-- K7 -->
-    <g style="fill: #17283b" transform="translate(220.726219 440.039719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(220.726219 440.039719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-89" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_35">
     <!-- K8 -->
-    <g style="fill: #17283b" transform="translate(252.998719 440.0445) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(252.998719 440.0445) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-8a" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_36">
     <!-- K9 -->
-    <g style="fill: #17283b" transform="translate(285.327 440.090719) scale(0.102 -0.102)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(285.327 440.090719) scale(0.102 -0.102)">
      <use xlink:href="#OutfitArticle-Regular-1d"/>
      <use xlink:href="#OutfitArticle-Regular-8b" transform="translate(66.59375 0)"/>
     </g>
    </g>
    <g id="text_37">
     <!-- cudaGraphLaunch() -->
-    <g style="fill: #315fe2" transform="translate(106.733531 382.780125) scale(0.108 -0.108)">
+    <g style="fill: var(--plot-blue, #315fe2)" transform="translate(106.733531 382.780125) scale(0.108 -0.108)">
      <defs>
       <path id="DejaVuSansMono-46" d="M 3316 178 
 Q 3084 44 2839 -23 
@@ -3114,7 +3115,7 @@ z
    </g>
    <g id="text_38">
     <!-- GPU · 9 separate kernels -->
-    <g style="fill: #17283b" transform="translate(16.2 480.6) scale(0.108 -0.108)">
+    <g style="fill: var(--plot-ink, #17283b)" transform="translate(16.2 480.6) scale(0.108 -0.108)">
      <use xlink:href="#OutfitArticle-Regular-15"/>
      <use xlink:href="#OutfitArticle-Regular-2a" transform="translate(77.296875 0)"/>
      <use xlink:href="#OutfitArticle-Regular-30" transform="translate(137.890625 0)"/>

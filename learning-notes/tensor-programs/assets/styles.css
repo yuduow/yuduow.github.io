@@ -18,7 +18,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --canvas: #07080c;
     --bg: #12151c;
     --ink: #f4f6fb;
