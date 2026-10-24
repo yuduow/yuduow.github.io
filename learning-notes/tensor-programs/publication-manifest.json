@@ -31,20 +31,16 @@
       "sha256": "2ca7e5cd1a4c5958b690174a365526bb03db7b98f605fe55ec30be1bdb10e0a9"
     },
     {
-      "path": "learning-notes/tensor-programs/assets/h100-max-semantic.svg",
-      "sha256": "dcc419d44c2296cea720a986531419e8b4825becaede4c475722d7c013a2672c"
-    },
-    {
       "path": "learning-notes/tensor-programs/assets/h100-program.svg",
-      "sha256": "c26ba2a7b03d6d4e1d9b946cbb5dc479e52a9232d758b2c04a9aef022358c996"
+      "sha256": "b21075ae1c94218e45588978e9fe1511aa24624332e47e630c0325ed0338acfe"
     },
     {
       "path": "learning-notes/tensor-programs/assets/h100-semantics.svg",
-      "sha256": "86e15f008b8df9f60b29cc1d9c3c28aee2941b49d7966d6b224d85f39c4d5d70"
+      "sha256": "c7a52ba5f65147c45e1ab843d834df17833fdbad0317a471811a4db4491e05ae"
     },
     {
       "path": "learning-notes/tensor-programs/assets/h100-tinygrad-uop.svg",
-      "sha256": "2e0ca2d1b3e95af63957ebd3f6deca2dc2a7288fd85426ca0426c78e6211c19f"
+      "sha256": "463e0341984346ff63057f820c63be196ffd41d831ce4721891a60fa3c6d1ebb"
     },
     {
       "path": "learning-notes/tensor-programs/assets/styles.css",
@@ -96,7 +92,7 @@
     },
     {
       "path": "learning-notes/tensor-programs/part-1/index.html",
-      "sha256": "f444aaaf7c37010f85708849ba442b24d70a0fc4d2b2d38ad195b257fa147447"
+      "sha256": "13df8294f36cbe31080736e2335275e8498ef87d0449b52a2a182b249743a7f7"
     }
   ]
 }

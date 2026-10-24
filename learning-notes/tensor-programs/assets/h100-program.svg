@@ -1,13 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 410" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 382" role="img" aria-labelledby="title desc">
 <title id="title">One Tensor Program, Three Operations</title><desc id="desc">Directed acyclic graph of weight → transpose, x and transposed weight → matrix multiplication, and projection and bias → addition → y. These are value dependencies, not GPU launches.</desc>
 <style>
-:root{--paper:#f7f9fc;--panel:#fff;--ink:#152234;--muted:#526276;--line:#cfdae5;--soft:#eaf0f6;--blue:#2260b0;--blue-soft:#e7f0ff;--teal:#086e66;--teal-soft:#dff4ee;--purple:#7753ab;--purple-soft:#f0eafa}
-@media(prefers-color-scheme:dark){:root{--paper:#151d29;--panel:#1c2735;--ink:#e9eff8;--muted:#b1bfd0;--line:#43536a;--soft:#29374a;--blue:#8ebaff;--blue-soft:#213c60;--teal:#83d8c9;--teal-soft:#163e3b;--purple:#c9a9f5;--purple-soft:#392e4d}}
+:root{--paper:#f7f9fc;--panel:#fff;--ink:#152234;--muted:#526276;--line:#cfdae5;--soft:#eaf0f6;--blue:#2260b0;--blue-soft:#e7f0ff;--teal:#086e66;--teal-soft:#dff4ee;--purple:#7753ab;--purple-soft:#f0eafa;--amber:#8a5a00;--amber-soft:#fcf0d6}
+@media(prefers-color-scheme:dark){:root{--paper:#151d29;--panel:#1c2735;--ink:#e9eff8;--muted:#b1bfd0;--line:#43536a;--soft:#29374a;--blue:#8ebaff;--blue-soft:#213c60;--teal:#83d8c9;--teal-soft:#163e3b;--purple:#c9a9f5;--purple-soft:#392e4d;--amber:#f0c36a;--amber-soft:#463718}}
 text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:var(--ink);font-size:18px}
 .title{font-size:25px;font-weight:650;letter-spacing:-.5px}.label{font-size:13px;letter-spacing:1.5px;fill:var(--muted);font-weight:600}.small{font-size:15px;fill:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px}.node-name{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;fill:var(--blue)}.node-shape{font-size:13px;fill:var(--muted)}.muted{fill:var(--muted)}.bold{font-weight:600}.blue{fill:var(--blue)}.teal{fill:var(--teal)}.purple{fill:var(--purple)}
 </style>
 <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="var(--muted)"/></marker></defs>
-<rect width="1000" height="410" rx="18" fill="var(--paper)"/>
+<rect width="1000" height="382" rx="18" fill="var(--paper)"/>
 
 <text x="24" y="43" class="title" text-anchor="start">One Tensor Program, Three Operations</text>
 <rect x="24" y="98" width="200" height="76" rx="10" fill="var(--panel)" stroke="var(--line)"/>
@@ -48,5 +48,4 @@ text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:var
 <text x="49" y="355" class="small" text-anchor="start">Operation</text>
 <rect x="170" y="342" width="16" height="16" rx="10" fill="var(--panel)" stroke="var(--line)"/>
 <text x="195" y="355" class="small" text-anchor="start">Tensor</text>
-<text x="24" y="387" class="small" text-anchor="start">Arrows show which values an operation reads. Operation boxes do not specify GPU kernel boundaries.</text>
 </svg>
