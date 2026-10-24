@@ -66,7 +66,7 @@
 <li><strong>FP16 projection rounding.</strong> The matrix result <code>proj</code> is rounded to FP16 <em>before</em> bias addition, and the final output <code>y</code> is FP16.</li>
 </ol>
 <p>Rounding before bias can change the answer, so it constrains which rewrites are legal. Both rules are requirements of this comparison; the <code>nn.Linear</code> API does not promise an FP16 intermediate before bias addition. A fused kernel must preserve our rounding step, but it can keep <code>proj</code> in registers instead of storing it in memory.</p>
-<p>With that, we can compare what each representation keeps explicit, what that enables, and what later stages must still decide.</p>
+<p>The contract defines which programs count as the same computation; for example, any summation order qualifies. Each IR shapes which of those equivalent programs a compiler can reach: Inductor and MAX name the MatMul and leave alternatives to implementation selection, TinyGrad rewrites views and indexing, and Luminal keeps several forms in an e-graph. With that, we can compare what each representation keeps explicit, what that enables, and what later stages must still decide.</p>
 <h2 id="pytorch-inductor-retains-matmul-and-explicit-casts" class="compiler-heading"><img class="compiler-logo" src="../assets/compiler-pytorch.webp?v=415a6b08be20" alt="" aria-hidden="true" width="36" height="36"><span>Inductor Retains MatMul and Explicit Casts</span></h2>
 <blockquote>
 <p>We wanted TorchInductor to share similar abstractions to PyTorch eager to allow support of all of PyTorch, with a thin translation layer.</p>

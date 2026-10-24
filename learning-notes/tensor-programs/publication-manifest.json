@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "087b7162a542082f6e570756af24ad705ba8d4bdf45b9ad8b8f81fe2534cc7a4"
+      "sha256": "9dbeac6f20b0dd06ab4a1c261c7090230980521232371f1a9799aeace9cddd96"
     },
     {
       "path": "learning-notes/index.html",
@@ -92,7 +92,7 @@
     },
     {
       "path": "learning-notes/tensor-programs/part-1/index.html",
-      "sha256": "607334355594aecdc109f65fcdc60b12bd1d6f1ee316ed5114badec3265a8e44"
+      "sha256": "994767ddecdf845e3f6914925db4fbeaf269fd736b7ae3bc68e943a853ff30ea"
     }
   ]
 }
