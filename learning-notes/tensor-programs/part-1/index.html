@@ -143,7 +143,7 @@
 <p>— <a href="https://github.com/luminal-ai/luminal/blob/77d3060f01dc9d6f649687cf16a651e3f288aa0c/README.md#search">Luminal README, “Search”</a></p>
 </blockquote>
 <p>Like TinyGrad, Luminal starts from primitive operations. Its distinctive <a href="https://github.com/luminal-ai/luminal/blob/77d3060f01dc9d6f649687cf16a651e3f288aa0c/README.md#search">design goal</a> is to use search to reduce reliance on hand-written performance heuristics. Equivalence rules describe which forms are legal; plan selection determines which available implementation is worth using. In this capture, a primitive contraction and recognized matrix forms remain available together.</p>
-<p>The initial graph expresses matrix multiplication through 3D broadcast views, multiplication (<code>LogicalMul</code>), and reduction (<code>LogicalReduceSum</code>). Because its frontend computes in the operands' dtype, our comparison setup inserts explicit FP32 input casts before multiplication and an FP16 projection cast after reduction (<a href="../evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/01-logical.egg">logical program</a>):</p>
+<p>The initial graph expresses matrix multiplication through 3D broadcast views, multiplication (<code>LogicalMul</code>), and reduction (<code>LogicalReduceSum</code>). Because its frontend computes in the operands' dtype, our comparison setup inserts explicit FP32 input casts before multiplication and an FP16 projection cast after reduction (<a href="../evidence/experiments/cuda_case/artifacts/20261018T071206Z-deep-analysis/weight_view/luminal-default-legacy-seed0/trace-0/01-logical.egg">logical program</a>):</p>
 <div class="code-block"><div class="code-header"><span>Egglog</span><span class="code-note"></span></div><pre tabindex="0" aria-label="Egglog code"><code class="syntax ir-code"><span class="p">(</span><span class="k">let</span> <span class="nv">v4</span> <span class="p">(</span><span class="nf">LogicalCast</span> <span class="nv">v0</span> <span class="p">(</span><span class="kt">F32</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">let</span> <span class="nv">v5</span> <span class="p">(</span><span class="nf">LogicalCast</span> <span class="nv">v3</span> <span class="p">(</span><span class="kt">F32</span><span class="p">)))</span>
 <span class="p">(</span><span class="k">let</span> <span class="nv">v8</span> <span class="p">(</span><span class="nf">LogicalMul</span> <span class="nv">v6</span> <span class="nv">v7</span><span class="p">))</span>
@@ -153,7 +153,7 @@
 </code></pre></div>
 <p>Each <code>let</code> binds a value. The inputs <code>v0</code>, <code>v1</code>, and <code>v2</code> are <code>x</code>, <code>weight</code>, and <code>b</code>. The omitted <code>LogicalIndexMapApply</code> bindings describe views: <code>v3</code> transposes <code>weight</code> to <code>[768, 1024]</code>, then <code>v6</code> and <code>v7</code> broadcast the FP32 inputs (<code>v4</code>, <code>v5</code>) across <code>[1024, 1024, 768]</code>.</p>
 <p><code>LogicalMul</code> forms the products, and <code>LogicalReduceSum v8 0</code> sums the trailing <code>K = 768</code> axis (<code>axis_from_end = 0</code>). The projection is rounded to FP16 in <code>v10</code> before the final addition. The omitted <code>v12</code> view broadcasts the bias across <code>[1024, 1024]</code>.</p>
-<p>Rewriting expands the initial logical program into an <strong>e-graph</strong> of equivalent expressions discovered under the available rules. An <strong>e-class</strong> represents one value; its <strong>e-nodes</strong> are alternative expressions for that value. The view below focuses on four classes from the <a href="../evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/02-saturated-egraph.json">captured e-graph</a>. Start with the FP32 projection: a sum of products, a matrix multiply, and a transposed product all belong to the same class. Selecting an expression reveals its operand classes, which can themselves contain alternatives.</p>
+<p>Rewriting expands the initial logical program into an <strong>e-graph</strong> of equivalent expressions discovered under the available rules. An <strong>e-class</strong> represents one value; its <strong>e-nodes</strong> are alternative expressions for that value. The view below focuses on four classes from the <a href="../evidence/experiments/cuda_case/artifacts/20261018T071206Z-deep-analysis/weight_view/luminal-default-legacy-seed0/trace-0/02-saturated-egraph.json">captured e-graph</a>. Start with the FP32 projection: a sum of products, a matrix multiply, and a transposed product all belong to the same class. Selecting an expression reveals its operand classes, which can themselves contain alternatives.</p>
 <p><strong>Extraction</strong> chooses compatible alternatives to form a plan; selecting a node in this view only inspects the capture. Equivalence does not imply equal cost: the reduction and matrix forms can lead to different generated kernels or library calls. Retaining alternatives keeps those options open, at the cost of graph growth and plan search (<a href="https://arxiv.org/abs/2004.03082">e-graph background</a>). The available rules and search budget limit what can be found; the capture does not guarantee the fastest implementation.</p>
 <figure class="eg-figure"><section class="eg-explorer" aria-label="Luminal e-graph explorer">
 <header><strong>One value, several equivalent expressions</strong><p>A dashed boundary is an <b>e-class</b>. Each solid card is an <b>e-node</b> inside it. Inspect an expression to see the e-classes it reads.</p></header>
@@ -163,7 +163,7 @@
   &quot;function-0-LogicalIndexMapApply&quot;: {
     &quot;op&quot;: &quot;LogicalIndexMapApply&quot;,
     &quot;children&quot;: [
-      &quot;function-1-LogicalTensorInputLit&quot;,
+      &quot;function-1-logical-of&quot;,
       &quot;function-0-IndexMapLit&quot;,
       &quot;function-10-shape-of&quot;
     ],
@@ -175,7 +175,7 @@
   &quot;function-0-LogicalHelperMatrixTranspose&quot;: {
     &quot;op&quot;: &quot;LogicalHelperMatrixTranspose&quot;,
     &quot;children&quot;: [
-      &quot;function-5-LogicalHelperMatrixTranspose&quot;
+      &quot;function-1-LogicalTensorInputLit&quot;
     ],
     &quot;eclass&quot;: &quot;LogicalTensor-52&quot;,
     &quot;cost&quot;: 1.0,
@@ -186,7 +186,7 @@
   &quot;function-5-logical-of&quot;: {
     &quot;op&quot;: &quot;logical-of&quot;,
     &quot;children&quot;: [
-      &quot;function-145-layout-tensor-list-nth-from-end&quot;
+      &quot;function-5-LayoutTensorLit&quot;
     ],
     &quot;eclass&quot;: &quot;LogicalTensor-52&quot;,
     &quot;cost&quot;: 1.0,
@@ -196,14 +196,14 @@
   &quot;function-15-logical-of&quot;: {
     &quot;op&quot;: &quot;logical-of&quot;,
     &quot;children&quot;: [
-      &quot;function-15-LayoutTensorLit&quot;
+      &quot;function-16-layout-tensor-list-nth-from-end&quot;
     ],
     &quot;eclass&quot;: &quot;LogicalTensor-52&quot;,
     &quot;cost&quot;: 1.0,
     &quot;subsumed&quot;: false
   }
 }</code></pre></details></details></div><div class="eg-class-panel" id="eg-class-69" data-eg-panel="69" >
-<div class="eg-cluster"><div class="eg-cluster-title"><strong>FP32 projection</strong><code>LogicalTensor-69</code><span>[1024, 1024] · FP32</span></div><p class="eg-equivalence">Same value · alternative expressions</p><div class="eg-alternatives"><button type="button" class="eg-alt" data-eg-node="function-0-LogicalReduceSum" aria-pressed="true" aria-controls="eg-detail-function-0-LogicalReduceSum"><strong>Sum of products</strong><code>Logical<wbr>Reduce<wbr>Sum</code><span>sum_k F32(x[m,k]) × F32(weight[n,k])</span></button><button type="button" class="eg-alt" data-eg-node="function-0-LogicalHelperMatrixMultiply" aria-pressed="false" aria-controls="eg-detail-function-0-LogicalHelperMatrixMultiply"><strong>Matrix multiply</strong><code>Logical<wbr>Helper<wbr>Matrix<wbr>Multiply</code><span>F32(x) @ F32(weight.T)</span></button><button type="button" class="eg-alt" data-eg-node="function-8-LogicalHelperMatrixTranspose" aria-pressed="false" aria-controls="eg-detail-function-8-LogicalHelperMatrixTranspose"><strong>Transposed product</strong><code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code><span>(F32(weight) @ F32(x.T)).T</span></button></div><p class="eg-count">3 of 6 captured members shown above. All belong to this e-class.</p></div>
+<div class="eg-cluster"><div class="eg-cluster-title"><strong>FP32 projection</strong><code>LogicalTensor-69</code><span>[1024, 1024] · FP32</span></div><p class="eg-equivalence">Same value · alternative expressions</p><div class="eg-alternatives"><button type="button" class="eg-alt" data-eg-node="function-0-LogicalReduceSum" aria-pressed="true" aria-controls="eg-detail-function-0-LogicalReduceSum"><strong>Sum of products</strong><code>Logical<wbr>Reduce<wbr>Sum</code><span>sum_k F32(x[m,k]) × F32(weight[n,k])</span></button><button type="button" class="eg-alt" data-eg-node="function-0-LogicalHelperMatrixMultiply" aria-pressed="false" aria-controls="eg-detail-function-0-LogicalHelperMatrixMultiply"><strong>Matrix multiply</strong><code>Logical<wbr>Helper<wbr>Matrix<wbr>Multiply</code><span>F32(x) @ F32(weight.T)</span></button><button type="button" class="eg-alt" data-eg-node="function-6-LogicalHelperMatrixTranspose" aria-pressed="false" aria-controls="eg-detail-function-6-LogicalHelperMatrixTranspose"><strong>Transposed product</strong><code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code><span>(F32(weight) @ F32(x.T)).T</span></button></div><p class="eg-count">3 of 6 captured members shown above. All belong to this e-class.</p></div>
 <div class="eg-inspector" aria-live="polite"><div class="eg-detail" data-eg-detail="function-0-LogicalReduceSum" id="eg-detail-function-0-LogicalReduceSum" ><strong>Sum of products</strong><p>Reduces the broadcast product over K = 768. The product is another e-class, so its operands can have alternatives too.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-68</code><span>Broadcast products</span></li><li><code>i64-0</code><span>Trailing axis (0)</span></li></ul><span>→ <code>Logical<wbr>Reduce<wbr>Sum</code></span></div><details><summary>Exact captured node</summary><pre><code>{
   &quot;function-0-LogicalReduceSum&quot;: {
     &quot;op&quot;: &quot;LogicalReduceSum&quot;,
@@ -219,15 +219,15 @@
   &quot;function-0-LogicalHelperMatrixMultiply&quot;: {
     &quot;op&quot;: &quot;LogicalHelperMatrixMultiply&quot;,
     &quot;children&quot;: [
-      &quot;function-7-LogicalHelperMatrixTranspose&quot;,
+      &quot;function-5-LogicalHelperMatrixTranspose&quot;,
       &quot;function-20-logical-of&quot;
     ],
     &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
     &quot;cost&quot;: 1.0,
     &quot;subsumed&quot;: false
   }
-}</code></pre></details></div><div class="eg-detail" data-eg-detail="function-8-LogicalHelperMatrixTranspose" id="eg-detail-function-8-LogicalHelperMatrixTranspose" hidden><strong>Transposed product</strong><p>Transposes the reversed contraction in e-class 2063. That class also refers back to this one: e-graphs can contain cycles.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-2063</code><span>Reversed contraction</span></li></ul><span>→ <code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code></span></div><details><summary>Exact captured node</summary><pre><code>{
-  &quot;function-8-LogicalHelperMatrixTranspose&quot;: {
+}</code></pre></details></div><div class="eg-detail" data-eg-detail="function-6-LogicalHelperMatrixTranspose" id="eg-detail-function-6-LogicalHelperMatrixTranspose" hidden><strong>Transposed product</strong><p>Transposes the reversed contraction in e-class 2061. That class also refers back to this one: e-graphs can contain cycles.</p><div class="eg-operands"><span>Operand e-classes →</span><ul><li><code>LogicalTensor-2061</code><span>Reversed contraction</span></li></ul><span>→ <code>Logical<wbr>Helper<wbr>Matrix<wbr>Transpose</code></span></div><details><summary>Exact captured node</summary><pre><code>{
+  &quot;function-6-LogicalHelperMatrixTranspose&quot;: {
     &quot;op&quot;: &quot;LogicalHelperMatrixTranspose&quot;,
     &quot;children&quot;: [
       &quot;function-9-LogicalIndexMapApply&quot;
@@ -237,11 +237,11 @@
     &quot;subsumed&quot;: false
   }
 }</code></pre></details></div></div>
-<details class="eg-more"><summary>Other captured members (3)</summary><p>These include representation links (<code>logical-of</code>) and additional views. Records retain the original child node IDs.</p><details><summary><code>Logical<wbr>Index<wbr>Map<wbr>Apply</code><span class="eg-record-id">function-14-LogicalIndexMapApply</span></summary><pre><code>{
-  &quot;function-14-LogicalIndexMapApply&quot;: {
+<details class="eg-more"><summary>Other captured members (3)</summary><p>These include representation links (<code>logical-of</code>) and additional views. Records retain the original child node IDs.</p><details><summary><code>Logical<wbr>Index<wbr>Map<wbr>Apply</code><span class="eg-record-id">function-12-LogicalIndexMapApply</span></summary><pre><code>{
+  &quot;function-12-LogicalIndexMapApply&quot;: {
     &quot;op&quot;: &quot;LogicalIndexMapApply&quot;,
     &quot;children&quot;: [
-      &quot;function-45-logical-of&quot;,
+      &quot;function-41-logical-of&quot;,
       &quot;function-7-IndexMapLit&quot;,
       &quot;function-14-shape-of&quot;
     ],
@@ -259,11 +259,11 @@
     &quot;cost&quot;: 1.0,
     &quot;subsumed&quot;: false
   }
-}</code></pre></details><details><summary><code>logical-of</code><span class="eg-record-id">function-46-logical-of</span></summary><pre><code>{
-  &quot;function-46-logical-of&quot;: {
+}</code></pre></details><details><summary><code>logical-of</code><span class="eg-record-id">function-42-logical-of</span></summary><pre><code>{
+  &quot;function-42-logical-of&quot;: {
     &quot;op&quot;: &quot;logical-of&quot;,
     &quot;children&quot;: [
-      &quot;function-100-layout-tensor-list-nth-from-end&quot;
+      &quot;function-42-LayoutTensorLit&quot;
     ],
     &quot;eclass&quot;: &quot;LogicalTensor-69&quot;,
     &quot;cost&quot;: 1.0,
@@ -370,8 +370,8 @@ document.querySelectorAll('.eg-explorer').forEach(root=>{
   panel.querySelectorAll('[data-eg-detail]').forEach(p=>p.hidden=p.dataset.egDetail!==button.dataset.egNode);
  }));
 });
-</script><figcaption>Figure 1.3. Selected e-classes from the <a href="../evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/02-saturated-egraph.json">captured e-graph</a>, with equivalent expressions, operand references, and required FP16 rounding. All 16 members of these 4 classes are inspectable. <span>Part 2 (forthcoming)</span> follows extraction and measurement of concrete execution plans.</figcaption></figure>
-<p>Backend rules attach implementation alternatives such as <code>CublasLtLogicalMatmulSite</code>. In this captured toy example, the FP16-storage Tensor Core alternative requires our <a href="../evidence/experiments/cuda_case/patches/luminal-fp16-f32-compute.patch">backend patch</a>; the unmodified pinned backend handles the explicit-FP32 graph using materialized FP32 operands. Both storage alternatives remain available, and both preserve the FP16 projection cast before bias addition (<a href="../evidence/experiments/cuda_case/patches/README.md">patch rationale</a>, <a href="../evidence/experiments/cuda_case/luminal-fp16-results.md">validation</a>).</p>
+</script><figcaption>Figure 1.3. Selected e-classes from the <a href="../evidence/experiments/cuda_case/artifacts/20261018T071206Z-deep-analysis/weight_view/luminal-default-legacy-seed0/trace-0/02-saturated-egraph.json">captured e-graph</a>, with equivalent expressions, operand references, and required FP16 rounding. All 16 members of these 4 classes are inspectable. <span>Part 2 (forthcoming)</span> follows extraction and measurement of concrete execution plans.</figcaption></figure>
+<p>Backend rules attach implementation alternatives such as <code>CublasLtLogicalMatmulSite</code>. The pinned CUDA backend offers <a href="https://github.com/luminal-ai/luminal/blob/77d3060f01dc9d6f649687cf16a651e3f288aa0c/crates/luminal_cuda_lite/src/ops/cublaslt/egg/cublaslt_marker_site.egg">FP32 and BF16 matrix sites</a> but none that read FP16 inputs, so for this graph it materializes FP32 copies of both operands. Every alternative preserves the FP16 projection cast before bias addition.</p>
 <h2 id="what-the-semantic-ir-makes-available">What the Semantic IR Makes Available</h2>
 <p>Figure 1.4 separates <strong>how the contraction is expressed</strong> (left versus right) from <strong>whether equivalent forms are retained together</strong> (top versus bottom). Locate TinyGrad, Inductor, and MAX first, then notice that Luminal spans both columns: decomposing MatMul into primitives does not prevent a compiler from recognizing and retaining a matrix operation later.</p>
 <figure><div class="figure-scroll"><img src="../assets/h100-semantics.svg?v=c7a52ba5f651" alt="Two-axis map of the captured contractions. TinyGrad shows primitives; Inductor and MAX show explicit MatMul. Luminal spans both columns with three equivalent expressions—sum of products, direct MatMul, and transposed product—followed by an ellipsis for other captured members." loading="lazy" decoding="async"></div><figcaption>Figure 1.4. Positions describe the contraction in these captures. The dashed boundary shows <strong>three of six captured members of one projection e-class</strong>; ≡ means they represent the same value, and … stands for the other three expressions in that class. The formulas use FP32 operands. A complete plan selects compatible members across many e-classes; these are expressions for one value, not complete programs. The earlier e-graph explorer exposes all six members.</figcaption></figure>

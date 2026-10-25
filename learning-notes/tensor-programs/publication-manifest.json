@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "index.html",
-      "sha256": "9dbeac6f20b0dd06ab4a1c261c7090230980521232371f1a9799aeace9cddd96"
+      "sha256": "dfe77bbaa2ee3051aae26b957cea4548c609b963dcc63adfb2a88a99b004dcb8"
     },
     {
       "path": "learning-notes/index.html",
@@ -63,28 +63,16 @@
       "sha256": "c9fb602b6623260b044505c68930b44a2b3b76e11b9c2075a1cd6917fc53f8b3"
     },
     {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/01-logical.egg",
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T071206Z-deep-analysis/weight_view/luminal-default-legacy-seed0/trace-0/01-logical.egg",
       "sha256": "78ec6e687d0c99605dcadb5cddcdda69e097ae412b0cae353ce82b490163b6c8"
     },
     {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261021T200328Z-luminal-frozen-replay-deep-analysis/weight_view/luminal-default/trace-0/02-saturated-egraph.json",
-      "sha256": "41be9007051c50d0e9626f29c20c12c5055f531ad9b245d796292d49936d6aba"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/luminal-fp16-results.md",
-      "sha256": "b85169add86c66d415c2f17db42cbf8023dd9ffef29757b62e1bbb64448e2cd3"
+      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T071206Z-deep-analysis/weight_view/luminal-default-legacy-seed0/trace-0/02-saturated-egraph.json",
+      "sha256": "e47ba634e8d79a16bc0eed546415652ab700c77864283ee817b273f6ca07a38c"
     },
     {
       "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/next_workloads.py",
       "sha256": "00ce32f85201bc735ffdf9529209f0196f3cedfc937b39ac74a9e2eed2296e0e"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/patches/README.md",
-      "sha256": "83709e287e4409410702ab3fc8d611ed33da25742f24944963baf1d39f7ce703"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/patches/luminal-fp16-f32-compute.patch",
-      "sha256": "e6cda78f95d75e745fd8de1575d7f82aaa03bee65bce12a34afbc7532fa57189"
     },
     {
       "path": "learning-notes/tensor-programs/index.html",
@@ -92,7 +80,7 @@
     },
     {
       "path": "learning-notes/tensor-programs/part-1/index.html",
-      "sha256": "ed622b7a1ff39b3d2db9ae7fb94a5caf6e466506d48bf0f2316b16701251d3e3"
+      "sha256": "9ef97d1d09bffcc20ccb07a5a4a0b74763783b6b03c7e41f9455987e68f08d6a"
     }
   ]
 }
