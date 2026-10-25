@@ -47,40 +47,12 @@
       "sha256": "a0621467cdb2bcc33d33e98bbe81124a7fb55c25e960ba9f779790e232577c7a"
     },
     {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/adapters.py",
-      "sha256": "9cc9fe3ccedba5b2f715396d7ccfa68e55f7d4b85150310307d21a438fd89b6f"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/inductor-default/trace-0/torch-debug/torch_compile_debug/run_2026_10_18_06_59_53_413986-pid_2301/torchinductor/model__0_inference_0.0/fx_graph_readable.py",
-      "sha256": "eebd013129966a4bda1b7277f70f9ea77fc8e9d498d3b1c1164fbf002c7da554"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/max-default/trace-0/01-semantic.mlir",
-      "sha256": "b40a79b028f9a6ceb33e6993b8be2eb87cd300b7c5c98a1766406ff05edc450a"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T065152Z-deep-analysis/weight_view/tinygrad-default/trace-0/01-semantic.uop.txt",
-      "sha256": "c9fb602b6623260b044505c68930b44a2b3b76e11b9c2075a1cd6917fc53f8b3"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T071206Z-deep-analysis/weight_view/luminal-default-legacy-seed0/trace-0/01-logical.egg",
-      "sha256": "78ec6e687d0c99605dcadb5cddcdda69e097ae412b0cae353ce82b490163b6c8"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/artifacts/20261018T071206Z-deep-analysis/weight_view/luminal-default-legacy-seed0/trace-0/02-saturated-egraph.json",
-      "sha256": "e47ba634e8d79a16bc0eed546415652ab700c77864283ee817b273f6ca07a38c"
-    },
-    {
-      "path": "learning-notes/tensor-programs/evidence/experiments/cuda_case/next_workloads.py",
-      "sha256": "00ce32f85201bc735ffdf9529209f0196f3cedfc937b39ac74a9e2eed2296e0e"
-    },
-    {
       "path": "learning-notes/tensor-programs/index.html",
       "sha256": "dca42db737ea6244685107ab09db2984cc2cb0ab29ef08d5f6432985fdccddb3"
     },
     {
       "path": "learning-notes/tensor-programs/part-1/index.html",
-      "sha256": "9ef97d1d09bffcc20ccb07a5a4a0b74763783b6b03c7e41f9455987e68f08d6a"
+      "sha256": "e5535ae497d5bcc46f10d86b6eb9fe9ec39c077eed5e77d8b04213789513f03b"
     }
   ]
 }
