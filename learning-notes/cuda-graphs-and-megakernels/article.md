@@ -99,6 +99,8 @@ Grid-wide barriers wait for every block in the launch. Row-scoped barriers wait 
 
 Blocks waiting at a barrier still occupy registers and shared memory; if the blocks they need cannot run, the kernel can deadlock. We therefore [cap each cooperative launch](https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-programming-guide/index.html#grid-synchronization-cg) at the kernel’s active blocks per SM multiplied by the GPU’s SM count. Larger inputs are split into row groups that fit this limit.
 
+Fusion can increase [register and shared-memory demand](https://docs.nvidia.com/cuda/archive/12.8.1/cuda-c-best-practices-guide/index.html#occupancy), leaving fewer resident blocks to hide latency. Separate kernels allow independent tuning of each phase. The best fusion boundary balances data reuse, synchronization and resource use.
+
 ## What the H100 Measurements Show
 
 We measured repeated execution on H100 80 GB GPUs (CUDA 12.8.1), using the same input after warmup. We time one invocation from submission until stream synchronization returns. Graph capture, instantiation, first-launch upload and data transfers are excluded.
@@ -121,10 +123,10 @@ In a separate experiment at 16 rows, runtime switches add input reloads, writes 
 
 Reloading the input adds **1.39 µs**; writing exponentials to global memory and reading them back adds **2.87 µs**. Each control copies the reloaded values into shared memory and adds block-level synchronization. The measured penalties therefore include these operations too; they do not isolate global-memory access cost.
 
-These results cover warm invocation latency at one row width on H100. Application speedups and other GPUs need separate measurements. The [full results and methods](evidence/rms-softmax/results.html) include per-session timings, both barrier variants, direct launches and slower candidates.
+These warm H100 timings cover one row width and include submission and synchronization. Application latency and throughput need separate measurements at representative batch sizes and concurrency, where cache reuse, contention and overlap may differ. The [full results and methods](evidence/rms-softmax/results.html) include per-session timings, both barrier variants, direct launches and slower candidates.
 
 ## When Is the Extra Control Worthwhile?
 
 For 16 rows, graph replay with local fusion reduces host completion time from **44.7 to 19.9 µs**. The megakernel saves a further **0.7 µs**, reaching **19.2 µs** with graph replay. It loads `x` once and keeps `E` for normalization, instead of rereading `x` and recomputing `E` across kernels. That additional saving is what must justify the synchronization and launch-size handling.
 
-Agents can automate parts of [writing, testing and refining kernels](https://arxiv.org/abs/2502.10517v1), potentially making megakernels cheaper to explore. The resulting speedup still needs to justify their synchronization and maintenance complexity.
+Agents can explore graph structure, launch configurations and fusion boundaries alongside [kernel code](https://arxiv.org/abs/2502.10517v1). Require numerical checks and repeatable performance gains, then validate application performance and any model-quality requirements before deployment.
