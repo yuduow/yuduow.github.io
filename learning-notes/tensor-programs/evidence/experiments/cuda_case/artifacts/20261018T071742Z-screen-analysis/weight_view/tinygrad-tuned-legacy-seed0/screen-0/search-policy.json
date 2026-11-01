@@ -1,0 +1,19 @@
+{
+  "compiler": "tinygrad",
+  "variant": "tuned",
+  "effort": "legacy",
+  "seed": 0,
+  "tinygrad_beam": 2,
+  "luminal_generations": 4,
+  "luminal_generation_size": 8,
+  "luminal_trials": 3,
+  "luminal_keep_finalists": 8,
+  "inductor_search_space": "DEFAULT",
+  "luminal_candidate_timed_trials_limit_seconds": 2,
+  "luminal_memory_caps_bytes": {
+    "arena": 536870912,
+    "intermediate": 67108864
+  },
+  "seed_scope": "Luminal extraction seed only; not a claimed random-seed API for every compiler.",
+  "deadline_scope": "Parent case limit includes compile/search, validation, capture and measurement. It is not a pure search timer. Timeout is censored, not a completed search result."
+}

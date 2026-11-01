@@ -1,0 +1,137 @@
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.mo.mlir'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.mo-pre-map.mlir'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.mo-to-map.mlir'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.map-pre-mogg.mlir'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.map-to-mogg.mlir'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.mogg-pre-mgp.mlir'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.mogg-to-mgp.mlir'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.mojo'.
+Emitting intermediate file to '/__modal/volumes/vo-7k4ZVGGwzH6ZD5FLgNT1NC/20261018T065152Z-deep/weight_view/max-default/trace-0/max-ir/weight_view.mgp.mlir'.
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=0] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=1] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=2] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=2] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=3] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=3] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=1] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=0] target=gpu:0
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=4] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=5] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=6] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=6] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=7] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=7] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=5] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=4] target=gpu:0
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=8] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=9] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=10] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=10] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=11] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=11] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=9] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=8] target=gpu:0
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=12] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=13] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=14] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=14] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=15] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=15] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=13] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=12] target=gpu:0
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=16] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=17] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=18] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=18] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=19] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=19] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=17] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=16] target=gpu:0
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=20] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=21] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=22] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=22] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=23] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=23] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=21] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=20] target=gpu:0
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=24] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=25] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=26] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=26] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=27] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=27] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=25] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=24] target=gpu:0
+[OP] LAUNCH Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=28] target=gpu:0
+[OP] LAUNCH matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=29] target=gpu:0
+INFO::: ---- MATMUL GPU execution started ----
+INFO::: MxNxK: 1024x1024x768
+INFO::: Data types: A= float16  B= float16  C= float16
+INFO::: Device:  NVIDIA H100 80GB HBM3
+INFO::: Transpose B: True Use Tensor Core: True
+INFO::: Static shapes available: N= True  K= True
+INFO::: ------ Dispatching to sm90 ------
+INFO::: Executing: vendor BLAS fallback
+[OP] LAUNCH CUBLAS_matmul [id=30] target=gpu:0
+[OP] COMPLETE CUBLAS_matmul [id=30] target=gpu:0
+[OP] LAUNCH elementwise(elementwise) [id=31] target=gpu:0
+[OP] COMPLETE elementwise(elementwise) [id=31] target=gpu:0
+[OP] COMPLETE matmulEpilogue(mo.matmul, View(mo.static.broadcast_to, mo.add), operandIndices=[0]) [id=29] target=gpu:0
+[OP] COMPLETE Epilogue(matmul, View(static.broadcast_to, add), operandIndices=[0]) [id=28] target=gpu:0

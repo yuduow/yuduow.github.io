@@ -1,0 +1,37 @@
+{
+  "source": "kernels.sass.txt",
+  "source_sha256": "1000d08da218c2c9074fd1cff8aedcbc8b530bd01e014d16b5a11db189a5d190",
+  "examples": [
+    {
+      "kernel": "sm80_xmma_gemm_f32f32_f32f32_f32_tt_n_tilesize64x64x8_stage3",
+      "opcode": "HFMA2.MMA",
+      "verbatim_line": "0x2afa96e11cb0           HFMA2.MMA R41, -RZ, RZ, 0, 5.9604644775390625e-08"
+    },
+    {
+      "kernel": "sm80_xmma_gemm_f32f32_f32f32_f32_tt_n_tilesize64x64x8_stage3",
+      "opcode": "LDGSTS.E.LTC128B",
+      "verbatim_line": "0x2afa96e11f60           LDGSTS.E.LTC128B [R56], desc[UR18][R46.64], P0"
+    },
+    {
+      "kernel": "sm80_xmma_gemm_f32f32_f32f32_f32_tt_n_tilesize64x64x8_stage3",
+      "opcode": "BAR.SYNC.DEFER_BLOCKING",
+      "verbatim_line": "0x2afa96e12380           BAR.SYNC.DEFER_BLOCKING 0x0"
+    },
+    {
+      "kernel": "sm80_xmma_gemm_f32f32_f32f32_f32_tt_n_tilesize64x64x8_stage3",
+      "opcode": "FFMA",
+      "verbatim_line": "0x2afa96e12740           FFMA R7, R36, R40, R7"
+    },
+    {
+      "kernel": "sm80_xmma_gemm_f32f32_f32f32_f32_tt_n_tilesize64x64x8_stage3",
+      "opcode": "FADD",
+      "verbatim_line": "0x2afa96e14e50           FADD R4, R48, R4"
+    },
+    {
+      "kernel": "k",
+      "opcode": "FADD",
+      "verbatim_line": "0x2afa4d7ef590           FADD R0, R0, R7"
+    }
+  ],
+  "scope": "First printed occurrence of each requested opcode form per kernel in the bounded Nsight Compute sample. Static instruction presence, not dynamic instruction counts; omitted instructions remain in the raw file."
+}

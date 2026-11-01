@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 214" role="img" aria-labelledby="title desc">
+<title id="title">TinyGrad Computes Matrix and Bias in One Kernel</title><desc id="desc">The BEAM=2 selected program uses 256 blocks of 64 threads, 24 chunks of 32 reduction elements, and a fused FP16 rounding and bias epilogue.</desc>
+<style>
+:root{--paper:#f7f9fc;--panel:#fff;--ink:#152234;--muted:#526276;--line:#cfdae5;--soft:#eaf0f6;--blue:#2260b0;--blue-soft:#e7f0ff;--teal:#086e66;--teal-soft:#dff4ee;--purple:#7753ab;--purple-soft:#f0eafa;--amber:#8a5a00;--amber-soft:#fcf0d6}
+@media(prefers-color-scheme:dark){:root{--paper:#151d29;--panel:#1c2735;--ink:#e9eff8;--muted:#b1bfd0;--line:#43536a;--soft:#29374a;--blue:#8ebaff;--blue-soft:#213c60;--teal:#83d8c9;--teal-soft:#163e3b;--purple:#c9a9f5;--purple-soft:#392e4d;--amber:#f0c36a;--amber-soft:#463718}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:var(--ink);font-size:18px}
+.title{font-size:25px;font-weight:650;letter-spacing:-.5px}.label{font-size:13px;letter-spacing:1.5px;fill:var(--muted);font-weight:600}.small{font-size:15px;fill:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px}.node-name{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;fill:var(--blue)}.node-shape{font-size:13px;fill:var(--muted)}.muted{fill:var(--muted)}.bold{font-weight:600}.blue{fill:var(--blue)}.teal{fill:var(--teal)}.purple{fill:var(--purple)}
+</style>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="var(--muted)"/></marker></defs>
+<rect width="1000" height="214" rx="18" fill="var(--paper)"/>
+
+<text x="24" y="43" class="title" text-anchor="start">TinyGrad Computes Matrix and Bias in One Kernel</text>
+<text x="24" y="84" class="label" text-anchor="start">SELECTED BEAM=2 RUN · 1 GPU KERNEL · NO SHARED-MEMORY STAGING</text>
+<rect x="24" y="104" width="295" height="86" rx="10" fill="var(--panel)" stroke="var(--line)"/>
+<text x="40" y="126" class="bold" text-anchor="start">1. Map the Output Tile</text>
+<text x="40" y="147" class="node-name" text-anchor="start">Grid 32×8 · Block 32×2</text>
+<text x="40" y="169" class="node-shape" text-anchor="start">128×32 outputs per block</text>
+<rect x="352" y="104" width="295" height="86" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="368" y="126" class="bold" text-anchor="start">2. Reduce over K</text>
+<text x="368" y="147" class="node-name" text-anchor="start">24 chunks × 32 elements</text>
+<text x="368" y="169" class="node-shape" text-anchor="start">64 FP32 accumulators / thread</text>
+<rect x="680" y="104" width="296" height="86" rx="10" fill="var(--teal-soft)" stroke="var(--line)"/>
+<text x="696" y="126" class="bold" text-anchor="start">3. Round and Add Bias</text>
+<text x="696" y="147" class="node-name" text-anchor="start">FP32 → FP16 → add bias</text>
+<text x="696" y="169" class="node-shape" text-anchor="start">Write final FP16 output</text>
+<path d="M327 147L344 147" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<path d="M655 147L672 147" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>

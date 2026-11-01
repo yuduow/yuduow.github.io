@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 492" role="img" aria-labelledby="title desc">
+<title id="title">One Selected Implementation per Compiler</title><desc id="desc">Inductor and TinyGrad each launch a fused matrix and bias kernel. MAX launches matrix then bias. Luminal launches two input casts, matrix, projection cast, and bias. Arrows show execution order, not duration.</desc>
+<style>
+:root{--paper:#f7f9fc;--panel:#fff;--ink:#152234;--muted:#526276;--line:#cfdae5;--soft:#eaf0f6;--blue:#2260b0;--blue-soft:#e7f0ff;--teal:#086e66;--teal-soft:#dff4ee;--purple:#7753ab;--purple-soft:#f0eafa;--amber:#8a5a00;--amber-soft:#fcf0d6}
+@media(prefers-color-scheme:dark){:root{--paper:#151d29;--panel:#1c2735;--ink:#e9eff8;--muted:#b1bfd0;--line:#43536a;--soft:#29374a;--blue:#8ebaff;--blue-soft:#213c60;--teal:#83d8c9;--teal-soft:#163e3b;--purple:#c9a9f5;--purple-soft:#392e4d;--amber:#f0c36a;--amber-soft:#463718}}
+text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:var(--ink);font-size:18px}
+.title{font-size:25px;font-weight:650;letter-spacing:-.5px}.label{font-size:13px;letter-spacing:1.5px;fill:var(--muted);font-weight:600}.small{font-size:15px;fill:var(--muted)}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:16px}.node-name{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;fill:var(--blue)}.node-shape{font-size:13px;fill:var(--muted)}.muted{fill:var(--muted)}.bold{font-weight:600}.blue{fill:var(--blue)}.teal{fill:var(--teal)}.purple{fill:var(--purple)}
+</style>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="var(--muted)"/></marker></defs>
+<rect width="1000" height="492" rx="18" fill="var(--paper)"/>
+
+<text x="24" y="43" class="title" text-anchor="start">One Selected Implementation per Compiler</text>
+<text x="24" y="77" class="label" text-anchor="start">ONE BOX = ONE GPU KERNEL · ARROWS = EXECUTION ORDER</text>
+<text x="24" y="127" class="bold" text-anchor="start">Inductor</text>
+<text x="24" y="151" class="node-shape" text-anchor="start">Expanded autotune</text>
+<rect x="180" y="100" width="796" height="65" rx="10" fill="var(--teal-soft)" stroke="var(--line)"/>
+<text x="196" y="129" class="bold" text-anchor="start">Triton matrix + bias</text>
+<text x="196" y="154" class="small" text-anchor="start">Projection rounded within the fused kernel</text>
+<text x="24" y="215" class="bold" text-anchor="start">MAX</text>
+<text x="24" y="239" class="node-shape" text-anchor="start">Library dispatch</text>
+<rect x="180" y="188" width="368" height="65" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="196" y="217" class="bold" text-anchor="start">cuBLAS matrix</text>
+<text x="196" y="242" class="small" text-anchor="start">Writes FP16 projection</text>
+<rect x="604" y="188" width="372" height="65" rx="10" fill="var(--teal-soft)" stroke="var(--line)"/>
+<text x="620" y="217" class="bold" text-anchor="start">Bias</text>
+<text x="620" y="242" class="small" text-anchor="start">Reads projection; adds bias</text>
+<path d="M558 220L594 220" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="24" y="303" class="bold" text-anchor="start">TinyGrad</text>
+<text x="24" y="327" class="node-shape" text-anchor="start">BEAM=2</text>
+<rect x="180" y="276" width="796" height="65" rx="10" fill="var(--teal-soft)" stroke="var(--line)"/>
+<text x="196" y="305" class="bold" text-anchor="start">Generated matrix + bias</text>
+<text x="196" y="330" class="small" text-anchor="start">Projection rounded within the fused kernel</text>
+<text x="24" y="391" class="bold" text-anchor="start">Luminal</text>
+<text x="24" y="415" class="node-shape" text-anchor="start">Expanded search</text>
+<rect x="180" y="364" width="148" height="65" rx="10" fill="var(--amber-soft)" stroke="var(--line)"/>
+<text x="196" y="393" class="bold" text-anchor="start">Cast x</text>
+<text x="192" y="416" class="node-shape" text-anchor="start">To FP32</text>
+<rect x="342" y="364" width="148" height="65" rx="10" fill="var(--amber-soft)" stroke="var(--line)"/>
+<text x="358" y="393" class="bold" text-anchor="start">Cast weight</text>
+<text x="354" y="416" class="node-shape" text-anchor="start">FP32 + transpose</text>
+<path d="M330 396L340 396" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="504" y="364" width="148" height="65" rx="10" fill="var(--blue-soft)" stroke="var(--line)"/>
+<text x="520" y="393" class="bold" text-anchor="start">cuBLASLt</text>
+<text x="516" y="416" class="node-shape" text-anchor="start">FP32 · FFMA</text>
+<path d="M492 396L502 396" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="666" y="364" width="148" height="65" rx="10" fill="var(--amber-soft)" stroke="var(--line)"/>
+<text x="682" y="393" class="bold" text-anchor="start">Cast projection</text>
+<text x="678" y="416" class="node-shape" text-anchor="start">To FP16</text>
+<path d="M654 396L664 396" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="828" y="364" width="148" height="65" rx="10" fill="var(--teal-soft)" stroke="var(--line)"/>
+<text x="844" y="393" class="bold" text-anchor="start">Bias</text>
+<text x="840" y="416" class="node-shape" text-anchor="start">Final FP16</text>
+<path d="M816 396L826 396" fill="none" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#arrow)"/>
+<text x="24" y="462" class="small" text-anchor="start">Selected code: Inductor, TinyGrad. Device traces also available: MAX, Luminal. No timing scale.</text>
+</svg>

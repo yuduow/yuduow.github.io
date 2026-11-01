@@ -1,0 +1,27 @@
+{
+  "source": "kernels.sass.txt",
+  "source_sha256": "61870880ab1c167a358fe83ffa91c752e31b0e619269d81a4c0eb1385f346a97",
+  "examples": [
+    {
+      "kernel": "nvjet_hsh_64x128_64x8_2x1_v_bz_TNN",
+      "opcode": "BAR.SYNC",
+      "verbatim_line": "0x2aec617e1280           BAR.SYNC 0x0, 0x80"
+    },
+    {
+      "kernel": "nvjet_hsh_64x128_64x8_2x1_v_bz_TNN",
+      "opcode": "HGMMA.64x64x16.F32",
+      "verbatim_line": "0x2aec617e12c0           HGMMA.64x64x16.F32 R24, gdesc[UR16], R24, !UP1"
+    },
+    {
+      "kernel": "nvjet_hsh_64x128_64x8_2x1_v_bz_TNN",
+      "opcode": "FFMA",
+      "verbatim_line": "0x2aec617e1890           FFMA R24, R17, R24, RZ"
+    },
+    {
+      "kernel": "elementwise_r2_w8_b256_gs_False_2ba83ece",
+      "opcode": "HFMA2.MMA",
+      "verbatim_line": "0x2aec617e5350           HFMA2.MMA R8, -RZ, RZ, 0, 0"
+    }
+  ],
+  "scope": "First printed occurrence of each requested opcode form per kernel in the bounded Nsight Compute sample. Static instruction presence, not dynamic instruction counts; omitted instructions remain in the raw file."
+}
