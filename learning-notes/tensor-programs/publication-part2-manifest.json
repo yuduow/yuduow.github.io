@@ -1,7 +1,7 @@
 {
   "scope": "Part 2, directly linked evidence, scoped part2 styles, series index, listing entries, and restored Part 2 links in Part 1",
   "part_1": "Preserved except Part 2 forthcoming spans restored as links",
-  "restored_part_1_links": 5,
+  "restored_part_1_links": 0,
   "files": [
     {
       "path": "index.html",
@@ -34,6 +34,14 @@
     {
       "path": "learning-notes/tensor-programs/assets/h100-max-lowering.svg",
       "sha256": "854e610f59180341bc1cfa0468bf8cd7cd1c6343bcdb3287d68ae0886267c532"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/h100-roofline.svg",
+      "sha256": "4fb7f1b52ccdd65a792bf846e13f324c009afffc5fb8fa125a6ecac8af6d8afd"
+    },
+    {
+      "path": "learning-notes/tensor-programs/assets/h100-storage.svg",
+      "sha256": "2d18dd77e2934c479131029d966c8670eb06ff2e0f9a41501e2bdd5640d2c297"
     },
     {
       "path": "learning-notes/tensor-programs/assets/h100-tinygrad-schedule.svg",
@@ -121,7 +129,7 @@
     },
     {
       "path": "learning-notes/tensor-programs/part-2/index.html",
-      "sha256": "9bdbcc8cc1307268371285f801a8ac6ec958bd18e49a3152a960dd84c0642314"
+      "sha256": "a59cb0320253e5077884d40b77feb8ec7a58096ee9eea11eb1a5e41d0422143a"
     }
   ]
 }
