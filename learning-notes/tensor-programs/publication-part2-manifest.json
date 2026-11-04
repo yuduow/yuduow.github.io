@@ -125,11 +125,11 @@
     },
     {
       "path": "learning-notes/tensor-programs/part-1/index.html",
-      "sha256": "9dd0963cd50f1c2b21ddec97cf75c11b9a0c880959cf734d1ec4cc473cbdeff5"
+      "sha256": "b74fb384d41d8df38c8b091b018c3810bbb050dfcfc967be7efceb716b2ea1ee"
     },
     {
       "path": "learning-notes/tensor-programs/part-2/index.html",
-      "sha256": "a59cb0320253e5077884d40b77feb8ec7a58096ee9eea11eb1a5e41d0422143a"
+      "sha256": "3ceba3e4c1952a50b9eae04904e05a349bb7cb88f6307b2a222999e3995f790d"
     }
   ]
 }
