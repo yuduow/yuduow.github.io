@@ -165,6 +165,11 @@ p {
   text-align: center;
 }
 
+.contacts .contact-labeled {
+  gap: 0.35rem;
+  padding-inline: 0.75rem;
+}
+
 .contacts .contact-icon-link {
   width: 2.75rem;
   padding: 0;
@@ -180,6 +185,35 @@ p {
 .contacts a:hover,
 .contacts a:focus-visible {
   background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+}
+
+/* Keep the profile links on one row on phones (fits from 360px wide). */
+@media (max-width: 440px) {
+  .contacts {
+    gap: 0.2rem;
+    font-size: 0.84rem;
+  }
+
+  .contacts a {
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .contacts .contact-labeled {
+    gap: 0.3rem;
+    padding-inline: 0.5rem;
+  }
+
+  .contacts .contact-icon-link {
+    width: 2.25rem;
+    padding: 0;
+  }
+
+  .contact-icon {
+    width: 1rem;
+    height: 1rem;
+  }
 }
 
 h1 {
