@@ -200,12 +200,14 @@ h1 {
   text-wrap: balance;
 }
 
-h2 a {
+h2 a,
+.chapters h3 a {
   color: inherit;
   text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
 }
 
-h2 a:hover {
+h2 a:hover,
+.chapters h3 a:hover {
   color: var(--accent);
 }
 
@@ -215,6 +217,26 @@ h2 a:hover {
   height: 0.9em;
   vertical-align: -0.04em;
   fill: currentColor;
+}
+
+.wordmark {
+  display: inline-block;
+  width: auto;
+  height: 0.78em;
+  aspect-ratio: 122.8 / 19.9;
+  vertical-align: -0.02em;
+  fill: currentColor;
+}
+
+a:has(> .logo-inline) {
+  white-space: nowrap;
+}
+
+.logo-inline {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.18em;
+  vertical-align: -0.02em;
 }
 
 .chapters {
@@ -230,6 +252,14 @@ h2 a:hover {
   min-width: 0;
 }
 
+/* The Apple entry has the longest description; a wider middle column
+   keeps all three entries at the same height on wide screens. */
+@media (min-width: 900px) {
+  .chapters {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+  }
+}
+
 .when {
   margin: 0;
   font-size: 0.72rem;
@@ -239,7 +269,8 @@ h2 a:hover {
   color: var(--accent);
 }
 
-h2 {
+h2,
+.chapters h3 {
   margin: 0.28rem 0 0;
   font-size: 1.15rem;
   font-weight: 600;
@@ -260,6 +291,34 @@ h2 {
 
 .earlier strong {
   font-weight: 650;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.7rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.site-footer p {
+  margin: 0;
 }
 
 @media (max-width: 800px) {
